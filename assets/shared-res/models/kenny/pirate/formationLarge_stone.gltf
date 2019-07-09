@@ -1,0 +1,178 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 228,
+      "type": "VEC3",
+      "max": [
+        0.0,
+        1.7924200296401978,
+        0.94679993391036987
+      ],
+      "min": [
+        -1.3623460531234741,
+        0.0,
+        -3.6095570540391122E-16
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 228,
+      "type": "VEC3",
+      "max": [
+        0.99846029281616211,
+        1.0,
+        0.9999692440032959
+      ],
+      "min": [
+        -0.99846029281616211,
+        -1.0,
+        -0.94862174987792969
+      ]
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 228,
+      "type": "VEC4",
+      "max": [
+        1.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        0.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 228,
+      "type": "VEC2",
+      "max": [
+        100.06056976318359,
+        35.859909057617188
+      ],
+      "min": [
+        -107.83804321289063,
+        -142.16111755371094
+      ]
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5121,
+      "count": 408,
+      "type": "SCALAR",
+      "max": [
+        227.0
+      ],
+      "min": [
+        0.0
+      ]
+    }
+  ],
+  "asset": {
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "uri": "formationLarge_stone.bin",
+      "byteLength": 11352
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 2736
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 2736,
+      "byteLength": 2736
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 5472,
+      "byteLength": 3648
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 9120,
+      "byteLength": 1824
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 10944,
+      "byteLength": 408
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.58431375,
+          0.6862745,
+          0.75686276,
+          1.0
+        ],
+        "metallicFactor": 0.25,
+        "roughnessFactor": 0.84999999403953552
+      },
+      "name": "stone"
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0
+        }
+      ],
+      "name": "formationLarge_stone"
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "rotation": [
+        0.0,
+        -1.0,
+        0.0,
+        5.35405054E-14
+      ],
+      "scale": [
+        1.0,
+        0.77,
+        1.0
+      ],
+      "translation": [
+        2.68280315,
+        2.0574476E-14,
+        -8.031761
+      ],
+      "name": "formationLarge_stone"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ],
+      "name": "formationLarge_stone"
+    }
+  ]
+}

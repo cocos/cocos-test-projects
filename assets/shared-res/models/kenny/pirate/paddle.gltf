@@ -1,0 +1,167 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 72,
+      "type": "VEC3",
+      "max": [
+        0.070515997707843781,
+        0.046783998608589172,
+        0.795199990272522
+      ],
+      "min": [
+        -0.070515997707843781,
+        -0.019584000110626221,
+        -0.22499999403953552
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 72,
+      "type": "VEC3",
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ]
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 72,
+      "type": "VEC4",
+      "max": [
+        1.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        0.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 72,
+      "type": "VEC2",
+      "max": [
+        60.472442626953125,
+        58.291278839111328
+      ],
+      "min": [
+        -60.472442626953125,
+        -59.472442626953125
+      ]
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5121,
+      "count": 108,
+      "type": "SCALAR",
+      "max": [
+        71.0
+      ],
+      "min": [
+        0.0
+      ]
+    }
+  ],
+  "asset": {
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "uri": "paddle.bin",
+      "byteLength": 3564
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 864
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 864,
+      "byteLength": 864
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1728,
+      "byteLength": 1152
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 2880,
+      "byteLength": 576
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 3456,
+      "byteLength": 108
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.7294118,
+          0.4627451,
+          0.2784314,
+          1.0
+        ],
+        "metallicFactor": 0.25,
+        "roughnessFactor": 0.84999999403953552
+      },
+      "name": "wood"
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0
+        }
+      ],
+      "name": "paddle"
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "translation": [
+        -0.478968,
+        0.369584,
+        -10.0724459
+      ],
+      "name": "paddle"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ],
+      "name": "paddle"
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 264,
+      "type": "VEC3",
+      "max": [
+        0.50382041931152344,
+        0.079999998211860657,
+        0.40704536437988281
+      ],
+      "min": [
+        -0.51964998245239258,
+        -1.0828671426815132E-15,
+        -0.44392213225364685
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 264,
+      "type": "VEC3",
+      "max": [
+        0.776063084602356,
+        1.0,
+        0.89612036943435669
+      ],
+      "min": [
+        -0.776063084602356,
+        -1.0,
+        -0.89612036943435669
+      ]
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 264,
+      "type": "VEC4",
+      "max": [
+        1.0,
+        0.0,
+        0.86602586507797241,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        0.0,
+        -0.86602580547332764,
+        -1.0
+      ]
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 264,
+      "type": "VEC2",
+      "max": [
+        39.6708984375,
+        35.954498291015625
+      ],
+      "min": [
+        -40.917320251464844,
+        -31.050815582275391
+      ]
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5123,
+      "count": 516,
+      "type": "SCALAR",
+      "max": [
+        257.0
+      ],
+      "min": [
+        0.0
+      ]
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5123,
+      "count": 12,
+      "type": "SCALAR",
+      "max": [
+        263.0
+      ],
+      "min": [
+        258.0
+      ]
+    }
+  ],
+  "asset": {
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "uri": "hole.bin",
+      "byteLength": 13728
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 3168
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 3168,
+      "byteLength": 3168
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 6336,
+      "byteLength": 4224
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 10560,
+      "byteLength": 2112
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 12672,
+      "byteLength": 1032
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 13704,
+      "byteLength": 24
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.847058833,
+          0.7607843,
+          0.607843161,
+          1.0
+        ],
+        "metallicFactor": 0.25,
+        "roughnessFactor": 0.84999999403953552
+      },
+      "name": "sand"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.3764706,
+          0.3764706,
+          0.3764706,
+          1.0
+        ],
+        "metallicFactor": 0.25,
+        "roughnessFactor": 0.84999999403953552
+      },
+      "name": "iron"
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0
+        },
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 5,
+          "material": 1
+        }
+      ],
+      "name": "hole"
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "translation": [
+        -4.775003,
+        1.08286714E-15,
+        -6.051787
+      ],
+      "name": "hole"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ],
+      "name": "hole"
+    }
+  ]
+}

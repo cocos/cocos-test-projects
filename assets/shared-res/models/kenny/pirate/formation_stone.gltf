@@ -1,0 +1,173 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 264,
+      "type": "VEC3",
+      "max": [
+        0.0,
+        1.2247499227523804,
+        1.0671254396438599
+      ],
+      "min": [
+        -1.0598505735397339,
+        0.0,
+        1.4438228216156449E-15
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 264,
+      "type": "VEC3",
+      "max": [
+        0.97844976186752319,
+        1.0,
+        0.99644654989242554
+      ],
+      "min": [
+        -0.91019237041473389,
+        -1.0,
+        -0.99644654989242554
+      ]
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 264,
+      "type": "VEC4",
+      "max": [
+        1.0,
+        0.0288461372256279,
+        0.98353850841522217,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -0.028846161440014839,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 264,
+      "type": "VEC2",
+      "max": [
+        85.7635269165039,
+        39.710906982421875
+      ],
+      "min": [
+        -95.961906433105469,
+        -100.33792877197266
+      ]
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5123,
+      "count": 516,
+      "type": "SCALAR",
+      "max": [
+        263.0
+      ],
+      "min": [
+        0.0
+      ]
+    }
+  ],
+  "asset": {
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "uri": "formation_stone.bin",
+      "byteLength": 13704
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 3168
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 3168,
+      "byteLength": 3168
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 6336,
+      "byteLength": 4224
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 10560,
+      "byteLength": 2112
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 12672,
+      "byteLength": 1032
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.58431375,
+          0.6862745,
+          0.75686276,
+          1.0
+        ],
+        "metallicFactor": 0.25,
+        "roughnessFactor": 0.84999999403953552
+      },
+      "name": "stone"
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0
+        }
+      ],
+      "name": "formation_stone"
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "rotation": [
+        0.0,
+        -1.0,
+        0.0,
+        4.15063966E-14
+      ],
+      "translation": [
+        4.635149,
+        1.98525634E-14,
+        -7.941707
+      ],
+      "name": "formation_stone"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ],
+      "name": "formation_stone"
+    }
+  ]
+}

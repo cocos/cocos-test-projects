@@ -1,0 +1,252 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 264,
+      "type": "VEC3",
+      "max": [
+        0.12249999493360519,
+        0.594014048576355,
+        0.12249999493360519
+      ],
+      "min": [
+        -0.12249999493360519,
+        -1.2550836249685465E-17,
+        -0.12249999493360519
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 264,
+      "type": "VEC3",
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ]
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 264,
+      "type": "VEC4",
+      "max": [
+        1.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        0.0,
+        -1.0,
+        -1.0
+      ]
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 264,
+      "type": "VEC2",
+      "max": [
+        9.6456689834594727,
+        10.645668983459473
+      ],
+      "min": [
+        -9.6456689834594727,
+        -45.772762298583984
+      ]
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5121,
+      "count": 324,
+      "type": "SCALAR",
+      "max": [
+        207.0
+      ],
+      "min": [
+        0.0
+      ]
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5123,
+      "count": 114,
+      "type": "SCALAR",
+      "max": [
+        263.0
+      ],
+      "min": [
+        208.0
+      ]
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5121,
+      "count": 48,
+      "type": "SCALAR",
+      "max": [
+        206.0
+      ],
+      "min": [
+        1.0
+      ]
+    }
+  ],
+  "asset": {
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "uri": "bottle.bin",
+      "byteLength": 13272
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 3168
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 3168,
+      "byteLength": 3168
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 6336,
+      "byteLength": 4224
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 10560,
+      "byteLength": 2112
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 12672,
+      "byteLength": 324
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 12996,
+      "byteLength": 228
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 13224,
+      "byteLength": 48
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.227450982,
+          0.5568628,
+          0.321568638,
+          1.0
+        ],
+        "metallicFactor": 0.25,
+        "roughnessFactor": 0.84999999403953552
+      },
+      "name": "leaves"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.7294118,
+          0.4627451,
+          0.2784314,
+          1.0
+        ],
+        "metallicFactor": 0.25,
+        "roughnessFactor": 0.84999999403953552
+      },
+      "name": "wood"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.819607854,
+          0.7529412,
+          0.670588255,
+          1.0
+        ],
+        "metallicFactor": 0.25,
+        "roughnessFactor": 0.84999999403953552
+      },
+      "name": "textile"
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0
+        },
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 5,
+          "material": 1
+        },
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 6,
+          "material": 2
+        }
+      ],
+      "name": "bottle"
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "scale": [
+        0.71,
+        0.71,
+        0.71
+      ],
+      "translation": [
+        -3.83815765,
+        7.21911464E-16,
+        -6.40873432
+      ],
+      "name": "bottle"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ],
+      "name": "bottle"
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 132,
+      "type": "VEC3",
+      "max": [
+        0.46765372157096863,
+        0.60702896118164063,
+        0.41939997673034668
+      ],
+      "min": [
+        -0.46765372157096863,
+        0.0,
+        -0.41939997673034668
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 132,
+      "type": "VEC3",
+      "max": [
+        0.95788478851318359,
+        0.99497485160827637,
+        0.82955253124237061
+      ],
+      "min": [
+        -0.95788478851318359,
+        -0.99497485160827637,
+        -0.82955253124237061
+      ]
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 132,
+      "type": "VEC4",
+      "max": [
+        0.866025447845459,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -0.866025447845459,
+        0.0,
+        -1.0,
+        -1.0
+      ]
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 132,
+      "type": "VEC2",
+      "max": [
+        16.511812210083008,
+        33.021415710449219
+      ],
+      "min": [
+        -16.511812210083008,
+        -54.225631713867188
+      ]
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5121,
+      "count": 180,
+      "type": "SCALAR",
+      "max": [
+        131.0
+      ],
+      "min": [
+        0.0
+      ]
+    }
+  ],
+  "asset": {
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "uri": "plant.bin",
+      "byteLength": 6516
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 1584
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1584,
+      "byteLength": 1584
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 3168,
+      "byteLength": 2112
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 5280,
+      "byteLength": 1056
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 6336,
+      "byteLength": 180
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.227450982,
+          0.5568628,
+          0.321568638,
+          1.0
+        ],
+        "metallicFactor": 0.25,
+        "roughnessFactor": 0.84999999403953552
+      },
+      "name": "leaves"
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0
+        }
+      ],
+      "name": "plant"
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "rotation": [
+        2.111669E-16,
+        3.76129069E-32,
+        -2.13743179E-16,
+        1.0
+      ],
+      "scale": [
+        0.69,
+        0.69,
+        0.69
+      ],
+      "translation": [
+        0.6374152,
+        1.98525634E-14,
+        -6.40954447
+      ],
+      "name": "plant"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ],
+      "name": "plant"
+    }
+  ]
+}

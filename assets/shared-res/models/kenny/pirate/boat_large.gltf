@@ -1,0 +1,167 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 184,
+      "type": "VEC3",
+      "max": [
+        0.44624999165534973,
+        0.34999999403953552,
+        1.0198495388031006
+      ],
+      "min": [
+        -0.44624999165534973,
+        -4.51194631754889E-17,
+        -0.75274199247360229
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 184,
+      "type": "VEC3",
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ]
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 184,
+      "type": "VEC4",
+      "max": [
+        1.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        0.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 184,
+      "type": "VEC2",
+      "max": [
+        80.303115844726563,
+        60.271022796630859
+      ],
+      "min": [
+        -80.303115844726563,
+        -79.303115844726563
+      ]
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5121,
+      "count": 378,
+      "type": "SCALAR",
+      "max": [
+        183.0
+      ],
+      "min": [
+        0.0
+      ]
+    }
+  ],
+  "asset": {
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "uri": "boat_large.bin",
+      "byteLength": 9210
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 2208
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 2208,
+      "byteLength": 2208
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 4416,
+      "byteLength": 2944
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 7360,
+      "byteLength": 1472
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 8832,
+      "byteLength": 378
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.7294118,
+          0.4627451,
+          0.2784314,
+          1.0
+        ],
+        "metallicFactor": 0.25,
+        "roughnessFactor": 0.84999999403953552
+      },
+      "name": "wood"
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0
+        }
+      ],
+      "name": "boat_large_8angles"
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "translation": [
+        1.31,
+        2.0574476E-14,
+        -9.962257
+      ],
+      "name": "boat_large_8angles"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ],
+      "name": "boat_large"
+    }
+  ]
+}

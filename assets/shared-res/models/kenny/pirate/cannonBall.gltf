@@ -1,0 +1,167 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 1296,
+      "type": "VEC3",
+      "max": [
+        0.070000000298023224,
+        0.070000000298023224,
+        0.070000000298023224
+      ],
+      "min": [
+        -0.070000000298023224,
+        -0.070000000298023224,
+        -0.070000000298023224
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 1296,
+      "type": "VEC3",
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ]
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 1296,
+      "type": "VEC4",
+      "max": [
+        1.0,
+        0.17701390385627747,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -0.17701388895511627,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 1296,
+      "type": "VEC2",
+      "max": [
+        1.0236982107162476,
+        2.02187442779541
+      ],
+      "min": [
+        -1.0236982107162476,
+        -0.021874547004699707
+      ]
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5123,
+      "count": 1872,
+      "type": "SCALAR",
+      "max": [
+        1295.0
+      ],
+      "min": [
+        0.0
+      ]
+    }
+  ],
+  "asset": {
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "uri": "cannonBall.bin",
+      "byteLength": 65952
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 15552
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 15552,
+      "byteLength": 15552
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 31104,
+      "byteLength": 20736
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 51840,
+      "byteLength": 10368
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 62208,
+      "byteLength": 3744
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.3764706,
+          0.3764706,
+          0.3764706,
+          1.0
+        ],
+        "metallicFactor": 0.25,
+        "roughnessFactor": 0.84999999403953552
+      },
+      "name": "iron"
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0
+        }
+      ],
+      "name": "cannonBall"
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "translation": [
+        -1.50947213,
+        0.07,
+        -7.772226
+      ],
+      "name": "cannonBall"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ],
+      "name": "cannonBall"
+    }
+  ]
+}

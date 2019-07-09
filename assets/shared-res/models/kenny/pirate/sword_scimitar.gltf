@@ -1,0 +1,287 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 742,
+      "type": "VEC3",
+      "max": [
+        0.11344565451145172,
+        0.57786822319030762,
+        0.054999995976686478
+      ],
+      "min": [
+        -0.087536320090293884,
+        -0.10000000149011612,
+        -0.054999995976686478
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 742,
+      "type": "VEC3",
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ]
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 742,
+      "type": "VEC4",
+      "max": [
+        1.0,
+        0.021492777392268181,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -0.021458204835653305,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 742,
+      "type": "VEC2",
+      "max": [
+        8.9148855209350586,
+        8.8740158081054688
+      ],
+      "min": [
+        -8.9185495376586914,
+        -44.155361175537109
+      ]
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5123,
+      "count": 444,
+      "type": "SCALAR",
+      "max": [
+        353.0
+      ],
+      "min": [
+        0.0
+      ]
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5123,
+      "count": 726,
+      "type": "SCALAR",
+      "max": [
+        699.0
+      ],
+      "min": [
+        354.0
+      ]
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5123,
+      "count": 36,
+      "type": "SCALAR",
+      "max": [
+        723.0
+      ],
+      "min": [
+        700.0
+      ]
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5123,
+      "count": 18,
+      "type": "SCALAR",
+      "max": [
+        741.0
+      ],
+      "min": [
+        724.0
+      ]
+    }
+  ],
+  "asset": {
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "uri": "sword_scimitar.bin",
+      "byteLength": 38064
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 8904
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 8904,
+      "byteLength": 8904
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 17808,
+      "byteLength": 11872
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 29680,
+      "byteLength": 5936
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 35616,
+      "byteLength": 888
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 36504,
+      "byteLength": 1452
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 37956,
+      "byteLength": 72
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 38028,
+      "byteLength": 36
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.58431375,
+          0.6862745,
+          0.75686276,
+          1.0
+        ],
+        "metallicFactor": 0.25,
+        "roughnessFactor": 0.84999999403953552
+      },
+      "name": "stone"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.819607854,
+          0.7529412,
+          0.670588255,
+          1.0
+        ],
+        "metallicFactor": 0.25,
+        "roughnessFactor": 0.84999999403953552
+      },
+      "name": "textile"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.7294118,
+          0.4627451,
+          0.2784314,
+          1.0
+        ],
+        "metallicFactor": 0.25,
+        "roughnessFactor": 0.84999999403953552
+      },
+      "name": "wood"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.5
+      },
+      "name": "_defaultMat"
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0
+        },
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 5,
+          "material": 1
+        },
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 6,
+          "material": 2
+        },
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 7,
+          "material": 3
+        }
+      ],
+      "name": "sword_scimitar"
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "rotation": [
+        0.0,
+        -0.7071068,
+        0.0,
+        0.7071068
+      ],
+      "translation": [
+        -2.26815987,
+        0.1,
+        -8.576152
+      ],
+      "name": "sword_scimitar"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ],
+      "name": "sword_scimitar"
+    }
+  ]
+}

@@ -1,0 +1,281 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 368,
+      "type": "VEC3",
+      "max": [
+        0.0397607795894146,
+        0.46698722243309021,
+        0.080940000712871552
+      ],
+      "min": [
+        -0.0397607795894146,
+        -0.067604407668113708,
+        -0.080940000712871552
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 368,
+      "type": "VEC3",
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ]
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 368,
+      "type": "VEC4",
+      "max": [
+        1.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        0.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 368,
+      "type": "VEC2",
+      "max": [
+        6.3732285499572754,
+        6.3231816291809082
+      ],
+      "min": [
+        -6.3732285499572754,
+        -34.935440063476563
+      ]
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5123,
+      "count": 582,
+      "type": "SCALAR",
+      "max": [
+        289.0
+      ],
+      "min": [
+        0.0
+      ]
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5123,
+      "count": 78,
+      "type": "SCALAR",
+      "max": [
+        333.0
+      ],
+      "min": [
+        290.0
+      ]
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5123,
+      "count": 36,
+      "type": "SCALAR",
+      "max": [
+        357.0
+      ],
+      "min": [
+        334.0
+      ]
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5123,
+      "count": 12,
+      "type": "SCALAR",
+      "max": [
+        367.0
+      ],
+      "min": [
+        358.0
+      ]
+    }
+  ],
+  "asset": {
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "uri": "sword.bin",
+      "byteLength": 19080
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 4416
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 4416,
+      "byteLength": 4416
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 8832,
+      "byteLength": 5888
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 14720,
+      "byteLength": 2944
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 17664,
+      "byteLength": 1164
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 18828,
+      "byteLength": 156
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 18984,
+      "byteLength": 72
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 19056,
+      "byteLength": 24
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.819607854,
+          0.7529412,
+          0.670588255,
+          1.0
+        ],
+        "metallicFactor": 0.25,
+        "roughnessFactor": 0.84999999403953552
+      },
+      "name": "textile"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.58431375,
+          0.6862745,
+          0.75686276,
+          1.0
+        ],
+        "metallicFactor": 0.25,
+        "roughnessFactor": 0.84999999403953552
+      },
+      "name": "stone"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.7294118,
+          0.4627451,
+          0.2784314,
+          1.0
+        ],
+        "metallicFactor": 0.25,
+        "roughnessFactor": 0.84999999403953552
+      },
+      "name": "wood"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.5
+      },
+      "name": "_defaultMat"
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0
+        },
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 5,
+          "material": 1
+        },
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 6,
+          "material": 2
+        },
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 7,
+          "material": 3
+        }
+      ],
+      "name": "sword"
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "translation": [
+        -2.66292048,
+        0.0676044151,
+        -8.576152
+      ],
+      "name": "sword"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ],
+      "name": "sword"
+    }
+  ]
+}

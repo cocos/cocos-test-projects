@@ -1,0 +1,207 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 204,
+      "type": "VEC3",
+      "max": [
+        0.0,
+        0.036800000816583633,
+        0.8970000147819519
+      ],
+      "min": [
+        -0.22079998254776,
+        -1.6243006610827107E-15,
+        0.0
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 204,
+      "type": "VEC3",
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ]
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 204,
+      "type": "VEC4",
+      "max": [
+        1.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -1.0,
+        0.0,
+        -1.0,
+        1.0
+      ]
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 204,
+      "type": "VEC2",
+      "max": [
+        70.629920959472656,
+        1.0
+      ],
+      "min": [
+        -70.629920959472656,
+        -69.629920959472656
+      ]
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5121,
+      "count": 186,
+      "type": "SCALAR",
+      "max": [
+        87.0
+      ],
+      "min": [
+        0.0
+      ]
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5121,
+      "count": 240,
+      "type": "SCALAR",
+      "max": [
+        203.0
+      ],
+      "min": [
+        12.0
+      ]
+    }
+  ],
+  "asset": {
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "uri": "shovel.bin",
+      "byteLength": 10218
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 2448
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 2448,
+      "byteLength": 2448
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 4896,
+      "byteLength": 3264
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 8160,
+      "byteLength": 1632
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 9792,
+      "byteLength": 186
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 9978,
+      "byteLength": 240
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.7294118,
+          0.4627451,
+          0.2784314,
+          1.0
+        ],
+        "metallicFactor": 0.25,
+        "roughnessFactor": 0.84999999403953552
+      },
+      "name": "wood"
+    },
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.58431375,
+          0.6862745,
+          0.75686276,
+          1.0
+        ],
+        "metallicFactor": 0.25,
+        "roughnessFactor": 0.84999999403953552
+      },
+      "name": "stone"
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0
+        },
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 5,
+          "material": 1
+        }
+      ],
+      "name": "shovel"
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "translation": [
+        -5.55107737,
+        1.588205E-14,
+        -6.47933435
+      ],
+      "name": "shovel"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ],
+      "name": "shovel"
+    }
+  ]
+}
