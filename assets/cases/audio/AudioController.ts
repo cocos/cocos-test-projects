@@ -1,4 +1,4 @@
-import { _decorator, Component, AudioClip, AudioSourceComponent, LabelComponent } from "cc";
+import { _decorator, Component, AudioClip, AudioSourceComponent, LabelComponent, SliderComponent } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("AudioController")
@@ -16,7 +16,7 @@ export class AudioController extends Component {
     @property({type: AudioSourceComponent})
     public audioSource: AudioSourceComponent = null;
 
-    @property({type: [LabelComponent]})
+    @property({type: LabelComponent})
     public nameLabel: LabelComponent = null;
 
     start () {
@@ -31,5 +31,9 @@ export class AudioController extends Component {
         let clip: AudioClip = this.clips[index];
         this.nameLabel.string = clip.name;
         this.audioSource.playOneShot(clip);
+    }
+
+    onVolumeSliderChanged(eventTarget: SliderComponent) {
+        this.audioSource.volume = eventTarget.progress;
     }
 }
