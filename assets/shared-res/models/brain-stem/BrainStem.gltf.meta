@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.9",
+  "ver": "1.1.15",
   "importer": "gltf",
   "imported": true,
   "uuid": "e905c2a5-4592-4fbc-ad43-80efa46f4ff9",
@@ -9,18 +9,40 @@
   ],
   "subMetas": {
     "Figure_2_geometry.mesh": {
-      "ver": "0.0.1",
+      "ver": "1.0.2",
       "importer": "gltf-mesh",
       "uuid": "e905c2a5-4592-4fbc-ad43-80efa46f4ff9@Figure_2_geometry.mesh",
-      "imported": false,
-      "files": [],
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
       }
     },
+    ".animation": {
+      "ver": "1.0.10",
+      "importer": "gltf-animation",
+      "uuid": "e905c2a5-4592-4fbc-ad43-80efa46f4ff9@.animation",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 34.880001068115234
+        },
+        "events": []
+      }
+    },
     "UnnamedAnimation.animation": {
-      "ver": "1.0.8",
+      "ver": "1.0.10",
       "importer": "gltf-animation",
       "uuid": "e905c2a5-4592-4fbc-ad43-80efa46f4ff9@UnnamedAnimation.animation",
       "imported": true,
@@ -814,7 +836,7 @@
       }
     },
     "BrainStem.prefab": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "importer": "gltf-scene",
       "uuid": "e905c2a5-4592-4fbc-ad43-80efa46f4ff9@BrainStem.prefab",
       "imported": true,
@@ -907,6 +929,20 @@
       "scenes": [
         "e905c2a5-4592-4fbc-ad43-80efa46f4ff9@BrainStem.prefab"
       ]
-    }
+    },
+    "animationImportSettings": [
+      {
+        "name": "",
+        "duration": 34.880001068115234,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "",
+            "from": 0,
+            "to": 34.880001068115234
+          }
+        ]
+      }
+    ]
   }
 }

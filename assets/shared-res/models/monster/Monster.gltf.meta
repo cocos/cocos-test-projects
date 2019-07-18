@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.9",
+  "ver": "1.1.15",
   "importer": "gltf",
   "imported": true,
   "uuid": "3174824f-f1f2-4011-8709-15d89417ad89",
@@ -22,8 +22,27 @@
         "gltfIndex": 0
       }
     },
+    ".animation": {
+      "ver": "1.0.10",
+      "importer": "gltf-animation",
+      "uuid": "3174824f-f1f2-4011-8709-15d89417ad89@.animation",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 3.333329916000366
+        },
+        "events": []
+      }
+    },
     "UnnamedAnimation.animation": {
-      "ver": "1.0.8",
+      "ver": "1.0.10",
       "importer": "gltf-animation",
       "uuid": "3174824f-f1f2-4011-8709-15d89417ad89@UnnamedAnimation.animation",
       "imported": true,
@@ -84,7 +103,7 @@
       }
     },
     "Monster.prefab": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "importer": "gltf-scene",
       "uuid": "3174824f-f1f2-4011-8709-15d89417ad89@Monster.prefab",
       "imported": true,
@@ -128,6 +147,20 @@
       "scenes": [
         "3174824f-f1f2-4011-8709-15d89417ad89@Monster.prefab"
       ]
-    }
+    },
+    "animationImportSettings": [
+      {
+        "name": "",
+        "duration": 3.333329916000366,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "",
+            "from": 0,
+            "to": 3.333329916000366
+          }
+        ]
+      }
+    ]
   }
 }
