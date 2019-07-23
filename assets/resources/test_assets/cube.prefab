@@ -1,0 +1,120 @@
+[
+  {
+    "__type__": "cc.Prefab",
+    "_name": "",
+    "_objFlags": 0,
+    "_native": "",
+    "data": {
+      "__id__": 1
+    },
+    "optimizationPolicy": 0,
+    "asyncLoadAssets": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "cube",
+    "_objFlags": 0,
+    "_parent": null,
+    "_children": [],
+    "_active": true,
+    "_level": 3,
+    "_components": [
+      {
+        "__id__": 2
+      },
+      {
+        "__id__": 3
+      },
+      {
+        "__id__": 4
+      }
+    ],
+    "_prefab": {
+      "__id__": 5
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 62.733
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 100,
+      "y": 100,
+      "z": 100
+    },
+    "_layer": 1,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.ModelComponent",
+    "_name": "Cube<ModelComponent>",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "_materials": [
+      {
+        "__uuid__": "91578ab3-9aa1-4f49-8746-70b6ee1c2245"
+      }
+    ],
+    "_viewID": 0,
+    "_mesh": {
+      "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@box.mesh"
+    },
+    "_shadowCastingMode": 0,
+    "_receiveShadows": false,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.UIModelComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "_priority": 0,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.AnimationComponent",
+    "_name": "cube<AnimationComponent>",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "playOnLoad": false,
+    "_clips": [],
+    "_defaultClip": null,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__uuid__": "b17c9609-761c-47b2-bb63-9fc460954296"
+    },
+    "fileId": "a2nXAQ1GdJC4l4aCOhBr2x",
+    "sync": false,
+    "_synced": {}
+  }
+]
