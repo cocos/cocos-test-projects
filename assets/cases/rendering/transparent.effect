@@ -1,0 +1,98 @@
+CCEffect %{
+  temporaries:
+    b1: &b1
+      targets:
+      - blend: true
+        blendSrc: src_alpha
+        blendDst: one
+        blendSrcAlpha: src_alpha
+        blendDstAlpha: one
+    b2: &b2
+      targets:
+      - blend: true
+        blendSrc: one
+        blendDst: one_minus_src_alpha
+        blendSrcAlpha: one
+        blendDstAlpha: one_minus_src_alpha
+    d1: &d1 { depthTest: true, depthWrite: false }
+    r1: &r1 { cullMode: none }
+    p1: &p1
+      color:        { value: [0.5, 0.5, 0.5, 0.5], inspector: { type: color } }
+      tilingOffset: { value: [1, 1, 0, 0] }
+      mainTexture:  { value: white         }
+  techniques:
+  - name: add
+    passes:
+    - vert: add-vs:vert
+      frag: add-fs:frag
+      rasterizerState: *r1
+      depthStencilState: *d1
+      blendState: *b1
+      properties: *p1
+  - name: alpha-blend
+    passes:
+    - vert: add-vs:vert
+      frag: add-fs:frag
+      rasterizerState: *r1
+      depthStencilState: *d1
+      blendState: *b2
+      properties: *p1
+}%
+
+CCProgram add-vs %{
+  precision mediump float;
+  #include <cc-global>
+  #include <cc-local>
+  #include <input>
+
+  in vec2 a_texCoord;
+  in lowp vec4 a_color;
+  out vec2 uv0;
+  #if USE_VERTEX_COLOR
+    out lowp vec4 v_color;
+  #endif
+  uniform TexCoords {
+    vec4 tilingOffset;
+  };
+
+  vec4 vert () {
+    vec3 position;
+    CCVertInput(position);
+
+    vec4 pos = cc_matViewProj * cc_matWorld * vec4(position, 1);
+
+    uv0 = a_texCoord * tilingOffset.xy + tilingOffset.zw;
+    #if USE_VERTEX_COLOR
+      v_color = a_color;
+    #endif
+    return pos;
+  }
+}%
+
+CCProgram add-fs %{
+  precision mediump float;
+  #include <output>
+
+  in vec2 uv0;
+#if USE_VERTEX_COLOR
+  in lowp vec4 v_color;
+#endif
+  uniform sampler2D mainTexture;
+
+  uniform Constant {
+    vec4 color;
+  };
+
+  vec4 frag () {
+    // vec4 o = vec4(1, 1, 1, 1);
+    // vec4 texColor = texture(mainTexture, uv0);
+    // o.rgb = 2.0 * color.rgb * texColor.rgb;
+    // o.a = color.a * 2.0;
+
+    vec4 o = 2.0 * color * texture(mainTexture, uv0);
+#if USE_VERTEX_COLOR
+    o *= v_color;
+#endif
+    return CCFragOutput(o);
+  }
+}%
