@@ -1005,6 +1005,24 @@
     "enable": true,
     "shapeType": 0,
     "emitFrom": 3,
+    "alignToDirection": false,
+    "randomDirectionAmount": 0,
+    "sphericalDirectionAmount": 0,
+    "randomPositionAmount": 0,
+    "radius": 1,
+    "radiusThickness": 1,
+    "arcMode": 0,
+    "arcSpread": 8,
+    "arcSpeed": {
+      "__id__": 26
+    },
+    "length": 0,
+    "boxThickness": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -1023,26 +1041,8 @@
       "y": 2,
       "z": 2
     },
-    "alignToDirection": false,
-    "randomDirectionAmount": 0,
-    "sphericalDirectionAmount": 0,
-    "randomPositionAmount": 0,
-    "radius": 1,
-    "radiusThickness": 1,
     "_arc": 6.283185307179586,
-    "arcMode": 0,
-    "arcSpread": 8,
-    "arcSpeed": {
-      "__id__": 26
-    },
-    "_angle": 0.4363323129985824,
-    "length": 0,
-    "boxThickness": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    }
+    "_angle": 0.4363323129985824
   },
   {
     "__type__": "cc.CurveRange",
@@ -2531,7 +2531,8 @@
     "colorOvertime": {
       "__id__": 60
     },
-    "_space": 0
+    "_space": 0,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.CurveRange",
@@ -2772,7 +2773,8 @@
     "_renderMode": 0,
     "_velocityScale": 1,
     "_lengthScale": 1,
-    "_mesh": null
+    "_mesh": null,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.Node",
@@ -3532,6 +3534,24 @@
     "enable": true,
     "shapeType": 0,
     "emitFrom": 1,
+    "alignToDirection": false,
+    "randomDirectionAmount": 0,
+    "sphericalDirectionAmount": 0,
+    "randomPositionAmount": 0,
+    "radius": 1,
+    "radiusThickness": 1,
+    "arcMode": 0,
+    "arcSpread": 8,
+    "arcSpeed": {
+      "__id__": 85
+    },
+    "length": 0,
+    "boxThickness": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -3550,26 +3570,8 @@
       "y": 1,
       "z": 1
     },
-    "alignToDirection": false,
-    "randomDirectionAmount": 0,
-    "sphericalDirectionAmount": 0,
-    "randomPositionAmount": 0,
-    "radius": 1,
-    "radiusThickness": 1,
     "_arc": 6.283185307179586,
-    "arcMode": 0,
-    "arcSpread": 8,
-    "arcSpeed": {
-      "__id__": 85
-    },
-    "_angle": 0.4363323129985824,
-    "length": 0,
-    "boxThickness": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    }
+    "_angle": 0.4363323129985824
   },
   {
     "__type__": "cc.CurveRange",
@@ -5058,7 +5060,8 @@
     "colorOvertime": {
       "__id__": 119
     },
-    "_space": 0
+    "_space": 0,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.CurveRange",
@@ -5299,7 +5302,8 @@
     "_renderMode": 0,
     "_velocityScale": 1,
     "_lengthScale": 1,
-    "_mesh": null
+    "_mesh": null,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.Node",
@@ -6059,6 +6063,24 @@
     "enable": true,
     "shapeType": 0,
     "emitFrom": 2,
+    "alignToDirection": false,
+    "randomDirectionAmount": 0,
+    "sphericalDirectionAmount": 0,
+    "randomPositionAmount": 0,
+    "radius": 1,
+    "radiusThickness": 1,
+    "arcMode": 0,
+    "arcSpread": 8,
+    "arcSpeed": {
+      "__id__": 144
+    },
+    "length": 0,
+    "boxThickness": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -6077,26 +6099,8 @@
       "y": 3,
       "z": 3
     },
-    "alignToDirection": false,
-    "randomDirectionAmount": 0,
-    "sphericalDirectionAmount": 0,
-    "randomPositionAmount": 0,
-    "radius": 1,
-    "radiusThickness": 1,
     "_arc": 6.283185307179586,
-    "arcMode": 0,
-    "arcSpread": 8,
-    "arcSpeed": {
-      "__id__": 144
-    },
-    "_angle": 0.4363323129985824,
-    "length": 0,
-    "boxThickness": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    }
+    "_angle": 0.4363323129985824
   },
   {
     "__type__": "cc.CurveRange",
@@ -7585,7 +7589,8 @@
     "colorOvertime": {
       "__id__": 178
     },
-    "_space": 0
+    "_space": 0,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.CurveRange",
@@ -7826,7 +7831,8 @@
     "_renderMode": 0,
     "_velocityScale": 1,
     "_lengthScale": 1,
-    "_mesh": null
+    "_mesh": null,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.Node",
@@ -8586,6 +8592,24 @@
     "enable": true,
     "shapeType": 1,
     "emitFrom": 3,
+    "alignToDirection": false,
+    "randomDirectionAmount": 0,
+    "sphericalDirectionAmount": 0,
+    "randomPositionAmount": 0,
+    "radius": 2,
+    "radiusThickness": 0.3,
+    "arcMode": 0,
+    "arcSpread": 0.125,
+    "arcSpeed": {
+      "__id__": 203
+    },
+    "length": 0,
+    "boxThickness": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -8604,26 +8628,8 @@
       "y": 1,
       "z": 1
     },
-    "alignToDirection": false,
-    "randomDirectionAmount": 0,
-    "sphericalDirectionAmount": 0,
-    "randomPositionAmount": 0,
-    "radius": 2,
-    "radiusThickness": 0.3,
     "_arc": 6.283185307179586,
-    "arcMode": 0,
-    "arcSpread": 0.125,
-    "arcSpeed": {
-      "__id__": 203
-    },
-    "_angle": 0.4363323129985824,
-    "length": 0,
-    "boxThickness": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    }
+    "_angle": 0.4363323129985824
   },
   {
     "__type__": "cc.CurveRange",
@@ -10112,7 +10118,8 @@
     "colorOvertime": {
       "__id__": 237
     },
-    "_space": 0
+    "_space": 0,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.CurveRange",
@@ -10353,7 +10360,8 @@
     "_renderMode": 0,
     "_velocityScale": 1,
     "_lengthScale": 1,
-    "_mesh": null
+    "_mesh": null,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.Node",
@@ -11113,6 +11121,24 @@
     "enable": true,
     "shapeType": 1,
     "emitFrom": 3,
+    "alignToDirection": false,
+    "randomDirectionAmount": 0,
+    "sphericalDirectionAmount": 0,
+    "randomPositionAmount": 0,
+    "radius": 1,
+    "radiusThickness": 0,
+    "arcMode": 1,
+    "arcSpread": 0.01,
+    "arcSpeed": {
+      "__id__": 262
+    },
+    "length": 0,
+    "boxThickness": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -11131,26 +11157,8 @@
       "y": 1,
       "z": 1
     },
-    "alignToDirection": false,
-    "randomDirectionAmount": 0,
-    "sphericalDirectionAmount": 0,
-    "randomPositionAmount": 0,
-    "radius": 1,
-    "radiusThickness": 0,
     "_arc": 6.283185307179586,
-    "arcMode": 1,
-    "arcSpread": 0.01,
-    "arcSpeed": {
-      "__id__": 262
-    },
-    "_angle": 0.4363323129985824,
-    "length": 0,
-    "boxThickness": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    }
+    "_angle": 0.4363323129985824
   },
   {
     "__type__": "cc.CurveRange",
@@ -12639,7 +12647,8 @@
     "colorOvertime": {
       "__id__": 296
     },
-    "_space": 0
+    "_space": 0,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.CurveRange",
@@ -12880,7 +12889,8 @@
     "_renderMode": 0,
     "_velocityScale": 1,
     "_lengthScale": 1,
-    "_mesh": null
+    "_mesh": null,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.Node",
@@ -13640,6 +13650,24 @@
     "enable": true,
     "shapeType": 1,
     "emitFrom": 3,
+    "alignToDirection": false,
+    "randomDirectionAmount": 0,
+    "sphericalDirectionAmount": 0,
+    "randomPositionAmount": 0,
+    "radius": 1,
+    "radiusThickness": 0,
+    "arcMode": 2,
+    "arcSpread": 0.1,
+    "arcSpeed": {
+      "__id__": 321
+    },
+    "length": 0,
+    "boxThickness": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -13658,26 +13686,8 @@
       "y": 1,
       "z": 1
     },
-    "alignToDirection": false,
-    "randomDirectionAmount": 0,
-    "sphericalDirectionAmount": 0,
-    "randomPositionAmount": 0,
-    "radius": 1,
-    "radiusThickness": 0,
     "_arc": 6.283185307179586,
-    "arcMode": 2,
-    "arcSpread": 0.1,
-    "arcSpeed": {
-      "__id__": 321
-    },
-    "_angle": 0.4363323129985824,
-    "length": 0,
-    "boxThickness": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    }
+    "_angle": 0.4363323129985824
   },
   {
     "__type__": "cc.CurveRange",
@@ -15166,7 +15176,8 @@
     "colorOvertime": {
       "__id__": 355
     },
-    "_space": 0
+    "_space": 0,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.CurveRange",
@@ -15407,7 +15418,8 @@
     "_renderMode": 0,
     "_velocityScale": 1,
     "_lengthScale": 1,
-    "_mesh": null
+    "_mesh": null,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.Node",
@@ -16167,6 +16179,24 @@
     "enable": true,
     "shapeType": 2,
     "emitFrom": 3,
+    "alignToDirection": false,
+    "randomDirectionAmount": 0,
+    "sphericalDirectionAmount": 0,
+    "randomPositionAmount": 0,
+    "radius": 0.1,
+    "radiusThickness": 1,
+    "arcMode": 0,
+    "arcSpread": 8,
+    "arcSpeed": {
+      "__id__": 380
+    },
+    "length": 2,
+    "boxThickness": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -16185,26 +16215,8 @@
       "y": 1,
       "z": 1
     },
-    "alignToDirection": false,
-    "randomDirectionAmount": 0,
-    "sphericalDirectionAmount": 0,
-    "randomPositionAmount": 0,
-    "radius": 0.1,
-    "radiusThickness": 1,
     "_arc": 6.283185307179586,
-    "arcMode": 0,
-    "arcSpread": 8,
-    "arcSpeed": {
-      "__id__": 380
-    },
-    "_angle": 0.4363323129985824,
-    "length": 2,
-    "boxThickness": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    }
+    "_angle": 0.4363323129985824
   },
   {
     "__type__": "cc.CurveRange",
@@ -17693,7 +17705,8 @@
     "colorOvertime": {
       "__id__": 414
     },
-    "_space": 0
+    "_space": 0,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.CurveRange",
@@ -17934,7 +17947,8 @@
     "_renderMode": 0,
     "_velocityScale": 1,
     "_lengthScale": 1,
-    "_mesh": null
+    "_mesh": null,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.Node",
@@ -18694,6 +18708,24 @@
     "enable": true,
     "shapeType": 2,
     "emitFrom": 0,
+    "alignToDirection": false,
+    "randomDirectionAmount": 0,
+    "sphericalDirectionAmount": 0,
+    "randomPositionAmount": 0,
+    "radius": 1,
+    "radiusThickness": 1,
+    "arcMode": 0,
+    "arcSpread": 8,
+    "arcSpeed": {
+      "__id__": 439
+    },
+    "length": 2,
+    "boxThickness": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -18712,26 +18744,8 @@
       "y": 1,
       "z": 1
     },
-    "alignToDirection": false,
-    "randomDirectionAmount": 0,
-    "sphericalDirectionAmount": 0,
-    "randomPositionAmount": 0,
-    "radius": 1,
-    "radiusThickness": 1,
     "_arc": 6.283185307179586,
-    "arcMode": 0,
-    "arcSpread": 8,
-    "arcSpeed": {
-      "__id__": 439
-    },
-    "_angle": 0.4363323129985824,
-    "length": 2,
-    "boxThickness": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    }
+    "_angle": 0.4363323129985824
   },
   {
     "__type__": "cc.CurveRange",
@@ -20220,7 +20234,8 @@
     "colorOvertime": {
       "__id__": 473
     },
-    "_space": 0
+    "_space": 0,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.CurveRange",
@@ -20461,7 +20476,8 @@
     "_renderMode": 0,
     "_velocityScale": 1,
     "_lengthScale": 1,
-    "_mesh": null
+    "_mesh": null,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.Node",
@@ -21221,6 +21237,24 @@
     "enable": true,
     "shapeType": 2,
     "emitFrom": 3,
+    "alignToDirection": false,
+    "randomDirectionAmount": 0,
+    "sphericalDirectionAmount": 0,
+    "randomPositionAmount": 0,
+    "radius": 1,
+    "radiusThickness": 0,
+    "arcMode": 0,
+    "arcSpread": 8,
+    "arcSpeed": {
+      "__id__": 498
+    },
+    "length": 2,
+    "boxThickness": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -21239,26 +21273,8 @@
       "y": 1,
       "z": 1
     },
-    "alignToDirection": false,
-    "randomDirectionAmount": 0,
-    "sphericalDirectionAmount": 0,
-    "randomPositionAmount": 0,
-    "radius": 1,
-    "radiusThickness": 0,
     "_arc": 6.283185307179586,
-    "arcMode": 0,
-    "arcSpread": 8,
-    "arcSpeed": {
-      "__id__": 498
-    },
-    "_angle": 0.4363323129985824,
-    "length": 2,
-    "boxThickness": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    }
+    "_angle": 0.4363323129985824
   },
   {
     "__type__": "cc.CurveRange",
@@ -22747,7 +22763,8 @@
     "colorOvertime": {
       "__id__": 532
     },
-    "_space": 0
+    "_space": 0,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.CurveRange",
@@ -22988,7 +23005,8 @@
     "_renderMode": 0,
     "_velocityScale": 1,
     "_lengthScale": 1,
-    "_mesh": null
+    "_mesh": null,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.Node",
@@ -23748,6 +23766,24 @@
     "enable": true,
     "shapeType": 2,
     "emitFrom": 0,
+    "alignToDirection": false,
+    "randomDirectionAmount": 0,
+    "sphericalDirectionAmount": 0,
+    "randomPositionAmount": 0,
+    "radius": 1,
+    "radiusThickness": 0,
+    "arcMode": 0,
+    "arcSpread": 8,
+    "arcSpeed": {
+      "__id__": 557
+    },
+    "length": 2,
+    "boxThickness": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -23766,26 +23802,8 @@
       "y": 1,
       "z": 1
     },
-    "alignToDirection": false,
-    "randomDirectionAmount": 0,
-    "sphericalDirectionAmount": 0,
-    "randomPositionAmount": 0,
-    "radius": 1,
-    "radiusThickness": 0,
     "_arc": 6.283185307179586,
-    "arcMode": 0,
-    "arcSpread": 8,
-    "arcSpeed": {
-      "__id__": 557
-    },
-    "_angle": 0.4363323129985824,
-    "length": 2,
-    "boxThickness": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    }
+    "_angle": 0.4363323129985824
   },
   {
     "__type__": "cc.CurveRange",
@@ -25274,7 +25292,8 @@
     "colorOvertime": {
       "__id__": 591
     },
-    "_space": 0
+    "_space": 0,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.CurveRange",
@@ -25515,7 +25534,8 @@
     "_renderMode": 0,
     "_velocityScale": 1,
     "_lengthScale": 1,
-    "_mesh": null
+    "_mesh": null,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.Node",
@@ -26275,6 +26295,24 @@
     "enable": true,
     "shapeType": 2,
     "emitFrom": 0,
+    "alignToDirection": false,
+    "randomDirectionAmount": 0,
+    "sphericalDirectionAmount": 0,
+    "randomPositionAmount": 0,
+    "radius": 1,
+    "radiusThickness": 0,
+    "arcMode": 1,
+    "arcSpread": 0.05,
+    "arcSpeed": {
+      "__id__": 616
+    },
+    "length": 2,
+    "boxThickness": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -26293,26 +26331,8 @@
       "y": 1,
       "z": 1
     },
-    "alignToDirection": false,
-    "randomDirectionAmount": 0,
-    "sphericalDirectionAmount": 0,
-    "randomPositionAmount": 0,
-    "radius": 1,
-    "radiusThickness": 0,
     "_arc": 6.283185307179586,
-    "arcMode": 1,
-    "arcSpread": 0.05,
-    "arcSpeed": {
-      "__id__": 616
-    },
-    "_angle": 0.4363323129985824,
-    "length": 2,
-    "boxThickness": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    }
+    "_angle": 0.4363323129985824
   },
   {
     "__type__": "cc.CurveRange",
@@ -27801,7 +27821,8 @@
     "colorOvertime": {
       "__id__": 650
     },
-    "_space": 0
+    "_space": 0,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.CurveRange",
@@ -28042,7 +28063,8 @@
     "_renderMode": 0,
     "_velocityScale": 1,
     "_lengthScale": 1,
-    "_mesh": null
+    "_mesh": null,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.Node",
@@ -28802,6 +28824,24 @@
     "enable": true,
     "shapeType": 3,
     "emitFrom": 3,
+    "alignToDirection": false,
+    "randomDirectionAmount": 0,
+    "sphericalDirectionAmount": 0,
+    "randomPositionAmount": 0,
+    "radius": 2,
+    "radiusThickness": 1,
+    "arcMode": 1,
+    "arcSpread": 0.1,
+    "arcSpeed": {
+      "__id__": 675
+    },
+    "length": 0,
+    "boxThickness": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -28820,26 +28860,8 @@
       "y": 1,
       "z": 1
     },
-    "alignToDirection": false,
-    "randomDirectionAmount": 0,
-    "sphericalDirectionAmount": 0,
-    "randomPositionAmount": 0,
-    "radius": 2,
-    "radiusThickness": 1,
     "_arc": 6.283185307179586,
-    "arcMode": 1,
-    "arcSpread": 0.1,
-    "arcSpeed": {
-      "__id__": 675
-    },
-    "_angle": 0.4363323129985824,
-    "length": 0,
-    "boxThickness": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    }
+    "_angle": 0.4363323129985824
   },
   {
     "__type__": "cc.CurveRange",
@@ -30328,7 +30350,8 @@
     "colorOvertime": {
       "__id__": 709
     },
-    "_space": 0
+    "_space": 0,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.CurveRange",
@@ -30569,7 +30592,8 @@
     "_renderMode": 0,
     "_velocityScale": 1,
     "_lengthScale": 1,
-    "_mesh": null
+    "_mesh": null,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.Node",
@@ -31329,6 +31353,24 @@
     "enable": true,
     "shapeType": 3,
     "emitFrom": 2,
+    "alignToDirection": false,
+    "randomDirectionAmount": 0,
+    "sphericalDirectionAmount": 0,
+    "randomPositionAmount": 0,
+    "radius": 2,
+    "radiusThickness": 1,
+    "arcMode": 0,
+    "arcSpread": 8,
+    "arcSpeed": {
+      "__id__": 734
+    },
+    "length": 0,
+    "boxThickness": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -31347,26 +31389,8 @@
       "y": 1,
       "z": 1
     },
-    "alignToDirection": false,
-    "randomDirectionAmount": 0,
-    "sphericalDirectionAmount": 0,
-    "randomPositionAmount": 0,
-    "radius": 2,
-    "radiusThickness": 1,
     "_arc": 6.283185307179586,
-    "arcMode": 0,
-    "arcSpread": 8,
-    "arcSpeed": {
-      "__id__": 734
-    },
-    "_angle": 0.4363323129985824,
-    "length": 0,
-    "boxThickness": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    }
+    "_angle": 0.4363323129985824
   },
   {
     "__type__": "cc.CurveRange",
@@ -32855,7 +32879,8 @@
     "colorOvertime": {
       "__id__": 768
     },
-    "_space": 0
+    "_space": 0,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.CurveRange",
@@ -33096,7 +33121,8 @@
     "_renderMode": 0,
     "_velocityScale": 1,
     "_lengthScale": 1,
-    "_mesh": null
+    "_mesh": null,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.Node",
@@ -33856,6 +33882,24 @@
     "enable": true,
     "shapeType": 4,
     "emitFrom": 3,
+    "alignToDirection": false,
+    "randomDirectionAmount": 0,
+    "sphericalDirectionAmount": 0,
+    "randomPositionAmount": 0,
+    "radius": 2,
+    "radiusThickness": 1,
+    "arcMode": 0,
+    "arcSpread": 0.1,
+    "arcSpeed": {
+      "__id__": 793
+    },
+    "length": 0,
+    "boxThickness": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -33874,26 +33918,8 @@
       "y": 1,
       "z": 1
     },
-    "alignToDirection": false,
-    "randomDirectionAmount": 0,
-    "sphericalDirectionAmount": 0,
-    "randomPositionAmount": 0,
-    "radius": 2,
-    "radiusThickness": 1,
     "_arc": 6.283185307179586,
-    "arcMode": 0,
-    "arcSpread": 0.1,
-    "arcSpeed": {
-      "__id__": 793
-    },
-    "_angle": 0.4363323129985824,
-    "length": 0,
-    "boxThickness": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    }
+    "_angle": 0.4363323129985824
   },
   {
     "__type__": "cc.CurveRange",
@@ -35382,7 +35408,8 @@
     "colorOvertime": {
       "__id__": 827
     },
-    "_space": 0
+    "_space": 0,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.CurveRange",
@@ -35623,7 +35650,8 @@
     "_renderMode": 0,
     "_velocityScale": 1,
     "_lengthScale": 1,
-    "_mesh": null
+    "_mesh": null,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.Node",
@@ -36383,6 +36411,24 @@
     "enable": true,
     "shapeType": 4,
     "emitFrom": 2,
+    "alignToDirection": false,
+    "randomDirectionAmount": 0,
+    "sphericalDirectionAmount": 0,
+    "randomPositionAmount": 0,
+    "radius": 2,
+    "radiusThickness": 1,
+    "arcMode": 0,
+    "arcSpread": 8,
+    "arcSpeed": {
+      "__id__": 852
+    },
+    "length": 0,
+    "boxThickness": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -36401,26 +36447,8 @@
       "y": 1,
       "z": 1
     },
-    "alignToDirection": false,
-    "randomDirectionAmount": 0,
-    "sphericalDirectionAmount": 0,
-    "randomPositionAmount": 0,
-    "radius": 2,
-    "radiusThickness": 1,
     "_arc": 6.283185307179586,
-    "arcMode": 0,
-    "arcSpread": 8,
-    "arcSpeed": {
-      "__id__": 852
-    },
-    "_angle": 0.4363323129985824,
-    "length": 0,
-    "boxThickness": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    }
+    "_angle": 0.4363323129985824
   },
   {
     "__type__": "cc.CurveRange",
@@ -37909,7 +37937,8 @@
     "colorOvertime": {
       "__id__": 886
     },
-    "_space": 0
+    "_space": 0,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.CurveRange",
@@ -38150,7 +38179,8 @@
     "_renderMode": 0,
     "_velocityScale": 1,
     "_lengthScale": 1,
-    "_mesh": null
+    "_mesh": null,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.SceneGlobals",
