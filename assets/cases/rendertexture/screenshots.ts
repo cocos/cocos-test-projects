@@ -14,11 +14,11 @@ export class ScreenShots extends Component {
 
     start () {
         // Your initialization goes here.
-        setTimeout(() => {
+        this.scheduleOnce(() => {
             this.createSprite();
             const img = this.initImage();
             this.showSprite(img);
-        }, 500);
+        }, 1);
     }
 
     initImage() {
