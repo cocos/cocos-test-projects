@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.9",
+  "ver": "1.1.21",
   "importer": "gltf",
   "imported": true,
   "uuid": "2447bb3a-f372-4743-b045-0cd672241c27",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh-button.mesh": {
+    "Mesh button.mesh": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "2447bb3a-f372-4743-b045-0cd672241c27@Mesh-button.mesh",
+      "uuid": "2447bb3a-f372-4743-b045-0cd672241c27@Mesh button.mesh",
       "imported": true,
       "files": [
         ".json",
@@ -22,10 +22,10 @@
         "gltfIndex": 0
       }
     },
-    "Mesh-knob.mesh": {
+    "Mesh knob.mesh": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "2447bb3a-f372-4743-b045-0cd672241c27@Mesh-knob.mesh",
+      "uuid": "2447bb3a-f372-4743-b045-0cd672241c27@Mesh knob.mesh",
       "imported": true,
       "files": [
         ".json",
@@ -76,13 +76,11 @@
       }
     },
     "button.prefab": {
-      "ver": "1.0.4",
+      "ver": "1.0.7",
       "importer": "gltf-scene",
       "uuid": "2447bb3a-f372-4743-b045-0cd672241c27@button.prefab",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
+      "imported": false,
+      "files": [],
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
@@ -97,8 +95,8 @@
     "redirect": "2447bb3a-f372-4743-b045-0cd672241c27@button.prefab",
     "assetFinder": {
       "meshes": [
-        "2447bb3a-f372-4743-b045-0cd672241c27@Mesh-button.mesh",
-        "2447bb3a-f372-4743-b045-0cd672241c27@Mesh-knob.mesh"
+        "2447bb3a-f372-4743-b045-0cd672241c27@Mesh button.mesh",
+        "2447bb3a-f372-4743-b045-0cd672241c27@Mesh knob.mesh"
       ],
       "materials": [
         "2447bb3a-f372-4743-b045-0cd672241c27@metal.material",

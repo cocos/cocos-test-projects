@@ -534,6 +534,7 @@
         "__id__": 16
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -640,6 +641,7 @@
         "__id__": 29
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": -18.216,
@@ -941,7 +943,7 @@
     },
     "fileId": "Node.441",
     "sync": false,
-    "_synced": true
+    "_synced": {}
   },
   {
     "__type__": "cc.UITransformComponent",
@@ -1002,6 +1004,7 @@
         "__id__": 40
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -1048,6 +1051,7 @@
         "__id__": 33
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -1154,6 +1158,7 @@
         "__id__": 37
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -1438,6 +1443,7 @@
         "__id__": 51
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": -27.184,
@@ -1484,6 +1490,7 @@
         "__id__": 44
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -1590,6 +1597,7 @@
         "__id__": 48
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 27.184,
@@ -1864,6 +1872,7 @@
         "__id__": 111
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": -136.397,
@@ -2610,6 +2619,24 @@
     "enable": true,
     "shapeType": 2,
     "emitFrom": 3,
+    "alignToDirection": false,
+    "randomDirectionAmount": 0,
+    "sphericalDirectionAmount": 0,
+    "randomPositionAmount": 0,
+    "radius": 2,
+    "radiusThickness": 1,
+    "arcMode": 0,
+    "arcSpread": 5,
+    "arcSpeed": {
+      "__id__": 72
+    },
+    "length": 8,
+    "boxThickness": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
     "_position": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -2628,26 +2655,8 @@
       "y": 1,
       "z": 1
     },
-    "alignToDirection": false,
-    "randomDirectionAmount": 0,
-    "sphericalDirectionAmount": 0,
-    "randomPositionAmount": 0,
-    "radius": 2,
-    "radiusThickness": 1,
     "_arc": 6.283185307179586,
-    "arcMode": 0,
-    "arcSpread": 5,
-    "arcSpeed": {
-      "__id__": 72
-    },
-    "_angle": 0.2617993877991494,
-    "length": 8,
-    "boxThickness": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    }
+    "_angle": 0.2617993877991494
   },
   {
     "__type__": "cc.CurveRange",
@@ -4136,7 +4145,8 @@
     "colorOvertime": {
       "__id__": 106
     },
-    "_space": 0
+    "_space": 0,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.CurveRange",
@@ -4377,7 +4387,8 @@
     "_renderMode": 0,
     "_velocityScale": 1,
     "_lengthScale": 1,
-    "_mesh": null
+    "_mesh": null,
+    "_particleSystem": null
   },
   {
     "__type__": "cc.UIModelComponent",

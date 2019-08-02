@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.9",
+  "ver": "1.1.21",
   "importer": "gltf",
   "imported": true,
   "uuid": "e905c2a5-4592-4fbc-ad43-80efa46f4ff9",
@@ -9,20 +9,23 @@
   ],
   "subMetas": {
     "Figure_2_geometry.mesh": {
-      "ver": "0.0.1",
+      "ver": "1.0.2",
       "importer": "gltf-mesh",
       "uuid": "e905c2a5-4592-4fbc-ad43-80efa46f4ff9@Figure_2_geometry.mesh",
-      "imported": false,
-      "files": [],
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
       }
     },
-    "UnnamedAnimation.animation": {
-      "ver": "1.0.8",
+    ".animation": {
+      "ver": "1.0.10",
       "importer": "gltf-animation",
-      "uuid": "e905c2a5-4592-4fbc-ad43-80efa46f4ff9@UnnamedAnimation.animation",
+      "uuid": "e905c2a5-4592-4fbc-ad43-80efa46f4ff9@.animation",
       "imported": true,
       "files": [
         ".json"
@@ -30,6 +33,11 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 34.880001068115234
+        },
         "events": []
       }
     },
@@ -814,13 +822,11 @@
       }
     },
     "BrainStem.prefab": {
-      "ver": "1.0.4",
+      "ver": "1.0.7",
       "importer": "gltf-scene",
       "uuid": "e905c2a5-4592-4fbc-ad43-80efa46f4ff9@BrainStem.prefab",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
+      "imported": false,
+      "files": [],
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
@@ -833,12 +839,23 @@
     "tangents": 2,
     "dumpMaterials": false,
     "redirect": "e905c2a5-4592-4fbc-ad43-80efa46f4ff9@BrainStem.prefab",
+    "animationImportSettings": [
+      {
+        "name": "",
+        "duration": 34.880001068115234,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "",
+            "from": 0,
+            "to": 34.880001068115234
+          }
+        ]
+      }
+    ],
     "assetFinder": {
       "meshes": [
         "e905c2a5-4592-4fbc-ad43-80efa46f4ff9@Figure_2_geometry.mesh"
-      ],
-      "animations": [
-        "e905c2a5-4592-4fbc-ad43-80efa46f4ff9@UnnamedAnimation.animation"
       ],
       "skeletons": [
         "e905c2a5-4592-4fbc-ad43-80efa46f4ff9@Poser_scene_root.skeleton"

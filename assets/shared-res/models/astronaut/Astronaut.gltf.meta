@@ -1,10 +1,105 @@
 {
-  "ver": "0.0.1",
+  "ver": "1.1.21",
   "importer": "gltf",
-  "imported": false,
+  "imported": true,
   "uuid": "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc",
   "displayName": "",
-  "files": [],
-  "subMetas": {},
-  "userData": {}
+  "files": [
+    ".gltf"
+  ],
+  "subMetas": {
+    "buffer-0-mesh-0.mesh": {
+      "ver": "1.0.2",
+      "importer": "gltf-mesh",
+      "uuid": "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@buffer-0-mesh-0.mesh",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "Astronaut_mat-texture.texture": {
+      "ver": "1.0.19",
+      "importer": "texture",
+      "uuid": "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@Astronaut_mat-texture.texture",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "premultiplyAlpha": false,
+        "anisotropy": 1,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/shared-res/models/astronaut/Astronaut_BaseColor.png"
+      }
+    },
+    "Astronaut_mat.material": {
+      "ver": "1.0.10",
+      "importer": "gltf-material",
+      "uuid": "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@Astronaut_mat.material",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "Astronaut.prefab": {
+      "ver": "1.0.8",
+      "importer": "gltf-scene",
+      "uuid": "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@Astronaut.prefab",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    }
+  },
+  "userData": {
+    "imageLocations": {
+      "Astronaut_mat-image": {
+        "originalPath": "Astronaut_BaseColor.png",
+        "targetDatabaseUrl": null
+      }
+    },
+    "normals": 2,
+    "tangents": 2,
+    "dumpMaterials": false,
+    "redirect": "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@Astronaut.prefab",
+    "assetFinder": {
+      "meshes": [
+        "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@buffer-0-mesh-0.mesh"
+      ],
+      "images": [
+        {
+          "embeded": false,
+          "uuidOrDatabaseUri": "db://assets/shared-res/models/astronaut/Astronaut_BaseColor.png"
+        }
+      ],
+      "textures": [
+        "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@Astronaut_mat-texture.texture"
+      ],
+      "materials": [
+        "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@Astronaut_mat.material"
+      ],
+      "scenes": [
+        "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@Astronaut.prefab"
+      ]
+    }
+  }
 }

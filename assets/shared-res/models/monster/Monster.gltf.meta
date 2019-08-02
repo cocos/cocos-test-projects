@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.9",
+  "ver": "1.1.21",
   "importer": "gltf",
   "imported": true,
   "uuid": "3174824f-f1f2-4011-8709-15d89417ad89",
@@ -22,10 +22,10 @@
         "gltfIndex": 0
       }
     },
-    "UnnamedAnimation.animation": {
-      "ver": "1.0.8",
+    ".animation": {
+      "ver": "1.0.10",
       "importer": "gltf-animation",
-      "uuid": "3174824f-f1f2-4011-8709-15d89417ad89@UnnamedAnimation.animation",
+      "uuid": "3174824f-f1f2-4011-8709-15d89417ad89@.animation",
       "imported": true,
       "files": [
         ".json"
@@ -33,6 +33,11 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 3.333329916000366
+        },
         "events": []
       }
     },
@@ -84,13 +89,11 @@
       }
     },
     "Monster.prefab": {
-      "ver": "1.0.4",
+      "ver": "1.0.7",
       "importer": "gltf-scene",
       "uuid": "3174824f-f1f2-4011-8709-15d89417ad89@Monster.prefab",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
+      "imported": false,
+      "files": [],
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
@@ -103,12 +106,23 @@
     "tangents": 2,
     "dumpMaterials": false,
     "redirect": "3174824f-f1f2-4011-8709-15d89417ad89@Monster.prefab",
+    "animationImportSettings": [
+      {
+        "name": "",
+        "duration": 3.333329916000366,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "",
+            "from": 0,
+            "to": 3.333329916000366
+          }
+        ]
+      }
+    ],
     "assetFinder": {
       "meshes": [
         "3174824f-f1f2-4011-8709-15d89417ad89@monster.mesh"
-      ],
-      "animations": [
-        "3174824f-f1f2-4011-8709-15d89417ad89@UnnamedAnimation.animation"
       ],
       "skeletons": [
         "3174824f-f1f2-4011-8709-15d89417ad89@Armature.skeleton"
