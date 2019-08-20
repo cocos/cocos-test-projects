@@ -2,7 +2,7 @@ import { _decorator, Component, systemEvent, SystemEventType, LabelComponent, Ev
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("SystemEvent")
-@menu('UI/SystemEvent')
+@menu('Event/SystemEvent')
 export class SystemEvent extends Component {
     /* class member could be defined like this */
     // dummy = '';

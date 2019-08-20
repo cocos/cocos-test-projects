@@ -2,7 +2,7 @@ import { _decorator, Component, LabelComponent, Node } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("NodeEvent")
-@menu('UI/NodeEvent')
+@menu('Event/NodeEvent')
 export class NodeEvent extends Component {
     /* class member could be defined like this */
     // dummy = '';
