@@ -1,43 +1,40 @@
-import { _decorator, Component, Node, LabelComponent, RenderableComponent } from "cc";
-const { ccclass, property } = _decorator;
+import { _decorator, Component, LabelComponent, renderer } from "cc";
+const { ccclass } = _decorator;
+
+interface CullingState {
+    model: renderer.Model;
+    visible: boolean;
+}
 
 @ccclass("CullingTestInfo")
 export class CullingTestInfo extends Component {
-    /* class member could be defined like this */
-    // dummy = '';
 
-    /* use `property` decorator if your want the member to be serializable */
-    // @property
-    // serializableDummy = 0;
-
-    @property({
-        type: Node
-    })
-    public nodes: Node[] = [];
-
-    private _renderables: RenderableComponent[] = [];
-    private _infoLabel: LabelComponent = null;
-    private _cullingInfo: string = null;
+    private _label: LabelComponent = null;
+    private _states: CullingState[] = [];
 
     start () {
-        // Your initialization goes here.
-        this._renderables.length = 0;
-        for (const n of this.nodes) {
-            this._renderables.push(n.getComponent(RenderableComponent));
+        const models = cc.director.getScene().renderScene.models;
+        for (let i = 0; i < models.length; i++) {
+            const model = models[i];
+            const oldFn = model.updateUBOs.bind(model);
+            model.updateUBOs = (...args: any) => {
+                this._states[i].visible = true;
+                return oldFn(...args);
+            }
+            this._states.push({ model, visible: false });
         }
-        this._infoLabel = this.node.getComponent(LabelComponent);
+        this._label = this.node.getComponent(LabelComponent);
     }
 
-    update (deltaTime: number) {
-        // Your update function goes here.
-        this._cullingInfo = String();
-        for (const r of this._renderables) {
-            if (r._getModel()._uboUpdated) {
-                this._cullingInfo += r.node.name + ': Visible\n';
-            } else {
-                this._cullingInfo += r.node.name + ': Culled\n';
+    update () {
+        let info = '';
+        for (let i = 0; i < this._states.length; i++) {
+            const state = this._states[i];
+            if (state.visible) {
+                info += state.model.node.name + '\n';
+                state.visible = false;
             }
         }
-        this._infoLabel.string = this._cullingInfo;
+        this._label.string = info;
     }
 }
