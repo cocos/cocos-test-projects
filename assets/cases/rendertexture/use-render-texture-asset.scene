@@ -58,7 +58,7 @@
     "_globals": {
       "__id__": 35
     },
-    "_id": "9c17a950-ff76-4a57-81a8-bb6698aab851"
+    "_id": "6eaab8e4-60ce-454c-81a7-f127fed2b46e"
   },
   {
     "__type__": "cc.Node",
@@ -530,20 +530,20 @@
     "_id": "7dWQTpwS5LrIHnc1zAPUtf"
   },
   {
-    "__type__": "c0df2m0GMhJYpH+xSMVYVVQ",
+    "__type__": "07d94W9KPNNpZuDMYnjBRSX",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 4
     },
     "_enabled": true,
-    "sprite": {
+    "render": {
+      "__uuid__": "84e17389-c200-418a-919c-3f9aeaf88a5f"
+    },
+    "content": {
       "__id__": 18
     },
-    "camera": {
-      "__id__": 16
-    },
-    "_id": "9anrKHx4dBxpuC4O2zqCtV"
+    "_id": "9dcl4IaKFJ14IZta9Hruh/"
   },
   {
     "__type__": "cc.SpriteComponent",
@@ -800,7 +800,9 @@
     },
     "_enabled": true,
     "_alignFlags": 45,
-    "_target": null,
+    "_target": {
+      "__id__": 20
+    },
     "_left": 0,
     "_right": 0,
     "_top": 0,
@@ -980,7 +982,7 @@
     "_enabled": true,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 562.29,
+      "width": 220,
       "height": 50
     },
     "_anchorPoint": {
@@ -1010,7 +1012,7 @@
     },
     "_sharedMaterial": null,
     "_useOriginalSize": true,
-    "_string": "此案例会重置 RenderTexture 尺寸，可以看到图片由模糊变清晰",
+    "_string": "可以看到一只小黄鸭图片",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 20,
@@ -1036,7 +1038,9 @@
     },
     "_enabled": true,
     "_alignFlags": 4,
-    "_target": null,
+    "_target": {
+      "__id__": 20
+    },
     "_left": 0,
     "_right": 0,
     "_top": 0,
