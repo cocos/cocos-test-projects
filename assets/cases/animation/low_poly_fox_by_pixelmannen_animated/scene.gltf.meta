@@ -1,0 +1,215 @@
+{
+  "ver": "1.1.22",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "3004862e-868e-4b34-95cb-f185d324e081",
+  "displayName": "",
+  "files": [
+    ".gltf"
+  ],
+  "subMetas": {
+    "fox1_fox_material_0.mesh": {
+      "ver": "1.0.2",
+      "importer": "gltf-mesh",
+      "uuid": "3004862e-868e-4b34-95cb-f185d324e081@fox1_fox_material_0.mesh",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "Take 001.animation": {
+      "ver": "1.0.10",
+      "importer": "gltf-animation",
+      "uuid": "3004862e-868e-4b34-95cb-f185d324e081@Take 001.animation",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "events": [],
+        "gltfIndex": 0,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 15.9375
+        },
+        "speed": 1,
+        "wrapMode": 2
+      }
+    },
+    "Idle.animation": {
+      "ver": "1.0.10",
+      "importer": "gltf-animation",
+      "uuid": "3004862e-868e-4b34-95cb-f185d324e081@Idle.animation",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 7.166666666666667
+        },
+        "events": []
+      }
+    },
+    "Walk.animation": {
+      "ver": "1.0.10",
+      "importer": "gltf-animation",
+      "uuid": "3004862e-868e-4b34-95cb-f185d324e081@Walk.animation",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "events": [],
+        "gltfIndex": 0,
+        "sample": 30,
+        "span": {
+          "from": 7.166666666666667,
+          "to": 10.766666666666667
+        },
+        "speed": 1,
+        "wrapMode": 2
+      }
+    },
+    "Run.animation": {
+      "ver": "1.0.10",
+      "importer": "gltf-animation",
+      "uuid": "3004862e-868e-4b34-95cb-f185d324e081@Run.animation",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "events": [],
+        "gltfIndex": 0,
+        "sample": 30,
+        "span": {
+          "from": 10.766666666666667,
+          "to": 15.9375
+        },
+        "wrapMode": 2,
+        "speed": 1
+      }
+    },
+    "UnnamedSkeleton.skeleton": {
+      "ver": "1.0.0",
+      "importer": "gltf-skeleton",
+      "uuid": "3004862e-868e-4b34-95cb-f185d324e081@UnnamedSkeleton.skeleton",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    },
+    "UnnamedTexture.texture": {
+      "ver": "1.0.19",
+      "importer": "texture",
+      "uuid": "3004862e-868e-4b34-95cb-f185d324e081@UnnamedTexture.texture",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "premultiplyAlpha": false,
+        "anisotropy": 1,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/cases/animation/low_poly_fox_by_pixelmannen_animated/textures/fox_material_baseColor.png"
+      }
+    },
+    "scene.prefab": {
+      "ver": "1.0.8",
+      "importer": "gltf-scene",
+      "uuid": "3004862e-868e-4b34-95cb-f185d324e081@scene.prefab",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      }
+    }
+  },
+  "userData": {
+    "imageLocations": {},
+    "normals": 2,
+    "tangents": 2,
+    "dumpMaterials": true,
+    "animationImportSettings": [
+      {
+        "name": "Take 001",
+        "duration": 15.9375,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Take 001",
+            "from": 0,
+            "to": 15.9375
+          },
+          {
+            "name": "Idle",
+            "from": 0,
+            "to": 7.166666666666667
+          },
+          {
+            "name": "Walk",
+            "from": 7.166666666666667,
+            "to": 10.766666666666667
+          },
+          {
+            "name": "Run",
+            "from": 10.766666666666667,
+            "to": 15.9375
+          }
+        ]
+      }
+    ],
+    "redirect": "3004862e-868e-4b34-95cb-f185d324e081@scene.prefab",
+    "assetFinder": {
+      "meshes": [
+        "3004862e-868e-4b34-95cb-f185d324e081@fox1_fox_material_0.mesh"
+      ],
+      "skeletons": [
+        "3004862e-868e-4b34-95cb-f185d324e081@UnnamedSkeleton.skeleton"
+      ],
+      "images": [
+        {
+          "embeded": false,
+          "uuidOrDatabaseUri": "db://assets/cases/animation/low_poly_fox_by_pixelmannen_animated/textures/fox_material_baseColor.png"
+        }
+      ],
+      "textures": [
+        "3004862e-868e-4b34-95cb-f185d324e081@UnnamedTexture.texture"
+      ],
+      "materials": [
+        "ebcc2a35-bfaa-49af-9796-2763feff1797"
+      ],
+      "scenes": [
+        "3004862e-868e-4b34-95cb-f185d324e081@scene.prefab"
+      ]
+    },
+    "materialDumpDir": "db://assets/cases/animation/low_poly_fox_by_pixelmannen_animated"
+  }
+}
