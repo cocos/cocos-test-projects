@@ -1,9 +1,9 @@
 import { _decorator, Component, Node, RenderTexture, CameraComponent, ModelComponent } from "cc";
 const { ccclass, property, menu } = _decorator;
 
-@ccclass("RenderToModel")
-@menu('UI/RenderToModel')
-export class RenderToModel extends Component {
+@ccclass("RenderCameraToModel")
+@menu('RenderTexture/RenderCameraToModel')
+export class RenderCameraToModel extends Component {
     /* class member could be defined like this */
     // dummy = '';
 
@@ -15,9 +15,10 @@ export class RenderToModel extends Component {
 
     start () {
         // Your initialization goes here.
-        const renderTex = new RenderTexture({
+        const renderTex = new RenderTexture();
+        renderTex.reset({
             width: 256,
-            height:256,
+            height: 256,
             colorFormat: RenderTexture.PixelFormat.RGBA8888,
             depthStencilFormat: RenderTexture.DepthStencilFormat.DEPTH_32_STENCIL_8,
         });
