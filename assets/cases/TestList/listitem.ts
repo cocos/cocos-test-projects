@@ -39,7 +39,7 @@ export class ListItem extends Component {
 
     public updateItem(idx: number, name: string) {
         this.index = idx;
-        this.name = name;
+        this._name = name;
         this.label.string = name;
     }
 }
