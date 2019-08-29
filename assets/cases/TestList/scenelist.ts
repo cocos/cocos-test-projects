@@ -34,6 +34,7 @@ export const sceneArray:string[] = [
     "group-mask",
     "trigger",
     "velocity",
+    "a-start",
     "culling",
     "planar-shadow",
     "sort",
