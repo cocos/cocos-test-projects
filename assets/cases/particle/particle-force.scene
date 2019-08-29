@@ -22,16 +22,16 @@
         "__id__": 4
       },
       {
-        "__id__": 6
+        "__id__": 7
       },
       {
-        "__id__": 67
+        "__id__": 68
       },
       {
-        "__id__": 128
+        "__id__": 129
       },
       {
-        "__id__": 189
+        "__id__": 190
       }
     ],
     "_active": true,
@@ -65,7 +65,7 @@
     },
     "autoReleaseAssets": false,
     "_globals": {
-      "__id__": 250
+      "__id__": 251
     },
     "_id": "4690923a-6e69-4dba-906d-fcfd744a0960"
   },
@@ -103,7 +103,7 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 1,
+    "_layer": 1073741825,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -144,14 +144,17 @@
     "_components": [
       {
         "__id__": 5
+      },
+      {
+        "__id__": 6
       }
     ],
     "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0,
+      "x": 2.591,
       "y": 0,
-      "z": 0
+      "z": 6.568
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -166,7 +169,7 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 1,
+    "_layer": 1073741825,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -191,9 +194,9 @@
     "_far": 1000,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 0,
+      "g": 95,
+      "b": 170,
       "a": 255
     },
     "_depth": 1,
@@ -207,9 +210,23 @@
       "height": 1
     },
     "_screenScale": 1,
-    "_visibility": 1610612736,
+    "_visibility": 1619001344,
     "_targetTexture": null,
     "_id": "7dWQTpwS5LrIHnc1zAPUtf"
+  },
+  {
+    "__type__": "445598TP61LhoVLGOAdP05g",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 4
+    },
+    "_enabled": true,
+    "moveSpeed": 1,
+    "moveSpeedShiftScale": 0,
+    "damp": 0.05,
+    "rotateSpeed": 1,
+    "_id": "50FsG/LRhNb7C7Z2L8Fbaw"
   },
   {
     "__type__": "cc.Node",
@@ -222,7 +239,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 7
+        "__id__": 8
       }
     ],
     "_prefab": null,
@@ -245,7 +262,7 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 1,
+    "_layer": 1073741825,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -259,77 +276,77 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 6
+      "__id__": 7
     },
     "_enabled": true,
     "_materials": [],
-    "_visFlags": 1073741824,
+    "_visFlags": 0,
     "startColor": {
-      "__id__": 8
+      "__id__": 9
     },
     "scaleSpace": 1,
     "startSize": {
-      "__id__": 12
-    },
-    "startSpeed": {
       "__id__": 13
     },
-    "startRotation": {
+    "startSpeed": {
       "__id__": 14
     },
-    "startDelay": {
+    "startRotation": {
       "__id__": 15
     },
-    "startLifetime": {
+    "startDelay": {
       "__id__": 16
+    },
+    "startLifetime": {
+      "__id__": 17
     },
     "duration": 5,
     "loop": true,
     "simulationSpeed": 1,
     "playOnAwake": true,
     "gravityModifier": {
-      "__id__": 17
-    },
-    "rateOverTime": {
       "__id__": 18
     },
-    "rateOverDistance": {
+    "rateOverTime": {
       "__id__": 19
+    },
+    "rateOverDistance": {
+      "__id__": 20
     },
     "bursts": [
       {
-        "__id__": 20
+        "__id__": 21
       }
     ],
     "colorOverLifetimeModule": {
-      "__id__": 22
+      "__id__": 23
     },
     "shapeModule": {
-      "__id__": 27
+      "__id__": 28
     },
     "sizeOvertimeModule": {
-      "__id__": 29
+      "__id__": 30
     },
     "velocityOvertimeModule": {
-      "__id__": 34
+      "__id__": 35
     },
     "forceOvertimeModule": {
-      "__id__": 39
+      "__id__": 40
     },
     "limitVelocityOvertimeModule": {
-      "__id__": 43
+      "__id__": 44
     },
     "rotationOvertimeModule": {
-      "__id__": 48
+      "__id__": 49
     },
     "textureAnimationModule": {
-      "__id__": 52
+      "__id__": 53
     },
     "trailModule": {
-      "__id__": 55
+      "__id__": 56
     },
     "renderer": {
-      "__id__": 66
+      "__id__": 67
     },
     "_prewarm": false,
     "_capacity": 100,
@@ -360,13 +377,13 @@
       "a": 255
     },
     "gradient": {
-      "__id__": 9
-    },
-    "gradientMin": {
       "__id__": 10
     },
-    "gradientMax": {
+    "gradientMin": {
       "__id__": 11
+    },
+    "gradientMax": {
+      "__id__": 12
     },
     "_mode": 0
   },
@@ -916,7 +933,7 @@
     "_repeatCount": 1,
     "repeatInterval": 1,
     "count": {
-      "__id__": 21
+      "__id__": 22
     }
   },
   {
@@ -988,7 +1005,7 @@
     "__type__": "cc.ColorOvertimeModule",
     "enable": false,
     "color": {
-      "__id__": 23
+      "__id__": 24
     }
   },
   {
@@ -1015,13 +1032,13 @@
       "a": 255
     },
     "gradient": {
-      "__id__": 24
-    },
-    "gradientMin": {
       "__id__": 25
     },
-    "gradientMax": {
+    "gradientMin": {
       "__id__": 26
+    },
+    "gradientMax": {
+      "__id__": 27
     },
     "_mode": 0
   },
@@ -1057,7 +1074,7 @@
     "arcMode": 0,
     "arcSpread": 8,
     "arcSpeed": {
-      "__id__": 28
+      "__id__": 29
     },
     "length": 0,
     "boxThickness": {
@@ -1157,16 +1174,16 @@
     "enable": false,
     "separateAxes": false,
     "size": {
-      "__id__": 30
-    },
-    "x": {
       "__id__": 31
     },
-    "y": {
+    "x": {
       "__id__": 32
     },
-    "z": {
+    "y": {
       "__id__": 33
+    },
+    "z": {
+      "__id__": 34
     }
   },
   {
@@ -1433,16 +1450,16 @@
     "__type__": "cc.VelocityOvertimeModule",
     "enable": false,
     "x": {
-      "__id__": 35
-    },
-    "y": {
       "__id__": 36
     },
-    "z": {
+    "y": {
       "__id__": 37
     },
-    "speedModifier": {
+    "z": {
       "__id__": 38
+    },
+    "speedModifier": {
+      "__id__": 39
     },
     "space": 1
   },
@@ -1710,13 +1727,13 @@
     "__type__": "cc.ForceOvertimeModule",
     "enable": true,
     "x": {
-      "__id__": 40
-    },
-    "y": {
       "__id__": 41
     },
-    "z": {
+    "y": {
       "__id__": 42
+    },
+    "z": {
+      "__id__": 43
     },
     "space": 1
   },
@@ -1932,16 +1949,16 @@
     "__type__": "cc.LimitVelocityOvertimeModule",
     "enable": false,
     "limitX": {
-      "__id__": 44
-    },
-    "limitY": {
       "__id__": 45
     },
-    "limitZ": {
+    "limitY": {
       "__id__": 46
     },
-    "limit": {
+    "limitZ": {
       "__id__": 47
+    },
+    "limit": {
+      "__id__": 48
     },
     "dampen": 3,
     "separateAxes": false,
@@ -2212,13 +2229,13 @@
     "enable": false,
     "_separateAxes": false,
     "x": {
-      "__id__": 49
-    },
-    "y": {
       "__id__": 50
     },
-    "z": {
+    "y": {
       "__id__": 51
+    },
+    "z": {
+      "__id__": 52
     }
   },
   {
@@ -2424,10 +2441,10 @@
     "numTilesY": 0,
     "animation": 0,
     "frameOverTime": {
-      "__id__": 53
+      "__id__": 54
     },
     "startFrame": {
-      "__id__": 54
+      "__id__": 55
     },
     "cycleCount": 0,
     "_flipU": 0,
@@ -2571,24 +2588,26 @@
     "_enable": false,
     "mode": 0,
     "lifeTime": {
-      "__id__": 56
+      "__id__": 57
     },
     "_minParticleDistance": 0.1,
     "existWithParticles": true,
     "textureMode": 0,
     "widthFromParticle": true,
     "widthRatio": {
-      "__id__": 57
+      "__id__": 58
     },
     "colorFromParticle": false,
     "colorOverTrail": {
-      "__id__": 58
+      "__id__": 59
     },
     "colorOvertime": {
-      "__id__": 62
+      "__id__": 63
     },
     "_space": 0,
-    "_particleSystem": null
+    "_particleSystem": {
+      "__id__": 8
+    }
   },
   {
     "__type__": "cc.CurveRange",
@@ -2744,13 +2763,13 @@
       "a": 255
     },
     "gradient": {
-      "__id__": 59
-    },
-    "gradientMin": {
       "__id__": 60
     },
-    "gradientMax": {
+    "gradientMin": {
       "__id__": 61
+    },
+    "gradientMax": {
+      "__id__": 62
     },
     "_mode": 0
   },
@@ -2796,13 +2815,13 @@
       "a": 255
     },
     "gradient": {
-      "__id__": 63
-    },
-    "gradientMin": {
       "__id__": 64
     },
-    "gradientMax": {
+    "gradientMin": {
       "__id__": 65
+    },
+    "gradientMax": {
+      "__id__": 66
     },
     "_mode": 0
   },
@@ -2830,7 +2849,9 @@
     "_velocityScale": 1,
     "_lengthScale": 1,
     "_mesh": null,
-    "_particleSystem": null
+    "_particleSystem": {
+      "__id__": 8
+    }
   },
   {
     "__type__": "cc.Node",
@@ -2843,7 +2864,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 68
+        "__id__": 69
       }
     ],
     "_prefab": null,
@@ -2866,7 +2887,7 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 1,
+    "_layer": 1073741825,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -2880,77 +2901,77 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 67
+      "__id__": 68
     },
     "_enabled": true,
     "_materials": [],
-    "_visFlags": 1073741824,
+    "_visFlags": 0,
     "startColor": {
-      "__id__": 69
+      "__id__": 70
     },
     "scaleSpace": 1,
     "startSize": {
-      "__id__": 73
-    },
-    "startSpeed": {
       "__id__": 74
     },
-    "startRotation": {
+    "startSpeed": {
       "__id__": 75
     },
-    "startDelay": {
+    "startRotation": {
       "__id__": 76
     },
-    "startLifetime": {
+    "startDelay": {
       "__id__": 77
+    },
+    "startLifetime": {
+      "__id__": 78
     },
     "duration": 5,
     "loop": true,
     "simulationSpeed": 1,
     "playOnAwake": true,
     "gravityModifier": {
-      "__id__": 78
-    },
-    "rateOverTime": {
       "__id__": 79
     },
-    "rateOverDistance": {
+    "rateOverTime": {
       "__id__": 80
+    },
+    "rateOverDistance": {
+      "__id__": 81
     },
     "bursts": [
       {
-        "__id__": 81
+        "__id__": 82
       }
     ],
     "colorOverLifetimeModule": {
-      "__id__": 83
+      "__id__": 84
     },
     "shapeModule": {
-      "__id__": 88
+      "__id__": 89
     },
     "sizeOvertimeModule": {
-      "__id__": 90
+      "__id__": 91
     },
     "velocityOvertimeModule": {
-      "__id__": 95
+      "__id__": 96
     },
     "forceOvertimeModule": {
-      "__id__": 100
+      "__id__": 101
     },
     "limitVelocityOvertimeModule": {
-      "__id__": 104
+      "__id__": 105
     },
     "rotationOvertimeModule": {
-      "__id__": 109
+      "__id__": 110
     },
     "textureAnimationModule": {
-      "__id__": 113
+      "__id__": 114
     },
     "trailModule": {
-      "__id__": 116
+      "__id__": 117
     },
     "renderer": {
-      "__id__": 127
+      "__id__": 128
     },
     "_prewarm": false,
     "_capacity": 100,
@@ -2981,13 +3002,13 @@
       "a": 255
     },
     "gradient": {
-      "__id__": 70
-    },
-    "gradientMin": {
       "__id__": 71
     },
-    "gradientMax": {
+    "gradientMin": {
       "__id__": 72
+    },
+    "gradientMax": {
+      "__id__": 73
     },
     "_mode": 0
   },
@@ -3537,7 +3558,7 @@
     "_repeatCount": 1,
     "repeatInterval": 1,
     "count": {
-      "__id__": 82
+      "__id__": 83
     }
   },
   {
@@ -3609,7 +3630,7 @@
     "__type__": "cc.ColorOvertimeModule",
     "enable": false,
     "color": {
-      "__id__": 84
+      "__id__": 85
     }
   },
   {
@@ -3636,13 +3657,13 @@
       "a": 255
     },
     "gradient": {
-      "__id__": 85
-    },
-    "gradientMin": {
       "__id__": 86
     },
-    "gradientMax": {
+    "gradientMin": {
       "__id__": 87
+    },
+    "gradientMax": {
+      "__id__": 88
     },
     "_mode": 0
   },
@@ -3678,7 +3699,7 @@
     "arcMode": 0,
     "arcSpread": 8,
     "arcSpeed": {
-      "__id__": 89
+      "__id__": 90
     },
     "length": 0,
     "boxThickness": {
@@ -3778,16 +3799,16 @@
     "enable": false,
     "separateAxes": false,
     "size": {
-      "__id__": 91
-    },
-    "x": {
       "__id__": 92
     },
-    "y": {
+    "x": {
       "__id__": 93
     },
-    "z": {
+    "y": {
       "__id__": 94
+    },
+    "z": {
+      "__id__": 95
     }
   },
   {
@@ -4054,16 +4075,16 @@
     "__type__": "cc.VelocityOvertimeModule",
     "enable": false,
     "x": {
-      "__id__": 96
-    },
-    "y": {
       "__id__": 97
     },
-    "z": {
+    "y": {
       "__id__": 98
     },
-    "speedModifier": {
+    "z": {
       "__id__": 99
+    },
+    "speedModifier": {
+      "__id__": 100
     },
     "space": 1
   },
@@ -4331,13 +4352,13 @@
     "__type__": "cc.ForceOvertimeModule",
     "enable": true,
     "x": {
-      "__id__": 101
-    },
-    "y": {
       "__id__": 102
     },
-    "z": {
+    "y": {
       "__id__": 103
+    },
+    "z": {
+      "__id__": 104
     },
     "space": 1
   },
@@ -4553,16 +4574,16 @@
     "__type__": "cc.LimitVelocityOvertimeModule",
     "enable": false,
     "limitX": {
-      "__id__": 105
-    },
-    "limitY": {
       "__id__": 106
     },
-    "limitZ": {
+    "limitY": {
       "__id__": 107
     },
-    "limit": {
+    "limitZ": {
       "__id__": 108
+    },
+    "limit": {
+      "__id__": 109
     },
     "dampen": 3,
     "separateAxes": false,
@@ -4833,13 +4854,13 @@
     "enable": false,
     "_separateAxes": false,
     "x": {
-      "__id__": 110
-    },
-    "y": {
       "__id__": 111
     },
-    "z": {
+    "y": {
       "__id__": 112
+    },
+    "z": {
+      "__id__": 113
     }
   },
   {
@@ -5045,10 +5066,10 @@
     "numTilesY": 0,
     "animation": 0,
     "frameOverTime": {
-      "__id__": 114
+      "__id__": 115
     },
     "startFrame": {
-      "__id__": 115
+      "__id__": 116
     },
     "cycleCount": 0,
     "_flipU": 0,
@@ -5192,24 +5213,26 @@
     "_enable": false,
     "mode": 0,
     "lifeTime": {
-      "__id__": 117
+      "__id__": 118
     },
     "_minParticleDistance": 0.1,
     "existWithParticles": true,
     "textureMode": 0,
     "widthFromParticle": true,
     "widthRatio": {
-      "__id__": 118
+      "__id__": 119
     },
     "colorFromParticle": false,
     "colorOverTrail": {
-      "__id__": 119
+      "__id__": 120
     },
     "colorOvertime": {
-      "__id__": 123
+      "__id__": 124
     },
     "_space": 0,
-    "_particleSystem": null
+    "_particleSystem": {
+      "__id__": 69
+    }
   },
   {
     "__type__": "cc.CurveRange",
@@ -5365,13 +5388,13 @@
       "a": 255
     },
     "gradient": {
-      "__id__": 120
-    },
-    "gradientMin": {
       "__id__": 121
     },
-    "gradientMax": {
+    "gradientMin": {
       "__id__": 122
+    },
+    "gradientMax": {
+      "__id__": 123
     },
     "_mode": 0
   },
@@ -5417,13 +5440,13 @@
       "a": 255
     },
     "gradient": {
-      "__id__": 124
-    },
-    "gradientMin": {
       "__id__": 125
     },
-    "gradientMax": {
+    "gradientMin": {
       "__id__": 126
+    },
+    "gradientMax": {
+      "__id__": 127
     },
     "_mode": 0
   },
@@ -5451,7 +5474,9 @@
     "_velocityScale": 1,
     "_lengthScale": 1,
     "_mesh": null,
-    "_particleSystem": null
+    "_particleSystem": {
+      "__id__": 69
+    }
   },
   {
     "__type__": "cc.Node",
@@ -5464,7 +5489,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 129
+        "__id__": 130
       }
     ],
     "_prefab": null,
@@ -5487,7 +5512,7 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 1,
+    "_layer": 1073741825,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -5501,77 +5526,77 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 128
+      "__id__": 129
     },
     "_enabled": true,
     "_materials": [],
-    "_visFlags": 1073741824,
+    "_visFlags": 0,
     "startColor": {
-      "__id__": 130
+      "__id__": 131
     },
     "scaleSpace": 1,
     "startSize": {
-      "__id__": 134
-    },
-    "startSpeed": {
       "__id__": 135
     },
-    "startRotation": {
+    "startSpeed": {
       "__id__": 136
     },
-    "startDelay": {
+    "startRotation": {
       "__id__": 137
     },
-    "startLifetime": {
+    "startDelay": {
       "__id__": 138
+    },
+    "startLifetime": {
+      "__id__": 139
     },
     "duration": 5,
     "loop": true,
     "simulationSpeed": 1,
     "playOnAwake": true,
     "gravityModifier": {
-      "__id__": 139
-    },
-    "rateOverTime": {
       "__id__": 140
     },
-    "rateOverDistance": {
+    "rateOverTime": {
       "__id__": 141
+    },
+    "rateOverDistance": {
+      "__id__": 142
     },
     "bursts": [
       {
-        "__id__": 142
+        "__id__": 143
       }
     ],
     "colorOverLifetimeModule": {
-      "__id__": 144
+      "__id__": 145
     },
     "shapeModule": {
-      "__id__": 149
+      "__id__": 150
     },
     "sizeOvertimeModule": {
-      "__id__": 151
+      "__id__": 152
     },
     "velocityOvertimeModule": {
-      "__id__": 156
+      "__id__": 157
     },
     "forceOvertimeModule": {
-      "__id__": 161
+      "__id__": 162
     },
     "limitVelocityOvertimeModule": {
-      "__id__": 165
+      "__id__": 166
     },
     "rotationOvertimeModule": {
-      "__id__": 170
+      "__id__": 171
     },
     "textureAnimationModule": {
-      "__id__": 174
+      "__id__": 175
     },
     "trailModule": {
-      "__id__": 177
+      "__id__": 178
     },
     "renderer": {
-      "__id__": 188
+      "__id__": 189
     },
     "_prewarm": false,
     "_capacity": 100,
@@ -5602,13 +5627,13 @@
       "a": 255
     },
     "gradient": {
-      "__id__": 131
-    },
-    "gradientMin": {
       "__id__": 132
     },
-    "gradientMax": {
+    "gradientMin": {
       "__id__": 133
+    },
+    "gradientMax": {
+      "__id__": 134
     },
     "_mode": 0
   },
@@ -6158,7 +6183,7 @@
     "_repeatCount": 1,
     "repeatInterval": 1,
     "count": {
-      "__id__": 143
+      "__id__": 144
     }
   },
   {
@@ -6230,7 +6255,7 @@
     "__type__": "cc.ColorOvertimeModule",
     "enable": false,
     "color": {
-      "__id__": 145
+      "__id__": 146
     }
   },
   {
@@ -6257,13 +6282,13 @@
       "a": 255
     },
     "gradient": {
-      "__id__": 146
-    },
-    "gradientMin": {
       "__id__": 147
     },
-    "gradientMax": {
+    "gradientMin": {
       "__id__": 148
+    },
+    "gradientMax": {
+      "__id__": 149
     },
     "_mode": 0
   },
@@ -6299,7 +6324,7 @@
     "arcMode": 0,
     "arcSpread": 8,
     "arcSpeed": {
-      "__id__": 150
+      "__id__": 151
     },
     "length": 0,
     "boxThickness": {
@@ -6399,16 +6424,16 @@
     "enable": false,
     "separateAxes": false,
     "size": {
-      "__id__": 152
-    },
-    "x": {
       "__id__": 153
     },
-    "y": {
+    "x": {
       "__id__": 154
     },
-    "z": {
+    "y": {
       "__id__": 155
+    },
+    "z": {
+      "__id__": 156
     }
   },
   {
@@ -6675,16 +6700,16 @@
     "__type__": "cc.VelocityOvertimeModule",
     "enable": false,
     "x": {
-      "__id__": 157
-    },
-    "y": {
       "__id__": 158
     },
-    "z": {
+    "y": {
       "__id__": 159
     },
-    "speedModifier": {
+    "z": {
       "__id__": 160
+    },
+    "speedModifier": {
+      "__id__": 161
     },
     "space": 1
   },
@@ -6952,13 +6977,13 @@
     "__type__": "cc.ForceOvertimeModule",
     "enable": true,
     "x": {
-      "__id__": 162
-    },
-    "y": {
       "__id__": 163
     },
-    "z": {
+    "y": {
       "__id__": 164
+    },
+    "z": {
+      "__id__": 165
     },
     "space": 0
   },
@@ -7174,16 +7199,16 @@
     "__type__": "cc.LimitVelocityOvertimeModule",
     "enable": false,
     "limitX": {
-      "__id__": 166
-    },
-    "limitY": {
       "__id__": 167
     },
-    "limitZ": {
+    "limitY": {
       "__id__": 168
     },
-    "limit": {
+    "limitZ": {
       "__id__": 169
+    },
+    "limit": {
+      "__id__": 170
     },
     "dampen": 3,
     "separateAxes": false,
@@ -7454,13 +7479,13 @@
     "enable": false,
     "_separateAxes": false,
     "x": {
-      "__id__": 171
-    },
-    "y": {
       "__id__": 172
     },
-    "z": {
+    "y": {
       "__id__": 173
+    },
+    "z": {
+      "__id__": 174
     }
   },
   {
@@ -7666,10 +7691,10 @@
     "numTilesY": 0,
     "animation": 0,
     "frameOverTime": {
-      "__id__": 175
+      "__id__": 176
     },
     "startFrame": {
-      "__id__": 176
+      "__id__": 177
     },
     "cycleCount": 0,
     "_flipU": 0,
@@ -7813,24 +7838,26 @@
     "_enable": false,
     "mode": 0,
     "lifeTime": {
-      "__id__": 178
+      "__id__": 179
     },
     "_minParticleDistance": 0.1,
     "existWithParticles": true,
     "textureMode": 0,
     "widthFromParticle": true,
     "widthRatio": {
-      "__id__": 179
+      "__id__": 180
     },
     "colorFromParticle": false,
     "colorOverTrail": {
-      "__id__": 180
+      "__id__": 181
     },
     "colorOvertime": {
-      "__id__": 184
+      "__id__": 185
     },
     "_space": 0,
-    "_particleSystem": null
+    "_particleSystem": {
+      "__id__": 130
+    }
   },
   {
     "__type__": "cc.CurveRange",
@@ -7986,13 +8013,13 @@
       "a": 255
     },
     "gradient": {
-      "__id__": 181
-    },
-    "gradientMin": {
       "__id__": 182
     },
-    "gradientMax": {
+    "gradientMin": {
       "__id__": 183
+    },
+    "gradientMax": {
+      "__id__": 184
     },
     "_mode": 0
   },
@@ -8038,13 +8065,13 @@
       "a": 255
     },
     "gradient": {
-      "__id__": 185
-    },
-    "gradientMin": {
       "__id__": 186
     },
-    "gradientMax": {
+    "gradientMin": {
       "__id__": 187
+    },
+    "gradientMax": {
+      "__id__": 188
     },
     "_mode": 0
   },
@@ -8072,7 +8099,9 @@
     "_velocityScale": 1,
     "_lengthScale": 1,
     "_mesh": null,
-    "_particleSystem": null
+    "_particleSystem": {
+      "__id__": 130
+    }
   },
   {
     "__type__": "cc.Node",
@@ -8085,7 +8114,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 190
+        "__id__": 191
       }
     ],
     "_prefab": null,
@@ -8108,7 +8137,7 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 1,
+    "_layer": 1073741825,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -8122,77 +8151,77 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 189
+      "__id__": 190
     },
     "_enabled": true,
     "_materials": [],
-    "_visFlags": 1073741824,
+    "_visFlags": 0,
     "startColor": {
-      "__id__": 191
+      "__id__": 192
     },
     "scaleSpace": 1,
     "startSize": {
-      "__id__": 195
-    },
-    "startSpeed": {
       "__id__": 196
     },
-    "startRotation": {
+    "startSpeed": {
       "__id__": 197
     },
-    "startDelay": {
+    "startRotation": {
       "__id__": 198
     },
-    "startLifetime": {
+    "startDelay": {
       "__id__": 199
+    },
+    "startLifetime": {
+      "__id__": 200
     },
     "duration": 5,
     "loop": true,
     "simulationSpeed": 1,
     "playOnAwake": true,
     "gravityModifier": {
-      "__id__": 200
-    },
-    "rateOverTime": {
       "__id__": 201
     },
-    "rateOverDistance": {
+    "rateOverTime": {
       "__id__": 202
+    },
+    "rateOverDistance": {
+      "__id__": 203
     },
     "bursts": [
       {
-        "__id__": 203
+        "__id__": 204
       }
     ],
     "colorOverLifetimeModule": {
-      "__id__": 205
+      "__id__": 206
     },
     "shapeModule": {
-      "__id__": 210
+      "__id__": 211
     },
     "sizeOvertimeModule": {
-      "__id__": 212
+      "__id__": 213
     },
     "velocityOvertimeModule": {
-      "__id__": 217
+      "__id__": 218
     },
     "forceOvertimeModule": {
-      "__id__": 222
+      "__id__": 223
     },
     "limitVelocityOvertimeModule": {
-      "__id__": 226
+      "__id__": 227
     },
     "rotationOvertimeModule": {
-      "__id__": 231
+      "__id__": 232
     },
     "textureAnimationModule": {
-      "__id__": 235
+      "__id__": 236
     },
     "trailModule": {
-      "__id__": 238
+      "__id__": 239
     },
     "renderer": {
-      "__id__": 249
+      "__id__": 250
     },
     "_prewarm": false,
     "_capacity": 100,
@@ -8223,13 +8252,13 @@
       "a": 255
     },
     "gradient": {
-      "__id__": 192
-    },
-    "gradientMin": {
       "__id__": 193
     },
-    "gradientMax": {
+    "gradientMin": {
       "__id__": 194
+    },
+    "gradientMax": {
+      "__id__": 195
     },
     "_mode": 0
   },
@@ -8779,7 +8808,7 @@
     "_repeatCount": 1,
     "repeatInterval": 1,
     "count": {
-      "__id__": 204
+      "__id__": 205
     }
   },
   {
@@ -8851,7 +8880,7 @@
     "__type__": "cc.ColorOvertimeModule",
     "enable": false,
     "color": {
-      "__id__": 206
+      "__id__": 207
     }
   },
   {
@@ -8878,13 +8907,13 @@
       "a": 255
     },
     "gradient": {
-      "__id__": 207
-    },
-    "gradientMin": {
       "__id__": 208
     },
-    "gradientMax": {
+    "gradientMin": {
       "__id__": 209
+    },
+    "gradientMax": {
+      "__id__": 210
     },
     "_mode": 0
   },
@@ -8920,7 +8949,7 @@
     "arcMode": 0,
     "arcSpread": 8,
     "arcSpeed": {
-      "__id__": 211
+      "__id__": 212
     },
     "length": 0,
     "boxThickness": {
@@ -9020,16 +9049,16 @@
     "enable": false,
     "separateAxes": false,
     "size": {
-      "__id__": 213
-    },
-    "x": {
       "__id__": 214
     },
-    "y": {
+    "x": {
       "__id__": 215
     },
-    "z": {
+    "y": {
       "__id__": 216
+    },
+    "z": {
+      "__id__": 217
     }
   },
   {
@@ -9296,16 +9325,16 @@
     "__type__": "cc.VelocityOvertimeModule",
     "enable": false,
     "x": {
-      "__id__": 218
-    },
-    "y": {
       "__id__": 219
     },
-    "z": {
+    "y": {
       "__id__": 220
     },
-    "speedModifier": {
+    "z": {
       "__id__": 221
+    },
+    "speedModifier": {
+      "__id__": 222
     },
     "space": 1
   },
@@ -9573,13 +9602,13 @@
     "__type__": "cc.ForceOvertimeModule",
     "enable": true,
     "x": {
-      "__id__": 223
-    },
-    "y": {
       "__id__": 224
     },
-    "z": {
+    "y": {
       "__id__": 225
+    },
+    "z": {
+      "__id__": 226
     },
     "space": 0
   },
@@ -9795,16 +9824,16 @@
     "__type__": "cc.LimitVelocityOvertimeModule",
     "enable": false,
     "limitX": {
-      "__id__": 227
-    },
-    "limitY": {
       "__id__": 228
     },
-    "limitZ": {
+    "limitY": {
       "__id__": 229
     },
-    "limit": {
+    "limitZ": {
       "__id__": 230
+    },
+    "limit": {
+      "__id__": 231
     },
     "dampen": 3,
     "separateAxes": false,
@@ -10075,13 +10104,13 @@
     "enable": false,
     "_separateAxes": false,
     "x": {
-      "__id__": 232
-    },
-    "y": {
       "__id__": 233
     },
-    "z": {
+    "y": {
       "__id__": 234
+    },
+    "z": {
+      "__id__": 235
     }
   },
   {
@@ -10287,10 +10316,10 @@
     "numTilesY": 0,
     "animation": 0,
     "frameOverTime": {
-      "__id__": 236
+      "__id__": 237
     },
     "startFrame": {
-      "__id__": 237
+      "__id__": 238
     },
     "cycleCount": 0,
     "_flipU": 0,
@@ -10434,24 +10463,26 @@
     "_enable": false,
     "mode": 0,
     "lifeTime": {
-      "__id__": 239
+      "__id__": 240
     },
     "_minParticleDistance": 0.1,
     "existWithParticles": true,
     "textureMode": 0,
     "widthFromParticle": true,
     "widthRatio": {
-      "__id__": 240
+      "__id__": 241
     },
     "colorFromParticle": false,
     "colorOverTrail": {
-      "__id__": 241
+      "__id__": 242
     },
     "colorOvertime": {
-      "__id__": 245
+      "__id__": 246
     },
     "_space": 0,
-    "_particleSystem": null
+    "_particleSystem": {
+      "__id__": 191
+    }
   },
   {
     "__type__": "cc.CurveRange",
@@ -10607,13 +10638,13 @@
       "a": 255
     },
     "gradient": {
-      "__id__": 242
-    },
-    "gradientMin": {
       "__id__": 243
     },
-    "gradientMax": {
+    "gradientMin": {
       "__id__": 244
+    },
+    "gradientMax": {
+      "__id__": 245
     },
     "_mode": 0
   },
@@ -10659,13 +10690,13 @@
       "a": 255
     },
     "gradient": {
-      "__id__": 246
-    },
-    "gradientMin": {
       "__id__": 247
     },
-    "gradientMax": {
+    "gradientMin": {
       "__id__": 248
+    },
+    "gradientMax": {
+      "__id__": 249
     },
     "_mode": 0
   },
@@ -10693,18 +10724,20 @@
     "_velocityScale": 1,
     "_lengthScale": 1,
     "_mesh": null,
-    "_particleSystem": null
+    "_particleSystem": {
+      "__id__": 191
+    }
   },
   {
     "__type__": "cc.SceneGlobals",
     "ambient": {
-      "__id__": 251
-    },
-    "skybox": {
       "__id__": 252
     },
-    "planarShadows": {
+    "skybox": {
       "__id__": 253
+    },
+    "planarShadows": {
+      "__id__": 254
     }
   },
   {
