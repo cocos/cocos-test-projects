@@ -94,7 +94,7 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 1,
+    "_layer": 1073741825,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -142,7 +142,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 0
+      "z": 1.824
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -157,7 +157,7 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 1,
+    "_layer": 1073741825,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -182,9 +182,9 @@
     "_far": 1000,
     "_color": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
+      "r": 0,
+      "g": 78,
+      "b": 163,
       "a": 255
     },
     "_depth": 1,
@@ -198,7 +198,7 @@
       "height": 1
     },
     "_screenScale": 1,
-    "_visibility": 1610612736,
+    "_visibility": 1619001344,
     "_targetTexture": null,
     "_id": "7dWQTpwS5LrIHnc1zAPUtf"
   },
@@ -236,7 +236,7 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 1,
+    "_layer": 1073741825,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -258,7 +258,7 @@
         "__uuid__": "95eb7024-da9c-4726-8bb8-b8819afd4551"
       }
     ],
-    "_visFlags": 1073741824,
+    "_visFlags": 0,
     "startColor": {
       "__id__": 8
     },
@@ -2576,7 +2576,9 @@
       "__id__": 62
     },
     "_space": 0,
-    "_particleSystem": null
+    "_particleSystem": {
+      "__id__": 7
+    }
   },
   {
     "__type__": "cc.CurveRange",
@@ -2818,7 +2820,9 @@
     "_velocityScale": 1,
     "_lengthScale": 1,
     "_mesh": null,
-    "_particleSystem": null
+    "_particleSystem": {
+      "__id__": 7
+    }
   },
   {
     "__type__": "cc.SceneGlobals",
