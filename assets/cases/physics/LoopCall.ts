@@ -5,9 +5,15 @@ const { menu, ccclass, property } = _decorator;
 @menu("physics/LoopCall")
 export class LoopCall extends Component {
 
-    start () {
+    private _hander: number = 0;
+
+    public onEnable () {
         // Your initialization goes here.
-        setInterval(this.clearString.bind(this), 3000);
+        this._hander = setInterval(this.clearString.bind(this), 3000);
+    }
+
+    public onDisable () {
+        clearInterval(this._hander);
     }
 
     /**

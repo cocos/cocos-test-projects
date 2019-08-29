@@ -2,8 +2,8 @@ import { _decorator, Component, ColliderComponent } from "cc";
 import { PHY_MASK } from "./group-mask";
 const { menu, ccclass, property } = _decorator;
 
-@ccclass("masktesting")
-@menu("physics/masktesting")
+@ccclass("mask-testing")
+@menu("physics/mask-testing")
 export class masktesting extends Component {
 
     @property({ type: PHY_MASK })
