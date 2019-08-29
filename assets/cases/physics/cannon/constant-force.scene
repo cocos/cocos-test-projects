@@ -11,7 +11,7 @@
   },
   {
     "__type__": "cc.Scene",
-    "_name": "Scene",
+    "_name": "",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -38,9 +38,6 @@
       },
       {
         "__id__": 24
-      },
-      {
-        "__id__": 25
       }
     ],
     "_active": true,
@@ -74,7 +71,7 @@
     },
     "autoReleaseAssets": false,
     "_globals": {
-      "__id__": 26
+      "__id__": 30
     },
     "_id": "05ca2bdb-992f-48fa-9025-ec4d7ca972f9"
   },
@@ -112,7 +109,7 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 1,
+    "_layer": 1073741825,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": -27.252424877320724,
@@ -175,7 +172,7 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 1,
+    "_layer": 1073741825,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": -20.613437,
@@ -216,7 +213,7 @@
       "height": 1
     },
     "_screenScale": 1,
-    "_visibility": 1610612736,
+    "_visibility": 1619001344,
     "_targetTexture": null,
     "_id": "7dWQTpwS5LrIHnc1zAPUtf"
   },
@@ -240,6 +237,7 @@
         "__id__": 9
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -259,7 +257,7 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 1,
+    "_layer": 1073741825,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -281,7 +279,7 @@
         "__uuid__": "e795142e-0b47-4185-9371-f13afc2d84cd"
       }
     ],
-    "_visFlags": 1073741824,
+    "_visFlags": 0,
     "_mesh": {
       "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@box.mesh"
     },
@@ -371,6 +369,7 @@
         "__id__": 13
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -390,7 +389,7 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 1,
+    "_layer": 1073741825,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -412,7 +411,7 @@
         "__uuid__": "0672a755-2905-4fa2-8dfd-642f2399d3f2"
       }
     ],
-    "_visFlags": 1073741824,
+    "_visFlags": 0,
     "_mesh": {
       "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@box.mesh"
     },
@@ -502,6 +501,7 @@
         "__id__": 17
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -521,7 +521,7 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 1,
+    "_layer": 1073741825,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -543,7 +543,7 @@
         "__uuid__": "a8b3c3bc-5f63-4b1c-a09d-5120c37aba3b"
       }
     ],
-    "_visFlags": 1073741824,
+    "_visFlags": 0,
     "_mesh": {
       "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@box.mesh"
     },
@@ -633,6 +633,7 @@
         "__id__": 21
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -652,7 +653,7 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 1,
+    "_layer": 1073741825,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -674,7 +675,7 @@
         "__uuid__": "7b138a09-0d2e-4882-9a21-f7129d3f8a12"
       }
     ],
-    "_visFlags": 1073741824,
+    "_visFlags": 0,
     "_mesh": {
       "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@box.mesh"
     },
@@ -758,6 +759,7 @@
         "__id__": 23
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": -35,
@@ -777,7 +779,7 @@
       "y": 1,
       "z": 2
     },
-    "_layer": 1,
+    "_layer": 1073741825,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -799,7 +801,7 @@
         "__uuid__": "b3a94fb1-9f5e-4f15-91aa-736eb4d6388a"
       }
     ],
-    "_visFlags": 1073741824,
+    "_visFlags": 0,
     "_mesh": {
       "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@plane.mesh"
     },
@@ -809,19 +811,30 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "上面两个方块在旋转",
+    "_name": "Canvas",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
     },
-    "_children": [],
+    "_children": [
+      {
+        "__id__": 25
+      }
+    ],
     "_active": true,
-    "_components": [],
+    "_components": [
+      {
+        "__id__": 28
+      },
+      {
+        "__id__": 29
+      }
+    ],
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
+      "x": 480,
+      "y": 320,
+      "z": 1
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -836,25 +849,32 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 1,
+    "_layer": 1082130433,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
       "z": 0
     },
-    "_id": "af8VrqW1pGQqIfmsKl8K49"
+    "_id": "3dCTxZ+qdFQ7pFLuJA47PN"
   },
   {
     "__type__": "cc.Node",
-    "_name": "下面两个方块在移动",
+    "_name": "New Label",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 1
+      "__id__": 24
     },
     "_children": [],
     "_active": true,
-    "_components": [],
+    "_components": [
+      {
+        "__id__": 26
+      },
+      {
+        "__id__": 27
+      }
+    ],
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -874,25 +894,114 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 1,
+    "_layer": 1082130433,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
       "z": 0
     },
-    "_id": "0cpXy6BCJGG4Ah1M84yzhN"
+    "_id": "3faajx5SFLuZhJnr89mz5W"
+  },
+  {
+    "__type__": "cc.UITransformComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 25
+    },
+    "_enabled": true,
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 180,
+      "height": 80
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_id": "78ICs2Mh1A3bhYZuWCwh+z"
+  },
+  {
+    "__type__": "cc.LabelComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 25
+    },
+    "_enabled": true,
+    "_priority": 0,
+    "_srcBlendFactor": 2,
+    "_dstBlendFactor": 4,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_sharedMaterial": null,
+    "_useOriginalSize": true,
+    "_string": "上面两个方块在旋转\n下面两个方块在移动",
+    "_horizontalAlign": 0,
+    "_verticalAlign": 0,
+    "_actualFontSize": 20,
+    "_fontSize": 20,
+    "_fontFamily": "Arial",
+    "_lineHeight": 40,
+    "_overflow": 0,
+    "_enableWrapText": true,
+    "_font": null,
+    "_isSystemFontUsed": true,
+    "_isItalic": false,
+    "_isBold": false,
+    "_isUnderline": false,
+    "_cacheMode": 0,
+    "_id": "93huguyTtMe5Yj2YP2LdSe"
+  },
+  {
+    "__type__": "cc.UITransformComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 24
+    },
+    "_enabled": true,
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 960,
+      "height": 640
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_id": "06UE3PKxpOF7B+dMCvMUkP"
+  },
+  {
+    "__type__": "cc.CanvasComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 24
+    },
+    "_enabled": true,
+    "_priority": 0,
+    "_targetTexture": null,
+    "_id": "a0VDwVsaRCGpKY40uWaR1F"
   },
   {
     "__type__": "cc.SceneGlobals",
     "ambient": {
-      "__id__": 27
+      "__id__": 31
     },
     "skybox": {
-      "__id__": 28
+      "__id__": 32
     },
     "planarShadows": {
-      "__id__": 29
+      "__id__": 33
     }
   },
   {
