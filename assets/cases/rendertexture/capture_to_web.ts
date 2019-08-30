@@ -30,7 +30,7 @@ export class CaptureToWeb extends Component {
             width: 256,
             height: 256,
             colorFormat: RenderTexture.PixelFormat.RGBA8888,
-            depthStencilFormat: RenderTexture.DepthStencilFormat.DEPTH_32_STENCIL_8
+            depthStencilFormat: RenderTexture.DepthStencilFormat.DEPTH_24_STENCIL_8
         });
         this.camera.targetTexture = rendetTex;
         sp.texture = rendetTex;
@@ -41,7 +41,7 @@ export class CaptureToWeb extends Component {
                 width: 512,
                 height: 512,
                 colorFormat: RenderTexture.PixelFormat.RGBA8888,
-                depthStencilFormat: RenderTexture.DepthStencilFormat.DEPTH_32_STENCIL_8
+                depthStencilFormat: RenderTexture.DepthStencilFormat.DEPTH_24_STENCIL_8
             });
         }, 2000);
     }
