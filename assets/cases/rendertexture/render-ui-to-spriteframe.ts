@@ -33,7 +33,7 @@ export class RenderUIToSpriteFrame extends Component {
             width: size.width,
             height: size.height,
             colorFormat: RenderTexture.PixelFormat.RGBA8888,
-            depthStencilFormat: RenderTexture.DepthStencilFormat.DEPTH_32_STENCIL_8
+            depthStencilFormat: RenderTexture.DepthStencilFormat.DEPTH_24_STENCIL_8
         });
 
         const cameraComp = this.getComponent(CanvasComponent);

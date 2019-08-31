@@ -20,7 +20,7 @@ export class RenderCameraToModel extends Component {
             width: 256,
             height: 256,
             colorFormat: RenderTexture.PixelFormat.RGBA8888,
-            depthStencilFormat: RenderTexture.DepthStencilFormat.DEPTH_32_STENCIL_8,
+            depthStencilFormat: RenderTexture.DepthStencilFormat.DEPTH_24_STENCIL_8,
         });
         const cameraComp = this.getComponent(CameraComponent);
         cameraComp.targetTexture = renderTex;
