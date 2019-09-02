@@ -27,6 +27,10 @@ export class NodeEvent extends Component {
         this.node.on('click', this.click, this._receiver);
     }
 
+    onDestroy(){
+        this.node.off('click', this.click, this._receiver);
+    }
+
     click() {
         this.labelComp.string = `Receiver is: ${this._receiver.node.name}`;
     }

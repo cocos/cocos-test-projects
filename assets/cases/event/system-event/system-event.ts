@@ -22,6 +22,15 @@ export class SystemEvent extends Component {
         systemEvent.on(SystemEventType.KEY_UP, this.onKeyUp, this);
     }
 
+    onDestroy(){
+        systemEvent.off(SystemEventType.TOUCH_START, this.onTouchStart, this);
+        systemEvent.off(SystemEventType.TOUCH_END, this.onTouchEnd, this);
+        systemEvent.off(SystemEventType.TOUCH_MOVE, this.onTouchMove, this);
+        systemEvent.off(SystemEventType.TOUCH_CANCEL, this.onTouchCancel, this);
+        systemEvent.off(SystemEventType.KEY_DOWN, this.onKeyDown, this);
+        systemEvent.off(SystemEventType.KEY_UP, this.onKeyUp, this);
+    }
+
     onTouchStart(event: EventTouch){
         this.labelShow.string = `TouchStart: ${event.getLocation()}`;
     }
