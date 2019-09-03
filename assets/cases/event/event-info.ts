@@ -20,6 +20,15 @@ export class EventInfo extends Component {
         systemEvent.on(SystemEventType.MOUSE_UP, this._mouseUp, this);
     }
 
+    onDestroy(){
+        systemEvent.off(SystemEventType.TOUCH_START, this._touchStart, this);
+        systemEvent.off(SystemEventType.TOUCH_MOVE, this._touchMove, this);
+        systemEvent.off(SystemEventType.TOUCH_END, this._touchEnd, this);
+
+        systemEvent.off(SystemEventType.MOUSE_MOVE, this._mouseMove, this);
+        systemEvent.off(SystemEventType.MOUSE_UP, this._mouseUp, this);
+    }
+
     // update (deltaTime: number) {
     //     // Your update function goes here.
     // }
