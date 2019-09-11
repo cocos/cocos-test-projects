@@ -1,6 +1,5 @@
 import { _decorator, Component, Vec3, tweenUtil } from "cc";
 const { ccclass, property } = _decorator;
-declare const TWEEN: any;
 
 @ccclass("tween-test")
 export class tweentest extends Component {
