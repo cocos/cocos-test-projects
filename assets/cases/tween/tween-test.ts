@@ -1,6 +1,5 @@
-import { _decorator, Component, Node, Vec3, tweenUtil, tween } from "cc";
+import { _decorator, Component, Vec3, tweenUtil } from "cc";
 const { ccclass, property } = _decorator;
-declare const TWEEN: any;
 
 @ccclass("tween-test")
 export class tweentest extends Component {
@@ -16,19 +15,17 @@ export class tweentest extends Component {
             .to(3, new Vec3(10, 10, 10), { easing: 'Bounce-InOut' })
             .to(3, new Vec3(0, 0, 0), { easing: 'Elastic-Out' })
             .union()
-            .repeat(-1)
+            .repeat(Infinity)
             .start();
 
         Vec3.copy(this._wscale, this.node.worldScale);
 
-        tween(this._wscale)
-            .to(3, new Vec3(3, 3, 3), { easing: 'Bounce-InOut' })
-            .to(3, new Vec3(1, 1, 1), { easing: 'Elastic-Out' })
+        tweenUtil(this._wscale)
+            .to(0.5, new Vec3(3, 3, 3), { easing: 'Bounce-InOut' })
+            .to(0.5, new Vec3(1, 1, 1), { easing: 'Elastic-Out' })
             .union()
-            .repeat(-1)
+            .repeat(Infinity)
             .start();
-
-        TWEEN.update();
     }
 
     update (deltaTime: number) {
