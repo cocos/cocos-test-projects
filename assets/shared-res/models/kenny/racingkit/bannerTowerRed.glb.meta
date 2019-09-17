@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "4664307a-6874-4ce4-9975-f809b963cb45",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh bannerTowerRed.mesh": {
+    "87c42": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "4664307a-6874-4ce4-9975-f809b963cb45@Mesh bannerTowerRed.mesh",
+      "uuid": "4664307a-6874-4ce4-9975-f809b963cb45@87c42",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "87c42",
+      "name": "Mesh bannerTowerRed.mesh"
     },
-    "_defaultMat.material": {
+    "0ee4f": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "4664307a-6874-4ce4-9975-f809b963cb45@_defaultMat.material",
+      "uuid": "4664307a-6874-4ce4-9975-f809b963cb45@0ee4f",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "0ee4f",
+      "name": "_defaultMat.material"
     },
-    "grey.material": {
+    "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "4664307a-6874-4ce4-9975-f809b963cb45@grey.material",
+      "uuid": "4664307a-6874-4ce4-9975-f809b963cb45@d63d5",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "d63d5",
+      "name": "grey.material"
     },
-    "red.material": {
+    "92dfd": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "4664307a-6874-4ce4-9975-f809b963cb45@red.material",
+      "uuid": "4664307a-6874-4ce4-9975-f809b963cb45@92dfd",
       "imported": true,
       "files": [
         ".json"
@@ -59,12 +65,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 2
-      }
+      },
+      "id": "92dfd",
+      "name": "red.material"
     },
-    "bannerTowerRed.prefab": {
+    "ff6f3": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "4664307a-6874-4ce4-9975-f809b963cb45@bannerTowerRed.prefab",
+      "uuid": "4664307a-6874-4ce4-9975-f809b963cb45@ff6f3",
       "imported": true,
       "files": [
         ".json"
@@ -72,7 +80,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "ff6f3",
+      "name": "bannerTowerRed.prefab"
     }
   },
   "userData": {
@@ -80,18 +90,18 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "4664307a-6874-4ce4-9975-f809b963cb45@bannerTowerRed.prefab",
+    "redirect": "4664307a-6874-4ce4-9975-f809b963cb45@ff6f3",
     "assetFinder": {
       "meshes": [
-        "4664307a-6874-4ce4-9975-f809b963cb45@Mesh bannerTowerRed.mesh"
+        "4664307a-6874-4ce4-9975-f809b963cb45@87c42"
       ],
       "materials": [
-        "4664307a-6874-4ce4-9975-f809b963cb45@_defaultMat.material",
-        "4664307a-6874-4ce4-9975-f809b963cb45@grey.material",
-        "4664307a-6874-4ce4-9975-f809b963cb45@red.material"
+        "4664307a-6874-4ce4-9975-f809b963cb45@0ee4f",
+        "4664307a-6874-4ce4-9975-f809b963cb45@d63d5",
+        "4664307a-6874-4ce4-9975-f809b963cb45@92dfd"
       ],
       "scenes": [
-        "4664307a-6874-4ce4-9975-f809b963cb45@bannerTowerRed.prefab"
+        "4664307a-6874-4ce4-9975-f809b963cb45@ff6f3"
       ]
     }
   }

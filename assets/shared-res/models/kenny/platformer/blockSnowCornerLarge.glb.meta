@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "828dafe8-4197-4ddb-abd0-f7e6e2354368",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh blockSnowCornerLarge.mesh": {
+    "1a78a": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "828dafe8-4197-4ddb-abd0-f7e6e2354368@Mesh blockSnowCornerLarge.mesh",
+      "uuid": "828dafe8-4197-4ddb-abd0-f7e6e2354368@1a78a",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "1a78a",
+      "name": "Mesh blockSnowCornerLarge.mesh"
     },
-    "dirt.material": {
+    "3577b": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "828dafe8-4197-4ddb-abd0-f7e6e2354368@dirt.material",
+      "uuid": "828dafe8-4197-4ddb-abd0-f7e6e2354368@3577b",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "3577b",
+      "name": "dirt.material"
     },
-    "snow.material": {
+    "dfa42": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "828dafe8-4197-4ddb-abd0-f7e6e2354368@snow.material",
+      "uuid": "828dafe8-4197-4ddb-abd0-f7e6e2354368@dfa42",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "dfa42",
+      "name": "snow.material"
     },
-    "blockSnowCornerLarge.prefab": {
+    "c9010": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "828dafe8-4197-4ddb-abd0-f7e6e2354368@blockSnowCornerLarge.prefab",
+      "uuid": "828dafe8-4197-4ddb-abd0-f7e6e2354368@c9010",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "c9010",
+      "name": "blockSnowCornerLarge.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "828dafe8-4197-4ddb-abd0-f7e6e2354368@blockSnowCornerLarge.prefab",
+    "redirect": "828dafe8-4197-4ddb-abd0-f7e6e2354368@c9010",
     "assetFinder": {
       "meshes": [
-        "828dafe8-4197-4ddb-abd0-f7e6e2354368@Mesh blockSnowCornerLarge.mesh"
+        "828dafe8-4197-4ddb-abd0-f7e6e2354368@1a78a"
       ],
       "materials": [
-        "828dafe8-4197-4ddb-abd0-f7e6e2354368@dirt.material",
-        "828dafe8-4197-4ddb-abd0-f7e6e2354368@snow.material"
+        "828dafe8-4197-4ddb-abd0-f7e6e2354368@3577b",
+        "828dafe8-4197-4ddb-abd0-f7e6e2354368@dfa42"
       ],
       "scenes": [
-        "828dafe8-4197-4ddb-abd0-f7e6e2354368@blockSnowCornerLarge.prefab"
+        "828dafe8-4197-4ddb-abd0-f7e6e2354368@c9010"
       ]
     }
   }

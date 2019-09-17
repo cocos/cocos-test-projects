@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "96ee8145-3bc3-40a5-a097-0f5e1b1edc15",
@@ -8,10 +8,25 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh rocks.mesh": {
+    "99038": {
+      "ver": "1.0.10",
+      "importer": "gltf-material",
+      "uuid": "96ee8145-3bc3-40a5-a097-0f5e1b1edc15@99038",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "99038",
+      "name": "rock.material"
+    },
+    "415e9": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "96ee8145-3bc3-40a5-a097-0f5e1b1edc15@Mesh rocks.mesh",
+      "uuid": "96ee8145-3bc3-40a5-a097-0f5e1b1edc15@415e9",
       "imported": true,
       "files": [
         ".json",
@@ -20,25 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "415e9",
+      "name": "Mesh rocks.mesh"
     },
-    "rock.material": {
-      "ver": "1.0.10",
-      "importer": "gltf-material",
-      "uuid": "96ee8145-3bc3-40a5-a097-0f5e1b1edc15@rock.material",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
-    },
-    "rocks.prefab": {
+    "9c9ed": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "96ee8145-3bc3-40a5-a097-0f5e1b1edc15@rocks.prefab",
+      "uuid": "96ee8145-3bc3-40a5-a097-0f5e1b1edc15@9c9ed",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "9c9ed",
+      "name": "rocks.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "96ee8145-3bc3-40a5-a097-0f5e1b1edc15@rocks.prefab",
+    "redirect": "96ee8145-3bc3-40a5-a097-0f5e1b1edc15@9c9ed",
     "assetFinder": {
       "meshes": [
-        "96ee8145-3bc3-40a5-a097-0f5e1b1edc15@Mesh rocks.mesh"
+        "96ee8145-3bc3-40a5-a097-0f5e1b1edc15@415e9"
       ],
       "materials": [
-        "96ee8145-3bc3-40a5-a097-0f5e1b1edc15@rock.material"
+        "96ee8145-3bc3-40a5-a097-0f5e1b1edc15@99038"
       ],
       "scenes": [
-        "96ee8145-3bc3-40a5-a097-0f5e1b1edc15@rocks.prefab"
+        "96ee8145-3bc3-40a5-a097-0f5e1b1edc15@9c9ed"
       ]
     }
   }

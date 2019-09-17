@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "bd65af07-5292-40fc-a4d9-1c4cfa60b711",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh overheadLights.mesh": {
+    "fdd74": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "bd65af07-5292-40fc-a4d9-1c4cfa60b711@Mesh overheadLights.mesh",
+      "uuid": "bd65af07-5292-40fc-a4d9-1c4cfa60b711@fdd74",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "fdd74",
+      "name": "Mesh overheadLights.mesh"
     },
-    "grey.material": {
+    "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "bd65af07-5292-40fc-a4d9-1c4cfa60b711@grey.material",
+      "uuid": "bd65af07-5292-40fc-a4d9-1c4cfa60b711@d63d5",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "d63d5",
+      "name": "grey.material"
     },
-    "road.material": {
+    "35ea4": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "bd65af07-5292-40fc-a4d9-1c4cfa60b711@road.material",
+      "uuid": "bd65af07-5292-40fc-a4d9-1c4cfa60b711@35ea4",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "35ea4",
+      "name": "road.material"
     },
-    "red.material": {
+    "92dfd": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "bd65af07-5292-40fc-a4d9-1c4cfa60b711@red.material",
+      "uuid": "bd65af07-5292-40fc-a4d9-1c4cfa60b711@92dfd",
       "imported": true,
       "files": [
         ".json"
@@ -59,12 +65,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 2
-      }
+      },
+      "id": "92dfd",
+      "name": "red.material"
     },
-    "overheadLights.prefab": {
+    "5761f": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "bd65af07-5292-40fc-a4d9-1c4cfa60b711@overheadLights.prefab",
+      "uuid": "bd65af07-5292-40fc-a4d9-1c4cfa60b711@5761f",
       "imported": true,
       "files": [
         ".json"
@@ -72,7 +80,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "5761f",
+      "name": "overheadLights.prefab"
     }
   },
   "userData": {
@@ -80,18 +90,18 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "bd65af07-5292-40fc-a4d9-1c4cfa60b711@overheadLights.prefab",
+    "redirect": "bd65af07-5292-40fc-a4d9-1c4cfa60b711@5761f",
     "assetFinder": {
       "meshes": [
-        "bd65af07-5292-40fc-a4d9-1c4cfa60b711@Mesh overheadLights.mesh"
+        "bd65af07-5292-40fc-a4d9-1c4cfa60b711@fdd74"
       ],
       "materials": [
-        "bd65af07-5292-40fc-a4d9-1c4cfa60b711@grey.material",
-        "bd65af07-5292-40fc-a4d9-1c4cfa60b711@road.material",
-        "bd65af07-5292-40fc-a4d9-1c4cfa60b711@red.material"
+        "bd65af07-5292-40fc-a4d9-1c4cfa60b711@d63d5",
+        "bd65af07-5292-40fc-a4d9-1c4cfa60b711@35ea4",
+        "bd65af07-5292-40fc-a4d9-1c4cfa60b711@92dfd"
       ],
       "scenes": [
-        "bd65af07-5292-40fc-a4d9-1c4cfa60b711@overheadLights.prefab"
+        "bd65af07-5292-40fc-a4d9-1c4cfa60b711@5761f"
       ]
     }
   }

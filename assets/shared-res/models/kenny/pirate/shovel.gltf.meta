@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "c2902fda-990c-4904-b1c3-b403925f07ae",
@@ -8,10 +8,10 @@
     ".gltf"
   ],
   "subMetas": {
-    "shovel.mesh": {
+    "9fdca": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "c2902fda-990c-4904-b1c3-b403925f07ae@shovel.mesh",
+      "uuid": "c2902fda-990c-4904-b1c3-b403925f07ae@9fdca",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "9fdca",
+      "name": "shovel.mesh"
     },
-    "wood.material": {
+    "e4014": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "c2902fda-990c-4904-b1c3-b403925f07ae@wood.material",
+      "uuid": "c2902fda-990c-4904-b1c3-b403925f07ae@e4014",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "e4014",
+      "name": "wood.material"
     },
-    "stone.material": {
+    "4de10": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "c2902fda-990c-4904-b1c3-b403925f07ae@stone.material",
+      "uuid": "c2902fda-990c-4904-b1c3-b403925f07ae@4de10",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "4de10",
+      "name": "stone.material"
     },
-    "shovel.prefab": {
+    "ffb0a": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "c2902fda-990c-4904-b1c3-b403925f07ae@shovel.prefab",
+      "uuid": "c2902fda-990c-4904-b1c3-b403925f07ae@ffb0a",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "ffb0a",
+      "name": "shovel.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "c2902fda-990c-4904-b1c3-b403925f07ae@shovel.prefab",
+    "redirect": "c2902fda-990c-4904-b1c3-b403925f07ae@ffb0a",
     "assetFinder": {
       "meshes": [
-        "c2902fda-990c-4904-b1c3-b403925f07ae@shovel.mesh"
+        "c2902fda-990c-4904-b1c3-b403925f07ae@9fdca"
       ],
       "materials": [
-        "c2902fda-990c-4904-b1c3-b403925f07ae@wood.material",
-        "c2902fda-990c-4904-b1c3-b403925f07ae@stone.material"
+        "c2902fda-990c-4904-b1c3-b403925f07ae@e4014",
+        "c2902fda-990c-4904-b1c3-b403925f07ae@4de10"
       ],
       "scenes": [
-        "c2902fda-990c-4904-b1c3-b403925f07ae@shovel.prefab"
+        "c2902fda-990c-4904-b1c3-b403925f07ae@ffb0a"
       ]
     }
   }

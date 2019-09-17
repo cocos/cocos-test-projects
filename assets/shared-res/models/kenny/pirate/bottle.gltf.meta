@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "da666f40-2371-4168-beac-83e9ffb37e88",
@@ -8,10 +8,10 @@
     ".gltf"
   ],
   "subMetas": {
-    "bottle.mesh": {
+    "43807": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "da666f40-2371-4168-beac-83e9ffb37e88@bottle.mesh",
+      "uuid": "da666f40-2371-4168-beac-83e9ffb37e88@43807",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "43807",
+      "name": "bottle.mesh"
     },
-    "leaves.material": {
+    "a1dfa": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "da666f40-2371-4168-beac-83e9ffb37e88@leaves.material",
+      "uuid": "da666f40-2371-4168-beac-83e9ffb37e88@a1dfa",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "a1dfa",
+      "name": "leaves.material"
     },
-    "wood.material": {
+    "e4014": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "da666f40-2371-4168-beac-83e9ffb37e88@wood.material",
+      "uuid": "da666f40-2371-4168-beac-83e9ffb37e88@e4014",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "e4014",
+      "name": "wood.material"
     },
-    "textile.material": {
+    "2f37c": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "da666f40-2371-4168-beac-83e9ffb37e88@textile.material",
+      "uuid": "da666f40-2371-4168-beac-83e9ffb37e88@2f37c",
       "imported": true,
       "files": [
         ".json"
@@ -59,12 +65,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 2
-      }
+      },
+      "id": "2f37c",
+      "name": "textile.material"
     },
-    "bottle.prefab": {
+    "00218": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "da666f40-2371-4168-beac-83e9ffb37e88@bottle.prefab",
+      "uuid": "da666f40-2371-4168-beac-83e9ffb37e88@00218",
       "imported": true,
       "files": [
         ".json"
@@ -72,7 +80,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "00218",
+      "name": "bottle.prefab"
     }
   },
   "userData": {
@@ -80,18 +90,18 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "da666f40-2371-4168-beac-83e9ffb37e88@bottle.prefab",
+    "redirect": "da666f40-2371-4168-beac-83e9ffb37e88@00218",
     "assetFinder": {
       "meshes": [
-        "da666f40-2371-4168-beac-83e9ffb37e88@bottle.mesh"
+        "da666f40-2371-4168-beac-83e9ffb37e88@43807"
       ],
       "materials": [
-        "da666f40-2371-4168-beac-83e9ffb37e88@leaves.material",
-        "da666f40-2371-4168-beac-83e9ffb37e88@wood.material",
-        "da666f40-2371-4168-beac-83e9ffb37e88@textile.material"
+        "da666f40-2371-4168-beac-83e9ffb37e88@a1dfa",
+        "da666f40-2371-4168-beac-83e9ffb37e88@e4014",
+        "da666f40-2371-4168-beac-83e9ffb37e88@2f37c"
       ],
       "scenes": [
-        "da666f40-2371-4168-beac-83e9ffb37e88@bottle.prefab"
+        "da666f40-2371-4168-beac-83e9ffb37e88@00218"
       ]
     }
   }

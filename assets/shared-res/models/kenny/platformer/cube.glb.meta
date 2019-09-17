@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "e161426f-ee41-4922-8d1c-d0beb73c67c0",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh cube.mesh": {
+    "fa8e3": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "e161426f-ee41-4922-8d1c-d0beb73c67c0@Mesh cube.mesh",
+      "uuid": "e161426f-ee41-4922-8d1c-d0beb73c67c0@fa8e3",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "fa8e3",
+      "name": "Mesh cube.mesh"
     },
-    "gold.material": {
+    "9dbcb": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "e161426f-ee41-4922-8d1c-d0beb73c67c0@gold.material",
+      "uuid": "e161426f-ee41-4922-8d1c-d0beb73c67c0@9dbcb",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "9dbcb",
+      "name": "gold.material"
     },
-    "wood.material": {
+    "e4014": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "e161426f-ee41-4922-8d1c-d0beb73c67c0@wood.material",
+      "uuid": "e161426f-ee41-4922-8d1c-d0beb73c67c0@e4014",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "e4014",
+      "name": "wood.material"
     },
-    "cube.prefab": {
+    "29adf": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "e161426f-ee41-4922-8d1c-d0beb73c67c0@cube.prefab",
+      "uuid": "e161426f-ee41-4922-8d1c-d0beb73c67c0@29adf",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "29adf",
+      "name": "cube.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "e161426f-ee41-4922-8d1c-d0beb73c67c0@cube.prefab",
+    "redirect": "e161426f-ee41-4922-8d1c-d0beb73c67c0@29adf",
     "assetFinder": {
       "meshes": [
-        "e161426f-ee41-4922-8d1c-d0beb73c67c0@Mesh cube.mesh"
+        "e161426f-ee41-4922-8d1c-d0beb73c67c0@fa8e3"
       ],
       "materials": [
-        "e161426f-ee41-4922-8d1c-d0beb73c67c0@gold.material",
-        "e161426f-ee41-4922-8d1c-d0beb73c67c0@wood.material"
+        "e161426f-ee41-4922-8d1c-d0beb73c67c0@9dbcb",
+        "e161426f-ee41-4922-8d1c-d0beb73c67c0@e4014"
       ],
       "scenes": [
-        "e161426f-ee41-4922-8d1c-d0beb73c67c0@cube.prefab"
+        "e161426f-ee41-4922-8d1c-d0beb73c67c0@29adf"
       ]
     }
   }

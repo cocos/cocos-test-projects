@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "8929b9b8-e344-48af-86be-02d16882cf48",
@@ -8,10 +8,25 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh noExport.mesh": {
+    "53398": {
+      "ver": "1.0.10",
+      "importer": "gltf-material",
+      "uuid": "8929b9b8-e344-48af-86be-02d16882cf48@53398",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "53398",
+      "name": "grass.material"
+    },
+    "a6d73": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "8929b9b8-e344-48af-86be-02d16882cf48@Mesh noExport.mesh",
+      "uuid": "8929b9b8-e344-48af-86be-02d16882cf48@a6d73",
       "imported": true,
       "files": [
         ".json",
@@ -20,25 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "a6d73",
+      "name": "Mesh noExport.mesh"
     },
-    "grass.material": {
+    "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "8929b9b8-e344-48af-86be-02d16882cf48@grass.material",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
-    },
-    "grey.material": {
-      "ver": "1.0.10",
-      "importer": "gltf-material",
-      "uuid": "8929b9b8-e344-48af-86be-02d16882cf48@grey.material",
+      "uuid": "8929b9b8-e344-48af-86be-02d16882cf48@d63d5",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "d63d5",
+      "name": "grey.material"
     },
-    "tentClosedLong.prefab": {
+    "23b8f": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "8929b9b8-e344-48af-86be-02d16882cf48@tentClosedLong.prefab",
+      "uuid": "8929b9b8-e344-48af-86be-02d16882cf48@23b8f",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "23b8f",
+      "name": "tentClosedLong.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "8929b9b8-e344-48af-86be-02d16882cf48@tentClosedLong.prefab",
+    "redirect": "8929b9b8-e344-48af-86be-02d16882cf48@23b8f",
     "assetFinder": {
       "meshes": [
-        "8929b9b8-e344-48af-86be-02d16882cf48@Mesh noExport.mesh"
+        "8929b9b8-e344-48af-86be-02d16882cf48@a6d73"
       ],
       "materials": [
-        "8929b9b8-e344-48af-86be-02d16882cf48@grass.material",
-        "8929b9b8-e344-48af-86be-02d16882cf48@grey.material"
+        "8929b9b8-e344-48af-86be-02d16882cf48@53398",
+        "8929b9b8-e344-48af-86be-02d16882cf48@d63d5"
       ],
       "scenes": [
-        "8929b9b8-e344-48af-86be-02d16882cf48@tentClosedLong.prefab"
+        "8929b9b8-e344-48af-86be-02d16882cf48@23b8f"
       ]
     }
   }

@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "f016daa7-4916-489b-84d0-09d71c1f3a12",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh lever.mesh": {
+    "e3187": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "f016daa7-4916-489b-84d0-09d71c1f3a12@Mesh lever.mesh",
+      "uuid": "f016daa7-4916-489b-84d0-09d71c1f3a12@e3187",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "e3187",
+      "name": "Mesh lever.mesh"
     },
-    "Mesh handle.mesh": {
+    "089c3": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "f016daa7-4916-489b-84d0-09d71c1f3a12@Mesh handle.mesh",
+      "uuid": "f016daa7-4916-489b-84d0-09d71c1f3a12@089c3",
       "imported": true,
       "files": [
         ".json",
@@ -34,12 +36,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "089c3",
+      "name": "Mesh handle.mesh"
     },
-    "metal.material": {
+    "16ef1": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "f016daa7-4916-489b-84d0-09d71c1f3a12@metal.material",
+      "uuid": "f016daa7-4916-489b-84d0-09d71c1f3a12@16ef1",
       "imported": true,
       "files": [
         ".json"
@@ -47,12 +51,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "16ef1",
+      "name": "metal.material"
     },
-    "wood.material": {
+    "e4014": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "f016daa7-4916-489b-84d0-09d71c1f3a12@wood.material",
+      "uuid": "f016daa7-4916-489b-84d0-09d71c1f3a12@e4014",
       "imported": true,
       "files": [
         ".json"
@@ -60,12 +66,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "e4014",
+      "name": "wood.material"
     },
-    "lever.prefab": {
+    "d6260": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "f016daa7-4916-489b-84d0-09d71c1f3a12@lever.prefab",
+      "uuid": "f016daa7-4916-489b-84d0-09d71c1f3a12@d6260",
       "imported": true,
       "files": [
         ".json"
@@ -73,7 +81,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "d6260",
+      "name": "lever.prefab"
     }
   },
   "userData": {
@@ -81,18 +91,18 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "f016daa7-4916-489b-84d0-09d71c1f3a12@lever.prefab",
+    "redirect": "f016daa7-4916-489b-84d0-09d71c1f3a12@d6260",
     "assetFinder": {
       "meshes": [
-        "f016daa7-4916-489b-84d0-09d71c1f3a12@Mesh lever.mesh",
-        "f016daa7-4916-489b-84d0-09d71c1f3a12@Mesh handle.mesh"
+        "f016daa7-4916-489b-84d0-09d71c1f3a12@e3187",
+        "f016daa7-4916-489b-84d0-09d71c1f3a12@089c3"
       ],
       "materials": [
-        "f016daa7-4916-489b-84d0-09d71c1f3a12@metal.material",
-        "f016daa7-4916-489b-84d0-09d71c1f3a12@wood.material"
+        "f016daa7-4916-489b-84d0-09d71c1f3a12@16ef1",
+        "f016daa7-4916-489b-84d0-09d71c1f3a12@e4014"
       ],
       "scenes": [
-        "f016daa7-4916-489b-84d0-09d71c1f3a12@lever.prefab"
+        "f016daa7-4916-489b-84d0-09d71c1f3a12@d6260"
       ]
     }
   }

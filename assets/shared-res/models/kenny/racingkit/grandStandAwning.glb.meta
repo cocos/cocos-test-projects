@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "dbf79868-bc59-45b7-8be2-9061b865ff58",
@@ -8,10 +8,25 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh grandStandAwning.mesh": {
+    "67858": {
+      "ver": "1.0.8",
+      "importer": "gltf-scene",
+      "uuid": "dbf79868-bc59-45b7-8be2-9061b865ff58@67858",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "67858",
+      "name": "grandStandAwning.prefab"
+    },
+    "750a3": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "dbf79868-bc59-45b7-8be2-9061b865ff58@Mesh grandStandAwning.mesh",
+      "uuid": "dbf79868-bc59-45b7-8be2-9061b865ff58@750a3",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "750a3",
+      "name": "Mesh grandStandAwning.mesh"
     },
-    "grey.material": {
+    "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "dbf79868-bc59-45b7-8be2-9061b865ff58@grey.material",
+      "uuid": "dbf79868-bc59-45b7-8be2-9061b865ff58@d63d5",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "d63d5",
+      "name": "grey.material"
     },
-    "red.material": {
+    "92dfd": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "dbf79868-bc59-45b7-8be2-9061b865ff58@red.material",
+      "uuid": "dbf79868-bc59-45b7-8be2-9061b865ff58@92dfd",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +65,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "92dfd",
+      "name": "red.material"
     },
-    "road.material": {
+    "35ea4": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "dbf79868-bc59-45b7-8be2-9061b865ff58@road.material",
+      "uuid": "dbf79868-bc59-45b7-8be2-9061b865ff58@35ea4",
       "imported": true,
       "files": [
         ".json"
@@ -59,20 +80,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 2
-      }
-    },
-    "grandStandAwning.prefab": {
-      "ver": "1.0.8",
-      "importer": "gltf-scene",
-      "uuid": "dbf79868-bc59-45b7-8be2-9061b865ff58@grandStandAwning.prefab",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
+      },
+      "id": "35ea4",
+      "name": "road.material"
     }
   },
   "userData": {
@@ -80,18 +90,18 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "dbf79868-bc59-45b7-8be2-9061b865ff58@grandStandAwning.prefab",
+    "redirect": "dbf79868-bc59-45b7-8be2-9061b865ff58@67858",
     "assetFinder": {
       "meshes": [
-        "dbf79868-bc59-45b7-8be2-9061b865ff58@Mesh grandStandAwning.mesh"
+        "dbf79868-bc59-45b7-8be2-9061b865ff58@750a3"
       ],
       "materials": [
-        "dbf79868-bc59-45b7-8be2-9061b865ff58@grey.material",
-        "dbf79868-bc59-45b7-8be2-9061b865ff58@red.material",
-        "dbf79868-bc59-45b7-8be2-9061b865ff58@road.material"
+        "dbf79868-bc59-45b7-8be2-9061b865ff58@d63d5",
+        "dbf79868-bc59-45b7-8be2-9061b865ff58@92dfd",
+        "dbf79868-bc59-45b7-8be2-9061b865ff58@35ea4"
       ],
       "scenes": [
-        "dbf79868-bc59-45b7-8be2-9061b865ff58@grandStandAwning.prefab"
+        "dbf79868-bc59-45b7-8be2-9061b865ff58@67858"
       ]
     }
   }

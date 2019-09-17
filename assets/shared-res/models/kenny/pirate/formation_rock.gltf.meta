@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "4da41302-4460-4a1f-b84c-28c95a6eb6cb",
@@ -8,10 +8,10 @@
     ".gltf"
   ],
   "subMetas": {
-    "formation_rock.mesh": {
+    "bae8f": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "4da41302-4460-4a1f-b84c-28c95a6eb6cb@formation_rock.mesh",
+      "uuid": "4da41302-4460-4a1f-b84c-28c95a6eb6cb@bae8f",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "bae8f",
+      "name": "formation_rock.mesh"
     },
-    "wood.material": {
+    "e4014": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "4da41302-4460-4a1f-b84c-28c95a6eb6cb@wood.material",
+      "uuid": "4da41302-4460-4a1f-b84c-28c95a6eb6cb@e4014",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "e4014",
+      "name": "wood.material"
     },
-    "sand.material": {
+    "5f31f": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "4da41302-4460-4a1f-b84c-28c95a6eb6cb@sand.material",
+      "uuid": "4da41302-4460-4a1f-b84c-28c95a6eb6cb@5f31f",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "5f31f",
+      "name": "sand.material"
     },
-    "formation_rock.prefab": {
+    "8c440": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "4da41302-4460-4a1f-b84c-28c95a6eb6cb@formation_rock.prefab",
+      "uuid": "4da41302-4460-4a1f-b84c-28c95a6eb6cb@8c440",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "8c440",
+      "name": "formation_rock.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "4da41302-4460-4a1f-b84c-28c95a6eb6cb@formation_rock.prefab",
+    "redirect": "4da41302-4460-4a1f-b84c-28c95a6eb6cb@8c440",
     "assetFinder": {
       "meshes": [
-        "4da41302-4460-4a1f-b84c-28c95a6eb6cb@formation_rock.mesh"
+        "4da41302-4460-4a1f-b84c-28c95a6eb6cb@bae8f"
       ],
       "materials": [
-        "4da41302-4460-4a1f-b84c-28c95a6eb6cb@wood.material",
-        "4da41302-4460-4a1f-b84c-28c95a6eb6cb@sand.material"
+        "4da41302-4460-4a1f-b84c-28c95a6eb6cb@e4014",
+        "4da41302-4460-4a1f-b84c-28c95a6eb6cb@5f31f"
       ],
       "scenes": [
-        "4da41302-4460-4a1f-b84c-28c95a6eb6cb@formation_rock.prefab"
+        "4da41302-4460-4a1f-b84c-28c95a6eb6cb@8c440"
       ]
     }
   }

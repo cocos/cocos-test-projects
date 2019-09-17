@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "e186ef5a-9039-44ee-985e-fd3968851e18",
@@ -8,10 +8,25 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh roadStart.mesh": {
+    "53398": {
+      "ver": "1.0.10",
+      "importer": "gltf-material",
+      "uuid": "e186ef5a-9039-44ee-985e-fd3968851e18@53398",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 1
+      },
+      "id": "53398",
+      "name": "grass.material"
+    },
+    "32b87": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "e186ef5a-9039-44ee-985e-fd3968851e18@Mesh roadStart.mesh",
+      "uuid": "e186ef5a-9039-44ee-985e-fd3968851e18@32b87",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "32b87",
+      "name": "Mesh roadStart.mesh"
     },
-    "grey.material": {
+    "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "e186ef5a-9039-44ee-985e-fd3968851e18@grey.material",
+      "uuid": "e186ef5a-9039-44ee-985e-fd3968851e18@d63d5",
       "imported": true,
       "files": [
         ".json"
@@ -33,25 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "d63d5",
+      "name": "grey.material"
     },
-    "grass.material": {
+    "35ea4": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "e186ef5a-9039-44ee-985e-fd3968851e18@grass.material",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 1
-      }
-    },
-    "road.material": {
-      "ver": "1.0.10",
-      "importer": "gltf-material",
-      "uuid": "e186ef5a-9039-44ee-985e-fd3968851e18@road.material",
+      "uuid": "e186ef5a-9039-44ee-985e-fd3968851e18@35ea4",
       "imported": true,
       "files": [
         ".json"
@@ -59,12 +65,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 2
-      }
+      },
+      "id": "35ea4",
+      "name": "road.material"
     },
-    "roadStart.prefab": {
+    "61e48": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "e186ef5a-9039-44ee-985e-fd3968851e18@roadStart.prefab",
+      "uuid": "e186ef5a-9039-44ee-985e-fd3968851e18@61e48",
       "imported": true,
       "files": [
         ".json"
@@ -72,7 +80,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "61e48",
+      "name": "roadStart.prefab"
     }
   },
   "userData": {
@@ -80,18 +90,18 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "e186ef5a-9039-44ee-985e-fd3968851e18@roadStart.prefab",
+    "redirect": "e186ef5a-9039-44ee-985e-fd3968851e18@61e48",
     "assetFinder": {
       "meshes": [
-        "e186ef5a-9039-44ee-985e-fd3968851e18@Mesh roadStart.mesh"
+        "e186ef5a-9039-44ee-985e-fd3968851e18@32b87"
       ],
       "materials": [
-        "e186ef5a-9039-44ee-985e-fd3968851e18@grey.material",
-        "e186ef5a-9039-44ee-985e-fd3968851e18@grass.material",
-        "e186ef5a-9039-44ee-985e-fd3968851e18@road.material"
+        "e186ef5a-9039-44ee-985e-fd3968851e18@d63d5",
+        "e186ef5a-9039-44ee-985e-fd3968851e18@53398",
+        "e186ef5a-9039-44ee-985e-fd3968851e18@35ea4"
       ],
       "scenes": [
-        "e186ef5a-9039-44ee-985e-fd3968851e18@roadStart.prefab"
+        "e186ef5a-9039-44ee-985e-fd3968851e18@61e48"
       ]
     }
   }

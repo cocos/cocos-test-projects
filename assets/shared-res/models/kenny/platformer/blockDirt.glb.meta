@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "2b653a52-ae86-4503-bfa3-609e866cc4e2",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh blockDirt.mesh": {
+    "1f133": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "2b653a52-ae86-4503-bfa3-609e866cc4e2@Mesh blockDirt.mesh",
+      "uuid": "2b653a52-ae86-4503-bfa3-609e866cc4e2@1f133",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "1f133",
+      "name": "Mesh blockDirt.mesh"
     },
-    "dirt.material": {
+    "3577b": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "2b653a52-ae86-4503-bfa3-609e866cc4e2@dirt.material",
+      "uuid": "2b653a52-ae86-4503-bfa3-609e866cc4e2@3577b",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "3577b",
+      "name": "dirt.material"
     },
-    "blockDirt.prefab": {
+    "089e1": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "2b653a52-ae86-4503-bfa3-609e866cc4e2@blockDirt.prefab",
+      "uuid": "2b653a52-ae86-4503-bfa3-609e866cc4e2@089e1",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "089e1",
+      "name": "blockDirt.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "2b653a52-ae86-4503-bfa3-609e866cc4e2@blockDirt.prefab",
+    "redirect": "2b653a52-ae86-4503-bfa3-609e866cc4e2@089e1",
     "assetFinder": {
       "meshes": [
-        "2b653a52-ae86-4503-bfa3-609e866cc4e2@Mesh blockDirt.mesh"
+        "2b653a52-ae86-4503-bfa3-609e866cc4e2@1f133"
       ],
       "materials": [
-        "2b653a52-ae86-4503-bfa3-609e866cc4e2@dirt.material"
+        "2b653a52-ae86-4503-bfa3-609e866cc4e2@3577b"
       ],
       "scenes": [
-        "2b653a52-ae86-4503-bfa3-609e866cc4e2@blockDirt.prefab"
+        "2b653a52-ae86-4503-bfa3-609e866cc4e2@089e1"
       ]
     }
   }

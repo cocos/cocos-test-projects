@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "87fb6463-5ecb-4b1f-ba36-e736590d4a9b",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh roadCornerSmallSand.mesh": {
+    "ee79b": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "87fb6463-5ecb-4b1f-ba36-e736590d4a9b@Mesh roadCornerSmallSand.mesh",
+      "uuid": "87fb6463-5ecb-4b1f-ba36-e736590d4a9b@ee79b",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "ee79b",
+      "name": "Mesh roadCornerSmallSand.mesh"
     },
-    "sand.material": {
+    "5f31f": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "87fb6463-5ecb-4b1f-ba36-e736590d4a9b@sand.material",
+      "uuid": "87fb6463-5ecb-4b1f-ba36-e736590d4a9b@5f31f",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "5f31f",
+      "name": "sand.material"
     },
-    "roadCornerSmallSand.prefab": {
+    "27d91": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "87fb6463-5ecb-4b1f-ba36-e736590d4a9b@roadCornerSmallSand.prefab",
+      "uuid": "87fb6463-5ecb-4b1f-ba36-e736590d4a9b@27d91",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "27d91",
+      "name": "roadCornerSmallSand.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "87fb6463-5ecb-4b1f-ba36-e736590d4a9b@roadCornerSmallSand.prefab",
+    "redirect": "87fb6463-5ecb-4b1f-ba36-e736590d4a9b@27d91",
     "assetFinder": {
       "meshes": [
-        "87fb6463-5ecb-4b1f-ba36-e736590d4a9b@Mesh roadCornerSmallSand.mesh"
+        "87fb6463-5ecb-4b1f-ba36-e736590d4a9b@ee79b"
       ],
       "materials": [
-        "87fb6463-5ecb-4b1f-ba36-e736590d4a9b@sand.material"
+        "87fb6463-5ecb-4b1f-ba36-e736590d4a9b@5f31f"
       ],
       "scenes": [
-        "87fb6463-5ecb-4b1f-ba36-e736590d4a9b@roadCornerSmallSand.prefab"
+        "87fb6463-5ecb-4b1f-ba36-e736590d4a9b@27d91"
       ]
     }
   }

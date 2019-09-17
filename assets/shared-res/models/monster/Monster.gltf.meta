@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "3174824f-f1f2-4011-8709-15d89417ad89",
@@ -8,10 +8,10 @@
     ".gltf"
   ],
   "subMetas": {
-    "monster.mesh": {
+    "cf79d": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "3174824f-f1f2-4011-8709-15d89417ad89@monster.mesh",
+      "uuid": "3174824f-f1f2-4011-8709-15d89417ad89@cf79d",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "cf79d",
+      "name": "monster.mesh"
     },
-    ".animation": {
+    "ce256": {
       "ver": "1.0.10",
       "importer": "gltf-animation",
-      "uuid": "3174824f-f1f2-4011-8709-15d89417ad89@.animation",
+      "uuid": "3174824f-f1f2-4011-8709-15d89417ad89@ce256",
       "imported": true,
       "files": [
         ".json"
@@ -39,12 +41,14 @@
           "to": 3.333329916000366
         },
         "events": []
-      }
+      },
+      "id": "ce256",
+      "name": ".animation"
     },
-    "Armature.skeleton": {
+    "f9d1d": {
       "ver": "1.0.0",
       "importer": "gltf-skeleton",
-      "uuid": "3174824f-f1f2-4011-8709-15d89417ad89@Armature.skeleton",
+      "uuid": "3174824f-f1f2-4011-8709-15d89417ad89@f9d1d",
       "imported": true,
       "files": [
         ".json"
@@ -52,12 +56,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "f9d1d",
+      "name": "Armature.skeleton"
     },
-    "UnnamedTexture.texture": {
+    "e39f7": {
       "ver": "1.0.19",
       "importer": "texture",
-      "uuid": "3174824f-f1f2-4011-8709-15d89417ad89@UnnamedTexture.texture",
+      "uuid": "3174824f-f1f2-4011-8709-15d89417ad89@e39f7",
       "imported": true,
       "files": [
         ".json"
@@ -73,12 +79,14 @@
         "anisotropy": 1,
         "isUuid": false,
         "imageUuidOrDatabaseUri": "db://assets/shared-res/models/monster/Monster.jpg"
-      }
+      },
+      "id": "e39f7",
+      "name": "UnnamedTexture.texture"
     },
-    "monster-effect.material": {
+    "58bf7": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "3174824f-f1f2-4011-8709-15d89417ad89@monster-effect.material",
+      "uuid": "3174824f-f1f2-4011-8709-15d89417ad89@58bf7",
       "imported": true,
       "files": [
         ".json"
@@ -86,12 +94,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "58bf7",
+      "name": "monster-effect.material"
     },
-    "Monster.prefab": {
+    "a07f9": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "3174824f-f1f2-4011-8709-15d89417ad89@Monster.prefab",
+      "uuid": "3174824f-f1f2-4011-8709-15d89417ad89@a07f9",
       "imported": true,
       "files": [
         ".json"
@@ -99,7 +109,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "a07f9",
+      "name": "Monster.prefab"
     }
   },
   "userData": {
@@ -107,7 +119,7 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "3174824f-f1f2-4011-8709-15d89417ad89@Monster.prefab",
+    "redirect": "3174824f-f1f2-4011-8709-15d89417ad89@a07f9",
     "animationImportSettings": [
       {
         "name": "",
@@ -124,10 +136,10 @@
     ],
     "assetFinder": {
       "meshes": [
-        "3174824f-f1f2-4011-8709-15d89417ad89@monster.mesh"
+        "3174824f-f1f2-4011-8709-15d89417ad89@cf79d"
       ],
       "skeletons": [
-        "3174824f-f1f2-4011-8709-15d89417ad89@Armature.skeleton"
+        "3174824f-f1f2-4011-8709-15d89417ad89@f9d1d"
       ],
       "images": [
         {
@@ -136,13 +148,13 @@
         }
       ],
       "textures": [
-        "3174824f-f1f2-4011-8709-15d89417ad89@UnnamedTexture.texture"
+        "3174824f-f1f2-4011-8709-15d89417ad89@e39f7"
       ],
       "materials": [
-        "3174824f-f1f2-4011-8709-15d89417ad89@monster-effect.material"
+        "3174824f-f1f2-4011-8709-15d89417ad89@58bf7"
       ],
       "scenes": [
-        "3174824f-f1f2-4011-8709-15d89417ad89@Monster.prefab"
+        "3174824f-f1f2-4011-8709-15d89417ad89@a07f9"
       ]
     }
   }

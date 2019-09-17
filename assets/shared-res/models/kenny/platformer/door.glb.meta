@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038",
@@ -8,10 +8,25 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh door-0.mesh": {
+    "92006": {
+      "ver": "1.0.8",
+      "importer": "gltf-scene",
+      "uuid": "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@92006",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "92006",
+      "name": "door.prefab"
+    },
+    "76bb7": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@Mesh door-0.mesh",
+      "uuid": "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@76bb7",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "76bb7",
+      "name": "Mesh door-0.mesh"
     },
-    "Mesh door-1.mesh": {
+    "a29d4": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@Mesh door-1.mesh",
+      "uuid": "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@a29d4",
       "imported": true,
       "files": [
         ".json",
@@ -34,12 +51,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "a29d4",
+      "name": "Mesh door-1.mesh"
     },
-    "metal.material": {
+    "16ef1": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@metal.material",
+      "uuid": "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@16ef1",
       "imported": true,
       "files": [
         ".json"
@@ -47,12 +66,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "16ef1",
+      "name": "metal.material"
     },
-    "wood.material": {
+    "e4014": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@wood.material",
+      "uuid": "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@e4014",
       "imported": true,
       "files": [
         ".json"
@@ -60,12 +81,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "e4014",
+      "name": "wood.material"
     },
-    "woodDark.material": {
+    "938e8": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@woodDark.material",
+      "uuid": "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@938e8",
       "imported": true,
       "files": [
         ".json"
@@ -73,20 +96,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 2
-      }
-    },
-    "door.prefab": {
-      "ver": "1.0.8",
-      "importer": "gltf-scene",
-      "uuid": "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@door.prefab",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
+      },
+      "id": "938e8",
+      "name": "woodDark.material"
     }
   },
   "userData": {
@@ -94,19 +106,19 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@door.prefab",
+    "redirect": "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@92006",
     "assetFinder": {
       "meshes": [
-        "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@Mesh door-0.mesh",
-        "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@Mesh door-1.mesh"
+        "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@76bb7",
+        "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@a29d4"
       ],
       "materials": [
-        "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@metal.material",
-        "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@wood.material",
-        "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@woodDark.material"
+        "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@16ef1",
+        "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@e4014",
+        "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@938e8"
       ],
       "scenes": [
-        "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@door.prefab"
+        "cd1fcfd6-d0aa-492f-8cb7-cb3d10abf038@92006"
       ]
     }
   }

@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "19c9b4d4-da4b-4104-a790-8a4dc9bcc812",
@@ -8,10 +8,10 @@
     ".gltf"
   ],
   "subMetas": {
-    "paddle.mesh": {
+    "cfe3c": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "19c9b4d4-da4b-4104-a790-8a4dc9bcc812@paddle.mesh",
+      "uuid": "19c9b4d4-da4b-4104-a790-8a4dc9bcc812@cfe3c",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "cfe3c",
+      "name": "paddle.mesh"
     },
-    "wood.material": {
+    "e4014": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "19c9b4d4-da4b-4104-a790-8a4dc9bcc812@wood.material",
+      "uuid": "19c9b4d4-da4b-4104-a790-8a4dc9bcc812@e4014",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "e4014",
+      "name": "wood.material"
     },
-    "paddle.prefab": {
+    "b23ce": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "19c9b4d4-da4b-4104-a790-8a4dc9bcc812@paddle.prefab",
+      "uuid": "19c9b4d4-da4b-4104-a790-8a4dc9bcc812@b23ce",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "b23ce",
+      "name": "paddle.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "19c9b4d4-da4b-4104-a790-8a4dc9bcc812@paddle.prefab",
+    "redirect": "19c9b4d4-da4b-4104-a790-8a4dc9bcc812@b23ce",
     "assetFinder": {
       "meshes": [
-        "19c9b4d4-da4b-4104-a790-8a4dc9bcc812@paddle.mesh"
+        "19c9b4d4-da4b-4104-a790-8a4dc9bcc812@cfe3c"
       ],
       "materials": [
-        "19c9b4d4-da4b-4104-a790-8a4dc9bcc812@wood.material"
+        "19c9b4d4-da4b-4104-a790-8a4dc9bcc812@e4014"
       ],
       "scenes": [
-        "19c9b4d4-da4b-4104-a790-8a4dc9bcc812@paddle.prefab"
+        "19c9b4d4-da4b-4104-a790-8a4dc9bcc812@b23ce"
       ]
     }
   }

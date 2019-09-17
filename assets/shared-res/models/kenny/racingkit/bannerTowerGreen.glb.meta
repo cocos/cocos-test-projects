@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "4109a814-c662-48f6-98b8-f8b940a073ef",
@@ -8,10 +8,25 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh bannerTowerGreen.mesh": {
+    "53398": {
+      "ver": "1.0.10",
+      "importer": "gltf-material",
+      "uuid": "4109a814-c662-48f6-98b8-f8b940a073ef@53398",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 2
+      },
+      "id": "53398",
+      "name": "grass.material"
+    },
+    "fddc1": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "4109a814-c662-48f6-98b8-f8b940a073ef@Mesh bannerTowerGreen.mesh",
+      "uuid": "4109a814-c662-48f6-98b8-f8b940a073ef@fddc1",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "fddc1",
+      "name": "Mesh bannerTowerGreen.mesh"
     },
-    "_defaultMat.material": {
+    "0ee4f": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "4109a814-c662-48f6-98b8-f8b940a073ef@_defaultMat.material",
+      "uuid": "4109a814-c662-48f6-98b8-f8b940a073ef@0ee4f",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "0ee4f",
+      "name": "_defaultMat.material"
     },
-    "grey.material": {
+    "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "4109a814-c662-48f6-98b8-f8b940a073ef@grey.material",
+      "uuid": "4109a814-c662-48f6-98b8-f8b940a073ef@d63d5",
       "imported": true,
       "files": [
         ".json"
@@ -46,25 +65,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "d63d5",
+      "name": "grey.material"
     },
-    "grass.material": {
-      "ver": "1.0.10",
-      "importer": "gltf-material",
-      "uuid": "4109a814-c662-48f6-98b8-f8b940a073ef@grass.material",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 2
-      }
-    },
-    "bannerTowerGreen.prefab": {
+    "c35a9": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "4109a814-c662-48f6-98b8-f8b940a073ef@bannerTowerGreen.prefab",
+      "uuid": "4109a814-c662-48f6-98b8-f8b940a073ef@c35a9",
       "imported": true,
       "files": [
         ".json"
@@ -72,7 +80,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "c35a9",
+      "name": "bannerTowerGreen.prefab"
     }
   },
   "userData": {
@@ -80,18 +90,18 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "4109a814-c662-48f6-98b8-f8b940a073ef@bannerTowerGreen.prefab",
+    "redirect": "4109a814-c662-48f6-98b8-f8b940a073ef@c35a9",
     "assetFinder": {
       "meshes": [
-        "4109a814-c662-48f6-98b8-f8b940a073ef@Mesh bannerTowerGreen.mesh"
+        "4109a814-c662-48f6-98b8-f8b940a073ef@fddc1"
       ],
       "materials": [
-        "4109a814-c662-48f6-98b8-f8b940a073ef@_defaultMat.material",
-        "4109a814-c662-48f6-98b8-f8b940a073ef@grey.material",
-        "4109a814-c662-48f6-98b8-f8b940a073ef@grass.material"
+        "4109a814-c662-48f6-98b8-f8b940a073ef@0ee4f",
+        "4109a814-c662-48f6-98b8-f8b940a073ef@d63d5",
+        "4109a814-c662-48f6-98b8-f8b940a073ef@53398"
       ],
       "scenes": [
-        "4109a814-c662-48f6-98b8-f8b940a073ef@bannerTowerGreen.prefab"
+        "4109a814-c662-48f6-98b8-f8b940a073ef@c35a9"
       ]
     }
   }

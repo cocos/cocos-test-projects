@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "20db50f3-7222-4320-860e-73941951c4db",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh flag.mesh": {
+    "afb20": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "20db50f3-7222-4320-860e-73941951c4db@Mesh flag.mesh",
+      "uuid": "20db50f3-7222-4320-860e-73941951c4db@afb20",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "afb20",
+      "name": "Mesh flag.mesh"
     },
-    "woodDark.material": {
+    "938e8": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "20db50f3-7222-4320-860e-73941951c4db@woodDark.material",
+      "uuid": "20db50f3-7222-4320-860e-73941951c4db@938e8",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "938e8",
+      "name": "woodDark.material"
     },
-    "heart.material": {
+    "4e300": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "20db50f3-7222-4320-860e-73941951c4db@heart.material",
+      "uuid": "20db50f3-7222-4320-860e-73941951c4db@4e300",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "4e300",
+      "name": "heart.material"
     },
-    "flag.prefab": {
+    "c34d0": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "20db50f3-7222-4320-860e-73941951c4db@flag.prefab",
+      "uuid": "20db50f3-7222-4320-860e-73941951c4db@c34d0",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "c34d0",
+      "name": "flag.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "20db50f3-7222-4320-860e-73941951c4db@flag.prefab",
+    "redirect": "20db50f3-7222-4320-860e-73941951c4db@c34d0",
     "assetFinder": {
       "meshes": [
-        "20db50f3-7222-4320-860e-73941951c4db@Mesh flag.mesh"
+        "20db50f3-7222-4320-860e-73941951c4db@afb20"
       ],
       "materials": [
-        "20db50f3-7222-4320-860e-73941951c4db@woodDark.material",
-        "20db50f3-7222-4320-860e-73941951c4db@heart.material"
+        "20db50f3-7222-4320-860e-73941951c4db@938e8",
+        "20db50f3-7222-4320-860e-73941951c4db@4e300"
       ],
       "scenes": [
-        "20db50f3-7222-4320-860e-73941951c4db@flag.prefab"
+        "20db50f3-7222-4320-860e-73941951c4db@c34d0"
       ]
     }
   }

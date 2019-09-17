@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "b7f9c73b-6064-4a7d-9742-a02241a36f93",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh noExport.mesh": {
+    "a6d73": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "b7f9c73b-6064-4a7d-9742-a02241a36f93@Mesh noExport.mesh",
+      "uuid": "b7f9c73b-6064-4a7d-9742-a02241a36f93@a6d73",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "a6d73",
+      "name": "Mesh noExport.mesh"
     },
-    "net.image": {
+    "c2450": {
       "ver": "1.0.0",
       "importer": "gltf-embeded-image",
-      "uuid": "b7f9c73b-6064-4a7d-9742-a02241a36f93@net.image",
+      "uuid": "b7f9c73b-6064-4a7d-9742-a02241a36f93@c2450",
       "imported": true,
       "files": [
         ".png",
@@ -34,12 +36,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "c2450",
+      "name": "net.image"
     },
-    "UnnamedTexture.texture": {
+    "e39f7": {
       "ver": "1.0.19",
       "importer": "texture",
-      "uuid": "b7f9c73b-6064-4a7d-9742-a02241a36f93@UnnamedTexture.texture",
+      "uuid": "b7f9c73b-6064-4a7d-9742-a02241a36f93@e39f7",
       "imported": true,
       "files": [
         ".json"
@@ -54,13 +58,15 @@
         "premultiplyAlpha": false,
         "anisotropy": 1,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "b7f9c73b-6064-4a7d-9742-a02241a36f93@net.image"
-      }
+        "imageUuidOrDatabaseUri": "b7f9c73b-6064-4a7d-9742-a02241a36f93@c2450"
+      },
+      "id": "e39f7",
+      "name": "UnnamedTexture.texture"
     },
-    "grey.material": {
+    "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "b7f9c73b-6064-4a7d-9742-a02241a36f93@grey.material",
+      "uuid": "b7f9c73b-6064-4a7d-9742-a02241a36f93@d63d5",
       "imported": true,
       "files": [
         ".json"
@@ -68,12 +74,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "d63d5",
+      "name": "grey.material"
     },
-    "net.material": {
+    "54bcf": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "b7f9c73b-6064-4a7d-9742-a02241a36f93@net.material",
+      "uuid": "b7f9c73b-6064-4a7d-9742-a02241a36f93@54bcf",
       "imported": true,
       "files": [
         ".json"
@@ -81,12 +89,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "54bcf",
+      "name": "net.material"
     },
-    "fenceStraight.prefab": {
+    "2f921": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "b7f9c73b-6064-4a7d-9742-a02241a36f93@fenceStraight.prefab",
+      "uuid": "b7f9c73b-6064-4a7d-9742-a02241a36f93@2f921",
       "imported": true,
       "files": [
         ".json"
@@ -94,7 +104,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "2f921",
+      "name": "fenceStraight.prefab"
     }
   },
   "userData": {
@@ -102,26 +114,26 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "b7f9c73b-6064-4a7d-9742-a02241a36f93@fenceStraight.prefab",
+    "redirect": "b7f9c73b-6064-4a7d-9742-a02241a36f93@2f921",
     "assetFinder": {
       "meshes": [
-        "b7f9c73b-6064-4a7d-9742-a02241a36f93@Mesh noExport.mesh"
+        "b7f9c73b-6064-4a7d-9742-a02241a36f93@a6d73"
       ],
       "images": [
         {
           "embeded": true,
-          "uuidOrDatabaseUri": "b7f9c73b-6064-4a7d-9742-a02241a36f93@net.image"
+          "uuidOrDatabaseUri": "b7f9c73b-6064-4a7d-9742-a02241a36f93@c2450"
         }
       ],
       "textures": [
-        "b7f9c73b-6064-4a7d-9742-a02241a36f93@UnnamedTexture.texture"
+        "b7f9c73b-6064-4a7d-9742-a02241a36f93@e39f7"
       ],
       "materials": [
-        "b7f9c73b-6064-4a7d-9742-a02241a36f93@grey.material",
-        "b7f9c73b-6064-4a7d-9742-a02241a36f93@net.material"
+        "b7f9c73b-6064-4a7d-9742-a02241a36f93@d63d5",
+        "b7f9c73b-6064-4a7d-9742-a02241a36f93@54bcf"
       ],
       "scenes": [
-        "b7f9c73b-6064-4a7d-9742-a02241a36f93@fenceStraight.prefab"
+        "b7f9c73b-6064-4a7d-9742-a02241a36f93@2f921"
       ]
     }
   }

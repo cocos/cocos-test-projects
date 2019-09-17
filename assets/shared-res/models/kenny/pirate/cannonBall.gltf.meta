@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "eff3f334-db64-49ee-80eb-8e3dcf554783",
@@ -8,10 +8,10 @@
     ".gltf"
   ],
   "subMetas": {
-    "cannonBall.mesh": {
+    "c4527": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "eff3f334-db64-49ee-80eb-8e3dcf554783@cannonBall.mesh",
+      "uuid": "eff3f334-db64-49ee-80eb-8e3dcf554783@c4527",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "c4527",
+      "name": "cannonBall.mesh"
     },
-    "iron.material": {
+    "861c9": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "eff3f334-db64-49ee-80eb-8e3dcf554783@iron.material",
+      "uuid": "eff3f334-db64-49ee-80eb-8e3dcf554783@861c9",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "861c9",
+      "name": "iron.material"
     },
-    "cannonBall.prefab": {
+    "eec72": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "eff3f334-db64-49ee-80eb-8e3dcf554783@cannonBall.prefab",
+      "uuid": "eff3f334-db64-49ee-80eb-8e3dcf554783@eec72",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "eec72",
+      "name": "cannonBall.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "eff3f334-db64-49ee-80eb-8e3dcf554783@cannonBall.prefab",
+    "redirect": "eff3f334-db64-49ee-80eb-8e3dcf554783@eec72",
     "assetFinder": {
       "meshes": [
-        "eff3f334-db64-49ee-80eb-8e3dcf554783@cannonBall.mesh"
+        "eff3f334-db64-49ee-80eb-8e3dcf554783@c4527"
       ],
       "materials": [
-        "eff3f334-db64-49ee-80eb-8e3dcf554783@iron.material"
+        "eff3f334-db64-49ee-80eb-8e3dcf554783@861c9"
       ],
       "scenes": [
-        "eff3f334-db64-49ee-80eb-8e3dcf554783@cannonBall.prefab"
+        "eff3f334-db64-49ee-80eb-8e3dcf554783@eec72"
       ]
     }
   }

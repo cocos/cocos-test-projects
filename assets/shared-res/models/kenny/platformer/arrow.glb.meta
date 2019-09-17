@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "30db11e6-a84f-4873-a3e9-0952d56aad67",
@@ -8,24 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh arrow-0.mesh": {
+    "45187": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "30db11e6-a84f-4873-a3e9-0952d56aad67@Mesh arrow-0.mesh",
-      "imported": true,
-      "files": [
-        ".json",
-        ".bin"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
-    },
-    "Mesh arrow-1.mesh": {
-      "ver": "1.0.2",
-      "importer": "gltf-mesh",
-      "uuid": "30db11e6-a84f-4873-a3e9-0952d56aad67@Mesh arrow-1.mesh",
+      "uuid": "30db11e6-a84f-4873-a3e9-0952d56aad67@45187",
       "imported": true,
       "files": [
         ".json",
@@ -34,12 +20,30 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "45187",
+      "name": "Mesh arrow-1.mesh"
     },
-    "woodDark.material": {
+    "019e3": {
+      "ver": "1.0.2",
+      "importer": "gltf-mesh",
+      "uuid": "30db11e6-a84f-4873-a3e9-0952d56aad67@019e3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "019e3",
+      "name": "Mesh arrow-0.mesh"
+    },
+    "938e8": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "30db11e6-a84f-4873-a3e9-0952d56aad67@woodDark.material",
+      "uuid": "30db11e6-a84f-4873-a3e9-0952d56aad67@938e8",
       "imported": true,
       "files": [
         ".json"
@@ -47,12 +51,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "938e8",
+      "name": "woodDark.material"
     },
-    "wood.material": {
+    "e4014": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "30db11e6-a84f-4873-a3e9-0952d56aad67@wood.material",
+      "uuid": "30db11e6-a84f-4873-a3e9-0952d56aad67@e4014",
       "imported": true,
       "files": [
         ".json"
@@ -60,12 +66,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "e4014",
+      "name": "wood.material"
     },
-    "arrow.prefab": {
+    "0d683": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "30db11e6-a84f-4873-a3e9-0952d56aad67@arrow.prefab",
+      "uuid": "30db11e6-a84f-4873-a3e9-0952d56aad67@0d683",
       "imported": true,
       "files": [
         ".json"
@@ -73,7 +81,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "0d683",
+      "name": "arrow.prefab"
     }
   },
   "userData": {
@@ -81,18 +91,18 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "30db11e6-a84f-4873-a3e9-0952d56aad67@arrow.prefab",
+    "redirect": "30db11e6-a84f-4873-a3e9-0952d56aad67@0d683",
     "assetFinder": {
       "meshes": [
-        "30db11e6-a84f-4873-a3e9-0952d56aad67@Mesh arrow-0.mesh",
-        "30db11e6-a84f-4873-a3e9-0952d56aad67@Mesh arrow-1.mesh"
+        "30db11e6-a84f-4873-a3e9-0952d56aad67@019e3",
+        "30db11e6-a84f-4873-a3e9-0952d56aad67@45187"
       ],
       "materials": [
-        "30db11e6-a84f-4873-a3e9-0952d56aad67@woodDark.material",
-        "30db11e6-a84f-4873-a3e9-0952d56aad67@wood.material"
+        "30db11e6-a84f-4873-a3e9-0952d56aad67@938e8",
+        "30db11e6-a84f-4873-a3e9-0952d56aad67@e4014"
       ],
       "scenes": [
-        "30db11e6-a84f-4873-a3e9-0952d56aad67@arrow.prefab"
+        "30db11e6-a84f-4873-a3e9-0952d56aad67@0d683"
       ]
     }
   }

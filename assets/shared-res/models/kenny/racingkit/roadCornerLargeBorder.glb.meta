@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "72691ae9-088f-425c-bd7d-01ec07570bde",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh roadCornerLargeBorder.mesh": {
+    "2bd30": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "72691ae9-088f-425c-bd7d-01ec07570bde@Mesh roadCornerLargeBorder.mesh",
+      "uuid": "72691ae9-088f-425c-bd7d-01ec07570bde@2bd30",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "2bd30",
+      "name": "Mesh roadCornerLargeBorder.mesh"
     },
-    "white.material": {
+    "b31f4": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "72691ae9-088f-425c-bd7d-01ec07570bde@white.material",
+      "uuid": "72691ae9-088f-425c-bd7d-01ec07570bde@b31f4",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "b31f4",
+      "name": "white.material"
     },
-    "red.material": {
+    "92dfd": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "72691ae9-088f-425c-bd7d-01ec07570bde@red.material",
+      "uuid": "72691ae9-088f-425c-bd7d-01ec07570bde@92dfd",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "92dfd",
+      "name": "red.material"
     },
-    "roadCornerLargeBorder.prefab": {
+    "aa37b": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "72691ae9-088f-425c-bd7d-01ec07570bde@roadCornerLargeBorder.prefab",
+      "uuid": "72691ae9-088f-425c-bd7d-01ec07570bde@aa37b",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "aa37b",
+      "name": "roadCornerLargeBorder.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "72691ae9-088f-425c-bd7d-01ec07570bde@roadCornerLargeBorder.prefab",
+    "redirect": "72691ae9-088f-425c-bd7d-01ec07570bde@aa37b",
     "assetFinder": {
       "meshes": [
-        "72691ae9-088f-425c-bd7d-01ec07570bde@Mesh roadCornerLargeBorder.mesh"
+        "72691ae9-088f-425c-bd7d-01ec07570bde@2bd30"
       ],
       "materials": [
-        "72691ae9-088f-425c-bd7d-01ec07570bde@white.material",
-        "72691ae9-088f-425c-bd7d-01ec07570bde@red.material"
+        "72691ae9-088f-425c-bd7d-01ec07570bde@b31f4",
+        "72691ae9-088f-425c-bd7d-01ec07570bde@92dfd"
       ],
       "scenes": [
-        "72691ae9-088f-425c-bd7d-01ec07570bde@roadCornerLargeBorder.prefab"
+        "72691ae9-088f-425c-bd7d-01ec07570bde@aa37b"
       ]
     }
   }

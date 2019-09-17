@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "977ef531-2ffd-4fb1-a20f-a63483770b77",
@@ -8,10 +8,25 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh blockEnd.mesh": {
+    "53398": {
+      "ver": "1.0.10",
+      "importer": "gltf-material",
+      "uuid": "977ef531-2ffd-4fb1-a20f-a63483770b77@53398",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 1
+      },
+      "id": "53398",
+      "name": "grass.material"
+    },
+    "2feb7": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "977ef531-2ffd-4fb1-a20f-a63483770b77@Mesh blockEnd.mesh",
+      "uuid": "977ef531-2ffd-4fb1-a20f-a63483770b77@2feb7",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "2feb7",
+      "name": "Mesh blockEnd.mesh"
     },
-    "dirt.material": {
+    "3577b": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "977ef531-2ffd-4fb1-a20f-a63483770b77@dirt.material",
+      "uuid": "977ef531-2ffd-4fb1-a20f-a63483770b77@3577b",
       "imported": true,
       "files": [
         ".json"
@@ -33,25 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "3577b",
+      "name": "dirt.material"
     },
-    "grass.material": {
-      "ver": "1.0.10",
-      "importer": "gltf-material",
-      "uuid": "977ef531-2ffd-4fb1-a20f-a63483770b77@grass.material",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 1
-      }
-    },
-    "blockEnd.prefab": {
+    "dab40": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "977ef531-2ffd-4fb1-a20f-a63483770b77@blockEnd.prefab",
+      "uuid": "977ef531-2ffd-4fb1-a20f-a63483770b77@dab40",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "dab40",
+      "name": "blockEnd.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "977ef531-2ffd-4fb1-a20f-a63483770b77@blockEnd.prefab",
+    "redirect": "977ef531-2ffd-4fb1-a20f-a63483770b77@dab40",
     "assetFinder": {
       "meshes": [
-        "977ef531-2ffd-4fb1-a20f-a63483770b77@Mesh blockEnd.mesh"
+        "977ef531-2ffd-4fb1-a20f-a63483770b77@2feb7"
       ],
       "materials": [
-        "977ef531-2ffd-4fb1-a20f-a63483770b77@dirt.material",
-        "977ef531-2ffd-4fb1-a20f-a63483770b77@grass.material"
+        "977ef531-2ffd-4fb1-a20f-a63483770b77@3577b",
+        "977ef531-2ffd-4fb1-a20f-a63483770b77@53398"
       ],
       "scenes": [
-        "977ef531-2ffd-4fb1-a20f-a63483770b77@blockEnd.prefab"
+        "977ef531-2ffd-4fb1-a20f-a63483770b77@dab40"
       ]
     }
   }

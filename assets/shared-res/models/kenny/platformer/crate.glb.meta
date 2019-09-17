@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "5d49508f-5557-4331-9e03-91b0f73bbb0d",
@@ -8,10 +8,25 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh crate.mesh": {
+    "25299": {
+      "ver": "1.0.8",
+      "importer": "gltf-scene",
+      "uuid": "5d49508f-5557-4331-9e03-91b0f73bbb0d@25299",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "25299",
+      "name": "crate.prefab"
+    },
+    "e73a8": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "5d49508f-5557-4331-9e03-91b0f73bbb0d@Mesh crate.mesh",
+      "uuid": "5d49508f-5557-4331-9e03-91b0f73bbb0d@e73a8",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "e73a8",
+      "name": "Mesh crate.mesh"
     },
-    "wood.material": {
+    "e4014": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "5d49508f-5557-4331-9e03-91b0f73bbb0d@wood.material",
+      "uuid": "5d49508f-5557-4331-9e03-91b0f73bbb0d@e4014",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "e4014",
+      "name": "wood.material"
     },
-    "woodDark.material": {
+    "938e8": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "5d49508f-5557-4331-9e03-91b0f73bbb0d@woodDark.material",
+      "uuid": "5d49508f-5557-4331-9e03-91b0f73bbb0d@938e8",
       "imported": true,
       "files": [
         ".json"
@@ -46,20 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
-    },
-    "crate.prefab": {
-      "ver": "1.0.8",
-      "importer": "gltf-scene",
-      "uuid": "5d49508f-5557-4331-9e03-91b0f73bbb0d@crate.prefab",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
+      },
+      "id": "938e8",
+      "name": "woodDark.material"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "5d49508f-5557-4331-9e03-91b0f73bbb0d@crate.prefab",
+    "redirect": "5d49508f-5557-4331-9e03-91b0f73bbb0d@25299",
     "assetFinder": {
       "meshes": [
-        "5d49508f-5557-4331-9e03-91b0f73bbb0d@Mesh crate.mesh"
+        "5d49508f-5557-4331-9e03-91b0f73bbb0d@e73a8"
       ],
       "materials": [
-        "5d49508f-5557-4331-9e03-91b0f73bbb0d@wood.material",
-        "5d49508f-5557-4331-9e03-91b0f73bbb0d@woodDark.material"
+        "5d49508f-5557-4331-9e03-91b0f73bbb0d@e4014",
+        "5d49508f-5557-4331-9e03-91b0f73bbb0d@938e8"
       ],
       "scenes": [
-        "5d49508f-5557-4331-9e03-91b0f73bbb0d@crate.prefab"
+        "5d49508f-5557-4331-9e03-91b0f73bbb0d@25299"
       ]
     }
   }

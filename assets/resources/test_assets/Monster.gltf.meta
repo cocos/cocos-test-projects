@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "84db66ec-643f-4e78-b06c-3af1ac7a4871",
@@ -8,10 +8,10 @@
     ".gltf"
   ],
   "subMetas": {
-    "monster.mesh": {
+    "cf79d": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "84db66ec-643f-4e78-b06c-3af1ac7a4871@monster.mesh",
+      "uuid": "84db66ec-643f-4e78-b06c-3af1ac7a4871@cf79d",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "cf79d",
+      "name": "monster.mesh"
     },
-    ".animation": {
+    "ce256": {
       "ver": "1.0.10",
       "importer": "gltf-animation",
-      "uuid": "84db66ec-643f-4e78-b06c-3af1ac7a4871@.animation",
+      "uuid": "84db66ec-643f-4e78-b06c-3af1ac7a4871@ce256",
       "imported": true,
       "files": [
         ".json"
@@ -39,12 +41,14 @@
           "to": 3.333329916000366
         },
         "events": []
-      }
+      },
+      "id": "ce256",
+      "name": ".animation"
     },
-    "Armature.skeleton": {
+    "f9d1d": {
       "ver": "1.0.0",
       "importer": "gltf-skeleton",
-      "uuid": "84db66ec-643f-4e78-b06c-3af1ac7a4871@Armature.skeleton",
+      "uuid": "84db66ec-643f-4e78-b06c-3af1ac7a4871@f9d1d",
       "imported": true,
       "files": [
         ".json"
@@ -52,12 +56,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "f9d1d",
+      "name": "Armature.skeleton"
     },
-    "UnnamedTexture.texture": {
+    "e39f7": {
       "ver": "1.0.19",
       "importer": "texture",
-      "uuid": "84db66ec-643f-4e78-b06c-3af1ac7a4871@UnnamedTexture.texture",
+      "uuid": "84db66ec-643f-4e78-b06c-3af1ac7a4871@e39f7",
       "imported": true,
       "files": [
         ".json"
@@ -73,12 +79,14 @@
         "anisotropy": 1,
         "isUuid": false,
         "imageUuidOrDatabaseUri": "db://assets/resources/test_assets/Monster.jpg"
-      }
+      },
+      "id": "e39f7",
+      "name": "UnnamedTexture.texture"
     },
-    "monster-effect.material": {
+    "58bf7": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "84db66ec-643f-4e78-b06c-3af1ac7a4871@monster-effect.material",
+      "uuid": "84db66ec-643f-4e78-b06c-3af1ac7a4871@58bf7",
       "imported": true,
       "files": [
         ".json"
@@ -86,12 +94,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "58bf7",
+      "name": "monster-effect.material"
     },
-    "Monster.prefab": {
+    "a07f9": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "84db66ec-643f-4e78-b06c-3af1ac7a4871@Monster.prefab",
+      "uuid": "84db66ec-643f-4e78-b06c-3af1ac7a4871@a07f9",
       "imported": true,
       "files": [
         ".json"
@@ -99,7 +109,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "a07f9",
+      "name": "Monster.prefab"
     }
   },
   "userData": {
@@ -121,13 +133,13 @@
         ]
       }
     ],
-    "redirect": "84db66ec-643f-4e78-b06c-3af1ac7a4871@Monster.prefab",
+    "redirect": "84db66ec-643f-4e78-b06c-3af1ac7a4871@a07f9",
     "assetFinder": {
       "meshes": [
-        "84db66ec-643f-4e78-b06c-3af1ac7a4871@monster.mesh"
+        "84db66ec-643f-4e78-b06c-3af1ac7a4871@cf79d"
       ],
       "skeletons": [
-        "84db66ec-643f-4e78-b06c-3af1ac7a4871@Armature.skeleton"
+        "84db66ec-643f-4e78-b06c-3af1ac7a4871@f9d1d"
       ],
       "images": [
         {
@@ -136,13 +148,13 @@
         }
       ],
       "textures": [
-        "84db66ec-643f-4e78-b06c-3af1ac7a4871@UnnamedTexture.texture"
+        "84db66ec-643f-4e78-b06c-3af1ac7a4871@e39f7"
       ],
       "materials": [
-        "84db66ec-643f-4e78-b06c-3af1ac7a4871@monster-effect.material"
+        "84db66ec-643f-4e78-b06c-3af1ac7a4871@58bf7"
       ],
       "scenes": [
-        "84db66ec-643f-4e78-b06c-3af1ac7a4871@Monster.prefab"
+        "84db66ec-643f-4e78-b06c-3af1ac7a4871@a07f9"
       ]
     }
   }

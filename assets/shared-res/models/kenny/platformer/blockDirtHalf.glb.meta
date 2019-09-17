@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "98ba54e9-8e88-43b7-839b-74b38ba43169",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh blockDirtHalf.mesh": {
+    "27959": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "98ba54e9-8e88-43b7-839b-74b38ba43169@Mesh blockDirtHalf.mesh",
+      "uuid": "98ba54e9-8e88-43b7-839b-74b38ba43169@27959",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "27959",
+      "name": "Mesh blockDirtHalf.mesh"
     },
-    "dirt.material": {
+    "3577b": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "98ba54e9-8e88-43b7-839b-74b38ba43169@dirt.material",
+      "uuid": "98ba54e9-8e88-43b7-839b-74b38ba43169@3577b",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "3577b",
+      "name": "dirt.material"
     },
-    "blockDirtHalf.prefab": {
+    "1b122": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "98ba54e9-8e88-43b7-839b-74b38ba43169@blockDirtHalf.prefab",
+      "uuid": "98ba54e9-8e88-43b7-839b-74b38ba43169@1b122",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "1b122",
+      "name": "blockDirtHalf.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "98ba54e9-8e88-43b7-839b-74b38ba43169@blockDirtHalf.prefab",
+    "redirect": "98ba54e9-8e88-43b7-839b-74b38ba43169@1b122",
     "assetFinder": {
       "meshes": [
-        "98ba54e9-8e88-43b7-839b-74b38ba43169@Mesh blockDirtHalf.mesh"
+        "98ba54e9-8e88-43b7-839b-74b38ba43169@27959"
       ],
       "materials": [
-        "98ba54e9-8e88-43b7-839b-74b38ba43169@dirt.material"
+        "98ba54e9-8e88-43b7-839b-74b38ba43169@3577b"
       ],
       "scenes": [
-        "98ba54e9-8e88-43b7-839b-74b38ba43169@blockDirtHalf.prefab"
+        "98ba54e9-8e88-43b7-839b-74b38ba43169@1b122"
       ]
     }
   }

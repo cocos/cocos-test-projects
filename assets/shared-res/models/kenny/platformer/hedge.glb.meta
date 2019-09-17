@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "2cd81cea-3eb5-4659-823b-217cfe8d0d5a",
@@ -8,10 +8,25 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh hedge.mesh": {
+    "53398": {
+      "ver": "1.0.10",
+      "importer": "gltf-material",
+      "uuid": "2cd81cea-3eb5-4659-823b-217cfe8d0d5a@53398",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "53398",
+      "name": "grass.material"
+    },
+    "6b403": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "2cd81cea-3eb5-4659-823b-217cfe8d0d5a@Mesh hedge.mesh",
+      "uuid": "2cd81cea-3eb5-4659-823b-217cfe8d0d5a@6b403",
       "imported": true,
       "files": [
         ".json",
@@ -20,25 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "6b403",
+      "name": "Mesh hedge.mesh"
     },
-    "grass.material": {
-      "ver": "1.0.10",
-      "importer": "gltf-material",
-      "uuid": "2cd81cea-3eb5-4659-823b-217cfe8d0d5a@grass.material",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
-    },
-    "hedge.prefab": {
+    "75b44": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "2cd81cea-3eb5-4659-823b-217cfe8d0d5a@hedge.prefab",
+      "uuid": "2cd81cea-3eb5-4659-823b-217cfe8d0d5a@75b44",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "75b44",
+      "name": "hedge.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "2cd81cea-3eb5-4659-823b-217cfe8d0d5a@hedge.prefab",
+    "redirect": "2cd81cea-3eb5-4659-823b-217cfe8d0d5a@75b44",
     "assetFinder": {
       "meshes": [
-        "2cd81cea-3eb5-4659-823b-217cfe8d0d5a@Mesh hedge.mesh"
+        "2cd81cea-3eb5-4659-823b-217cfe8d0d5a@6b403"
       ],
       "materials": [
-        "2cd81cea-3eb5-4659-823b-217cfe8d0d5a@grass.material"
+        "2cd81cea-3eb5-4659-823b-217cfe8d0d5a@53398"
       ],
       "scenes": [
-        "2cd81cea-3eb5-4659-823b-217cfe8d0d5a@hedge.prefab"
+        "2cd81cea-3eb5-4659-823b-217cfe8d0d5a@75b44"
       ]
     }
   }

@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "31feb60c-6ae0-47c7-a525-6b9083206416",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh roadCornerBridgeLarge.mesh": {
+    "2d3aa": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "31feb60c-6ae0-47c7-a525-6b9083206416@Mesh roadCornerBridgeLarge.mesh",
+      "uuid": "31feb60c-6ae0-47c7-a525-6b9083206416@2d3aa",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "2d3aa",
+      "name": "Mesh roadCornerBridgeLarge.mesh"
     },
-    "wall.material": {
+    "7d412": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "31feb60c-6ae0-47c7-a525-6b9083206416@wall.material",
+      "uuid": "31feb60c-6ae0-47c7-a525-6b9083206416@7d412",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "7d412",
+      "name": "wall.material"
     },
-    "grey.material": {
+    "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "31feb60c-6ae0-47c7-a525-6b9083206416@grey.material",
+      "uuid": "31feb60c-6ae0-47c7-a525-6b9083206416@d63d5",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "d63d5",
+      "name": "grey.material"
     },
-    "road.material": {
+    "35ea4": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "31feb60c-6ae0-47c7-a525-6b9083206416@road.material",
+      "uuid": "31feb60c-6ae0-47c7-a525-6b9083206416@35ea4",
       "imported": true,
       "files": [
         ".json"
@@ -59,12 +65,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 2
-      }
+      },
+      "id": "35ea4",
+      "name": "road.material"
     },
-    "roadCornerBridgeLarge.prefab": {
+    "633b6": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "31feb60c-6ae0-47c7-a525-6b9083206416@roadCornerBridgeLarge.prefab",
+      "uuid": "31feb60c-6ae0-47c7-a525-6b9083206416@633b6",
       "imported": true,
       "files": [
         ".json"
@@ -72,7 +80,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "633b6",
+      "name": "roadCornerBridgeLarge.prefab"
     }
   },
   "userData": {
@@ -80,18 +90,18 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "31feb60c-6ae0-47c7-a525-6b9083206416@roadCornerBridgeLarge.prefab",
+    "redirect": "31feb60c-6ae0-47c7-a525-6b9083206416@633b6",
     "assetFinder": {
       "meshes": [
-        "31feb60c-6ae0-47c7-a525-6b9083206416@Mesh roadCornerBridgeLarge.mesh"
+        "31feb60c-6ae0-47c7-a525-6b9083206416@2d3aa"
       ],
       "materials": [
-        "31feb60c-6ae0-47c7-a525-6b9083206416@wall.material",
-        "31feb60c-6ae0-47c7-a525-6b9083206416@grey.material",
-        "31feb60c-6ae0-47c7-a525-6b9083206416@road.material"
+        "31feb60c-6ae0-47c7-a525-6b9083206416@7d412",
+        "31feb60c-6ae0-47c7-a525-6b9083206416@d63d5",
+        "31feb60c-6ae0-47c7-a525-6b9083206416@35ea4"
       ],
       "scenes": [
-        "31feb60c-6ae0-47c7-a525-6b9083206416@roadCornerBridgeLarge.prefab"
+        "31feb60c-6ae0-47c7-a525-6b9083206416@633b6"
       ]
     }
   }

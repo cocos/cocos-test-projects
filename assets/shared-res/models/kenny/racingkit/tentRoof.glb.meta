@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "08aa84bf-500c-4728-a8b0-2efd8fbe3cb7",
@@ -8,10 +8,25 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh tentRoof.mesh": {
+    "53398": {
+      "ver": "1.0.10",
+      "importer": "gltf-material",
+      "uuid": "08aa84bf-500c-4728-a8b0-2efd8fbe3cb7@53398",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 1
+      },
+      "id": "53398",
+      "name": "grass.material"
+    },
+    "e828e": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "08aa84bf-500c-4728-a8b0-2efd8fbe3cb7@Mesh tentRoof.mesh",
+      "uuid": "08aa84bf-500c-4728-a8b0-2efd8fbe3cb7@e828e",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "e828e",
+      "name": "Mesh tentRoof.mesh"
     },
-    "grey.material": {
+    "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "08aa84bf-500c-4728-a8b0-2efd8fbe3cb7@grey.material",
+      "uuid": "08aa84bf-500c-4728-a8b0-2efd8fbe3cb7@d63d5",
       "imported": true,
       "files": [
         ".json"
@@ -33,25 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "d63d5",
+      "name": "grey.material"
     },
-    "grass.material": {
-      "ver": "1.0.10",
-      "importer": "gltf-material",
-      "uuid": "08aa84bf-500c-4728-a8b0-2efd8fbe3cb7@grass.material",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 1
-      }
-    },
-    "tentRoof.prefab": {
+    "edaa8": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "08aa84bf-500c-4728-a8b0-2efd8fbe3cb7@tentRoof.prefab",
+      "uuid": "08aa84bf-500c-4728-a8b0-2efd8fbe3cb7@edaa8",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "edaa8",
+      "name": "tentRoof.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "08aa84bf-500c-4728-a8b0-2efd8fbe3cb7@tentRoof.prefab",
+    "redirect": "08aa84bf-500c-4728-a8b0-2efd8fbe3cb7@edaa8",
     "assetFinder": {
       "meshes": [
-        "08aa84bf-500c-4728-a8b0-2efd8fbe3cb7@Mesh tentRoof.mesh"
+        "08aa84bf-500c-4728-a8b0-2efd8fbe3cb7@e828e"
       ],
       "materials": [
-        "08aa84bf-500c-4728-a8b0-2efd8fbe3cb7@grey.material",
-        "08aa84bf-500c-4728-a8b0-2efd8fbe3cb7@grass.material"
+        "08aa84bf-500c-4728-a8b0-2efd8fbe3cb7@d63d5",
+        "08aa84bf-500c-4728-a8b0-2efd8fbe3cb7@53398"
       ],
       "scenes": [
-        "08aa84bf-500c-4728-a8b0-2efd8fbe3cb7@tentRoof.prefab"
+        "08aa84bf-500c-4728-a8b0-2efd8fbe3cb7@edaa8"
       ]
     }
   }

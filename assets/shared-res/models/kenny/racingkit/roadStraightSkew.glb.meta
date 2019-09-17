@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "37b93a5f-9e55-4391-9eaf-7c2b511efcfc",
@@ -8,10 +8,25 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh roadStraightSkew.mesh": {
+    "53398": {
+      "ver": "1.0.10",
+      "importer": "gltf-material",
+      "uuid": "37b93a5f-9e55-4391-9eaf-7c2b511efcfc@53398",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "53398",
+      "name": "grass.material"
+    },
+    "b7762": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "37b93a5f-9e55-4391-9eaf-7c2b511efcfc@Mesh roadStraightSkew.mesh",
+      "uuid": "37b93a5f-9e55-4391-9eaf-7c2b511efcfc@b7762",
       "imported": true,
       "files": [
         ".json",
@@ -20,25 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "b7762",
+      "name": "Mesh roadStraightSkew.mesh"
     },
-    "grass.material": {
+    "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "37b93a5f-9e55-4391-9eaf-7c2b511efcfc@grass.material",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
-    },
-    "grey.material": {
-      "ver": "1.0.10",
-      "importer": "gltf-material",
-      "uuid": "37b93a5f-9e55-4391-9eaf-7c2b511efcfc@grey.material",
+      "uuid": "37b93a5f-9e55-4391-9eaf-7c2b511efcfc@d63d5",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "d63d5",
+      "name": "grey.material"
     },
-    "road.material": {
+    "35ea4": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "37b93a5f-9e55-4391-9eaf-7c2b511efcfc@road.material",
+      "uuid": "37b93a5f-9e55-4391-9eaf-7c2b511efcfc@35ea4",
       "imported": true,
       "files": [
         ".json"
@@ -59,12 +65,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 2
-      }
+      },
+      "id": "35ea4",
+      "name": "road.material"
     },
-    "roadStraightSkew.prefab": {
+    "187c6": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "37b93a5f-9e55-4391-9eaf-7c2b511efcfc@roadStraightSkew.prefab",
+      "uuid": "37b93a5f-9e55-4391-9eaf-7c2b511efcfc@187c6",
       "imported": true,
       "files": [
         ".json"
@@ -72,7 +80,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "187c6",
+      "name": "roadStraightSkew.prefab"
     }
   },
   "userData": {
@@ -80,18 +90,18 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "37b93a5f-9e55-4391-9eaf-7c2b511efcfc@roadStraightSkew.prefab",
+    "redirect": "37b93a5f-9e55-4391-9eaf-7c2b511efcfc@187c6",
     "assetFinder": {
       "meshes": [
-        "37b93a5f-9e55-4391-9eaf-7c2b511efcfc@Mesh roadStraightSkew.mesh"
+        "37b93a5f-9e55-4391-9eaf-7c2b511efcfc@b7762"
       ],
       "materials": [
-        "37b93a5f-9e55-4391-9eaf-7c2b511efcfc@grass.material",
-        "37b93a5f-9e55-4391-9eaf-7c2b511efcfc@grey.material",
-        "37b93a5f-9e55-4391-9eaf-7c2b511efcfc@road.material"
+        "37b93a5f-9e55-4391-9eaf-7c2b511efcfc@53398",
+        "37b93a5f-9e55-4391-9eaf-7c2b511efcfc@d63d5",
+        "37b93a5f-9e55-4391-9eaf-7c2b511efcfc@35ea4"
       ],
       "scenes": [
-        "37b93a5f-9e55-4391-9eaf-7c2b511efcfc@roadStraightSkew.prefab"
+        "37b93a5f-9e55-4391-9eaf-7c2b511efcfc@187c6"
       ]
     }
   }

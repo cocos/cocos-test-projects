@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "4786b9a5-4a56-4e66-94de-bbeec2b14ccd",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh spikesLarge.mesh": {
+    "be8f2": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "4786b9a5-4a56-4e66-94de-bbeec2b14ccd@Mesh spikesLarge.mesh",
+      "uuid": "4786b9a5-4a56-4e66-94de-bbeec2b14ccd@be8f2",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "be8f2",
+      "name": "Mesh spikesLarge.mesh"
     },
-    "metal.material": {
+    "16ef1": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "4786b9a5-4a56-4e66-94de-bbeec2b14ccd@metal.material",
+      "uuid": "4786b9a5-4a56-4e66-94de-bbeec2b14ccd@16ef1",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "16ef1",
+      "name": "metal.material"
     },
-    "spikesLarge.prefab": {
+    "d0dfa": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "4786b9a5-4a56-4e66-94de-bbeec2b14ccd@spikesLarge.prefab",
+      "uuid": "4786b9a5-4a56-4e66-94de-bbeec2b14ccd@d0dfa",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "d0dfa",
+      "name": "spikesLarge.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "4786b9a5-4a56-4e66-94de-bbeec2b14ccd@spikesLarge.prefab",
+    "redirect": "4786b9a5-4a56-4e66-94de-bbeec2b14ccd@d0dfa",
     "assetFinder": {
       "meshes": [
-        "4786b9a5-4a56-4e66-94de-bbeec2b14ccd@Mesh spikesLarge.mesh"
+        "4786b9a5-4a56-4e66-94de-bbeec2b14ccd@be8f2"
       ],
       "materials": [
-        "4786b9a5-4a56-4e66-94de-bbeec2b14ccd@metal.material"
+        "4786b9a5-4a56-4e66-94de-bbeec2b14ccd@16ef1"
       ],
       "scenes": [
-        "4786b9a5-4a56-4e66-94de-bbeec2b14ccd@spikesLarge.prefab"
+        "4786b9a5-4a56-4e66-94de-bbeec2b14ccd@d0dfa"
       ]
     }
   }

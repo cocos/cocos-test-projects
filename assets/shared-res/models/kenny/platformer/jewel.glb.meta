@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "7de89826-8ed0-4eac-ae63-06587b187208",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh jewel.mesh": {
+    "62add": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "7de89826-8ed0-4eac-ae63-06587b187208@Mesh jewel.mesh",
+      "uuid": "7de89826-8ed0-4eac-ae63-06587b187208@62add",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "62add",
+      "name": "Mesh jewel.mesh"
     },
-    "gold.material": {
+    "9dbcb": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "7de89826-8ed0-4eac-ae63-06587b187208@gold.material",
+      "uuid": "7de89826-8ed0-4eac-ae63-06587b187208@9dbcb",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "9dbcb",
+      "name": "gold.material"
     },
-    "jewel.prefab": {
+    "e3cdc": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "7de89826-8ed0-4eac-ae63-06587b187208@jewel.prefab",
+      "uuid": "7de89826-8ed0-4eac-ae63-06587b187208@e3cdc",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "e3cdc",
+      "name": "jewel.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "7de89826-8ed0-4eac-ae63-06587b187208@jewel.prefab",
+    "redirect": "7de89826-8ed0-4eac-ae63-06587b187208@e3cdc",
     "assetFinder": {
       "meshes": [
-        "7de89826-8ed0-4eac-ae63-06587b187208@Mesh jewel.mesh"
+        "7de89826-8ed0-4eac-ae63-06587b187208@62add"
       ],
       "materials": [
-        "7de89826-8ed0-4eac-ae63-06587b187208@gold.material"
+        "7de89826-8ed0-4eac-ae63-06587b187208@9dbcb"
       ],
       "scenes": [
-        "7de89826-8ed0-4eac-ae63-06587b187208@jewel.prefab"
+        "7de89826-8ed0-4eac-ae63-06587b187208@e3cdc"
       ]
     }
   }

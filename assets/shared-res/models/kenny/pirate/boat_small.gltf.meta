@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "af8c778e-939c-495f-9234-ca832e59a5ac",
@@ -8,10 +8,10 @@
     ".gltf"
   ],
   "subMetas": {
-    "boat_small_8angles.mesh": {
+    "58c07": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "af8c778e-939c-495f-9234-ca832e59a5ac@boat_small_8angles.mesh",
+      "uuid": "af8c778e-939c-495f-9234-ca832e59a5ac@58c07",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "58c07",
+      "name": "boat_small_8angles.mesh"
     },
-    "wood.material": {
+    "e4014": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "af8c778e-939c-495f-9234-ca832e59a5ac@wood.material",
+      "uuid": "af8c778e-939c-495f-9234-ca832e59a5ac@e4014",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "e4014",
+      "name": "wood.material"
     },
-    "boat_small.prefab": {
+    "edc40": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "af8c778e-939c-495f-9234-ca832e59a5ac@boat_small.prefab",
+      "uuid": "af8c778e-939c-495f-9234-ca832e59a5ac@edc40",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "edc40",
+      "name": "boat_small.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "af8c778e-939c-495f-9234-ca832e59a5ac@boat_small.prefab",
+    "redirect": "af8c778e-939c-495f-9234-ca832e59a5ac@edc40",
     "assetFinder": {
       "meshes": [
-        "af8c778e-939c-495f-9234-ca832e59a5ac@boat_small_8angles.mesh"
+        "af8c778e-939c-495f-9234-ca832e59a5ac@58c07"
       ],
       "materials": [
-        "af8c778e-939c-495f-9234-ca832e59a5ac@wood.material"
+        "af8c778e-939c-495f-9234-ca832e59a5ac@e4014"
       ],
       "scenes": [
-        "af8c778e-939c-495f-9234-ca832e59a5ac@boat_small.prefab"
+        "af8c778e-939c-495f-9234-ca832e59a5ac@edc40"
       ]
     }
   }

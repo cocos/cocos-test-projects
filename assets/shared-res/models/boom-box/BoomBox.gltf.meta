@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "9c06e1bc-7469-4c8f-9aef-9531d05e337a",
@@ -8,129 +8,25 @@
     ".gltf"
   ],
   "subMetas": {
-    "BoomBox.mesh": {
-      "ver": "1.0.2",
-      "importer": "gltf-mesh",
-      "uuid": "9c06e1bc-7469-4c8f-9aef-9531d05e337a@BoomBox.mesh",
+    "48021": {
+      "ver": "1.0.10",
+      "importer": "gltf-material",
+      "uuid": "9c06e1bc-7469-4c8f-9aef-9531d05e337a@48021",
       "imported": true,
       "files": [
-        ".json",
-        ".bin"
+        ".json"
       ],
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "48021",
+      "name": "BoomBox_Mat.material"
     },
-    "UnnamedTexture-0.texture": {
+    "50743": {
       "ver": "1.0.19",
       "importer": "texture",
-      "uuid": "9c06e1bc-7469-4c8f-9aef-9531d05e337a@UnnamedTexture-0.texture",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "wrapModeS": "repeat",
-        "wrapModeT": "repeat",
-        "minfilter": "linear",
-        "magfilter": "linear",
-        "mipfilter": "none",
-        "premultiplyAlpha": false,
-        "anisotropy": 1,
-        "isUuid": false,
-        "imageUuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_baseColor.png"
-      }
-    },
-    "UnnamedTexture-1.texture": {
-      "ver": "1.0.19",
-      "importer": "texture",
-      "uuid": "9c06e1bc-7469-4c8f-9aef-9531d05e337a@UnnamedTexture-1.texture",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "wrapModeS": "repeat",
-        "wrapModeT": "repeat",
-        "minfilter": "linear",
-        "magfilter": "linear",
-        "mipfilter": "none",
-        "premultiplyAlpha": false,
-        "anisotropy": 1,
-        "isUuid": false,
-        "imageUuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_roughnessMetallic.png"
-      }
-    },
-    "UnnamedTexture-2.texture": {
-      "ver": "1.0.19",
-      "importer": "texture",
-      "uuid": "9c06e1bc-7469-4c8f-9aef-9531d05e337a@UnnamedTexture-2.texture",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "wrapModeS": "repeat",
-        "wrapModeT": "repeat",
-        "minfilter": "linear",
-        "magfilter": "linear",
-        "mipfilter": "none",
-        "premultiplyAlpha": false,
-        "anisotropy": 1,
-        "isUuid": false,
-        "imageUuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_normal.png"
-      }
-    },
-    "UnnamedTexture-3.texture": {
-      "ver": "1.0.19",
-      "importer": "texture",
-      "uuid": "9c06e1bc-7469-4c8f-9aef-9531d05e337a@UnnamedTexture-3.texture",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "wrapModeS": "repeat",
-        "wrapModeT": "repeat",
-        "minfilter": "linear",
-        "magfilter": "linear",
-        "mipfilter": "none",
-        "premultiplyAlpha": false,
-        "anisotropy": 1,
-        "isUuid": false,
-        "imageUuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_emissive.png"
-      }
-    },
-    "UnnamedTexture-4.texture": {
-      "ver": "1.0.19",
-      "importer": "texture",
-      "uuid": "9c06e1bc-7469-4c8f-9aef-9531d05e337a@UnnamedTexture-4.texture",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "wrapModeS": "repeat",
-        "wrapModeT": "repeat",
-        "minfilter": "linear",
-        "magfilter": "linear",
-        "mipfilter": "none",
-        "premultiplyAlpha": false,
-        "anisotropy": 1,
-        "isUuid": false,
-        "imageUuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_occlusion.png"
-      }
-    },
-    "UnnamedTexture-5.texture": {
-      "ver": "1.0.19",
-      "importer": "texture",
-      "uuid": "9c06e1bc-7469-4c8f-9aef-9531d05e337a@UnnamedTexture-5.texture",
+      "uuid": "9c06e1bc-7469-4c8f-9aef-9531d05e337a@50743",
       "imported": true,
       "files": [
         ".json"
@@ -146,12 +42,145 @@
         "anisotropy": 1,
         "isUuid": false,
         "imageUuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_diffuse.png"
-      }
+      },
+      "id": "50743",
+      "name": "UnnamedTexture-5.texture"
     },
-    "UnnamedTexture-6.texture": {
+    "f85dc": {
+      "ver": "1.0.2",
+      "importer": "gltf-mesh",
+      "uuid": "9c06e1bc-7469-4c8f-9aef-9531d05e337a@f85dc",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "f85dc",
+      "name": "BoomBox.mesh"
+    },
+    "3effa": {
       "ver": "1.0.19",
       "importer": "texture",
-      "uuid": "9c06e1bc-7469-4c8f-9aef-9531d05e337a@UnnamedTexture-6.texture",
+      "uuid": "9c06e1bc-7469-4c8f-9aef-9531d05e337a@3effa",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "premultiplyAlpha": false,
+        "anisotropy": 1,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_baseColor.png"
+      },
+      "id": "3effa",
+      "name": "UnnamedTexture-0.texture"
+    },
+    "221a5": {
+      "ver": "1.0.19",
+      "importer": "texture",
+      "uuid": "9c06e1bc-7469-4c8f-9aef-9531d05e337a@221a5",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "premultiplyAlpha": false,
+        "anisotropy": 1,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_roughnessMetallic.png"
+      },
+      "id": "221a5",
+      "name": "UnnamedTexture-1.texture"
+    },
+    "0089c": {
+      "ver": "1.0.19",
+      "importer": "texture",
+      "uuid": "9c06e1bc-7469-4c8f-9aef-9531d05e337a@0089c",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "premultiplyAlpha": false,
+        "anisotropy": 1,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_normal.png"
+      },
+      "id": "0089c",
+      "name": "UnnamedTexture-2.texture"
+    },
+    "9b633": {
+      "ver": "1.0.19",
+      "importer": "texture",
+      "uuid": "9c06e1bc-7469-4c8f-9aef-9531d05e337a@9b633",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "premultiplyAlpha": false,
+        "anisotropy": 1,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_emissive.png"
+      },
+      "id": "9b633",
+      "name": "UnnamedTexture-3.texture"
+    },
+    "9b782": {
+      "ver": "1.0.19",
+      "importer": "texture",
+      "uuid": "9c06e1bc-7469-4c8f-9aef-9531d05e337a@9b782",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "premultiplyAlpha": false,
+        "anisotropy": 1,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_occlusion.png"
+      },
+      "id": "9b782",
+      "name": "UnnamedTexture-4.texture"
+    },
+    "99ea5": {
+      "ver": "1.0.19",
+      "importer": "texture",
+      "uuid": "9c06e1bc-7469-4c8f-9aef-9531d05e337a@99ea5",
       "imported": true,
       "files": [
         ".json"
@@ -167,25 +196,14 @@
         "anisotropy": 1,
         "isUuid": false,
         "imageUuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_specularGlossiness.png"
-      }
+      },
+      "id": "99ea5",
+      "name": "UnnamedTexture-6.texture"
     },
-    "BoomBox_Mat.material": {
-      "ver": "1.0.10",
-      "importer": "gltf-material",
-      "uuid": "9c06e1bc-7469-4c8f-9aef-9531d05e337a@BoomBox_Mat.material",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
-    },
-    "BoomBox.prefab": {
+    "49d89": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "9c06e1bc-7469-4c8f-9aef-9531d05e337a@BoomBox.prefab",
+      "uuid": "9c06e1bc-7469-4c8f-9aef-9531d05e337a@49d89",
       "imported": true,
       "files": [
         ".json"
@@ -193,7 +211,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "49d89",
+      "name": "BoomBox.prefab"
     }
   },
   "userData": {
@@ -201,10 +221,10 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "9c06e1bc-7469-4c8f-9aef-9531d05e337a@BoomBox.prefab",
+    "redirect": "9c06e1bc-7469-4c8f-9aef-9531d05e337a@49d89",
     "assetFinder": {
       "meshes": [
-        "9c06e1bc-7469-4c8f-9aef-9531d05e337a@BoomBox.mesh"
+        "9c06e1bc-7469-4c8f-9aef-9531d05e337a@f85dc"
       ],
       "images": [
         {
@@ -237,19 +257,19 @@
         }
       ],
       "textures": [
-        "9c06e1bc-7469-4c8f-9aef-9531d05e337a@UnnamedTexture-0.texture",
-        "9c06e1bc-7469-4c8f-9aef-9531d05e337a@UnnamedTexture-1.texture",
-        "9c06e1bc-7469-4c8f-9aef-9531d05e337a@UnnamedTexture-2.texture",
-        "9c06e1bc-7469-4c8f-9aef-9531d05e337a@UnnamedTexture-3.texture",
-        "9c06e1bc-7469-4c8f-9aef-9531d05e337a@UnnamedTexture-4.texture",
-        "9c06e1bc-7469-4c8f-9aef-9531d05e337a@UnnamedTexture-5.texture",
-        "9c06e1bc-7469-4c8f-9aef-9531d05e337a@UnnamedTexture-6.texture"
+        "9c06e1bc-7469-4c8f-9aef-9531d05e337a@3effa",
+        "9c06e1bc-7469-4c8f-9aef-9531d05e337a@221a5",
+        "9c06e1bc-7469-4c8f-9aef-9531d05e337a@0089c",
+        "9c06e1bc-7469-4c8f-9aef-9531d05e337a@9b633",
+        "9c06e1bc-7469-4c8f-9aef-9531d05e337a@9b782",
+        "9c06e1bc-7469-4c8f-9aef-9531d05e337a@50743",
+        "9c06e1bc-7469-4c8f-9aef-9531d05e337a@99ea5"
       ],
       "materials": [
-        "9c06e1bc-7469-4c8f-9aef-9531d05e337a@BoomBox_Mat.material"
+        "9c06e1bc-7469-4c8f-9aef-9531d05e337a@48021"
       ],
       "scenes": [
-        "9c06e1bc-7469-4c8f-9aef-9531d05e337a@BoomBox.prefab"
+        "9c06e1bc-7469-4c8f-9aef-9531d05e337a@49d89"
       ]
     }
   }

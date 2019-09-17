@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "2b6a9f59-577e-4944-ad9f-7081d39c7e49",
@@ -8,10 +8,10 @@
     ".gltf"
   ],
   "subMetas": {
-    "cannonLarge.mesh": {
+    "1291d": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "2b6a9f59-577e-4944-ad9f-7081d39c7e49@cannonLarge.mesh",
+      "uuid": "2b6a9f59-577e-4944-ad9f-7081d39c7e49@1291d",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "1291d",
+      "name": "cannonLarge.mesh"
     },
-    "barrel 1.mesh": {
+    "fa87e": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "2b6a9f59-577e-4944-ad9f-7081d39c7e49@barrel 1.mesh",
+      "uuid": "2b6a9f59-577e-4944-ad9f-7081d39c7e49@fa87e",
       "imported": true,
       "files": [
         ".json",
@@ -34,12 +36,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "fa87e",
+      "name": "barrel 1.mesh"
     },
-    "wood.material": {
+    "e4014": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "2b6a9f59-577e-4944-ad9f-7081d39c7e49@wood.material",
+      "uuid": "2b6a9f59-577e-4944-ad9f-7081d39c7e49@e4014",
       "imported": true,
       "files": [
         ".json"
@@ -47,12 +51,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "e4014",
+      "name": "wood.material"
     },
-    "iron.material": {
+    "861c9": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "2b6a9f59-577e-4944-ad9f-7081d39c7e49@iron.material",
+      "uuid": "2b6a9f59-577e-4944-ad9f-7081d39c7e49@861c9",
       "imported": true,
       "files": [
         ".json"
@@ -60,12 +66,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "861c9",
+      "name": "iron.material"
     },
-    "cannonLarge.prefab": {
+    "5d721": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "2b6a9f59-577e-4944-ad9f-7081d39c7e49@cannonLarge.prefab",
+      "uuid": "2b6a9f59-577e-4944-ad9f-7081d39c7e49@5d721",
       "imported": true,
       "files": [
         ".json"
@@ -73,7 +81,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "5d721",
+      "name": "cannonLarge.prefab"
     }
   },
   "userData": {
@@ -81,18 +91,18 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "2b6a9f59-577e-4944-ad9f-7081d39c7e49@cannonLarge.prefab",
+    "redirect": "2b6a9f59-577e-4944-ad9f-7081d39c7e49@5d721",
     "assetFinder": {
       "meshes": [
-        "2b6a9f59-577e-4944-ad9f-7081d39c7e49@cannonLarge.mesh",
-        "2b6a9f59-577e-4944-ad9f-7081d39c7e49@barrel 1.mesh"
+        "2b6a9f59-577e-4944-ad9f-7081d39c7e49@1291d",
+        "2b6a9f59-577e-4944-ad9f-7081d39c7e49@fa87e"
       ],
       "materials": [
-        "2b6a9f59-577e-4944-ad9f-7081d39c7e49@wood.material",
-        "2b6a9f59-577e-4944-ad9f-7081d39c7e49@iron.material"
+        "2b6a9f59-577e-4944-ad9f-7081d39c7e49@e4014",
+        "2b6a9f59-577e-4944-ad9f-7081d39c7e49@861c9"
       ],
       "scenes": [
-        "2b6a9f59-577e-4944-ad9f-7081d39c7e49@cannonLarge.prefab"
+        "2b6a9f59-577e-4944-ad9f-7081d39c7e49@5d721"
       ]
     }
   }

@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "3e8ce8db-d867-4933-a57b-1268f401269d",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh roadCornerLargerBorder.mesh": {
+    "e8bd9": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "3e8ce8db-d867-4933-a57b-1268f401269d@Mesh roadCornerLargerBorder.mesh",
+      "uuid": "3e8ce8db-d867-4933-a57b-1268f401269d@e8bd9",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "e8bd9",
+      "name": "Mesh roadCornerLargerBorder.mesh"
     },
-    "red.material": {
+    "92dfd": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "3e8ce8db-d867-4933-a57b-1268f401269d@red.material",
+      "uuid": "3e8ce8db-d867-4933-a57b-1268f401269d@92dfd",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "92dfd",
+      "name": "red.material"
     },
-    "white.material": {
+    "b31f4": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "3e8ce8db-d867-4933-a57b-1268f401269d@white.material",
+      "uuid": "3e8ce8db-d867-4933-a57b-1268f401269d@b31f4",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "b31f4",
+      "name": "white.material"
     },
-    "roadCornerLargerBorder.prefab": {
+    "ba2a6": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "3e8ce8db-d867-4933-a57b-1268f401269d@roadCornerLargerBorder.prefab",
+      "uuid": "3e8ce8db-d867-4933-a57b-1268f401269d@ba2a6",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "ba2a6",
+      "name": "roadCornerLargerBorder.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "3e8ce8db-d867-4933-a57b-1268f401269d@roadCornerLargerBorder.prefab",
+    "redirect": "3e8ce8db-d867-4933-a57b-1268f401269d@ba2a6",
     "assetFinder": {
       "meshes": [
-        "3e8ce8db-d867-4933-a57b-1268f401269d@Mesh roadCornerLargerBorder.mesh"
+        "3e8ce8db-d867-4933-a57b-1268f401269d@e8bd9"
       ],
       "materials": [
-        "3e8ce8db-d867-4933-a57b-1268f401269d@red.material",
-        "3e8ce8db-d867-4933-a57b-1268f401269d@white.material"
+        "3e8ce8db-d867-4933-a57b-1268f401269d@92dfd",
+        "3e8ce8db-d867-4933-a57b-1268f401269d@b31f4"
       ],
       "scenes": [
-        "3e8ce8db-d867-4933-a57b-1268f401269d@roadCornerLargerBorder.prefab"
+        "3e8ce8db-d867-4933-a57b-1268f401269d@ba2a6"
       ]
     }
   }

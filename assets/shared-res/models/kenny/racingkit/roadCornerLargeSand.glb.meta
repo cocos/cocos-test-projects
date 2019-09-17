@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "a73e552f-7281-49b6-92e8-d098b4f792fc",
@@ -8,10 +8,25 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh roadCornerLargeSand.mesh": {
+    "35058": {
+      "ver": "1.0.8",
+      "importer": "gltf-scene",
+      "uuid": "a73e552f-7281-49b6-92e8-d098b4f792fc@35058",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "35058",
+      "name": "roadCornerLargeSand.prefab"
+    },
+    "ae208": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "a73e552f-7281-49b6-92e8-d098b4f792fc@Mesh roadCornerLargeSand.mesh",
+      "uuid": "a73e552f-7281-49b6-92e8-d098b4f792fc@ae208",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "ae208",
+      "name": "Mesh roadCornerLargeSand.mesh"
     },
-    "sand.material": {
+    "5f31f": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "a73e552f-7281-49b6-92e8-d098b4f792fc@sand.material",
+      "uuid": "a73e552f-7281-49b6-92e8-d098b4f792fc@5f31f",
       "imported": true,
       "files": [
         ".json"
@@ -33,20 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
-    },
-    "roadCornerLargeSand.prefab": {
-      "ver": "1.0.8",
-      "importer": "gltf-scene",
-      "uuid": "a73e552f-7281-49b6-92e8-d098b4f792fc@roadCornerLargeSand.prefab",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
+      },
+      "id": "5f31f",
+      "name": "sand.material"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "a73e552f-7281-49b6-92e8-d098b4f792fc@roadCornerLargeSand.prefab",
+    "redirect": "a73e552f-7281-49b6-92e8-d098b4f792fc@35058",
     "assetFinder": {
       "meshes": [
-        "a73e552f-7281-49b6-92e8-d098b4f792fc@Mesh roadCornerLargeSand.mesh"
+        "a73e552f-7281-49b6-92e8-d098b4f792fc@ae208"
       ],
       "materials": [
-        "a73e552f-7281-49b6-92e8-d098b4f792fc@sand.material"
+        "a73e552f-7281-49b6-92e8-d098b4f792fc@5f31f"
       ],
       "scenes": [
-        "a73e552f-7281-49b6-92e8-d098b4f792fc@roadCornerLargeSand.prefab"
+        "a73e552f-7281-49b6-92e8-d098b4f792fc@35058"
       ]
     }
   }

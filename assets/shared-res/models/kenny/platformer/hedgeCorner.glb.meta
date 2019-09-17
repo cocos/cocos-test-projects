@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "3f1e980c-73fd-4cfa-b448-405b01b004ef",
@@ -8,10 +8,25 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh hedgeCorner.mesh": {
+    "53398": {
+      "ver": "1.0.10",
+      "importer": "gltf-material",
+      "uuid": "3f1e980c-73fd-4cfa-b448-405b01b004ef@53398",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "53398",
+      "name": "grass.material"
+    },
+    "1f802": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "3f1e980c-73fd-4cfa-b448-405b01b004ef@Mesh hedgeCorner.mesh",
+      "uuid": "3f1e980c-73fd-4cfa-b448-405b01b004ef@1f802",
       "imported": true,
       "files": [
         ".json",
@@ -20,25 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "1f802",
+      "name": "Mesh hedgeCorner.mesh"
     },
-    "grass.material": {
-      "ver": "1.0.10",
-      "importer": "gltf-material",
-      "uuid": "3f1e980c-73fd-4cfa-b448-405b01b004ef@grass.material",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
-    },
-    "hedgeCorner.prefab": {
+    "b29f9": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "3f1e980c-73fd-4cfa-b448-405b01b004ef@hedgeCorner.prefab",
+      "uuid": "3f1e980c-73fd-4cfa-b448-405b01b004ef@b29f9",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "b29f9",
+      "name": "hedgeCorner.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "3f1e980c-73fd-4cfa-b448-405b01b004ef@hedgeCorner.prefab",
+    "redirect": "3f1e980c-73fd-4cfa-b448-405b01b004ef@b29f9",
     "assetFinder": {
       "meshes": [
-        "3f1e980c-73fd-4cfa-b448-405b01b004ef@Mesh hedgeCorner.mesh"
+        "3f1e980c-73fd-4cfa-b448-405b01b004ef@1f802"
       ],
       "materials": [
-        "3f1e980c-73fd-4cfa-b448-405b01b004ef@grass.material"
+        "3f1e980c-73fd-4cfa-b448-405b01b004ef@53398"
       ],
       "scenes": [
-        "3f1e980c-73fd-4cfa-b448-405b01b004ef@hedgeCorner.prefab"
+        "3f1e980c-73fd-4cfa-b448-405b01b004ef@b29f9"
       ]
     }
   }

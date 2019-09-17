@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "b315da67-5be4-4503-bffd-21d5740ba4cb",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh railDouble.mesh": {
+    "1a483": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "b315da67-5be4-4503-bffd-21d5740ba4cb@Mesh railDouble.mesh",
+      "uuid": "b315da67-5be4-4503-bffd-21d5740ba4cb@1a483",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "1a483",
+      "name": "Mesh railDouble.mesh"
     },
-    "grey.material": {
+    "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "b315da67-5be4-4503-bffd-21d5740ba4cb@grey.material",
+      "uuid": "b315da67-5be4-4503-bffd-21d5740ba4cb@d63d5",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "d63d5",
+      "name": "grey.material"
     },
-    "railDouble.prefab": {
+    "d2239": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "b315da67-5be4-4503-bffd-21d5740ba4cb@railDouble.prefab",
+      "uuid": "b315da67-5be4-4503-bffd-21d5740ba4cb@d2239",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "d2239",
+      "name": "railDouble.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "b315da67-5be4-4503-bffd-21d5740ba4cb@railDouble.prefab",
+    "redirect": "b315da67-5be4-4503-bffd-21d5740ba4cb@d2239",
     "assetFinder": {
       "meshes": [
-        "b315da67-5be4-4503-bffd-21d5740ba4cb@Mesh railDouble.mesh"
+        "b315da67-5be4-4503-bffd-21d5740ba4cb@1a483"
       ],
       "materials": [
-        "b315da67-5be4-4503-bffd-21d5740ba4cb@grey.material"
+        "b315da67-5be4-4503-bffd-21d5740ba4cb@d63d5"
       ],
       "scenes": [
-        "b315da67-5be4-4503-bffd-21d5740ba4cb@railDouble.prefab"
+        "b315da67-5be4-4503-bffd-21d5740ba4cb@d2239"
       ]
     }
   }

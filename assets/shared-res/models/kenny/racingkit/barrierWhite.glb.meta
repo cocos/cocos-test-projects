@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "bac0959a-32c1-4210-b38f-388d2bbb2ab2",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh barrierWhite.mesh": {
+    "73ecc": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "bac0959a-32c1-4210-b38f-388d2bbb2ab2@Mesh barrierWhite.mesh",
+      "uuid": "bac0959a-32c1-4210-b38f-388d2bbb2ab2@73ecc",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "73ecc",
+      "name": "Mesh barrierWhite.mesh"
     },
-    "grey.material": {
+    "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "bac0959a-32c1-4210-b38f-388d2bbb2ab2@grey.material",
+      "uuid": "bac0959a-32c1-4210-b38f-388d2bbb2ab2@d63d5",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "d63d5",
+      "name": "grey.material"
     },
-    "barrierWhite.prefab": {
+    "b6875": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "bac0959a-32c1-4210-b38f-388d2bbb2ab2@barrierWhite.prefab",
+      "uuid": "bac0959a-32c1-4210-b38f-388d2bbb2ab2@b6875",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "b6875",
+      "name": "barrierWhite.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "bac0959a-32c1-4210-b38f-388d2bbb2ab2@barrierWhite.prefab",
+    "redirect": "bac0959a-32c1-4210-b38f-388d2bbb2ab2@b6875",
     "assetFinder": {
       "meshes": [
-        "bac0959a-32c1-4210-b38f-388d2bbb2ab2@Mesh barrierWhite.mesh"
+        "bac0959a-32c1-4210-b38f-388d2bbb2ab2@73ecc"
       ],
       "materials": [
-        "bac0959a-32c1-4210-b38f-388d2bbb2ab2@grey.material"
+        "bac0959a-32c1-4210-b38f-388d2bbb2ab2@d63d5"
       ],
       "scenes": [
-        "bac0959a-32c1-4210-b38f-388d2bbb2ab2@barrierWhite.prefab"
+        "bac0959a-32c1-4210-b38f-388d2bbb2ab2@b6875"
       ]
     }
   }

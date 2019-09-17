@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "0299d724-d932-4c2e-a4b3-b02ee408fc05",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh ladderBroken.mesh": {
+    "16101": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "0299d724-d932-4c2e-a4b3-b02ee408fc05@Mesh ladderBroken.mesh",
+      "uuid": "0299d724-d932-4c2e-a4b3-b02ee408fc05@16101",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "16101",
+      "name": "Mesh ladderBroken.mesh"
     },
-    "wood.material": {
+    "e4014": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "0299d724-d932-4c2e-a4b3-b02ee408fc05@wood.material",
+      "uuid": "0299d724-d932-4c2e-a4b3-b02ee408fc05@e4014",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "e4014",
+      "name": "wood.material"
     },
-    "ladderBroken.prefab": {
+    "8b37b": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "0299d724-d932-4c2e-a4b3-b02ee408fc05@ladderBroken.prefab",
+      "uuid": "0299d724-d932-4c2e-a4b3-b02ee408fc05@8b37b",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "8b37b",
+      "name": "ladderBroken.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "0299d724-d932-4c2e-a4b3-b02ee408fc05@ladderBroken.prefab",
+    "redirect": "0299d724-d932-4c2e-a4b3-b02ee408fc05@8b37b",
     "assetFinder": {
       "meshes": [
-        "0299d724-d932-4c2e-a4b3-b02ee408fc05@Mesh ladderBroken.mesh"
+        "0299d724-d932-4c2e-a4b3-b02ee408fc05@16101"
       ],
       "materials": [
-        "0299d724-d932-4c2e-a4b3-b02ee408fc05@wood.material"
+        "0299d724-d932-4c2e-a4b3-b02ee408fc05@e4014"
       ],
       "scenes": [
-        "0299d724-d932-4c2e-a4b3-b02ee408fc05@ladderBroken.prefab"
+        "0299d724-d932-4c2e-a4b3-b02ee408fc05@8b37b"
       ]
     }
   }
