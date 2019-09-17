@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "55ce6f50-17a3-4901-910f-9a56eb462191",
@@ -8,10 +8,10 @@
     ".gltf"
   ],
   "subMetas": {
-    "NormalTangentTest_low.mesh": {
+    "9c834": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "55ce6f50-17a3-4901-910f-9a56eb462191@NormalTangentTest_low.mesh",
+      "uuid": "55ce6f50-17a3-4901-910f-9a56eb462191@9c834",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "9c834",
+      "name": "NormalTangentTest_low.mesh"
     },
-    "UnnamedTexture-0.texture": {
+    "3effa": {
       "ver": "1.0.19",
       "importer": "texture",
-      "uuid": "55ce6f50-17a3-4901-910f-9a56eb462191@UnnamedTexture-0.texture",
+      "uuid": "55ce6f50-17a3-4901-910f-9a56eb462191@3effa",
       "imported": true,
       "files": [
         ".json"
@@ -41,12 +43,14 @@
         "anisotropy": 1,
         "isUuid": false,
         "imageUuidOrDatabaseUri": "db://assets/shared-res/gltf-tests/normal-tangent-mirror/NormalTangentMirrorTest_OcclusionRoughnessMetallic.png"
-      }
+      },
+      "id": "3effa",
+      "name": "UnnamedTexture-0.texture"
     },
-    "UnnamedTexture-1.texture": {
+    "221a5": {
       "ver": "1.0.19",
       "importer": "texture",
-      "uuid": "55ce6f50-17a3-4901-910f-9a56eb462191@UnnamedTexture-1.texture",
+      "uuid": "55ce6f50-17a3-4901-910f-9a56eb462191@221a5",
       "imported": true,
       "files": [
         ".json"
@@ -62,12 +66,14 @@
         "anisotropy": 1,
         "isUuid": false,
         "imageUuidOrDatabaseUri": "db://assets/shared-res/gltf-tests/normal-tangent-mirror/NormalTangentTest_Normal.png"
-      }
+      },
+      "id": "221a5",
+      "name": "UnnamedTexture-1.texture"
     },
-    "UnnamedTexture-2.texture": {
+    "0089c": {
       "ver": "1.0.19",
       "importer": "texture",
-      "uuid": "55ce6f50-17a3-4901-910f-9a56eb462191@UnnamedTexture-2.texture",
+      "uuid": "55ce6f50-17a3-4901-910f-9a56eb462191@0089c",
       "imported": true,
       "files": [
         ".json"
@@ -83,12 +89,14 @@
         "anisotropy": 1,
         "isUuid": false,
         "imageUuidOrDatabaseUri": "db://assets/shared-res/gltf-tests/normal-tangent-mirror/NormalTangentMirrorTest_BaseColor.png"
-      }
+      },
+      "id": "0089c",
+      "name": "UnnamedTexture-2.texture"
     },
-    "Material.material": {
+    "b4e6b": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "55ce6f50-17a3-4901-910f-9a56eb462191@Material.material",
+      "uuid": "55ce6f50-17a3-4901-910f-9a56eb462191@b4e6b",
       "imported": true,
       "files": [
         ".json"
@@ -96,12 +104,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "b4e6b",
+      "name": "Material.material"
     },
-    "NormalTangentMirrorTest.prefab": {
+    "c98cb": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "55ce6f50-17a3-4901-910f-9a56eb462191@NormalTangentMirrorTest.prefab",
+      "uuid": "55ce6f50-17a3-4901-910f-9a56eb462191@c98cb",
       "imported": true,
       "files": [
         ".json"
@@ -109,7 +119,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "c98cb",
+      "name": "NormalTangentMirrorTest.prefab"
     }
   },
   "userData": {
@@ -117,10 +129,10 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "55ce6f50-17a3-4901-910f-9a56eb462191@NormalTangentMirrorTest.prefab",
+    "redirect": "55ce6f50-17a3-4901-910f-9a56eb462191@c98cb",
     "assetFinder": {
       "meshes": [
-        "55ce6f50-17a3-4901-910f-9a56eb462191@NormalTangentTest_low.mesh"
+        "55ce6f50-17a3-4901-910f-9a56eb462191@9c834"
       ],
       "images": [
         {
@@ -137,15 +149,15 @@
         }
       ],
       "textures": [
-        "55ce6f50-17a3-4901-910f-9a56eb462191@UnnamedTexture-0.texture",
-        "55ce6f50-17a3-4901-910f-9a56eb462191@UnnamedTexture-1.texture",
-        "55ce6f50-17a3-4901-910f-9a56eb462191@UnnamedTexture-2.texture"
+        "55ce6f50-17a3-4901-910f-9a56eb462191@3effa",
+        "55ce6f50-17a3-4901-910f-9a56eb462191@221a5",
+        "55ce6f50-17a3-4901-910f-9a56eb462191@0089c"
       ],
       "materials": [
-        "55ce6f50-17a3-4901-910f-9a56eb462191@Material.material"
+        "55ce6f50-17a3-4901-910f-9a56eb462191@b4e6b"
       ],
       "scenes": [
-        "55ce6f50-17a3-4901-910f-9a56eb462191@NormalTangentMirrorTest.prefab"
+        "55ce6f50-17a3-4901-910f-9a56eb462191@c98cb"
       ]
     }
   }

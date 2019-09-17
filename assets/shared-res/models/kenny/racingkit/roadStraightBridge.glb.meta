@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "28b8e602-f043-4216-b696-6ffdf9bc416c",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh noExport.mesh": {
+    "a6d73": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "28b8e602-f043-4216-b696-6ffdf9bc416c@Mesh noExport.mesh",
+      "uuid": "28b8e602-f043-4216-b696-6ffdf9bc416c@a6d73",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "a6d73",
+      "name": "Mesh noExport.mesh"
     },
-    "wall.material": {
+    "7d412": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "28b8e602-f043-4216-b696-6ffdf9bc416c@wall.material",
+      "uuid": "28b8e602-f043-4216-b696-6ffdf9bc416c@7d412",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "7d412",
+      "name": "wall.material"
     },
-    "grey.material": {
+    "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "28b8e602-f043-4216-b696-6ffdf9bc416c@grey.material",
+      "uuid": "28b8e602-f043-4216-b696-6ffdf9bc416c@d63d5",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "d63d5",
+      "name": "grey.material"
     },
-    "road.material": {
+    "35ea4": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "28b8e602-f043-4216-b696-6ffdf9bc416c@road.material",
+      "uuid": "28b8e602-f043-4216-b696-6ffdf9bc416c@35ea4",
       "imported": true,
       "files": [
         ".json"
@@ -59,12 +65,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 2
-      }
+      },
+      "id": "35ea4",
+      "name": "road.material"
     },
-    "_defaultMat.material": {
+    "0ee4f": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "28b8e602-f043-4216-b696-6ffdf9bc416c@_defaultMat.material",
+      "uuid": "28b8e602-f043-4216-b696-6ffdf9bc416c@0ee4f",
       "imported": true,
       "files": [
         ".json"
@@ -72,12 +80,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 3
-      }
+      },
+      "id": "0ee4f",
+      "name": "_defaultMat.material"
     },
-    "roadStraightBridge.prefab": {
+    "ab2ad": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "28b8e602-f043-4216-b696-6ffdf9bc416c@roadStraightBridge.prefab",
+      "uuid": "28b8e602-f043-4216-b696-6ffdf9bc416c@ab2ad",
       "imported": true,
       "files": [
         ".json"
@@ -85,7 +95,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "ab2ad",
+      "name": "roadStraightBridge.prefab"
     }
   },
   "userData": {
@@ -93,19 +105,19 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "28b8e602-f043-4216-b696-6ffdf9bc416c@roadStraightBridge.prefab",
+    "redirect": "28b8e602-f043-4216-b696-6ffdf9bc416c@ab2ad",
     "assetFinder": {
       "meshes": [
-        "28b8e602-f043-4216-b696-6ffdf9bc416c@Mesh noExport.mesh"
+        "28b8e602-f043-4216-b696-6ffdf9bc416c@a6d73"
       ],
       "materials": [
-        "28b8e602-f043-4216-b696-6ffdf9bc416c@wall.material",
-        "28b8e602-f043-4216-b696-6ffdf9bc416c@grey.material",
-        "28b8e602-f043-4216-b696-6ffdf9bc416c@road.material",
-        "28b8e602-f043-4216-b696-6ffdf9bc416c@_defaultMat.material"
+        "28b8e602-f043-4216-b696-6ffdf9bc416c@7d412",
+        "28b8e602-f043-4216-b696-6ffdf9bc416c@d63d5",
+        "28b8e602-f043-4216-b696-6ffdf9bc416c@35ea4",
+        "28b8e602-f043-4216-b696-6ffdf9bc416c@0ee4f"
       ],
       "scenes": [
-        "28b8e602-f043-4216-b696-6ffdf9bc416c@roadStraightBridge.prefab"
+        "28b8e602-f043-4216-b696-6ffdf9bc416c@ab2ad"
       ]
     }
   }

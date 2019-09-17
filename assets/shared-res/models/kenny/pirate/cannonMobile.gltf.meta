@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "6879021a-9b99-465e-b4b9-99e467f1600c",
@@ -8,10 +8,10 @@
     ".gltf"
   ],
   "subMetas": {
-    "cannonMobile_8angles.mesh": {
+    "2c437": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "6879021a-9b99-465e-b4b9-99e467f1600c@cannonMobile_8angles.mesh",
+      "uuid": "6879021a-9b99-465e-b4b9-99e467f1600c@2c437",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "2c437",
+      "name": "cannonMobile_8angles.mesh"
     },
-    "barrel 2.mesh": {
+    "9d0f0": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "6879021a-9b99-465e-b4b9-99e467f1600c@barrel 2.mesh",
+      "uuid": "6879021a-9b99-465e-b4b9-99e467f1600c@9d0f0",
       "imported": true,
       "files": [
         ".json",
@@ -34,12 +36,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "9d0f0",
+      "name": "barrel 2.mesh"
     },
-    "wheel_backLeft.mesh": {
+    "fcb2b": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "6879021a-9b99-465e-b4b9-99e467f1600c@wheel_backLeft.mesh",
+      "uuid": "6879021a-9b99-465e-b4b9-99e467f1600c@fcb2b",
       "imported": true,
       "files": [
         ".json",
@@ -48,12 +52,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 2
-      }
+      },
+      "id": "fcb2b",
+      "name": "wheel_backLeft.mesh"
     },
-    "iron.material": {
+    "861c9": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "6879021a-9b99-465e-b4b9-99e467f1600c@iron.material",
+      "uuid": "6879021a-9b99-465e-b4b9-99e467f1600c@861c9",
       "imported": true,
       "files": [
         ".json"
@@ -61,12 +67,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "861c9",
+      "name": "iron.material"
     },
-    "wood.material": {
+    "e4014": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "6879021a-9b99-465e-b4b9-99e467f1600c@wood.material",
+      "uuid": "6879021a-9b99-465e-b4b9-99e467f1600c@e4014",
       "imported": true,
       "files": [
         ".json"
@@ -74,12 +82,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "e4014",
+      "name": "wood.material"
     },
-    "cannonMobile.prefab": {
+    "485dd": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "6879021a-9b99-465e-b4b9-99e467f1600c@cannonMobile.prefab",
+      "uuid": "6879021a-9b99-465e-b4b9-99e467f1600c@485dd",
       "imported": true,
       "files": [
         ".json"
@@ -87,7 +97,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "485dd",
+      "name": "cannonMobile.prefab"
     }
   },
   "userData": {
@@ -95,19 +107,19 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "6879021a-9b99-465e-b4b9-99e467f1600c@cannonMobile.prefab",
+    "redirect": "6879021a-9b99-465e-b4b9-99e467f1600c@485dd",
     "assetFinder": {
       "meshes": [
-        "6879021a-9b99-465e-b4b9-99e467f1600c@cannonMobile_8angles.mesh",
-        "6879021a-9b99-465e-b4b9-99e467f1600c@barrel 2.mesh",
-        "6879021a-9b99-465e-b4b9-99e467f1600c@wheel_backLeft.mesh"
+        "6879021a-9b99-465e-b4b9-99e467f1600c@2c437",
+        "6879021a-9b99-465e-b4b9-99e467f1600c@9d0f0",
+        "6879021a-9b99-465e-b4b9-99e467f1600c@fcb2b"
       ],
       "materials": [
-        "6879021a-9b99-465e-b4b9-99e467f1600c@iron.material",
-        "6879021a-9b99-465e-b4b9-99e467f1600c@wood.material"
+        "6879021a-9b99-465e-b4b9-99e467f1600c@861c9",
+        "6879021a-9b99-465e-b4b9-99e467f1600c@e4014"
       ],
       "scenes": [
-        "6879021a-9b99-465e-b4b9-99e467f1600c@cannonMobile.prefab"
+        "6879021a-9b99-465e-b4b9-99e467f1600c@485dd"
       ]
     }
   }

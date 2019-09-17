@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "e20403c4-26ec-4398-b5fa-1aa5c84ac7dd",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh bridgeHalf.mesh": {
+    "f30d8": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "e20403c4-26ec-4398-b5fa-1aa5c84ac7dd@Mesh bridgeHalf.mesh",
+      "uuid": "e20403c4-26ec-4398-b5fa-1aa5c84ac7dd@f30d8",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "f30d8",
+      "name": "Mesh bridgeHalf.mesh"
     },
-    "wood.material": {
+    "e4014": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "e20403c4-26ec-4398-b5fa-1aa5c84ac7dd@wood.material",
+      "uuid": "e20403c4-26ec-4398-b5fa-1aa5c84ac7dd@e4014",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "e4014",
+      "name": "wood.material"
     },
-    "woodDark.material": {
+    "938e8": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "e20403c4-26ec-4398-b5fa-1aa5c84ac7dd@woodDark.material",
+      "uuid": "e20403c4-26ec-4398-b5fa-1aa5c84ac7dd@938e8",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "938e8",
+      "name": "woodDark.material"
     },
-    "bridgeHalf.prefab": {
+    "3f637": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "e20403c4-26ec-4398-b5fa-1aa5c84ac7dd@bridgeHalf.prefab",
+      "uuid": "e20403c4-26ec-4398-b5fa-1aa5c84ac7dd@3f637",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "3f637",
+      "name": "bridgeHalf.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "e20403c4-26ec-4398-b5fa-1aa5c84ac7dd@bridgeHalf.prefab",
+    "redirect": "e20403c4-26ec-4398-b5fa-1aa5c84ac7dd@3f637",
     "assetFinder": {
       "meshes": [
-        "e20403c4-26ec-4398-b5fa-1aa5c84ac7dd@Mesh bridgeHalf.mesh"
+        "e20403c4-26ec-4398-b5fa-1aa5c84ac7dd@f30d8"
       ],
       "materials": [
-        "e20403c4-26ec-4398-b5fa-1aa5c84ac7dd@wood.material",
-        "e20403c4-26ec-4398-b5fa-1aa5c84ac7dd@woodDark.material"
+        "e20403c4-26ec-4398-b5fa-1aa5c84ac7dd@e4014",
+        "e20403c4-26ec-4398-b5fa-1aa5c84ac7dd@938e8"
       ],
       "scenes": [
-        "e20403c4-26ec-4398-b5fa-1aa5c84ac7dd@bridgeHalf.prefab"
+        "e20403c4-26ec-4398-b5fa-1aa5c84ac7dd@3f637"
       ]
     }
   }

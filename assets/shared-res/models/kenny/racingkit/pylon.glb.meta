@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "fc867259-0478-4e5f-81ba-fe66bd8d78fd",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh pylon.mesh": {
+    "ef52c": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "fc867259-0478-4e5f-81ba-fe66bd8d78fd@Mesh pylon.mesh",
+      "uuid": "fc867259-0478-4e5f-81ba-fe66bd8d78fd@ef52c",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "ef52c",
+      "name": "Mesh pylon.mesh"
     },
-    "pylon.material": {
+    "1ed61": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "fc867259-0478-4e5f-81ba-fe66bd8d78fd@pylon.material",
+      "uuid": "fc867259-0478-4e5f-81ba-fe66bd8d78fd@1ed61",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "1ed61",
+      "name": "pylon.material"
     },
-    "pylon.prefab": {
+    "91a15": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "fc867259-0478-4e5f-81ba-fe66bd8d78fd@pylon.prefab",
+      "uuid": "fc867259-0478-4e5f-81ba-fe66bd8d78fd@91a15",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "91a15",
+      "name": "pylon.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "fc867259-0478-4e5f-81ba-fe66bd8d78fd@pylon.prefab",
+    "redirect": "fc867259-0478-4e5f-81ba-fe66bd8d78fd@91a15",
     "assetFinder": {
       "meshes": [
-        "fc867259-0478-4e5f-81ba-fe66bd8d78fd@Mesh pylon.mesh"
+        "fc867259-0478-4e5f-81ba-fe66bd8d78fd@ef52c"
       ],
       "materials": [
-        "fc867259-0478-4e5f-81ba-fe66bd8d78fd@pylon.material"
+        "fc867259-0478-4e5f-81ba-fe66bd8d78fd@1ed61"
       ],
       "scenes": [
-        "fc867259-0478-4e5f-81ba-fe66bd8d78fd@pylon.prefab"
+        "fc867259-0478-4e5f-81ba-fe66bd8d78fd@91a15"
       ]
     }
   }

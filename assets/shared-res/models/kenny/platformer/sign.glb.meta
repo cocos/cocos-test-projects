@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "347b9248-a596-417a-bcd2-8d70ae666f11",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh sign.mesh": {
+    "1383f": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "347b9248-a596-417a-bcd2-8d70ae666f11@Mesh sign.mesh",
+      "uuid": "347b9248-a596-417a-bcd2-8d70ae666f11@1383f",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "1383f",
+      "name": "Mesh sign.mesh"
     },
-    "woodDark.material": {
+    "938e8": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "347b9248-a596-417a-bcd2-8d70ae666f11@woodDark.material",
+      "uuid": "347b9248-a596-417a-bcd2-8d70ae666f11@938e8",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "938e8",
+      "name": "woodDark.material"
     },
-    "wood.material": {
+    "e4014": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "347b9248-a596-417a-bcd2-8d70ae666f11@wood.material",
+      "uuid": "347b9248-a596-417a-bcd2-8d70ae666f11@e4014",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "e4014",
+      "name": "wood.material"
     },
-    "sign.prefab": {
+    "9ccfa": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "347b9248-a596-417a-bcd2-8d70ae666f11@sign.prefab",
+      "uuid": "347b9248-a596-417a-bcd2-8d70ae666f11@9ccfa",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "9ccfa",
+      "name": "sign.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "347b9248-a596-417a-bcd2-8d70ae666f11@sign.prefab",
+    "redirect": "347b9248-a596-417a-bcd2-8d70ae666f11@9ccfa",
     "assetFinder": {
       "meshes": [
-        "347b9248-a596-417a-bcd2-8d70ae666f11@Mesh sign.mesh"
+        "347b9248-a596-417a-bcd2-8d70ae666f11@1383f"
       ],
       "materials": [
-        "347b9248-a596-417a-bcd2-8d70ae666f11@woodDark.material",
-        "347b9248-a596-417a-bcd2-8d70ae666f11@wood.material"
+        "347b9248-a596-417a-bcd2-8d70ae666f11@938e8",
+        "347b9248-a596-417a-bcd2-8d70ae666f11@e4014"
       ],
       "scenes": [
-        "347b9248-a596-417a-bcd2-8d70ae666f11@sign.prefab"
+        "347b9248-a596-417a-bcd2-8d70ae666f11@9ccfa"
       ]
     }
   }

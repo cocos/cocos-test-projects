@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "60a57602-8175-4dc6-93a7-ab0660f90d39",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh overheadRoundColored.mesh": {
+    "cb004": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "60a57602-8175-4dc6-93a7-ab0660f90d39@Mesh overheadRoundColored.mesh",
+      "uuid": "60a57602-8175-4dc6-93a7-ab0660f90d39@cb004",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "cb004",
+      "name": "Mesh overheadRoundColored.mesh"
     },
-    "red.material": {
+    "92dfd": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "60a57602-8175-4dc6-93a7-ab0660f90d39@red.material",
+      "uuid": "60a57602-8175-4dc6-93a7-ab0660f90d39@92dfd",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "92dfd",
+      "name": "red.material"
     },
-    "grey.material": {
+    "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "60a57602-8175-4dc6-93a7-ab0660f90d39@grey.material",
+      "uuid": "60a57602-8175-4dc6-93a7-ab0660f90d39@d63d5",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "d63d5",
+      "name": "grey.material"
     },
-    "overheadRoundColored.prefab": {
+    "3b9da": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "60a57602-8175-4dc6-93a7-ab0660f90d39@overheadRoundColored.prefab",
+      "uuid": "60a57602-8175-4dc6-93a7-ab0660f90d39@3b9da",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "3b9da",
+      "name": "overheadRoundColored.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "60a57602-8175-4dc6-93a7-ab0660f90d39@overheadRoundColored.prefab",
+    "redirect": "60a57602-8175-4dc6-93a7-ab0660f90d39@3b9da",
     "assetFinder": {
       "meshes": [
-        "60a57602-8175-4dc6-93a7-ab0660f90d39@Mesh overheadRoundColored.mesh"
+        "60a57602-8175-4dc6-93a7-ab0660f90d39@cb004"
       ],
       "materials": [
-        "60a57602-8175-4dc6-93a7-ab0660f90d39@red.material",
-        "60a57602-8175-4dc6-93a7-ab0660f90d39@grey.material"
+        "60a57602-8175-4dc6-93a7-ab0660f90d39@92dfd",
+        "60a57602-8175-4dc6-93a7-ab0660f90d39@d63d5"
       ],
       "scenes": [
-        "60a57602-8175-4dc6-93a7-ab0660f90d39@overheadRoundColored.prefab"
+        "60a57602-8175-4dc6-93a7-ab0660f90d39@3b9da"
       ]
     }
   }

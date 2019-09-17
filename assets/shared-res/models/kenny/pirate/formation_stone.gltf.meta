@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "12f831f7-44fa-439c-b5c7-985d0134b1fd",
@@ -8,10 +8,10 @@
     ".gltf"
   ],
   "subMetas": {
-    "formation_stone.mesh": {
+    "b7d3d": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "12f831f7-44fa-439c-b5c7-985d0134b1fd@formation_stone.mesh",
+      "uuid": "12f831f7-44fa-439c-b5c7-985d0134b1fd@b7d3d",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "b7d3d",
+      "name": "formation_stone.mesh"
     },
-    "stone.material": {
+    "4de10": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "12f831f7-44fa-439c-b5c7-985d0134b1fd@stone.material",
+      "uuid": "12f831f7-44fa-439c-b5c7-985d0134b1fd@4de10",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "4de10",
+      "name": "stone.material"
     },
-    "formation_stone.prefab": {
+    "2884a": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "12f831f7-44fa-439c-b5c7-985d0134b1fd@formation_stone.prefab",
+      "uuid": "12f831f7-44fa-439c-b5c7-985d0134b1fd@2884a",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "2884a",
+      "name": "formation_stone.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "12f831f7-44fa-439c-b5c7-985d0134b1fd@formation_stone.prefab",
+    "redirect": "12f831f7-44fa-439c-b5c7-985d0134b1fd@2884a",
     "assetFinder": {
       "meshes": [
-        "12f831f7-44fa-439c-b5c7-985d0134b1fd@formation_stone.mesh"
+        "12f831f7-44fa-439c-b5c7-985d0134b1fd@b7d3d"
       ],
       "materials": [
-        "12f831f7-44fa-439c-b5c7-985d0134b1fd@stone.material"
+        "12f831f7-44fa-439c-b5c7-985d0134b1fd@4de10"
       ],
       "scenes": [
-        "12f831f7-44fa-439c-b5c7-985d0134b1fd@formation_stone.prefab"
+        "12f831f7-44fa-439c-b5c7-985d0134b1fd@2884a"
       ]
     }
   }

@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "03e7e19d-d76f-4606-976e-62725d249a4a",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh noExport.mesh": {
+    "a6d73": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "03e7e19d-d76f-4606-976e-62725d249a4a@Mesh noExport.mesh",
+      "uuid": "03e7e19d-d76f-4606-976e-62725d249a4a@a6d73",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "a6d73",
+      "name": "Mesh noExport.mesh"
     },
-    "grey.material": {
+    "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "03e7e19d-d76f-4606-976e-62725d249a4a@grey.material",
+      "uuid": "03e7e19d-d76f-4606-976e-62725d249a4a@d63d5",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "d63d5",
+      "name": "grey.material"
     },
-    "road.material": {
+    "35ea4": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "03e7e19d-d76f-4606-976e-62725d249a4a@road.material",
+      "uuid": "03e7e19d-d76f-4606-976e-62725d249a4a@35ea4",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "35ea4",
+      "name": "road.material"
     },
-    "radarEquipment.prefab": {
+    "6e2f9": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "03e7e19d-d76f-4606-976e-62725d249a4a@radarEquipment.prefab",
+      "uuid": "03e7e19d-d76f-4606-976e-62725d249a4a@6e2f9",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "6e2f9",
+      "name": "radarEquipment.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "03e7e19d-d76f-4606-976e-62725d249a4a@radarEquipment.prefab",
+    "redirect": "03e7e19d-d76f-4606-976e-62725d249a4a@6e2f9",
     "assetFinder": {
       "meshes": [
-        "03e7e19d-d76f-4606-976e-62725d249a4a@Mesh noExport.mesh"
+        "03e7e19d-d76f-4606-976e-62725d249a4a@a6d73"
       ],
       "materials": [
-        "03e7e19d-d76f-4606-976e-62725d249a4a@grey.material",
-        "03e7e19d-d76f-4606-976e-62725d249a4a@road.material"
+        "03e7e19d-d76f-4606-976e-62725d249a4a@d63d5",
+        "03e7e19d-d76f-4606-976e-62725d249a4a@35ea4"
       ],
       "scenes": [
-        "03e7e19d-d76f-4606-976e-62725d249a4a@radarEquipment.prefab"
+        "03e7e19d-d76f-4606-976e-62725d249a4a@6e2f9"
       ]
     }
   }

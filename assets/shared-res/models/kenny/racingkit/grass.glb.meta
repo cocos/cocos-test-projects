@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "a94a2e07-3349-41b0-a7d9-68d5b0c24a99",
@@ -8,10 +8,25 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh grass.mesh": {
+    "53398": {
+      "ver": "1.0.10",
+      "importer": "gltf-material",
+      "uuid": "a94a2e07-3349-41b0-a7d9-68d5b0c24a99@53398",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "53398",
+      "name": "grass.material"
+    },
+    "f6d5c": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "a94a2e07-3349-41b0-a7d9-68d5b0c24a99@Mesh grass.mesh",
+      "uuid": "a94a2e07-3349-41b0-a7d9-68d5b0c24a99@f6d5c",
       "imported": true,
       "files": [
         ".json",
@@ -20,25 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "f6d5c",
+      "name": "Mesh grass.mesh"
     },
-    "grass.material": {
-      "ver": "1.0.10",
-      "importer": "gltf-material",
-      "uuid": "a94a2e07-3349-41b0-a7d9-68d5b0c24a99@grass.material",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
-    },
-    "grass.prefab": {
+    "3022b": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "a94a2e07-3349-41b0-a7d9-68d5b0c24a99@grass.prefab",
+      "uuid": "a94a2e07-3349-41b0-a7d9-68d5b0c24a99@3022b",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "3022b",
+      "name": "grass.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "a94a2e07-3349-41b0-a7d9-68d5b0c24a99@grass.prefab",
+    "redirect": "a94a2e07-3349-41b0-a7d9-68d5b0c24a99@3022b",
     "assetFinder": {
       "meshes": [
-        "a94a2e07-3349-41b0-a7d9-68d5b0c24a99@Mesh grass.mesh"
+        "a94a2e07-3349-41b0-a7d9-68d5b0c24a99@f6d5c"
       ],
       "materials": [
-        "a94a2e07-3349-41b0-a7d9-68d5b0c24a99@grass.material"
+        "a94a2e07-3349-41b0-a7d9-68d5b0c24a99@53398"
       ],
       "scenes": [
-        "a94a2e07-3349-41b0-a7d9-68d5b0c24a99@grass.prefab"
+        "a94a2e07-3349-41b0-a7d9-68d5b0c24a99@3022b"
       ]
     }
   }

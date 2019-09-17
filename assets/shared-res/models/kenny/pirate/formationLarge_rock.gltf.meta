@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "cda269e5-c27c-466e-85b8-fbfa144b5bc6",
@@ -8,10 +8,25 @@
     ".gltf"
   ],
   "subMetas": {
-    "formationLarge_rock.mesh": {
+    "43555": {
+      "ver": "1.0.8",
+      "importer": "gltf-scene",
+      "uuid": "cda269e5-c27c-466e-85b8-fbfa144b5bc6@43555",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "43555",
+      "name": "formationLarge_rock.prefab"
+    },
+    "dd4b2": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "cda269e5-c27c-466e-85b8-fbfa144b5bc6@formationLarge_rock.mesh",
+      "uuid": "cda269e5-c27c-466e-85b8-fbfa144b5bc6@dd4b2",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "dd4b2",
+      "name": "formationLarge_rock.mesh"
     },
-    "wood.material": {
+    "e4014": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "cda269e5-c27c-466e-85b8-fbfa144b5bc6@wood.material",
+      "uuid": "cda269e5-c27c-466e-85b8-fbfa144b5bc6@e4014",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "e4014",
+      "name": "wood.material"
     },
-    "sand.material": {
+    "5f31f": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "cda269e5-c27c-466e-85b8-fbfa144b5bc6@sand.material",
+      "uuid": "cda269e5-c27c-466e-85b8-fbfa144b5bc6@5f31f",
       "imported": true,
       "files": [
         ".json"
@@ -46,20 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
-    },
-    "formationLarge_rock.prefab": {
-      "ver": "1.0.8",
-      "importer": "gltf-scene",
-      "uuid": "cda269e5-c27c-466e-85b8-fbfa144b5bc6@formationLarge_rock.prefab",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
+      },
+      "id": "5f31f",
+      "name": "sand.material"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "cda269e5-c27c-466e-85b8-fbfa144b5bc6@formationLarge_rock.prefab",
+    "redirect": "cda269e5-c27c-466e-85b8-fbfa144b5bc6@43555",
     "assetFinder": {
       "meshes": [
-        "cda269e5-c27c-466e-85b8-fbfa144b5bc6@formationLarge_rock.mesh"
+        "cda269e5-c27c-466e-85b8-fbfa144b5bc6@dd4b2"
       ],
       "materials": [
-        "cda269e5-c27c-466e-85b8-fbfa144b5bc6@wood.material",
-        "cda269e5-c27c-466e-85b8-fbfa144b5bc6@sand.material"
+        "cda269e5-c27c-466e-85b8-fbfa144b5bc6@e4014",
+        "cda269e5-c27c-466e-85b8-fbfa144b5bc6@5f31f"
       ],
       "scenes": [
-        "cda269e5-c27c-466e-85b8-fbfa144b5bc6@formationLarge_rock.prefab"
+        "cda269e5-c27c-466e-85b8-fbfa144b5bc6@43555"
       ]
     }
   }

@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "a17f0879-50a1-43f6-aab4-80d42168224d",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh roadCornerSmallWall.mesh": {
+    "a594a": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "a17f0879-50a1-43f6-aab4-80d42168224d@Mesh roadCornerSmallWall.mesh",
+      "uuid": "a17f0879-50a1-43f6-aab4-80d42168224d@a594a",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "a594a",
+      "name": "Mesh roadCornerSmallWall.mesh"
     },
-    "red.material": {
+    "92dfd": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "a17f0879-50a1-43f6-aab4-80d42168224d@red.material",
+      "uuid": "a17f0879-50a1-43f6-aab4-80d42168224d@92dfd",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "92dfd",
+      "name": "red.material"
     },
-    "white.material": {
+    "b31f4": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "a17f0879-50a1-43f6-aab4-80d42168224d@white.material",
+      "uuid": "a17f0879-50a1-43f6-aab4-80d42168224d@b31f4",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "b31f4",
+      "name": "white.material"
     },
-    "roadCornerSmallWall.prefab": {
+    "dc1fd": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "a17f0879-50a1-43f6-aab4-80d42168224d@roadCornerSmallWall.prefab",
+      "uuid": "a17f0879-50a1-43f6-aab4-80d42168224d@dc1fd",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "dc1fd",
+      "name": "roadCornerSmallWall.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "a17f0879-50a1-43f6-aab4-80d42168224d@roadCornerSmallWall.prefab",
+    "redirect": "a17f0879-50a1-43f6-aab4-80d42168224d@dc1fd",
     "assetFinder": {
       "meshes": [
-        "a17f0879-50a1-43f6-aab4-80d42168224d@Mesh roadCornerSmallWall.mesh"
+        "a17f0879-50a1-43f6-aab4-80d42168224d@a594a"
       ],
       "materials": [
-        "a17f0879-50a1-43f6-aab4-80d42168224d@red.material",
-        "a17f0879-50a1-43f6-aab4-80d42168224d@white.material"
+        "a17f0879-50a1-43f6-aab4-80d42168224d@92dfd",
+        "a17f0879-50a1-43f6-aab4-80d42168224d@b31f4"
       ],
       "scenes": [
-        "a17f0879-50a1-43f6-aab4-80d42168224d@roadCornerSmallWall.prefab"
+        "a17f0879-50a1-43f6-aab4-80d42168224d@dc1fd"
       ]
     }
   }

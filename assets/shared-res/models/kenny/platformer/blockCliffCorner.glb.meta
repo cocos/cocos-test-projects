@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "cb6558df-b8c1-4ee6-bd07-c852dbc73dce",
@@ -8,10 +8,25 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh blockCliffCorner.mesh": {
+    "53398": {
+      "ver": "1.0.10",
+      "importer": "gltf-material",
+      "uuid": "cb6558df-b8c1-4ee6-bd07-c852dbc73dce@53398",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 1
+      },
+      "id": "53398",
+      "name": "grass.material"
+    },
+    "65969": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "cb6558df-b8c1-4ee6-bd07-c852dbc73dce@Mesh blockCliffCorner.mesh",
+      "uuid": "cb6558df-b8c1-4ee6-bd07-c852dbc73dce@65969",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "65969",
+      "name": "Mesh blockCliffCorner.mesh"
     },
-    "dirt.material": {
+    "3577b": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "cb6558df-b8c1-4ee6-bd07-c852dbc73dce@dirt.material",
+      "uuid": "cb6558df-b8c1-4ee6-bd07-c852dbc73dce@3577b",
       "imported": true,
       "files": [
         ".json"
@@ -33,25 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "3577b",
+      "name": "dirt.material"
     },
-    "grass.material": {
-      "ver": "1.0.10",
-      "importer": "gltf-material",
-      "uuid": "cb6558df-b8c1-4ee6-bd07-c852dbc73dce@grass.material",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 1
-      }
-    },
-    "blockCliffCorner.prefab": {
+    "be771": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "cb6558df-b8c1-4ee6-bd07-c852dbc73dce@blockCliffCorner.prefab",
+      "uuid": "cb6558df-b8c1-4ee6-bd07-c852dbc73dce@be771",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "be771",
+      "name": "blockCliffCorner.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "cb6558df-b8c1-4ee6-bd07-c852dbc73dce@blockCliffCorner.prefab",
+    "redirect": "cb6558df-b8c1-4ee6-bd07-c852dbc73dce@be771",
     "assetFinder": {
       "meshes": [
-        "cb6558df-b8c1-4ee6-bd07-c852dbc73dce@Mesh blockCliffCorner.mesh"
+        "cb6558df-b8c1-4ee6-bd07-c852dbc73dce@65969"
       ],
       "materials": [
-        "cb6558df-b8c1-4ee6-bd07-c852dbc73dce@dirt.material",
-        "cb6558df-b8c1-4ee6-bd07-c852dbc73dce@grass.material"
+        "cb6558df-b8c1-4ee6-bd07-c852dbc73dce@3577b",
+        "cb6558df-b8c1-4ee6-bd07-c852dbc73dce@53398"
       ],
       "scenes": [
-        "cb6558df-b8c1-4ee6-bd07-c852dbc73dce@blockCliffCorner.prefab"
+        "cb6558df-b8c1-4ee6-bd07-c852dbc73dce@be771"
       ]
     }
   }

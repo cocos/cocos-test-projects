@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "01109121-4d7a-41e8-84ca-a7f2ce67b251",
@@ -8,10 +8,25 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh treeSmall.mesh": {
+    "53398": {
+      "ver": "1.0.10",
+      "importer": "gltf-material",
+      "uuid": "01109121-4d7a-41e8-84ca-a7f2ce67b251@53398",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "53398",
+      "name": "grass.material"
+    },
+    "95168": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "01109121-4d7a-41e8-84ca-a7f2ce67b251@Mesh treeSmall.mesh",
+      "uuid": "01109121-4d7a-41e8-84ca-a7f2ce67b251@95168",
       "imported": true,
       "files": [
         ".json",
@@ -20,25 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "95168",
+      "name": "Mesh treeSmall.mesh"
     },
-    "grass.material": {
+    "dc328": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "01109121-4d7a-41e8-84ca-a7f2ce67b251@grass.material",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
-    },
-    "bark.material": {
-      "ver": "1.0.10",
-      "importer": "gltf-material",
-      "uuid": "01109121-4d7a-41e8-84ca-a7f2ce67b251@bark.material",
+      "uuid": "01109121-4d7a-41e8-84ca-a7f2ce67b251@dc328",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "dc328",
+      "name": "bark.material"
     },
-    "treeSmall.prefab": {
+    "c0adb": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "01109121-4d7a-41e8-84ca-a7f2ce67b251@treeSmall.prefab",
+      "uuid": "01109121-4d7a-41e8-84ca-a7f2ce67b251@c0adb",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "c0adb",
+      "name": "treeSmall.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "01109121-4d7a-41e8-84ca-a7f2ce67b251@treeSmall.prefab",
+    "redirect": "01109121-4d7a-41e8-84ca-a7f2ce67b251@c0adb",
     "assetFinder": {
       "meshes": [
-        "01109121-4d7a-41e8-84ca-a7f2ce67b251@Mesh treeSmall.mesh"
+        "01109121-4d7a-41e8-84ca-a7f2ce67b251@95168"
       ],
       "materials": [
-        "01109121-4d7a-41e8-84ca-a7f2ce67b251@grass.material",
-        "01109121-4d7a-41e8-84ca-a7f2ce67b251@bark.material"
+        "01109121-4d7a-41e8-84ca-a7f2ce67b251@53398",
+        "01109121-4d7a-41e8-84ca-a7f2ce67b251@dc328"
       ],
       "scenes": [
-        "01109121-4d7a-41e8-84ca-a7f2ce67b251@treeSmall.prefab"
+        "01109121-4d7a-41e8-84ca-a7f2ce67b251@c0adb"
       ]
     }
   }

@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "458f4c61-3703-4db4-9921-24a54c5c575f",
@@ -8,10 +8,10 @@
     ".gltf"
   ],
   "subMetas": {
-    "bottleLarge.mesh": {
+    "7fcdf": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "458f4c61-3703-4db4-9921-24a54c5c575f@bottleLarge.mesh",
+      "uuid": "458f4c61-3703-4db4-9921-24a54c5c575f@7fcdf",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "7fcdf",
+      "name": "bottleLarge.mesh"
     },
-    "textile.material": {
+    "2f37c": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "458f4c61-3703-4db4-9921-24a54c5c575f@textile.material",
+      "uuid": "458f4c61-3703-4db4-9921-24a54c5c575f@2f37c",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "2f37c",
+      "name": "textile.material"
     },
-    "wood.material": {
+    "e4014": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "458f4c61-3703-4db4-9921-24a54c5c575f@wood.material",
+      "uuid": "458f4c61-3703-4db4-9921-24a54c5c575f@e4014",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "e4014",
+      "name": "wood.material"
     },
-    "bottleLarge.prefab": {
+    "bf611": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "458f4c61-3703-4db4-9921-24a54c5c575f@bottleLarge.prefab",
+      "uuid": "458f4c61-3703-4db4-9921-24a54c5c575f@bf611",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "bf611",
+      "name": "bottleLarge.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "458f4c61-3703-4db4-9921-24a54c5c575f@bottleLarge.prefab",
+    "redirect": "458f4c61-3703-4db4-9921-24a54c5c575f@bf611",
     "assetFinder": {
       "meshes": [
-        "458f4c61-3703-4db4-9921-24a54c5c575f@bottleLarge.mesh"
+        "458f4c61-3703-4db4-9921-24a54c5c575f@7fcdf"
       ],
       "materials": [
-        "458f4c61-3703-4db4-9921-24a54c5c575f@textile.material",
-        "458f4c61-3703-4db4-9921-24a54c5c575f@wood.material"
+        "458f4c61-3703-4db4-9921-24a54c5c575f@2f37c",
+        "458f4c61-3703-4db4-9921-24a54c5c575f@e4014"
       ],
       "scenes": [
-        "458f4c61-3703-4db4-9921-24a54c5c575f@bottleLarge.prefab"
+        "458f4c61-3703-4db4-9921-24a54c5c575f@bf611"
       ]
     }
   }

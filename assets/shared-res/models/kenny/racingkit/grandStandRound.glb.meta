@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh grandStandRound.mesh": {
+    "b7718": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@Mesh grandStandRound.mesh",
+      "uuid": "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@b7718",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "b7718",
+      "name": "Mesh grandStandRound.mesh"
     },
-    "grey.material": {
+    "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@grey.material",
+      "uuid": "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@d63d5",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "d63d5",
+      "name": "grey.material"
     },
-    "red.material": {
+    "92dfd": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@red.material",
+      "uuid": "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@92dfd",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "92dfd",
+      "name": "red.material"
     },
-    "road.material": {
+    "35ea4": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@road.material",
+      "uuid": "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@35ea4",
       "imported": true,
       "files": [
         ".json"
@@ -59,12 +65,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 2
-      }
+      },
+      "id": "35ea4",
+      "name": "road.material"
     },
-    "_defaultMat.material": {
+    "0ee4f": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@_defaultMat.material",
+      "uuid": "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@0ee4f",
       "imported": true,
       "files": [
         ".json"
@@ -72,12 +80,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 3
-      }
+      },
+      "id": "0ee4f",
+      "name": "_defaultMat.material"
     },
-    "grandStandRound.prefab": {
+    "fbfb7": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@grandStandRound.prefab",
+      "uuid": "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@fbfb7",
       "imported": true,
       "files": [
         ".json"
@@ -85,7 +95,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "fbfb7",
+      "name": "grandStandRound.prefab"
     }
   },
   "userData": {
@@ -93,19 +105,19 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@grandStandRound.prefab",
+    "redirect": "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@fbfb7",
     "assetFinder": {
       "meshes": [
-        "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@Mesh grandStandRound.mesh"
+        "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@b7718"
       ],
       "materials": [
-        "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@grey.material",
-        "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@red.material",
-        "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@road.material",
-        "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@_defaultMat.material"
+        "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@d63d5",
+        "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@92dfd",
+        "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@35ea4",
+        "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@0ee4f"
       ],
       "scenes": [
-        "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@grandStandRound.prefab"
+        "bc4ebd87-ec65-47ff-b3d6-867cb6b3d3e4@fbfb7"
       ]
     }
   }

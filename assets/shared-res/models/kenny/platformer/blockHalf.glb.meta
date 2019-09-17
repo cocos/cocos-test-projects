@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "31fde41d-8a6d-47d6-ace2-f3dd94fc1fdd",
@@ -8,10 +8,25 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh blockHalf.mesh": {
+    "53398": {
+      "ver": "1.0.10",
+      "importer": "gltf-material",
+      "uuid": "31fde41d-8a6d-47d6-ace2-f3dd94fc1fdd@53398",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 1
+      },
+      "id": "53398",
+      "name": "grass.material"
+    },
+    "75103": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "31fde41d-8a6d-47d6-ace2-f3dd94fc1fdd@Mesh blockHalf.mesh",
+      "uuid": "31fde41d-8a6d-47d6-ace2-f3dd94fc1fdd@75103",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "75103",
+      "name": "Mesh blockHalf.mesh"
     },
-    "dirt.material": {
+    "3577b": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "31fde41d-8a6d-47d6-ace2-f3dd94fc1fdd@dirt.material",
+      "uuid": "31fde41d-8a6d-47d6-ace2-f3dd94fc1fdd@3577b",
       "imported": true,
       "files": [
         ".json"
@@ -33,25 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "3577b",
+      "name": "dirt.material"
     },
-    "grass.material": {
-      "ver": "1.0.10",
-      "importer": "gltf-material",
-      "uuid": "31fde41d-8a6d-47d6-ace2-f3dd94fc1fdd@grass.material",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 1
-      }
-    },
-    "blockHalf.prefab": {
+    "35d32": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "31fde41d-8a6d-47d6-ace2-f3dd94fc1fdd@blockHalf.prefab",
+      "uuid": "31fde41d-8a6d-47d6-ace2-f3dd94fc1fdd@35d32",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "35d32",
+      "name": "blockHalf.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "31fde41d-8a6d-47d6-ace2-f3dd94fc1fdd@blockHalf.prefab",
+    "redirect": "31fde41d-8a6d-47d6-ace2-f3dd94fc1fdd@35d32",
     "assetFinder": {
       "meshes": [
-        "31fde41d-8a6d-47d6-ace2-f3dd94fc1fdd@Mesh blockHalf.mesh"
+        "31fde41d-8a6d-47d6-ace2-f3dd94fc1fdd@75103"
       ],
       "materials": [
-        "31fde41d-8a6d-47d6-ace2-f3dd94fc1fdd@dirt.material",
-        "31fde41d-8a6d-47d6-ace2-f3dd94fc1fdd@grass.material"
+        "31fde41d-8a6d-47d6-ace2-f3dd94fc1fdd@3577b",
+        "31fde41d-8a6d-47d6-ace2-f3dd94fc1fdd@53398"
       ],
       "scenes": [
-        "31fde41d-8a6d-47d6-ace2-f3dd94fc1fdd@blockHalf.prefab"
+        "31fde41d-8a6d-47d6-ace2-f3dd94fc1fdd@35d32"
       ]
     }
   }

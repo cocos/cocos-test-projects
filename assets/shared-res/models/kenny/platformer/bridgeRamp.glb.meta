@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "dbebc135-6630-4034-9086-fda8f885bab3",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh bridgeRamp.mesh": {
+    "f849b": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "dbebc135-6630-4034-9086-fda8f885bab3@Mesh bridgeRamp.mesh",
+      "uuid": "dbebc135-6630-4034-9086-fda8f885bab3@f849b",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "f849b",
+      "name": "Mesh bridgeRamp.mesh"
     },
-    "woodDark.material": {
+    "938e8": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "dbebc135-6630-4034-9086-fda8f885bab3@woodDark.material",
+      "uuid": "dbebc135-6630-4034-9086-fda8f885bab3@938e8",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "938e8",
+      "name": "woodDark.material"
     },
-    "wood.material": {
+    "e4014": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "dbebc135-6630-4034-9086-fda8f885bab3@wood.material",
+      "uuid": "dbebc135-6630-4034-9086-fda8f885bab3@e4014",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "e4014",
+      "name": "wood.material"
     },
-    "bridgeRamp.prefab": {
+    "f08bb": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "dbebc135-6630-4034-9086-fda8f885bab3@bridgeRamp.prefab",
+      "uuid": "dbebc135-6630-4034-9086-fda8f885bab3@f08bb",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "f08bb",
+      "name": "bridgeRamp.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "dbebc135-6630-4034-9086-fda8f885bab3@bridgeRamp.prefab",
+    "redirect": "dbebc135-6630-4034-9086-fda8f885bab3@f08bb",
     "assetFinder": {
       "meshes": [
-        "dbebc135-6630-4034-9086-fda8f885bab3@Mesh bridgeRamp.mesh"
+        "dbebc135-6630-4034-9086-fda8f885bab3@f849b"
       ],
       "materials": [
-        "dbebc135-6630-4034-9086-fda8f885bab3@woodDark.material",
-        "dbebc135-6630-4034-9086-fda8f885bab3@wood.material"
+        "dbebc135-6630-4034-9086-fda8f885bab3@938e8",
+        "dbebc135-6630-4034-9086-fda8f885bab3@e4014"
       ],
       "scenes": [
-        "dbebc135-6630-4034-9086-fda8f885bab3@bridgeRamp.prefab"
+        "dbebc135-6630-4034-9086-fda8f885bab3@f08bb"
       ]
     }
   }

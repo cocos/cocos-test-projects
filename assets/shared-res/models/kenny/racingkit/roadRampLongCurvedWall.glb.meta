@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "2878ca48-738d-49e7-875e-e838c79daa9c",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh noExport.mesh": {
+    "a6d73": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "2878ca48-738d-49e7-875e-e838c79daa9c@Mesh noExport.mesh",
+      "uuid": "2878ca48-738d-49e7-875e-e838c79daa9c@a6d73",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "a6d73",
+      "name": "Mesh noExport.mesh"
     },
-    "wall.material": {
+    "7d412": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "2878ca48-738d-49e7-875e-e838c79daa9c@wall.material",
+      "uuid": "2878ca48-738d-49e7-875e-e838c79daa9c@7d412",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "7d412",
+      "name": "wall.material"
     },
-    "grey.material": {
+    "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "2878ca48-738d-49e7-875e-e838c79daa9c@grey.material",
+      "uuid": "2878ca48-738d-49e7-875e-e838c79daa9c@d63d5",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "d63d5",
+      "name": "grey.material"
     },
-    "road.material": {
+    "35ea4": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "2878ca48-738d-49e7-875e-e838c79daa9c@road.material",
+      "uuid": "2878ca48-738d-49e7-875e-e838c79daa9c@35ea4",
       "imported": true,
       "files": [
         ".json"
@@ -59,12 +65,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 2
-      }
+      },
+      "id": "35ea4",
+      "name": "road.material"
     },
-    "roadRampLongCurvedWall.prefab": {
+    "f682d": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "2878ca48-738d-49e7-875e-e838c79daa9c@roadRampLongCurvedWall.prefab",
+      "uuid": "2878ca48-738d-49e7-875e-e838c79daa9c@f682d",
       "imported": true,
       "files": [
         ".json"
@@ -72,7 +80,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "f682d",
+      "name": "roadRampLongCurvedWall.prefab"
     }
   },
   "userData": {
@@ -80,18 +90,18 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "2878ca48-738d-49e7-875e-e838c79daa9c@roadRampLongCurvedWall.prefab",
+    "redirect": "2878ca48-738d-49e7-875e-e838c79daa9c@f682d",
     "assetFinder": {
       "meshes": [
-        "2878ca48-738d-49e7-875e-e838c79daa9c@Mesh noExport.mesh"
+        "2878ca48-738d-49e7-875e-e838c79daa9c@a6d73"
       ],
       "materials": [
-        "2878ca48-738d-49e7-875e-e838c79daa9c@wall.material",
-        "2878ca48-738d-49e7-875e-e838c79daa9c@grey.material",
-        "2878ca48-738d-49e7-875e-e838c79daa9c@road.material"
+        "2878ca48-738d-49e7-875e-e838c79daa9c@7d412",
+        "2878ca48-738d-49e7-875e-e838c79daa9c@d63d5",
+        "2878ca48-738d-49e7-875e-e838c79daa9c@35ea4"
       ],
       "scenes": [
-        "2878ca48-738d-49e7-875e-e838c79daa9c@roadRampLongCurvedWall.prefab"
+        "2878ca48-738d-49e7-875e-e838c79daa9c@f682d"
       ]
     }
   }

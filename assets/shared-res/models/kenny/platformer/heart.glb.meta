@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "cb470193-b517-4296-a565-b4aae8996327",
@@ -8,10 +8,25 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh heart.mesh": {
+    "60206": {
+      "ver": "1.0.8",
+      "importer": "gltf-scene",
+      "uuid": "cb470193-b517-4296-a565-b4aae8996327@60206",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "60206",
+      "name": "heart.prefab"
+    },
+    "173c3": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "cb470193-b517-4296-a565-b4aae8996327@Mesh heart.mesh",
+      "uuid": "cb470193-b517-4296-a565-b4aae8996327@173c3",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "173c3",
+      "name": "Mesh heart.mesh"
     },
-    "heart.material": {
+    "4e300": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "cb470193-b517-4296-a565-b4aae8996327@heart.material",
+      "uuid": "cb470193-b517-4296-a565-b4aae8996327@4e300",
       "imported": true,
       "files": [
         ".json"
@@ -33,20 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
-    },
-    "heart.prefab": {
-      "ver": "1.0.8",
-      "importer": "gltf-scene",
-      "uuid": "cb470193-b517-4296-a565-b4aae8996327@heart.prefab",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
+      },
+      "id": "4e300",
+      "name": "heart.material"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "cb470193-b517-4296-a565-b4aae8996327@heart.prefab",
+    "redirect": "cb470193-b517-4296-a565-b4aae8996327@60206",
     "assetFinder": {
       "meshes": [
-        "cb470193-b517-4296-a565-b4aae8996327@Mesh heart.mesh"
+        "cb470193-b517-4296-a565-b4aae8996327@173c3"
       ],
       "materials": [
-        "cb470193-b517-4296-a565-b4aae8996327@heart.material"
+        "cb470193-b517-4296-a565-b4aae8996327@4e300"
       ],
       "scenes": [
-        "cb470193-b517-4296-a565-b4aae8996327@heart.prefab"
+        "cb470193-b517-4296-a565-b4aae8996327@60206"
       ]
     }
   }

@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "7aea141c-d634-4280-9aaf-6a8273f11822",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh noExport.mesh": {
+    "a6d73": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "7aea141c-d634-4280-9aaf-6a8273f11822@Mesh noExport.mesh",
+      "uuid": "7aea141c-d634-4280-9aaf-6a8273f11822@a6d73",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "a6d73",
+      "name": "Mesh noExport.mesh"
     },
-    "red.material": {
+    "92dfd": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "7aea141c-d634-4280-9aaf-6a8273f11822@red.material",
+      "uuid": "7aea141c-d634-4280-9aaf-6a8273f11822@92dfd",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "92dfd",
+      "name": "red.material"
     },
-    "barrierRed.prefab": {
+    "81a10": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "7aea141c-d634-4280-9aaf-6a8273f11822@barrierRed.prefab",
+      "uuid": "7aea141c-d634-4280-9aaf-6a8273f11822@81a10",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "81a10",
+      "name": "barrierRed.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "7aea141c-d634-4280-9aaf-6a8273f11822@barrierRed.prefab",
+    "redirect": "7aea141c-d634-4280-9aaf-6a8273f11822@81a10",
     "assetFinder": {
       "meshes": [
-        "7aea141c-d634-4280-9aaf-6a8273f11822@Mesh noExport.mesh"
+        "7aea141c-d634-4280-9aaf-6a8273f11822@a6d73"
       ],
       "materials": [
-        "7aea141c-d634-4280-9aaf-6a8273f11822@red.material"
+        "7aea141c-d634-4280-9aaf-6a8273f11822@92dfd"
       ],
       "scenes": [
-        "7aea141c-d634-4280-9aaf-6a8273f11822@barrierRed.prefab"
+        "7aea141c-d634-4280-9aaf-6a8273f11822@81a10"
       ]
     }
   }

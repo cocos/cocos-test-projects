@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "2cff6d72-2db1-4bef-b714-38d781beb85c",
@@ -8,64 +8,10 @@
     ".gltf"
   ],
   "subMetas": {
-    "Group 18.mesh": {
-      "ver": "1.0.2",
-      "importer": "gltf-mesh",
-      "uuid": "2cff6d72-2db1-4bef-b714-38d781beb85c@Group 18.mesh",
-      "imported": true,
-      "files": [
-        ".json",
-        ".bin"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
-    },
-    "Group 20.mesh": {
-      "ver": "1.0.2",
-      "importer": "gltf-mesh",
-      "uuid": "2cff6d72-2db1-4bef-b714-38d781beb85c@Group 20.mesh",
-      "imported": true,
-      "files": [
-        ".json",
-        ".bin"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 1
-      }
-    },
-    "wood.material": {
-      "ver": "1.0.10",
-      "importer": "gltf-material",
-      "uuid": "2cff6d72-2db1-4bef-b714-38d781beb85c@wood.material",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
-    },
-    "leaves.material": {
-      "ver": "1.0.10",
-      "importer": "gltf-material",
-      "uuid": "2cff6d72-2db1-4bef-b714-38d781beb85c@leaves.material",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 1
-      }
-    },
-    "palm_detailed_short.prefab": {
+    "79400": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "2cff6d72-2db1-4bef-b714-38d781beb85c@palm_detailed_short.prefab",
+      "uuid": "2cff6d72-2db1-4bef-b714-38d781beb85c@79400",
       "imported": true,
       "files": [
         ".json"
@@ -73,7 +19,71 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "79400",
+      "name": "palm_detailed_short.prefab"
+    },
+    "69c91": {
+      "ver": "1.0.2",
+      "importer": "gltf-mesh",
+      "uuid": "2cff6d72-2db1-4bef-b714-38d781beb85c@69c91",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "69c91",
+      "name": "Group 18.mesh"
+    },
+    "7bbb1": {
+      "ver": "1.0.2",
+      "importer": "gltf-mesh",
+      "uuid": "2cff6d72-2db1-4bef-b714-38d781beb85c@7bbb1",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 1
+      },
+      "id": "7bbb1",
+      "name": "Group 20.mesh"
+    },
+    "e4014": {
+      "ver": "1.0.10",
+      "importer": "gltf-material",
+      "uuid": "2cff6d72-2db1-4bef-b714-38d781beb85c@e4014",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "e4014",
+      "name": "wood.material"
+    },
+    "a1dfa": {
+      "ver": "1.0.10",
+      "importer": "gltf-material",
+      "uuid": "2cff6d72-2db1-4bef-b714-38d781beb85c@a1dfa",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 1
+      },
+      "id": "a1dfa",
+      "name": "leaves.material"
     }
   },
   "userData": {
@@ -81,18 +91,18 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "2cff6d72-2db1-4bef-b714-38d781beb85c@palm_detailed_short.prefab",
+    "redirect": "2cff6d72-2db1-4bef-b714-38d781beb85c@79400",
     "assetFinder": {
       "meshes": [
-        "2cff6d72-2db1-4bef-b714-38d781beb85c@Group 18.mesh",
-        "2cff6d72-2db1-4bef-b714-38d781beb85c@Group 20.mesh"
+        "2cff6d72-2db1-4bef-b714-38d781beb85c@69c91",
+        "2cff6d72-2db1-4bef-b714-38d781beb85c@7bbb1"
       ],
       "materials": [
-        "2cff6d72-2db1-4bef-b714-38d781beb85c@wood.material",
-        "2cff6d72-2db1-4bef-b714-38d781beb85c@leaves.material"
+        "2cff6d72-2db1-4bef-b714-38d781beb85c@e4014",
+        "2cff6d72-2db1-4bef-b714-38d781beb85c@a1dfa"
       ],
       "scenes": [
-        "2cff6d72-2db1-4bef-b714-38d781beb85c@palm_detailed_short.prefab"
+        "2cff6d72-2db1-4bef-b714-38d781beb85c@79400"
       ]
     }
   }

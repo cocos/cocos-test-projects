@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "ab70b01b-3790-40ef-96a5-ab0e0920f43c",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh noExport.mesh": {
+    "a6d73": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "ab70b01b-3790-40ef-96a5-ab0e0920f43c@Mesh noExport.mesh",
+      "uuid": "ab70b01b-3790-40ef-96a5-ab0e0920f43c@a6d73",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "a6d73",
+      "name": "Mesh noExport.mesh"
     },
-    "wall.material": {
+    "7d412": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "ab70b01b-3790-40ef-96a5-ab0e0920f43c@wall.material",
+      "uuid": "ab70b01b-3790-40ef-96a5-ab0e0920f43c@7d412",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "7d412",
+      "name": "wall.material"
     },
-    "grey.material": {
+    "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "ab70b01b-3790-40ef-96a5-ab0e0920f43c@grey.material",
+      "uuid": "ab70b01b-3790-40ef-96a5-ab0e0920f43c@d63d5",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "d63d5",
+      "name": "grey.material"
     },
-    "road.material": {
+    "35ea4": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "ab70b01b-3790-40ef-96a5-ab0e0920f43c@road.material",
+      "uuid": "ab70b01b-3790-40ef-96a5-ab0e0920f43c@35ea4",
       "imported": true,
       "files": [
         ".json"
@@ -59,12 +65,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 2
-      }
+      },
+      "id": "35ea4",
+      "name": "road.material"
     },
-    "roadStraightBridgeMid.prefab": {
+    "cbf38": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "ab70b01b-3790-40ef-96a5-ab0e0920f43c@roadStraightBridgeMid.prefab",
+      "uuid": "ab70b01b-3790-40ef-96a5-ab0e0920f43c@cbf38",
       "imported": true,
       "files": [
         ".json"
@@ -72,7 +80,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "cbf38",
+      "name": "roadStraightBridgeMid.prefab"
     }
   },
   "userData": {
@@ -80,18 +90,18 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "ab70b01b-3790-40ef-96a5-ab0e0920f43c@roadStraightBridgeMid.prefab",
+    "redirect": "ab70b01b-3790-40ef-96a5-ab0e0920f43c@cbf38",
     "assetFinder": {
       "meshes": [
-        "ab70b01b-3790-40ef-96a5-ab0e0920f43c@Mesh noExport.mesh"
+        "ab70b01b-3790-40ef-96a5-ab0e0920f43c@a6d73"
       ],
       "materials": [
-        "ab70b01b-3790-40ef-96a5-ab0e0920f43c@wall.material",
-        "ab70b01b-3790-40ef-96a5-ab0e0920f43c@grey.material",
-        "ab70b01b-3790-40ef-96a5-ab0e0920f43c@road.material"
+        "ab70b01b-3790-40ef-96a5-ab0e0920f43c@7d412",
+        "ab70b01b-3790-40ef-96a5-ab0e0920f43c@d63d5",
+        "ab70b01b-3790-40ef-96a5-ab0e0920f43c@35ea4"
       ],
       "scenes": [
-        "ab70b01b-3790-40ef-96a5-ab0e0920f43c@roadStraightBridgeMid.prefab"
+        "ab70b01b-3790-40ef-96a5-ab0e0920f43c@cbf38"
       ]
     }
   }

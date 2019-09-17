@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "0d74e384-0772-43fa-9265-0eabb88b52c4",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh fenceCorner.mesh": {
+    "630af": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "0d74e384-0772-43fa-9265-0eabb88b52c4@Mesh fenceCorner.mesh",
+      "uuid": "0d74e384-0772-43fa-9265-0eabb88b52c4@630af",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "630af",
+      "name": "Mesh fenceCorner.mesh"
     },
-    "wood.material": {
+    "e4014": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "0d74e384-0772-43fa-9265-0eabb88b52c4@wood.material",
+      "uuid": "0d74e384-0772-43fa-9265-0eabb88b52c4@e4014",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "e4014",
+      "name": "wood.material"
     },
-    "fenceCorner.prefab": {
+    "e10bf": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "0d74e384-0772-43fa-9265-0eabb88b52c4@fenceCorner.prefab",
+      "uuid": "0d74e384-0772-43fa-9265-0eabb88b52c4@e10bf",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "e10bf",
+      "name": "fenceCorner.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "0d74e384-0772-43fa-9265-0eabb88b52c4@fenceCorner.prefab",
+    "redirect": "0d74e384-0772-43fa-9265-0eabb88b52c4@e10bf",
     "assetFinder": {
       "meshes": [
-        "0d74e384-0772-43fa-9265-0eabb88b52c4@Mesh fenceCorner.mesh"
+        "0d74e384-0772-43fa-9265-0eabb88b52c4@630af"
       ],
       "materials": [
-        "0d74e384-0772-43fa-9265-0eabb88b52c4@wood.material"
+        "0d74e384-0772-43fa-9265-0eabb88b52c4@e4014"
       ],
       "scenes": [
-        "0d74e384-0772-43fa-9265-0eabb88b52c4@fenceCorner.prefab"
+        "0d74e384-0772-43fa-9265-0eabb88b52c4@e10bf"
       ]
     }
   }

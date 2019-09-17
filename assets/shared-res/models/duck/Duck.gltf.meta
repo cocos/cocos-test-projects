@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "054daf25-262f-4267-92ba-e8bd2d1c2bb7",
@@ -8,10 +8,10 @@
     ".gltf"
   ],
   "subMetas": {
-    "LOD3spShape.mesh": {
+    "82fcb": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "054daf25-262f-4267-92ba-e8bd2d1c2bb7@LOD3spShape.mesh",
+      "uuid": "054daf25-262f-4267-92ba-e8bd2d1c2bb7@82fcb",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "82fcb",
+      "name": "LOD3spShape.mesh"
     },
-    "UnnamedTexture.texture": {
+    "e39f7": {
       "ver": "1.0.19",
       "importer": "texture",
-      "uuid": "054daf25-262f-4267-92ba-e8bd2d1c2bb7@UnnamedTexture.texture",
+      "uuid": "054daf25-262f-4267-92ba-e8bd2d1c2bb7@e39f7",
       "imported": true,
       "files": [
         ".json"
@@ -41,12 +43,14 @@
         "anisotropy": 1,
         "isUuid": false,
         "imageUuidOrDatabaseUri": "db://assets/shared-res/models/duck/DuckCM.png"
-      }
+      },
+      "id": "e39f7",
+      "name": "UnnamedTexture.texture"
     },
-    "blinn3-fx.material": {
+    "ef53f": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "054daf25-262f-4267-92ba-e8bd2d1c2bb7@blinn3-fx.material",
+      "uuid": "054daf25-262f-4267-92ba-e8bd2d1c2bb7@ef53f",
       "imported": true,
       "files": [
         ".json"
@@ -54,12 +58,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "ef53f",
+      "name": "blinn3-fx.material"
     },
-    "Duck.prefab": {
+    "5f176": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "054daf25-262f-4267-92ba-e8bd2d1c2bb7@Duck.prefab",
+      "uuid": "054daf25-262f-4267-92ba-e8bd2d1c2bb7@5f176",
       "imported": true,
       "files": [
         ".json"
@@ -67,7 +73,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "5f176",
+      "name": "Duck.prefab"
     }
   },
   "userData": {
@@ -75,10 +83,10 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "054daf25-262f-4267-92ba-e8bd2d1c2bb7@Duck.prefab",
+    "redirect": "054daf25-262f-4267-92ba-e8bd2d1c2bb7@5f176",
     "assetFinder": {
       "meshes": [
-        "054daf25-262f-4267-92ba-e8bd2d1c2bb7@LOD3spShape.mesh"
+        "054daf25-262f-4267-92ba-e8bd2d1c2bb7@82fcb"
       ],
       "images": [
         {
@@ -87,13 +95,13 @@
         }
       ],
       "textures": [
-        "054daf25-262f-4267-92ba-e8bd2d1c2bb7@UnnamedTexture.texture"
+        "054daf25-262f-4267-92ba-e8bd2d1c2bb7@e39f7"
       ],
       "materials": [
-        "054daf25-262f-4267-92ba-e8bd2d1c2bb7@blinn3-fx.material"
+        "054daf25-262f-4267-92ba-e8bd2d1c2bb7@ef53f"
       ],
       "scenes": [
-        "054daf25-262f-4267-92ba-e8bd2d1c2bb7@Duck.prefab"
+        "054daf25-262f-4267-92ba-e8bd2d1c2bb7@5f176"
       ]
     }
   }

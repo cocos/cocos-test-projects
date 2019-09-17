@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "5a86e66b-5f63-43f5-b154-74a0b77bf905",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh overhead.mesh": {
+    "d28cf": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "5a86e66b-5f63-43f5-b154-74a0b77bf905@Mesh overhead.mesh",
+      "uuid": "5a86e66b-5f63-43f5-b154-74a0b77bf905@d28cf",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "d28cf",
+      "name": "Mesh overhead.mesh"
     },
-    "grey.material": {
+    "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "5a86e66b-5f63-43f5-b154-74a0b77bf905@grey.material",
+      "uuid": "5a86e66b-5f63-43f5-b154-74a0b77bf905@d63d5",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "d63d5",
+      "name": "grey.material"
     },
-    "overhead.prefab": {
+    "6c29a": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "5a86e66b-5f63-43f5-b154-74a0b77bf905@overhead.prefab",
+      "uuid": "5a86e66b-5f63-43f5-b154-74a0b77bf905@6c29a",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "6c29a",
+      "name": "overhead.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "5a86e66b-5f63-43f5-b154-74a0b77bf905@overhead.prefab",
+    "redirect": "5a86e66b-5f63-43f5-b154-74a0b77bf905@6c29a",
     "assetFinder": {
       "meshes": [
-        "5a86e66b-5f63-43f5-b154-74a0b77bf905@Mesh overhead.mesh"
+        "5a86e66b-5f63-43f5-b154-74a0b77bf905@d28cf"
       ],
       "materials": [
-        "5a86e66b-5f63-43f5-b154-74a0b77bf905@grey.material"
+        "5a86e66b-5f63-43f5-b154-74a0b77bf905@d63d5"
       ],
       "scenes": [
-        "5a86e66b-5f63-43f5-b154-74a0b77bf905@overhead.prefab"
+        "5a86e66b-5f63-43f5-b154-74a0b77bf905@6c29a"
       ]
     }
   }

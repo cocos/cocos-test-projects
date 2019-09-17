@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "8d98d674-a750-4cad-8bed-82c6f6f3f6fd",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh bridge.mesh": {
+    "aec7e": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "8d98d674-a750-4cad-8bed-82c6f6f3f6fd@Mesh bridge.mesh",
+      "uuid": "8d98d674-a750-4cad-8bed-82c6f6f3f6fd@aec7e",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "aec7e",
+      "name": "Mesh bridge.mesh"
     },
-    "wood.material": {
+    "e4014": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "8d98d674-a750-4cad-8bed-82c6f6f3f6fd@wood.material",
+      "uuid": "8d98d674-a750-4cad-8bed-82c6f6f3f6fd@e4014",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "e4014",
+      "name": "wood.material"
     },
-    "woodDark.material": {
+    "938e8": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "8d98d674-a750-4cad-8bed-82c6f6f3f6fd@woodDark.material",
+      "uuid": "8d98d674-a750-4cad-8bed-82c6f6f3f6fd@938e8",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "938e8",
+      "name": "woodDark.material"
     },
-    "bridge.prefab": {
+    "c8923": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "8d98d674-a750-4cad-8bed-82c6f6f3f6fd@bridge.prefab",
+      "uuid": "8d98d674-a750-4cad-8bed-82c6f6f3f6fd@c8923",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "c8923",
+      "name": "bridge.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "8d98d674-a750-4cad-8bed-82c6f6f3f6fd@bridge.prefab",
+    "redirect": "8d98d674-a750-4cad-8bed-82c6f6f3f6fd@c8923",
     "assetFinder": {
       "meshes": [
-        "8d98d674-a750-4cad-8bed-82c6f6f3f6fd@Mesh bridge.mesh"
+        "8d98d674-a750-4cad-8bed-82c6f6f3f6fd@aec7e"
       ],
       "materials": [
-        "8d98d674-a750-4cad-8bed-82c6f6f3f6fd@wood.material",
-        "8d98d674-a750-4cad-8bed-82c6f6f3f6fd@woodDark.material"
+        "8d98d674-a750-4cad-8bed-82c6f6f3f6fd@e4014",
+        "8d98d674-a750-4cad-8bed-82c6f6f3f6fd@938e8"
       ],
       "scenes": [
-        "8d98d674-a750-4cad-8bed-82c6f6f3f6fd@bridge.prefab"
+        "8d98d674-a750-4cad-8bed-82c6f6f3f6fd@c8923"
       ]
     }
   }

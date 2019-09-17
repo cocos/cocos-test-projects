@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "adca0157-a318-4226-91df-7c401429c552",
@@ -8,10 +8,10 @@
     ".gltf"
   ],
   "subMetas": {
-    "Suzanne.mesh": {
+    "a781f": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "adca0157-a318-4226-91df-7c401429c552@Suzanne.mesh",
+      "uuid": "adca0157-a318-4226-91df-7c401429c552@a781f",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "a781f",
+      "name": "Suzanne.mesh"
     },
-    "UnnamedTexture-0.texture": {
+    "3effa": {
       "ver": "1.0.19",
       "importer": "texture",
-      "uuid": "adca0157-a318-4226-91df-7c401429c552@UnnamedTexture-0.texture",
+      "uuid": "adca0157-a318-4226-91df-7c401429c552@3effa",
       "imported": true,
       "files": [
         ".json"
@@ -41,12 +43,14 @@
         "anisotropy": 1,
         "isUuid": false,
         "imageUuidOrDatabaseUri": "db://assets/shared-res/models/suzanne/Suzanne_BaseColor.png"
-      }
+      },
+      "id": "3effa",
+      "name": "UnnamedTexture-0.texture"
     },
-    "UnnamedTexture-1.texture": {
+    "221a5": {
       "ver": "1.0.19",
       "importer": "texture",
-      "uuid": "adca0157-a318-4226-91df-7c401429c552@UnnamedTexture-1.texture",
+      "uuid": "adca0157-a318-4226-91df-7c401429c552@221a5",
       "imported": true,
       "files": [
         ".json"
@@ -62,12 +66,14 @@
         "anisotropy": 1,
         "isUuid": false,
         "imageUuidOrDatabaseUri": "db://assets/shared-res/models/suzanne/Suzanne_MetallicRoughness.png"
-      }
+      },
+      "id": "221a5",
+      "name": "UnnamedTexture-1.texture"
     },
-    "Suzanne.material": {
+    "e3dd8": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "adca0157-a318-4226-91df-7c401429c552@Suzanne.material",
+      "uuid": "adca0157-a318-4226-91df-7c401429c552@e3dd8",
       "imported": true,
       "files": [
         ".json"
@@ -75,12 +81,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "e3dd8",
+      "name": "Suzanne.material"
     },
-    "Suzanne.prefab": {
+    "1a935": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "adca0157-a318-4226-91df-7c401429c552@Suzanne.prefab",
+      "uuid": "adca0157-a318-4226-91df-7c401429c552@1a935",
       "imported": true,
       "files": [
         ".json"
@@ -88,7 +96,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "1a935",
+      "name": "Suzanne.prefab"
     }
   },
   "userData": {
@@ -96,10 +106,10 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "adca0157-a318-4226-91df-7c401429c552@Suzanne.prefab",
+    "redirect": "adca0157-a318-4226-91df-7c401429c552@1a935",
     "assetFinder": {
       "meshes": [
-        "adca0157-a318-4226-91df-7c401429c552@Suzanne.mesh"
+        "adca0157-a318-4226-91df-7c401429c552@a781f"
       ],
       "images": [
         {
@@ -112,14 +122,14 @@
         }
       ],
       "textures": [
-        "adca0157-a318-4226-91df-7c401429c552@UnnamedTexture-0.texture",
-        "adca0157-a318-4226-91df-7c401429c552@UnnamedTexture-1.texture"
+        "adca0157-a318-4226-91df-7c401429c552@3effa",
+        "adca0157-a318-4226-91df-7c401429c552@221a5"
       ],
       "materials": [
-        "adca0157-a318-4226-91df-7c401429c552@Suzanne.material"
+        "adca0157-a318-4226-91df-7c401429c552@e3dd8"
       ],
       "scenes": [
-        "adca0157-a318-4226-91df-7c401429c552@Suzanne.prefab"
+        "adca0157-a318-4226-91df-7c401429c552@1a935"
       ]
     }
   }

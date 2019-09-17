@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "e561f277-a596-4fa5-be6a-f2b4854d4bdc",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh coin.mesh": {
+    "c5629": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "e561f277-a596-4fa5-be6a-f2b4854d4bdc@Mesh coin.mesh",
+      "uuid": "e561f277-a596-4fa5-be6a-f2b4854d4bdc@c5629",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "c5629",
+      "name": "Mesh coin.mesh"
     },
-    "metal.material": {
+    "16ef1": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "e561f277-a596-4fa5-be6a-f2b4854d4bdc@metal.material",
+      "uuid": "e561f277-a596-4fa5-be6a-f2b4854d4bdc@16ef1",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "16ef1",
+      "name": "metal.material"
     },
-    "wood.material": {
+    "e4014": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "e561f277-a596-4fa5-be6a-f2b4854d4bdc@wood.material",
+      "uuid": "e561f277-a596-4fa5-be6a-f2b4854d4bdc@e4014",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "e4014",
+      "name": "wood.material"
     },
-    "coinSilver.prefab": {
+    "958e8": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "e561f277-a596-4fa5-be6a-f2b4854d4bdc@coinSilver.prefab",
+      "uuid": "e561f277-a596-4fa5-be6a-f2b4854d4bdc@958e8",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "958e8",
+      "name": "coinSilver.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "e561f277-a596-4fa5-be6a-f2b4854d4bdc@coinSilver.prefab",
+    "redirect": "e561f277-a596-4fa5-be6a-f2b4854d4bdc@958e8",
     "assetFinder": {
       "meshes": [
-        "e561f277-a596-4fa5-be6a-f2b4854d4bdc@Mesh coin.mesh"
+        "e561f277-a596-4fa5-be6a-f2b4854d4bdc@c5629"
       ],
       "materials": [
-        "e561f277-a596-4fa5-be6a-f2b4854d4bdc@metal.material",
-        "e561f277-a596-4fa5-be6a-f2b4854d4bdc@wood.material"
+        "e561f277-a596-4fa5-be6a-f2b4854d4bdc@16ef1",
+        "e561f277-a596-4fa5-be6a-f2b4854d4bdc@e4014"
       ],
       "scenes": [
-        "e561f277-a596-4fa5-be6a-f2b4854d4bdc@coinSilver.prefab"
+        "e561f277-a596-4fa5-be6a-f2b4854d4bdc@958e8"
       ]
     }
   }

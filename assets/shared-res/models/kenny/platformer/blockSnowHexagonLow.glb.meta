@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "8fa7ae81-6b5c-41e1-b8d4-d9d3c182d11f",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh blockSnowHexagonLow.mesh": {
+    "4ed55": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "8fa7ae81-6b5c-41e1-b8d4-d9d3c182d11f@Mesh blockSnowHexagonLow.mesh",
+      "uuid": "8fa7ae81-6b5c-41e1-b8d4-d9d3c182d11f@4ed55",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "4ed55",
+      "name": "Mesh blockSnowHexagonLow.mesh"
     },
-    "snow.material": {
+    "dfa42": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "8fa7ae81-6b5c-41e1-b8d4-d9d3c182d11f@snow.material",
+      "uuid": "8fa7ae81-6b5c-41e1-b8d4-d9d3c182d11f@dfa42",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "dfa42",
+      "name": "snow.material"
     },
-    "dirt.material": {
+    "3577b": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "8fa7ae81-6b5c-41e1-b8d4-d9d3c182d11f@dirt.material",
+      "uuid": "8fa7ae81-6b5c-41e1-b8d4-d9d3c182d11f@3577b",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "3577b",
+      "name": "dirt.material"
     },
-    "blockSnowHexagonLow.prefab": {
+    "9bf5a": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "8fa7ae81-6b5c-41e1-b8d4-d9d3c182d11f@blockSnowHexagonLow.prefab",
+      "uuid": "8fa7ae81-6b5c-41e1-b8d4-d9d3c182d11f@9bf5a",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "9bf5a",
+      "name": "blockSnowHexagonLow.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "8fa7ae81-6b5c-41e1-b8d4-d9d3c182d11f@blockSnowHexagonLow.prefab",
+    "redirect": "8fa7ae81-6b5c-41e1-b8d4-d9d3c182d11f@9bf5a",
     "assetFinder": {
       "meshes": [
-        "8fa7ae81-6b5c-41e1-b8d4-d9d3c182d11f@Mesh blockSnowHexagonLow.mesh"
+        "8fa7ae81-6b5c-41e1-b8d4-d9d3c182d11f@4ed55"
       ],
       "materials": [
-        "8fa7ae81-6b5c-41e1-b8d4-d9d3c182d11f@snow.material",
-        "8fa7ae81-6b5c-41e1-b8d4-d9d3c182d11f@dirt.material"
+        "8fa7ae81-6b5c-41e1-b8d4-d9d3c182d11f@dfa42",
+        "8fa7ae81-6b5c-41e1-b8d4-d9d3c182d11f@3577b"
       ],
       "scenes": [
-        "8fa7ae81-6b5c-41e1-b8d4-d9d3c182d11f@blockSnowHexagonLow.prefab"
+        "8fa7ae81-6b5c-41e1-b8d4-d9d3c182d11f@9bf5a"
       ]
     }
   }

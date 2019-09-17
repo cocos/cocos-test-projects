@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "707ce342-a105-408c-a132-59eeb56cba75",
@@ -8,10 +8,40 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh flowers.mesh": {
+    "53398": {
+      "ver": "1.0.10",
+      "importer": "gltf-material",
+      "uuid": "707ce342-a105-408c-a132-59eeb56cba75@53398",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "53398",
+      "name": "grass.material"
+    },
+    "85104": {
+      "ver": "1.0.8",
+      "importer": "gltf-scene",
+      "uuid": "707ce342-a105-408c-a132-59eeb56cba75@85104",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "85104",
+      "name": "flowers.prefab"
+    },
+    "7f83f": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "707ce342-a105-408c-a132-59eeb56cba75@Mesh flowers.mesh",
+      "uuid": "707ce342-a105-408c-a132-59eeb56cba75@7f83f",
       "imported": true,
       "files": [
         ".json",
@@ -20,25 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "7f83f",
+      "name": "Mesh flowers.mesh"
     },
-    "grass.material": {
+    "4e300": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "707ce342-a105-408c-a132-59eeb56cba75@grass.material",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
-    },
-    "heart.material": {
-      "ver": "1.0.10",
-      "importer": "gltf-material",
-      "uuid": "707ce342-a105-408c-a132-59eeb56cba75@heart.material",
+      "uuid": "707ce342-a105-408c-a132-59eeb56cba75@4e300",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +65,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "4e300",
+      "name": "heart.material"
     },
-    "gold.material": {
+    "9dbcb": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "707ce342-a105-408c-a132-59eeb56cba75@gold.material",
+      "uuid": "707ce342-a105-408c-a132-59eeb56cba75@9dbcb",
       "imported": true,
       "files": [
         ".json"
@@ -59,20 +80,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 2
-      }
-    },
-    "flowers.prefab": {
-      "ver": "1.0.8",
-      "importer": "gltf-scene",
-      "uuid": "707ce342-a105-408c-a132-59eeb56cba75@flowers.prefab",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
+      },
+      "id": "9dbcb",
+      "name": "gold.material"
     }
   },
   "userData": {
@@ -80,18 +90,18 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "707ce342-a105-408c-a132-59eeb56cba75@flowers.prefab",
+    "redirect": "707ce342-a105-408c-a132-59eeb56cba75@85104",
     "assetFinder": {
       "meshes": [
-        "707ce342-a105-408c-a132-59eeb56cba75@Mesh flowers.mesh"
+        "707ce342-a105-408c-a132-59eeb56cba75@7f83f"
       ],
       "materials": [
-        "707ce342-a105-408c-a132-59eeb56cba75@grass.material",
-        "707ce342-a105-408c-a132-59eeb56cba75@heart.material",
-        "707ce342-a105-408c-a132-59eeb56cba75@gold.material"
+        "707ce342-a105-408c-a132-59eeb56cba75@53398",
+        "707ce342-a105-408c-a132-59eeb56cba75@4e300",
+        "707ce342-a105-408c-a132-59eeb56cba75@9dbcb"
       ],
       "scenes": [
-        "707ce342-a105-408c-a132-59eeb56cba75@flowers.prefab"
+        "707ce342-a105-408c-a132-59eeb56cba75@85104"
       ]
     }
   }

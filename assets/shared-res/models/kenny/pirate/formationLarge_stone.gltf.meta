@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "bd9addcd-79de-474e-80ba-c16ccd65fe5d",
@@ -8,10 +8,10 @@
     ".gltf"
   ],
   "subMetas": {
-    "formationLarge_stone.mesh": {
+    "8e8fe": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "bd9addcd-79de-474e-80ba-c16ccd65fe5d@formationLarge_stone.mesh",
+      "uuid": "bd9addcd-79de-474e-80ba-c16ccd65fe5d@8e8fe",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "8e8fe",
+      "name": "formationLarge_stone.mesh"
     },
-    "stone.material": {
+    "4de10": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "bd9addcd-79de-474e-80ba-c16ccd65fe5d@stone.material",
+      "uuid": "bd9addcd-79de-474e-80ba-c16ccd65fe5d@4de10",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "4de10",
+      "name": "stone.material"
     },
-    "formationLarge_stone.prefab": {
+    "0c3c0": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "bd9addcd-79de-474e-80ba-c16ccd65fe5d@formationLarge_stone.prefab",
+      "uuid": "bd9addcd-79de-474e-80ba-c16ccd65fe5d@0c3c0",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "0c3c0",
+      "name": "formationLarge_stone.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "bd9addcd-79de-474e-80ba-c16ccd65fe5d@formationLarge_stone.prefab",
+    "redirect": "bd9addcd-79de-474e-80ba-c16ccd65fe5d@0c3c0",
     "assetFinder": {
       "meshes": [
-        "bd9addcd-79de-474e-80ba-c16ccd65fe5d@formationLarge_stone.mesh"
+        "bd9addcd-79de-474e-80ba-c16ccd65fe5d@8e8fe"
       ],
       "materials": [
-        "bd9addcd-79de-474e-80ba-c16ccd65fe5d@stone.material"
+        "bd9addcd-79de-474e-80ba-c16ccd65fe5d@4de10"
       ],
       "scenes": [
-        "bd9addcd-79de-474e-80ba-c16ccd65fe5d@formationLarge_stone.prefab"
+        "bd9addcd-79de-474e-80ba-c16ccd65fe5d@0c3c0"
       ]
     }
   }

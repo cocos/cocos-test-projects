@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "9efa3c5f-927f-4507-be22-f900d51b6e1b",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh pitsOfficeRoof.mesh": {
+    "97dc0": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "9efa3c5f-927f-4507-be22-f900d51b6e1b@Mesh pitsOfficeRoof.mesh",
+      "uuid": "9efa3c5f-927f-4507-be22-f900d51b6e1b@97dc0",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "97dc0",
+      "name": "Mesh pitsOfficeRoof.mesh"
     },
-    "grey.material": {
+    "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "9efa3c5f-927f-4507-be22-f900d51b6e1b@grey.material",
+      "uuid": "9efa3c5f-927f-4507-be22-f900d51b6e1b@d63d5",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "d63d5",
+      "name": "grey.material"
     },
-    "red.material": {
+    "92dfd": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "9efa3c5f-927f-4507-be22-f900d51b6e1b@red.material",
+      "uuid": "9efa3c5f-927f-4507-be22-f900d51b6e1b@92dfd",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "92dfd",
+      "name": "red.material"
     },
-    "glass.material": {
+    "56ce1": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "9efa3c5f-927f-4507-be22-f900d51b6e1b@glass.material",
+      "uuid": "9efa3c5f-927f-4507-be22-f900d51b6e1b@56ce1",
       "imported": true,
       "files": [
         ".json"
@@ -59,12 +65,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 2
-      }
+      },
+      "id": "56ce1",
+      "name": "glass.material"
     },
-    "_defaultMat.material": {
+    "0ee4f": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "9efa3c5f-927f-4507-be22-f900d51b6e1b@_defaultMat.material",
+      "uuid": "9efa3c5f-927f-4507-be22-f900d51b6e1b@0ee4f",
       "imported": true,
       "files": [
         ".json"
@@ -72,12 +80,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 3
-      }
+      },
+      "id": "0ee4f",
+      "name": "_defaultMat.material"
     },
-    "pitsOfficeRoof.prefab": {
+    "ae26a": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "9efa3c5f-927f-4507-be22-f900d51b6e1b@pitsOfficeRoof.prefab",
+      "uuid": "9efa3c5f-927f-4507-be22-f900d51b6e1b@ae26a",
       "imported": true,
       "files": [
         ".json"
@@ -85,7 +95,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "ae26a",
+      "name": "pitsOfficeRoof.prefab"
     }
   },
   "userData": {
@@ -93,19 +105,19 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "9efa3c5f-927f-4507-be22-f900d51b6e1b@pitsOfficeRoof.prefab",
+    "redirect": "9efa3c5f-927f-4507-be22-f900d51b6e1b@ae26a",
     "assetFinder": {
       "meshes": [
-        "9efa3c5f-927f-4507-be22-f900d51b6e1b@Mesh pitsOfficeRoof.mesh"
+        "9efa3c5f-927f-4507-be22-f900d51b6e1b@97dc0"
       ],
       "materials": [
-        "9efa3c5f-927f-4507-be22-f900d51b6e1b@grey.material",
-        "9efa3c5f-927f-4507-be22-f900d51b6e1b@red.material",
-        "9efa3c5f-927f-4507-be22-f900d51b6e1b@glass.material",
-        "9efa3c5f-927f-4507-be22-f900d51b6e1b@_defaultMat.material"
+        "9efa3c5f-927f-4507-be22-f900d51b6e1b@d63d5",
+        "9efa3c5f-927f-4507-be22-f900d51b6e1b@92dfd",
+        "9efa3c5f-927f-4507-be22-f900d51b6e1b@56ce1",
+        "9efa3c5f-927f-4507-be22-f900d51b6e1b@0ee4f"
       ],
       "scenes": [
-        "9efa3c5f-927f-4507-be22-f900d51b6e1b@pitsOfficeRoof.prefab"
+        "9efa3c5f-927f-4507-be22-f900d51b6e1b@ae26a"
       ]
     }
   }

@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "56864c13-be74-442f-892d-fd87a16b14cd",
@@ -8,10 +8,25 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh blockHexagonLow.mesh": {
+    "53398": {
+      "ver": "1.0.10",
+      "importer": "gltf-material",
+      "uuid": "56864c13-be74-442f-892d-fd87a16b14cd@53398",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "53398",
+      "name": "grass.material"
+    },
+    "cdc2f": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "56864c13-be74-442f-892d-fd87a16b14cd@Mesh blockHexagonLow.mesh",
+      "uuid": "56864c13-be74-442f-892d-fd87a16b14cd@cdc2f",
       "imported": true,
       "files": [
         ".json",
@@ -20,25 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "cdc2f",
+      "name": "Mesh blockHexagonLow.mesh"
     },
-    "grass.material": {
+    "3577b": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "56864c13-be74-442f-892d-fd87a16b14cd@grass.material",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
-    },
-    "dirt.material": {
-      "ver": "1.0.10",
-      "importer": "gltf-material",
-      "uuid": "56864c13-be74-442f-892d-fd87a16b14cd@dirt.material",
+      "uuid": "56864c13-be74-442f-892d-fd87a16b14cd@3577b",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "3577b",
+      "name": "dirt.material"
     },
-    "blockHexagonLow.prefab": {
+    "f43f7": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "56864c13-be74-442f-892d-fd87a16b14cd@blockHexagonLow.prefab",
+      "uuid": "56864c13-be74-442f-892d-fd87a16b14cd@f43f7",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "f43f7",
+      "name": "blockHexagonLow.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "56864c13-be74-442f-892d-fd87a16b14cd@blockHexagonLow.prefab",
+    "redirect": "56864c13-be74-442f-892d-fd87a16b14cd@f43f7",
     "assetFinder": {
       "meshes": [
-        "56864c13-be74-442f-892d-fd87a16b14cd@Mesh blockHexagonLow.mesh"
+        "56864c13-be74-442f-892d-fd87a16b14cd@cdc2f"
       ],
       "materials": [
-        "56864c13-be74-442f-892d-fd87a16b14cd@grass.material",
-        "56864c13-be74-442f-892d-fd87a16b14cd@dirt.material"
+        "56864c13-be74-442f-892d-fd87a16b14cd@53398",
+        "56864c13-be74-442f-892d-fd87a16b14cd@3577b"
       ],
       "scenes": [
-        "56864c13-be74-442f-892d-fd87a16b14cd@blockHexagonLow.prefab"
+        "56864c13-be74-442f-892d-fd87a16b14cd@f43f7"
       ]
     }
   }

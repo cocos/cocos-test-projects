@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "9082b642-433b-46b0-aad7-30a20818182e",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh roadCornerLargeSandInner.mesh": {
+    "32649": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "9082b642-433b-46b0-aad7-30a20818182e@Mesh roadCornerLargeSandInner.mesh",
+      "uuid": "9082b642-433b-46b0-aad7-30a20818182e@32649",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "32649",
+      "name": "Mesh roadCornerLargeSandInner.mesh"
     },
-    "sand.material": {
+    "5f31f": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "9082b642-433b-46b0-aad7-30a20818182e@sand.material",
+      "uuid": "9082b642-433b-46b0-aad7-30a20818182e@5f31f",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "5f31f",
+      "name": "sand.material"
     },
-    "roadCornerLargeSandInner.prefab": {
+    "51e41": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "9082b642-433b-46b0-aad7-30a20818182e@roadCornerLargeSandInner.prefab",
+      "uuid": "9082b642-433b-46b0-aad7-30a20818182e@51e41",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "51e41",
+      "name": "roadCornerLargeSandInner.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "9082b642-433b-46b0-aad7-30a20818182e@roadCornerLargeSandInner.prefab",
+    "redirect": "9082b642-433b-46b0-aad7-30a20818182e@51e41",
     "assetFinder": {
       "meshes": [
-        "9082b642-433b-46b0-aad7-30a20818182e@Mesh roadCornerLargeSandInner.mesh"
+        "9082b642-433b-46b0-aad7-30a20818182e@32649"
       ],
       "materials": [
-        "9082b642-433b-46b0-aad7-30a20818182e@sand.material"
+        "9082b642-433b-46b0-aad7-30a20818182e@5f31f"
       ],
       "scenes": [
-        "9082b642-433b-46b0-aad7-30a20818182e@roadCornerLargeSandInner.prefab"
+        "9082b642-433b-46b0-aad7-30a20818182e@51e41"
       ]
     }
   }

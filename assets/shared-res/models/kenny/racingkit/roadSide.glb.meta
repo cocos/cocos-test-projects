@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "f1f2015a-4ee5-4f0f-a479-000d27c38eaf",
@@ -8,10 +8,25 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh roadSide.mesh": {
+    "53398": {
+      "ver": "1.0.10",
+      "importer": "gltf-material",
+      "uuid": "f1f2015a-4ee5-4f0f-a479-000d27c38eaf@53398",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "53398",
+      "name": "grass.material"
+    },
+    "b9b19": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "f1f2015a-4ee5-4f0f-a479-000d27c38eaf@Mesh roadSide.mesh",
+      "uuid": "f1f2015a-4ee5-4f0f-a479-000d27c38eaf@b9b19",
       "imported": true,
       "files": [
         ".json",
@@ -20,25 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "b9b19",
+      "name": "Mesh roadSide.mesh"
     },
-    "grass.material": {
+    "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "f1f2015a-4ee5-4f0f-a479-000d27c38eaf@grass.material",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
-    },
-    "grey.material": {
-      "ver": "1.0.10",
-      "importer": "gltf-material",
-      "uuid": "f1f2015a-4ee5-4f0f-a479-000d27c38eaf@grey.material",
+      "uuid": "f1f2015a-4ee5-4f0f-a479-000d27c38eaf@d63d5",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "d63d5",
+      "name": "grey.material"
     },
-    "road.material": {
+    "35ea4": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "f1f2015a-4ee5-4f0f-a479-000d27c38eaf@road.material",
+      "uuid": "f1f2015a-4ee5-4f0f-a479-000d27c38eaf@35ea4",
       "imported": true,
       "files": [
         ".json"
@@ -59,12 +65,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 2
-      }
+      },
+      "id": "35ea4",
+      "name": "road.material"
     },
-    "roadSide.prefab": {
+    "ca16f": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "f1f2015a-4ee5-4f0f-a479-000d27c38eaf@roadSide.prefab",
+      "uuid": "f1f2015a-4ee5-4f0f-a479-000d27c38eaf@ca16f",
       "imported": true,
       "files": [
         ".json"
@@ -72,7 +80,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "ca16f",
+      "name": "roadSide.prefab"
     }
   },
   "userData": {
@@ -80,18 +90,18 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "f1f2015a-4ee5-4f0f-a479-000d27c38eaf@roadSide.prefab",
+    "redirect": "f1f2015a-4ee5-4f0f-a479-000d27c38eaf@ca16f",
     "assetFinder": {
       "meshes": [
-        "f1f2015a-4ee5-4f0f-a479-000d27c38eaf@Mesh roadSide.mesh"
+        "f1f2015a-4ee5-4f0f-a479-000d27c38eaf@b9b19"
       ],
       "materials": [
-        "f1f2015a-4ee5-4f0f-a479-000d27c38eaf@grass.material",
-        "f1f2015a-4ee5-4f0f-a479-000d27c38eaf@grey.material",
-        "f1f2015a-4ee5-4f0f-a479-000d27c38eaf@road.material"
+        "f1f2015a-4ee5-4f0f-a479-000d27c38eaf@53398",
+        "f1f2015a-4ee5-4f0f-a479-000d27c38eaf@d63d5",
+        "f1f2015a-4ee5-4f0f-a479-000d27c38eaf@35ea4"
       ],
       "scenes": [
-        "f1f2015a-4ee5-4f0f-a479-000d27c38eaf@roadSide.prefab"
+        "f1f2015a-4ee5-4f0f-a479-000d27c38eaf@ca16f"
       ]
     }
   }

@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "bfdf385d-e7fc-4089-a4ad-0c5f8e09e91d",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh blockSnowHexagon.mesh": {
+    "13ba4": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "bfdf385d-e7fc-4089-a4ad-0c5f8e09e91d@Mesh blockSnowHexagon.mesh",
+      "uuid": "bfdf385d-e7fc-4089-a4ad-0c5f8e09e91d@13ba4",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "13ba4",
+      "name": "Mesh blockSnowHexagon.mesh"
     },
-    "dirt.material": {
+    "3577b": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "bfdf385d-e7fc-4089-a4ad-0c5f8e09e91d@dirt.material",
+      "uuid": "bfdf385d-e7fc-4089-a4ad-0c5f8e09e91d@3577b",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "3577b",
+      "name": "dirt.material"
     },
-    "snow.material": {
+    "dfa42": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "bfdf385d-e7fc-4089-a4ad-0c5f8e09e91d@snow.material",
+      "uuid": "bfdf385d-e7fc-4089-a4ad-0c5f8e09e91d@dfa42",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "dfa42",
+      "name": "snow.material"
     },
-    "blockSnowHexagon.prefab": {
+    "67a0f": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "bfdf385d-e7fc-4089-a4ad-0c5f8e09e91d@blockSnowHexagon.prefab",
+      "uuid": "bfdf385d-e7fc-4089-a4ad-0c5f8e09e91d@67a0f",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "67a0f",
+      "name": "blockSnowHexagon.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "bfdf385d-e7fc-4089-a4ad-0c5f8e09e91d@blockSnowHexagon.prefab",
+    "redirect": "bfdf385d-e7fc-4089-a4ad-0c5f8e09e91d@67a0f",
     "assetFinder": {
       "meshes": [
-        "bfdf385d-e7fc-4089-a4ad-0c5f8e09e91d@Mesh blockSnowHexagon.mesh"
+        "bfdf385d-e7fc-4089-a4ad-0c5f8e09e91d@13ba4"
       ],
       "materials": [
-        "bfdf385d-e7fc-4089-a4ad-0c5f8e09e91d@dirt.material",
-        "bfdf385d-e7fc-4089-a4ad-0c5f8e09e91d@snow.material"
+        "bfdf385d-e7fc-4089-a4ad-0c5f8e09e91d@3577b",
+        "bfdf385d-e7fc-4089-a4ad-0c5f8e09e91d@dfa42"
       ],
       "scenes": [
-        "bfdf385d-e7fc-4089-a4ad-0c5f8e09e91d@blockSnowHexagon.prefab"
+        "bfdf385d-e7fc-4089-a4ad-0c5f8e09e91d@67a0f"
       ]
     }
   }

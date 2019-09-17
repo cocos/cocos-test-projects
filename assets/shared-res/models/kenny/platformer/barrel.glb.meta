@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "d72d9fa4-88dc-4984-b4b7-a8c78a66deea",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh barrel.mesh": {
+    "95382": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "d72d9fa4-88dc-4984-b4b7-a8c78a66deea@Mesh barrel.mesh",
+      "uuid": "d72d9fa4-88dc-4984-b4b7-a8c78a66deea@95382",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "95382",
+      "name": "Mesh barrel.mesh"
     },
-    "wood.material": {
+    "e4014": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "d72d9fa4-88dc-4984-b4b7-a8c78a66deea@wood.material",
+      "uuid": "d72d9fa4-88dc-4984-b4b7-a8c78a66deea@e4014",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "e4014",
+      "name": "wood.material"
     },
-    "woodDark.material": {
+    "938e8": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "d72d9fa4-88dc-4984-b4b7-a8c78a66deea@woodDark.material",
+      "uuid": "d72d9fa4-88dc-4984-b4b7-a8c78a66deea@938e8",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "938e8",
+      "name": "woodDark.material"
     },
-    "metal.material": {
+    "16ef1": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "d72d9fa4-88dc-4984-b4b7-a8c78a66deea@metal.material",
+      "uuid": "d72d9fa4-88dc-4984-b4b7-a8c78a66deea@16ef1",
       "imported": true,
       "files": [
         ".json"
@@ -59,12 +65,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 2
-      }
+      },
+      "id": "16ef1",
+      "name": "metal.material"
     },
-    "barrel.prefab": {
+    "67ae4": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "d72d9fa4-88dc-4984-b4b7-a8c78a66deea@barrel.prefab",
+      "uuid": "d72d9fa4-88dc-4984-b4b7-a8c78a66deea@67ae4",
       "imported": true,
       "files": [
         ".json"
@@ -72,7 +80,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "67ae4",
+      "name": "barrel.prefab"
     }
   },
   "userData": {
@@ -80,18 +90,18 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "d72d9fa4-88dc-4984-b4b7-a8c78a66deea@barrel.prefab",
+    "redirect": "d72d9fa4-88dc-4984-b4b7-a8c78a66deea@67ae4",
     "assetFinder": {
       "meshes": [
-        "d72d9fa4-88dc-4984-b4b7-a8c78a66deea@Mesh barrel.mesh"
+        "d72d9fa4-88dc-4984-b4b7-a8c78a66deea@95382"
       ],
       "materials": [
-        "d72d9fa4-88dc-4984-b4b7-a8c78a66deea@wood.material",
-        "d72d9fa4-88dc-4984-b4b7-a8c78a66deea@woodDark.material",
-        "d72d9fa4-88dc-4984-b4b7-a8c78a66deea@metal.material"
+        "d72d9fa4-88dc-4984-b4b7-a8c78a66deea@e4014",
+        "d72d9fa4-88dc-4984-b4b7-a8c78a66deea@938e8",
+        "d72d9fa4-88dc-4984-b4b7-a8c78a66deea@16ef1"
       ],
       "scenes": [
-        "d72d9fa4-88dc-4984-b4b7-a8c78a66deea@barrel.prefab"
+        "d72d9fa4-88dc-4984-b4b7-a8c78a66deea@67ae4"
       ]
     }
   }

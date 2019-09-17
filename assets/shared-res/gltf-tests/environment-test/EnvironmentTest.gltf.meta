@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e",
@@ -8,24 +8,40 @@
     ".gltf"
   ],
   "subMetas": {
-    "Metallic0_N3D.mesh": {
-      "ver": "1.0.2",
-      "importer": "gltf-mesh",
-      "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@Metallic0_N3D.mesh",
+    "16384": {
+      "ver": "1.0.10",
+      "importer": "gltf-material",
+      "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@16384",
       "imported": true,
       "files": [
-        ".json",
-        ".bin"
+        ".json"
       ],
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "16384",
+      "name": "MetallicSpheresMat-0.material"
     },
-    "Dielectric0_N3D2.mesh": {
+    "52060": {
+      "ver": "1.0.8",
+      "importer": "gltf-scene",
+      "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@52060",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "52060",
+      "name": "EnvironmentTest.prefab"
+    },
+    "85552": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@Dielectric0_N3D2.mesh",
+      "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@85552",
       "imported": true,
       "files": [
         ".json",
@@ -34,12 +50,30 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "85552",
+      "name": "Dielectric0_N3D2.mesh"
     },
-    "Dielectric0_N3D.mesh": {
+    "420b6": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@Dielectric0_N3D.mesh",
+      "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@420b6",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "420b6",
+      "name": "Metallic0_N3D.mesh"
+    },
+    "d502a": {
+      "ver": "1.0.2",
+      "importer": "gltf-mesh",
+      "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@d502a",
       "imported": true,
       "files": [
         ".json",
@@ -48,12 +82,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 2
-      }
+      },
+      "id": "d502a",
+      "name": "Dielectric0_N3D.mesh"
     },
-    "tmp_image_pie_dc1e_1a22_fbf9roughness_map_roughness_tmp_image_pie_dc1e_1a22_fbf9metal_map_metallic_0_texture.texture": {
+    "d0b0e": {
       "ver": "1.0.19",
       "importer": "texture",
-      "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@tmp_image_pie_dc1e_1a22_fbf9roughness_map_roughness_tmp_image_pie_dc1e_1a22_fbf9metal_map_metallic_0_texture.texture",
+      "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@d0b0e",
       "imported": true,
       "files": [
         ".json"
@@ -69,12 +105,14 @@
         "anisotropy": 1,
         "isUuid": false,
         "imageUuidOrDatabaseUri": "db://assets/shared-res/gltf-tests/environment-test/EnvironmentTest_images/roughness_metallic_0.jpg"
-      }
+      },
+      "id": "d0b0e",
+      "name": "tmp_image_pie_dc1e_1a22_fbf9roughness_map_roughness_tmp_image_pie_dc1e_1a22_fbf9metal_map_metallic_0_texture.texture"
     },
-    "tmp_image_pie_b20b_ebb4_317droughness_map2_roughness_tmp_image_pie_b20b_ebb4_317dmetal_map2_metallic_1_texture.texture": {
+    "2ab37": {
       "ver": "1.0.19",
       "importer": "texture",
-      "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@tmp_image_pie_b20b_ebb4_317droughness_map2_roughness_tmp_image_pie_b20b_ebb4_317dmetal_map2_metallic_1_texture.texture",
+      "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@2ab37",
       "imported": true,
       "files": [
         ".json"
@@ -90,25 +128,14 @@
         "anisotropy": 1,
         "isUuid": false,
         "imageUuidOrDatabaseUri": "db://assets/shared-res/gltf-tests/environment-test/EnvironmentTest_images/roughness_metallic_1.jpg"
-      }
+      },
+      "id": "2ab37",
+      "name": "tmp_image_pie_b20b_ebb4_317droughness_map2_roughness_tmp_image_pie_b20b_ebb4_317dmetal_map2_metallic_1_texture.texture"
     },
-    "MetallicSpheresMat-0.material": {
+    "e3604": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@MetallicSpheresMat-0.material",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
-    },
-    "DielectricSpheresMat-1.material": {
-      "ver": "1.0.10",
-      "importer": "gltf-material",
-      "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@DielectricSpheresMat-1.material",
+      "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@e3604",
       "imported": true,
       "files": [
         ".json"
@@ -116,12 +143,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "e3604",
+      "name": "DielectricSpheresMat-1.material"
     },
-    "DielectricSpheresMat-2.material": {
+    "5ff40": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@DielectricSpheresMat-2.material",
+      "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@5ff40",
       "imported": true,
       "files": [
         ".json"
@@ -129,20 +158,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 2
-      }
-    },
-    "EnvironmentTest.prefab": {
-      "ver": "1.0.8",
-      "importer": "gltf-scene",
-      "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@EnvironmentTest.prefab",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
+      },
+      "id": "5ff40",
+      "name": "DielectricSpheresMat-2.material"
     }
   },
   "userData": {
@@ -159,12 +177,12 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "9f94c180-f4f5-4146-88ee-0771efc58f8e@EnvironmentTest.prefab",
+    "redirect": "9f94c180-f4f5-4146-88ee-0771efc58f8e@52060",
     "assetFinder": {
       "meshes": [
-        "9f94c180-f4f5-4146-88ee-0771efc58f8e@Metallic0_N3D.mesh",
-        "9f94c180-f4f5-4146-88ee-0771efc58f8e@Dielectric0_N3D2.mesh",
-        "9f94c180-f4f5-4146-88ee-0771efc58f8e@Dielectric0_N3D.mesh"
+        "9f94c180-f4f5-4146-88ee-0771efc58f8e@420b6",
+        "9f94c180-f4f5-4146-88ee-0771efc58f8e@85552",
+        "9f94c180-f4f5-4146-88ee-0771efc58f8e@d502a"
       ],
       "images": [
         {
@@ -177,16 +195,16 @@
         }
       ],
       "textures": [
-        "9f94c180-f4f5-4146-88ee-0771efc58f8e@tmp_image_pie_dc1e_1a22_fbf9roughness_map_roughness_tmp_image_pie_dc1e_1a22_fbf9metal_map_metallic_0_texture.texture",
-        "9f94c180-f4f5-4146-88ee-0771efc58f8e@tmp_image_pie_b20b_ebb4_317droughness_map2_roughness_tmp_image_pie_b20b_ebb4_317dmetal_map2_metallic_1_texture.texture"
+        "9f94c180-f4f5-4146-88ee-0771efc58f8e@d0b0e",
+        "9f94c180-f4f5-4146-88ee-0771efc58f8e@2ab37"
       ],
       "materials": [
-        "9f94c180-f4f5-4146-88ee-0771efc58f8e@MetallicSpheresMat-0.material",
-        "9f94c180-f4f5-4146-88ee-0771efc58f8e@DielectricSpheresMat-1.material",
-        "9f94c180-f4f5-4146-88ee-0771efc58f8e@DielectricSpheresMat-2.material"
+        "9f94c180-f4f5-4146-88ee-0771efc58f8e@16384",
+        "9f94c180-f4f5-4146-88ee-0771efc58f8e@e3604",
+        "9f94c180-f4f5-4146-88ee-0771efc58f8e@5ff40"
       ],
       "scenes": [
-        "9f94c180-f4f5-4146-88ee-0771efc58f8e@EnvironmentTest.prefab"
+        "9f94c180-f4f5-4146-88ee-0771efc58f8e@52060"
       ]
     }
   }

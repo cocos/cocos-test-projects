@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "7a049c2c-a2b5-4542-84f0-bf6b0b59014b",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh blockSnowEnd.mesh": {
+    "bb4bf": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "7a049c2c-a2b5-4542-84f0-bf6b0b59014b@Mesh blockSnowEnd.mesh",
+      "uuid": "7a049c2c-a2b5-4542-84f0-bf6b0b59014b@bb4bf",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "bb4bf",
+      "name": "Mesh blockSnowEnd.mesh"
     },
-    "dirt.material": {
+    "3577b": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "7a049c2c-a2b5-4542-84f0-bf6b0b59014b@dirt.material",
+      "uuid": "7a049c2c-a2b5-4542-84f0-bf6b0b59014b@3577b",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "3577b",
+      "name": "dirt.material"
     },
-    "snow.material": {
+    "dfa42": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "7a049c2c-a2b5-4542-84f0-bf6b0b59014b@snow.material",
+      "uuid": "7a049c2c-a2b5-4542-84f0-bf6b0b59014b@dfa42",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "dfa42",
+      "name": "snow.material"
     },
-    "blockSnowEnd.prefab": {
+    "4224b": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "7a049c2c-a2b5-4542-84f0-bf6b0b59014b@blockSnowEnd.prefab",
+      "uuid": "7a049c2c-a2b5-4542-84f0-bf6b0b59014b@4224b",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "4224b",
+      "name": "blockSnowEnd.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "7a049c2c-a2b5-4542-84f0-bf6b0b59014b@blockSnowEnd.prefab",
+    "redirect": "7a049c2c-a2b5-4542-84f0-bf6b0b59014b@4224b",
     "assetFinder": {
       "meshes": [
-        "7a049c2c-a2b5-4542-84f0-bf6b0b59014b@Mesh blockSnowEnd.mesh"
+        "7a049c2c-a2b5-4542-84f0-bf6b0b59014b@bb4bf"
       ],
       "materials": [
-        "7a049c2c-a2b5-4542-84f0-bf6b0b59014b@dirt.material",
-        "7a049c2c-a2b5-4542-84f0-bf6b0b59014b@snow.material"
+        "7a049c2c-a2b5-4542-84f0-bf6b0b59014b@3577b",
+        "7a049c2c-a2b5-4542-84f0-bf6b0b59014b@dfa42"
       ],
       "scenes": [
-        "7a049c2c-a2b5-4542-84f0-bf6b0b59014b@blockSnowEnd.prefab"
+        "7a049c2c-a2b5-4542-84f0-bf6b0b59014b@4224b"
       ]
     }
   }

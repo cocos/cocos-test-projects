@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "e2b83c79-216f-4158-b7f6-95d57167685c",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh spikesHidden.mesh": {
+    "5a0ac": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "e2b83c79-216f-4158-b7f6-95d57167685c@Mesh spikesHidden.mesh",
+      "uuid": "e2b83c79-216f-4158-b7f6-95d57167685c@5a0ac",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "5a0ac",
+      "name": "Mesh spikesHidden.mesh"
     },
-    "metal.material": {
+    "16ef1": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "e2b83c79-216f-4158-b7f6-95d57167685c@metal.material",
+      "uuid": "e2b83c79-216f-4158-b7f6-95d57167685c@16ef1",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "16ef1",
+      "name": "metal.material"
     },
-    "spikesHidden.prefab": {
+    "a1d7e": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "e2b83c79-216f-4158-b7f6-95d57167685c@spikesHidden.prefab",
+      "uuid": "e2b83c79-216f-4158-b7f6-95d57167685c@a1d7e",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "a1d7e",
+      "name": "spikesHidden.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "e2b83c79-216f-4158-b7f6-95d57167685c@spikesHidden.prefab",
+    "redirect": "e2b83c79-216f-4158-b7f6-95d57167685c@a1d7e",
     "assetFinder": {
       "meshes": [
-        "e2b83c79-216f-4158-b7f6-95d57167685c@Mesh spikesHidden.mesh"
+        "e2b83c79-216f-4158-b7f6-95d57167685c@5a0ac"
       ],
       "materials": [
-        "e2b83c79-216f-4158-b7f6-95d57167685c@metal.material"
+        "e2b83c79-216f-4158-b7f6-95d57167685c@16ef1"
       ],
       "scenes": [
-        "e2b83c79-216f-4158-b7f6-95d57167685c@spikesHidden.prefab"
+        "e2b83c79-216f-4158-b7f6-95d57167685c@a1d7e"
       ]
     }
   }

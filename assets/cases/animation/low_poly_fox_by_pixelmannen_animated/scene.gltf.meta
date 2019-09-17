@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "3004862e-868e-4b34-95cb-f185d324e081",
@@ -8,64 +8,10 @@
     ".gltf"
   ],
   "subMetas": {
-    "fox1_fox_material_0.mesh": {
-      "ver": "1.0.2",
-      "importer": "gltf-mesh",
-      "uuid": "3004862e-868e-4b34-95cb-f185d324e081@fox1_fox_material_0.mesh",
-      "imported": true,
-      "files": [
-        ".json",
-        ".bin"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
-    },
-    "Take 001.animation": {
+    "57146": {
       "ver": "1.0.10",
       "importer": "gltf-animation",
-      "uuid": "3004862e-868e-4b34-95cb-f185d324e081@Take 001.animation",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "events": [],
-        "gltfIndex": 0,
-        "sample": 30,
-        "span": {
-          "from": 0,
-          "to": 15.9375
-        },
-        "speed": 1,
-        "wrapMode": 2
-      }
-    },
-    "Idle.animation": {
-      "ver": "1.0.10",
-      "importer": "gltf-animation",
-      "uuid": "3004862e-868e-4b34-95cb-f185d324e081@Idle.animation",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0,
-        "sample": 30,
-        "span": {
-          "from": 0,
-          "to": 7.166666666666667
-        },
-        "events": []
-      }
-    },
-    "Walk.animation": {
-      "ver": "1.0.10",
-      "importer": "gltf-animation",
-      "uuid": "3004862e-868e-4b34-95cb-f185d324e081@Walk.animation",
+      "uuid": "3004862e-868e-4b34-95cb-f185d324e081@57146",
       "imported": true,
       "files": [
         ".json"
@@ -81,12 +27,74 @@
         },
         "speed": 1,
         "wrapMode": 2
-      }
+      },
+      "id": "57146",
+      "name": "Walk.animation"
     },
-    "Run.animation": {
+    "3a99e": {
+      "ver": "1.0.2",
+      "importer": "gltf-mesh",
+      "uuid": "3004862e-868e-4b34-95cb-f185d324e081@3a99e",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "3a99e",
+      "name": "fox1_fox_material_0.mesh"
+    },
+    "73b7f": {
       "ver": "1.0.10",
       "importer": "gltf-animation",
-      "uuid": "3004862e-868e-4b34-95cb-f185d324e081@Run.animation",
+      "uuid": "3004862e-868e-4b34-95cb-f185d324e081@73b7f",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "events": [],
+        "gltfIndex": 0,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 15.9375
+        },
+        "speed": 1,
+        "wrapMode": 2
+      },
+      "id": "73b7f",
+      "name": "Take 001.animation"
+    },
+    "c2696": {
+      "ver": "1.0.10",
+      "importer": "gltf-animation",
+      "uuid": "3004862e-868e-4b34-95cb-f185d324e081@c2696",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 7.166666666666667
+        },
+        "events": []
+      },
+      "id": "c2696",
+      "name": "Idle.animation"
+    },
+    "9292d": {
+      "ver": "1.0.10",
+      "importer": "gltf-animation",
+      "uuid": "3004862e-868e-4b34-95cb-f185d324e081@9292d",
       "imported": true,
       "files": [
         ".json"
@@ -102,12 +110,14 @@
         },
         "wrapMode": 2,
         "speed": 1
-      }
+      },
+      "id": "9292d",
+      "name": "Run.animation"
     },
-    "UnnamedSkeleton.skeleton": {
+    "438fe": {
       "ver": "1.0.0",
       "importer": "gltf-skeleton",
-      "uuid": "3004862e-868e-4b34-95cb-f185d324e081@UnnamedSkeleton.skeleton",
+      "uuid": "3004862e-868e-4b34-95cb-f185d324e081@438fe",
       "imported": true,
       "files": [
         ".json"
@@ -115,12 +125,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "438fe",
+      "name": "UnnamedSkeleton.skeleton"
     },
-    "UnnamedTexture.texture": {
+    "e39f7": {
       "ver": "1.0.19",
       "importer": "texture",
-      "uuid": "3004862e-868e-4b34-95cb-f185d324e081@UnnamedTexture.texture",
+      "uuid": "3004862e-868e-4b34-95cb-f185d324e081@e39f7",
       "imported": true,
       "files": [
         ".json"
@@ -136,12 +148,14 @@
         "anisotropy": 1,
         "isUuid": false,
         "imageUuidOrDatabaseUri": "db://assets/cases/animation/low_poly_fox_by_pixelmannen_animated/textures/fox_material_baseColor.png"
-      }
+      },
+      "id": "e39f7",
+      "name": "UnnamedTexture.texture"
     },
-    "scene.prefab": {
+    "d1932": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "3004862e-868e-4b34-95cb-f185d324e081@scene.prefab",
+      "uuid": "3004862e-868e-4b34-95cb-f185d324e081@d1932",
       "imported": true,
       "files": [
         ".json"
@@ -149,7 +163,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "d1932",
+      "name": "scene.prefab"
     }
   },
   "userData": {
@@ -186,13 +202,13 @@
         ]
       }
     ],
-    "redirect": "3004862e-868e-4b34-95cb-f185d324e081@scene.prefab",
+    "redirect": "3004862e-868e-4b34-95cb-f185d324e081@d1932",
     "assetFinder": {
       "meshes": [
-        "3004862e-868e-4b34-95cb-f185d324e081@fox1_fox_material_0.mesh"
+        "3004862e-868e-4b34-95cb-f185d324e081@3a99e"
       ],
       "skeletons": [
-        "3004862e-868e-4b34-95cb-f185d324e081@UnnamedSkeleton.skeleton"
+        "3004862e-868e-4b34-95cb-f185d324e081@438fe"
       ],
       "images": [
         {
@@ -201,13 +217,13 @@
         }
       ],
       "textures": [
-        "3004862e-868e-4b34-95cb-f185d324e081@UnnamedTexture.texture"
+        "3004862e-868e-4b34-95cb-f185d324e081@e39f7"
       ],
       "materials": [
         "ebcc2a35-bfaa-49af-9796-2763feff1797"
       ],
       "scenes": [
-        "3004862e-868e-4b34-95cb-f185d324e081@scene.prefab"
+        "3004862e-868e-4b34-95cb-f185d324e081@d1932"
       ]
     },
     "materialDumpDir": "db://assets/cases/animation/low_poly_fox_by_pixelmannen_animated"

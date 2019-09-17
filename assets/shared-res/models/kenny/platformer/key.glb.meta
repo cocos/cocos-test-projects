@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "41430563-2d3e-41bf-be29-fee322ee47a6",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh key.mesh": {
+    "0fe4b": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "41430563-2d3e-41bf-be29-fee322ee47a6@Mesh key.mesh",
+      "uuid": "41430563-2d3e-41bf-be29-fee322ee47a6@0fe4b",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "0fe4b",
+      "name": "Mesh key.mesh"
     },
-    "gold.material": {
+    "9dbcb": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "41430563-2d3e-41bf-be29-fee322ee47a6@gold.material",
+      "uuid": "41430563-2d3e-41bf-be29-fee322ee47a6@9dbcb",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "9dbcb",
+      "name": "gold.material"
     },
-    "key.prefab": {
+    "9fc2c": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "41430563-2d3e-41bf-be29-fee322ee47a6@key.prefab",
+      "uuid": "41430563-2d3e-41bf-be29-fee322ee47a6@9fc2c",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "9fc2c",
+      "name": "key.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "41430563-2d3e-41bf-be29-fee322ee47a6@key.prefab",
+    "redirect": "41430563-2d3e-41bf-be29-fee322ee47a6@9fc2c",
     "assetFinder": {
       "meshes": [
-        "41430563-2d3e-41bf-be29-fee322ee47a6@Mesh key.mesh"
+        "41430563-2d3e-41bf-be29-fee322ee47a6@0fe4b"
       ],
       "materials": [
-        "41430563-2d3e-41bf-be29-fee322ee47a6@gold.material"
+        "41430563-2d3e-41bf-be29-fee322ee47a6@9dbcb"
       ],
       "scenes": [
-        "41430563-2d3e-41bf-be29-fee322ee47a6@key.prefab"
+        "41430563-2d3e-41bf-be29-fee322ee47a6@9fc2c"
       ]
     }
   }

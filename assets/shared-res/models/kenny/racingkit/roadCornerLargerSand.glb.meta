@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "b06b400d-0db8-4c88-809d-4727ae826109",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh roadCornerLargerSand.mesh": {
+    "34799": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "b06b400d-0db8-4c88-809d-4727ae826109@Mesh roadCornerLargerSand.mesh",
+      "uuid": "b06b400d-0db8-4c88-809d-4727ae826109@34799",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "34799",
+      "name": "Mesh roadCornerLargerSand.mesh"
     },
-    "sand.material": {
+    "5f31f": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "b06b400d-0db8-4c88-809d-4727ae826109@sand.material",
+      "uuid": "b06b400d-0db8-4c88-809d-4727ae826109@5f31f",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "5f31f",
+      "name": "sand.material"
     },
-    "roadCornerLargerSand.prefab": {
+    "08e61": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "b06b400d-0db8-4c88-809d-4727ae826109@roadCornerLargerSand.prefab",
+      "uuid": "b06b400d-0db8-4c88-809d-4727ae826109@08e61",
       "imported": true,
       "files": [
         ".json"
@@ -46,7 +50,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "08e61",
+      "name": "roadCornerLargerSand.prefab"
     }
   },
   "userData": {
@@ -54,16 +60,16 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "b06b400d-0db8-4c88-809d-4727ae826109@roadCornerLargerSand.prefab",
+    "redirect": "b06b400d-0db8-4c88-809d-4727ae826109@08e61",
     "assetFinder": {
       "meshes": [
-        "b06b400d-0db8-4c88-809d-4727ae826109@Mesh roadCornerLargerSand.mesh"
+        "b06b400d-0db8-4c88-809d-4727ae826109@34799"
       ],
       "materials": [
-        "b06b400d-0db8-4c88-809d-4727ae826109@sand.material"
+        "b06b400d-0db8-4c88-809d-4727ae826109@5f31f"
       ],
       "scenes": [
-        "b06b400d-0db8-4c88-809d-4727ae826109@roadCornerLargerSand.prefab"
+        "b06b400d-0db8-4c88-809d-4727ae826109@08e61"
       ]
     }
   }

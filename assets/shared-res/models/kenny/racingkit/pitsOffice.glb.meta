@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "cc9db779-b982-47ae-9ee5-27992586953a",
@@ -8,10 +8,25 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh noExport.mesh": {
+    "10131": {
+      "ver": "1.0.8",
+      "importer": "gltf-scene",
+      "uuid": "cc9db779-b982-47ae-9ee5-27992586953a@10131",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "10131",
+      "name": "pitsOffice.prefab"
+    },
+    "a6d73": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "cc9db779-b982-47ae-9ee5-27992586953a@Mesh noExport.mesh",
+      "uuid": "cc9db779-b982-47ae-9ee5-27992586953a@a6d73",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "a6d73",
+      "name": "Mesh noExport.mesh"
     },
-    "grey.material": {
+    "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "cc9db779-b982-47ae-9ee5-27992586953a@grey.material",
+      "uuid": "cc9db779-b982-47ae-9ee5-27992586953a@d63d5",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "d63d5",
+      "name": "grey.material"
     },
-    "red.material": {
+    "92dfd": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "cc9db779-b982-47ae-9ee5-27992586953a@red.material",
+      "uuid": "cc9db779-b982-47ae-9ee5-27992586953a@92dfd",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +65,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "92dfd",
+      "name": "red.material"
     },
-    "glass.material": {
+    "56ce1": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "cc9db779-b982-47ae-9ee5-27992586953a@glass.material",
+      "uuid": "cc9db779-b982-47ae-9ee5-27992586953a@56ce1",
       "imported": true,
       "files": [
         ".json"
@@ -59,12 +80,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 2
-      }
+      },
+      "id": "56ce1",
+      "name": "glass.material"
     },
-    "_defaultMat.material": {
+    "0ee4f": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "cc9db779-b982-47ae-9ee5-27992586953a@_defaultMat.material",
+      "uuid": "cc9db779-b982-47ae-9ee5-27992586953a@0ee4f",
       "imported": true,
       "files": [
         ".json"
@@ -72,20 +95,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 3
-      }
-    },
-    "pitsOffice.prefab": {
-      "ver": "1.0.8",
-      "importer": "gltf-scene",
-      "uuid": "cc9db779-b982-47ae-9ee5-27992586953a@pitsOffice.prefab",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 0
-      }
+      },
+      "id": "0ee4f",
+      "name": "_defaultMat.material"
     }
   },
   "userData": {
@@ -93,19 +105,19 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "cc9db779-b982-47ae-9ee5-27992586953a@pitsOffice.prefab",
+    "redirect": "cc9db779-b982-47ae-9ee5-27992586953a@10131",
     "assetFinder": {
       "meshes": [
-        "cc9db779-b982-47ae-9ee5-27992586953a@Mesh noExport.mesh"
+        "cc9db779-b982-47ae-9ee5-27992586953a@a6d73"
       ],
       "materials": [
-        "cc9db779-b982-47ae-9ee5-27992586953a@grey.material",
-        "cc9db779-b982-47ae-9ee5-27992586953a@red.material",
-        "cc9db779-b982-47ae-9ee5-27992586953a@glass.material",
-        "cc9db779-b982-47ae-9ee5-27992586953a@_defaultMat.material"
+        "cc9db779-b982-47ae-9ee5-27992586953a@d63d5",
+        "cc9db779-b982-47ae-9ee5-27992586953a@92dfd",
+        "cc9db779-b982-47ae-9ee5-27992586953a@56ce1",
+        "cc9db779-b982-47ae-9ee5-27992586953a@0ee4f"
       ],
       "scenes": [
-        "cc9db779-b982-47ae-9ee5-27992586953a@pitsOffice.prefab"
+        "cc9db779-b982-47ae-9ee5-27992586953a@10131"
       ]
     }
   }

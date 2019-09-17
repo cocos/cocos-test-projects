@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "13153a1f-d5e9-4f85-98eb-24d5d876bfae",
@@ -8,10 +8,10 @@
     ".glb"
   ],
   "subMetas": {
-    "Mesh overheadRound.mesh": {
+    "754a4": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "13153a1f-d5e9-4f85-98eb-24d5d876bfae@Mesh overheadRound.mesh",
+      "uuid": "13153a1f-d5e9-4f85-98eb-24d5d876bfae@754a4",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "754a4",
+      "name": "Mesh overheadRound.mesh"
     },
-    "road.material": {
+    "35ea4": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "13153a1f-d5e9-4f85-98eb-24d5d876bfae@road.material",
+      "uuid": "13153a1f-d5e9-4f85-98eb-24d5d876bfae@35ea4",
       "imported": true,
       "files": [
         ".json"
@@ -33,12 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "35ea4",
+      "name": "road.material"
     },
-    "grey.material": {
+    "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "13153a1f-d5e9-4f85-98eb-24d5d876bfae@grey.material",
+      "uuid": "13153a1f-d5e9-4f85-98eb-24d5d876bfae@d63d5",
       "imported": true,
       "files": [
         ".json"
@@ -46,12 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "d63d5",
+      "name": "grey.material"
     },
-    "overheadRound.prefab": {
+    "33f40": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "13153a1f-d5e9-4f85-98eb-24d5d876bfae@overheadRound.prefab",
+      "uuid": "13153a1f-d5e9-4f85-98eb-24d5d876bfae@33f40",
       "imported": true,
       "files": [
         ".json"
@@ -59,7 +65,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "33f40",
+      "name": "overheadRound.prefab"
     }
   },
   "userData": {
@@ -67,17 +75,17 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "13153a1f-d5e9-4f85-98eb-24d5d876bfae@overheadRound.prefab",
+    "redirect": "13153a1f-d5e9-4f85-98eb-24d5d876bfae@33f40",
     "assetFinder": {
       "meshes": [
-        "13153a1f-d5e9-4f85-98eb-24d5d876bfae@Mesh overheadRound.mesh"
+        "13153a1f-d5e9-4f85-98eb-24d5d876bfae@754a4"
       ],
       "materials": [
-        "13153a1f-d5e9-4f85-98eb-24d5d876bfae@road.material",
-        "13153a1f-d5e9-4f85-98eb-24d5d876bfae@grey.material"
+        "13153a1f-d5e9-4f85-98eb-24d5d876bfae@35ea4",
+        "13153a1f-d5e9-4f85-98eb-24d5d876bfae@d63d5"
       ],
       "scenes": [
-        "13153a1f-d5e9-4f85-98eb-24d5d876bfae@overheadRound.prefab"
+        "13153a1f-d5e9-4f85-98eb-24d5d876bfae@33f40"
       ]
     }
   }

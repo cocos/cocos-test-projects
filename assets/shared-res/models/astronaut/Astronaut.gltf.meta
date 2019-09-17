@@ -1,5 +1,5 @@
 {
-  "ver": "1.1.22",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc",
@@ -8,10 +8,10 @@
     ".gltf"
   ],
   "subMetas": {
-    "buffer-0-mesh-0.mesh": {
+    "b4e71": {
       "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "uuid": "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@buffer-0-mesh-0.mesh",
+      "uuid": "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@b4e71",
       "imported": true,
       "files": [
         ".json",
@@ -20,12 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "b4e71",
+      "name": "buffer-0-mesh-0.mesh"
     },
-    "Astronaut_mat-texture.texture": {
+    "c1228": {
       "ver": "1.0.19",
       "importer": "texture",
-      "uuid": "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@Astronaut_mat-texture.texture",
+      "uuid": "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@c1228",
       "imported": true,
       "files": [
         ".json"
@@ -41,12 +43,14 @@
         "anisotropy": 1,
         "isUuid": false,
         "imageUuidOrDatabaseUri": "db://assets/shared-res/models/astronaut/Astronaut_BaseColor.png"
-      }
+      },
+      "id": "c1228",
+      "name": "Astronaut_mat-texture.texture"
     },
-    "Astronaut_mat.material": {
+    "e4ec5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "uuid": "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@Astronaut_mat.material",
+      "uuid": "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@e4ec5",
       "imported": true,
       "files": [
         ".json"
@@ -54,12 +58,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "e4ec5",
+      "name": "Astronaut_mat.material"
     },
-    "Astronaut.prefab": {
+    "9ee96": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "uuid": "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@Astronaut.prefab",
+      "uuid": "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@9ee96",
       "imported": true,
       "files": [
         ".json"
@@ -67,7 +73,9 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "9ee96",
+      "name": "Astronaut.prefab"
     }
   },
   "userData": {
@@ -80,10 +88,10 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@Astronaut.prefab",
+    "redirect": "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@9ee96",
     "assetFinder": {
       "meshes": [
-        "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@buffer-0-mesh-0.mesh"
+        "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@b4e71"
       ],
       "images": [
         {
@@ -92,13 +100,13 @@
         }
       ],
       "textures": [
-        "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@Astronaut_mat-texture.texture"
+        "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@c1228"
       ],
       "materials": [
-        "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@Astronaut_mat.material"
+        "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@e4ec5"
       ],
       "scenes": [
-        "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@Astronaut.prefab"
+        "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@9ee96"
       ]
     }
   }
