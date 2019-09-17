@@ -9,7 +9,7 @@ export class PhyicsTitle extends Component {
         // Your initialization goes here.
         let label = this.getComponent(LabelComponent);
         if (label) {
-            if (CC_PHYSICS_BUILT_IN) {
+            if (CC_PHYSICS_BUILTIN) {
                 label.string = '物理：builtin';
             } else if (CC_PHYSICS_CANNON) {
                 label.string = '物理：cannon';
