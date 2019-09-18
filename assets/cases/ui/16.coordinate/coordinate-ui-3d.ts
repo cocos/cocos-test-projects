@@ -3,9 +3,9 @@ const { ccclass, property, menu } = _decorator;
 
 const _v3_0 = new Vec3();
 
-@ccclass("coordinate-ui-3d")
-@menu("UI/coordinate-ui-3d")
-export class CoordinateUi3D extends Component {
+@ccclass("CoordinateUI3D")
+@menu("UI/CoordinateUI3D")
+export class CoordinateUI3D extends Component {
 
     @property({ type: Node })
     public D3Node: Node = null;
