@@ -1,0 +1,72 @@
+[
+  {
+    "__type__": "cc.AnimationClip",
+    "_name": "MaterialTexture(Animation Editor Case)",
+    "_objFlags": 0,
+    "_native": "",
+    "sample": 1,
+    "speed": 1,
+    "wrapMode": 2,
+    "_curves": [
+      {
+        "modifiers": [
+          {
+            "__id__": 1
+          },
+          "sharedMaterials",
+          0
+        ],
+        "data": {
+          "keys": 0,
+          "values": [
+            {
+              "__uuid__": "955ddf8f-65a0-4d76-b84d-542310d6ebee@6c48a"
+            },
+            null,
+            {
+              "__uuid__": "b765d1e8-3909-48fe-9163-35c04c6f0e0b@6c48a"
+            },
+            null,
+            {
+              "__uuid__": "293b879a-48d1-452a-93d6-073b11587d46@6c48a"
+            },
+            null
+          ],
+          "easingMethods": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        "valueAdapter": {
+          "__id__": 2
+        }
+      }
+    ],
+    "events": [],
+    "_duration": 5,
+    "_keys": [
+      [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    ],
+    "_stepness": 0
+  },
+  {
+    "__type__": "cc.ComponentModifier",
+    "component": "cc.ModelComponent"
+  },
+  {
+    "__type__": "cc.UniformCurveValueAdapter",
+    "passIndex": 0,
+    "uniformName": "albedoMap"
+  }
+]
