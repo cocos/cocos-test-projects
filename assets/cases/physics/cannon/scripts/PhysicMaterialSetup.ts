@@ -11,10 +11,12 @@ export class PhysicMaterialSetup extends Component {
     public restitution: number = 0;
 
     start () {
-        let collider = this.getComponent(ColliderComponent);
-        if (collider) {
-            collider.material.friction = this.friction;
-            collider.material.restitution = this.restitution;
+        if (CC_PHYSICS_CANNON) {
+            let collider = this.getComponent(ColliderComponent);
+            if (collider) {
+                collider.material.friction = this.friction;
+                collider.material.restitution = this.restitution;
+            }
         }
     }
 

@@ -25,7 +25,7 @@ export class ListSetUp extends Component {
         }
 
         if (this.node.name == 'cannon') {
-            if (CC_PHYSICS_BUILT_IN || CC_PHYSICS_AMMO) {
+            if (CC_PHYSICS_BUILTIN || CC_PHYSICS_AMMO) {
                 this.node.active = false;
             } else {
                 this.setUp();
@@ -33,7 +33,7 @@ export class ListSetUp extends Component {
         }
 
         if (this.node.name == 'ammo') {
-            if (CC_PHYSICS_BUILT_IN || CC_PHYSICS_CANNON) {
+            if (CC_PHYSICS_BUILTIN || CC_PHYSICS_CANNON) {
                 this.node.active = false;
             } else {
                 this.setUp();
