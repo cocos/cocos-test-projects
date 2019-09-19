@@ -4,8 +4,8 @@ const { ccclass, property, menu } = _decorator;
 const _v3_0 = new Vec3();
 const _quat_0 = new Quat();
 
-@ccclass("rotate-around-axis")
-@menu("UI/rotate-around-axis")
+@ccclass("RotateAroundAxis")
+@menu("UI/RotateAroundAxis")
 export class RotateAroundAxis extends Component {
 
     update (deltaTime: number) {
