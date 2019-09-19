@@ -1,0 +1,54 @@
+import { _decorator, Component, Node, Texture2D, UniformCurveValueAdapter, AnimationClip, ModelComponent, ComponentModifier, js, AnimationComponent, error } from "cc";
+const { ccclass, property } = _decorator;
+
+/**
+ * This component demonstrates how material texture animation run.
+ */
+@ccclass("MaterialTextureAnimation")
+export class MaterialTextureAnimation extends Component {
+    /**
+     * Textures to be animated.
+     */
+    @property([Texture2D])
+    textures: Array<Texture2D | null> = [];
+
+    start () {
+        const animationComponent = this.node.getComponent(AnimationComponent);
+        if (!animationComponent) {
+            error(`Animation component is required for this script.`);
+            return;
+        }
+        const clip = createMaterialTextureAnimationClip(this.textures);
+        animationComponent.clips = [ clip ];
+        animationComponent.defaultClip = clip;
+        animationComponent.playOnLoad = true;
+    }
+}
+
+function createMaterialTextureAnimationClip(textures: Texture2D[]) {
+    // Animate every texture for 1 sec.
+    const defaultKeys = textures.map((texture, index) => index);
+
+    // Setup the value adapter.
+    const uca = new UniformCurveValueAdapter();
+    uca.passIndex = 0;
+    uca.uniformName = 'albedoMap';
+
+    const animationClip = new AnimationClip();
+    animationClip.wrapMode = AnimationClip.WrapMode.Loop;
+    animationClip.keys = [ defaultKeys ];
+    animationClip.duration = defaultKeys[defaultKeys.length - 1] + 1;
+    animationClip.curves = [{
+        modifiers: [
+            new ComponentModifier(js.getClassName(ModelComponent)),
+            'sharedMaterials',
+            0,
+        ],
+        valueAdapter: uca,
+        data: {
+            keys: 0,
+            values: textures,
+        },
+    }];
+    return animationClip;
+}
