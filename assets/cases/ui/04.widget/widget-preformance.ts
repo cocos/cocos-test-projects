@@ -15,18 +15,20 @@ export class WidgetPreformance extends Component {
     @property(SpriteFrame)
     bgTex: SpriteFrame = null;
 
+    nodeA: Node = null;
+
     start () {
         let i = 0;
-        const nodeA = instantiate(this.performancePrefab) as Node;
-        this.node.addChild(nodeA);
-        nodeA.setContentSize(400, 500);
-        const sprite = nodeA.getComponent(SpriteComponent);
+        this.nodeA = instantiate(this.performancePrefab) as Node;
+        this.node.addChild(this.nodeA);
+        this.nodeA.setContentSize(400, 500);
+        const sprite = this.nodeA.getComponent(SpriteComponent);
         sprite.spriteFrame = this.bgTex;
         const arr = [true, false];
         for (i = 0; i < 500; i++) {
             const child = instantiate(this.performancePrefab) as Node;
             child.name = `layer_${i + 1}`;
-            nodeA.addChild(child);
+            this.nodeA.addChild(child);
             const childWidgetComp = child.getComponent(WidgetComponent);
             childWidgetComp.isAlignTop = true;
             let bol = arr[Math.floor(Math.random() * arr.length)];
@@ -42,12 +44,15 @@ export class WidgetPreformance extends Component {
             renderComp.color = new Color(Math.random() * 255, Math.random() * 255, Math.random() * 255, 255);
         }
 
-        setTimeout(this.adjustWidget.bind(this), 500, nodeA);
+        this.schedule(this.adjustWidget,0.5);
     }
 
-    adjustWidget(node: Node){
-        const size = node.getContentSize();
-        node.setContentSize(size.width, Math.random() * 200);
-        setTimeout(this.adjustWidget.bind(this), 500, node);
+    onDisable () {
+        this.unschedule(this.adjustWidget);
+    }
+
+    adjustWidget(){
+        const size = this.nodeA.getContentSize();
+        this.nodeA.setContentSize(size.width, Math.random() * 200);
     }
 }
