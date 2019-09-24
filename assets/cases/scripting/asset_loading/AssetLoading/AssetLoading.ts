@@ -119,7 +119,7 @@ export class AssetLoading extends Component {
                 loader.loadRes(url, loadCallBack);
                 break;
             case 'Scene': 
-                director.loadScene('testScene.scene');
+                director.loadScene('LoadRes');
                 break;
             case 'CORS':
                 loader.load(url, loadCallBack);
@@ -157,8 +157,6 @@ export class AssetLoading extends Component {
 
     _onShowResClick (event: any) {
         if (this._curType === "Scene") {
-            director.runScene(this._curRes.scene);
-
             return;
         }
         this._createNode(this._curType, this._curRes);
@@ -191,9 +189,7 @@ export class AssetLoading extends Component {
             case "CORS":
                 component = node.addComponent(SpriteComponent);
                 const spriteFrame = new SpriteFrame();
-                spriteFrame.setRect(new Rect(0, 0, res.width, res.height));
-                spriteFrame._mipmaps = [res];
-                spriteFrame.onLoaded();
+                spriteFrame.texture = res._texture;
                 component.spriteFrame = spriteFrame;
                 break;
             case "Audio":
