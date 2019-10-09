@@ -49,10 +49,10 @@ export class CoordinateUILocalLocal extends Component {
         if (this.convertType === ConvertType.LOCAL) {
             pos = this.node.worldPosition;
             this._aimTransform.convertToNodeSpaceAR(pos, this._out);
-            this.showLabel.string = `金币位置与下方图标位置距离 5 的倍数：\n ${this._out.toString()}`;
+            this.showLabel.string = `金币位置与下方图标位置距离 5 的倍数：${this._out.toString()}`;
         } else {
             this._transfrom.convertToWorldSpaceAR(this._fixPoint, this._out);
-            this.showLabel.string = `与金币 x 轴相距 100 的点的世界坐标：\n ${this._out.toString()}`;
+            this.showLabel.string = `与金币 x 轴相距 100 的点的世界坐标：${this._out.toString()}`;
         }
 
 
