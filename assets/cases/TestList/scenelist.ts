@@ -103,9 +103,5 @@ export class SceneManager extends Component {
     }
 
     start () {
-        this.scheduleOnce(function(){
-            this._ScrollCom = this.node.getParent().getParent().getComponent(ScrollViewComponent) as ScrollViewComponent;
-            this._ScrollCom.scrollToOffset(backbutton.offset,0.1,true);
-        },0.01);
     }
 }
