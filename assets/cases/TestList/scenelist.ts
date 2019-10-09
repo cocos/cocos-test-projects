@@ -1,5 +1,4 @@
-import { _decorator, Component, Node, Prefab, ScrollViewComponent } from "cc";
-import { backbutton } from "./backbutton";
+import { _decorator, Component, Node, Prefab } from "cc";
 const { ccclass, property } = _decorator;
 
 export const sceneArray:string[] = [
@@ -90,8 +89,6 @@ export class SceneManager extends Component {
 
     @property ({ type: Prefab })
     itemPrefab: Prefab | null  = null;
-
-    _ScrollCom : ScrollViewComponent;
 
     onLoad() {
         if(this.itemPrefab){
