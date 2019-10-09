@@ -1,25 +1,23 @@
-import { _decorator, Component, Node } from "cc";
+import { _decorator, Component, Node, ScrollViewComponent, Vec2, Vec3 } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("backbutton")
 export class backbutton extends Component {
-    /* class member could be defined like this */
-    // dummy = '';
+    private static _offset = new Vec3();
 
-    /* use `property` decorator if your want the member to be serializable */
-    // @property
-    // serializableDummy = 0;
+    public static get offset() {
+        return backbutton._offset;
+    }
+
+    public static set offset( value ) {
+        backbutton._offset = value;
+    }
 
     start () {
-        // Your initialization goes here.
         cc.game.addPersistRootNode(this.node);
     }
 
     backToList () {
         cc.director.loadScene("TestList");
     }
-
-    // update (deltaTime: number) {
-    //     // Your update function goes here.
-    // }
 }

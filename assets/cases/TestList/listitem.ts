@@ -1,19 +1,17 @@
-import { _decorator, Component, Node, LabelComponent } from "cc";
+import { _decorator, Component, Node, LabelComponent, ScrollViewComponent, math, Vec3 } from "cc";
 import { sceneArray } from "./scenelist";
+import { backbutton } from "./backbutton";
 const { ccclass, property } = _decorator;
 
 @ccclass("ListItem")
 export class ListItem extends Component {
-    /* class member could be defined like this */
-    // dummy = '';
-
-    /* use `property` decorator if your want the member to be serializable */
-    // @property
-    // serializableDummy = 0;
 
     index = -1;
     _name = "";
     label : LabelComponent | null = null;
+
+    _ScrollCom : ScrollViewComponent;
+
 
     onload () {
 
@@ -27,13 +25,11 @@ export class ListItem extends Component {
             this.label = this.node.getComponentInChildren(LabelComponent) as LabelComponent;
         }
         this.updateItem(this.index,sceneArray[this.index]);
+        this._ScrollCom = this.node.getParent().getParent().getParent().getComponent(ScrollViewComponent) as ScrollViewComponent;
     }
 
-    // update (deltaTime: number) {
-    //     // Your update function goes here.
-    // }
-
     public loadScene() {
+        backbutton.offset = new Vec3(0, this._ScrollCom.getScrollOffset().y, 0);
         cc.director.loadScene(this._name);
     }
 

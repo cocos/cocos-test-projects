@@ -1,5 +1,5 @@
-import { _decorator, Component, Node, Prefab } from "cc";
-import { ListItem } from "./listitem";
+import { _decorator, Component, Node, Prefab, ScrollViewComponent } from "cc";
+import { backbutton } from "./backbutton";
 const { ccclass, property } = _decorator;
 
 export const sceneArray:string[] = [
@@ -89,7 +89,9 @@ export const sceneArray:string[] = [
 export class SceneManager extends Component {
 
     @property ({ type: Prefab })
-    itemPrefab: ListItem | null  = null;
+    itemPrefab: Prefab | null  = null;
+
+    _ScrollCom : ScrollViewComponent;
 
     onLoad() {
         if(this.itemPrefab){
@@ -101,12 +103,9 @@ export class SceneManager extends Component {
     }
 
     start () {
-        // Your initialization goes here.
+        this.scheduleOnce(function(){
+            this._ScrollCom = this.node.getParent().getParent().getComponent(ScrollViewComponent) as ScrollViewComponent;
+            this._ScrollCom.scrollToOffset(backbutton.offset,0.1,true);
+        },0.01);
     }
-
-    // update (deltaTime: number) {
-    //     // Your update function goes here.
-    // }
-
-
 }
