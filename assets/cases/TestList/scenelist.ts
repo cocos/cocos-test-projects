@@ -1,5 +1,4 @@
 import { _decorator, Component, Node, Prefab } from "cc";
-import { ListItem } from "./listitem";
 const { ccclass, property } = _decorator;
 
 export const sceneArray:string[] = [
@@ -89,7 +88,7 @@ export const sceneArray:string[] = [
 export class SceneManager extends Component {
 
     @property ({ type: Prefab })
-    itemPrefab: ListItem | null  = null;
+    itemPrefab: Prefab | null  = null;
 
     onLoad() {
         if(this.itemPrefab){
@@ -101,12 +100,5 @@ export class SceneManager extends Component {
     }
 
     start () {
-        // Your initialization goes here.
     }
-
-    // update (deltaTime: number) {
-    //     // Your update function goes here.
-    // }
-
-
 }

@@ -1,25 +1,42 @@
-import { _decorator, Component, Node } from "cc";
+import { _decorator, Component, Node, ScrollViewComponent, Vec3 } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("backbutton")
 export class backbutton extends Component {
-    /* class member could be defined like this */
-    // dummy = '';
+    private static _offset = new Vec3();
+    public static _scrollNode : Node | null  = null;
+    private static _scrollCom : ScrollViewComponent | null = null;
 
-    /* use `property` decorator if your want the member to be serializable */
-    // @property
-    // serializableDummy = 0;
+    public static get offset() {
+        return backbutton._offset;
+    }
+
+    public static set offset( value ) {
+        backbutton._offset = value;
+    }
+
+    public static saveOffset () {
+        if ( backbutton._scrollNode ) {
+            backbutton._offset = new Vec3(0, backbutton._scrollCom.getScrollOffset().y, 0);
+        }
+    }
 
     start () {
-        // Your initialization goes here.
         cc.game.addPersistRootNode(this.node);
+        backbutton._scrollNode = this.node.getParent().getChildByPath('Canvas/ScrollView') as Node;
+        if (backbutton._scrollNode) {
+            backbutton._scrollCom = backbutton._scrollNode.getComponent(ScrollViewComponent);
+        }
     }
 
     backToList () {
         cc.director.loadScene("TestList");
+        this.scheduleOnce(function(){
+            backbutton._scrollNode = this.node.getParent().getChildByPath('Canvas/ScrollView');
+            if (backbutton._scrollNode) {
+                backbutton._scrollCom = backbutton._scrollNode.getComponent(ScrollViewComponent);
+                backbutton._scrollCom.scrollToOffset(backbutton.offset,0.1,true);
+            }
+        },0.01);
     }
-
-    // update (deltaTime: number) {
-    //     // Your update function goes here.
-    // }
 }

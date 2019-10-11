@@ -1,15 +1,10 @@
 import { _decorator, Component, Node, LabelComponent } from "cc";
 import { sceneArray } from "./scenelist";
+import { backbutton } from "./backbutton";
 const { ccclass, property } = _decorator;
 
 @ccclass("ListItem")
 export class ListItem extends Component {
-    /* class member could be defined like this */
-    // dummy = '';
-
-    /* use `property` decorator if your want the member to be serializable */
-    // @property
-    // serializableDummy = 0;
 
     index = -1;
     _name = "";
@@ -29,11 +24,8 @@ export class ListItem extends Component {
         this.updateItem(this.index,sceneArray[this.index]);
     }
 
-    // update (deltaTime: number) {
-    //     // Your update function goes here.
-    // }
-
     public loadScene() {
+        backbutton.saveOffset();
         cc.director.loadScene(this._name);
     }
 
