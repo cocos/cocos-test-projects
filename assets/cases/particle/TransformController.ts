@@ -74,16 +74,16 @@ export class TransformController extends Component {
     onRotateChanged (slider: SliderComponent, data: string) {
         this._rotate.set(slider.progress * 90, 0, 0);
         if (this.check1.isChecked) {
-            this.particle1.setRotationFromEuler(this._rotate.x,this.particle1.eulerAngles.y,this.particle1.eulerAngles.z);
+            this.particle1.setRotationFromEuler(this.particle1.eulerAngles.x,this._rotate.x,this.particle1.eulerAngles.z);
         }
         if (this.check2.isChecked) {
-            this.particle2.setRotationFromEuler(this._rotate.x,this.particle2.eulerAngles.y,this.particle2.eulerAngles.z);
+            this.particle2.setRotationFromEuler(this.particle2.eulerAngles.x,this._rotate.x,this.particle2.eulerAngles.z);
         }
         if (this.check3.isChecked) {
-            this.particle3.setRotationFromEuler(this._rotate.x,this.particle3.eulerAngles.y,this.particle3.eulerAngles.z);
+            this.particle3.setRotationFromEuler(this.particle3.eulerAngles.x,this._rotate.x,this.particle3.eulerAngles.z);
         }
         if (this.check4.isChecked) {
-            this.particle4.setRotationFromEuler(this._rotate.x,this.particle4.eulerAngles.y,this.particle4.eulerAngles.z);
+            this.particle4.setRotationFromEuler(this.particle4.eulerAngles.x,this._rotate.x,this.particle4.eulerAngles.z);
         }
     }
 }
