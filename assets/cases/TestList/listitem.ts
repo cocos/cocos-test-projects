@@ -26,6 +26,7 @@ export class ListItem extends Component {
 
     public loadScene() {
         backbutton.saveOffset();
+        backbutton.saveIndex(this.index);
         cc.director.loadScene(this._name);
     }
 
