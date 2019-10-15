@@ -35,7 +35,6 @@ export const sceneArray:string[] = [
     "physic-material",
     "trigger",
     "velocity",
-    "physics-start",
     "culling",
     "planar-shadow",
     "sort",
@@ -82,6 +81,7 @@ export const sceneArray:string[] = [
     "pageView_unified_verticle",
     "coordinate-ui-3d",
     "priority",
+    "uimodel",
 ]
 
 @ccclass("scenemanager")
