@@ -3,8 +3,7 @@ const { ccclass, property, menu } = _decorator;
 
 enum ERaycastType {
     ALL,
-    CLOSEST,
-    ANY
+    CLOSEST
 }
 
 @ccclass("RaycastTest")
@@ -50,8 +49,8 @@ export class RaycastTest extends Component {
         this.camera.screenPointToRay(touch._point.x, touch._point.y, this._ray);
         switch (this._raycastType) {
             case ERaycastType.ALL:
-                if (PhysicsSystem.instance.raycastAll(this._ray, Layers.Enum.DEFAULT, this._maxDistance)) {
-                    const r = PhysicsSystem.instance.raycastAllResults;
+                if (PhysicsSystem.instance.raycast(this._ray, Layers.Enum.DEFAULT, this._maxDistance)) {
+                    const r = PhysicsSystem.instance.raycastResults;
                     for (let i = 0; i < r.length; i++) {
                         const item = r[i];
                         const modelCom = item.collider.node.getComponent(ModelComponent);
@@ -62,13 +61,6 @@ export class RaycastTest extends Component {
             case ERaycastType.CLOSEST:
                 if (PhysicsSystem.instance.raycastClosest(this._ray, Layers.Enum.DEFAULT, this._maxDistance)) {
                     const r = PhysicsSystem.instance.raycastClosestResult;
-                    const modelCom = r.collider.node.getComponent(ModelComponent);
-                    modelCom.material = this.rayMaterial;
-                }
-                break;
-            case ERaycastType.ANY:
-                if (PhysicsSystem.instance.raycastAny(this._ray, Layers.Enum.DEFAULT, this._maxDistance)) {
-                    const r = PhysicsSystem.instance.raycastAnyResult;
                     const modelCom = r.collider.node.getComponent(ModelComponent);
                     modelCom.material = this.rayMaterial;
                 }
@@ -88,8 +80,6 @@ export class RaycastTest extends Component {
             this._raycastType = ERaycastType.ALL;
         } else if (toggleCom.node.name == 'Toggle2') {
             this._raycastType = ERaycastType.CLOSEST;
-        } else {
-            this._raycastType = ERaycastType.ANY;
         }
     }
 
