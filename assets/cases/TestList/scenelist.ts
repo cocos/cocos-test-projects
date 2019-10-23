@@ -61,6 +61,7 @@ export const sceneArray:string[] = [
     "advance-widget",
     "align-mode",
     "anim-widget",
+    "widget-percentage",
     "widget-performance",
     "layout-basic",
     "layout-grid-expand",
