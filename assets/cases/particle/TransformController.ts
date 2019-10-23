@@ -1,6 +1,8 @@
 import { _decorator, Component, Node, SliderComponent, ToggleComponent, Vec3 } from "cc";
 const { ccclass, property } = _decorator;
 
+let _temp_num: number = 0;
+
 @ccclass("TransformController")
 export class TransformController extends Component {
     /* class member could be defined like this */
@@ -56,9 +58,10 @@ export class TransformController extends Component {
     // }
 
     onTranslateChanged (slider: SliderComponent, data: string) {
-        this._translate.set(0, 0, slider.progress * 10);
+        this._translate.set(0, 0, slider.progress * 10 - _temp_num);
+        _temp_num = slider.progress * 10;
         if (this.check1.isChecked) {
-            this.particle1.setPosition(this._translate);
+            this.particle1.translate(this._translate);
         }
         if (this.check2.isChecked) {
             this.particle2.translate(this._translate);
