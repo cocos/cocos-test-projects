@@ -61,11 +61,9 @@ export class ListSetUp extends Component {
     }
 
     onTouchStart (event: EventTouch) {
-        director.loadScene(this.node.name,
-            () => {
-                console.log("切换成功");
-            }, () => {
-                console.log("切换失败");
-            });
+        let result = director.loadScene(this.node.name, (...args: any) => { console.log("切换成功", args); }, null);
+        if (!result) {
+            console.log("切换失败");
+        }
     }
 }
