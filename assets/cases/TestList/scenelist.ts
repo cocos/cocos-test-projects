@@ -28,6 +28,7 @@ export const sceneArray:string[] = [
     "particle-velocity",
     "group-mask-builtin",
     "trigger-builtin",
+    "physics-raycast",
     "collision",
     "constant-force",
     "force-impluse",
