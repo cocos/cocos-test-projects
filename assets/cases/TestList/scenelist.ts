@@ -15,6 +15,8 @@ export const sceneArray:string[] = [
     "system-event",
     "event-info",
     "material",
+    "boxes-unbatched",
+    "boxes-batched",
     "particle-color",
     "particle-force",
     "particle-limit-velocity",

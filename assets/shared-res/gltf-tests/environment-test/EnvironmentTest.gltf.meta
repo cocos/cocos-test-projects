@@ -1,12 +1,9 @@
 {
-  "ver": "1.1.24",
+  "ver": "1.3.7",
   "importer": "gltf",
   "imported": true,
   "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e",
-  "displayName": "",
-  "files": [
-    ".gltf"
-  ],
+  "files": [],
   "subMetas": {
     "16384": {
       "ver": "1.0.10",
@@ -39,7 +36,7 @@
       "name": "EnvironmentTest.prefab"
     },
     "85552": {
-      "ver": "1.0.2",
+      "ver": "1.0.4",
       "importer": "gltf-mesh",
       "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@85552",
       "imported": true,
@@ -55,7 +52,7 @@
       "name": "Dielectric0_N3D2.mesh"
     },
     "420b6": {
-      "ver": "1.0.2",
+      "ver": "1.0.4",
       "importer": "gltf-mesh",
       "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@420b6",
       "imported": true,
@@ -71,7 +68,7 @@
       "name": "Metallic0_N3D.mesh"
     },
     "d502a": {
-      "ver": "1.0.2",
+      "ver": "1.0.4",
       "importer": "gltf-mesh",
       "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@d502a",
       "imported": true,
@@ -164,16 +161,6 @@
     }
   },
   "userData": {
-    "imageLocations": {
-      "tmp_image_pie_dc1e_1a22_fbf9roughness_map_roughness_tmp_image_pie_dc1e_1a22_fbf9metal_map_metallic_0": {
-        "originalPath": "EnvironmentTest_images/roughness_metallic_0.jpg",
-        "targetDatabaseUrl": null
-      },
-      "tmp_image_pie_b20b_ebb4_317droughness_map2_roughness_tmp_image_pie_b20b_ebb4_317dmetal_map2_metallic_1": {
-        "originalPath": "EnvironmentTest_images/roughness_metallic_1.jpg",
-        "targetDatabaseUrl": null
-      }
-    },
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
@@ -183,16 +170,6 @@
         "9f94c180-f4f5-4146-88ee-0771efc58f8e@420b6",
         "9f94c180-f4f5-4146-88ee-0771efc58f8e@85552",
         "9f94c180-f4f5-4146-88ee-0771efc58f8e@d502a"
-      ],
-      "images": [
-        {
-          "embeded": false,
-          "uuidOrDatabaseUri": "db://assets/shared-res/gltf-tests/environment-test/EnvironmentTest_images/roughness_metallic_0.jpg"
-        },
-        {
-          "embeded": false,
-          "uuidOrDatabaseUri": "db://assets/shared-res/gltf-tests/environment-test/EnvironmentTest_images/roughness_metallic_1.jpg"
-        }
       ],
       "textures": [
         "9f94c180-f4f5-4146-88ee-0771efc58f8e@d0b0e",
@@ -205,7 +182,18 @@
       ],
       "scenes": [
         "9f94c180-f4f5-4146-88ee-0771efc58f8e@52060"
-      ]
-    }
+      ],
+      "skeletons": []
+    },
+    "imageMetas": [
+      {
+        "name": "tmp_image_pie_dc1e_1a22_fbf9roughness_map_roughness_tmp_image_pie_dc1e_1a22_fbf9metal_map_metallic_0",
+        "uri": "db://assets/shared-res/gltf-tests/environment-test/EnvironmentTest_images/roughness_metallic_0.jpg"
+      },
+      {
+        "name": "tmp_image_pie_b20b_ebb4_317droughness_map2_roughness_tmp_image_pie_b20b_ebb4_317dmetal_map2_metallic_1",
+        "uri": "db://assets/shared-res/gltf-tests/environment-test/EnvironmentTest_images/roughness_metallic_1.jpg"
+      }
+    ]
   }
 }

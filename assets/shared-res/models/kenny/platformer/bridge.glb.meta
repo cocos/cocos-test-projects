@@ -1,17 +1,17 @@
 {
-  "ver": "1.1.24",
+  "ver": "1.3.7",
   "importer": "gltf",
   "imported": true,
   "uuid": "8d98d674-a750-4cad-8bed-82c6f6f3f6fd",
-  "displayName": "",
-  "files": [
-    ".glb"
-  ],
+  "files": [],
   "subMetas": {
     "aec7e": {
-      "ver": "1.0.2",
+      "ver": "1.0.4",
       "importer": "gltf-mesh",
+      "name": "Mesh bridge.mesh",
+      "id": "aec7e",
       "uuid": "8d98d674-a750-4cad-8bed-82c6f6f3f6fd@aec7e",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json",
@@ -20,14 +20,15 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      },
-      "id": "aec7e",
-      "name": "Mesh bridge.mesh"
+      }
     },
     "e4014": {
       "ver": "1.0.10",
       "importer": "gltf-material",
+      "name": "wood.material",
+      "id": "e4014",
       "uuid": "8d98d674-a750-4cad-8bed-82c6f6f3f6fd@e4014",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -35,14 +36,15 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      },
-      "id": "e4014",
-      "name": "wood.material"
+      }
     },
     "938e8": {
       "ver": "1.0.10",
       "importer": "gltf-material",
+      "name": "woodDark.material",
+      "id": "938e8",
       "uuid": "8d98d674-a750-4cad-8bed-82c6f6f3f6fd@938e8",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -50,14 +52,15 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      },
-      "id": "938e8",
-      "name": "woodDark.material"
+      }
     },
     "c8923": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
+      "name": "bridge.prefab",
+      "id": "c8923",
       "uuid": "8d98d674-a750-4cad-8bed-82c6f6f3f6fd@c8923",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -65,13 +68,10 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      },
-      "id": "c8923",
-      "name": "bridge.prefab"
+      }
     }
   },
   "userData": {
-    "imageLocations": {},
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
@@ -86,7 +86,10 @@
       ],
       "scenes": [
         "8d98d674-a750-4cad-8bed-82c6f6f3f6fd@c8923"
-      ]
-    }
+      ],
+      "skeletons": [],
+      "textures": []
+    },
+    "imageMetas": []
   }
 }

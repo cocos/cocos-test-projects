@@ -1,15 +1,12 @@
 {
-  "ver": "1.1.24",
+  "ver": "1.3.7",
   "importer": "gltf",
   "imported": true,
   "uuid": "d2ee34ab-594a-46fe-b68f-8b7385eddb5c",
-  "displayName": "",
-  "files": [
-    ".gltf"
-  ],
+  "files": [],
   "subMetas": {
     "2f6d1": {
-      "ver": "1.0.2",
+      "ver": "1.0.4",
       "importer": "gltf-mesh",
       "uuid": "d2ee34ab-594a-46fe-b68f-8b7385eddb5c@2f6d1",
       "imported": true,
@@ -102,7 +99,6 @@
     }
   },
   "userData": {
-    "imageLocations": {},
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
@@ -110,16 +106,6 @@
     "assetFinder": {
       "meshes": [
         "d2ee34ab-594a-46fe-b68f-8b7385eddb5c@2f6d1"
-      ],
-      "images": [
-        {
-          "embeded": false,
-          "uuidOrDatabaseUri": "db://assets/shared-res/gltf-tests/multi-uv/uv0.png"
-        },
-        {
-          "embeded": false,
-          "uuidOrDatabaseUri": "db://assets/shared-res/gltf-tests/multi-uv/uv1.png"
-        }
       ],
       "textures": [
         "d2ee34ab-594a-46fe-b68f-8b7385eddb5c@3effa",
@@ -130,7 +116,16 @@
       ],
       "scenes": [
         "d2ee34ab-594a-46fe-b68f-8b7385eddb5c@9fa1e"
-      ]
-    }
+      ],
+      "skeletons": []
+    },
+    "imageMetas": [
+      {
+        "uri": "db://assets/shared-res/gltf-tests/multi-uv/uv0.png"
+      },
+      {
+        "uri": "db://assets/shared-res/gltf-tests/multi-uv/uv1.png"
+      }
+    ]
   }
 }

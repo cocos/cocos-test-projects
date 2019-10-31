@@ -1,17 +1,17 @@
 {
-  "ver": "1.1.24",
+  "ver": "1.3.7",
   "importer": "gltf",
   "imported": true,
   "uuid": "017c5cf6-47b4-4189-8f8e-31ad5383f8fa",
-  "displayName": "",
-  "files": [
-    ".glb"
-  ],
+  "files": [],
   "subMetas": {
     "53398": {
       "ver": "1.0.10",
       "importer": "gltf-material",
+      "name": "grass.material",
+      "id": "53398",
       "uuid": "017c5cf6-47b4-4189-8f8e-31ad5383f8fa@53398",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -19,14 +19,15 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      },
-      "id": "53398",
-      "name": "grass.material"
+      }
     },
     "2ab9a": {
-      "ver": "1.0.2",
+      "ver": "1.0.4",
       "importer": "gltf-mesh",
+      "name": "Mesh roadCornerSmallSquare.mesh",
+      "id": "2ab9a",
       "uuid": "017c5cf6-47b4-4189-8f8e-31ad5383f8fa@2ab9a",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json",
@@ -35,14 +36,15 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      },
-      "id": "2ab9a",
-      "name": "Mesh roadCornerSmallSquare.mesh"
+      }
     },
     "0ee4f": {
       "ver": "1.0.10",
       "importer": "gltf-material",
+      "name": "_defaultMat.material",
+      "id": "0ee4f",
       "uuid": "017c5cf6-47b4-4189-8f8e-31ad5383f8fa@0ee4f",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -50,14 +52,15 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      },
-      "id": "0ee4f",
-      "name": "_defaultMat.material"
+      }
     },
     "35ea4": {
       "ver": "1.0.10",
       "importer": "gltf-material",
+      "name": "road.material",
+      "id": "35ea4",
       "uuid": "017c5cf6-47b4-4189-8f8e-31ad5383f8fa@35ea4",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -65,14 +68,15 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 2
-      },
-      "id": "35ea4",
-      "name": "road.material"
+      }
     },
     "8ed34": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
+      "name": "roadCornerSmallSquare.prefab",
+      "id": "8ed34",
       "uuid": "017c5cf6-47b4-4189-8f8e-31ad5383f8fa@8ed34",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -80,13 +84,10 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      },
-      "id": "8ed34",
-      "name": "roadCornerSmallSquare.prefab"
+      }
     }
   },
   "userData": {
-    "imageLocations": {},
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
@@ -102,7 +103,10 @@
       ],
       "scenes": [
         "017c5cf6-47b4-4189-8f8e-31ad5383f8fa@8ed34"
-      ]
-    }
+      ],
+      "skeletons": [],
+      "textures": []
+    },
+    "imageMetas": []
   }
 }

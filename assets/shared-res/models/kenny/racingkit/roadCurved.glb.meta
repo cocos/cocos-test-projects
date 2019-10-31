@@ -1,17 +1,17 @@
 {
-  "ver": "1.1.24",
+  "ver": "1.3.7",
   "importer": "gltf",
   "imported": true,
   "uuid": "f1366741-4235-4bb7-95a3-c17f57cc94ea",
-  "displayName": "",
-  "files": [
-    ".glb"
-  ],
+  "files": [],
   "subMetas": {
     "53398": {
       "ver": "1.0.10",
       "importer": "gltf-material",
+      "name": "grass.material",
+      "id": "53398",
       "uuid": "f1366741-4235-4bb7-95a3-c17f57cc94ea@53398",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -19,14 +19,15 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 2
-      },
-      "id": "53398",
-      "name": "grass.material"
+      }
     },
     "c8b7e": {
-      "ver": "1.0.2",
+      "ver": "1.0.4",
       "importer": "gltf-mesh",
+      "name": "Mesh roadCurved.mesh",
+      "id": "c8b7e",
       "uuid": "f1366741-4235-4bb7-95a3-c17f57cc94ea@c8b7e",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json",
@@ -35,14 +36,15 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      },
-      "id": "c8b7e",
-      "name": "Mesh roadCurved.mesh"
+      }
     },
     "35ea4": {
       "ver": "1.0.10",
       "importer": "gltf-material",
+      "name": "road.material",
+      "id": "35ea4",
       "uuid": "f1366741-4235-4bb7-95a3-c17f57cc94ea@35ea4",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -50,14 +52,15 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      },
-      "id": "35ea4",
-      "name": "road.material"
+      }
     },
     "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
+      "name": "grey.material",
+      "id": "d63d5",
       "uuid": "f1366741-4235-4bb7-95a3-c17f57cc94ea@d63d5",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -65,14 +68,15 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      },
-      "id": "d63d5",
-      "name": "grey.material"
+      }
     },
     "04d75": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
+      "name": "roadCurved.prefab",
+      "id": "04d75",
       "uuid": "f1366741-4235-4bb7-95a3-c17f57cc94ea@04d75",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -80,13 +84,10 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      },
-      "id": "04d75",
-      "name": "roadCurved.prefab"
+      }
     }
   },
   "userData": {
-    "imageLocations": {},
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
@@ -102,7 +103,10 @@
       ],
       "scenes": [
         "f1366741-4235-4bb7-95a3-c17f57cc94ea@04d75"
-      ]
-    }
+      ],
+      "skeletons": [],
+      "textures": []
+    },
+    "imageMetas": []
   }
 }
