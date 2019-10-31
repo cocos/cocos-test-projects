@@ -1,17 +1,17 @@
 {
-  "ver": "1.1.24",
+  "ver": "1.3.7",
   "importer": "gltf",
   "imported": true,
   "uuid": "4109a814-c662-48f6-98b8-f8b940a073ef",
-  "displayName": "",
-  "files": [
-    ".glb"
-  ],
+  "files": [],
   "subMetas": {
     "53398": {
       "ver": "1.0.10",
       "importer": "gltf-material",
+      "name": "grass.material",
+      "id": "53398",
       "uuid": "4109a814-c662-48f6-98b8-f8b940a073ef@53398",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -19,14 +19,15 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 2
-      },
-      "id": "53398",
-      "name": "grass.material"
+      }
     },
     "fddc1": {
-      "ver": "1.0.2",
+      "ver": "1.0.4",
       "importer": "gltf-mesh",
+      "name": "Mesh bannerTowerGreen.mesh",
+      "id": "fddc1",
       "uuid": "4109a814-c662-48f6-98b8-f8b940a073ef@fddc1",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json",
@@ -35,14 +36,15 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      },
-      "id": "fddc1",
-      "name": "Mesh bannerTowerGreen.mesh"
+      }
     },
     "0ee4f": {
       "ver": "1.0.10",
       "importer": "gltf-material",
+      "name": "_defaultMat.material",
+      "id": "0ee4f",
       "uuid": "4109a814-c662-48f6-98b8-f8b940a073ef@0ee4f",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -50,14 +52,15 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      },
-      "id": "0ee4f",
-      "name": "_defaultMat.material"
+      }
     },
     "d63d5": {
       "ver": "1.0.10",
       "importer": "gltf-material",
+      "name": "grey.material",
+      "id": "d63d5",
       "uuid": "4109a814-c662-48f6-98b8-f8b940a073ef@d63d5",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -65,14 +68,15 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      },
-      "id": "d63d5",
-      "name": "grey.material"
+      }
     },
     "c35a9": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
+      "name": "bannerTowerGreen.prefab",
+      "id": "c35a9",
       "uuid": "4109a814-c662-48f6-98b8-f8b940a073ef@c35a9",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -80,13 +84,10 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      },
-      "id": "c35a9",
-      "name": "bannerTowerGreen.prefab"
+      }
     }
   },
   "userData": {
-    "imageLocations": {},
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
@@ -102,7 +103,10 @@
       ],
       "scenes": [
         "4109a814-c662-48f6-98b8-f8b940a073ef@c35a9"
-      ]
-    }
+      ],
+      "skeletons": [],
+      "textures": []
+    },
+    "imageMetas": []
   }
 }

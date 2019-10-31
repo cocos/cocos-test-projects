@@ -1,17 +1,17 @@
 {
-  "ver": "1.1.24",
+  "ver": "1.3.7",
   "importer": "gltf",
   "imported": true,
   "uuid": "368bd6f0-17a1-49a1-8b55-cfb183bd235e",
-  "displayName": "",
-  "files": [
-    ".glb"
-  ],
+  "files": [],
   "subMetas": {
     "c5629": {
-      "ver": "1.0.2",
+      "ver": "1.0.4",
       "importer": "gltf-mesh",
+      "name": "Mesh coin.mesh",
+      "id": "c5629",
       "uuid": "368bd6f0-17a1-49a1-8b55-cfb183bd235e@c5629",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json",
@@ -20,14 +20,15 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      },
-      "id": "c5629",
-      "name": "Mesh coin.mesh"
+      }
     },
     "9dbcb": {
       "ver": "1.0.10",
       "importer": "gltf-material",
+      "name": "gold.material",
+      "id": "9dbcb",
       "uuid": "368bd6f0-17a1-49a1-8b55-cfb183bd235e@9dbcb",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -35,14 +36,15 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      },
-      "id": "9dbcb",
-      "name": "gold.material"
+      }
     },
     "e4014": {
       "ver": "1.0.10",
       "importer": "gltf-material",
+      "name": "wood.material",
+      "id": "e4014",
       "uuid": "368bd6f0-17a1-49a1-8b55-cfb183bd235e@e4014",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -50,14 +52,15 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      },
-      "id": "e4014",
-      "name": "wood.material"
+      }
     },
     "5ec8d": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
+      "name": "coinGold.prefab",
+      "id": "5ec8d",
       "uuid": "368bd6f0-17a1-49a1-8b55-cfb183bd235e@5ec8d",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -65,13 +68,10 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      },
-      "id": "5ec8d",
-      "name": "coinGold.prefab"
+      }
     }
   },
   "userData": {
-    "imageLocations": {},
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
@@ -86,7 +86,10 @@
       ],
       "scenes": [
         "368bd6f0-17a1-49a1-8b55-cfb183bd235e@5ec8d"
-      ]
-    }
+      ],
+      "skeletons": [],
+      "textures": []
+    },
+    "imageMetas": []
   }
 }

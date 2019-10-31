@@ -1,17 +1,17 @@
 {
-  "ver": "1.1.24",
+  "ver": "1.3.7",
   "importer": "gltf",
   "imported": true,
   "uuid": "f8eaf2cb-1d53-431d-a238-89eb3df3431e",
-  "displayName": "",
-  "files": [
-    ".glb"
-  ],
+  "files": [],
   "subMetas": {
     "53398": {
       "ver": "1.0.10",
       "importer": "gltf-material",
+      "name": "grass.material",
+      "id": "53398",
       "uuid": "f8eaf2cb-1d53-431d-a238-89eb3df3431e@53398",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -19,14 +19,15 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      },
-      "id": "53398",
-      "name": "grass.material"
+      }
     },
     "5ef5d": {
-      "ver": "1.0.2",
+      "ver": "1.0.4",
       "importer": "gltf-mesh",
+      "name": "Mesh roadSplitRoundLarge.mesh",
+      "id": "5ef5d",
       "uuid": "f8eaf2cb-1d53-431d-a238-89eb3df3431e@5ef5d",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json",
@@ -35,14 +36,15 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      },
-      "id": "5ef5d",
-      "name": "Mesh roadSplitRoundLarge.mesh"
+      }
     },
     "0ee4f": {
       "ver": "1.0.10",
       "importer": "gltf-material",
+      "name": "_defaultMat.material",
+      "id": "0ee4f",
       "uuid": "f8eaf2cb-1d53-431d-a238-89eb3df3431e@0ee4f",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -50,14 +52,15 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      },
-      "id": "0ee4f",
-      "name": "_defaultMat.material"
+      }
     },
     "35ea4": {
       "ver": "1.0.10",
       "importer": "gltf-material",
+      "name": "road.material",
+      "id": "35ea4",
       "uuid": "f8eaf2cb-1d53-431d-a238-89eb3df3431e@35ea4",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -65,14 +68,15 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 2
-      },
-      "id": "35ea4",
-      "name": "road.material"
+      }
     },
     "17d9a": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
+      "name": "roadSplitRoundLarge.prefab",
+      "id": "17d9a",
       "uuid": "f8eaf2cb-1d53-431d-a238-89eb3df3431e@17d9a",
+      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -80,13 +84,10 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      },
-      "id": "17d9a",
-      "name": "roadSplitRoundLarge.prefab"
+      }
     }
   },
   "userData": {
-    "imageLocations": {},
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
@@ -102,7 +103,10 @@
       ],
       "scenes": [
         "f8eaf2cb-1d53-431d-a238-89eb3df3431e@17d9a"
-      ]
-    }
+      ],
+      "skeletons": [],
+      "textures": []
+    },
+    "imageMetas": []
   }
 }
