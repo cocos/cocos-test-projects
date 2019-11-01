@@ -19,7 +19,7 @@ export class backbutton extends Component {
         let firstIndex = 0;
         let lastIndex = 0;
         let sceneString:string = '';
-        for(let i = 0; i < sceneInfo.length - 1; i++){
+        for(let i = 0; i < sceneInfo.length; i++) {
             sceneString = sceneInfo[i].url;
             firstIndex = sceneString.lastIndexOf('/') + 1;
             lastIndex = sceneString.lastIndexOf('.scene');

@@ -1,17 +1,17 @@
 {
-  "ver": "1.3.7",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "6ba6509c-4144-4772-b762-59fb52790732",
-  "files": [],
+  "displayName": "",
+  "files": [
+    ".glb"
+  ],
   "subMetas": {
     "d0fe0": {
-      "ver": "1.0.4",
+      "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "name": "Mesh blockSnowCliffCorner.mesh",
-      "id": "d0fe0",
       "uuid": "6ba6509c-4144-4772-b762-59fb52790732@d0fe0",
-      "displayName": "",
       "imported": true,
       "files": [
         ".json",
@@ -20,15 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "d0fe0",
+      "name": "Mesh blockSnowCliffCorner.mesh"
     },
     "3577b": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "name": "dirt.material",
-      "id": "3577b",
       "uuid": "6ba6509c-4144-4772-b762-59fb52790732@3577b",
-      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -36,15 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "3577b",
+      "name": "dirt.material"
     },
     "dfa42": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "name": "snow.material",
-      "id": "dfa42",
       "uuid": "6ba6509c-4144-4772-b762-59fb52790732@dfa42",
-      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -52,15 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "dfa42",
+      "name": "snow.material"
     },
     "4d596": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "name": "blockSnowCliffCorner.prefab",
-      "id": "4d596",
       "uuid": "6ba6509c-4144-4772-b762-59fb52790732@4d596",
-      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -68,10 +65,13 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "4d596",
+      "name": "blockSnowCliffCorner.prefab"
     }
   },
   "userData": {
+    "imageLocations": {},
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
@@ -86,10 +86,7 @@
       ],
       "scenes": [
         "6ba6509c-4144-4772-b762-59fb52790732@4d596"
-      ],
-      "skeletons": [],
-      "textures": []
-    },
-    "imageMetas": []
+      ]
+    }
   }
 }
