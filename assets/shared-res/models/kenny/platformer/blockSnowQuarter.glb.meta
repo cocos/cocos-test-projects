@@ -1,17 +1,17 @@
 {
-  "ver": "1.3.7",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "6f08451b-1fbb-4f58-966c-461814fcb9da",
-  "files": [],
+  "displayName": "",
+  "files": [
+    ".glb"
+  ],
   "subMetas": {
     "fedd5": {
-      "ver": "1.0.4",
+      "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "name": "Mesh blockSnowQuarter.mesh",
-      "id": "fedd5",
       "uuid": "6f08451b-1fbb-4f58-966c-461814fcb9da@fedd5",
-      "displayName": "",
       "imported": true,
       "files": [
         ".json",
@@ -20,15 +20,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "fedd5",
+      "name": "Mesh blockSnowQuarter.mesh"
     },
     "dfa42": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "name": "snow.material",
-      "id": "dfa42",
       "uuid": "6f08451b-1fbb-4f58-966c-461814fcb9da@dfa42",
-      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -36,15 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "dfa42",
+      "name": "snow.material"
     },
     "3577b": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "name": "dirt.material",
-      "id": "3577b",
       "uuid": "6f08451b-1fbb-4f58-966c-461814fcb9da@3577b",
-      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -52,15 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "3577b",
+      "name": "dirt.material"
     },
     "4159a": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "name": "blockSnowQuarter.prefab",
-      "id": "4159a",
       "uuid": "6f08451b-1fbb-4f58-966c-461814fcb9da@4159a",
-      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -68,10 +65,13 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "4159a",
+      "name": "blockSnowQuarter.prefab"
     }
   },
   "userData": {
+    "imageLocations": {},
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
@@ -86,10 +86,7 @@
       ],
       "scenes": [
         "6f08451b-1fbb-4f58-966c-461814fcb9da@4159a"
-      ],
-      "skeletons": [],
-      "textures": []
-    },
-    "imageMetas": []
+      ]
+    }
   }
 }

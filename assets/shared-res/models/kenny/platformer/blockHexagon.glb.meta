@@ -1,17 +1,17 @@
 {
-  "ver": "1.3.7",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "81657287-1586-4ca4-9855-b63c70fc6bd0",
-  "files": [],
+  "displayName": "",
+  "files": [
+    ".glb"
+  ],
   "subMetas": {
     "53398": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "name": "grass.material",
-      "id": "53398",
       "uuid": "81657287-1586-4ca4-9855-b63c70fc6bd0@53398",
-      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -19,15 +19,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "53398",
+      "name": "grass.material"
     },
     "e0d9b": {
-      "ver": "1.0.4",
+      "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "name": "Mesh blockHexagon.mesh",
-      "id": "e0d9b",
       "uuid": "81657287-1586-4ca4-9855-b63c70fc6bd0@e0d9b",
-      "displayName": "",
       "imported": true,
       "files": [
         ".json",
@@ -36,15 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "e0d9b",
+      "name": "Mesh blockHexagon.mesh"
     },
     "3577b": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "name": "dirt.material",
-      "id": "3577b",
       "uuid": "81657287-1586-4ca4-9855-b63c70fc6bd0@3577b",
-      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -52,15 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "3577b",
+      "name": "dirt.material"
     },
     "f549f": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "name": "blockHexagon.prefab",
-      "id": "f549f",
       "uuid": "81657287-1586-4ca4-9855-b63c70fc6bd0@f549f",
-      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -68,10 +65,13 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "f549f",
+      "name": "blockHexagon.prefab"
     }
   },
   "userData": {
+    "imageLocations": {},
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
@@ -86,10 +86,7 @@
       ],
       "scenes": [
         "81657287-1586-4ca4-9855-b63c70fc6bd0@f549f"
-      ],
-      "skeletons": [],
-      "textures": []
-    },
-    "imageMetas": []
+      ]
+    }
   }
 }

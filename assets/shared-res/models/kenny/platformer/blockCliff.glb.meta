@@ -1,17 +1,17 @@
 {
-  "ver": "1.3.7",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "68a7f065-7d15-48a6-b6c2-097386ff2922",
-  "files": [],
+  "displayName": "",
+  "files": [
+    ".glb"
+  ],
   "subMetas": {
     "53398": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "name": "grass.material",
-      "id": "53398",
       "uuid": "68a7f065-7d15-48a6-b6c2-097386ff2922@53398",
-      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -19,15 +19,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "53398",
+      "name": "grass.material"
     },
     "57bb7": {
-      "ver": "1.0.4",
+      "ver": "1.0.2",
       "importer": "gltf-mesh",
-      "name": "Mesh blockCliff.mesh",
-      "id": "57bb7",
       "uuid": "68a7f065-7d15-48a6-b6c2-097386ff2922@57bb7",
-      "displayName": "",
       "imported": true,
       "files": [
         ".json",
@@ -36,15 +35,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "57bb7",
+      "name": "Mesh blockCliff.mesh"
     },
     "3577b": {
       "ver": "1.0.10",
       "importer": "gltf-material",
-      "name": "dirt.material",
-      "id": "3577b",
       "uuid": "68a7f065-7d15-48a6-b6c2-097386ff2922@3577b",
-      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -52,15 +50,14 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 1
-      }
+      },
+      "id": "3577b",
+      "name": "dirt.material"
     },
     "5b5e8": {
       "ver": "1.0.8",
       "importer": "gltf-scene",
-      "name": "blockCliff.prefab",
-      "id": "5b5e8",
       "uuid": "68a7f065-7d15-48a6-b6c2-097386ff2922@5b5e8",
-      "displayName": "",
       "imported": true,
       "files": [
         ".json"
@@ -68,10 +65,13 @@
       "subMetas": {},
       "userData": {
         "gltfIndex": 0
-      }
+      },
+      "id": "5b5e8",
+      "name": "blockCliff.prefab"
     }
   },
   "userData": {
+    "imageLocations": {},
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
@@ -86,10 +86,7 @@
       ],
       "scenes": [
         "68a7f065-7d15-48a6-b6c2-097386ff2922@5b5e8"
-      ],
-      "skeletons": [],
-      "textures": []
-    },
-    "imageMetas": []
+      ]
+    }
   }
 }
