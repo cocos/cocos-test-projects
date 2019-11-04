@@ -1,11 +1,62 @@
 {
-  "ver": "1.3.7",
+  "ver": "1.1.24",
   "importer": "gltf",
-  "imported": false,
+  "imported": true,
   "uuid": "0865bcfc-b738-4367-bd83-f40131de5048",
-  "files": [],
-  "subMetas": {},
+  "displayName": "",
+  "files": [
+    ".glb"
+  ],
+  "subMetas": {
+    "0668b": {
+      "ver": "1.0.2",
+      "importer": "gltf-mesh",
+      "uuid": "0865bcfc-b738-4367-bd83-f40131de5048@0668b",
+      "imported": true,
+      "files": [
+        ".json",
+        ".bin"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "0668b",
+      "name": "Mesh ladderLong.mesh"
+    },
+    "e4014": {
+      "ver": "1.0.10",
+      "importer": "gltf-material",
+      "uuid": "0865bcfc-b738-4367-bd83-f40131de5048@e4014",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "e4014",
+      "name": "wood.material"
+    },
+    "3f200": {
+      "ver": "1.0.8",
+      "importer": "gltf-scene",
+      "uuid": "0865bcfc-b738-4367-bd83-f40131de5048@3f200",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {},
+      "userData": {
+        "gltfIndex": 0
+      },
+      "id": "3f200",
+      "name": "ladderLong.prefab"
+    }
+  },
   "userData": {
+    "imageLocations": {},
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
@@ -19,10 +70,7 @@
       ],
       "scenes": [
         "0865bcfc-b738-4367-bd83-f40131de5048@3f200"
-      ],
-      "skeletons": [],
-      "textures": []
-    },
-    "imageMetas": []
+      ]
+    }
   }
 }

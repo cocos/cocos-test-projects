@@ -1,9 +1,12 @@
 {
-  "ver": "1.3.7",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "9c06e1bc-7469-4c8f-9aef-9531d05e337a",
-  "files": [],
+  "displayName": "",
+  "files": [
+    ".gltf"
+  ],
   "subMetas": {
     "48021": {
       "ver": "1.0.10",
@@ -18,8 +21,7 @@
         "gltfIndex": 0
       },
       "id": "48021",
-      "name": "BoomBox_Mat.material",
-      "displayName": ""
+      "name": "BoomBox_Mat.material"
     },
     "50743": {
       "ver": "1.0.19",
@@ -42,11 +44,10 @@
         "imageUuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_diffuse.png"
       },
       "id": "50743",
-      "name": "UnnamedTexture-5.texture",
-      "displayName": ""
+      "name": "UnnamedTexture-5.texture"
     },
     "f85dc": {
-      "ver": "1.0.6",
+      "ver": "1.0.2",
       "importer": "gltf-mesh",
       "uuid": "9c06e1bc-7469-4c8f-9aef-9531d05e337a@f85dc",
       "imported": true,
@@ -59,8 +60,7 @@
         "gltfIndex": 0
       },
       "id": "f85dc",
-      "name": "BoomBox.mesh",
-      "displayName": ""
+      "name": "BoomBox.mesh"
     },
     "3effa": {
       "ver": "1.0.19",
@@ -83,8 +83,7 @@
         "imageUuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_baseColor.png"
       },
       "id": "3effa",
-      "name": "UnnamedTexture-0.texture",
-      "displayName": ""
+      "name": "UnnamedTexture-0.texture"
     },
     "221a5": {
       "ver": "1.0.19",
@@ -107,8 +106,7 @@
         "imageUuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_roughnessMetallic.png"
       },
       "id": "221a5",
-      "name": "UnnamedTexture-1.texture",
-      "displayName": ""
+      "name": "UnnamedTexture-1.texture"
     },
     "0089c": {
       "ver": "1.0.19",
@@ -131,8 +129,7 @@
         "imageUuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_normal.png"
       },
       "id": "0089c",
-      "name": "UnnamedTexture-2.texture",
-      "displayName": ""
+      "name": "UnnamedTexture-2.texture"
     },
     "9b633": {
       "ver": "1.0.19",
@@ -155,8 +152,7 @@
         "imageUuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_emissive.png"
       },
       "id": "9b633",
-      "name": "UnnamedTexture-3.texture",
-      "displayName": ""
+      "name": "UnnamedTexture-3.texture"
     },
     "9b782": {
       "ver": "1.0.19",
@@ -179,8 +175,7 @@
         "imageUuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_occlusion.png"
       },
       "id": "9b782",
-      "name": "UnnamedTexture-4.texture",
-      "displayName": ""
+      "name": "UnnamedTexture-4.texture"
     },
     "99ea5": {
       "ver": "1.0.19",
@@ -203,8 +198,7 @@
         "imageUuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_specularGlossiness.png"
       },
       "id": "99ea5",
-      "name": "UnnamedTexture-6.texture",
-      "displayName": ""
+      "name": "UnnamedTexture-6.texture"
     },
     "49d89": {
       "ver": "1.0.8",
@@ -219,11 +213,11 @@
         "gltfIndex": 0
       },
       "id": "49d89",
-      "name": "BoomBox.prefab",
-      "displayName": ""
+      "name": "BoomBox.prefab"
     }
   },
   "userData": {
+    "imageLocations": {},
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
@@ -231,6 +225,36 @@
     "assetFinder": {
       "meshes": [
         "9c06e1bc-7469-4c8f-9aef-9531d05e337a@f85dc"
+      ],
+      "images": [
+        {
+          "embeded": false,
+          "uuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_baseColor.png"
+        },
+        {
+          "embeded": false,
+          "uuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_roughnessMetallic.png"
+        },
+        {
+          "embeded": false,
+          "uuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_normal.png"
+        },
+        {
+          "embeded": false,
+          "uuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_emissive.png"
+        },
+        {
+          "embeded": false,
+          "uuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_occlusion.png"
+        },
+        {
+          "embeded": false,
+          "uuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_diffuse.png"
+        },
+        {
+          "embeded": false,
+          "uuidOrDatabaseUri": "db://assets/shared-res/models/boom-box/BoomBox_specularGlossiness.png"
+        }
       ],
       "textures": [
         "9c06e1bc-7469-4c8f-9aef-9531d05e337a@3effa",
@@ -246,31 +270,7 @@
       ],
       "scenes": [
         "9c06e1bc-7469-4c8f-9aef-9531d05e337a@49d89"
-      ],
-      "skeletons": []
-    },
-    "imageMetas": [
-      {
-        "uri": "db://assets/shared-res/models/boom-box/BoomBox_baseColor.png"
-      },
-      {
-        "uri": "db://assets/shared-res/models/boom-box/BoomBox_roughnessMetallic.png"
-      },
-      {
-        "uri": "db://assets/shared-res/models/boom-box/BoomBox_normal.png"
-      },
-      {
-        "uri": "db://assets/shared-res/models/boom-box/BoomBox_emissive.png"
-      },
-      {
-        "uri": "db://assets/shared-res/models/boom-box/BoomBox_occlusion.png"
-      },
-      {
-        "uri": "db://assets/shared-res/models/boom-box/BoomBox_diffuse.png"
-      },
-      {
-        "uri": "db://assets/shared-res/models/boom-box/BoomBox_specularGlossiness.png"
-      }
-    ]
+      ]
+    }
   }
 }

@@ -1,17 +1,19 @@
 {
-  "ver": "1.3.7",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "3004862e-868e-4b34-95cb-f185d324e081",
-  "files": [],
+  "displayName": "",
+  "files": [
+    ".gltf"
+  ],
   "subMetas": {
     "57146": {
-      "ver": "1.0.13",
+      "ver": "1.0.10",
       "importer": "gltf-animation",
       "uuid": "3004862e-868e-4b34-95cb-f185d324e081@57146",
       "imported": true,
       "files": [
-        ".bin",
         ".json"
       ],
       "subMetas": {},
@@ -27,11 +29,10 @@
         "wrapMode": 2
       },
       "id": "57146",
-      "name": "Walk.animation",
-      "displayName": ""
+      "name": "Walk.animation"
     },
     "3a99e": {
-      "ver": "1.0.6",
+      "ver": "1.0.2",
       "importer": "gltf-mesh",
       "uuid": "3004862e-868e-4b34-95cb-f185d324e081@3a99e",
       "imported": true,
@@ -44,16 +45,14 @@
         "gltfIndex": 0
       },
       "id": "3a99e",
-      "name": "fox1_fox_material_0.mesh",
-      "displayName": ""
+      "name": "fox1_fox_material_0.mesh"
     },
     "73b7f": {
-      "ver": "1.0.13",
+      "ver": "1.0.10",
       "importer": "gltf-animation",
       "uuid": "3004862e-868e-4b34-95cb-f185d324e081@73b7f",
       "imported": true,
       "files": [
-        ".bin",
         ".json"
       ],
       "subMetas": {},
@@ -69,16 +68,14 @@
         "wrapMode": 2
       },
       "id": "73b7f",
-      "name": "Take 001.animation",
-      "displayName": ""
+      "name": "Take 001.animation"
     },
     "c2696": {
-      "ver": "1.0.13",
+      "ver": "1.0.10",
       "importer": "gltf-animation",
       "uuid": "3004862e-868e-4b34-95cb-f185d324e081@c2696",
       "imported": true,
       "files": [
-        ".bin",
         ".json"
       ],
       "subMetas": {},
@@ -92,16 +89,14 @@
         "events": []
       },
       "id": "c2696",
-      "name": "Idle.animation",
-      "displayName": ""
+      "name": "Idle.animation"
     },
     "9292d": {
-      "ver": "1.0.13",
+      "ver": "1.0.10",
       "importer": "gltf-animation",
       "uuid": "3004862e-868e-4b34-95cb-f185d324e081@9292d",
       "imported": true,
       "files": [
-        ".bin",
         ".json"
       ],
       "subMetas": {},
@@ -117,8 +112,7 @@
         "speed": 1
       },
       "id": "9292d",
-      "name": "Run.animation",
-      "displayName": ""
+      "name": "Run.animation"
     },
     "438fe": {
       "ver": "1.0.0",
@@ -133,8 +127,7 @@
         "gltfIndex": 0
       },
       "id": "438fe",
-      "name": "UnnamedSkeleton.skeleton",
-      "displayName": ""
+      "name": "UnnamedSkeleton.skeleton"
     },
     "e39f7": {
       "ver": "1.0.19",
@@ -157,8 +150,7 @@
         "imageUuidOrDatabaseUri": "db://assets/cases/animation/low_poly_fox_by_pixelmannen_animated/textures/fox_material_baseColor.png"
       },
       "id": "e39f7",
-      "name": "UnnamedTexture.texture",
-      "displayName": ""
+      "name": "UnnamedTexture.texture"
     },
     "d1932": {
       "ver": "1.0.8",
@@ -173,11 +165,11 @@
         "gltfIndex": 0
       },
       "id": "d1932",
-      "name": "scene.prefab",
-      "displayName": ""
+      "name": "scene.prefab"
     }
   },
   "userData": {
+    "imageLocations": {},
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": true,
@@ -218,6 +210,12 @@
       "skeletons": [
         "3004862e-868e-4b34-95cb-f185d324e081@438fe"
       ],
+      "images": [
+        {
+          "embeded": false,
+          "uuidOrDatabaseUri": "db://assets/cases/animation/low_poly_fox_by_pixelmannen_animated/textures/fox_material_baseColor.png"
+        }
+      ],
       "textures": [
         "3004862e-868e-4b34-95cb-f185d324e081@e39f7"
       ],
@@ -228,11 +226,6 @@
         "3004862e-868e-4b34-95cb-f185d324e081@d1932"
       ]
     },
-    "materialDumpDir": "db://assets/cases/animation/low_poly_fox_by_pixelmannen_animated",
-    "imageMetas": [
-      {
-        "uri": "db://assets/cases/animation/low_poly_fox_by_pixelmannen_animated/textures/fox_material_baseColor.png"
-      }
-    ]
+    "materialDumpDir": "db://assets/cases/animation/low_poly_fox_by_pixelmannen_animated"
   }
 }

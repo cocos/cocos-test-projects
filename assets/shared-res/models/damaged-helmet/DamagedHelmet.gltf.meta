@@ -1,9 +1,12 @@
 {
-  "ver": "1.3.7",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "de6314a3-4e89-4cd8-8653-07c7cc969d4c",
-  "files": [],
+  "displayName": "",
+  "files": [
+    ".gltf"
+  ],
   "subMetas": {
     "28803": {
       "ver": "1.0.10",
@@ -18,11 +21,10 @@
         "gltfIndex": 0
       },
       "id": "28803",
-      "name": "Material_MR.material",
-      "displayName": ""
+      "name": "Material_MR.material"
     },
     "92175": {
-      "ver": "1.0.6",
+      "ver": "1.0.2",
       "importer": "gltf-mesh",
       "uuid": "de6314a3-4e89-4cd8-8653-07c7cc969d4c@92175",
       "imported": true,
@@ -35,8 +37,7 @@
         "gltfIndex": 0
       },
       "id": "92175",
-      "name": "mesh_helmet_LP_13930damagedHelmet.mesh",
-      "displayName": ""
+      "name": "mesh_helmet_LP_13930damagedHelmet.mesh"
     },
     "3effa": {
       "ver": "1.0.19",
@@ -59,8 +60,7 @@
         "imageUuidOrDatabaseUri": "db://assets/shared-res/models/damaged-helmet/Default_albedo.jpg"
       },
       "id": "3effa",
-      "name": "UnnamedTexture-0.texture",
-      "displayName": ""
+      "name": "UnnamedTexture-0.texture"
     },
     "221a5": {
       "ver": "1.0.19",
@@ -83,8 +83,7 @@
         "imageUuidOrDatabaseUri": "db://assets/shared-res/models/damaged-helmet/Default_metalRoughness.jpg"
       },
       "id": "221a5",
-      "name": "UnnamedTexture-1.texture",
-      "displayName": ""
+      "name": "UnnamedTexture-1.texture"
     },
     "0089c": {
       "ver": "1.0.19",
@@ -107,8 +106,7 @@
         "imageUuidOrDatabaseUri": "db://assets/shared-res/models/damaged-helmet/Default_emissive.jpg"
       },
       "id": "0089c",
-      "name": "UnnamedTexture-2.texture",
-      "displayName": ""
+      "name": "UnnamedTexture-2.texture"
     },
     "9b633": {
       "ver": "1.0.19",
@@ -131,8 +129,7 @@
         "imageUuidOrDatabaseUri": "db://assets/shared-res/models/damaged-helmet/Default_AO.jpg"
       },
       "id": "9b633",
-      "name": "UnnamedTexture-3.texture",
-      "displayName": ""
+      "name": "UnnamedTexture-3.texture"
     },
     "9b782": {
       "ver": "1.0.19",
@@ -155,8 +152,7 @@
         "imageUuidOrDatabaseUri": "db://assets/shared-res/models/damaged-helmet/Default_normal.jpg"
       },
       "id": "9b782",
-      "name": "UnnamedTexture-4.texture",
-      "displayName": ""
+      "name": "UnnamedTexture-4.texture"
     },
     "3b75d": {
       "ver": "1.0.8",
@@ -171,11 +167,11 @@
         "gltfIndex": 0
       },
       "id": "3b75d",
-      "name": "DamagedHelmet.prefab",
-      "displayName": ""
+      "name": "DamagedHelmet.prefab"
     }
   },
   "userData": {
+    "imageLocations": {},
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
@@ -183,6 +179,28 @@
     "assetFinder": {
       "meshes": [
         "de6314a3-4e89-4cd8-8653-07c7cc969d4c@92175"
+      ],
+      "images": [
+        {
+          "embeded": false,
+          "uuidOrDatabaseUri": "db://assets/shared-res/models/damaged-helmet/Default_albedo.jpg"
+        },
+        {
+          "embeded": false,
+          "uuidOrDatabaseUri": "db://assets/shared-res/models/damaged-helmet/Default_metalRoughness.jpg"
+        },
+        {
+          "embeded": false,
+          "uuidOrDatabaseUri": "db://assets/shared-res/models/damaged-helmet/Default_emissive.jpg"
+        },
+        {
+          "embeded": false,
+          "uuidOrDatabaseUri": "db://assets/shared-res/models/damaged-helmet/Default_AO.jpg"
+        },
+        {
+          "embeded": false,
+          "uuidOrDatabaseUri": "db://assets/shared-res/models/damaged-helmet/Default_normal.jpg"
+        }
       ],
       "textures": [
         "de6314a3-4e89-4cd8-8653-07c7cc969d4c@3effa",
@@ -196,25 +214,7 @@
       ],
       "scenes": [
         "de6314a3-4e89-4cd8-8653-07c7cc969d4c@3b75d"
-      ],
-      "skeletons": []
-    },
-    "imageMetas": [
-      {
-        "uri": "db://assets/shared-res/models/damaged-helmet/Default_albedo.jpg"
-      },
-      {
-        "uri": "db://assets/shared-res/models/damaged-helmet/Default_metalRoughness.jpg"
-      },
-      {
-        "uri": "db://assets/shared-res/models/damaged-helmet/Default_emissive.jpg"
-      },
-      {
-        "uri": "db://assets/shared-res/models/damaged-helmet/Default_AO.jpg"
-      },
-      {
-        "uri": "db://assets/shared-res/models/damaged-helmet/Default_normal.jpg"
-      }
-    ]
+      ]
+    }
   }
 }

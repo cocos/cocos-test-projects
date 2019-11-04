@@ -1,12 +1,15 @@
 {
-  "ver": "1.3.7",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "5b35a7fe-3513-4dfc-b92c-aafc34ccfeef",
-  "files": [],
+  "displayName": "",
+  "files": [
+    ".glb"
+  ],
   "subMetas": {
     "a6d73": {
-      "ver": "1.0.6",
+      "ver": "1.0.2",
       "importer": "gltf-mesh",
       "uuid": "5b35a7fe-3513-4dfc-b92c-aafc34ccfeef@a6d73",
       "imported": true,
@@ -19,11 +22,10 @@
         "gltfIndex": 0
       },
       "id": "a6d73",
-      "name": "Mesh noExport.mesh",
-      "displayName": ""
+      "name": "Mesh noExport.mesh"
     },
     "c2450": {
-      "ver": "1.0.2",
+      "ver": "1.0.0",
       "importer": "gltf-embeded-image",
       "uuid": "5b35a7fe-3513-4dfc-b92c-aafc34ccfeef@c2450",
       "imported": true,
@@ -36,8 +38,7 @@
         "gltfIndex": 0
       },
       "id": "c2450",
-      "name": "net.image",
-      "displayName": ""
+      "name": "net.image"
     },
     "e39f7": {
       "ver": "1.0.19",
@@ -60,8 +61,7 @@
         "imageUuidOrDatabaseUri": "5b35a7fe-3513-4dfc-b92c-aafc34ccfeef@c2450"
       },
       "id": "e39f7",
-      "name": "UnnamedTexture.texture",
-      "displayName": ""
+      "name": "UnnamedTexture.texture"
     },
     "d63d5": {
       "ver": "1.0.10",
@@ -76,8 +76,7 @@
         "gltfIndex": 0
       },
       "id": "d63d5",
-      "name": "grey.material",
-      "displayName": ""
+      "name": "grey.material"
     },
     "54bcf": {
       "ver": "1.0.10",
@@ -92,8 +91,7 @@
         "gltfIndex": 1
       },
       "id": "54bcf",
-      "name": "net.material",
-      "displayName": ""
+      "name": "net.material"
     },
     "d4716": {
       "ver": "1.0.8",
@@ -108,11 +106,11 @@
         "gltfIndex": 0
       },
       "id": "d4716",
-      "name": "fenceCurved.prefab",
-      "displayName": ""
+      "name": "fenceCurved.prefab"
     }
   },
   "userData": {
+    "imageLocations": {},
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
@@ -120,6 +118,12 @@
     "assetFinder": {
       "meshes": [
         "5b35a7fe-3513-4dfc-b92c-aafc34ccfeef@a6d73"
+      ],
+      "images": [
+        {
+          "embeded": true,
+          "uuidOrDatabaseUri": "5b35a7fe-3513-4dfc-b92c-aafc34ccfeef@c2450"
+        }
       ],
       "textures": [
         "5b35a7fe-3513-4dfc-b92c-aafc34ccfeef@e39f7"
@@ -130,14 +134,7 @@
       ],
       "scenes": [
         "5b35a7fe-3513-4dfc-b92c-aafc34ccfeef@d4716"
-      ],
-      "skeletons": []
-    },
-    "imageMetas": [
-      {
-        "name": "net",
-        "uri": "5b35a7fe-3513-4dfc-b92c-aafc34ccfeef@c2450"
-      }
-    ]
+      ]
+    }
   }
 }

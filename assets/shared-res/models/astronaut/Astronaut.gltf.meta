@@ -1,12 +1,15 @@
 {
-  "ver": "1.3.7",
+  "ver": "1.1.24",
   "importer": "gltf",
   "imported": true,
   "uuid": "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc",
-  "files": [],
+  "displayName": "",
+  "files": [
+    ".gltf"
+  ],
   "subMetas": {
     "b4e71": {
-      "ver": "1.0.6",
+      "ver": "1.0.2",
       "importer": "gltf-mesh",
       "uuid": "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@b4e71",
       "imported": true,
@@ -19,8 +22,7 @@
         "gltfIndex": 0
       },
       "id": "b4e71",
-      "name": "buffer-0-mesh-0.mesh",
-      "displayName": ""
+      "name": "buffer-0-mesh-0.mesh"
     },
     "c1228": {
       "ver": "1.0.19",
@@ -43,8 +45,7 @@
         "imageUuidOrDatabaseUri": "db://assets/shared-res/models/astronaut/Astronaut_BaseColor.png"
       },
       "id": "c1228",
-      "name": "Astronaut_mat-texture.texture",
-      "displayName": ""
+      "name": "Astronaut_mat-texture.texture"
     },
     "e4ec5": {
       "ver": "1.0.10",
@@ -59,8 +60,7 @@
         "gltfIndex": 0
       },
       "id": "e4ec5",
-      "name": "Astronaut_mat.material",
-      "displayName": ""
+      "name": "Astronaut_mat.material"
     },
     "9ee96": {
       "ver": "1.0.8",
@@ -75,11 +75,16 @@
         "gltfIndex": 0
       },
       "id": "9ee96",
-      "name": "Astronaut.prefab",
-      "displayName": ""
+      "name": "Astronaut.prefab"
     }
   },
   "userData": {
+    "imageLocations": {
+      "Astronaut_mat-image": {
+        "originalPath": "Astronaut_BaseColor.png",
+        "targetDatabaseUrl": null
+      }
+    },
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
@@ -87,6 +92,12 @@
     "assetFinder": {
       "meshes": [
         "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@b4e71"
+      ],
+      "images": [
+        {
+          "embeded": false,
+          "uuidOrDatabaseUri": "db://assets/shared-res/models/astronaut/Astronaut_BaseColor.png"
+        }
       ],
       "textures": [
         "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@c1228"
@@ -96,14 +107,7 @@
       ],
       "scenes": [
         "3ec2e568-a309-4585-bd5c-ac9bdbe8d4fc@9ee96"
-      ],
-      "skeletons": []
-    },
-    "imageMetas": [
-      {
-        "name": "Astronaut_mat-image",
-        "uri": "db://assets/shared-res/models/astronaut/Astronaut_BaseColor.png"
-      }
-    ]
+      ]
+    }
   }
 }
