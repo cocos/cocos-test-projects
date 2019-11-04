@@ -1,15 +1,12 @@
 {
-  "ver": "1.1.24",
+  "ver": "1.3.7",
   "importer": "gltf",
   "imported": true,
   "uuid": "6645bba9-e160-47fe-81e6-3a9fe030dd8b",
-  "displayName": "",
-  "files": [
-    ".glb"
-  ],
+  "files": [],
   "subMetas": {
     "7425d": {
-      "ver": "1.0.2",
+      "ver": "1.0.6",
       "importer": "gltf-mesh",
       "uuid": "6645bba9-e160-47fe-81e6-3a9fe030dd8b@7425d",
       "imported": true,
@@ -22,10 +19,11 @@
         "gltfIndex": 0
       },
       "id": "7425d",
-      "name": "Mesh flagTankco.mesh"
+      "name": "Mesh flagTankco.mesh",
+      "displayName": ""
     },
     "e5a79": {
-      "ver": "1.0.2",
+      "ver": "1.0.6",
       "importer": "gltf-mesh",
       "uuid": "6645bba9-e160-47fe-81e6-3a9fe030dd8b@e5a79",
       "imported": true,
@@ -38,10 +36,11 @@
         "gltfIndex": 1
       },
       "id": "e5a79",
-      "name": "Mesh Group 391.mesh"
+      "name": "Mesh Group 391.mesh",
+      "displayName": ""
     },
     "765da": {
-      "ver": "1.0.0",
+      "ver": "1.0.2",
       "importer": "gltf-embeded-image",
       "uuid": "6645bba9-e160-47fe-81e6-3a9fe030dd8b@765da",
       "imported": true,
@@ -54,7 +53,8 @@
         "gltfIndex": 0
       },
       "id": "765da",
-      "name": "tankcoBanner.image"
+      "name": "tankcoBanner.image",
+      "displayName": ""
     },
     "e39f7": {
       "ver": "1.0.19",
@@ -77,7 +77,8 @@
         "imageUuidOrDatabaseUri": "6645bba9-e160-47fe-81e6-3a9fe030dd8b@765da"
       },
       "id": "e39f7",
-      "name": "UnnamedTexture.texture"
+      "name": "UnnamedTexture.texture",
+      "displayName": ""
     },
     "7bfd2": {
       "ver": "1.0.10",
@@ -92,7 +93,8 @@
         "gltfIndex": 0
       },
       "id": "7bfd2",
-      "name": "tankco.material"
+      "name": "tankco.material",
+      "displayName": ""
     },
     "0ee4f": {
       "ver": "1.0.10",
@@ -107,7 +109,8 @@
         "gltfIndex": 1
       },
       "id": "0ee4f",
-      "name": "_defaultMat.material"
+      "name": "_defaultMat.material",
+      "displayName": ""
     },
     "d63d5": {
       "ver": "1.0.10",
@@ -122,7 +125,8 @@
         "gltfIndex": 2
       },
       "id": "d63d5",
-      "name": "grey.material"
+      "name": "grey.material",
+      "displayName": ""
     },
     "35ea4": {
       "ver": "1.0.10",
@@ -137,7 +141,8 @@
         "gltfIndex": 3
       },
       "id": "35ea4",
-      "name": "road.material"
+      "name": "road.material",
+      "displayName": ""
     },
     "f2ce7": {
       "ver": "1.0.8",
@@ -152,11 +157,11 @@
         "gltfIndex": 0
       },
       "id": "f2ce7",
-      "name": "flagTankco.prefab"
+      "name": "flagTankco.prefab",
+      "displayName": ""
     }
   },
   "userData": {
-    "imageLocations": {},
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
@@ -165,12 +170,6 @@
       "meshes": [
         "6645bba9-e160-47fe-81e6-3a9fe030dd8b@7425d",
         "6645bba9-e160-47fe-81e6-3a9fe030dd8b@e5a79"
-      ],
-      "images": [
-        {
-          "embeded": true,
-          "uuidOrDatabaseUri": "6645bba9-e160-47fe-81e6-3a9fe030dd8b@765da"
-        }
       ],
       "textures": [
         "6645bba9-e160-47fe-81e6-3a9fe030dd8b@e39f7"
@@ -183,7 +182,14 @@
       ],
       "scenes": [
         "6645bba9-e160-47fe-81e6-3a9fe030dd8b@f2ce7"
-      ]
-    }
+      ],
+      "skeletons": []
+    },
+    "imageMetas": [
+      {
+        "name": "tankcoBanner",
+        "uri": "6645bba9-e160-47fe-81e6-3a9fe030dd8b@765da"
+      }
+    ]
   }
 }

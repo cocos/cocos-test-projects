@@ -1,15 +1,12 @@
 {
-  "ver": "1.1.24",
+  "ver": "1.3.7",
   "importer": "gltf",
   "imported": true,
   "uuid": "55ce6f50-17a3-4901-910f-9a56eb462191",
-  "displayName": "",
-  "files": [
-    ".gltf"
-  ],
+  "files": [],
   "subMetas": {
     "9c834": {
-      "ver": "1.0.2",
+      "ver": "1.0.6",
       "importer": "gltf-mesh",
       "uuid": "55ce6f50-17a3-4901-910f-9a56eb462191@9c834",
       "imported": true,
@@ -22,7 +19,8 @@
         "gltfIndex": 0
       },
       "id": "9c834",
-      "name": "NormalTangentTest_low.mesh"
+      "name": "NormalTangentTest_low.mesh",
+      "displayName": ""
     },
     "3effa": {
       "ver": "1.0.19",
@@ -45,7 +43,8 @@
         "imageUuidOrDatabaseUri": "db://assets/shared-res/gltf-tests/normal-tangent-mirror/NormalTangentMirrorTest_OcclusionRoughnessMetallic.png"
       },
       "id": "3effa",
-      "name": "UnnamedTexture-0.texture"
+      "name": "UnnamedTexture-0.texture",
+      "displayName": ""
     },
     "221a5": {
       "ver": "1.0.19",
@@ -68,7 +67,8 @@
         "imageUuidOrDatabaseUri": "db://assets/shared-res/gltf-tests/normal-tangent-mirror/NormalTangentTest_Normal.png"
       },
       "id": "221a5",
-      "name": "UnnamedTexture-1.texture"
+      "name": "UnnamedTexture-1.texture",
+      "displayName": ""
     },
     "0089c": {
       "ver": "1.0.19",
@@ -91,7 +91,8 @@
         "imageUuidOrDatabaseUri": "db://assets/shared-res/gltf-tests/normal-tangent-mirror/NormalTangentMirrorTest_BaseColor.png"
       },
       "id": "0089c",
-      "name": "UnnamedTexture-2.texture"
+      "name": "UnnamedTexture-2.texture",
+      "displayName": ""
     },
     "b4e6b": {
       "ver": "1.0.10",
@@ -106,7 +107,8 @@
         "gltfIndex": 0
       },
       "id": "b4e6b",
-      "name": "Material.material"
+      "name": "Material.material",
+      "displayName": ""
     },
     "c98cb": {
       "ver": "1.0.8",
@@ -121,11 +123,11 @@
         "gltfIndex": 0
       },
       "id": "c98cb",
-      "name": "NormalTangentMirrorTest.prefab"
+      "name": "NormalTangentMirrorTest.prefab",
+      "displayName": ""
     }
   },
   "userData": {
-    "imageLocations": {},
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
@@ -133,20 +135,6 @@
     "assetFinder": {
       "meshes": [
         "55ce6f50-17a3-4901-910f-9a56eb462191@9c834"
-      ],
-      "images": [
-        {
-          "embeded": false,
-          "uuidOrDatabaseUri": "db://assets/shared-res/gltf-tests/normal-tangent-mirror/NormalTangentMirrorTest_OcclusionRoughnessMetallic.png"
-        },
-        {
-          "embeded": false,
-          "uuidOrDatabaseUri": "db://assets/shared-res/gltf-tests/normal-tangent-mirror/NormalTangentTest_Normal.png"
-        },
-        {
-          "embeded": false,
-          "uuidOrDatabaseUri": "db://assets/shared-res/gltf-tests/normal-tangent-mirror/NormalTangentMirrorTest_BaseColor.png"
-        }
       ],
       "textures": [
         "55ce6f50-17a3-4901-910f-9a56eb462191@3effa",
@@ -158,7 +146,19 @@
       ],
       "scenes": [
         "55ce6f50-17a3-4901-910f-9a56eb462191@c98cb"
-      ]
-    }
+      ],
+      "skeletons": []
+    },
+    "imageMetas": [
+      {
+        "uri": "db://assets/shared-res/gltf-tests/normal-tangent-mirror/NormalTangentMirrorTest_OcclusionRoughnessMetallic.png"
+      },
+      {
+        "uri": "db://assets/shared-res/gltf-tests/normal-tangent-mirror/NormalTangentTest_Normal.png"
+      },
+      {
+        "uri": "db://assets/shared-res/gltf-tests/normal-tangent-mirror/NormalTangentMirrorTest_BaseColor.png"
+      }
+    ]
   }
 }

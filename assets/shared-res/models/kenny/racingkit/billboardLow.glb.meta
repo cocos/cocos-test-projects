@@ -1,15 +1,12 @@
 {
-  "ver": "1.1.24",
+  "ver": "1.3.7",
   "importer": "gltf",
   "imported": true,
   "uuid": "c6b65eae-48bd-4004-83f4-398bc8abb84c",
-  "displayName": "",
-  "files": [
-    ".glb"
-  ],
+  "files": [],
   "subMetas": {
     "a6d73": {
-      "ver": "1.0.2",
+      "ver": "1.0.6",
       "importer": "gltf-mesh",
       "uuid": "c6b65eae-48bd-4004-83f4-398bc8abb84c@a6d73",
       "imported": true,
@@ -22,10 +19,11 @@
         "gltfIndex": 0
       },
       "id": "a6d73",
-      "name": "Mesh noExport.mesh"
+      "name": "Mesh noExport.mesh",
+      "displayName": ""
     },
     "765da": {
-      "ver": "1.0.0",
+      "ver": "1.0.2",
       "importer": "gltf-embeded-image",
       "uuid": "c6b65eae-48bd-4004-83f4-398bc8abb84c@765da",
       "imported": true,
@@ -38,7 +36,8 @@
         "gltfIndex": 0
       },
       "id": "765da",
-      "name": "tankcoBanner.image"
+      "name": "tankcoBanner.image",
+      "displayName": ""
     },
     "e39f7": {
       "ver": "1.0.19",
@@ -61,7 +60,8 @@
         "imageUuidOrDatabaseUri": "c6b65eae-48bd-4004-83f4-398bc8abb84c@765da"
       },
       "id": "e39f7",
-      "name": "UnnamedTexture.texture"
+      "name": "UnnamedTexture.texture",
+      "displayName": ""
     },
     "dc328": {
       "ver": "1.0.10",
@@ -76,7 +76,8 @@
         "gltfIndex": 0
       },
       "id": "dc328",
-      "name": "bark.material"
+      "name": "bark.material",
+      "displayName": ""
     },
     "35ea4": {
       "ver": "1.0.10",
@@ -91,7 +92,8 @@
         "gltfIndex": 1
       },
       "id": "35ea4",
-      "name": "road.material"
+      "name": "road.material",
+      "displayName": ""
     },
     "7bfd2": {
       "ver": "1.0.10",
@@ -106,7 +108,8 @@
         "gltfIndex": 2
       },
       "id": "7bfd2",
-      "name": "tankco.material"
+      "name": "tankco.material",
+      "displayName": ""
     },
     "d63d5": {
       "ver": "1.0.10",
@@ -121,7 +124,8 @@
         "gltfIndex": 3
       },
       "id": "d63d5",
-      "name": "grey.material"
+      "name": "grey.material",
+      "displayName": ""
     },
     "71dc2": {
       "ver": "1.0.8",
@@ -136,11 +140,11 @@
         "gltfIndex": 0
       },
       "id": "71dc2",
-      "name": "billboardLow.prefab"
+      "name": "billboardLow.prefab",
+      "displayName": ""
     }
   },
   "userData": {
-    "imageLocations": {},
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
@@ -148,12 +152,6 @@
     "assetFinder": {
       "meshes": [
         "c6b65eae-48bd-4004-83f4-398bc8abb84c@a6d73"
-      ],
-      "images": [
-        {
-          "embeded": true,
-          "uuidOrDatabaseUri": "c6b65eae-48bd-4004-83f4-398bc8abb84c@765da"
-        }
       ],
       "textures": [
         "c6b65eae-48bd-4004-83f4-398bc8abb84c@e39f7"
@@ -166,7 +164,14 @@
       ],
       "scenes": [
         "c6b65eae-48bd-4004-83f4-398bc8abb84c@71dc2"
-      ]
-    }
+      ],
+      "skeletons": []
+    },
+    "imageMetas": [
+      {
+        "name": "tankcoBanner",
+        "uri": "c6b65eae-48bd-4004-83f4-398bc8abb84c@765da"
+      }
+    ]
   }
 }

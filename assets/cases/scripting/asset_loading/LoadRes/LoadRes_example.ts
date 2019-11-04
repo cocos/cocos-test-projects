@@ -22,7 +22,7 @@ export class LoadResexample extends Component {
             sprite.spriteFrame = atlas.getSpriteFrame('sheep_run_0');
         });
     }
- 
+
     loadPrefab () {
         const url = this._url[1];
         this._releaseResource(url, Prefab);
