@@ -22,7 +22,7 @@ export class LoadResexample extends Component {
             sprite.spriteFrame = atlas.getSpriteFrame('sheep_run_0');
         });
     }
- 
+
     loadPrefab () {
         const url = this._url[1];
         this._releaseResource(url, Prefab);
@@ -34,20 +34,24 @@ export class LoadResexample extends Component {
             node.setPosition(0, 0, 0);
         });
     }
- 
+
     onDisable () {
         this._releaseResource(this._url[0], SpriteAtlas);
         this._releaseResource(this._url[1], Prefab);
     }
- 
+
     _removeAllChildren () {
         this.content.removeAllChildren(true);
     }
- 
+
     _releaseResource (url, type) {
         this._removeAllChildren();
         const res = loader.getRes(url, type);
         const all = loader.getDependsRecursively(res);
         loader.release(all);
+    }
+
+    backToAssetLoading () {
+        cc.director.loadScene('AssetLoading');
     }
 }
