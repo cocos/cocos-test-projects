@@ -40,32 +40,6 @@
     "_active": true,
     "_components": [],
     "_prefab": null,
-    "_lpos": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_lrot": {
-      "__type__": "cc.Quat",
-      "x": 0,
-      "y": 0,
-      "z": 0,
-      "w": 1
-    },
-    "_lscale": {
-      "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
-      "z": 1
-    },
-    "_layer": 1073741824,
-    "_euler": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
     "autoReleaseAssets": false,
     "_globals": {
       "__id__": 425
@@ -2236,7 +2210,7 @@
       "__id__": 52
     },
     "dampen": 1,
-    "separateAxes": false,
+    "separateAxes": true,
     "space": 1
   },
   {
@@ -2371,19 +2345,28 @@
   },
   {
     "__type__": "cc.CurveRange",
-    "mode": 0,
+    "mode": 1,
     "curve": {
       "__type__": "cc.AnimationCurve",
       "preWrapMode": 2,
       "postWrapMode": 2,
       "keyFrames": [
         {
+          "__type__": "cc.Keyframe",
           "time": 0,
           "value": 1,
           "inTangent": 0,
           "outTangent": 0
         },
         {
+          "__type__": "cc.Keyframe",
+          "time": 0.5,
+          "value": 0,
+          "inTangent": 0,
+          "outTangent": 0
+        },
+        {
+          "__type__": "cc.Keyframe",
           "time": 1,
           "value": 1,
           "inTangent": 0,
@@ -2397,12 +2380,14 @@
       "postWrapMode": 2,
       "keyFrames": [
         {
+          "__type__": "cc.Keyframe",
           "time": 0,
           "value": 1,
           "inTangent": 0,
           "outTangent": 0
         },
         {
+          "__type__": "cc.Keyframe",
           "time": 1,
           "value": 1,
           "inTangent": 0,
@@ -2416,12 +2401,14 @@
       "postWrapMode": 2,
       "keyFrames": [
         {
+          "__type__": "cc.Keyframe",
           "time": 0,
           "value": 1,
           "inTangent": 0,
           "outTangent": 0
         },
         {
+          "__type__": "cc.Keyframe",
           "time": 1,
           "value": 1,
           "inTangent": 0,
@@ -2432,7 +2419,7 @@
     "constant": 0,
     "constantMin": 0,
     "constantMax": 0,
-    "multiplier": 1
+    "multiplier": 2
   },
   {
     "__type__": "cc.CurveRange",
@@ -5148,7 +5135,7 @@
       "__id__": 117
     },
     "dampen": 1,
-    "separateAxes": false,
+    "separateAxes": true,
     "space": 1
   },
   {
@@ -5283,19 +5270,28 @@
   },
   {
     "__type__": "cc.CurveRange",
-    "mode": 0,
+    "mode": 1,
     "curve": {
       "__type__": "cc.AnimationCurve",
       "preWrapMode": 2,
       "postWrapMode": 2,
       "keyFrames": [
         {
+          "__type__": "cc.Keyframe",
           "time": 0,
           "value": 1,
           "inTangent": 0,
           "outTangent": 0
         },
         {
+          "__type__": "cc.Keyframe",
+          "time": 0.5,
+          "value": -0.01,
+          "inTangent": 0,
+          "outTangent": 0
+        },
+        {
+          "__type__": "cc.Keyframe",
           "time": 1,
           "value": 1,
           "inTangent": 0,
@@ -5309,12 +5305,14 @@
       "postWrapMode": 2,
       "keyFrames": [
         {
+          "__type__": "cc.Keyframe",
           "time": 0,
           "value": 1,
           "inTangent": 0,
           "outTangent": 0
         },
         {
+          "__type__": "cc.Keyframe",
           "time": 1,
           "value": 1,
           "inTangent": 0,
@@ -5328,12 +5326,14 @@
       "postWrapMode": 2,
       "keyFrames": [
         {
+          "__type__": "cc.Keyframe",
           "time": 0,
           "value": 1,
           "inTangent": 0,
           "outTangent": 0
         },
         {
+          "__type__": "cc.Keyframe",
           "time": 1,
           "value": 1,
           "inTangent": 0,
@@ -5344,7 +5344,7 @@
     "constant": 0,
     "constantMin": 0,
     "constantMax": 0,
-    "multiplier": 1
+    "multiplier": 2
   },
   {
     "__type__": "cc.CurveRange",
@@ -8060,7 +8060,7 @@
       "__id__": 182
     },
     "dampen": 1,
-    "separateAxes": false,
+    "separateAxes": true,
     "space": 0
   },
   {
@@ -8195,19 +8195,28 @@
   },
   {
     "__type__": "cc.CurveRange",
-    "mode": 0,
+    "mode": 1,
     "curve": {
       "__type__": "cc.AnimationCurve",
       "preWrapMode": 2,
       "postWrapMode": 2,
       "keyFrames": [
         {
+          "__type__": "cc.Keyframe",
           "time": 0,
           "value": 1,
           "inTangent": 0,
           "outTangent": 0
         },
         {
+          "__type__": "cc.Keyframe",
+          "time": 0.5,
+          "value": 0,
+          "inTangent": 0,
+          "outTangent": 0
+        },
+        {
+          "__type__": "cc.Keyframe",
           "time": 1,
           "value": 1,
           "inTangent": 0,
@@ -8221,12 +8230,14 @@
       "postWrapMode": 2,
       "keyFrames": [
         {
+          "__type__": "cc.Keyframe",
           "time": 0,
           "value": 1,
           "inTangent": 0,
           "outTangent": 0
         },
         {
+          "__type__": "cc.Keyframe",
           "time": 1,
           "value": 1,
           "inTangent": 0,
@@ -8240,12 +8251,14 @@
       "postWrapMode": 2,
       "keyFrames": [
         {
+          "__type__": "cc.Keyframe",
           "time": 0,
           "value": 1,
           "inTangent": 0,
           "outTangent": 0
         },
         {
+          "__type__": "cc.Keyframe",
           "time": 1,
           "value": 1,
           "inTangent": 0,
@@ -8256,7 +8269,7 @@
     "constant": 0,
     "constantMin": 0,
     "constantMax": 0,
-    "multiplier": 1
+    "multiplier": 2
   },
   {
     "__type__": "cc.CurveRange",
@@ -10972,7 +10985,7 @@
       "__id__": 247
     },
     "dampen": 1,
-    "separateAxes": false,
+    "separateAxes": true,
     "space": 0
   },
   {
@@ -11107,19 +11120,28 @@
   },
   {
     "__type__": "cc.CurveRange",
-    "mode": 0,
+    "mode": 1,
     "curve": {
       "__type__": "cc.AnimationCurve",
       "preWrapMode": 2,
       "postWrapMode": 2,
       "keyFrames": [
         {
+          "__type__": "cc.Keyframe",
           "time": 0,
           "value": 1,
           "inTangent": 0,
           "outTangent": 0
         },
         {
+          "__type__": "cc.Keyframe",
+          "time": 0.51,
+          "value": 0,
+          "inTangent": 0,
+          "outTangent": 0
+        },
+        {
+          "__type__": "cc.Keyframe",
           "time": 1,
           "value": 1,
           "inTangent": 0,
@@ -11133,12 +11155,14 @@
       "postWrapMode": 2,
       "keyFrames": [
         {
+          "__type__": "cc.Keyframe",
           "time": 0,
           "value": 1,
           "inTangent": 0,
           "outTangent": 0
         },
         {
+          "__type__": "cc.Keyframe",
           "time": 1,
           "value": 1,
           "inTangent": 0,
@@ -11152,12 +11176,14 @@
       "postWrapMode": 2,
       "keyFrames": [
         {
+          "__type__": "cc.Keyframe",
           "time": 0,
           "value": 1,
           "inTangent": 0,
           "outTangent": 0
         },
         {
+          "__type__": "cc.Keyframe",
           "time": 1,
           "value": 1,
           "inTangent": 0,
@@ -11168,7 +11194,7 @@
     "constant": 0,
     "constantMin": 0,
     "constantMax": 0,
-    "multiplier": 1
+    "multiplier": 2
   },
   {
     "__type__": "cc.CurveRange",
@@ -12132,6 +12158,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
+    "_useGrayscale": false,
     "_atlas": null,
     "_id": "7eL+Uoe1BJVZvFxSp5CVWq"
   },
@@ -12190,6 +12217,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
+    "_useGrayscale": false,
     "_atlas": null,
     "_id": "99TxaYkqZMv67fe8pONK9E"
   },
@@ -12508,6 +12536,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
+    "_useGrayscale": false,
     "_atlas": null,
     "_id": "e7LLX4oGBLnYLvcg8sBWiV"
   },
@@ -12566,6 +12595,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
+    "_useGrayscale": false,
     "_atlas": null,
     "_id": "86+6bbdHRInqZkHCQMWwzg"
   },
@@ -12884,6 +12914,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
+    "_useGrayscale": false,
     "_atlas": null,
     "_id": "9c3aW2jT1Om6Aur/Hv9GqA"
   },
@@ -12942,6 +12973,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
+    "_useGrayscale": false,
     "_atlas": null,
     "_id": "74WrciyLhEgojH7qG3ga2w"
   },
@@ -13260,6 +13292,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
+    "_useGrayscale": false,
     "_atlas": null,
     "_id": "c3phBSizdDHadJqPFcX0o6"
   },
@@ -13318,6 +13351,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
+    "_useGrayscale": false,
     "_atlas": null,
     "_id": "a642FtIdZEi5hncAJktq0P"
   },
@@ -13639,6 +13673,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
+    "_useGrayscale": false,
     "_atlas": null,
     "_id": "00WD+V0hRAUIKLVVmAHb8G"
   },
@@ -13749,6 +13784,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
+    "_useGrayscale": false,
     "_atlas": null,
     "_id": "11sv1h0UtDIrqWAtEqlnh9"
   },
@@ -14248,6 +14284,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
+    "_useGrayscale": false,
     "_atlas": null,
     "_id": "2cycv+Yj1ONK5hT3rnCP3B"
   },
@@ -14358,6 +14395,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
+    "_useGrayscale": false,
     "_atlas": null,
     "_id": "2etIGVeetLB4D0lqh1lTvD"
   },
@@ -15018,6 +15056,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
+    "_useGrayscale": false,
     "_atlas": null,
     "_id": "9aojfUgipHwI/88amv3dvj"
   },
@@ -15314,6 +15353,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
+    "_useGrayscale": false,
     "_atlas": null,
     "_id": "c3A6dRetlBfqB/Wt5v26kL"
   },
@@ -15610,6 +15650,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
+    "_useGrayscale": false,
     "_atlas": null,
     "_id": "4cRwGIjgNDJqezAZf7VSea"
   },
@@ -15906,6 +15947,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
+    "_useGrayscale": false,
     "_atlas": null,
     "_id": "1fdb+Cbf9AqpOw/JKXsnUl"
   },
@@ -16278,6 +16320,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
+    "_useGrayscale": false,
     "_atlas": null,
     "_id": "b0ooR23npB5bwBIkEC0Kjp"
   },
@@ -16574,6 +16617,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
+    "_useGrayscale": false,
     "_atlas": null,
     "_id": "79i3CaWkdF+oqsfSWnYIIA"
   },
@@ -16870,6 +16914,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
+    "_useGrayscale": false,
     "_atlas": null,
     "_id": "a87ej6zsZOZIbLS3Uznk5C"
   },
@@ -17166,6 +17211,7 @@
     "_fillStart": 0,
     "_fillRange": 0,
     "_isTrimmedMode": true,
+    "_useGrayscale": false,
     "_atlas": null,
     "_id": "85xa47+fpD66IEQP4LGnWP"
   },
