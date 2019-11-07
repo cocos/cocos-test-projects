@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, ScrollViewComponent, Vec3, ButtonComponent } from "cc";
+import { _decorator, Component, Node, ScrollViewComponent, Vec3, ButtonComponent, LayoutComponent } from "cc";
 const { ccclass, property } = _decorator;
 import { sceneArray } from "./scenelist";
 
@@ -76,35 +76,33 @@ export class backbutton extends Component {
     }
 
     backToList () {
-        cc.director.loadScene("TestList");
-        backbutton._sceneIndex = -1;
-        backbutton.refreshButton();
-        let self = this;
-        setTimeout(function(){
-            backbutton._scrollNode = self.node.getParent().getChildByPath('Canvas/ScrollView') as Node;
+
+        cc.director.loadScene("TestList", function() {
+            backbutton._sceneIndex = -1;
+            backbutton.refreshButton();
+            backbutton._scrollNode = this.node.getParent().getChildByPath('Canvas/ScrollView') as Node;
             if (backbutton._scrollNode) {
                 backbutton._scrollCom = backbutton._scrollNode.getComponent(ScrollViewComponent);
+                backbutton._scrollCom._content.getComponent(LayoutComponent).updateLayout();
                 backbutton._scrollCom.scrollToOffset(backbutton.offset,0.1,true);
             }
-        },100);
+        }.bind(this));
     }
 
     nextscene () {
         backbutton._nextButton.interactable = false;
         this.updateSceneIndex(true);
-        cc.director.loadScene(this.getSceneName());
-        this.scheduleOnce(function(){
+        cc.director.loadScene(this.getSceneName(), function() {
             backbutton._nextButton.interactable = true;
-        },0.5);
+        });
     }
 
     prescene () {
         backbutton._prevButton.interactable = false;
         this.updateSceneIndex(false);
-        cc.director.loadScene(this.getSceneName());
-        this.scheduleOnce(function(){
+        cc.director.loadScene(this.getSceneName(), function() {
             backbutton._prevButton.interactable = true;
-        },0.5);
+        });
     }
 
     updateSceneIndex(next:Boolean) {
