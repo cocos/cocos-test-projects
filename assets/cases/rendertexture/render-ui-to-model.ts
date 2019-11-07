@@ -13,20 +13,31 @@ export class RenderUIToModel extends Component {
     @property(ModelComponent)
     model: ModelComponent = null;
 
+    renderTexture: RenderTexture = null;
+
     start () {
         const canvas = this.getComponent(CanvasComponent);
         const tex = new RenderTexture();
+        tex.name = 'render-ui-to-model';
         const size = cc.view.getVisibleSize();
         tex.reset({
             width: size.width,
             height: size.height,
             colorFormat: RenderTexture.PixelFormat.RGBA8888,
-            depthStencilFormat: RenderTexture.DepthStencilFormat.NONE,
+            depthStencilFormat: RenderTexture.DepthStencilFormat.DEPTH_24_STENCIL_8,
         });
+
+        this.renderTexture = tex;
 
         canvas.targetTexture = tex;
         const mat = this.model.material;
         mat.setProperty('mainTexture', tex);
+    }
+
+    onDestroy(){
+        if(this.renderTexture){
+            this.renderTexture.destroy();
+        }
     }
 
     // update (deltaTime: number) {
