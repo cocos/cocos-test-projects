@@ -268,7 +268,7 @@
   },
   {
     "__type__": "cc.UITransformComponent",
-    "_name": "",
+    "_name": "tip<UITransformComponent>",
     "_objFlags": 0,
     "node": {
       "__id__": 7
@@ -276,8 +276,8 @@
     "_enabled": true,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 160,
-      "height": 50
+      "width": 840,
+      "height": 100
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -288,7 +288,7 @@
   },
   {
     "__type__": "cc.LabelComponent",
-    "_name": "",
+    "_name": "tip<LabelComponent>",
     "_objFlags": 0,
     "node": {
       "__id__": 7
@@ -306,7 +306,7 @@
     },
     "_sharedMaterial": null,
     "_useOriginalSize": true,
-    "_string": "对齐模式",
+    "_string": "对齐模式\n上方粉色块随着父节点的改变而改变，下方不变",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 40,
