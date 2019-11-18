@@ -9,20 +9,24 @@ export class SwitchAnimation extends Component {
     /* use `property` decorator if your want the member to be serializable */
     // @property
     // serializableDummy = 0;
+    private num = 0;
+    private animationComponent
 
+    switch(){
+        if(this.num == 0){
+            this.animationComponent.play("Walk");
+        }
+        if(this.num == 1){
+            this.animationComponent.play("Run");
+        }
+        if(this.num == 2){
+            this.animationComponent.play("Idle");
+            this.num = -1;
+        }
+        this.num ++;
+    }
     start () {
-        const animationComponent = this.node.getComponent(AnimationComponent);
-        const keyToAnimationName = {
-            "i": "Idle",
-            "w": "Walk",
-            "r": "Run",
-        };
-        systemEvent.on(SystemEventType.KEY_UP, (event) => {
-            const { key } = event.rawEvent;
-            if (key in keyToAnimationName) {
-                animationComponent.play(keyToAnimationName[key]);
-            }
-        });
+        this.animationComponent = this.node.getComponent(AnimationComponent);
     }
 
     // update (deltaTime: number) {
