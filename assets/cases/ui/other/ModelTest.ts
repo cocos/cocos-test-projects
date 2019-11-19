@@ -1,7 +1,8 @@
 import { _decorator, Component, Node, Mesh, ModelComponent, Material, UIModelComponent, LabelComponent, Prefab, instantiate } from "cc";
-const { ccclass, property } = _decorator;
+const { ccclass, property, menu } = _decorator;
 
 @ccclass("ModelTest")
+@menu('UI/ModelTest')
 export class ModelTest extends Component {
 
     @property({
