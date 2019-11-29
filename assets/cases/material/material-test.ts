@@ -1,4 +1,4 @@
-import { _decorator, Component, ModelComponent, ToggleComponent, Node, SliderComponent, Material, Color, Vec4, LabelComponent } from "cc";
+import { _decorator, Component, ModelComponent, ToggleComponent, Node, SliderComponent, Material, Color, GFXCullMode, LabelComponent } from "cc";
 const { ccclass, property } = _decorator;
 
 const color = Color.WHITE.clone();
@@ -50,24 +50,19 @@ export class MaterialTest extends Component {
     }
 
     setMetallic (e: SliderComponent) {
-        let param = this._material.getProperty('pbrParams');
-        if (!param) { param = new Vec4(0.8, 0.6, 1, 1); }
-        param.y = e.progress;
-        this._material.setProperty('pbrParams', param);
+        this._material.setProperty('metallic', e.progress);
         this.manualMetallic.getComponentInChildren(LabelComponent).string = e.progress.toFixed(1);
     }
 
     setAlphaThreshold (e: SliderComponent) {
-        let param = this._material.getProperty('albedoScale');
-        param.w = e.progress;
-        this._material.setProperty('albedoScale', param);
+        this._material.setProperty('alphaThreshold', e.progress);
         this.manualAlphaTest.getComponentInChildren(LabelComponent).string = e.progress.toFixed(1);
     }
 
     cullFrontFace (e: ToggleComponent) {
         this._material.overridePipelineStates({
             rasterizerState: {
-                cullMode: e.isChecked ? cc.GFXCullMode.FRONT : cc.GFXCullMode.BACK,
+                cullMode: e.isChecked ? GFXCullMode.FRONT : GFXCullMode.BACK,
             }
         });
     }
