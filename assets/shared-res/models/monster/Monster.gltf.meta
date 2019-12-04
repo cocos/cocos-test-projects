@@ -1,15 +1,12 @@
 {
-  "ver": "1.1.24",
+  "ver": "1.3.15",
   "importer": "gltf",
   "imported": true,
   "uuid": "3174824f-f1f2-4011-8709-15d89417ad89",
-  "displayName": "",
-  "files": [
-    ".gltf"
-  ],
+  "files": [],
   "subMetas": {
     "cf79d": {
-      "ver": "1.0.2",
+      "ver": "1.0.7",
       "importer": "gltf-mesh",
       "uuid": "3174824f-f1f2-4011-8709-15d89417ad89@cf79d",
       "imported": true,
@@ -24,12 +21,13 @@
       "id": "cf79d",
       "name": "monster.mesh"
     },
-    "ce256": {
-      "ver": "1.0.10",
+    "a3140": {
+      "ver": "1.0.13",
       "importer": "gltf-animation",
-      "uuid": "3174824f-f1f2-4011-8709-15d89417ad89@ce256",
+      "uuid": "3174824f-f1f2-4011-8709-15d89417ad89@a3140",
       "imported": true,
       "files": [
+        ".bin",
         ".json"
       ],
       "subMetas": {},
@@ -42,8 +40,9 @@
         },
         "events": []
       },
-      "id": "ce256",
-      "name": ".animation"
+      "displayName": "",
+      "id": "a3140",
+      "name": "UnnamedAnimation.animation"
     },
     "f9d1d": {
       "ver": "1.0.0",
@@ -115,19 +114,18 @@
     }
   },
   "userData": {
-    "imageLocations": {},
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
     "redirect": "3174824f-f1f2-4011-8709-15d89417ad89@a07f9",
     "animationImportSettings": [
       {
-        "name": "",
+        "name": "UnnamedAnimation",
         "duration": 3.333329916000366,
         "fps": 30,
         "splits": [
           {
-            "name": "",
+            "name": "UnnamedAnimation",
             "from": 0,
             "to": 3.333329916000366
           }
@@ -141,12 +139,6 @@
       "skeletons": [
         "3174824f-f1f2-4011-8709-15d89417ad89@f9d1d"
       ],
-      "images": [
-        {
-          "embeded": false,
-          "uuidOrDatabaseUri": "db://assets/shared-res/models/monster/Monster.jpg"
-        }
-      ],
       "textures": [
         "3174824f-f1f2-4011-8709-15d89417ad89@e39f7"
       ],
@@ -156,6 +148,11 @@
       "scenes": [
         "3174824f-f1f2-4011-8709-15d89417ad89@a07f9"
       ]
-    }
+    },
+    "imageMetas": [
+      {
+        "uri": "db://assets/shared-res/models/monster/Monster.jpg"
+      }
+    ]
   }
 }
