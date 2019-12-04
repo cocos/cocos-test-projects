@@ -8,7 +8,11 @@
   },
   "_techIdx": 0,
   "_defines": [
-    {}
+    {
+      "OCCLUSION_CHANNEL": "b",
+      "ROUGHNESS_CHANNEL": "r",
+      "METALLIC_CHANNEL": "g"
+    }
   ],
   "_states": [
     {
@@ -23,18 +27,18 @@
   ],
   "_props": [
     {
-      "albedo": {
-        "__type__": "cc.Color",
-        "r": 209,
-        "g": 179,
-        "b": 57,
-        "a": 255
-      },
       "emissive": {
         "__type__": "cc.Color",
         "r": 77,
         "g": 75,
         "b": 63,
+        "a": 255
+      },
+      "mainColor": {
+        "__type__": "cc.Color",
+        "r": 209,
+        "g": 179,
+        "b": 57,
         "a": 255
       }
     }
