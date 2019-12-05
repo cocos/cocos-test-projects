@@ -37,4 +37,11 @@ export class CullingTestInfo extends Component {
         }
         this._label.string = info;
     }
+
+    onDestroy () {
+        for (let i = 0; i < this._states.length; i++) {
+            const model = this._states[i].model;
+            model.updateUBOs = cc.renderer.Model.prototype.updateUBOs.bind(model);
+        }
+    }
 }
