@@ -35,22 +35,18 @@ export class StaticUI extends Component {
             x += 5;
         }
 
-        this.func();
+        this.schedule(this.func, 1);
     }
 
     func() {
-        setTimeout(()=>{
-            this._idx++;
-            const comp = this.getComponent(UIStaticBatchComponent);
-            const pos = Math.random() * 100;
-            const lpos = this.node.position;
-            this.node.setPosition(pos, lpos.y, lpos.z);
-            comp.collect = true;
-            if (this.tipLabel) {
-                this.tipLabel.string = `第 ${this._idx} 次开始采集数据`;
-            }
-
-            this.func();
-        }, 1000);
+        this._idx++;
+        const comp = this.getComponent(UIStaticBatchComponent);
+        const pos = Math.random() * 100;
+        const lpos = this.node.position;
+        this.node.setPosition(pos, lpos.y, lpos.z);
+        comp.collect = true;
+        if (this.tipLabel) {
+            this.tipLabel.string = `第 ${this._idx} 次开始采集数据`;
+        }
     }
 }
