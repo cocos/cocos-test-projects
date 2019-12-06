@@ -28,32 +28,6 @@
     "_active": true,
     "_components": [],
     "_prefab": null,
-    "_lpos": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
-    "_lrot": {
-      "__type__": "cc.Quat",
-      "x": 0,
-      "y": 0,
-      "z": 0,
-      "w": 1
-    },
-    "_lscale": {
-      "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
-      "z": 1
-    },
-    "_layer": 1073741824,
-    "_euler": {
-      "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
-    },
     "autoReleaseAssets": false,
     "_globals": {
       "__id__": 13
@@ -286,7 +260,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 100,
+      "y": 25,
       "z": 0
     },
     "_lrot": {
@@ -319,18 +293,18 @@
       "__id__": 8
     },
     "_enabled": true,
+    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 527.77,
-      "height": 360
+      "height": 400
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
       "x": 0.5,
       "y": 0.5
     },
-    "_id": "134VEaTOBITKay549nxZdH",
-    "_priority": 0
+    "_id": "134VEaTOBITKay549nxZdH"
   },
   {
     "__type__": "cc.LabelComponent",
@@ -351,7 +325,7 @@
     },
     "_sharedMaterial": null,
     "_useOriginalSize": true,
-    "_string": "主要测试预览页面\n在预览页面中的 Debug Mode 改为 Info 模式\n并且打开控制台 快捷键为 Ctrl + Shift + i\n如果在控制台看到了以下格式的任意内容\n格式1 ： ‘***’  is deprecated, please use ‘***’\n\n例以下输出\n 'cc.tween' is deprecated, please use 'cc.tweenUtil' instead. \n那么就是正常的表现。",
+    "_string": "主要测试预览页面\n在预览页面中的 Debug Mode 改为 Info 模式\n并且打开控制台 快捷键为 Ctrl + Shift + i\n如果在控制台看到了以下格式的任意内容\n格式1 ： ‘***’  is deprecated, please use ‘***’\n\n例以下输出\n 'cc.tween' is deprecated, please use 'cc.tweenUtil' instead. \n那么就是正常的表现。\n此输出只会在场景直接预览和 Debug 版本中出现",
     "_horizontalAlign": 0,
     "_verticalAlign": 0,
     "_actualFontSize": 20,
@@ -376,6 +350,7 @@
       "__id__": 7
     },
     "_enabled": true,
+    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 960,
@@ -398,6 +373,15 @@
     "_enabled": true,
     "_priority": 0,
     "_targetTexture": null,
+    "_clearFlag": 0,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 0
+    },
+    "_renderMode": 0,
     "_id": "0f79012SROO7vbKu2jfGkA"
   },
   {
