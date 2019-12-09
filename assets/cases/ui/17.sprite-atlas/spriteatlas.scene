@@ -30,7 +30,7 @@
     "_prefab": null,
     "autoReleaseAssets": false,
     "_globals": {
-      "__id__": 71
+      "__id__": 79
     },
     "_id": "b24ad168-f5bf-4b5a-8090-8c833f1ba7d0"
   },
@@ -207,15 +207,18 @@
       },
       {
         "__id__": 60
+      },
+      {
+        "__id__": 69
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 69
+        "__id__": 77
       },
       {
-        "__id__": 70
+        "__id__": 78
       }
     ],
     "_prefab": null,
@@ -1110,8 +1113,8 @@
     "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 391.12,
-      "height": 540
+      "width": 340,
+      "height": 450
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1139,7 +1142,7 @@
     },
     "_sharedMaterial": null,
     "_useOriginalSize": true,
-    "_string": "测试内容：图集内的精灵快速替换\nTips:\n1.在下方输入栏输入当前图集\n的图片名字(lake,mountain)\n点击替换可实现图集内的快速替换精灵\n2.点击更换图片按钮，可将图片\n更换为其他图集的图片，再次\n输入Atlas-01图集内的图片仍\n可替换成功。\n3.点击清除图集可以将当前图集\n设置为空，不会影响到当前图片\n效果，再次点击替换按钮\n替换结果为替换失败。控制台\n有警告但不会报错。\n步骤1的目的：可以实现图集内的精灵替换\n步骤2的目的：更换图片不会影响到图集\n步骤3的目的：清除图集后无法替换并有提示\n",
+    "_string": "测试内容：图集内的精灵快速替换\nTips:\n1.在下方输入栏输入当前图集\n的图片名字(lake,mountain)\n点击替换可实现图集内的快速替换精灵\n2.点击更换图片按钮，可将图片\n更换为其他图集的图片，再次\n输入Atlas-01图集内的图片仍\n可替换成功。\n3.点击清除图集可以将当前图集\n设置为空，不会影响到当前图片\n效果，再次点击替换按钮\n替换结果为替换失败。控制台\n有警告但不会报错。\n",
     "_horizontalAlign": 0,
     "_verticalAlign": 0,
     "_actualFontSize": 20,
@@ -1166,9 +1169,9 @@
     "_enabled": true,
     "_alignFlags": 41,
     "_target": null,
-    "_left": 373.9590000000001,
-    "_right": 194.92099999999988,
-    "_top": 18.036999999999978,
+    "_left": 399.5190000000001,
+    "_right": 220.48099999999988,
+    "_top": 63.03699999999998,
     "_bottom": 0,
     "_horizontalCenter": 0,
     "_verticalCenter": 0,
@@ -2395,6 +2398,291 @@
     "_id": "862u5v4s1Ib7erbMt3jsjr"
   },
   {
+    "__type__": "cc.Node",
+    "_name": "Button-4",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 6
+    },
+    "_children": [
+      {
+        "__id__": 70
+      }
+    ],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 73
+      },
+      {
+        "__id__": 74
+      },
+      {
+        "__id__": 75
+      }
+    ],
+    "_prefab": null,
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 369,
+      "y": 289.576,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 33554432,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": "56VkyEoJROC7CP3kEm9XVI"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Label",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 69
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 71
+      },
+      {
+        "__id__": 72
+      }
+    ],
+    "_prefab": null,
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 33554432,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": "9dFW+aNexNwLszu2orCjtH"
+  },
+  {
+    "__type__": "cc.UITransformComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 70
+    },
+    "_enabled": true,
+    "_priority": 0,
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 100,
+      "height": 40
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_id": "d8sXj1RipG4LA63WPWC4SY"
+  },
+  {
+    "__type__": "cc.LabelComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 70
+    },
+    "_enabled": true,
+    "_srcBlendFactor": 2,
+    "_dstBlendFactor": 4,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    },
+    "_sharedMaterial": null,
+    "_useOriginalSize": true,
+    "_string": "Tips",
+    "_horizontalAlign": 1,
+    "_verticalAlign": 1,
+    "_actualFontSize": 20,
+    "_fontSize": 20,
+    "_fontFamily": "Arial",
+    "_lineHeight": 40,
+    "_overflow": 1,
+    "_enableWrapText": false,
+    "_font": null,
+    "_isSystemFontUsed": true,
+    "_isItalic": false,
+    "_isBold": false,
+    "_isUnderline": false,
+    "_cacheMode": 0,
+    "_id": "3fxnPjyUFLXYSFifM89IT6"
+  },
+  {
+    "__type__": "cc.UITransformComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 69
+    },
+    "_enabled": true,
+    "_priority": 0,
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 100,
+      "height": 40
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_id": "0bouH/pwVB+bdO+0Dm0ywN"
+  },
+  {
+    "__type__": "cc.SpriteComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 69
+    },
+    "_enabled": true,
+    "_srcBlendFactor": 2,
+    "_dstBlendFactor": 4,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_sharedMaterial": null,
+    "_spriteFrame": {
+      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941"
+    },
+    "_type": 1,
+    "_fillType": 0,
+    "_sizeMode": 0,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_useGrayscale": false,
+    "_atlas": null,
+    "_id": "1aicAsIoBJ6Ln0R1OckymC"
+  },
+  {
+    "__type__": "cc.ButtonComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 69
+    },
+    "_enabled": true,
+    "clickEvents": [
+      {
+        "__id__": 76
+      }
+    ],
+    "_interactable": true,
+    "_transition": 2,
+    "_normalColor": {
+      "__type__": "cc.Color",
+      "r": 214,
+      "g": 214,
+      "b": 214,
+      "a": 255
+    },
+    "_hoverColor": {
+      "__type__": "cc.Color",
+      "r": 211,
+      "g": 211,
+      "b": 211,
+      "a": 255
+    },
+    "_pressColor": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_disabledColor": {
+      "__type__": "cc.Color",
+      "r": 124,
+      "g": 124,
+      "b": 124,
+      "a": 255
+    },
+    "_normalSprite": {
+      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941"
+    },
+    "_hoverSprite": {
+      "__uuid__": "20835ba4-6145-4fbc-a58a-051ce700aa3e@f9941"
+    },
+    "_pressedSprite": {
+      "__uuid__": "544e49d6-3f05-4fa8-9a9e-091f98fc2ce8@f9941"
+    },
+    "_disabledSprite": {
+      "__uuid__": "951249e0-9f16-456d-8b85-a6ca954da16b@f9941"
+    },
+    "_duration": 0.1,
+    "_zoomScale": 1.2,
+    "_target": {
+      "__id__": 69
+    },
+    "_id": "e67P3VoxdOL5069phsHwMF"
+  },
+  {
+    "__type__": "cc.ClickEvent",
+    "target": {
+      "__id__": 7
+    },
+    "component": "",
+    "_componentId": "acb91WgF7FLwbelgCmr78H7",
+    "handler": "button4",
+    "customEventData": ""
+  },
+  {
     "__type__": "cc.UITransformComponent",
     "_name": "",
     "_objFlags": 0,
@@ -2439,13 +2727,13 @@
   {
     "__type__": "cc.SceneGlobals",
     "ambient": {
-      "__id__": 72
+      "__id__": 80
     },
     "skybox": {
-      "__id__": 73
+      "__id__": 81
     },
     "planarShadows": {
-      "__id__": 74
+      "__id__": 82
     }
   },
   {

@@ -1,4 +1,4 @@
-import { _decorator, Component, director, LabelComponent, SpriteComponent, EditBoxComponent, SpriteFrame } from "cc";
+import { _decorator, Component, director, LabelComponent, SpriteComponent, EditBoxComponent, SpriteFrame, Vec3 } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("Test")
@@ -50,5 +50,8 @@ export class Test extends Component {
     button3(){
         this._sprite.spriteFrame=this.sf;
         this.showlabel.getComponent(LabelComponent).string='更换图片 tree';
+    }
+    button4(){
+        this.tiplabel.position = new Vec3(90,32,0);
     }
 }
