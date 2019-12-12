@@ -44,7 +44,7 @@ export class StaticUI extends Component {
         const pos = Math.random() * 100;
         const lpos = this.node.position;
         this.node.setPosition(pos, lpos.y, lpos.z);
-        comp.collectMark = true;
+        comp.markAsDirty();
         if (this.tipLabel) {
             this.tipLabel.string = `第 ${this._idx} 次开始采集数据`;
         }
