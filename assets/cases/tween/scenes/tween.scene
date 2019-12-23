@@ -35,7 +35,7 @@
     "_globals": {
       "__id__": 15
     },
-    "_id": "5ced111e-2d66-4e75-b7fb-e00b8da68e8a"
+    "_id": "d3692778-3076-49bc-9beb-61e8093fafc5"
   },
   {
     "__type__": "cc.Node",
@@ -361,6 +361,7 @@
       "__id__": 10
     },
     "_enabled": true,
+    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 490,
@@ -381,7 +382,6 @@
       "__id__": 10
     },
     "_enabled": true,
-    "_priority": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -418,6 +418,7 @@
       "__id__": 9
     },
     "_enabled": true,
+    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 960,
@@ -456,10 +457,10 @@
     "ambient": {
       "__id__": 16
     },
-    "skybox": {
+    "planarShadows": {
       "__id__": 17
     },
-    "planarShadows": {
+    "_skybox": {
       "__id__": 18
     }
   },
@@ -482,13 +483,6 @@
     }
   },
   {
-    "__type__": "cc.SkyboxInfo",
-    "_envmap": null,
-    "_isRGBE": false,
-    "_enabled": false,
-    "_useIBL": false
-  },
-  {
     "__type__": "cc.PlanarShadowInfo",
     "_enabled": false,
     "_normal": {
@@ -505,5 +499,12 @@
       "b": 0,
       "a": 76
     }
+  },
+  {
+    "__type__": "cc.SkyboxInfo",
+    "_envmap": null,
+    "_isRGBE": false,
+    "_enabled": false,
+    "_useIBL": false
   }
 ]

@@ -1,4 +1,4 @@
-import { _decorator, Component, Vec3, tweenUtil, Quat, Tween } from "cc";
+import { _decorator, Component, Vec3, tween, Quat, Tween } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 /**
@@ -23,11 +23,9 @@ export class tweentest extends Component {
         Vec3.copy(this._wpos, this.node.worldPosition);
 
         /**
-         * 注意，这里的 easing 的值类型在 V1.1 已经变动了，为了测试旧版本，这里没有将其改成正确的值
-         * 
-         * 另外，下面 Tween 中的 easing 是正确的
+         * 注意，这里的 easing 的值类型在 V1.1 已经变动了，为了测试旧版本的兼容性，这里没有将其改成正确的值
          */
-        this.tweenPos = tweenUtil(this._wpos)
+        this.tweenPos = tween(this._wpos)
             .to(3, new Vec3(10, 10, 10), { easing: 'Bounce-InOut' })
             .to(3, new Vec3(0, 0, 0), { easing: 'elasticOut' })
             .union()
@@ -35,7 +33,10 @@ export class tweentest extends Component {
 
         Vec3.copy(this._wscale, this.node.worldScale);
 
-        this.tweenScale = tweenUtil(this._wscale)
+        /**
+         * 下面 Tween 中的 easing 是正确的
+         */
+        this.tweenScale = tween(this._wscale)
             .to(0.5, new Vec3(3, 3, 3), { easing: 'bounceInOut' })
             .to(0.5, new Vec3(1, 1, 1), { easing: 'elasticOut' })
             .union()
@@ -43,7 +44,7 @@ export class tweentest extends Component {
 
         Vec3.copy(this._leuler, this.node.eulerAngles);
 
-        this.tweenEuler = tweenUtil(this._leuler)
+        this.tweenEuler = tween(this._leuler)
             .to(4.5, new Vec3(360, 360, 360), { easing: 'bounceInOut' })
             .to(4.5, new Vec3(0, 0, 0), { easing: 'elasticOut' })
             .union()

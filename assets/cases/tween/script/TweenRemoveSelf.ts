@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, tween, tweenUtil, Tween } from "cc";
+import { _decorator, Component, Node, tween, Tween } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("TweenRemoveSelf")
@@ -11,7 +11,7 @@ export class TweenRemoveSelf extends Component {
         /**
          * 注意 target 需要是 Node 的，才可以使用 removeSelf
          */
-        this.tweenRemoveSelf = tweenUtil(this.node)
+        this.tweenRemoveSelf = tween(this.node)
             .delay(1)
             .removeSelf()
     }

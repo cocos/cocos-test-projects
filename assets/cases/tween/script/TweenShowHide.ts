@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, tweenUtil, Tween } from "cc";
+import { _decorator, Component, Node, tween, Tween } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("TweenShowHide")
@@ -11,7 +11,7 @@ export class TweenShowHide extends Component {
         /**
          * 注意 target 需要是 Node 的，才可以使用 show 和 hide
          */
-        this.tweenSH = tweenUtil(this.node)
+        this.tweenSH = tween(this.node)
             .delay(0.1)
             .hide()
             .delay(0.1)

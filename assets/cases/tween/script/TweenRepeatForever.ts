@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Vec3, tweenUtil, Tween } from "cc";
+import { _decorator, Component, Node, Vec3, tween, Tween } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("TweenRepeatForever")
@@ -9,7 +9,7 @@ export class TweenRepeatForever extends Component {
 
     onLoad () {
         // 一直重复执行下去
-        this.tweenRF = tweenUtil(this.node)
+        this.tweenRF = tween(this.node)
             .by(1, { scale: new Vec3(2, 2, 2) })
             .repeatForever()
     }

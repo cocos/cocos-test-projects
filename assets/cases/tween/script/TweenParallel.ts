@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, tweenUtil, Vec3, Tween } from "cc";
+import { _decorator, Component, Node, tween, Vec3, Tween } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("TweenParallel")
@@ -8,11 +8,11 @@ export class TweenParallel extends Component {
     private tweenParallel: Tween;
 
     onLoad () {
-        this.tweenParallel = tweenUtil(this.node)
+        this.tweenParallel = tween(this.node)
             // 同时执行两个 Tween
             .parallel(
-                tweenUtil().to(2, { scale: new Vec3(1, 2, 3) }),
-                tweenUtil().to(2, { position: new Vec3(3, 0, 3) })
+                tween().to(2, { scale: new Vec3(1, 2, 3) }),
+                tween().to(2, { position: new Vec3(3, 0, 3) })
             )
             .call(() => {
                 console.log('All tweens finished.')
