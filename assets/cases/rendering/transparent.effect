@@ -17,7 +17,7 @@ CCEffect %{
     d1: &d1 { depthTest: true, depthWrite: false }
     r1: &r1 { cullMode: none }
     p1: &p1
-      color:        { value: [0.5, 0.5, 0.5, 0.5], inspector: { type: color } }
+      color:        { value: [0.5, 0.5, 0.5, 0.5], editor: { type: color } }
       tilingOffset: { value: [1, 1, 0, 0] }
       mainTexture:  { value: white         }
   techniques:
