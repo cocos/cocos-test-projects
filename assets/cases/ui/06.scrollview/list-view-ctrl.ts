@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, ScrollViewComponent, LabelComponent, ButtonComponent, Vec3 } from "cc";
+import { _decorator, Component, Node, ScrollViewComponent, LabelComponent, ButtonComponent, Vec3, UITransformComponent } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 const _temp_vec3 = new Vec3();
@@ -56,9 +56,10 @@ export class ListViewCtrl extends Component {
         }
     }
 
-    getPositionInView(item: Node) { // get item position in scrollview's node space
-        let worldPos = item.parent.uiTransfromComp.convertToWorldSpaceAR(item.position);
-        let viewPos = this.scrollView.node.uiTransfromComp.convertToNodeSpaceAR(worldPos);
+    getPositionInView(item: Node) {
+        // get item position in scrollview's node space
+        let worldPos = item.parent.getComponent(UITransformComponent).convertToWorldSpaceAR(item.position);
+        let viewPos = this.scrollView.node.getComponent(UITransformComponent).convertToNodeSpaceAR(worldPos);
         return viewPos;
     }
 
