@@ -17,12 +17,13 @@ export class MultiTouchCtrl extends Component {
         // Your initialization goes here.
         systemEvent.on(SystemEventType.TOUCH_START, this.onTouchStart, this);
         systemEvent.on(SystemEventType.TOUCH_END, this.onTouchEnd, this);
+        systemEvent.on(SystemEventType.TOUCH_CANCEL, this.onTouchEnd, this);
     }
 
     onDestroy() {
         systemEvent.off(SystemEventType.TOUCH_START, this.onTouchStart, this);
         systemEvent.off(SystemEventType.TOUCH_END, this.onTouchEnd, this);
-
+        systemEvent.off(SystemEventType.TOUCH_CANCEL, this.onTouchEnd, this);
     }
 
     onTouchStart(touch: Touch, event: EventTouch) {
@@ -39,6 +40,7 @@ export class MultiTouchCtrl extends Component {
     }
 
     changeMulit() {
+        this.labelShow.string = '';
         if (this.toggle.isChecked) {
             cc.macro.ENABLE_MULTI_TOUCH = true;
         } else {
