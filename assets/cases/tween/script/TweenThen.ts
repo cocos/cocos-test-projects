@@ -10,7 +10,7 @@ export class TweenThen extends Component {
     onLoad () {
         let scale = tween().to(1, { scale: new Vec3(2, 2, 2) })
         let rotate = tween().to(1, { eulerAngles: new Vec3(45, 45, 45) })
-        let move = tween().to(1, { position: new Vec3(5, 5, 5) })
+        let move = tween().to(1, { position: new Vec3(0, 5, 0) })
 
         // 先缩放，再旋转，再移动
         this.tweenThen = tween(this.node)
