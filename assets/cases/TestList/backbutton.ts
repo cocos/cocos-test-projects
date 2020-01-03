@@ -29,6 +29,7 @@ export class backbutton extends Component {
             }
             sceneArray.push(sceneString);
         }
+        sceneArray.sort();
     }
 
     public static get offset() {
