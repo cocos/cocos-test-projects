@@ -416,6 +416,7 @@
     },
     "_sharedMaterial": null,
     "_type": 2,
+    "_inverted": false,
     "_segments": 64,
     "_id": "bf1938yYtBeaFcs3be+a18"
   },
@@ -651,7 +652,7 @@
     },
     "_sharedMaterial": null,
     "_useOriginalSize": true,
-    "_string": "可以看到绘制了一个椭圆形遮罩",
+    "_string": "可以看到绘制了一个六边形遮罩",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 30,
@@ -742,10 +743,10 @@
     "ambient": {
       "__id__": 25
     },
-    "_skybox": {
+    "planarShadows": {
       "__id__": 26
     },
-    "planarShadows": {
+    "_skybox": {
       "__id__": 27
     }
   },
@@ -768,13 +769,6 @@
     }
   },
   {
-    "__type__": "cc.SkyboxInfo",
-    "_envmap": null,
-    "_isRGBE": false,
-    "_enabled": false,
-    "_useIBL": false
-  },
-  {
     "__type__": "cc.PlanarShadowInfo",
     "_enabled": false,
     "_normal": {
@@ -791,5 +785,12 @@
       "b": 0,
       "a": 76
     }
+  },
+  {
+    "__type__": "cc.SkyboxInfo",
+    "_envmap": null,
+    "_isRGBE": false,
+    "_enabled": false,
+    "_useIBL": false
   }
 ]
