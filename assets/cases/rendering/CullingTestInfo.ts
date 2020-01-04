@@ -11,12 +11,13 @@ export class CullingTestInfo extends Component {
 
     private _label: LabelComponent = null;
     private _states: CullingState[] = [];
+    private _oldFns: any[] = [];
 
     start () {
         const models = cc.director.getScene().renderScene.models;
         for (let i = 0; i < models.length; i++) {
             const model = models[i];
-            const oldFn = model.updateUBOs.bind(model);
+            const oldFn = this._oldFns[i] = model.updateUBOs.bind(model);
             model.updateUBOs = (...args: any) => {
                 this._states[i].visible = true;
                 return oldFn(...args);
@@ -41,7 +42,7 @@ export class CullingTestInfo extends Component {
     onDestroy () {
         for (let i = 0; i < this._states.length; i++) {
             const model = this._states[i].model;
-            model.updateUBOs = cc.renderer.Model.prototype.updateUBOs.bind(model);
+            model.updateUBOs = this._oldFns[i];
         }
     }
 }
