@@ -1,7 +1,7 @@
-import { _decorator, Component, Node, Prefab } from "cc";
+import { _decorator, Component, Node, Prefab, instantiate } from "cc";
 const { ccclass, property } = _decorator;
 
-export const sceneArray:string[] = []
+export const sceneArray:string[] = [];
 
 @ccclass("scenemanager")
 export class SceneManager extends Component {
@@ -12,7 +12,7 @@ export class SceneManager extends Component {
     onLoad() {
         if(this.itemPrefab){
             for(let i = 0; i<sceneArray.length; i++ ) {
-                let item = cc.instantiate(this.itemPrefab);
+                let item = instantiate(this.itemPrefab);
                 this.node.addChild(item);
             }
         }
