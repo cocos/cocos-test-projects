@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, ScrollViewComponent, Vec3, ButtonComponent, LayoutComponent } from "cc";
+import { _decorator, Component, Node, ScrollViewComponent, Vec3, ButtonComponent, LayoutComponent, game } from "cc";
 const { ccclass, property } = _decorator;
 import { sceneArray } from "./scenelist";
 
@@ -15,19 +15,16 @@ export class backbutton extends Component {
     private static _nextButton : ButtonComponent;
 
     __preload() {
-        let sceneInfo = cc.game._sceneInfos;
-        let firstIndex = 0;
-        let lastIndex = 0;
-        let sceneString:string = '';
-        for(let i = 0; i < sceneInfo.length; i++) {
-            sceneString = sceneInfo[i].url;
-            firstIndex = sceneString.lastIndexOf('/') + 1;
-            lastIndex = sceneString.lastIndexOf('.scene');
-            sceneString = sceneString.substring(firstIndex,lastIndex);
-            if(sceneString === "TestList") {
+        const sceneInfo = game._sceneInfos;
+        const array: string[] = sceneInfo.map((i) => i.url).sort();
+        for (let i = 0;  i< array.length; i++) {
+            let str = array[i];
+            if (str.includes("TestList")) {
                 continue;
             }
-            sceneArray.push(sceneString);
+            const firstIndex = str.lastIndexOf('/') + 1;
+            const lastIndex = str.lastIndexOf('.scene');
+            sceneArray.push(str.substring(firstIndex, lastIndex));
         }
     }
 
