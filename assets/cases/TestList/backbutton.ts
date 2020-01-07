@@ -19,7 +19,7 @@ export class backbutton extends Component {
         const array: string[] = sceneInfo.map((i) => i.url).sort();
         for (let i = 0;  i< array.length; i++) {
             let str = array[i];
-            if (str.includes("TestList")) {
+            if (str.includes("TestList") || (str.includes("multiTouch") && (cc.sys.os === cc.sys.OS_WINDOWS || cc.sys.os === cc.sys.MACOS)) ) {
                 continue;
             }
             const firstIndex = str.lastIndexOf('/') + 1;
