@@ -13,7 +13,7 @@
           {
             "__id__": 1
           },
-          "sharedMaterials",
+          "materials",
           0
         ],
         "data": {
@@ -61,11 +61,11 @@
     "_stepness": 0
   },
   {
-    "__type__": "cc.ComponentModifier",
+    "__type__": "cc.animation.ComponentPath",
     "component": "cc.ModelComponent"
   },
   {
-    "__type__": "cc.UniformCurveValueAdapter",
+    "__type__": "cc.animation.UniformProxyFactory",
     "passIndex": 0,
     "uniformName": "albedoMap"
   }
