@@ -1,20 +1,25 @@
 
 import * as cc from 'cc';
+import { UILog } from '../../../ui/ui-log';
 
 @cc._decorator.ccclass('AsyncFunctionsTest')
 @cc._decorator.menu('TestCases/Scripting/LanguageFeature/AsyncFunctionsTest')
 export class AsyncFunctionsTest extends cc.Component {
+    @cc._decorator.property(UILog)
+    logPanel: UILog = null;
     public start () {
         (async () => { // Directly running an async function should be OK.
-            cc.log(`Async function starts at ${new Date()}`);
+            this.logPanel.addLabel(`Async function starts at ${new Date()}`);
+            // cc.log(`Async function starts at ${new Date()}`);
             await sleep(2000);
-            cc.log(`Async function ends at ${new Date()}(Expected: 2 seconds past)`);
+            this.logPanel.addLabel(`Async function ends at ${new Date()}(Expected: 2 seconds past)`);
+            // cc.log(`Async function ends at ${new Date()}(Expected: 2 seconds past)`);
 
             try {
-                cc.log(`Async function(which is throw-ful) starts at ${new Date()}`);
+                this.logPanel.addLabel(`Async function(which is throw-ful) starts at ${new Date()}`);
                 await sleepThrow(1000);
             } catch (error) {
-                cc.log(`Async function(which is throw-ful) throws "${error}" at ${new Date()}(Expected: 1 seconds past)`);
+                this.logPanel.addLabel(`Async function(which is throw-ful) throws "${error}" at ${new Date()}(Expected: 1 seconds past)`);
             }
         })();
     }

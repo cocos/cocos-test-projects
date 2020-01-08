@@ -20,6 +20,9 @@
       },
       {
         "__id__": 4
+      },
+      {
+        "__id__": 8
       }
     ],
     "_active": true,
@@ -27,7 +30,7 @@
     "_prefab": null,
     "autoReleaseAssets": false,
     "_globals": {
-      "__id__": 7
+      "__id__": 11
     },
     "_id": "7f2dd551-ffe6-49a8-a788-185e448adb3d"
   },
@@ -184,18 +187,134 @@
       "__id__": 4
     },
     "_enabled": true,
+    "logPanel": {
+      "__id__": 7
+    },
     "_id": "aehVLXg95JKKXpHUcODeLo"
+  },
+  {
+    "__type__": "582baHkZuZBgLuu7k76+F1C",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 8
+    },
+    "_enabled": true,
+    "panel": {
+      "__uuid__": "712c29f1-a9fe-4b2f-bf2e-49a83f2d4ca1"
+    },
+    "item": {
+      "__uuid__": "34988447-d28a-40eb-bbec-50a399b91b53"
+    },
+    "workOnLoad": true,
+    "_size": {
+      "__type__": "cc.Size",
+      "width": 300,
+      "height": 300
+    },
+    "_id": "f6OiHMQixOFLc7SB93JotF"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Canvas",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 1
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 9
+      },
+      {
+        "__id__": 10
+      },
+      {
+        "__id__": 7
+      }
+    ],
+    "_prefab": null,
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 480,
+      "y": 320,
+      "z": 1
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 33554432,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": "9dMBZNEnRAhY8Cf759koti"
+  },
+  {
+    "__type__": "cc.UITransformComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 8
+    },
+    "_enabled": true,
+    "_priority": 0,
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 960,
+      "height": 640
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_id": "17jNsxDT5Af46jYTsZBrMJ"
+  },
+  {
+    "__type__": "cc.CanvasComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 8
+    },
+    "_enabled": true,
+    "_priority": 0,
+    "_targetTexture": null,
+    "_clearFlag": 0,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 0
+    },
+    "_renderMode": 0,
+    "_id": "bbUbBMX5lPFZr/eecpqnyf"
   },
   {
     "__type__": "cc.SceneGlobals",
     "ambient": {
-      "__id__": 8
+      "__id__": 12
     },
     "planarShadows": {
-      "__id__": 9
+      "__id__": 13
     },
     "_skybox": {
-      "__id__": 10
+      "__id__": 14
     }
   },
   {
