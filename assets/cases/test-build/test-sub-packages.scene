@@ -30,7 +30,7 @@
     "_prefab": null,
     "autoReleaseAssets": false,
     "_globals": {
-      "__id__": 13
+      "__id__": 16
     },
     "_id": "8ee0d077-e433-4760-a55e-795d5844dee5"
   },
@@ -186,15 +186,18 @@
     "_children": [
       {
         "__id__": 7
+      },
+      {
+        "__id__": 11
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 11
+        "__id__": 14
       },
       {
-        "__id__": 12
+        "__id__": 15
       }
     ],
     "_prefab": null,
@@ -283,6 +286,7 @@
       "__id__": 7
     },
     "_enabled": true,
+    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 156.78,
@@ -293,8 +297,7 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_id": "800LkIvL9CMpkoWWSNRhHf",
-    "_priority": 0
+    "_id": "800LkIvL9CMpkoWWSNRhHf"
   },
   {
     "__type__": "cc.LabelComponent",
@@ -333,7 +336,7 @@
     "_id": "a5ZyZ9Hv1Hyb4V24ZCQkND"
   },
   {
-    "__type__": "4bb9fHcD/xIvLBZN4cSO9gb",
+    "__type__": "c613aqM8DtJXq0RwpVyXnS/",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -346,7 +349,110 @@
     "canvas": {
       "__id__": 6
     },
-    "_id": "45LkUnsDhO56qwGi8Xgv43"
+    "_id": "38ram0lJdJm69csLbXBz8t"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "title",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 6
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 12
+      },
+      {
+        "__id__": 13
+      }
+    ],
+    "_prefab": null,
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 184.153,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 33554432,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": "aefqM/jOJKBpaahhNGBdlT"
+  },
+  {
+    "__type__": "cc.UITransformComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 11
+    },
+    "_enabled": true,
+    "_priority": 0,
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 227.9,
+      "height": 40
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_id": "d8z/ZMPA1B8oO4GrtE5CmC"
+  },
+  {
+    "__type__": "cc.LabelComponent",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 11
+    },
+    "_enabled": true,
+    "_srcBlendFactor": 2,
+    "_dstBlendFactor": 4,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_sharedMaterial": null,
+    "_useOriginalSize": true,
+    "_string": "scene: test-sub-packages",
+    "_horizontalAlign": 1,
+    "_verticalAlign": 1,
+    "_actualFontSize": 20,
+    "_fontSize": 20,
+    "_fontFamily": "Arial",
+    "_lineHeight": 40,
+    "_overflow": 0,
+    "_enableWrapText": true,
+    "_font": null,
+    "_isSystemFontUsed": true,
+    "_isItalic": false,
+    "_isBold": false,
+    "_isUnderline": false,
+    "_cacheMode": 0,
+    "_id": "66r2RJOiZMKr/UxHuuAqYh"
   },
   {
     "__type__": "cc.UITransformComponent",
@@ -356,6 +462,7 @@
       "__id__": 6
     },
     "_enabled": true,
+    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 960,
@@ -392,13 +499,13 @@
   {
     "__type__": "cc.SceneGlobals",
     "ambient": {
-      "__id__": 14
+      "__id__": 17
     },
     "planarShadows": {
-      "__id__": 16
+      "__id__": 18
     },
     "_skybox": {
-      "__id__": 15
+      "__id__": 19
     }
   },
   {
@@ -420,13 +527,6 @@
     }
   },
   {
-    "__type__": "cc.SkyboxInfo",
-    "_envmap": null,
-    "_isRGBE": false,
-    "_enabled": false,
-    "_useIBL": false
-  },
-  {
     "__type__": "cc.PlanarShadowInfo",
     "_enabled": false,
     "_normal": {
@@ -443,5 +543,12 @@
       "b": 0,
       "a": 76
     }
+  },
+  {
+    "__type__": "cc.SkyboxInfo",
+    "_envmap": null,
+    "_isRGBE": false,
+    "_enabled": false,
+    "_useIBL": false
   }
 ]
