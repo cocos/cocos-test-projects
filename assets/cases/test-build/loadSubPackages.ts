@@ -20,8 +20,8 @@ export class loadSubPackages extends Component {
     }
 
     loadSubPackage() {
-        if (!window['wx']) {
-            this.label.string = 'Please test this case in WeChat platform';
+        if (!(CC_BAIDU || CC_WECHAT || CC_XIAOMI || CC_RUNTIME_BASED)) {
+            this.label.string = '该平台暂不支持分包加载';
             return;
         }
         this.label.string = 'Load subPackage...';
