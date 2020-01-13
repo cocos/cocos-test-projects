@@ -7,6 +7,7 @@ import { UILog } from '../../../ui/ui-log';
 export class AsyncFunctionsTest extends cc.Component {
     @cc._decorator.property(UILog)
     logPanel: UILog = null;
+    
     public start () {
         (async () => { // Directly running an async function should be OK.
             this.logPanel.addLabel(`Async function starts at ${new Date()}`);

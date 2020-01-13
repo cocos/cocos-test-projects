@@ -103,7 +103,7 @@ export class backbutton extends Component {
         }
         backbutton._nextButton.interactable = false;
         this.updateSceneIndex(true);
-        cc.director.loadScene(this.getSceneName(), function() {
+        director.loadScene(this.getSceneName(), function() {
             backbutton._nextButton.interactable = true;
         });
     }
@@ -114,7 +114,7 @@ export class backbutton extends Component {
         }
         backbutton._prevButton.interactable = false;
         this.updateSceneIndex(false);
-        cc.director.loadScene(this.getSceneName(), function() {
+        director.loadScene(this.getSceneName(), function() {
             backbutton._prevButton.interactable = true;
         });
     }

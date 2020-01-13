@@ -1,4 +1,4 @@
-import { _decorator, Component, Prefab, LabelComponent, PageViewComponent, Color, Node, Vec3, SpriteComponent  } from "cc";
+import { _decorator, Component, Prefab, LabelComponent, PageViewComponent, Color, Node, Vec3, SpriteComponent, instantiate  } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("PageViewCtrl")
@@ -21,7 +21,7 @@ export class PageViewCtrl extends Component {
     direction = PageViewComponent.Direction.Horizontal;
 
     _createPage() {
-        const page = cc.instantiate(this.pageTeample) as Node;
+        const page = instantiate(this.pageTeample) as Node;
         page.name = `page_${this.curNum}`;
         page.setPosition(new Vec3());
         const color = new Color();

@@ -1,4 +1,4 @@
-import { _decorator, Component, LabelComponent, renderer } from "cc";
+import { _decorator, Component, LabelComponent, renderer, director } from "cc";
 const { ccclass } = _decorator;
 
 interface CullingState {
@@ -14,7 +14,7 @@ export class CullingTestInfo extends Component {
     private _oldFns: any[] = [];
 
     start () {
-        const models = cc.director.getScene().renderScene.models;
+        const models = director.getScene().renderScene.models;
         for (let i = 0; i < models.length; i++) {
             const model = models[i];
             const oldFn = this._oldFns[i] = model.updateUBOs.bind(model);
