@@ -87,6 +87,9 @@ export class backbutton extends Component {
     }
 
     nextscene () {
+        if(game.isPaused()){
+            game.resume();    
+        }
         backbutton._nextButton.interactable = false;
         this.updateSceneIndex(true);
         cc.director.loadScene(this.getSceneName(), function() {
@@ -95,6 +98,9 @@ export class backbutton extends Component {
     }
 
     prescene () {
+        if(game.isPaused()){
+            game.resume();
+        }
         backbutton._prevButton.interactable = false;
         this.updateSceneIndex(false);
         cc.director.loadScene(this.getSceneName(), function() {

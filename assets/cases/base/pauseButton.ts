@@ -26,8 +26,11 @@ export class button extends Component {
     }
     update (deltaTime: number) {
         if (this.timer) {
-            this.Label.node.active = true;
-            game.pause();
+                this.Label.node.active = true;
+                game.pause();
+        }
+        if(game.isPaused()){
+            this.timer=false;
         }
     }
 }
