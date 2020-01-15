@@ -52,7 +52,7 @@ export class CoordinateUILocalLocal extends Component {
             this.showLabel.string = `金币位置与下方图标位置距离 5 的倍数：${this._out.toString()}`;
         } else {
             this._transfrom.convertToWorldSpaceAR(this._fixPoint, this._out);
-            this.showLabel.string = `与金币 x 轴相距 100 的点的世界坐标：${this._out.toString()}`;
+            this.showLabel.string = `初始与金币 x 轴相距 100 的点的世界坐标\n实际观察每次坐标 x 轴差值为 5：${this._out.toString()}`;
         }
 
 

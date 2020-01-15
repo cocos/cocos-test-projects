@@ -4,6 +4,7 @@ const { ccclass, property, menu } = _decorator;
 @ccclass("PageViewCtrl")
 @menu('UI/PageViewCtrl')
 export class PageViewCtrl extends Component {
+    public static Direction = PageViewComponent.Direction;
     @property
     public curNum = 3;
     @property
@@ -14,6 +15,10 @@ export class PageViewCtrl extends Component {
     target: PageViewComponent | null = null;
     @property(LabelComponent)
     label: LabelComponent | null = null;
+    @property({
+        type:PageViewComponent.Direction,
+    })
+    direction = PageViewComponent.Direction.Horizontal;
 
     _createPage() {
         const page = cc.instantiate(this.pageTeample) as Node;
@@ -35,7 +40,8 @@ export class PageViewCtrl extends Component {
 
     update() {
         // 当前页面索引
-        this.label.string = "第" + (this.target.getCurrentPageIndex() + 1) + "页";
+        const extra = this.direction === PageViewComponent.Direction.Vertical ? '\n' : '';
+        this.label.string = `第${extra}` + (this.target.getCurrentPageIndex() + 1) + `${extra}页`;
     }
 
     // 返回首页
