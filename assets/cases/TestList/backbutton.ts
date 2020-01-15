@@ -76,6 +76,9 @@ export class backbutton extends Component {
     }
 
     SwitchSceneName(){ 
+        if (this.getSceneName() == null) {
+            return;
+        }
         this.scenename.node.active = true;
         this.scenename.string = this.getSceneName(); 
     } 
