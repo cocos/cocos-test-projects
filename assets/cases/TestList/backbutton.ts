@@ -87,7 +87,7 @@ export class backbutton extends Component {
         if (game.isPaused()) {
             game.resume();
         }
-        cc.director.loadScene("TestList", function() {
+        director.loadScene("TestList", function() {
             this.scenename.node.active = false;
             backbutton._sceneIndex = -1;
             backbutton.refreshButton();
