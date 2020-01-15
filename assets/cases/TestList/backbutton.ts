@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, ScrollViewComponent, Vec3, ButtonComponent, LayoutComponent, game } from "cc";
+import { _decorator, Component, Node, ScrollViewComponent, Vec3, ButtonComponent, LayoutComponent, game, LabelComponent, director, Director } from "cc";
 const { ccclass, property } = _decorator;
 import { sceneArray } from "./scenelist";
 
@@ -13,6 +13,7 @@ export class backbutton extends Component {
     private static _nextNode : Node;
     private static _prevButton : ButtonComponent;
     private static _nextButton : ButtonComponent;
+    private scenename : LabelComponent; 
 
     __preload() {
         const sceneInfo = game._sceneInfos;
@@ -58,6 +59,7 @@ export class backbutton extends Component {
     }
 
     start () {
+        this.scenename = director.getScene().getChildByName("backRoot").getChildByName("sceneName").getComponent(LabelComponent); 
         cc.game.addPersistRootNode(this.node);
         backbutton._scrollNode = this.node.getParent().getChildByPath('Canvas/ScrollView') as Node;
         if (backbutton._scrollNode) {
@@ -70,11 +72,20 @@ export class backbutton extends Component {
             backbutton._nextButton = backbutton._nextNode.getComponent(ButtonComponent);
             backbutton.refreshButton();
         }
+        director.on(Director.EVENT_BEFORE_SCENE_LOADING,this.SwitchSceneName,this); 
     }
 
-    backToList () {
+    SwitchSceneName(){ 
+        if (this.getSceneName() == null) {
+            return;
+        }
+        this.scenename.node.active = true;
+        this.scenename.string = this.getSceneName(); 
+    } 
 
+    backToList () {
         cc.director.loadScene("TestList", function() {
+            this.scenename.node.active = false;
             backbutton._sceneIndex = -1;
             backbutton.refreshButton();
             backbutton._scrollNode = this.node.getParent().getChildByPath('Canvas/ScrollView') as Node;
