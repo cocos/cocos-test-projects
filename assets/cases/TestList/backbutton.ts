@@ -76,12 +76,13 @@ export class backbutton extends Component {
     }
 
     SwitchSceneName(){ 
+        this.scenename.node.active = true;
         this.scenename.string = this.getSceneName(); 
     } 
 
     backToList () {
-
         cc.director.loadScene("TestList", function() {
+            this.scenename.node.active = false;
             backbutton._sceneIndex = -1;
             backbutton.refreshButton();
             backbutton._scrollNode = this.node.getParent().getChildByPath('Canvas/ScrollView') as Node;
