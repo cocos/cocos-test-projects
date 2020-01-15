@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, loader, SpriteComponent, SpriteAtlas } from "cc";
+import { _decorator, Component, Node, loader, SpriteComponent, SpriteAtlas, LabelComponent } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("loadSubPackages")
@@ -9,7 +9,7 @@ export class loadSubPackages extends Component {
     /* use `property` decorator if your want the member to be serializable */
     // @property
     // serializableDummy = 0;
-    @property({type: cc.LabelComponent})
+    @property({type: LabelComponent})
     label = null;
 
     @property({type: Node})

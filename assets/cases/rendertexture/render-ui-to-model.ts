@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, ModelComponent, CanvasComponent, RenderTexture } from "cc";
+import { _decorator, Component, Node, ModelComponent, CanvasComponent, RenderTexture, view } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("RenderUIToModel")
@@ -19,7 +19,7 @@ export class RenderUIToModel extends Component {
         const canvas = this.getComponent(CanvasComponent);
         const tex = new RenderTexture();
         tex.name = 'render-ui-to-model';
-        const size = cc.view.getVisibleSize();
+        const size = view.getVisibleSize();
         tex.reset({
             width: size.width,
             height: size.height,

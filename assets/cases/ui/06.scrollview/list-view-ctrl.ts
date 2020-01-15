@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, ScrollViewComponent, LabelComponent, ButtonComponent, Vec3, UITransformComponent } from "cc";
+import { _decorator, Component, Node, ScrollViewComponent, LabelComponent, ButtonComponent, Vec3, UITransformComponent, instantiate, error } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 const _temp_vec3 = new Vec3();
@@ -47,7 +47,7 @@ export class ListViewCtrl extends Component {
     initialize() {
         this._content.height = this.totalCount * (this.itemTemplate.height + this.spacing) + this.spacing; // get total content height
         for (let i = 0; i < this.spawnCount; ++i) { // spawn items, we only need to do this once
-            let item = cc.instantiate(this.itemTemplate) as Node;
+            let item = instantiate(this.itemTemplate) as Node;
             this._content.addChild(item);
             item.setPosition(0, -item.height * (0.5 + i) - this.spacing * (i + 1), 0);
             const labelComp = item.getComponentInChildren(LabelComponent);
@@ -100,7 +100,7 @@ export class ListViewCtrl extends Component {
 
     removeItem() {
         if (this.totalCount - 1 < 30) {
-            cc.error("can't remove item less than 30!");
+            error("can't remove item less than 30!");
             return;
         }
 

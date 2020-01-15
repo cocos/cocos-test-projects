@@ -1,4 +1,4 @@
-import { _decorator, Component, AnimationClip, UniformCurveValueAdapter, math, AnimationComponent, ComponentModifier, HierachyModifier } from 'cc';
+import { _decorator, Component, AnimationClip, UniformCurveValueAdapter, math, AnimationComponent, animation, js, ModelComponent } from 'cc';
 
 
 @_decorator.ccclass('UniformKTest')
@@ -24,8 +24,8 @@ export class UniformKTest extends Component {
         ];
         animationClip.curves =[{
             modifiers: [
-                new HierachyModifier('Nested'),
-                new ComponentModifier('cc.ModelComponent'),
+                new animation.HierarchyPath('Nested'),
+                new animation.ComponentPath(js.getClassName(ModelComponent)),
                 "sharedMaterials",
                 0,
             ],

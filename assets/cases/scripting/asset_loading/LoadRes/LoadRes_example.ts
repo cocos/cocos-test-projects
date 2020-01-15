@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, loader, SpriteComponent, SpriteAtlas, Prefab, instantiate, v2 } from "cc";
+import { _decorator, Component, Node, loader, SpriteComponent, SpriteAtlas, Prefab, instantiate, v2, director } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("LoadResexample")
@@ -52,6 +52,6 @@ export class LoadResexample extends Component {
     }
 
     backToAssetLoading () {
-        cc.director.loadScene('AssetLoading');
+        director.loadScene('AssetLoading');
     }
 }
