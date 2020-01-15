@@ -60,7 +60,7 @@ export class backbutton extends Component {
 
     start () {
         this.scenename = director.getScene().getChildByName("backRoot").getChildByName("sceneName").getComponent(LabelComponent); 
-        cc.game.addPersistRootNode(this.node);
+        game.addPersistRootNode(this.node);
         backbutton._scrollNode = this.node.getParent().getChildByPath('Canvas/ScrollView') as Node;
         if (backbutton._scrollNode) {
             backbutton._scrollCom = backbutton._scrollNode.getComponent(ScrollViewComponent);
@@ -84,7 +84,7 @@ export class backbutton extends Component {
     } 
 
     backToList () {
-        cc.director.loadScene("TestList", function() {
+        director.loadScene("TestList", function() {
             this.scenename.node.active = false;
             backbutton._sceneIndex = -1;
             backbutton.refreshButton();
@@ -103,7 +103,7 @@ export class backbutton extends Component {
         }
         backbutton._nextButton.interactable = false;
         this.updateSceneIndex(true);
-        cc.director.loadScene(this.getSceneName(), function() {
+        director.loadScene(this.getSceneName(), function() {
             backbutton._nextButton.interactable = true;
         });
     }
@@ -114,7 +114,7 @@ export class backbutton extends Component {
         }
         backbutton._prevButton.interactable = false;
         this.updateSceneIndex(false);
-        cc.director.loadScene(this.getSceneName(), function() {
+        director.loadScene(this.getSceneName(), function() {
             backbutton._prevButton.interactable = true;
         });
     }

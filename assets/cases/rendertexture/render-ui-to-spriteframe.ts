@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, SpriteComponent, SpriteFrame, CanvasComponent, RenderTexture } from "cc";
+import { _decorator, Component, Node, SpriteComponent, SpriteFrame, CanvasComponent, RenderTexture, view } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("RenderUIToSpriteFrame")
@@ -28,7 +28,7 @@ export class RenderUIToSpriteFrame extends Component {
         });
 
         const renderTex = new RenderTexture();
-        const size = cc.view.getVisibleSize();
+        const size = view.getVisibleSize();
         renderTex.reset({
             width: size.width,
             height: size.height,

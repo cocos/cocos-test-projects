@@ -1,4 +1,4 @@
-import { _decorator, Component, ModelComponent, ToggleComponent, Node, SliderComponent, Material, Color, GFXCullMode, LabelComponent } from "cc";
+import { _decorator, Component, ModelComponent, ToggleComponent, Node, SliderComponent, Material, Color, GFXCullMode, LabelComponent, director } from "cc";
 const { ccclass, property } = _decorator;
 
 const color = Color.WHITE.clone();
@@ -22,7 +22,7 @@ export class MaterialTest extends Component {
     }
 
     update () {
-        this.node.setRotationFromEuler(0, cc.director.getCurrentTime() * 0.01, 0);
+        this.node.setRotationFromEuler(0, director.getCurrentTime() * 0.01, 0);
     }
 
     // callbacks

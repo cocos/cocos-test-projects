@@ -1,4 +1,4 @@
-import { _decorator, Component, systemEvent, SystemEventType, EventTouch, LabelComponent, ToggleComponent, Node } from "cc";
+import { _decorator, Component, systemEvent, SystemEventType, EventTouch, LabelComponent, ToggleComponent, Node, macro } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("MultiTouchCtrl")
@@ -42,9 +42,9 @@ export class MultiTouchCtrl extends Component {
     changeMulit() {
         this.labelShow.string = '';
         if (this.toggle.isChecked) {
-            cc.macro.ENABLE_MULTI_TOUCH = true;
+            macro.ENABLE_MULTI_TOUCH = true;
         } else {
-            cc.macro.ENABLE_MULTI_TOUCH = false;
+            macro.ENABLE_MULTI_TOUCH = false;
         }
     }
 }
