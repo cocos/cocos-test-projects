@@ -8,8 +8,8 @@ export class VisibilityChanged extends Component {
     target: Node | null = null;
 
     start() {
-        setTimeout(() => {
+        this.scheduleOnce(()=>{
             this.node.setParent(this.target);
-        }, 1000);
+        }, 1);
     }
 }

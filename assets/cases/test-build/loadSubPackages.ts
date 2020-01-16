@@ -20,7 +20,7 @@ export class loadSubPackages extends Component {
     }
 
     loadSubPackage() {
-        if (!(CC_BAIDU || CC_WECHAT || CC_XIAOMI || CC_RUNTIME_BASED)) {
+        if (!CC_WECHAT) {
             this.label.string = '该平台暂不支持分包加载';
             return;
         }
