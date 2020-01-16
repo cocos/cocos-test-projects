@@ -35,14 +35,13 @@ export class CaptureToWeb extends Component {
         this.camera.targetTexture = rendetTex;
         sp.texture = rendetTex;
         this.sprite.spriteFrame = sp;
-
-        setTimeout(() => {
+        this.scheduleOnce(()=>{
             rendetTex.reset({
                 width: 512,
                 height: 512,
                 colorFormat: RenderTexture.PixelFormat.RGBA8888,
                 depthStencilFormat: RenderTexture.DepthStencilFormat.DEPTH_24_STENCIL_8
             });
-        }, 2000);
+        },2);
     }
 }
