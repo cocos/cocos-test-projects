@@ -12,8 +12,14 @@ export class subScript02 extends Component {
     @property({type: LabelComponent})
     tips = null;
 
+    backRoot: Node = null;
+
     start () {
         // Your initialization goes here.
+        this.backRoot = this.node.getParent().getChildByName('backRoot');
+        if(this.backRoot) {
+            this.backRoot.active = false;
+        }
         console.log('subScript02 load finish');
         this.tips.string = "subScript02 load finish!";
     }
@@ -23,6 +29,9 @@ export class subScript02 extends Component {
     // }
 
     backToList() {
+        if(this.backRoot){
+            this.backRoot.active = true;
+        }
         director.loadScene('sub-packages');
     }
 }

@@ -20,7 +20,7 @@ export class loadSubPackages extends Component {
     }
 
     loadSubPackage() {
-        if (!CC_WECHAT) {
+        if (!CC_MINIGAME) {
             this.label.string = '该平台暂不支持分包加载';
             return;
         }
