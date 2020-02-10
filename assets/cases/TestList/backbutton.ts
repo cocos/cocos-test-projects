@@ -13,14 +13,14 @@ export class backbutton extends Component {
     private static _nextNode : Node;
     private static _prevButton : ButtonComponent;
     private static _nextButton : ButtonComponent;
-    private scenename : LabelComponent; 
+    private scenename : LabelComponent;
 
     __preload() {
         const sceneInfo = game._sceneInfos;
         const array: string[] = sceneInfo.map((i) => i.url).sort();
         for (let i = 0;  i< array.length; i++) {
             let str = array[i];
-            if (str.includes("TestList") || (str.includes("multiTouch") && (cc.sys.os === cc.sys.OS_WINDOWS || cc.sys.os === cc.sys.MACOS)) ) {
+            if (str.includes("TestList") || str.includes("subPack")) {
                 continue;
             }
             const firstIndex = str.lastIndexOf('/') + 1;
