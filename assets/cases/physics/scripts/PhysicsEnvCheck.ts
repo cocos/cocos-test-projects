@@ -5,6 +5,7 @@ enum EPhysicsItem {
     BUILTIN = 1 << 0,
     CANNON = 1 << 1,
     AMMO = 1 << 2,
+    BUILTIN_AMMO = EPhysicsItem.BUILTIN + EPhysicsItem.AMMO,
     CANNON_AMMO = EPhysicsItem.CANNON + EPhysicsItem.AMMO,
     ALL = -1,
 }
@@ -43,6 +44,8 @@ export class PhysicsEnvCheck extends Component {
             this.physics = EPhysicsItem.AMMO;
         } else if (name == "builtin-cannon-ammo") {
             this.physics = EPhysicsItem.ALL;
+        } else if (name == "builtin-ammo") {
+            this.physics = EPhysicsItem.BUILTIN_AMMO;
         }
 
         switch (this.physics) {
@@ -59,6 +62,19 @@ export class PhysicsEnvCheck extends Component {
                 let sprCom = this.getComponentInChildren(SpriteComponent);
                 sprCom.enabled = true;
                 break;
+
+            case EPhysicsItem.BUILTIN_AMMO:
+                if (CC_PHYSICS_BUILTIN || CC_PHYSICS_AMMO) {
+                    break;
+                }
+
+                let lbCom1 = this.node.getChildByName('lb').getComponent(LabelComponent);
+                lbCom1.enabled = true;
+                lbCom1.string = "测试此场景需要将物理模块设置为 builtin 或 ammo.js";
+                let sprCom1 = this.getComponentInChildren(SpriteComponent);
+                sprCom1.enabled = true;
+                break;
+
             case EPhysicsItem.CANNON:
                 if (!CC_PHYSICS_CANNON) {
                     let lbCom = this.node.getChildByName('lb').getComponent(LabelComponent);
