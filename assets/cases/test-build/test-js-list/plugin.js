@@ -1,0 +1,1 @@
+window.JS_LIST_TIPS = '插件脚本加载成功';
