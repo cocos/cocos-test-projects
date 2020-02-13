@@ -1,4 +1,4 @@
-import { _decorator, Component, AnimationComponent, AnimationClip, tween } from "cc";
+import { _decorator, Component, AnimationComponent, AnimationClip, tweenUtil } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("deprecated-testing")
@@ -14,7 +14,7 @@ export class deprecatedtesting extends Component {
         console.log(anim.removeClip(clip));
 
         // API 更名
-        tween({});
+        tweenUtil({});
     }
 
 }

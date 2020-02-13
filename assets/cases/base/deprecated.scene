@@ -325,7 +325,7 @@
     },
     "_sharedMaterial": null,
     "_useOriginalSize": true,
-    "_string": "主要测试预览页面\n在预览页面中的 Debug Mode 改为 Info 模式\n并且打开控制台 快捷键为 Ctrl + Shift + i\n如果在控制台看到了以下格式的任意内容\n格式1 ： ‘***’  is deprecated, please use ‘***’\n\n例以下输出\n 'cc.tween' is deprecated, please use 'cc.tweenUtil' instead. \n那么就是正常的表现。\n此输出只会在场景直接预览和 Debug 版本中出现",
+    "_string": "主要测试预览页面\n在预览页面中的 Debug Mode 改为 Info 模式\n并且打开控制台 快捷键为 Ctrl + Shift + i\n如果在控制台看到了以下格式的任意内容\n格式1 ： ‘***’  is deprecated, please use ‘***’\n\n例以下输出\n 'cc.tweenUtil' is deprecated, please use 'cc.tween' instead. \n那么就是正常的表现。\n此输出只会在场景直接预览和 Debug 版本中出现",
     "_horizontalAlign": 0,
     "_verticalAlign": 0,
     "_actualFontSize": 20,
@@ -390,10 +390,10 @@
       "__id__": 14
     },
     "planarShadows": {
-      "__id__": 16
+      "__id__": 15
     },
     "_skybox": {
-      "__id__": 15
+      "__id__": 16
     }
   },
   {
@@ -415,13 +415,6 @@
     }
   },
   {
-    "__type__": "cc.SkyboxInfo",
-    "_envmap": null,
-    "_isRGBE": false,
-    "_enabled": false,
-    "_useIBL": false
-  },
-  {
     "__type__": "cc.PlanarShadowInfo",
     "_enabled": false,
     "_normal": {
@@ -438,5 +431,12 @@
       "b": 0,
       "a": 76
     }
+  },
+  {
+    "__type__": "cc.SkyboxInfo",
+    "_envmap": null,
+    "_isRGBE": false,
+    "_enabled": false,
+    "_useIBL": false
   }
 ]
