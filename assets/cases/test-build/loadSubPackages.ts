@@ -20,7 +20,7 @@ export class loadSubPackages extends Component {
     }
 
     loadSubPackage() {
-        if (!CC_MINIGAME) {
+        if (CC_ALIPAY || CC_COCOSPLAY || !(CC_MINIGAME || CC_RUNTIME_BASED)) {
             this.label.string = '该平台暂不支持分包加载';
             return;
         }
