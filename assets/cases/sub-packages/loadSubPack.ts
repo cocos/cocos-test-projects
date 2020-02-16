@@ -24,7 +24,7 @@ export class loadSubPack extends Component {
     loadSubPackages() {
         this.createButton_1.node.active = false;
         this.createButton_2.node.active = false;
-        if(!(CC_MINIGAME || CC_RUNTIME_BASED)) {
+        if(CC_ALIPAY || CC_COCOSPLAY || !(CC_MINIGAME || CC_RUNTIME_BASED)) {
             this.label.string = '该平台暂不支持分包加载';
             return;
         }
@@ -38,19 +38,20 @@ export class loadSubPack extends Component {
             this.label.string = 'load sub-pack-01 success!';
             console.log(`load subpackage(sub-pack-01) successfully.`);
             this.createButton_1.node.active = true;
-        });
-        loader.downloader.loadSubpackage('sub-pack-02',(err: any) => {
-            if(err) {
-                this.label.string = 'load sub-pack-02 failed!';
-                this.label.color = 'red';
-                return console.error(err);
-            }
-            this.label.string += '\n load sub-pack-02 success!';
-            console.log(`load subpackage(sub-pack-02) successfully.`);
-            this.createButton_2.node.active = true;
-        });
 
-        this.label.string += '\n load all success!';
+            loader.downloader.loadSubpackage('sub-pack-02',(err: any) => {
+                if(err) {
+                    this.label.string = 'load sub-pack-02 failed!';
+                    this.label.color = 'red';
+                    return console.error(err);
+                }
+                this.label.string += '\n load sub-pack-02 success!';
+                console.log(`load subpackage(sub-pack-02) successfully.`);
+                this.createButton_2.node.active = true;
+
+                this.label.string += '\n load all success!';
+            });
+        });
     }
 
     jumpToSubScene01() {
