@@ -12,14 +12,16 @@ export class button extends Component {
     })
     Label = null;
     private timer =false;
-    start () {  
+    start () {
         // Your initialization goes here.
     }
 
     onPause () {
+        if(game.isPaused()) return;
         this.timer=true;
     }
     onResume () {
+        if(!game.isPaused()) return;
         this.timer = false
         this.Label.node.active = false;
         game.resume();
