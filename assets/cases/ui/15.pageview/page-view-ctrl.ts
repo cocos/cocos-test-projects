@@ -91,6 +91,9 @@ export class PageViewCtrl extends Component {
         this.lessPageNum(() => {
             var pages = this.target.getPages();
             this.target.removePage(pages[pages.length - 1]);
+            if(this.curNum === 0){
+                this.onAddPage();
+            }
         });
     }
 
@@ -98,6 +101,9 @@ export class PageViewCtrl extends Component {
     onRemovePageAtIndex() {
         this.lessPageNum(() => {
             this.target.removePageAtIndex(this.target.getCurrentPageIndex());
+            if (this.curNum === 0) {
+                this.onAddPage();
+            }
         });
     }
 
@@ -105,6 +111,7 @@ export class PageViewCtrl extends Component {
     onRemoveAllPage() {
         this.target.removeAllPages();
         this.curNum = 0;
+        this.onAddPage();
     }
 
     // 监听事件
