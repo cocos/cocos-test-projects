@@ -52,7 +52,7 @@ export class PageViewCtrl extends Component {
 
     // 添加页面
     plusPage(callback: Function) {
-        if (this.curNum > this.curTotal) {
+        if (this.curNum >= this.curTotal) {
             return;
         }
         this.curNum++;
