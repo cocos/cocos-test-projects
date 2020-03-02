@@ -1,52 +1,54 @@
-import { _decorator, Component, Node, SpriteFrame, SpriteComponent, LabelComponent, UIStaticBatchComponent } from "cc";
+import { _decorator, Component, Node, SpriteFrame, SpriteComponent, LabelComponent, UIStaticBatchComponent, director } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("StaticUI")
 @menu('UI/StaticUI')
 export class StaticUI extends Component {
-    @property({
-        type: [SpriteFrame]
-    })
-    spriteList: SpriteFrame[] = [];
     @property(LabelComponent)
     tipLabel: LabelComponent = null;
-
-    private _idx = 0;
+    @property
+    newSceneName = '';
+    @property({
+        type: [UIStaticBatchComponent]
+    })
+    uiStaticBatchCompList: UIStaticBatchComponent[] = [];
 
     start () {
-        const content = this.node.getContentSize();
-        let x = -content.width / 2;
-        let y = content.height / 2;
-        let len = this.spriteList.length;
-        for (let i = 0; i < 500; i++) {
-            const node = new Node(i.toString());
-            node.parent = this.node as Node;
-            node.setPosition(x, y, 0);
-            const sprite = node.addComponent(SpriteComponent);
-            sprite.type = SpriteComponent.Type.SLICED;
-            sprite.sizeMode = SpriteComponent.SizeMode.CUSTOM;
-            const sp = this.spriteList[i % len];
-            sprite.spriteFrame = sp;
+        this.scheduleOnce(this.func, 1.5);
 
-            if (x > content.width / 2) {
-                x = -content.width / 2;
-                y -= 110;
-            }
-            x += 5;
+        const local = cc.sys.localStorage;
+        const item = local.getItem('ui-static-level');
+        if (item) {
+            this.tipLabel.string = `第 ${parseInt(item)} 次切回`;
+        } else {
+            this.tipLabel.string = `第 0 次切回`;
         }
 
-        this.schedule(this.func, 1);
+        for (let i = 0; i < this.uiStaticBatchCompList.length; i++) {
+            const element = this.uiStaticBatchCompList[i];
+            element.markAsDirty();
+        }
     }
 
     func() {
-        this._idx++;
-        const comp = this.getComponent(UIStaticBatchComponent);
-        const pos = Math.random() * 100;
-        const lpos = this.node.position;
-        this.node.setPosition(pos, lpos.y, lpos.z);
-        comp.markAsDirty();
-        if (this.tipLabel) {
-            this.tipLabel.string = `第 ${this._idx} 次开始采集数据`;
+        const local = cc.sys.localStorage;
+        const item = local.getItem('ui-static-level');
+        if (item) {
+            let level = parseInt(item);
+            if (level > 5) {
+                local.removeItem('ui-static-level');
+                return;
+            }
+
+            level++;
+            if (this.newSceneName === 'static-ui') {
+                local.setItem('ui-static-level', `${level}`);
+            }
+
+        } else if (this.newSceneName === 'static-ui'){
+            local.setItem('ui-static-level', '1');
         }
+
+        director.loadScene(this.newSceneName);
     }
 }
