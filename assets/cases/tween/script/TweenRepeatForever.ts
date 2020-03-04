@@ -19,6 +19,9 @@ export class TweenRepeatForever extends Component {
     }
 
     onDisable () {
-        this.tweenRF.stop();
+        /**
+         * v1.0.4 版本开始，当缓动目标为 node 后，节点销毁后将会自动进行 stop
+         */
+        // this.tweenRF.stop();
     }
 }
