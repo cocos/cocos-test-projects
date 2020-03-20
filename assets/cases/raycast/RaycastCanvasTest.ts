@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, CameraComponent, LabelComponent, systemEvent, SystemEventType, EventTouch, Touch, geometry, director, Layers, CanvasComponent } from "cc";
+import { _decorator, Component, Node, CameraComponent, LabelComponent, systemEvent, SystemEventType, EventTouch, Touch, geometry, director, Layers, CanvasComponent, UITransformComponent } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("RaycastCanvasTest")
@@ -10,9 +10,10 @@ export class RaycastCanvasTest extends Component {
     @property({ type: LabelComponent })
     readonly label: LabelComponent = null;
 
-    private _ray: geometry.ray = new geometry.ray();
-
+    private _ray = new geometry.ray();
+    private _aabb = new geometry.aabb();
     onEnable () {
+        this.label.string = '点击文字测试射线检测';
         systemEvent.on(SystemEventType.TOUCH_START, this.onTouchStart, this);
     }
 
@@ -21,18 +22,13 @@ export class RaycastCanvasTest extends Component {
     }
 
     onTouchStart (touch: Touch, event: EventTouch) {
-        this.label.string = '点击我测试 UI 的射线检测';
+        this.label.string = '点击文字测试射线检测';
         const uiCamera = this.canvas.camera;
         uiCamera.screenPointToRay(this._ray, touch._point.x, touch._point.y);
-        const rs = director.getScene().renderScene;
-        if (rs.raycastAllCanvas(this._ray)) {
-            const result = rs.rayResultCanvas;
-            for (let i = result.length; i--;) {
-                const item = result[i];
-                if (item.node.uuid == this.label.node.uuid) {
-                    this.label.string = '检测成功，距离为 ' + item.distance;
-                }
-            }
+        const uitrans = this.label.getComponent(UITransformComponent);
+        uitrans.getComputeAABB(this._aabb);
+        if (geometry.intersect.ray_aabb(this._ray, this._aabb)) {
+            this.label.string = '检测成功';
         }
     }
 }
