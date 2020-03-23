@@ -33,6 +33,7 @@ export class releaseDependAsset extends Component {
             return;
         }
         this.prefabNode.active = false;
+        this.prefabNode.parent = null;
         let deps = loader.getDependsRecursively(this.prefabAsset);
         loader.release(deps);
     }
