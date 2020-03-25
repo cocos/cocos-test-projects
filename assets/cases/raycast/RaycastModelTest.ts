@@ -28,15 +28,8 @@ export class RaycastModelTest extends Component {
 
     onTouchStart (touch: Touch, event: EventTouch) {
         this.cameraCom.screenPointToRay(touch._point.x, touch._point.y, this._ray);
-        const rs = director.getScene().renderScene;
-        if (rs.raycastSingleModel(this._ray, this.modelCom.model)) {
-            const r = rs.rayResultSingleModel;
-            for (let i = 0; i < r.length; i++) {
-                const item = r[i];
-                if (item.node.uuid == this.modelCom.node.uuid) {
-                    this.modelCom.material = this.rayMaterial;
-                }
-            }
+        if (geometry.intersect.ray_model(this._ray, this.modelCom.model)) {
+            this.modelCom.material = this.rayMaterial;
         } else {
             this.modelCom.material = this.defaultMaterial;
         }
