@@ -1,4 +1,4 @@
-import { _decorator, Component, Vec3 } from "cc";
+import { _decorator, Component, Vec3, Quat } from "cc";
 const { menu, ccclass, property } = _decorator;
 
 @ccclass("LoopMotion")
@@ -10,6 +10,9 @@ export class LoopMotion extends Component {
 
     @property
     public readonly maxPostion: Vec3 = new Vec3;
+
+    @property
+    public readonly deltaRot: Quat = new Quat();
 
     update (deltaTime: number) {
 
@@ -29,5 +32,9 @@ export class LoopMotion extends Component {
         const newPos = this.deltaMotion.clone();
         newPos.add(this.node.worldPosition);
         this.node.setWorldPosition(newPos);
+
+        if (!this.deltaRot.equals(Quat.IDENTITY)) {
+            this.node.rotate(this.deltaRot);
+        }
     }
 }

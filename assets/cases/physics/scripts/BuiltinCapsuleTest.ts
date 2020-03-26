@@ -1,9 +1,10 @@
 import { _decorator, Component, Node, Quat, ITriggerEvent, Material, ColliderComponent, ModelComponent } from "cc";
-const { ccclass, property } = _decorator;
+const { ccclass, property, menu } = _decorator;
 
 const rot = Quat.fromEuler(new Quat(), 0, 2, 0);
 
 @ccclass("BuiltinCapsuleTest")
+@menu("physics/BuiltinCapsuleTest")
 export class BuiltinCapsuleTest extends Component {
 
     @property({ type: Material })

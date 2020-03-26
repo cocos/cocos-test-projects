@@ -1,7 +1,8 @@
 import { _decorator, Component, Node, Vec3, RigidBodyComponent } from "cc";
-const { ccclass, property } = _decorator;
+const { ccclass, property, menu } = _decorator;
 
 @ccclass("VelocitySetup")
+@menu("physics/VelocitySetup")
 export class VelocitySetup extends Component {
 
     @property({ type: Vec3 })
