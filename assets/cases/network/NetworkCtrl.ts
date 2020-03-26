@@ -25,24 +25,6 @@ export class NetworkCtrl extends Component {
     @property({type: cc.Asset})
     wssCacert: Asset = null;
 
-    // properties: {
-    //     xhr: cc.Label,
-    //     xhrAB: cc.Label,
-    //     xhrTimeout: cc.Label,
-    //     websocket: cc.Label,
-    //     socketIO: cc.Label,
-        
-    //     xhrResp: cc.Label,
-    //     xhrABResp: cc.Label,
-    //     xhrTimeoutResp: cc.Label,
-    //     websocketResp: cc.Label,
-    //     socketIOResp: cc.Label,
-    //     wssCacert: {
-    //         type: cc.Asset,
-    //         default: null
-    //     },
-    //     _reconnectCount: 0,
-    // },
     private  _reconnectCount = 0;
 
     private _xhrXHR : XMLHttpRequest = null;
