@@ -94,6 +94,7 @@
     },
     "_useColorTemperature": false,
     "_colorTemperature": 6550,
+    "_bakeType": 0,
     "_illuminance": 65000,
     "_id": "597uMYCbhEtJQc0ffJlcgA"
   },
@@ -162,9 +163,9 @@
     "_far": 1000,
     "_color": {
       "__type__": "cc.Color",
-      "r": 5,
-      "g": 76,
-      "b": 120,
+      "r": 51,
+      "g": 51,
+      "b": 51,
       "a": 255
     },
     "_depth": 1,
@@ -460,6 +461,7 @@
       "__id__": 11
     },
     "_enabled": true,
+    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 32,
@@ -470,8 +472,7 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_id": "96JVyF/ClL7oYTRx8RmxsQ",
-    "_priority": 0
+    "_id": "96JVyF/ClL7oYTRx8RmxsQ"
   },
   {
     "__type__": "cc.SpriteComponent",
@@ -571,6 +572,7 @@
       "__id__": 10
     },
     "_enabled": true,
+    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 300,
@@ -581,8 +583,7 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_id": "efu+DLoXlNKZdXob1Zyjei",
-    "_priority": 0
+    "_id": "efu+DLoXlNKZdXob1Zyjei"
   },
   {
     "__type__": "cc.SpriteComponent",
@@ -736,6 +737,7 @@
       "__id__": 20
     },
     "_enabled": true,
+    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 73.39,
@@ -746,8 +748,7 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_id": "798SNwp/hGcahZ9FliMxWP",
-    "_priority": 0
+    "_id": "798SNwp/hGcahZ9FliMxWP"
   },
   {
     "__type__": "cc.LabelComponent",
@@ -820,6 +821,7 @@
       "__id__": 9
     },
     "_enabled": true,
+    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 960,
@@ -861,6 +863,7 @@
       "__id__": 8
     },
     "_enabled": true,
+    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 77.82,
@@ -871,8 +874,7 @@
       "x": 0.5,
       "y": 0.5
     },
-    "_id": "ffCvYiJGFLkIUQhr4u2s0A",
-    "_priority": 0
+    "_id": "ffCvYiJGFLkIUQhr4u2s0A"
   },
   {
     "__type__": "cc.WidgetComponent",
@@ -921,10 +923,10 @@
       "__id__": 30
     },
     "planarShadows": {
-      "__id__": 32
+      "__id__": 31
     },
     "_skybox": {
-      "__id__": 31
+      "__id__": 32
     }
   },
   {
@@ -946,13 +948,6 @@
     }
   },
   {
-    "__type__": "cc.SkyboxInfo",
-    "_envmap": null,
-    "_isRGBE": false,
-    "_enabled": false,
-    "_useIBL": false
-  },
-  {
     "__type__": "cc.PlanarShadowInfo",
     "_enabled": false,
     "_normal": {
@@ -969,5 +964,12 @@
       "b": 0,
       "a": 76
     }
+  },
+  {
+    "__type__": "cc.SkyboxInfo",
+    "_envmap": null,
+    "_isRGBE": false,
+    "_enabled": false,
+    "_useIBL": false
   }
 ]
