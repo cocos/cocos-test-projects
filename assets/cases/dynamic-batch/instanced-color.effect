@@ -45,7 +45,7 @@ CCProgram unlit-fs %{
     #if USE_INSTANCING
       return CCFragOutput(v_color);
     #else
-      return CCFragOutput(vec4(1.0));
+      return CCFragOutput(vec4(0.3, 0.5, 0.7, 1.0));
     #endif
   }
 }%
