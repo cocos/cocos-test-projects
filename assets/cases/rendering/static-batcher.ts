@@ -1,8 +1,8 @@
-import { _decorator, Component, Node, BatchingUtility, ModelComponent, LabelComponent } from "cc";
+import { _decorator, Component, Node, BatchingUtility, LabelComponent } from 'cc';
 const { ccclass, property } = _decorator;
 
-@ccclass("staticBatcher")
-export class staticBatcher extends Component {
+@ccclass('StaticBatcher')
+export class StaticBatcher extends Component {
     /* class member could be defined like this */
     // dummy = '';
 
@@ -20,23 +20,17 @@ export class staticBatcher extends Component {
     })
     buttonLabel = null;
 
-    batch () {
-        BatchingUtility.batchStaticModel(this.staticNode, this.node);
-        this.staticNode.active = false;
-    }
-
-    unbatch () {
-        this.node.getComponent(ModelComponent).destroy();
-        this.staticNode.active = true;
-    }
+    _batched = false;
 
     onBtnClick () {
-        if (this.staticNode.activeInHierarchy) {
-            this.batch();
-            this.buttonLabel.string = 'Unbatch';
-        } else {
-            this.unbatch();
+        if (this._batched) {
+            BatchingUtility.unbatchStaticModel(this.staticNode, this.node);
+            this._batched = false;
             this.buttonLabel.string = 'Batch';
+        } else {
+            BatchingUtility.batchStaticModel(this.staticNode, this.node);
+            this._batched = true;
+            this.buttonLabel.string = 'Unbatch';
         }
     }
 }
