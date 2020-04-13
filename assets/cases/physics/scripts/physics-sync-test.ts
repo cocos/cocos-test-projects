@@ -13,9 +13,9 @@ export class physicsSyncTest extends Component {
     }
 
     update (dt: number) {
-        if (this.count == 1) {
+        if (this.count == 20) {
             this.node.setWorldPosition(0, 0.5, 0);
-        } else if (this.count == 60) {
+        } else if (this.count == 80) {
             PhysicsSystem.instance.enable = true;
         }
 
