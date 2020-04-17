@@ -55,7 +55,7 @@ export class NetworkCtrl extends Component {
         this.sendSocketIO();
     }
 
-     destroy () {
+    onDestroy () {
         var wsiSendBinary = this._wsiSendBinary;
         if (wsiSendBinary) {
             wsiSendBinary.onopen = null;
