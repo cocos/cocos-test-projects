@@ -19,7 +19,9 @@ export class accelerationEvent extends Component {
     start () {
         this.accelerometerEnable = false;
         // cause this function is not supported at vivo
-        // systemEvent.setAccelerometerInterval(0.5);
+        if (!CC_RUNTIME_BASED) {
+            systemEvent.setAccelerometerInterval(0.5);
+        }
         systemEvent.on(SystemEventType.DEVICEMOTION,this.moveBall,this);
     }
 
