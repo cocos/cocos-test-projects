@@ -1,8 +1,8 @@
-import { _decorator, Component, Node, Prefab, Vec3, LabelAtlas, LabelComponent, instantiate, director, widgetManager } from "cc";
+import { _decorator, Component, Node, Prefab, Vec3, LabelComponent, instantiate, director, widgetManager } from "cc";
 const { ccclass, property } = _decorator;
 
-@ccclass("widgetDestroy")
-export class widgetDestroy extends Component {
+@ccclass("WidgetDestroy")
+export class WidgetDestroy extends Component {
 
     @property ({type:Prefab})
     defaultPre = null;
@@ -15,7 +15,7 @@ export class widgetDestroy extends Component {
 
     movePos = new Vec3(-200, 0, 0);
 
-    createprefab() {
+    createPrefab() {
         let item = instantiate(this.defaultPre);
         this.node.addChild(item);
         this.schedule(this.updateLabel,0.5);
@@ -24,7 +24,7 @@ export class widgetDestroy extends Component {
     destroyThenCreate() {
         if (this.node.children.length < 1) {return;}
         this.node.children[this.node.children.length - 1].destroy();
-        this.createprefab();
+        this.createPrefab();
     }
 
     moveRoot() {
@@ -33,7 +33,7 @@ export class widgetDestroy extends Component {
     }
 
     updateLabel() {
-        this.coinNumber.string = ('The Coin Num is:' + director._scene.children[2].children[3].children.length);
+        this.coinNumber.string = ('The Coin Num is:' + director.getScene().children[2].children[3].children.length);
         this.activeWidgetNum.string = 'The active Widget Num is:' + (widgetManager._activeWidgetsIterator.length - 4);
     }
 }
