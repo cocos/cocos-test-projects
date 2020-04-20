@@ -115,9 +115,6 @@
         "__id__": 6
       },
       {
-        "__id__": 32
-      },
-      {
         "__id__": 33
       }
     ],
@@ -152,7 +149,7 @@
   },
   {
     "__type__": "cc.CameraComponent",
-    "_name": "",
+    "_name": "Camera<CameraComponent>",
     "_objFlags": 0,
     "node": {
       "__id__": 4
@@ -192,7 +189,7 @@
   },
   {
     "__type__": "2e116ACZoBGcpoJL3RMAD5+",
-    "_name": "",
+    "_name": "Camera<BatchTester>",
     "_objFlags": 0,
     "node": {
       "__id__": 4
@@ -261,20 +258,20 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 30
+        "__id__": 31
       },
       {
         "__id__": 7
       },
       {
-        "__id__": 31
+        "__id__": 32
       }
     ],
     "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 211.09,
-      "y": 220,
+      "y": 214.8,
       "z": 0
     },
     "_lrot": {
@@ -323,10 +320,10 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 28
+        "__id__": 29
       },
       {
-        "__id__": 29
+        "__id__": 30
       }
     ],
     "_prefab": null,
@@ -714,7 +711,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 401.09000000000003,
-      "y": 220,
+      "y": 214.8,
       "z": 0
     },
     "_lrot": {
@@ -751,7 +748,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 73.39,
-      "height": 40
+      "height": 50.4
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -841,13 +838,16 @@
       },
       {
         "__id__": 27
+      },
+      {
+        "__id__": 28
       }
     ],
     "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": -130,
-      "y": 250,
+      "y": 244.8,
       "z": 0
     },
     "_lrot": {
@@ -884,7 +884,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 0,
-      "height": 40
+      "height": 50.4
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -957,6 +957,18 @@
     "_id": "f4b+D7mgdJaaMZvPuxyL5B"
   },
   {
+    "__type__": "69edbvI+KVFQJEDKsfPvq75",
+    "_name": "Camera<ExtensionDetection>",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 24
+    },
+    "_enabled": true,
+    "feature": "instanced_arrays",
+    "tips": "expect the boxes to be blue-colored",
+    "_id": "edxq76iSFJxaWBTfXEddpr"
+  },
+  {
     "__type__": "cc.UITransformComponent",
     "_name": "",
     "_objFlags": 0,
@@ -1010,7 +1022,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 77.82,
-      "height": 40
+      "height": 50.4
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1048,7 +1060,7 @@
   },
   {
     "__type__": "445598TP61LhoVLGOAdP05g",
-    "_name": "",
+    "_name": "Camera<first-person-camera>",
     "_objFlags": 0,
     "node": {
       "__id__": 4
@@ -1059,18 +1071,6 @@
     "damp": 0.2,
     "rotateSpeed": 1,
     "_id": "06xsp+Q31G/K6vjL/wqsaB"
-  },
-  {
-    "__type__": "69edbvI+KVFQJEDKsfPvq75",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 4
-    },
-    "_enabled": true,
-    "feature": "instanced_array",
-    "tips": "expect the boxes to be blue-colored",
-    "_id": "12AZsAAQtGyqM9SlI0bSRD"
   },
   {
     "__type__": "cc.SceneGlobals",
