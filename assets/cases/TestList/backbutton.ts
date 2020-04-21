@@ -2,8 +2,8 @@ import { _decorator, Component, Node, ScrollViewComponent, Vec3, ButtonComponent
 const { ccclass, property } = _decorator;
 import { sceneArray } from "./scenelist";
 
-@ccclass("backbutton")
-export class backbutton extends Component {
+@ccclass("BackButton")
+export class BackButton extends Component {
     private static _offset = new Vec3();
     public static _scrollNode : Node | null  = null;
     private static _scrollCom : ScrollViewComponent | null = null;
@@ -13,7 +13,7 @@ export class backbutton extends Component {
     private static _nextNode : Node;
     private static _prevButton : ButtonComponent;
     private static _nextButton : ButtonComponent;
-    private scenename : LabelComponent;
+    private sceneName : LabelComponent;
 
     __preload() {
         const sceneInfo = game._sceneInfos;
@@ -30,57 +30,57 @@ export class backbutton extends Component {
     }
 
     public static get offset() {
-        return backbutton._offset;
+        return BackButton._offset;
     }
 
     public static set offset( value ) {
-        backbutton._offset = value;
+        BackButton._offset = value;
     }
 
     public static saveOffset () {
-        if ( backbutton._scrollNode ) {
-            backbutton._offset = new Vec3(0, backbutton._scrollCom.getScrollOffset().y, 0);
+        if (BackButton._scrollNode ) {
+            BackButton._offset = new Vec3(0, BackButton._scrollCom.getScrollOffset().y, 0);
         }
     }
 
     public static saveIndex ( index : number) {
-        backbutton._sceneIndex = index;
-        backbutton.refreshButton();
+        BackButton._sceneIndex = index;
+        BackButton.refreshButton();
     }
 
     public static refreshButton () {
-        if (backbutton._sceneIndex === -1) {
-            backbutton._prevNode.active = false;
-            backbutton._nextNode.active = false;
+        if (BackButton._sceneIndex === -1) {
+            BackButton._prevNode.active = false;
+            BackButton._nextNode.active = false;
         } else {
-            backbutton._prevNode.active = true;
-            backbutton._nextNode.active = true;
+            BackButton._prevNode.active = true;
+            BackButton._nextNode.active = true;
         }
     }
 
     start () {
-        this.scenename = director.getScene().getChildByName("backRoot").getChildByName("sceneName").getComponent(LabelComponent); 
+        this.sceneName = director.getScene().getChildByName("backRoot").getChildByName("sceneName").getComponent(LabelComponent); 
         game.addPersistRootNode(this.node);
-        backbutton._scrollNode = this.node.getParent().getChildByPath('Canvas/ScrollView') as Node;
-        if (backbutton._scrollNode) {
-            backbutton._scrollCom = backbutton._scrollNode.getComponent(ScrollViewComponent);
+        BackButton._scrollNode = this.node.getParent().getChildByPath('Canvas/ScrollView') as Node;
+        if (BackButton._scrollNode) {
+            BackButton._scrollCom = BackButton._scrollNode.getComponent(ScrollViewComponent);
         }
-        backbutton._prevNode = this.node.getChildByName('PrevButton') as Node;
-        backbutton._nextNode = this.node.getChildByName('NextButton') as Node;
-        if (backbutton._prevNode && backbutton._nextNode) {
-            backbutton._prevButton = backbutton._prevNode.getComponent(ButtonComponent);
-            backbutton._nextButton = backbutton._nextNode.getComponent(ButtonComponent);
-            backbutton.refreshButton();
+        BackButton._prevNode = this.node.getChildByName('PrevButton') as Node;
+        BackButton._nextNode = this.node.getChildByName('NextButton') as Node;
+        if (BackButton._prevNode && BackButton._nextNode) {
+            BackButton._prevButton = BackButton._prevNode.getComponent(ButtonComponent);
+            BackButton._nextButton = BackButton._nextNode.getComponent(ButtonComponent);
+            BackButton.refreshButton();
         }
-        director.on(Director.EVENT_BEFORE_SCENE_LOADING,this.SwitchSceneName,this); 
+        director.on(Director.EVENT_BEFORE_SCENE_LOADING,this.switchSceneName,this); 
     }
 
-    SwitchSceneName(){ 
+    switchSceneName(){ 
         if (this.getSceneName() == null) {
             return;
         }
-        this.scenename.node.active = true;
-        this.scenename.string = this.getSceneName(); 
+        this.sceneName.node.active = true;
+        this.sceneName.string = this.getSceneName(); 
     } 
 
     backToList () {
@@ -88,49 +88,49 @@ export class backbutton extends Component {
             game.resume();
         }
         director.loadScene("TestList", function() {
-            this.scenename.node.active = false;
-            backbutton._sceneIndex = -1;
-            backbutton.refreshButton();
-            backbutton._scrollNode = this.node.getParent().getChildByPath('Canvas/ScrollView') as Node;
-            if (backbutton._scrollNode) {
-                backbutton._scrollCom = backbutton._scrollNode.getComponent(ScrollViewComponent);
-                backbutton._scrollCom._content.getComponent(LayoutComponent).updateLayout();
-                backbutton._scrollCom.scrollToOffset(backbutton.offset,0.1,true);
+            this.sceneName.node.active = false;
+            BackButton._sceneIndex = -1;
+            BackButton.refreshButton();
+            BackButton._scrollNode = this.node.getParent().getChildByPath('Canvas/ScrollView') as Node;
+            if (BackButton._scrollNode) {
+                BackButton._scrollCom = BackButton._scrollNode.getComponent(ScrollViewComponent);
+                BackButton._scrollCom._content.getComponent(LayoutComponent).updateLayout();
+                BackButton._scrollCom.scrollToOffset(BackButton.offset,0.1,true);
             }
         }.bind(this));
     }
 
-    nextscene () {
+    nextScene () {
         if(game.isPaused()){
             game.resume();    
         }
-        backbutton._nextButton.interactable = false;
+        BackButton._nextButton.interactable = false;
         this.updateSceneIndex(true);
         director.loadScene(this.getSceneName(), function() {
-            backbutton._nextButton.interactable = true;
+            BackButton._nextButton.interactable = true;
         });
     }
 
-    prescene () {
+    preScene () {
         if(game.isPaused()){
             game.resume();
         }
-        backbutton._prevButton.interactable = false;
+        BackButton._prevButton.interactable = false;
         this.updateSceneIndex(false);
         director.loadScene(this.getSceneName(), function() {
-            backbutton._prevButton.interactable = true;
+            BackButton._prevButton.interactable = true;
         });
     }
 
     updateSceneIndex(next:Boolean) {
         if (next) {
-            (backbutton._sceneIndex + 1) >= sceneArray.length ? backbutton._sceneIndex = 0 : backbutton._sceneIndex += 1;
+            (BackButton._sceneIndex + 1) >= sceneArray.length ? BackButton._sceneIndex = 0 : BackButton._sceneIndex += 1;
         }else {
-            (backbutton._sceneIndex - 1) < 0 ? backbutton._sceneIndex = sceneArray.length - 1 : backbutton._sceneIndex -= 1;
+            (BackButton._sceneIndex - 1) < 0 ? BackButton._sceneIndex = sceneArray.length - 1 : BackButton._sceneIndex -= 1;
         }
     }
 
     getSceneName () {
-        return sceneArray[backbutton._sceneIndex];
+        return sceneArray[BackButton._sceneIndex];
     }
 }
