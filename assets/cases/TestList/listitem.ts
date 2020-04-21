@@ -1,6 +1,6 @@
 import { _decorator, Component, Node, LabelComponent, director } from "cc";
 import { sceneArray } from "./scenelist";
-import { backbutton } from "./backbutton";
+import { BackButton } from "./backbutton";
 const { ccclass, property } = _decorator;
 
 @ccclass("ListItem")
@@ -25,8 +25,8 @@ export class ListItem extends Component {
     }
 
     public loadScene() {
-        backbutton.saveOffset();
-        backbutton.saveIndex(this.index);
+        BackButton.saveOffset();
+        BackButton.saveIndex(this.index);
         director.loadScene(this._name);
     }
 
