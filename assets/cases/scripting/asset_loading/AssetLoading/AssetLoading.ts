@@ -40,6 +40,9 @@ export class AssetLoading extends Component {
     @property({ type: Prefab })
     loadAnimTestPrefab = null;
 
+    @property({ type: SpriteFrame })
+    loadMaterialSpriteFrame = null;
+
     // use this for initialization
     onLoad () {
         // registered event
@@ -207,7 +210,8 @@ export class AssetLoading extends Component {
             case "Material":
                 component = node.addComponent(SpriteComponent);
                 component.sharedMaterial = res;
-                component.spriteFrame = this.showWindow.getComponent(SpriteComponent).spriteFrame;
+                component.spriteFrame = this.loadMaterialSpriteFrame;
+                break;
             case "Font":
                 component = node.addComponent(LabelComponent);
                 component.font = res;
