@@ -192,7 +192,9 @@ export class AssetLoading extends Component {
             case "CORS":
                 component = node.addComponent(SpriteComponent);
                 const spriteFrame = new SpriteFrame();
-                spriteFrame.texture = res._texture;
+                const tex = new Texture2D();
+                tex.image = res;
+                spriteFrame.texture = tex;
                 component.spriteFrame = spriteFrame;
                 break;
             case "Audio":
