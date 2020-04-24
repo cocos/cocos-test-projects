@@ -19,9 +19,6 @@ export class NetworkCtrl extends Component {
     @property({type: LabelComponent})
     websocket: LabelComponent = null;
 
-    @property({type: LabelComponent})
-    socketIO : LabelComponent = null;
-
     @property({type: cc.Asset})
     wssCacert: Asset = null;
 
@@ -46,13 +43,11 @@ export class NetworkCtrl extends Component {
         this.xhrAB.string = "waiting..";
         this.xhrTimeout.string = "waiting..";
         this.websocket.string = "waiting..";
-        this.socketIO.string = "waiting..";
         
         this.sendXHR();
         this.sendXHRAB();
         this.sendXHRTimeout();
         this.prepareWebSocket();
-        this.sendSocketIO();
     }
 
     onDestroy () {
@@ -182,85 +177,6 @@ export class NetworkCtrl extends Component {
                 this.sendWebSocketBinary();
             }, 1);
         }
-    }
-
-    // Socket IO callbacks for testing
-    testevent(data) {
-        if (!this.socketIO) { return; }
-
-        var msg = this.tag + " says 'testevent' with data: " + data;
-        this.socketIO.node.getParent().getComponent(LabelComponent).string = "SocketIO: testevent";
-        this.socketIO.string = msg;
-    }
-
-    message(data) {
-        if (!this.socketIO) { return; }
-
-        var msg = this.tag + " received message: " + data;
-        this.socketIO.node.getParent().getComponent(LabelComponent).string = "SocketIO: message";
-        this.socketIO.string = msg;
-    }
-
-    disconnection() {
-        if (!this.socketIO) { return; }
-
-        var msg = this.tag + " disconnected!";
-        this.socketIO.node.getParent().getComponent(LabelComponent).string = "SocketIO: disconnect";
-        this.socketIO.string = msg;
-    }
-    
-    reconnecting () {
-        if (!this.socketIO) { return; }
-
-        this._reconnectCount++;
-        var msg = this.tag + " is reconnecting(" + this._reconnectCount + ")";
-        this.socketIO.node.getParent().getComponent(LabelComponent).string = "SocketIO: reconnecting";
-        this.socketIO.string = "Reconnecting...";
-    }
-
-    sendSocketIO () {
-        var self = this;
-        if (typeof io === 'undefined') {
-            cc.error('You should import the socket.io.js as a plugin!');
-            return;
-        }
-        //create a client by using this static method, url does not need to contain the protocol
-        var sioclient = io.connect("ws://tools.itharbors.com:4000", {"force new connection" : true});
-        this._sioClient = sioclient;
-
-        //if you need to track multiple sockets it is best to store them with tags in your own array for now
-        this.tag = sioclient.tag = "Test Client";
-        
-        //register event callbacks
-        //this is an example of a handler declared inline
-        sioclient.on("connect", function() {
-            if (!self.socketIO) { return; }
-
-            var msg = sioclient.tag + " Connected!";
-            // self.socketIO.textKey = i18n.t("cases/05_scripting/11_network/NetworkCtrl.js.13") + msg;
-            self.socketIO.string = msg;
-
-            // Send message after connection
-            self._sioClient.send("Hello Socket.IO!");
-        });
-
-        //example of a handler that is shared between multiple clients
-        sioclient.on("message", this.message.bind(this));
-
-        sioclient.on("echotest", function (data) {
-            if (!self.socketIO) { return; }
-
-            cc.log("echotest 'on' callback fired!");
-            var msg = self.tag + " says 'echotest' with data: " + data;
-            // self.socketIO.textKey = i18n.t("cases/05_scripting/11_network/NetworkCtrl.js.14") + msg;
-            self.socketIO.string = msg;
-        });
-
-        sioclient.on("testevent", this.testevent.bind(this));
-
-        sioclient.on("disconnect", this.disconnection.bind(this));
-
-        sioclient.on("reconnecting", this.reconnecting.bind(this));
     }
     
     streamXHREventsToLabel ( xhr:XMLHttpRequest, label:LabelComponent, method:string, responseHandler?:(string)=>string ) {
