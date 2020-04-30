@@ -6,10 +6,12 @@ export class physicsSyncTest extends Component {
 
     count = 0;
 
-    // @property
-
-    start () {
+    onEnable () {
         PhysicsSystem.instance.enable = false;
+    }
+    
+    onDisable () {
+        PhysicsSystem.instance.enable = true;
     }
 
     update (dt: number) {
