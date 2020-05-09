@@ -1,28 +1,12 @@
 {
-  "ver": "1.3.16",
+  "ver": "1.3.19",
   "importer": "gltf",
   "imported": true,
   "uuid": "fffdae50-0ca7-46b5-a98f-9565a58e0c36",
   "files": [],
   "subMetas": {
-    "17648": {
-      "ver": "1.0.12",
-      "importer": "gltf-material",
-      "uuid": "fffdae50-0ca7-46b5-a98f-9565a58e0c36@17648",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 4
-      },
-      "displayName": "",
-      "id": "17648",
-      "name": "Grey-skinning.material"
-    },
     "30732": {
-      "ver": "1.0.0",
+      "ver": "1.0.1",
       "importer": "gltf-skeleton",
       "uuid": "fffdae50-0ca7-46b5-a98f-9565a58e0c36@30732",
       "imported": true,
@@ -31,7 +15,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "jointsLength": 43
       },
       "id": "30732",
       "name": "UnnamedSkeleton-0.skeleton"
@@ -53,7 +38,8 @@
         "span": {
           "from": 0,
           "to": 1.6666666269302368
-        }
+        },
+        "wrapMode": 2
       },
       "id": "92482",
       "name": "No.animation"
@@ -75,13 +61,14 @@
         "span": {
           "from": 0,
           "to": 1.6666666269302368
-        }
+        },
+        "wrapMode": 2
       },
       "id": "95815",
       "name": "Yes.animation"
     },
     "98265": {
-      "ver": "1.0.7",
+      "ver": "1.0.9",
       "importer": "gltf-mesh",
       "uuid": "fffdae50-0ca7-46b5-a98f-9565a58e0c36@98265",
       "imported": true,
@@ -97,7 +84,7 @@
       "name": "Foot.L.mesh"
     },
     "cc786": {
-      "ver": "1.0.7",
+      "ver": "1.0.9",
       "importer": "gltf-mesh",
       "uuid": "fffdae50-0ca7-46b5-a98f-9565a58e0c36@cc786",
       "imported": true,
@@ -113,7 +100,7 @@
       "name": "Torso.mesh"
     },
     "040fb": {
-      "ver": "1.0.7",
+      "ver": "1.0.9",
       "importer": "gltf-mesh",
       "uuid": "fffdae50-0ca7-46b5-a98f-9565a58e0c36@040fb",
       "imported": true,
@@ -129,7 +116,7 @@
       "name": "Head.mesh"
     },
     "09731": {
-      "ver": "1.0.7",
+      "ver": "1.0.9",
       "importer": "gltf-mesh",
       "uuid": "fffdae50-0ca7-46b5-a98f-9565a58e0c36@09731",
       "imported": true,
@@ -145,7 +132,7 @@
       "name": "Foot.R.mesh"
     },
     "ec656": {
-      "ver": "1.0.7",
+      "ver": "1.0.9",
       "importer": "gltf-mesh",
       "uuid": "fffdae50-0ca7-46b5-a98f-9565a58e0c36@ec656",
       "imported": true,
@@ -161,7 +148,7 @@
       "name": "Shoulder.L.mesh"
     },
     "12e71": {
-      "ver": "1.0.7",
+      "ver": "1.0.9",
       "importer": "gltf-mesh",
       "uuid": "fffdae50-0ca7-46b5-a98f-9565a58e0c36@12e71",
       "imported": true,
@@ -177,7 +164,7 @@
       "name": "Arm.L.mesh"
     },
     "8d8ce": {
-      "ver": "1.0.7",
+      "ver": "1.0.9",
       "importer": "gltf-mesh",
       "uuid": "fffdae50-0ca7-46b5-a98f-9565a58e0c36@8d8ce",
       "imported": true,
@@ -193,7 +180,7 @@
       "name": "Shoulder.R.mesh"
     },
     "1396a": {
-      "ver": "1.0.7",
+      "ver": "1.0.9",
       "importer": "gltf-mesh",
       "uuid": "fffdae50-0ca7-46b5-a98f-9565a58e0c36@1396a",
       "imported": true,
@@ -209,7 +196,7 @@
       "name": "Arm.R.mesh"
     },
     "c8aaa": {
-      "ver": "1.0.7",
+      "ver": "1.0.9",
       "importer": "gltf-mesh",
       "uuid": "fffdae50-0ca7-46b5-a98f-9565a58e0c36@c8aaa",
       "imported": true,
@@ -225,7 +212,7 @@
       "name": "Leg.L.mesh"
     },
     "45b15": {
-      "ver": "1.0.7",
+      "ver": "1.0.9",
       "importer": "gltf-mesh",
       "uuid": "fffdae50-0ca7-46b5-a98f-9565a58e0c36@45b15",
       "imported": true,
@@ -241,7 +228,7 @@
       "name": "LowerLeg.L.mesh"
     },
     "a13a3": {
-      "ver": "1.0.7",
+      "ver": "1.0.9",
       "importer": "gltf-mesh",
       "uuid": "fffdae50-0ca7-46b5-a98f-9565a58e0c36@a13a3",
       "imported": true,
@@ -257,7 +244,7 @@
       "name": "Leg.R.mesh"
     },
     "565f4": {
-      "ver": "1.0.7",
+      "ver": "1.0.9",
       "importer": "gltf-mesh",
       "uuid": "fffdae50-0ca7-46b5-a98f-9565a58e0c36@565f4",
       "imported": true,
@@ -273,7 +260,7 @@
       "name": "LowerLeg.R.mesh"
     },
     "4ee07": {
-      "ver": "1.0.7",
+      "ver": "1.0.9",
       "importer": "gltf-mesh",
       "uuid": "fffdae50-0ca7-46b5-a98f-9565a58e0c36@4ee07",
       "imported": true,
@@ -289,7 +276,7 @@
       "name": "Hand.R.mesh"
     },
     "22afc": {
-      "ver": "1.0.7",
+      "ver": "1.0.9",
       "importer": "gltf-mesh",
       "uuid": "fffdae50-0ca7-46b5-a98f-9565a58e0c36@22afc",
       "imported": true,
@@ -321,7 +308,8 @@
         "span": {
           "from": 0,
           "to": 3.3333332538604736
-        }
+        },
+        "wrapMode": 2
       },
       "id": "5f563",
       "name": "Dance.animation"
@@ -343,7 +331,8 @@
         "span": {
           "from": 0,
           "to": 0.9583333134651184
-        }
+        },
+        "wrapMode": 2
       },
       "id": "ca7e4",
       "name": "Death.animation"
@@ -365,7 +354,8 @@
         "span": {
           "from": 0,
           "to": 3.3333332538604736
-        }
+        },
+        "wrapMode": 2
       },
       "id": "c2696",
       "name": "Idle.animation"
@@ -387,7 +377,8 @@
         "span": {
           "from": 0,
           "to": 0.7083333134651184
-        }
+        },
+        "wrapMode": 2
       },
       "id": "f4113",
       "name": "Jump.animation"
@@ -409,7 +400,8 @@
         "span": {
           "from": 0,
           "to": 0.8333333134651184
-        }
+        },
+        "wrapMode": 2
       },
       "id": "8885f",
       "name": "Punch.animation"
@@ -431,7 +423,8 @@
         "span": {
           "from": 0,
           "to": 0.9583333134651184
-        }
+        },
+        "wrapMode": 2
       },
       "id": "b84cf",
       "name": "Running.animation"
@@ -453,7 +446,8 @@
         "span": {
           "from": 0,
           "to": 0.4166666567325592
-        }
+        },
+        "wrapMode": 2
       },
       "id": "cdd1b",
       "name": "Sitting.animation"
@@ -475,7 +469,8 @@
         "span": {
           "from": 0,
           "to": 0.4166666567325592
-        }
+        },
+        "wrapMode": 2
       },
       "id": "e7f91",
       "name": "Standing.animation"
@@ -497,7 +492,8 @@
         "span": {
           "from": 0,
           "to": 1.5833333730697632
-        }
+        },
+        "wrapMode": 2
       },
       "id": "2357c",
       "name": "ThumbsUp.animation"
@@ -519,7 +515,8 @@
         "span": {
           "from": 0,
           "to": 0.9583333134651184
-        }
+        },
+        "wrapMode": 2
       },
       "id": "dc888",
       "name": "Walking.animation"
@@ -541,7 +538,8 @@
         "span": {
           "from": 0,
           "to": 0.8333333134651184
-        }
+        },
+        "wrapMode": 2
       },
       "id": "a3617",
       "name": "WalkJump.animation"
@@ -563,13 +561,14 @@
         "span": {
           "from": 0,
           "to": 1.8333333730697632
-        }
+        },
+        "wrapMode": 2
       },
       "id": "667e4",
       "name": "Wave.animation"
     },
     "f1394": {
-      "ver": "1.0.0",
+      "ver": "1.0.1",
       "importer": "gltf-skeleton",
       "uuid": "fffdae50-0ca7-46b5-a98f-9565a58e0c36@f1394",
       "imported": true,
@@ -578,13 +577,14 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 1
+        "gltfIndex": 1,
+        "jointsLength": 43
       },
       "id": "f1394",
       "name": "UnnamedSkeleton-1.skeleton"
     },
     "862e8": {
-      "ver": "1.0.12",
+      "ver": "1.0.14",
       "importer": "gltf-material",
       "uuid": "fffdae50-0ca7-46b5-a98f-9565a58e0c36@862e8",
       "imported": true,
@@ -599,7 +599,7 @@
       "name": "Grey.material"
     },
     "925cb": {
-      "ver": "1.0.12",
+      "ver": "1.0.14",
       "importer": "gltf-material",
       "uuid": "fffdae50-0ca7-46b5-a98f-9565a58e0c36@925cb",
       "imported": true,
@@ -614,7 +614,7 @@
       "name": "Main.material"
     },
     "8f8aa": {
-      "ver": "1.0.12",
+      "ver": "1.0.14",
       "importer": "gltf-material",
       "uuid": "fffdae50-0ca7-46b5-a98f-9565a58e0c36@8f8aa",
       "imported": true,
@@ -628,24 +628,8 @@
       "id": "8f8aa",
       "name": "Black.material"
     },
-    "6db0b": {
-      "ver": "1.0.12",
-      "importer": "gltf-material",
-      "uuid": "fffdae50-0ca7-46b5-a98f-9565a58e0c36@6db0b",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {},
-      "userData": {
-        "gltfIndex": 3
-      },
-      "displayName": "",
-      "id": "6db0b",
-      "name": "Main-skinning.material"
-    },
     "65afa": {
-      "ver": "1.0.8",
+      "ver": "1.0.11",
       "importer": "gltf-scene",
       "uuid": "fffdae50-0ca7-46b5-a98f-9565a58e0c36@65afa",
       "imported": true,
@@ -674,7 +658,8 @@
           {
             "name": "Dance",
             "from": 0,
-            "to": 3.3333332538604736
+            "to": 3.3333332538604736,
+            "wrapMode": 2
           }
         ]
       },
@@ -686,7 +671,8 @@
           {
             "name": "Death",
             "from": 0,
-            "to": 0.9583333134651184
+            "to": 0.9583333134651184,
+            "wrapMode": 2
           }
         ]
       },
@@ -698,7 +684,8 @@
           {
             "name": "Idle",
             "from": 0,
-            "to": 3.3333332538604736
+            "to": 3.3333332538604736,
+            "wrapMode": 2
           }
         ]
       },
@@ -710,7 +697,8 @@
           {
             "name": "Jump",
             "from": 0,
-            "to": 0.7083333134651184
+            "to": 0.7083333134651184,
+            "wrapMode": 2
           }
         ]
       },
@@ -722,7 +710,8 @@
           {
             "name": "No",
             "from": 0,
-            "to": 1.6666666269302368
+            "to": 1.6666666269302368,
+            "wrapMode": 2
           }
         ]
       },
@@ -734,7 +723,8 @@
           {
             "name": "Punch",
             "from": 0,
-            "to": 0.8333333134651184
+            "to": 0.8333333134651184,
+            "wrapMode": 2
           }
         ]
       },
@@ -746,7 +736,8 @@
           {
             "name": "Running",
             "from": 0,
-            "to": 0.9583333134651184
+            "to": 0.9583333134651184,
+            "wrapMode": 2
           }
         ]
       },
@@ -758,7 +749,8 @@
           {
             "name": "Sitting",
             "from": 0,
-            "to": 0.4166666567325592
+            "to": 0.4166666567325592,
+            "wrapMode": 2
           }
         ]
       },
@@ -770,7 +762,8 @@
           {
             "name": "Standing",
             "from": 0,
-            "to": 0.4166666567325592
+            "to": 0.4166666567325592,
+            "wrapMode": 2
           }
         ]
       },
@@ -782,7 +775,8 @@
           {
             "name": "ThumbsUp",
             "from": 0,
-            "to": 1.5833333730697632
+            "to": 1.5833333730697632,
+            "wrapMode": 2
           }
         ]
       },
@@ -794,7 +788,8 @@
           {
             "name": "Walking",
             "from": 0,
-            "to": 0.9583333134651184
+            "to": 0.9583333134651184,
+            "wrapMode": 2
           }
         ]
       },
@@ -806,7 +801,8 @@
           {
             "name": "WalkJump",
             "from": 0,
-            "to": 0.8333333134651184
+            "to": 0.8333333134651184,
+            "wrapMode": 2
           }
         ]
       },
@@ -818,7 +814,8 @@
           {
             "name": "Wave",
             "from": 0,
-            "to": 1.8333333730697632
+            "to": 1.8333333730697632,
+            "wrapMode": 2
           }
         ]
       },
@@ -830,7 +827,8 @@
           {
             "name": "Yes",
             "from": 0,
-            "to": 1.6666666269302368
+            "to": 1.6666666269302368,
+            "wrapMode": 2
           }
         ]
       }
@@ -859,9 +857,7 @@
       "materials": [
         "fffdae50-0ca7-46b5-a98f-9565a58e0c36@862e8",
         "fffdae50-0ca7-46b5-a98f-9565a58e0c36@925cb",
-        "fffdae50-0ca7-46b5-a98f-9565a58e0c36@8f8aa",
-        "fffdae50-0ca7-46b5-a98f-9565a58e0c36@6db0b",
-        "fffdae50-0ca7-46b5-a98f-9565a58e0c36@17648"
+        "fffdae50-0ca7-46b5-a98f-9565a58e0c36@8f8aa"
       ],
       "scenes": [
         "fffdae50-0ca7-46b5-a98f-9565a58e0c36@65afa"
