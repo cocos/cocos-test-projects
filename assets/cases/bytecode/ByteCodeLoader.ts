@@ -28,7 +28,7 @@ export class typescript extends Component {
         this.titleLabel.string ="Bytecode Test";
 
         if(typeof jsb === "undefined" || !jsb.saveByteCode) {
-            this.statusLabel.string = "Bytecode is only supported on native platforms!";
+            this.statusLabel.string = "Bytecode is not supported!";
         } else {
 
             if(last_time_result.done) {
