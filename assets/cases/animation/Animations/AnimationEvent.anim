@@ -1,15 +1,49 @@
-{
-  "__type__": "cc.AnimationClip",
-  "_name": "AnimationEvent",
-  "_objFlags": 0,
-  "_native": "",
-  "sample": 60,
-  "speed": 1,
-  "wrapMode": 2,
-  "curveDatas": {
-    "/": {
-      "props": {
-        "position": {
+[
+  {
+    "__type__": "cc.AnimationClip",
+    "_name": "AnimationEvent",
+    "_objFlags": 0,
+    "_native": "",
+    "sample": 60,
+    "speed": 1,
+    "wrapMode": 2,
+    "events": [
+      {
+        "frame": 1.0166666666666666,
+        "func": "AnimationEventTest",
+        "params": [
+          "接收到动画事件"
+        ]
+      }
+    ],
+    "_duration": 2,
+    "_keys": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        2
+      ]
+    ],
+    "_stepness": 0,
+    "_curves": [
+      {
+        "modifiers": [
+          {
+            "__id__": 1
+          },
+          "position"
+        ],
+        "data": {
           "keys": 0,
           "values": [
             {
@@ -36,8 +70,16 @@
             null,
             null
           ]
-        },
-        "rotation": {
+        }
+      },
+      {
+        "modifiers": [
+          {
+            "__id__": 1
+          },
+          "rotation"
+        ],
+        "data": {
           "keys": 1,
           "values": [
             {
@@ -67,8 +109,16 @@
             null,
             null
           ]
-        },
-        "scale": {
+        }
+      },
+      {
+        "modifiers": [
+          {
+            "__id__": 1
+          },
+          "scale"
+        ],
+        "data": {
           "keys": 2,
           "values": [
             {
@@ -97,34 +147,12 @@
           ]
         }
       }
-    }
+    ],
+    "_commonTargets": [],
+    "_hash": 0
   },
-  "events": [
-    {
-      "frame": 1.0166666666666666,
-      "func": "AnimationEventTest",
-      "params": [
-        "接收到动画事件"
-      ]
-    }
-  ],
-  "_duration": 2,
-  "_keys": [
-    [
-      0,
-      1,
-      2
-    ],
-    [
-      0,
-      1,
-      2
-    ],
-    [
-      0,
-      1,
-      2
-    ]
-  ],
-  "_stepness": 0
-}
+  {
+    "__type__": "cc.animation.HierarchyPath",
+    "path": "/"
+  }
+]
