@@ -1,37 +1,54 @@
-{
-  "__type__": "cc.AnimationClip",
-  "_name": "widget",
-  "_objFlags": 0,
-  "_native": "",
-  "sample": 60,
-  "speed": 1,
-  "wrapMode": 22,
-  "curveDatas": {
-    "/": {
-      "comps": {
-        "cc.WidgetComponent": {
-          "top": {
-            "keys": 0,
-            "values": [
-              780,
-              300
-            ],
-            "easingMethods": [
-              null,
-              null
-            ]
-          }
+[
+  {
+    "__type__": "cc.AnimationClip",
+    "_name": "widget",
+    "_objFlags": 0,
+    "_native": "",
+    "sample": 60,
+    "speed": 1,
+    "wrapMode": 22,
+    "events": [],
+    "_duration": 1.0166666666666666,
+    "_keys": [
+      [
+        0,
+        1.0166666666666666
+      ]
+    ],
+    "_stepness": 0,
+    "_curves": [
+      {
+        "modifiers": [
+          {
+            "__id__": 1
+          },
+          {
+            "__id__": 2
+          },
+          "top"
+        ],
+        "data": {
+          "keys": 0,
+          "values": [
+            780,
+            300
+          ],
+          "easingMethods": [
+            null,
+            null
+          ]
         }
       }
-    }
+    ],
+    "_commonTargets": [],
+    "_hash": 0
   },
-  "events": [],
-  "_duration": 1.0166666666666666,
-  "_keys": [
-    [
-      0,
-      1.0166666666666666
-    ]
-  ],
-  "_stepness": 0
-}
+  {
+    "__type__": "cc.animation.HierarchyPath",
+    "path": "/"
+  },
+  {
+    "__type__": "cc.animation.ComponentPath",
+    "component": "cc.WidgetComponent"
+  }
+]
