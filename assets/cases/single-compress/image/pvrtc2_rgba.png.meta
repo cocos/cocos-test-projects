@@ -2,7 +2,7 @@
   "ver": "1.0.17",
   "importer": "image",
   "imported": true,
-  "uuid": "7884adc8-854f-4fec-8eb8-49e25df6fd98",
+  "uuid": "1db65474-4d2c-4a64-9899-ef62a4818531",
   "files": [
     ".png",
     ".json"
@@ -10,8 +10,8 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "7884adc8-854f-4fec-8eb8-49e25df6fd98@6c48a",
-      "displayName": "sheep_down_2",
+      "uuid": "1db65474-4d2c-4a64-9899-ef62a4818531@6c48a",
+      "displayName": "pvrtc2_rgba",
       "id": "6c48a",
       "name": "texture",
       "ver": "1.0.19",
@@ -29,35 +29,31 @@
         "premultiplyAlpha": false,
         "anisotropy": 1,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "7884adc8-854f-4fec-8eb8-49e25df6fd98"
+        "imageUuidOrDatabaseUri": "1db65474-4d2c-4a64-9899-ef62a4818531"
       }
     },
     "f9941": {
-      "ver": "1.0.8",
       "importer": "sprite-frame",
-      "uuid": "7884adc8-854f-4fec-8eb8-49e25df6fd98@f9941",
+      "uuid": "1db65474-4d2c-4a64-9899-ef62a4818531@f9941",
+      "displayName": "pvrtc2_rgba",
+      "id": "f9941",
+      "name": "spriteFrame",
+      "ver": "1.0.8",
       "imported": true,
       "files": [
         ".json"
       ],
       "subMetas": {},
       "userData": {
-        "wrapModeS": "repeat",
-        "wrapModeT": "repeat",
-        "minfilter": "linear",
-        "magfilter": "linear",
-        "mipfilter": "none",
-        "premultiplyAlpha": false,
-        "anisotropy": 1,
         "trimType": "auto",
         "trimThreshold": 1,
         "rotated": false,
-        "offsetX": -6.5,
-        "offsetY": -3.5,
-        "trimX": 25,
-        "trimY": 31,
-        "width": 165,
-        "height": 104,
+        "offsetX": -11.5,
+        "offsetY": -2.5,
+        "trimX": 29,
+        "trimY": 13,
+        "width": 147,
+        "height": 138,
         "rawWidth": 228,
         "rawHeight": 159,
         "borderTop": 0,
@@ -65,29 +61,23 @@
         "borderLeft": 0,
         "borderRight": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "7884adc8-854f-4fec-8eb8-49e25df6fd98@6c48a",
+        "imageUuidOrDatabaseUri": "1db65474-4d2c-4a64-9899-ef62a4818531@6c48a",
         "atlasUuid": ""
-      },
-      "displayName": "sheep_down_2",
-      "id": "f9941",
-      "name": "spriteFrame"
+      }
     }
   },
   "userData": {
     "type": "sprite-frame",
-    "redirect": "7884adc8-854f-4fec-8eb8-49e25df6fd98@f9941",
+    "redirect": "1db65474-4d2c-4a64-9899-ef62a4818531@f9941",
     "platformSettings": {
-      "html5": {
-        "pvrtc_4bits": "normal",
-        "etc1_rgb": "fast",
-        "png": 80,
-        "pvrtc_2bits_rgb": "normal"
+      "default": {
+        "png": 80
       },
       "wechat": {
-        "pvrtc_4bits_rgb": "normal",
-        "pvrtc_2bits_rgb": "normal",
-        "etc1_rgb": "fast",
-        "png": 80
+        "pvrtc_2bits": "normal"
+      },
+      "html5": {
+        "pvrtc_2bits": "normal"
       }
     }
   }
