@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Prefab, CameraComponent, systemEvent, SystemEventType, EventTouch, geometry, Touch, ModelComponent, instantiate, Vec3 } from 'cc';
+import { _decorator, Component, Node, Prefab, CameraComponent, systemEvent, SystemEventType, EventTouch, geometry, Touch, ModelComponent, instantiate, Vec3, GFXAttributeName, Vec2 } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('IntersectRayTest')
@@ -48,22 +48,46 @@ export class IntersectRayTest extends Component {
             }
             if (geometry.intersect.ray_model(this._ray, mo, opt)) {
                 const r = opt.result;
+                const s = opt.subIndices;
                 if (me.subMeshCount == 1) {
+                    const vertex = new Vec3();
                     const pos = me.renderingSubMeshes[0].geometricInfo.positions;
 
-                    const vertex = new Vec3(pos[r[0].vertexIndex0], pos[r[0].vertexIndex0 + 1], pos[r[0].vertexIndex0 + 2]);
+                    let posIndex = r[0].vertexIndex0 * 3;
+                    vertex.set(pos[posIndex], pos[posIndex + 1], pos[posIndex + 2]);
                     Vec3.transformMat4(vertex, vertex, mo.node.worldMatrix);
                     this._points[0].setWorldPosition(vertex);
 
-                    vertex.set(pos[r[0].vertexIndex1], pos[r[0].vertexIndex1 + 1], pos[r[0].vertexIndex1 + 2])
+                    posIndex = r[0].vertexIndex1 * 3;
+                    vertex.set(pos[posIndex], pos[posIndex + 1], pos[posIndex + 2]);
                     Vec3.transformMat4(vertex, vertex, mo.node.worldMatrix);
                     this._points[1].setWorldPosition(vertex);
 
-                    vertex.set(pos[r[0].vertexIndex2], pos[r[0].vertexIndex2 + 1], pos[r[0].vertexIndex2 + 2])
+                    posIndex = r[0].vertexIndex2 * 3;
+                    vertex.set(pos[posIndex], pos[posIndex + 1], pos[posIndex + 2]);
                     Vec3.transformMat4(vertex, vertex, mo.node.worldMatrix);
                     this._points[2].setWorldPosition(vertex);
 
                     this._points[0].active = true; this._points[1].active = true; this._points[2].active = true;
+
+                    /**GET UV  */
+                    const tex_coord = me.readAttribute(s[0], GFXAttributeName.ATTR_TEX_COORD);
+                    if (tex_coord) {
+                        const uv = new Vec2();
+
+                        let uvIndex = r[0].vertexIndex0 * 2;
+                        uv.set(tex_coord[uvIndex], tex_coord[uvIndex + 1]);
+                        console.log(JSON.stringify(uv));
+
+                        uvIndex = r[0].vertexIndex1 * 2;
+                        uv.set(tex_coord[uvIndex], tex_coord[uvIndex + 1]);
+                        console.log(JSON.stringify(uv));
+
+                        uvIndex = r[0].vertexIndex2 * 2;
+                        uv.set(tex_coord[uvIndex], tex_coord[uvIndex + 1]);
+                        console.log(JSON.stringify(uv));
+                    }
+
                 } else {
                     const hitPoint = new Vec3();
                     this._ray.computeHit(hitPoint, r[0].distance);
