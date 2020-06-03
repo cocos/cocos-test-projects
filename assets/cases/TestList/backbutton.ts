@@ -9,10 +9,9 @@ export class BackButton extends Component {
     private static _scrollCom : ScrollViewComponent | null = null;
 
     private static _sceneIndex : number = -1;
+    private static _blockInput : Node;
     private static _prevNode : Node;
     private static _nextNode : Node;
-    private static _prevButton : ButtonComponent;
-    private static _nextButton : ButtonComponent;
     private sceneName : LabelComponent;
 
     __preload() {
@@ -59,35 +58,36 @@ export class BackButton extends Component {
     }
 
     start () {
-        this.sceneName = director.getScene().getChildByName("backRoot").getChildByName("sceneName").getComponent(LabelComponent); 
+        this.sceneName = director.getScene().getChildByName("backRoot").getChildByName("sceneName").getComponent(LabelComponent);
         game.addPersistRootNode(this.node);
         BackButton._scrollNode = this.node.getParent().getChildByPath('Canvas/ScrollView') as Node;
         if (BackButton._scrollNode) {
             BackButton._scrollCom = BackButton._scrollNode.getComponent(ScrollViewComponent);
         }
+        BackButton._blockInput = this.node.getChildByName('BlockInput') as Node;
+        BackButton._blockInput.active = false;
         BackButton._prevNode = this.node.getChildByName('PrevButton') as Node;
         BackButton._nextNode = this.node.getChildByName('NextButton') as Node;
         if (BackButton._prevNode && BackButton._nextNode) {
-            BackButton._prevButton = BackButton._prevNode.getComponent(ButtonComponent);
-            BackButton._nextButton = BackButton._nextNode.getComponent(ButtonComponent);
             BackButton.refreshButton();
         }
-        director.on(Director.EVENT_BEFORE_SCENE_LOADING,this.switchSceneName,this); 
+        director.on(Director.EVENT_BEFORE_SCENE_LOADING,this.switchSceneName,this);
     }
 
-    switchSceneName(){ 
+    switchSceneName () {
         if (this.getSceneName() == null) {
             return;
         }
         this.sceneName.node.active = true;
-        this.sceneName.string = this.getSceneName(); 
-    } 
+        this.sceneName.string = this.getSceneName();
+    }
 
     backToList () {
         if (game.isPaused()) {
             game.resume();
         }
-        director.loadScene("TestList", function() {
+        BackButton._blockInput.active = true;
+        director.loadScene('TestList', function () {
             this.sceneName.node.active = false;
             BackButton._sceneIndex = -1;
             BackButton.refreshButton();
@@ -97,17 +97,18 @@ export class BackButton extends Component {
                 BackButton._scrollCom._content.getComponent(LayoutComponent).updateLayout();
                 BackButton._scrollCom.scrollToOffset(BackButton.offset,0.1,true);
             }
+            BackButton._blockInput.active = false;
         }.bind(this));
     }
 
     nextScene () {
         if(game.isPaused()){
-            game.resume();    
+            game.resume();
         }
-        BackButton._nextButton.interactable = false;
+        BackButton._blockInput.active = true;
         this.updateSceneIndex(true);
-        director.loadScene(this.getSceneName(), function() {
-            BackButton._nextButton.interactable = true;
+        director.loadScene(this.getSceneName(), function () {
+            BackButton._blockInput.active = false;
         });
     }
 
@@ -115,14 +116,14 @@ export class BackButton extends Component {
         if(game.isPaused()){
             game.resume();
         }
-        BackButton._prevButton.interactable = false;
+        BackButton._blockInput.active = true;
         this.updateSceneIndex(false);
         director.loadScene(this.getSceneName(), function() {
-            BackButton._prevButton.interactable = true;
+            BackButton._blockInput.active = false;
         });
     }
 
-    updateSceneIndex(next:Boolean) {
+    updateSceneIndex (next:Boolean) {
         if (next) {
             (BackButton._sceneIndex + 1) >= sceneArray.length ? BackButton._sceneIndex = 0 : BackButton._sceneIndex += 1;
         }else {
