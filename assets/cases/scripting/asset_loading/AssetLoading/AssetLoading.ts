@@ -121,7 +121,7 @@ export class AssetLoading extends Component {
             case 'Skeleton':
                 loader.loadRes(url, loadCallBack);
                 break;
-            case 'Scene': 
+            case 'Scene':
                 director.loadScene('LoadRes');
                 break;
             case 'CORS':
@@ -140,7 +140,12 @@ export class AssetLoading extends Component {
             log('Error url [' + err + ']');
             return;
         }
-        this._curRes = res;
+        if (this._curType === 'ImageAsset' || this._curType === 'CORS') {
+            this._curRes = new Texture2D();
+            this._curRes.image = res;
+        } else {
+            this._curRes = res;
+        }
         if (this._curType === "Audio") {
             this._btnLabel.string = "播放";
         }
@@ -192,9 +197,7 @@ export class AssetLoading extends Component {
             case "CORS":
                 component = node.addComponent(SpriteComponent);
                 const spriteFrame = new SpriteFrame();
-                const tex = new Texture2D();
-                tex.image = res;
-                spriteFrame.texture = tex;
+                spriteFrame.texture = res;
                 component.spriteFrame = spriteFrame;
                 break;
             case "Audio":
