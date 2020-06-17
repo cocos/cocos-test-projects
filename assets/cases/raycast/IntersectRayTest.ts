@@ -63,15 +63,15 @@ export class IntersectRayTest extends Component {
 
                 const r_cube = map['Cube']
                 const r_cube_nus = map['Cube-non-uniform-scaled']
-                if (r_cube && r_cube_nus) {
-                    if (Math.abs(r_cube - r_cube_nus) > 4) {
-                        this.tips.string = "请建立 issue 并截图。";
-                        this.tips.color = Color.RED;
-                    }
-                }
+                if (r_cube && r_cube_nus) this.testEquals(r_cube, r_cube_nus, 4);
+
 
                 const r = opt.result;
                 const s = opt.subIndices;
+
+                // test dis is equals result[0]
+                this.testEquals(dis, r[0].distance, 0);
+
                 if (me.subMeshCount == 1) {
                     const vertex = new Vec3();
                     const pos = me.renderingSubMeshes[0].geometricInfo.positions;
@@ -118,6 +118,13 @@ export class IntersectRayTest extends Component {
                     this._points[0].active = true;
                 }
             }
+        }
+    }
+
+    private testEquals (a: number, b: number, precision: number) {
+        if (Math.abs(a - b) > precision) {
+            this.tips.string = "请建立 issue 并截图。" + `Math.abs(${a.toPrecision(3)} - ${b.toPrecision(3)}) > ${precision}`;
+            this.tips.color = Color.RED;
         }
     }
 }
