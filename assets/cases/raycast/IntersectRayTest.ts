@@ -1,8 +1,13 @@
-import { _decorator, Component, Node, Prefab, CameraComponent, systemEvent, SystemEventType, EventTouch, geometry, Touch, ModelComponent, instantiate, Vec3, GFXAttributeName, Vec2 } from 'cc';
+import { _decorator, Component, Node, Prefab, CameraComponent, systemEvent, SystemEventType, EventTouch, geometry, Touch, ModelComponent, instantiate, Vec3, GFXAttributeName, Vec2, LabelComponent, Color } from 'cc';
 const { ccclass, property } = _decorator;
+
+const map = {};
 
 @ccclass('IntersectRayTest')
 export class IntersectRayTest extends Component {
+
+    @property({ type: LabelComponent })
+    tips: LabelComponent = null;
 
     @property({ type: Prefab })
     point: Prefab = null;
@@ -46,7 +51,25 @@ export class IntersectRayTest extends Component {
                 'subIndices': [],
                 'doubleSided': false
             }
-            if (geometry.intersect.ray_model(this._ray, mo, opt)) {
+            const dis = geometry.intersect.ray_model(this._ray, mo, opt);
+            if (dis) {
+                console.log(mo.node.name, dis);
+
+                if (mo.node.name == 'Cube') {
+                    map['Cube'] = dis;
+                } else if (mo.node.name == 'Cube-non-uniform-scaled') {
+                    map['Cube-non-uniform-scaled'] = dis;
+                }
+
+                const r_cube = map['Cube']
+                const r_cube_nus = map['Cube-non-uniform-scaled']
+                if (r_cube && r_cube_nus) {
+                    if (Math.abs(r_cube - r_cube_nus) > 4) {
+                        this.tips.string = "请建立 issue 并截图。";
+                        this.tips.color = Color.RED;
+                    }
+                }
+
                 const r = opt.result;
                 const s = opt.subIndices;
                 if (me.subMeshCount == 1) {
