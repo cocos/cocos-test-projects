@@ -2,7 +2,7 @@
   "ver": "1.0.18",
   "importer": "image",
   "imported": true,
-  "uuid": "d925d215-7d2a-47db-9f44-77342d10786e",
+  "uuid": "1db65474-4d2c-4a64-9899-ef62a4818531",
   "files": [
     ".png",
     ".json"
@@ -10,8 +10,8 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "d925d215-7d2a-47db-9f44-77342d10786e@6c48a",
-      "displayName": "sheep_down_0",
+      "uuid": "1db65474-4d2c-4a64-9899-ef62a4818531@6c48a",
+      "displayName": "pvrtc2_rgba",
       "id": "6c48a",
       "name": "texture",
       "ver": "1.0.19",
@@ -29,13 +29,13 @@
         "premultiplyAlpha": false,
         "anisotropy": 1,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "d925d215-7d2a-47db-9f44-77342d10786e"
+        "imageUuidOrDatabaseUri": "1db65474-4d2c-4a64-9899-ef62a4818531"
       }
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "d925d215-7d2a-47db-9f44-77342d10786e@f9941",
-      "displayName": "sheep_down_0",
+      "uuid": "1db65474-4d2c-4a64-9899-ef62a4818531@f9941",
+      "displayName": "pvrtc2_rgba",
       "id": "f9941",
       "name": "spriteFrame",
       "ver": "1.0.8",
@@ -48,12 +48,12 @@
         "trimType": "auto",
         "trimThreshold": 1,
         "rotated": false,
-        "offsetX": 0,
-        "offsetY": -25,
-        "trimX": 2,
-        "trimY": 61,
-        "width": 224,
-        "height": 87,
+        "offsetX": -11.5,
+        "offsetY": -2.5,
+        "trimX": 29,
+        "trimY": 13,
+        "width": 147,
+        "height": 138,
         "rawWidth": 228,
         "rawHeight": 159,
         "borderTop": 0,
@@ -61,24 +61,23 @@
         "borderLeft": 0,
         "borderRight": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "d925d215-7d2a-47db-9f44-77342d10786e@6c48a",
+        "imageUuidOrDatabaseUri": "1db65474-4d2c-4a64-9899-ef62a4818531@6c48a",
         "atlasUuid": ""
       }
     }
   },
   "userData": {
     "type": "sprite-frame",
-    "redirect": "d925d215-7d2a-47db-9f44-77342d10786e@f9941",
+    "redirect": "1db65474-4d2c-4a64-9899-ef62a4818531@f9941",
     "platformSettings": {
-      "html5": {
-        "pvrtc_2bits": "normal",
-        "etc1_rgb": "fast",
+      "default": {
         "png": 80
       },
       "wechat": {
-        "pvrtc_2bits": "normal",
-        "etc1_rgb": "fast",
-        "png": 80
+        "pvrtc_2bits": "normal"
+      },
+      "html5": {
+        "pvrtc_2bits": "normal"
       }
     }
   }
