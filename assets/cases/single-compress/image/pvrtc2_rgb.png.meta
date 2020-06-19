@@ -1,5 +1,5 @@
 {
-  "ver": "1.0.18",
+  "ver": "1.0.19",
   "importer": "image",
   "imported": true,
   "uuid": "3dbe7c1c-4b0d-4b61-bf4c-c7f16deec3c3",
@@ -69,16 +69,10 @@
   "userData": {
     "type": "sprite-frame",
     "redirect": "3dbe7c1c-4b0d-4b61-bf4c-c7f16deec3c3@f9941",
-    "platformSettings": {
-      "default": {
-        "png": 80
-      },
-      "wechat": {
-        "pvrtc_2bits_rgb": "normal"
-      },
-      "html5": {
-        "pvrtc_2bits_rgb": "normal"
-      }
-    }
+    "compressSettings": {
+      "useCompressTexture": true,
+      "compressPresetName": "pvr2rgb"
+    },
+    "hasAlpha": true
   }
 }
