@@ -1,5 +1,5 @@
 {
-  "ver": "1.0.2",
+  "ver": "1.0.3",
   "importer": "auto-atlas",
   "imported": true,
   "uuid": "0d6a7d4c-9e04-4ea0-a0d9-0d3ce6101139",
@@ -20,13 +20,6 @@
     "contourBleed": true,
     "paddingBleed": true,
     "filterUnused": false,
-    "platformSettings": {
-      "html5": {
-        "etc1_rgb": "fast",
-        "pvrtc_4bits": "normal",
-        "png": 80
-      }
-    },
     "textureSetting": {
       "wrapModeS": "repeat",
       "wrapModeT": "repeat",
@@ -35,6 +28,11 @@
       "mipfilter": "none",
       "premultiplyAlpha": false,
       "anisotropy": 1
-    }
+    },
+    "compressSettings": {
+      "useCompressTexture": true,
+      "compressPresetName": "default"
+    },
+    "platformSettings": {}
   }
 }
