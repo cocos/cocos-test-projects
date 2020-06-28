@@ -1,8 +1,8 @@
 {
-  "ver": "1.0.17",
+  "ver": "1.0.19",
   "importer": "image",
   "imported": true,
-  "uuid": "19272444-c230-4d7c-ac92-528de9fd0ea0",
+  "uuid": "a30be7e2-9364-44cf-83b6-7ba8e74f03ea",
   "files": [
     ".png",
     ".json"
@@ -10,8 +10,8 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "19272444-c230-4d7c-ac92-528de9fd0ea0@6c48a",
-      "displayName": "sheep_jump_2",
+      "uuid": "a30be7e2-9364-44cf-83b6-7ba8e74f03ea@6c48a",
+      "displayName": "etc1_rgb_a",
       "id": "6c48a",
       "name": "texture",
       "ver": "1.0.19",
@@ -29,35 +29,31 @@
         "premultiplyAlpha": false,
         "anisotropy": 1,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "19272444-c230-4d7c-ac92-528de9fd0ea0"
+        "imageUuidOrDatabaseUri": "a30be7e2-9364-44cf-83b6-7ba8e74f03ea"
       }
     },
     "f9941": {
-      "ver": "1.0.8",
       "importer": "sprite-frame",
-      "uuid": "19272444-c230-4d7c-ac92-528de9fd0ea0@f9941",
+      "uuid": "a30be7e2-9364-44cf-83b6-7ba8e74f03ea@f9941",
+      "displayName": "etc1_rgb_a",
+      "id": "f9941",
+      "name": "spriteFrame",
+      "ver": "1.0.8",
       "imported": true,
       "files": [
         ".json"
       ],
       "subMetas": {},
       "userData": {
-        "wrapModeS": "repeat",
-        "wrapModeT": "repeat",
-        "minfilter": "linear",
-        "magfilter": "linear",
-        "mipfilter": "none",
-        "premultiplyAlpha": false,
-        "anisotropy": 1,
         "trimType": "auto",
         "trimThreshold": 1,
         "rotated": false,
-        "offsetX": -10,
-        "offsetY": 3.5,
+        "offsetX": -13,
+        "offsetY": 2,
         "trimX": 24,
-        "trimY": 24,
-        "width": 160,
-        "height": 104,
+        "trimY": 12,
+        "width": 154,
+        "height": 131,
         "rawWidth": 228,
         "rawHeight": 159,
         "borderTop": 0,
@@ -65,16 +61,18 @@
         "borderLeft": 0,
         "borderRight": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "19272444-c230-4d7c-ac92-528de9fd0ea0@6c48a",
+        "imageUuidOrDatabaseUri": "a30be7e2-9364-44cf-83b6-7ba8e74f03ea@6c48a",
         "atlasUuid": ""
-      },
-      "displayName": "sheep_jump_2",
-      "id": "f9941",
-      "name": "spriteFrame"
+      }
     }
   },
   "userData": {
     "type": "sprite-frame",
-    "redirect": "19272444-c230-4d7c-ac92-528de9fd0ea0@f9941"
+    "redirect": "a30be7e2-9364-44cf-83b6-7ba8e74f03ea@f9941",
+    "compressSettings": {
+      "useCompressTexture": true,
+      "compressPresetName": "etc1rgb_a"
+    },
+    "hasAlpha": true
   }
 }

@@ -1,5 +1,5 @@
 {
-  "ver": "1.0.18",
+  "ver": "1.0.19",
   "importer": "image",
   "imported": true,
   "uuid": "155efc85-9cf2-42dc-835e-bf79bd8586e7",
@@ -69,16 +69,10 @@
   "userData": {
     "type": "sprite-frame",
     "redirect": "155efc85-9cf2-42dc-835e-bf79bd8586e7@f9941",
-    "platformSettings": {
-      "default": {
-        "png": 80
-      },
-      "wechat": {
-        "etc1_rgb": "fast"
-      },
-      "html5": {
-        "etc1_rgb": "fast"
-      }
-    }
+    "compressSettings": {
+      "useCompressTexture": true,
+      "compressPresetName": "etc1rgb"
+    },
+    "hasAlpha": true
   }
 }
