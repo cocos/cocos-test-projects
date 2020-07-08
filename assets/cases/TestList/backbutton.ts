@@ -19,7 +19,7 @@ export class BackButton extends Component {
         const array: string[] = sceneInfo.map((i) => i.url).sort();
         for (let i = 0;  i< array.length; i++) {
             let str = array[i];
-            if (str.includes("TestList") || str.includes("subPack")) {
+            if (str.includes('TestList') || str.includes('subPack') || str.includes('static-ui-replace')) {
                 continue;
             }
             const firstIndex = str.lastIndexOf('/') + 1;
