@@ -10,19 +10,33 @@ export class AsyncFunctionsTest extends cc.Component {
     
     public start () {
         (async () => { // Directly running an async function should be OK.
-            this.logPanel.addLabel(`Async function starts at ${new Date()}`);
+            this._getLogPanelChecked().addLabel(`Async function starts at ${new Date()}`);
             // cc.log(`Async function starts at ${new Date()}`);
             await sleep(2000);
-            this.logPanel.addLabel(`Async function ends at ${new Date()}(Expected: 2 seconds past)`);
+            this._getLogPanelChecked().addLabel(`Async function ends at ${new Date()}(Expected: 2 seconds past)`);
             // cc.log(`Async function ends at ${new Date()}(Expected: 2 seconds past)`);
 
             try {
-                this.logPanel.addLabel(`Async function(which is throw-ful) starts at ${new Date()}`);
+                this._getLogPanelChecked().addLabel(`Async function(which is throw-ful) starts at ${new Date()}`);
                 await sleepThrow(1000);
             } catch (error) {
-                this.logPanel.addLabel(`Async function(which is throw-ful) throws "${error}" at ${new Date()}(Expected: 1 seconds past)`);
+                this._getLogPanelChecked().addLabel(`Async function(which is throw-ful) throws "${error}" at ${new Date()}(Expected: 1 seconds past)`);
             }
         })();
+    }
+
+    private _getLogPanelChecked () {
+        if (this.isValid) {
+            return this.logPanel;
+        } else {
+            // This may happen if the scene has been destroyed.
+            // For simplification, we return a mocking stuff...
+            return {
+                addLabel() {
+                    // ...
+                },
+            };
+        }
     }
 }
 
