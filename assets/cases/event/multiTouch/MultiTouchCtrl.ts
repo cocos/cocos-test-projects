@@ -1,4 +1,4 @@
-import { _decorator, Component, EventTouch, ToggleComponent, Node, macro } from "cc";
+import { _decorator, Component, systemEvent, SystemEventType, EventTouch, ToggleComponent, Node, macro } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("MultiTouchCtrl")
@@ -8,17 +8,15 @@ export class MultiTouchCtrl extends Component {
     toggle: ToggleComponent = null;
 
     @property(Node)
-    canvas: Node = null;
-
-    @property(Node)
     target: Node = null;
 
     start () {
-        this.canvas.on(Node.EventType.TOUCH_MOVE,this.onTouchMove, this);
+        systemEvent.on(SystemEventType.TOUCH_MOVE,this.onTouchMove, this);
+        this.changeMulit();
     }
 
     onDestroy () {
-        this.canvas.off(Node.EventType.TOUCH_MOVE,this.onTouchMove, this);
+        systemEvent.off(SystemEventType.TOUCH_MOVE,this.onTouchMove, this);
     }
 
     changeMulit () {
@@ -29,7 +27,7 @@ export class MultiTouchCtrl extends Component {
         }
     }
 
-    onTouchMove (event: EventTouch) {
+    onTouchMove (touch: Touch, event: EventTouch) {
         const touches = event.getTouches();
         if (macro.ENABLE_MULTI_TOUCH && touches.length > 1) {
             const touch1 = touches[0];
