@@ -26,6 +26,7 @@ export class ChangeUniform extends Component {
         this.cha = false;
         this.color = new Vec4(1,1,1,1);
         this.spriteCom = this.node.getComponent(SpriteComponent);
+        // this.materialIns = this.spriteCom.sharedMaterial;
         this.materialIns = this.spriteCom.material;
 
         this.schedule(this.changeUni,this.intervalTime,1000,this.startTime);
