@@ -17,6 +17,7 @@ CCEffect %{
       rasterizerState:
         cullMode: none
       properties:
+        mainTexture: { value: white }
         mainColor:   { value: [1, 1, 1, 1], editor: { type: color }}
 }%
 
@@ -54,11 +55,11 @@ CCProgram sprite-vs %{
 CCProgram sprite-fs %{
   precision highp float;
   #include <embedded-alpha>
-  #include <cc-sprite-texture>
 
   in vec4 color;
 
   in vec2 uv0;
+  uniform sampler2D mainTexture;
 
   uniform Constant {
     vec4 mainColor;
@@ -67,7 +68,7 @@ CCProgram sprite-fs %{
   vec4 frag () {
     vec4 o = vec4(1, 1, 1, 1);
 
-    o *= texture(cc_spriteTexture, uv0);
+    o *= texture(mainTexture, uv0);
 
     o *= color;
     o *= mainColor;
