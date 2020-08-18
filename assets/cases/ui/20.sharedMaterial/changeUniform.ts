@@ -33,8 +33,8 @@ export class ChangeUniform extends Component {
     }
 
     changeUni () {
-        if(this.cha) {
-            this.color.set(0,1,0,1);
+        if (this.cha) {
+            this.color.set(1,1,0,1);
         } else {
             this.color.set(1,1,1,1);
         }
