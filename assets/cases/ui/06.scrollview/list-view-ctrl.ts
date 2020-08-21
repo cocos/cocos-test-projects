@@ -6,8 +6,8 @@ const _temp_vec3 = new Vec3();
 @ccclass("ListViewCtrl")
 @menu('UI/ListViewCtrl')
 export class ListViewCtrl extends Component {
-    @property(Node)
-    public itemTemplate: Node  = null;
+    @property(UITransformComponent)
+    public itemTemplate: UITransformComponent  = null;
     @property(ScrollViewComponent)
     public scrollView: ScrollViewComponent  = null;
     @property
@@ -29,7 +29,7 @@ export class ListViewCtrl extends Component {
     @property(LabelComponent)
     lblTotalItems: LabelComponent  = null;
 
-    _content: Node = null;
+    _content: UITransformComponent = null;
     _items: Node[] = [];
     _updateTimer = 0;
     _updateInterval = 0.2;
@@ -47,9 +47,10 @@ export class ListViewCtrl extends Component {
     initialize() {
         this._content.height = this.totalCount * (this.itemTemplate.height + this.spacing) + this.spacing; // get total content height
         for (let i = 0; i < this.spawnCount; ++i) { // spawn items, we only need to do this once
-            let item = instantiate(this.itemTemplate) as Node;
-            this._content.addChild(item);
-            item.setPosition(0, -item.height * (0.5 + i) - this.spacing * (i + 1), 0);
+            let item = instantiate(this.itemTemplate.node) as Node;
+            let itemUITrans = item.getComponent(UITransformComponent);
+            this._content.node.addChild(item);
+            item.setPosition(0, -itemUITrans.height * (0.5 + i) - this.spacing * (i + 1), 0);
             const labelComp = item.getComponentInChildren(LabelComponent);
             labelComp.string = `item_${i}`;
             this._items.push(item);
@@ -69,7 +70,7 @@ export class ListViewCtrl extends Component {
         this._updateTimer = 0;
         let items = this._items;
         let buffer = this.bufferZone;
-        let isDown = this.scrollView.content.position.y < this._lastContentPosY; // scrolling direction
+        let isDown = this._content.node.position.y < this._lastContentPosY; // scrolling direction
         let offset = (this.itemTemplate.height + this.spacing) * items.length;
         for (let i = 0; i < items.length; ++i) {
             let viewPos = this.getPositionInView(items[i]);
@@ -89,7 +90,7 @@ export class ListViewCtrl extends Component {
             }
         }
         // update lastContentPosY
-        this._lastContentPosY = this.scrollView.content.position.y;
+        this._lastContentPosY = this._content.node.position.y;
         this.lblTotalItems.string = "Total Items: " + this.totalCount;
     }
 
