@@ -78,7 +78,7 @@ export class ListViewCtrl extends Component {
             if (isDown) {
                 // if away from buffer zone and not reaching top of content
                 if (viewPos.y < -buffer && _temp_vec3.y + offset < 0) {
-                    _temp_vec3.y += offset
+                    _temp_vec3.y += offset;
                     items[i].setPosition(_temp_vec3);
                 }
             } else {
