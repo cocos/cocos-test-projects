@@ -7,11 +7,14 @@ export class RichTextEvent extends Component {
     @property(Prefab)
     templateTips = null;
 
+    @property(Vec3)
+    position = new Vec3();
+
     onClick (event: string, param: string) {
         let node = instantiate(this.templateTips);
-        node.position = new Vec3(0, 0, 0);
+        node.position = this.position;
         node.parent = find('Canvas');
         let label = node.addComponent(LabelComponent);
-        label.string = 'Duang Duang Duang ';
+        label.string = 'Duang Duang';
     }
 }
