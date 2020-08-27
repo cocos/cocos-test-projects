@@ -6,8 +6,8 @@ const _temp_vec3 = new Vec3();
 @ccclass("ListViewCtrl")
 @menu('UI/ListViewCtrl')
 export class ListViewCtrl extends Component {
-    @property(UITransformComponent)
-    public itemTemplate: UITransformComponent  = null;
+    @property(Node)
+    public itemTemplate: Node  = null;
     @property(ScrollViewComponent)
     public scrollView: ScrollViewComponent  = null;
     @property
@@ -29,11 +29,13 @@ export class ListViewCtrl extends Component {
     @property(LabelComponent)
     lblTotalItems: LabelComponent  = null;
 
-    _content: UITransformComponent = null;
+    _content: Node = null;
     _items: Node[] = [];
     _updateTimer = 0;
     _updateInterval = 0.2;
     _lastContentPosY = 0;
+    _itemTemplateUITrans: UITransformComponent;
+    _contentUITrans: UITransformComponent;
 
     onLoad() {
         this._content = this.scrollView.content;
@@ -45,11 +47,13 @@ export class ListViewCtrl extends Component {
 
     // 初始化 item
     initialize() {
-        this._content.height = this.totalCount * (this.itemTemplate.height + this.spacing) + this.spacing; // get total content height
+        this._itemTemplateUITrans = this.itemTemplate._uiProps.uiTransformComp;
+        this._contentUITrans = this._content._uiProps.uiTransformComp
+        this._contentUITrans.height = this.totalCount * (this._itemTemplateUITrans.height + this.spacing) + this.spacing; // get total content height
         for (let i = 0; i < this.spawnCount; ++i) { // spawn items, we only need to do this once
-            let item = instantiate(this.itemTemplate.node) as Node;
-            let itemUITrans = item.getComponent(UITransformComponent);
-            this._content.node.addChild(item);
+            let item = instantiate(this.itemTemplate) as Node;
+            this._content.addChild(item);
+            let itemUITrans = item._uiProps.uiTransformComp;
             item.setPosition(0, -itemUITrans.height * (0.5 + i) - this.spacing * (i + 1), 0);
             const labelComp = item.getComponentInChildren(LabelComponent);
             labelComp.string = `item_${i}`;
@@ -70,8 +74,8 @@ export class ListViewCtrl extends Component {
         this._updateTimer = 0;
         let items = this._items;
         let buffer = this.bufferZone;
-        let isDown = this._content.node.position.y < this._lastContentPosY; // scrolling direction
-        let offset = (this.itemTemplate.height + this.spacing) * items.length;
+        let isDown = this.scrollView.content.position.y < this._lastContentPosY; // scrolling direction
+        let offset = (this._itemTemplateUITrans.height + this.spacing) * items.length;
         for (let i = 0; i < items.length; ++i) {
             let viewPos = this.getPositionInView(items[i]);
             items[i].getPosition(_temp_vec3);
@@ -83,19 +87,19 @@ export class ListViewCtrl extends Component {
                 }
             } else {
                 // if away from buffer zone and not reaching bottom of content
-                if (viewPos.y > buffer && _temp_vec3.y - offset > -this._content.height) {
+                if (viewPos.y > buffer && _temp_vec3.y - offset > -this._contentUITrans.height) {
                     _temp_vec3.y -= offset;
                     items[i].setPosition(_temp_vec3);
                 }
             }
         }
         // update lastContentPosY
-        this._lastContentPosY = this._content.node.position.y;
+        this._lastContentPosY = this.scrollView.content.position.y;
         this.lblTotalItems.string = "Total Items: " + this.totalCount;
     }
 
     addItem() {
-        this._content.height = (this.totalCount + 1) * (this.itemTemplate.height + this.spacing) + this.spacing; // get total content height
+        this._contentUITrans.height = (this.totalCount + 1) * (this._itemTemplateUITrans.height + this.spacing) + this.spacing; // get total content height
         this.totalCount = this.totalCount + 1;
     }
 
@@ -105,14 +109,14 @@ export class ListViewCtrl extends Component {
             return;
         }
 
-        this._content.height = (this.totalCount - 1) * (this.itemTemplate.height + this.spacing) + this.spacing; // get total content height
+        this._contentUITrans.height = (this.totalCount - 1) * (this._itemTemplateUITrans.height + this.spacing) + this.spacing; // get total content height
         this.totalCount = this.totalCount - 1;
 
         this.moveBottomItemToTop();
     }
 
     moveBottomItemToTop() {
-        let offset = (this.itemTemplate.height + this.spacing) * this._items.length;
+        let offset = (this._itemTemplateUITrans.height + this.spacing) * this._items.length;
         let length = this._items.length;
         let item = this.getItemAtBottom();
         item.getPosition(_temp_vec3);

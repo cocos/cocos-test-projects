@@ -1735,7 +1735,7 @@
     "cancelInnerEvents": true,
     "scrollEvents": [],
     "_content": {
-      "__id__": 37
+      "__id__": 12
     },
     "_horizontalScrollBar": null,
     "_verticalScrollBar": null,
@@ -2157,17 +2157,14 @@
     "ambient": {
       "__id__": 65
     },
-    "planarShadows": {
+    "shadows": {
       "__id__": 66
     },
-    "shadowMap": {
+    "_skybox": {
       "__id__": 67
     },
-    "_skybox": {
-      "__id__": 68
-    },
     "fog": {
-      "__id__": 69
+      "__id__": 68
     }
   },
   {
@@ -2189,7 +2186,8 @@
     }
   },
   {
-    "__type__": "cc.PlanarShadowInfo",
+    "__type__": "cc.ShadowsInfo",
+    "_type": 0,
     "_enabled": false,
     "_normal": {
       "__type__": "cc.Vec3",
@@ -2204,11 +2202,7 @@
       "g": 0,
       "b": 0,
       "a": 76
-    }
-  },
-  {
-    "__type__": "cc.ShadowInfo",
-    "_enabled": false,
+    },
     "_near": 1,
     "_far": 30,
     "_aspect": 1,
