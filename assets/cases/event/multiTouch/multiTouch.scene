@@ -168,6 +168,8 @@
       "__id__": 3
     },
     "_enabled": true,
+    "_materials": [],
+    "_visFlags": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -177,7 +179,6 @@
       "b": 65,
       "a": 255
     },
-    "_sharedMaterial": null,
     "_spriteFrame": {
       "__uuid__": "093b45c8-80d9-49a8-ac5c-bcdbaed2c6bf@f9941"
     },
@@ -302,6 +303,8 @@
       "__id__": 7
     },
     "_enabled": true,
+    "_materials": [],
+    "_visFlags": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -311,7 +314,6 @@
       "b": 255,
       "a": 255
     },
-    "_sharedMaterial": null,
     "_useOriginalSize": true,
     "_string": "多点触控事件，此场景请在手机上测试\n开关打开时可双指缩放图片，关闭时无效",
     "_horizontalAlign": 0,
@@ -433,6 +435,8 @@
       "__id__": 11
     },
     "_enabled": true,
+    "_materials": [],
+    "_visFlags": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -442,7 +446,6 @@
       "b": 255,
       "a": 255
     },
-    "_sharedMaterial": null,
     "_spriteFrame": {
       "__uuid__": "cea506fc-84e0-4e06-aa96-1db22f4e6a74@f9941"
     },
@@ -592,6 +595,8 @@
       "__id__": 15
     },
     "_enabled": true,
+    "_materials": [],
+    "_visFlags": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -601,7 +606,6 @@
       "b": 255,
       "a": 255
     },
-    "_sharedMaterial": null,
     "_spriteFrame": {
       "__uuid__": "158e7e52-3220-4cd7-9694-713e0e6e8278@f9941"
     },
@@ -695,6 +699,8 @@
       "__id__": 18
     },
     "_enabled": true,
+    "_materials": [],
+    "_visFlags": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -704,7 +710,6 @@
       "b": 255,
       "a": 255
     },
-    "_sharedMaterial": null,
     "_useOriginalSize": true,
     "_string": "多点触控开关",
     "_horizontalAlign": 0,
@@ -752,6 +757,8 @@
       "__id__": 14
     },
     "_enabled": true,
+    "_materials": [],
+    "_visFlags": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -761,7 +768,6 @@
       "b": 255,
       "a": 255
     },
-    "_sharedMaterial": null,
     "_spriteFrame": {
       "__uuid__": "11bdc4b0-64a8-4eb7-a2a7-9fb9e233e977@f9941"
     },
@@ -836,7 +842,6 @@
       }
     ],
     "_isChecked": true,
-    "_toggleGroup": null,
     "_checkMark": {
       "__id__": 17
     },
@@ -849,7 +854,7 @@
     },
     "component": "",
     "_componentId": "778bduOkDZEJoQ2kO/MRUcF",
-    "handler": "changeMulit",
+    "handler": "changeMulti",
     "customEventData": ""
   },
   {
@@ -906,9 +911,6 @@
     "toggle": {
       "__id__": 23
     },
-    "canvas": {
-      "__id__": 2
-    },
     "target": {
       "__id__": 11
     },
@@ -961,11 +963,14 @@
     "ambient": {
       "__id__": 30
     },
-    "planarShadows": {
+    "shadows": {
       "__id__": 31
     },
     "_skybox": {
       "__id__": 32
+    },
+    "fog": {
+      "__id__": 33
     }
   },
   {
@@ -987,7 +992,8 @@
     }
   },
   {
-    "__type__": "cc.PlanarShadowInfo",
+    "__type__": "cc.ShadowsInfo",
+    "_type": 0,
     "_enabled": false,
     "_normal": {
       "__type__": "cc.Vec3",
@@ -1002,6 +1008,16 @@
       "g": 0,
       "b": 0,
       "a": 76
+    },
+    "_pcf": 0,
+    "_near": 1,
+    "_far": 30,
+    "_aspect": 1,
+    "_orthoSize": 5,
+    "_size": {
+      "__type__": "cc.Vec2",
+      "x": 512,
+      "y": 512
     }
   },
   {
@@ -1010,5 +1026,23 @@
     "_isRGBE": false,
     "_enabled": false,
     "_useIBL": false
+  },
+  {
+    "__type__": "cc.FogInfo",
+    "_type": 0,
+    "_fogColor": {
+      "__type__": "cc.Color",
+      "r": 200,
+      "g": 200,
+      "b": 200,
+      "a": 255
+    },
+    "_enabled": false,
+    "_fogDensity": 0.3,
+    "_fogStart": 0.5,
+    "_fogEnd": 300,
+    "_fogAtten": 5,
+    "_fogTop": 1.5,
+    "_fogRange": 1.2
   }
 ]
