@@ -922,11 +922,11 @@
     "ambient": {
       "__id__": 30
     },
-    "planarShadows": {
-      "__id__": 31
-    },
     "_skybox": {
       "__id__": 32
+    },
+    "shadows": {
+      "__id__": 31
     }
   },
   {
@@ -948,7 +948,7 @@
     }
   },
   {
-    "__type__": "cc.PlanarShadowInfo",
+    "__type__": "cc.ShadowsInfo",
     "_enabled": false,
     "_normal": {
       "__type__": "cc.Vec3",

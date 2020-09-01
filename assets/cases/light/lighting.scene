@@ -1693,17 +1693,14 @@
     "ambient": {
       "__id__": 66
     },
-    "planarShadows": {
+    "shadows": {
       "__id__": 67
     },
-    "shadowMap": {
+    "_skybox": {
       "__id__": 68
     },
-    "_skybox": {
-      "__id__": 69
-    },
     "fog": {
-      "__id__": 70
+      "__id__": 69
     }
   },
   {
@@ -1725,7 +1722,8 @@
     }
   },
   {
-    "__type__": "cc.PlanarShadowInfo",
+    "__type__": "cc.ShadowsInfo",
+    "_type": 0,
     "_enabled": false,
     "_normal": {
       "__type__": "cc.Vec3",
@@ -1740,11 +1738,8 @@
       "g": 0,
       "b": 0,
       "a": 76
-    }
-  },
-  {
-    "__type__": "cc.ShadowInfo",
-    "_enabled": false,
+    },
+    "_pcf": 0,
     "_near": 1,
     "_far": 30,
     "_aspect": 1,

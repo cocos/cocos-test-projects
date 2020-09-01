@@ -276,6 +276,7 @@
         "__id__": 9
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -359,6 +360,7 @@
         "__id__": 12
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 11.338,
@@ -442,6 +444,7 @@
         "__id__": 15
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -525,6 +528,7 @@
         "__id__": 18
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 1.036,
@@ -608,6 +612,7 @@
         "__id__": 21
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 19.739,
@@ -691,6 +696,7 @@
         "__id__": 24
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": -13.466,
@@ -774,6 +780,7 @@
         "__id__": 27
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -857,6 +864,7 @@
         "__id__": 30
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": -16.1,
@@ -940,6 +948,7 @@
         "__id__": 33
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -4437,7 +4446,7 @@
     },
     "fileId": "65P0UR5KpFbJAFBGFI+i+p",
     "sync": false,
-    "_synced": true
+    "_synced": {}
   },
   {
     "__type__": "cc.Node",
@@ -7876,24 +7885,21 @@
     },
     "fileId": "5fw5RiXGpHyr5X5Bk/BEvj",
     "sync": false,
-    "_synced": true
+    "_synced": {}
   },
   {
     "__type__": "cc.SceneGlobals",
     "ambient": {
       "__id__": 266
     },
-    "planarShadows": {
+    "shadows": {
       "__id__": 267
     },
-    "shadowMap": {
+    "_skybox": {
       "__id__": 268
     },
-    "_skybox": {
-      "__id__": 269
-    },
     "fog": {
-      "__id__": 270
+      "__id__": 269
     }
   },
   {
@@ -7915,7 +7921,8 @@
     }
   },
   {
-    "__type__": "cc.PlanarShadowInfo",
+    "__type__": "cc.ShadowsInfo",
+    "_type": 0,
     "_enabled": false,
     "_normal": {
       "__type__": "cc.Vec3",
@@ -7930,11 +7937,8 @@
       "g": 0,
       "b": 0,
       "a": 76
-    }
-  },
-  {
-    "__type__": "cc.ShadowInfo",
-    "_enabled": false,
+    },
+    "_pcf": 0,
     "_near": 1,
     "_far": 30,
     "_aspect": 1,
