@@ -45,11 +45,11 @@ export class LoadResDirexample extends Component {
         const node = instantiate(this.label);
         const label = node.getComponent(LabelComponent);
         label.string = text;
-        this.scrollView.content.node.addChild(node);
+        this.scrollView.content.addChild(node);
     }
 
     _clear () {
-        this.scrollView.content.node.removeAllChildren(true);
+        this.scrollView.content.removeAllChildren(true);
         for (let i = 0; i < this._assets.length; ++i) {
             const asset = this._assets[i];
             // 需要释放所有资源依赖
