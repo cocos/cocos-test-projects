@@ -87,7 +87,7 @@
     "_id": "c0y6F5f+pAvI805TdmxIjx"
   },
   {
-    "__type__": "cc.DirectionalLightComponent",
+    "__type__": "cc.DirectionalLight",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -159,7 +159,7 @@
     "_id": "c9DMICJLFO5IeO07EPon7U"
   },
   {
-    "__type__": "cc.CameraComponent",
+    "__type__": "cc.Camera",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -276,6 +276,7 @@
         "__id__": 9
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -305,8 +306,8 @@
     "_id": "57BnUwGNxJlqCM6xR6ZAGa"
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Plane<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Plane<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 8
@@ -359,6 +360,7 @@
         "__id__": 12
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 11.338,
@@ -388,8 +390,8 @@
     "_id": "82mg+FW0NOQ7F10YwEUBTx"
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Cube<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Cube<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 11
@@ -442,6 +444,7 @@
         "__id__": 15
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -471,8 +474,8 @@
     "_id": "cb1ilk2gZLD5BYeg4b5sDz"
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Cylinder<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Cylinder<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 14
@@ -525,6 +528,7 @@
         "__id__": 18
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 1.036,
@@ -554,8 +558,8 @@
     "_id": "e01GDVviRCoqEY0YW3sD1c"
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Sphere<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Sphere<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 17
@@ -608,6 +612,7 @@
         "__id__": 21
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 19.739,
@@ -637,8 +642,8 @@
     "_id": "f5D/pR9plEWaB9d3EDKibP"
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Capsule<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Capsule<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 20
@@ -691,6 +696,7 @@
         "__id__": 24
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": -13.466,
@@ -720,8 +726,8 @@
     "_id": "08VcFlz/BMer+5t4yiqtVy"
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Cone<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Cone<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 23
@@ -774,6 +780,7 @@
         "__id__": 27
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -803,8 +810,8 @@
     "_id": "bd6ritQbJDu5qLi6vPUor1"
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Torus<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Torus<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 26
@@ -857,6 +864,7 @@
         "__id__": 30
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": -16.1,
@@ -886,8 +894,8 @@
     "_id": "4b0EohkYlAqrZEyGfRpAQM"
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Quad<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Quad<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 29
@@ -940,6 +948,7 @@
         "__id__": 33
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -969,7 +978,7 @@
     "_id": "f7W7xHPyxMbbSyoa7pR4L0"
   },
   {
-    "__type__": "cc.SphereLightComponent",
+    "__type__": "cc.SphereLight",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -4205,7 +4214,7 @@
     "_id": "2esMt4AnBGxpl1vgwPDEzT"
   },
   {
-    "__type__": "cc.SkinningModelComponent",
+    "__type__": "cc.SkinnedMeshRenderer",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -4321,7 +4330,7 @@
     "_id": "40ytsTvE5GB4OBLKYsrqiT"
   },
   {
-    "__type__": "cc.SkinningModelComponent",
+    "__type__": "cc.SkinnedMeshRenderer",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -4383,7 +4392,7 @@
     }
   },
   {
-    "__type__": "cc.SkeletalAnimationComponent",
+    "__type__": "cc.SkeletalAnimation",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -4437,7 +4446,7 @@
     },
     "fileId": "65P0UR5KpFbJAFBGFI+i+p",
     "sync": false,
-    "_synced": true
+    "_synced": {}
   },
   {
     "__type__": "cc.Node",
@@ -7644,7 +7653,7 @@
     "_id": "20jIdAWAlLjaEOlRfckVMl"
   },
   {
-    "__type__": "cc.SkinningModelComponent",
+    "__type__": "cc.SkinnedMeshRenderer",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -7760,7 +7769,7 @@
     "_id": "f7jKYm48hM2LkYQbFdf3hs"
   },
   {
-    "__type__": "cc.SkinningModelComponent",
+    "__type__": "cc.SkinnedMeshRenderer",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -7822,7 +7831,7 @@
     }
   },
   {
-    "__type__": "cc.SkeletalAnimationComponent",
+    "__type__": "cc.SkeletalAnimation",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -7876,24 +7885,21 @@
     },
     "fileId": "5fw5RiXGpHyr5X5Bk/BEvj",
     "sync": false,
-    "_synced": true
+    "_synced": {}
   },
   {
     "__type__": "cc.SceneGlobals",
     "ambient": {
       "__id__": 266
     },
-    "planarShadows": {
+    "shadows": {
       "__id__": 267
     },
-    "shadowMap": {
+    "_skybox": {
       "__id__": 268
     },
-    "_skybox": {
-      "__id__": 269
-    },
     "fog": {
-      "__id__": 270
+      "__id__": 269
     }
   },
   {
@@ -7915,7 +7921,8 @@
     }
   },
   {
-    "__type__": "cc.PlanarShadowInfo",
+    "__type__": "cc.ShadowsInfo",
+    "_type": 0,
     "_enabled": false,
     "_normal": {
       "__type__": "cc.Vec3",
@@ -7930,11 +7937,8 @@
       "g": 0,
       "b": 0,
       "a": 76
-    }
-  },
-  {
-    "__type__": "cc.ShadowInfo",
-    "_enabled": false,
+    },
+    "_pcf": 0,
     "_near": 1,
     "_far": 30,
     "_aspect": 1,
