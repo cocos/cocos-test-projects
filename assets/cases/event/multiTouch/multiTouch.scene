@@ -168,6 +168,8 @@
       "__id__": 3
     },
     "_enabled": true,
+    "_materials": [],
+    "_visFlags": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -177,7 +179,6 @@
       "b": 65,
       "a": 255
     },
-    "_sharedMaterial": null,
     "_spriteFrame": {
       "__uuid__": "093b45c8-80d9-49a8-ac5c-bcdbaed2c6bf@f9941"
     },
@@ -221,6 +222,7 @@
     "_originalWidth": 2,
     "_originalHeight": 2,
     "_alignMode": 1,
+    "_lockFlags": 0,
     "_id": "f64aRRTVlFk4e+RyFomSup"
   },
   {
@@ -247,7 +249,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 175.537,
-      "y": -221.793,
+      "y": -216.59300000000002,
       "z": 0
     },
     "_lrot": {
@@ -283,8 +285,8 @@
     "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 550,
-      "height": 160
+      "width": 450,
+      "height": 90.4
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -301,6 +303,8 @@
       "__id__": 7
     },
     "_enabled": true,
+    "_materials": [],
+    "_visFlags": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -310,9 +314,8 @@
       "b": 255,
       "a": 255
     },
-    "_sharedMaterial": null,
     "_useOriginalSize": true,
-    "_string": "多点触控事件，此场景请在手机上测试\n如遇到输出消失快的情况请尝试从一点逐个增加触\n摸点数量，输出也会逐个增加\n左侧开关关闭时，多指点击屏幕也只会有一行结果",
+    "_string": "多点触控事件，此场景请在手机上测试\n开关打开时可双指缩放图片，关闭时无效",
     "_horizontalAlign": 0,
     "_verticalAlign": 1,
     "_actualFontSize": 25,
@@ -342,7 +345,7 @@
     "_left": 0,
     "_right": 0,
     "_top": 0,
-    "_bottom": 18.207000000000022,
+    "_bottom": 58.20700000000002,
     "_horizontalCenter": 0,
     "_verticalCenter": 0,
     "_isAbsLeft": true,
@@ -354,11 +357,12 @@
     "_originalWidth": 0,
     "_originalHeight": 0,
     "_alignMode": 1,
+    "_lockFlags": 0,
     "_id": "d3szBXpTRLQq1oeiNhA41Z"
   },
   {
     "__type__": "cc.Node",
-    "_name": "receive",
+    "_name": "content",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
@@ -393,14 +397,14 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 1082130432,
+    "_layer": 1073741824,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
       "z": 0
     },
-    "_id": "76CxqlGZlNC55pe0f9Etde"
+    "_id": "a9EIzeTTNIZo2ZuA4NcOkn"
   },
   {
     "__type__": "cc.UITransformComponent",
@@ -413,24 +417,26 @@
     "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 118.37,
-      "height": 50
+      "width": 256,
+      "height": 256
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
       "x": 0.5,
       "y": 0.5
     },
-    "_id": "b2gWFXkZlO+7V2q/U3oTfJ"
+    "_id": "a1Yi3hxApKpquHaPJhzAvO"
   },
   {
-    "__type__": "cc.LabelComponent",
+    "__type__": "cc.SpriteComponent",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 11
     },
     "_enabled": true,
+    "_materials": [],
+    "_visFlags": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -440,24 +446,23 @@
       "b": 255,
       "a": 255
     },
-    "_sharedMaterial": null,
-    "_useOriginalSize": true,
-    "_string": "Receiver",
-    "_horizontalAlign": 1,
-    "_verticalAlign": 1,
-    "_actualFontSize": 30,
-    "_fontSize": 30,
-    "_fontFamily": "Arial",
-    "_lineHeight": 50,
-    "_overflow": 0,
-    "_enableWrapText": true,
-    "_font": null,
-    "_isSystemFontUsed": true,
-    "_isItalic": false,
-    "_isBold": false,
-    "_isUnderline": false,
-    "_cacheMode": 0,
-    "_id": "b5AbmyN8xEN5l4IW+lPXhU"
+    "_spriteFrame": {
+      "__uuid__": "cea506fc-84e0-4e06-aa96-1db22f4e6a74@f9941"
+    },
+    "_type": 0,
+    "_fillType": 0,
+    "_sizeMode": 0,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_useGrayscale": false,
+    "_atlas": null,
+    "_id": "87LcGPzbxH1bNeozXhMu33"
   },
   {
     "__type__": "cc.Node",
@@ -590,6 +595,8 @@
       "__id__": 15
     },
     "_enabled": true,
+    "_materials": [],
+    "_visFlags": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -599,7 +606,6 @@
       "b": 255,
       "a": 255
     },
-    "_sharedMaterial": null,
     "_spriteFrame": {
       "__uuid__": "158e7e52-3220-4cd7-9694-713e0e6e8278@f9941"
     },
@@ -676,7 +682,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 180,
-      "height": 40
+      "height": 50.4
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -693,6 +699,8 @@
       "__id__": 18
     },
     "_enabled": true,
+    "_materials": [],
+    "_visFlags": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -702,7 +710,6 @@
       "b": 255,
       "a": 255
     },
-    "_sharedMaterial": null,
     "_useOriginalSize": true,
     "_string": "多点触控开关",
     "_horizontalAlign": 0,
@@ -750,6 +757,8 @@
       "__id__": 14
     },
     "_enabled": true,
+    "_materials": [],
+    "_visFlags": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -759,7 +768,6 @@
       "b": 255,
       "a": 255
     },
-    "_sharedMaterial": null,
     "_spriteFrame": {
       "__uuid__": "11bdc4b0-64a8-4eb7-a2a7-9fb9e233e977@f9941"
     },
@@ -834,7 +842,6 @@
       }
     ],
     "_isChecked": true,
-    "_toggleGroup": null,
     "_checkMark": {
       "__id__": 17
     },
@@ -847,7 +854,7 @@
     },
     "component": "",
     "_componentId": "778bduOkDZEJoQ2kO/MRUcF",
-    "handler": "changeMulit",
+    "handler": "changeMulti",
     "customEventData": ""
   },
   {
@@ -901,17 +908,17 @@
       "__id__": 25
     },
     "_enabled": true,
-    "labelShow": {
-      "__id__": 13
-    },
     "toggle": {
       "__id__": 23
+    },
+    "target": {
+      "__id__": 11
     },
     "_id": "27f7K898RF2I7BuTQWwdWA"
   },
   {
     "__type__": "cc.UITransformComponent",
-    "_name": "",
+    "_name": "Canvas<UITransformComponent>",
     "_objFlags": 0,
     "node": {
       "__id__": 2
@@ -932,7 +939,7 @@
   },
   {
     "__type__": "cc.CanvasComponent",
-    "_name": "",
+    "_name": "Canvas<CanvasComponent>",
     "_objFlags": 0,
     "node": {
       "__id__": 2
@@ -956,11 +963,14 @@
     "ambient": {
       "__id__": 30
     },
-    "planarShadows": {
+    "shadows": {
       "__id__": 31
     },
     "_skybox": {
       "__id__": 32
+    },
+    "fog": {
+      "__id__": 33
     }
   },
   {
@@ -982,7 +992,8 @@
     }
   },
   {
-    "__type__": "cc.PlanarShadowInfo",
+    "__type__": "cc.ShadowsInfo",
+    "_type": 0,
     "_enabled": false,
     "_normal": {
       "__type__": "cc.Vec3",
@@ -997,6 +1008,16 @@
       "g": 0,
       "b": 0,
       "a": 76
+    },
+    "_pcf": 0,
+    "_near": 1,
+    "_far": 30,
+    "_aspect": 1,
+    "_orthoSize": 5,
+    "_size": {
+      "__type__": "cc.Vec2",
+      "x": 512,
+      "y": 512
     }
   },
   {
@@ -1005,5 +1026,23 @@
     "_isRGBE": false,
     "_enabled": false,
     "_useIBL": false
+  },
+  {
+    "__type__": "cc.FogInfo",
+    "_type": 0,
+    "_fogColor": {
+      "__type__": "cc.Color",
+      "r": 200,
+      "g": 200,
+      "b": 200,
+      "a": 255
+    },
+    "_enabled": false,
+    "_fogDensity": 0.3,
+    "_fogStart": 0.5,
+    "_fogEnd": 300,
+    "_fogAtten": 5,
+    "_fogTop": 1.5,
+    "_fogRange": 1.2
   }
 ]

@@ -1,7 +1,7 @@
 import { _decorator, Component, Node, SpriteComponent, SpriteFrame, CanvasComponent, RenderTexture, view, cclegacy } from "cc";
 const { ccclass, property, menu } = _decorator;
 
-@ccclass("RenderUIToSpriteFrame")
+@ccclass('RenderUIToSpriteFrame')
 @menu('RenderTexture/RenderUIToSpriteFrame')
 export class RenderUIToSpriteFrame extends Component {
     /* class member could be defined like this */

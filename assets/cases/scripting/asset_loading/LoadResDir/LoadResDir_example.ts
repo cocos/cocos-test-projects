@@ -36,18 +36,18 @@ export class LoadResDirexample extends Component {
         this.scrollView.content.height = 0;
         this.btnClearAll.active = false;
     }
- 
+
     onLoad () {
         this._init();
     }
- 
+
     _createLabel (text) {
         const node = instantiate(this.label);
         const label = node.getComponent(LabelComponent);
         label.string = text;
         this.scrollView.content.addChild(node);
     }
- 
+
     _clear () {
         this.scrollView.content.removeAllChildren(true);
         for (let i = 0; i < this._assets.length; ++i) {
@@ -74,27 +74,27 @@ export class LoadResDirexample extends Component {
         }
         cache = [];
     }
- 
+
     onClearAll () {
         this.scrollView.content.height = 0;
         this.btnClearAll.active = false;
         this._clear();
     }
- 
+
     onLoadAll () {
         if (this._hasLoading) { return; }
         this._hasLoading = true;
- 
+
         this._clear();
         this._createLabel("Load All Assets");
         this.scrollView.scrollToTop();
         this.btnClearAll.active = false;  // 防止加载的过程中清除资源
- 
+
         loader.loadResDir("test_assets", (err, assets) => {
             if (!this.isValid) {
                 return;
             }
- 
+
             this._assets = assets;
             for (var i = 0; i < assets.length; ++i) {
                 var asset = assets[i];
@@ -113,16 +113,16 @@ export class LoadResDirexample extends Component {
             this.btnClearAll.active = true;
         });
     }
- 
+
     onLoadSpriteFrameAll () {
         if (this._hasLoading) { return; }
         this._hasLoading = true;
- 
+
         this._clear();
         this._createLabel("Load All Sprite Frame");
         this.scrollView.scrollToTop();
         this.btnClearAll.active = false;  // 防止加载的过程中清除资源
- 
+
         loader.loadResDir("test_assets", SpriteFrame, (err, assets) => {
             if (!this.isValid) {
                 return;

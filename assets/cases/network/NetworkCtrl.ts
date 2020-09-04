@@ -1,4 +1,4 @@
-import { _decorator, Component, LabelComponent, Asset, assert, loader } from 'cc';
+import { _decorator, Component, LabelComponent, Asset, assert, loader, sys } from 'cc';
 const { ccclass, property } = _decorator;
 
 // imported from socket-io.js
@@ -19,7 +19,7 @@ export class NetworkCtrl extends Component {
     @property({type: LabelComponent})
     websocket: LabelComponent = null;
 
-    @property({type: cc.Asset})
+    @property({type: Asset})
     wssCacert: Asset = null;
 
     private  _reconnectCount = 0;
@@ -65,11 +65,11 @@ export class NetworkCtrl extends Component {
     }
 
     sendXHR () {
-        let xhr = cc.loader.getXMLHttpRequest();
+        let xhr = loader.getXMLHttpRequest();
         this.streamXHREventsToLabel(xhr, this.xhr, 'GET');
 
         xhr.open('GET', 'https://httpbin.org/get?show_env=1', true);
-        if (cc.sys.isNative) {
+        if (sys.isNative) {
             xhr.setRequestHeader('Accept-Encoding','gzip,deflate');
         }
 
@@ -82,7 +82,7 @@ export class NetworkCtrl extends Component {
     }
 
     sendXHRAB () {
-        let xhr = cc.loader.getXMLHttpRequest();
+        let xhr = loader.getXMLHttpRequest();
         this.streamXHREventsToLabel(xhr, this.xhrAB, 'POST');
 
         xhr.open('POST', 'https://httpbin.org/post');
