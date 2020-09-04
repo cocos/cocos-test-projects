@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, SpriteFrame, SpriteComponent, LabelComponent, UIStaticBatchComponent, director } from "cc";
+import { _decorator, Component, Node, SpriteFrame, SpriteComponent, LabelComponent, UIStaticBatchComponent, director, sys } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("StaticUI")
@@ -16,7 +16,7 @@ export class StaticUI extends Component {
     start () {
         this.scheduleOnce(this.func, 1.5);
 
-        const local = cc.sys.localStorage;
+        const local = sys.localStorage;
         const item = local.getItem('ui-static-level');
         if (item) {
             this.tipLabel.string = `第 ${parseInt(item)} 次切回`;
@@ -31,7 +31,7 @@ export class StaticUI extends Component {
     }
 
     func() {
-        const local = cc.sys.localStorage;
+        const local = sys.localStorage;
         const item = local.getItem('ui-static-level');
         if (item) {
             let level = parseInt(item);

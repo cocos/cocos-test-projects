@@ -1,5 +1,5 @@
 
-import { _decorator, CameraComponent, CanvasComponent, Color, Component, Font, LabelComponent, Node, Vec3 } from 'cc';
+import { _decorator, CameraComponent, CanvasComponent, Color, Component, Font, LabelComponent, Node, Vec3, quat } from 'cc';
 const { ccclass, property, menu } = _decorator;
 
 @ccclass('LabelModelComponent')
@@ -66,7 +66,7 @@ export class LabelModelComponent extends Component {
 
     private _label: LabelComponent | null = null;
     private _camera: CameraComponent | null = null;
-    private _worldRot = cc.quat();
+    private _worldRot = quat();
     private _lastCameraWpos = new Vec3();
     private _wpos = new Vec3();
     private _cameraWpos = new Vec3();

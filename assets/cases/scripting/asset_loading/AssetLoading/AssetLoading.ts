@@ -214,7 +214,7 @@ export class AssetLoading extends Component {
                 break;
             case "Material":
                 component = node.addComponent(SpriteComponent);
-                component.sharedMaterial = res;
+                component.sharedMaterials = res;
                 component.spriteFrame = this.loadMaterialSpriteFrame;
                 break;
             case "Font":

@@ -1,7 +1,7 @@
 import { _decorator, Component, Node, ModelComponent, CanvasComponent, RenderTexture, view, cclegacy } from "cc";
 const { ccclass, property, menu } = _decorator;
 
-@ccclass("RenderUIToModel")
+@ccclass('RenderUIToModel')
 @menu('RenderTexture/RenderUIToModel')
 export class RenderUIToModel extends Component {
     /* class member could be defined like this */
@@ -34,13 +34,9 @@ export class RenderUIToModel extends Component {
         mat.setProperty('mainTexture', tex);
     }
 
-    onDestroy(){
+    onDestroy () {
         if(this.renderTexture){
             this.renderTexture.destroy();
         }
     }
-
-    // update (deltaTime: number) {
-    //     // Your update function goes here.
-    // }
 }

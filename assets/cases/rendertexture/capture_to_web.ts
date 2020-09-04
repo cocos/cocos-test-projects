@@ -1,7 +1,7 @@
 import { _decorator, Component, Node, RenderTexture, SpriteComponent, CameraComponent, SpriteFrame, cclegacy } from "cc";
 const { ccclass, property, menu } = _decorator;
 
-@ccclass("CaptureToWeb")
+@ccclass('CaptureToWeb')
 @menu('RenderTexture/CaptureToWeb')
 export class CaptureToWeb extends Component {
     @property(SpriteComponent)

@@ -1,7 +1,7 @@
 import { _decorator, Component, Node, RenderTexture, CameraComponent, ModelComponent, cclegacy } from "cc";
 const { ccclass, property, menu } = _decorator;
 
-@ccclass("RenderCameraToModel")
+@ccclass('RenderCameraToModel')
 @menu('RenderTexture/RenderCameraToModel')
 export class RenderCameraToModel extends Component {
     /* class member could be defined like this */
