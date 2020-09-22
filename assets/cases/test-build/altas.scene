@@ -78,7 +78,7 @@
     "_id": "c0y6F5f+pAvI805TdmxIjx"
   },
   {
-    "__type__": "cc.DirectionalLightComponent",
+    "__type__": "cc.DirectionalLight",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -141,7 +141,7 @@
     "_id": "c9DMICJLFO5IeO07EPon7U"
   },
   {
-    "__type__": "cc.CameraComponent",
+    "__type__": "cc.Camera",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -275,7 +275,7 @@
     "_id": "batBhcSptEOoFE2ug/VdaA"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -296,7 +296,7 @@
     "_priority": 0
   },
   {
-    "__type__": "cc.SpriteComponent",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -378,7 +378,7 @@
     "_id": "2c3gIADBpNbr7YYhvsWjpL"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -399,7 +399,7 @@
     "_priority": 0
   },
   {
-    "__type__": "cc.LabelComponent",
+    "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -435,7 +435,7 @@
     "_id": "01tS7mnFBFGbyLPi2Jnb5y"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -455,7 +455,7 @@
     "_id": "68Eowam0RDOYoF/Qa7OHg/"
   },
   {
-    "__type__": "cc.CanvasComponent",
+    "__type__": "cc.Canvas",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -480,11 +480,11 @@
     "ambient": {
       "__id__": 16
     },
-    "planarShadows": {
-      "__id__": 18
-    },
     "_skybox": {
       "__id__": 17
+    },
+    "shadows": {
+      "__id__": 18
     }
   },
   {
@@ -513,7 +513,7 @@
     "_useIBL": false
   },
   {
-    "__type__": "cc.PlanarShadowInfo",
+    "__type__": "cc.ShadowsInfo",
     "_enabled": false,
     "_normal": {
       "__type__": "cc.Vec3",
