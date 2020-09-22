@@ -15,7 +15,8 @@ export class MorphCapability extends Component {
     start () {
         // Your initialization goes here.
         const device = director.root.device;
-        this.tip.string = `Morph is supported: ${device.hasFeature(GFXFeature.TEXTURE_FLOAT)}`;
+        // After v1.2, morph should be supported on all platforms
+        // this.tip.string = `Morph is supported: ${device.hasFeature(GFXFeature.TEXTURE_FLOAT)}`;
     }
 
     // update (deltaTime: number) {
