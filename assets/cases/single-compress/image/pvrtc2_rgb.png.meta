@@ -1,5 +1,5 @@
 {
-  "ver": "1.0.18",
+  "ver": "1.0.21",
   "importer": "image",
   "imported": true,
   "uuid": "3dbe7c1c-4b0d-4b61-bf4c-c7f16deec3c3",
@@ -14,7 +14,7 @@
       "displayName": "pvrtc2_rgb",
       "id": "6c48a",
       "name": "texture",
-      "ver": "1.0.19",
+      "ver": "1.0.20",
       "imported": true,
       "files": [
         ".json"
@@ -69,16 +69,10 @@
   "userData": {
     "type": "sprite-frame",
     "redirect": "3dbe7c1c-4b0d-4b61-bf4c-c7f16deec3c3@f9941",
-    "platformSettings": {
-      "default": {
-        "png": 80
-      },
-      "wechat": {
-        "pvrtc_2bits_rgb": "normal"
-      },
-      "html5": {
-        "pvrtc_2bits_rgb": "normal"
-      }
-    }
+    "compressSettings": {
+      "useCompressTexture": true,
+      "presetId": "13557f486bcc25b285cba9223b3377a8"
+    },
+    "hasAlpha": true
   }
 }

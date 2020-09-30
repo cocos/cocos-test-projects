@@ -107,7 +107,7 @@
     "_id": "c0y6F5f+pAvI805TdmxIjx"
   },
   {
-    "__type__": "cc.DirectionalLightComponent",
+    "__type__": "cc.DirectionalLight",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -170,7 +170,7 @@
     "_id": "c9DMICJLFO5IeO07EPon7U"
   },
   {
-    "__type__": "cc.CameraComponent",
+    "__type__": "cc.Camera",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -276,7 +276,7 @@
     "_id": "7aKuGVyINNf7C9L7UnH3Mj"
   },
   {
-    "__type__": "cc.ModelComponent",
+    "__type__": "cc.MeshRenderer",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -298,7 +298,7 @@
     "_id": "a6WAz3EHdC2Z2RvR1t8RWS"
   },
   {
-    "__type__": "cc.AnimationComponent",
+    "__type__": "cc.Animation",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -357,8 +357,8 @@
     "_id": "07q348tgZKObIz2wQ/Y7GS"
   },
   {
-    "__type__": "cc.AnimationComponent",
-    "_name": "TestNode(Animation Editor Case)<AnimationComponent>",
+    "__type__": "cc.Animation",
+    "_name": "TestNode(Animation Editor Case)<Animation>",
     "_objFlags": 0,
     "node": {
       "__id__": 10
@@ -376,7 +376,7 @@
     "_id": "82rcUttdRMRrtI/xfrP3b8"
   },
   {
-    "__type__": "cc.ModelComponent",
+    "__type__": "cc.MeshRenderer",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -402,11 +402,11 @@
     "ambient": {
       "__id__": 14
     },
-    "planarShadows": {
-      "__id__": 16
-    },
     "_skybox": {
       "__id__": 15
+    },
+    "shadows": {
+      "__id__": 16
     }
   },
   {
@@ -435,7 +435,7 @@
     "_useIBL": false
   },
   {
-    "__type__": "cc.PlanarShadowInfo",
+    "__type__": "cc.ShadowsInfo",
     "_enabled": false,
     "_normal": {
       "__type__": "cc.Vec3",

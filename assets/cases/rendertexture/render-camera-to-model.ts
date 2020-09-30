@@ -1,7 +1,7 @@
-import { _decorator, Component, Node, RenderTexture, CameraComponent, ModelComponent } from "cc";
+import { _decorator, Component, RenderTexture, CameraComponent, ModelComponent } from 'cc';
 const { ccclass, property, menu } = _decorator;
 
-@ccclass("RenderCameraToModel")
+@ccclass('RenderCameraToModel')
 @menu('RenderTexture/RenderCameraToModel')
 export class RenderCameraToModel extends Component {
     /* class member could be defined like this */
@@ -19,14 +19,12 @@ export class RenderCameraToModel extends Component {
         renderTex.reset({
             width: 256,
             height: 256,
-            colorFormat: RenderTexture.PixelFormat.RGBA8888,
-            depthStencilFormat: RenderTexture.DepthStencilFormat.DEPTH_24_STENCIL_8,
         });
         const cameraComp = this.getComponent(CameraComponent);
         cameraComp.targetTexture = renderTex;
         const pass = this.model.material.passes[0];
         const binding = pass.getBinding('mainTexture');
-        pass.bindTextureView(binding, renderTex.getGFXTextureView());
+        pass.bindTexture(binding, renderTex.getGFXTexture());
     }
 
     // update (deltaTime: number) {

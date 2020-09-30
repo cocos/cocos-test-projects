@@ -81,7 +81,7 @@
     "_id": "c0y6F5f+pAvI805TdmxIjx"
   },
   {
-    "__type__": "cc.DirectionalLightComponent",
+    "__type__": "cc.DirectionalLight",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -153,7 +153,7 @@
     "_id": "c9DMICJLFO5IeO07EPon7U"
   },
   {
-    "__type__": "cc.CameraComponent",
+    "__type__": "cc.Camera",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -295,8 +295,8 @@
     "_id": "0dgpl8US9BRLnZwkuLgMgd"
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Cube<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Cube<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 8
@@ -391,8 +391,8 @@
     "_id": "a9Jg5yuH1EAJEGWuXBU7Ob"
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Cube<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Cube<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 12
@@ -487,8 +487,8 @@
     "_id": "d49VRno3JLZr+8t6GqfGTp"
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Torus<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Torus<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 16
@@ -1869,7 +1869,7 @@
     "_id": "fabe1E/QVE3KsK5e1CjI3Y"
   },
   {
-    "__type__": "cc.SkinningModelComponent",
+    "__type__": "cc.SkinnedMeshRenderer",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -2119,8 +2119,8 @@
     }
   },
   {
-    "__type__": "cc.SkeletalAnimationComponent",
-    "_name": "BrainStem<SkeletalAnimationComponent>",
+    "__type__": "cc.SkeletalAnimation",
+    "_name": "BrainStem<SkeletalAnimation>",
     "_objFlags": 0,
     "node": {
       "__id__": 20
@@ -2171,7 +2171,7 @@
     "_id": "4f4Nl7ukhAsbP/f4ulnTkd"
   },
   {
-    "__type__": "cc.LabelComponent",
+    "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -2303,7 +2303,7 @@
     "_id": "2dXimLo/dB7aFIfNKm7/3n"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -2324,7 +2324,7 @@
     "_id": "52kyH23SBH75PXQz0qqjy7"
   },
   {
-    "__type__": "cc.CanvasComponent",
+    "__type__": "cc.Canvas",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -2345,7 +2345,7 @@
     "_id": "72neHCRNZEY7TxSe+k0U+E"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -2370,11 +2370,11 @@
     "ambient": {
       "__id__": 77
     },
-    "planarShadows": {
-      "__id__": 78
-    },
     "_skybox": {
       "__id__": 79
+    },
+    "shadows": {
+      "__id__": 78
     }
   },
   {
@@ -2396,7 +2396,7 @@
     }
   },
   {
-    "__type__": "cc.PlanarShadowInfo",
+    "__type__": "cc.ShadowsInfo",
     "_enabled": false,
     "_normal": {
       "__type__": "cc.Vec3",

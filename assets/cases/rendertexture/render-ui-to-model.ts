@@ -1,7 +1,7 @@
-import { _decorator, Component, Node, ModelComponent, CanvasComponent, RenderTexture, view } from "cc";
+import { _decorator, Component, ModelComponent, CanvasComponent, RenderTexture, view } from 'cc';
 const { ccclass, property, menu } = _decorator;
 
-@ccclass("RenderUIToModel")
+@ccclass('RenderUIToModel')
 @menu('RenderTexture/RenderUIToModel')
 export class RenderUIToModel extends Component {
     /* class member could be defined like this */
@@ -23,8 +23,6 @@ export class RenderUIToModel extends Component {
         tex.reset({
             width: size.width,
             height: size.height,
-            colorFormat: RenderTexture.PixelFormat.RGBA8888,
-            depthStencilFormat: RenderTexture.DepthStencilFormat.DEPTH_24_STENCIL_8,
         });
 
         this.renderTexture = tex;
@@ -34,13 +32,9 @@ export class RenderUIToModel extends Component {
         mat.setProperty('mainTexture', tex);
     }
 
-    onDestroy(){
+    onDestroy () {
         if(this.renderTexture){
             this.renderTexture.destroy();
         }
     }
-
-    // update (deltaTime: number) {
-    //     // Your update function goes here.
-    // }
 }

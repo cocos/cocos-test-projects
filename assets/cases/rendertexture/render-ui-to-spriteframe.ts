@@ -1,7 +1,7 @@
-import { _decorator, Component, Node, SpriteComponent, SpriteFrame, CanvasComponent, RenderTexture, view } from "cc";
+import { _decorator, Component, Node, SpriteComponent, SpriteFrame, CanvasComponent, RenderTexture, view, cclegacy } from 'cc';
 const { ccclass, property, menu } = _decorator;
 
-@ccclass("RenderUIToSpriteFrame")
+@ccclass('RenderUIToSpriteFrame')
 @menu('RenderTexture/RenderUIToSpriteFrame')
 export class RenderUIToSpriteFrame extends Component {
     /* class member could be defined like this */
@@ -32,8 +32,6 @@ export class RenderUIToSpriteFrame extends Component {
         renderTex.reset({
             width: size.width,
             height: size.height,
-            colorFormat: RenderTexture.PixelFormat.RGBA8888,
-            depthStencilFormat: RenderTexture.DepthStencilFormat.DEPTH_24_STENCIL_8
         });
 
         const cameraComp = this.getComponent(CanvasComponent);

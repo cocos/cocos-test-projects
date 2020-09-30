@@ -1,4 +1,4 @@
-import { _decorator, Component, game } from "cc";
+import { _decorator, Component, game, Game } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("button")
@@ -10,11 +10,11 @@ export class button extends Component {
     private isPaused =false;
     start () {
         // Your initialization goes here.
-        game.on(cc.Game.EVENT_SHOW, this.resumeState, this);
+        game.on(Game.EVENT_SHOW, this.resumeState, this);
     }
 
     onDestroy () {
-        game.off(cc.Game.EVENT_SHOW, this.resumeState, this);
+        game.off(Game.EVENT_SHOW, this.resumeState, this);
     }
 
     resumeState () {

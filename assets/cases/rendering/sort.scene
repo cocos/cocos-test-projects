@@ -110,7 +110,7 @@
     "_id": "c0y6F5f+pAvI805TdmxIjx"
   },
   {
-    "__type__": "cc.DirectionalLightComponent",
+    "__type__": "cc.DirectionalLight",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -176,7 +176,7 @@
     "_id": "c9DMICJLFO5IeO07EPon7U"
   },
   {
-    "__type__": "cc.CameraComponent",
+    "__type__": "cc.Camera",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -315,8 +315,8 @@
     "_id": "6a25bO/V9MZpVkUlPln4LE"
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Sphere<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Sphere<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 8
@@ -379,8 +379,8 @@
     "_id": "7bcr4ngsNLNZsxLSuWE2Q/"
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Quad<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Quad<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 10
@@ -489,8 +489,8 @@
     "_id": "9f+FzJ3LBCK4i0idEX6rrV"
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Quad<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Quad<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 13
@@ -553,8 +553,8 @@
     "_id": "e9tIU1b1FOLr7crJW/ReiA"
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Quad<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Quad<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 15
@@ -663,8 +663,8 @@
     "_id": "510YjFhcNMxbLSRf9Kr2JR"
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Sphere<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Sphere<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 18
@@ -727,8 +727,8 @@
     "_id": "19tUKxQptAMaUlhb4hG48f"
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Quad<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Quad<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 20
@@ -752,11 +752,11 @@
     "ambient": {
       "__id__": 23
     },
-    "planarShadows": {
-      "__id__": 25
-    },
     "_skybox": {
       "__id__": 24
+    },
+    "shadows": {
+      "__id__": 25
     }
   },
   {
@@ -785,7 +785,7 @@
     "_useIBL": false
   },
   {
-    "__type__": "cc.PlanarShadowInfo",
+    "__type__": "cc.ShadowsInfo",
     "_enabled": false,
     "_normal": {
       "__type__": "cc.Vec3",

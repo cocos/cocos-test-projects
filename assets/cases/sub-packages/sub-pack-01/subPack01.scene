@@ -134,7 +134,7 @@
     "_id": "0eWoYdAuJF8qPVkACM/wJN"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -155,7 +155,7 @@
     "_id": "bckrqx5OtOTaP7bO51OMFL"
   },
   {
-    "__type__": "cc.LabelComponent",
+    "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -237,7 +237,7 @@
     "_id": "caT7YSdwVKhJ4ICWCNc0xk"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -258,7 +258,7 @@
     "_id": "f1yNpczC5FFKr//cAZS+D8"
   },
   {
-    "__type__": "cc.SpriteComponent",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -393,7 +393,7 @@
     "_id": "1czPJYXRhJk6niNEO69HlI"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -414,7 +414,7 @@
     "_id": "8aiNt95h5CeIAccHvdtzxu"
   },
   {
-    "__type__": "cc.LabelComponent",
+    "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -450,7 +450,7 @@
     "_id": "10H6jMbQtA2JIVs6vaPTRL"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -471,7 +471,7 @@
     "_id": "e3njo1rMREn5puxsyzaWha"
   },
   {
-    "__type__": "cc.SpriteComponent",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -507,7 +507,7 @@
     "_id": "784l290RVHT63qe78sLqhr"
   },
   {
-    "__type__": "cc.ButtonComponent",
+    "__type__": "cc.Button",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -579,7 +579,7 @@
     "customEventData": ""
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -600,7 +600,7 @@
     "_id": "0biErnhApG5IMI8MwvGhFv"
   },
   {
-    "__type__": "cc.CanvasComponent",
+    "__type__": "cc.Canvas",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -638,11 +638,11 @@
     "ambient": {
       "__id__": 21
     },
-    "planarShadows": {
-      "__id__": 22
-    },
     "_skybox": {
       "__id__": 23
+    },
+    "shadows": {
+      "__id__": 22
     }
   },
   {
@@ -664,7 +664,7 @@
     }
   },
   {
-    "__type__": "cc.PlanarShadowInfo",
+    "__type__": "cc.ShadowsInfo",
     "_enabled": false,
     "_normal": {
       "__type__": "cc.Vec3",
