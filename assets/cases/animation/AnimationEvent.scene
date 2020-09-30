@@ -84,7 +84,7 @@
     "_id": "c0y6F5f+pAvI805TdmxIjx"
   },
   {
-    "__type__": "cc.DirectionalLightComponent",
+    "__type__": "cc.DirectionalLight",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -147,7 +147,7 @@
     "_id": "c9DMICJLFO5IeO07EPon7U"
   },
   {
-    "__type__": "cc.CameraComponent",
+    "__type__": "cc.Camera",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -232,8 +232,8 @@
     "_id": "7f1Lp496lNpr5BjU1mE5ci"
   },
   {
-    "__type__": "cc.ModelComponent",
-    "_name": "Cube<ModelComponent>",
+    "__type__": "cc.MeshRenderer",
+    "_name": "Cube<MeshRenderer>",
     "_objFlags": 0,
     "node": {
       "__id__": 6
@@ -252,8 +252,8 @@
     "_id": "6eLwBSEiBIX7zmc5K3NbOl"
   },
   {
-    "__type__": "cc.AnimationComponent",
-    "_name": "Cube<AnimationComponent>",
+    "__type__": "cc.Animation",
+    "_name": "Cube<Animation>",
     "_objFlags": 0,
     "node": {
       "__id__": 6
@@ -284,8 +284,8 @@
     "_id": "d0yE0XXENA7ogBANgaQSEs"
   },
   {
-    "__type__": "cc.LabelComponent",
-    "_name": "Label<LabelComponent>",
+    "__type__": "cc.Label",
+    "_name": "Label<Label>",
     "_objFlags": 0,
     "node": {
       "__id__": 11
@@ -465,8 +465,8 @@
     "_id": "71jSIKwJtK+ogff4SL9J6Q"
   },
   {
-    "__type__": "cc.UITransformComponent",
-    "_name": "Label<UITransformComponent>",
+    "__type__": "cc.UITransform",
+    "_name": "Label<UITransform>",
     "_objFlags": 0,
     "node": {
       "__id__": 13
@@ -486,8 +486,8 @@
     "_id": "b9z+V1e3BGjbmtC4+bDJAl"
   },
   {
-    "__type__": "cc.LabelComponent",
-    "_name": "Label<LabelComponent>",
+    "__type__": "cc.Label",
+    "_name": "Label<Label>",
     "_objFlags": 0,
     "node": {
       "__id__": 13
@@ -522,7 +522,7 @@
     "_id": "72wUcxHJxA54B0Z9NcsN3P"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -543,7 +543,7 @@
     "_id": "d5r7ZiYmpObJojPeNa8Zfh"
   },
   {
-    "__type__": "cc.CanvasComponent",
+    "__type__": "cc.Canvas",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -564,8 +564,8 @@
     "_id": "f76rn/BxJOpKWUsQL3240r"
   },
   {
-    "__type__": "cc.UITransformComponent",
-    "_name": "Label<UITransformComponent>",
+    "__type__": "cc.UITransform",
+    "_name": "Label<UITransform>",
     "_objFlags": 0,
     "node": {
       "__id__": 11
@@ -628,11 +628,11 @@
     "ambient": {
       "__id__": 21
     },
-    "planarShadows": {
-      "__id__": 22
-    },
     "_skybox": {
       "__id__": 23
+    },
+    "shadows": {
+      "__id__": 22
     }
   },
   {
@@ -654,7 +654,7 @@
     }
   },
   {
-    "__type__": "cc.PlanarShadowInfo",
+    "__type__": "cc.ShadowsInfo",
     "_enabled": false,
     "_normal": {
       "__type__": "cc.Vec3",

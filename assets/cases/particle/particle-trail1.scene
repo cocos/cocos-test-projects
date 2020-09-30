@@ -78,7 +78,7 @@
     "_id": "c0y6F5f+pAvI805TdmxIjx"
   },
   {
-    "__type__": "cc.DirectionalLightComponent",
+    "__type__": "cc.DirectionalLight",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -142,7 +142,7 @@
     "_id": "c9DMICJLFO5IeO07EPon7U"
   },
   {
-    "__type__": "cc.CameraComponent",
+    "__type__": "cc.Camera",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -228,7 +228,7 @@
     "_id": "c2DBqRhiRCqIzAUwA0I7Pw"
   },
   {
-    "__type__": "cc.ParticleSystemComponent",
+    "__type__": "cc.ParticleSystem",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -796,8 +796,8 @@
     "_useGPU": false
   },
   {
-    "__type__": "cc.AnimationComponent",
-    "_name": "New Particle<AnimationComponent>",
+    "__type__": "cc.Animation",
+    "_name": "New Particle<Animation>",
     "_objFlags": 0,
     "node": {
       "__id__": 6
@@ -819,11 +819,11 @@
     "ambient": {
       "__id__": 61
     },
-    "planarShadows": {
-      "__id__": 62
-    },
     "_skybox": {
       "__id__": 63
+    },
+    "shadows": {
+      "__id__": 62
     }
   },
   {
@@ -845,7 +845,7 @@
     }
   },
   {
-    "__type__": "cc.PlanarShadowInfo",
+    "__type__": "cc.ShadowsInfo",
     "_enabled": false,
     "_normal": {
       "__type__": "cc.Vec3",

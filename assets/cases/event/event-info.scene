@@ -137,8 +137,8 @@
     "_id": "bbwLI5k5VJ5KKmziXo862L"
   },
   {
-    "__type__": "cc.UITransformComponent",
-    "_name": "trimmed<UITransformComponent>",
+    "__type__": "cc.UITransform",
+    "_name": "trimmed<UITransform>",
     "_objFlags": 0,
     "node": {
       "__id__": 3
@@ -158,8 +158,8 @@
     "_priority": 0
   },
   {
-    "__type__": "cc.SpriteComponent",
-    "_name": "trimmed<SpriteComponent>",
+    "__type__": "cc.Sprite",
+    "_name": "trimmed<Sprite>",
     "_objFlags": 0,
     "node": {
       "__id__": 3
@@ -194,7 +194,7 @@
     "_id": "3eYDePhNdLkL4VbXI9Ob1h"
   },
   {
-    "__type__": "cc.WidgetComponent",
+    "__type__": "cc.Widget",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -267,7 +267,7 @@
     "_id": "b2QSfvMqhEZKBAE7RlOuAX"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -288,7 +288,7 @@
     "_priority": 0
   },
   {
-    "__type__": "cc.LabelComponent",
+    "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -373,7 +373,7 @@
     "_id": "b2zWWCd8RFCYxsUOh+VnrK"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -394,7 +394,7 @@
     "_priority": 0
   },
   {
-    "__type__": "cc.LabelComponent",
+    "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -430,7 +430,7 @@
     "_id": "5bjU1HUrNIU5mIg//VAotU"
   },
   {
-    "__type__": "cc.WidgetComponent",
+    "__type__": "cc.Widget",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -457,7 +457,7 @@
     "_id": "96ZgieRHtKw4Lme5x4Buvo"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -477,7 +477,7 @@
     "_id": "d8Nc8pvNxN5qibpvYcAIQK"
   },
   {
-    "__type__": "cc.CanvasComponent",
+    "__type__": "cc.Canvas",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -561,11 +561,11 @@
     "ambient": {
       "__id__": 19
     },
-    "planarShadows": {
-      "__id__": 21
-    },
     "_skybox": {
       "__id__": 20
+    },
+    "shadows": {
+      "__id__": 21
     }
   },
   {
@@ -594,7 +594,7 @@
     "_useIBL": false
   },
   {
-    "__type__": "cc.PlanarShadowInfo",
+    "__type__": "cc.ShadowsInfo",
     "_enabled": false,
     "_normal": {
       "__type__": "cc.Vec3",
