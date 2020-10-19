@@ -149,7 +149,7 @@
     "_id": "74AvgCHDJMpKbdx6qH8ln9"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -170,7 +170,7 @@
     "_id": "ffKONW/KxLg67ZRP7Xc2Lz"
   },
   {
-    "__type__": "cc.SpriteComponent",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -206,7 +206,7 @@
     "_id": "c5SkVEX5RINZIX5qI/iaxd"
   },
   {
-    "__type__": "cc.WidgetComponent",
+    "__type__": "cc.Widget",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -336,11 +336,57 @@
     "_id": "3dSO4o5XxN17+LR4W+xVPU"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
       "__id__": 8
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 12
+      },
+      {
+        "__id__": 13
+      }
+    ],
+    "_prefab": null,
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": -60,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 33554432,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": "700xZ+5gBIi4yo9BS6xo5z"
+  },
+  {
+    "__type__": "cc.UITransformComponent",
+    "_name": "Label<UITransformComponent>",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 11
     },
     "_enabled": true,
     "_priority": 0,
@@ -357,7 +403,7 @@
     "_id": "d6xPD9QXhCHbxfrvp3XAbJ"
   },
   {
-    "__type__": "cc.SpriteComponent",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -439,8 +485,8 @@
     "_id": "700xZ+5gBIi4yo9BS6xo5z"
   },
   {
-    "__type__": "cc.UITransformComponent",
-    "_name": "Label<UITransformComponent>",
+    "__type__": "cc.UITransform",
+    "_name": "Label<UITransform>",
     "_objFlags": 0,
     "node": {
       "__id__": 11
@@ -460,7 +506,7 @@
     "_id": "bcIWknYodLjL9pSBL6hPxR"
   },
   {
-    "__type__": "cc.LabelComponent",
+    "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -496,7 +542,7 @@
     "_id": "4dFqPICkpM/ot/YuQg99JW"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -517,7 +563,7 @@
     "_id": "dbaRUOqv9F1IaFXOqo26Nz"
   },
   {
-    "__type__": "cc.SpriteComponent",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -553,7 +599,7 @@
     "_id": "eaPVCVUm1IFZlvS3+mpB9J"
   },
   {
-    "__type__": "cc.ToggleComponent",
+    "__type__": "cc.Toggle",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -712,7 +758,7 @@
     "_id": "008bYVZEtDAKsVvfeNZdEf"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -733,7 +779,7 @@
     "_id": "2c67kfD2RDsLul3DvvSzWN"
   },
   {
-    "__type__": "cc.SpriteComponent",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -815,8 +861,8 @@
     "_id": "cfwrAHsDRKE46OD5arTZlB"
   },
   {
-    "__type__": "cc.UITransformComponent",
-    "_name": "Label<UITransformComponent>",
+    "__type__": "cc.UITransform",
+    "_name": "Label<UITransform>",
     "_objFlags": 0,
     "node": {
       "__id__": 21
@@ -836,7 +882,7 @@
     "_id": "ef1AabZFlImpQfy7pmH2bV"
   },
   {
-    "__type__": "cc.LabelComponent",
+    "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -872,7 +918,7 @@
     "_id": "39ybjwXplNK4eQeezZzPiZ"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -893,7 +939,7 @@
     "_id": "f0jQAIfltM7plTi5RlNKXr"
   },
   {
-    "__type__": "cc.SpriteComponent",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -929,7 +975,7 @@
     "_id": "cdhxCoddBNuJS+ZdAptXgA"
   },
   {
-    "__type__": "cc.ToggleComponent",
+    "__type__": "cc.Toggle",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -1088,7 +1134,7 @@
     "_id": "809ozx1xZPDbhM6/eGkOyL"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -1109,7 +1155,7 @@
     "_id": "f2U1fbxGlFMq1yc7NJkMWs"
   },
   {
-    "__type__": "cc.SpriteComponent",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -1191,8 +1237,8 @@
     "_id": "8d2x4+v7VDWau/Wm9048X8"
   },
   {
-    "__type__": "cc.UITransformComponent",
-    "_name": "Label<UITransformComponent>",
+    "__type__": "cc.UITransform",
+    "_name": "Label<UITransform>",
     "_objFlags": 0,
     "node": {
       "__id__": 31
@@ -1212,7 +1258,7 @@
     "_id": "9dfwaqWVRGp6Hhjv6hi7s8"
   },
   {
-    "__type__": "cc.LabelComponent",
+    "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -1248,7 +1294,7 @@
     "_id": "87K3+uwc5PQY/r15lHldUR"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -1269,7 +1315,7 @@
     "_id": "e0VWkzEClG3o4xcllZhPCt"
   },
   {
-    "__type__": "cc.SpriteComponent",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -1305,7 +1351,7 @@
     "_id": "04DBGY8SNITa2Rzefgh1G7"
   },
   {
-    "__type__": "cc.ToggleComponent",
+    "__type__": "cc.Toggle",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -1464,7 +1510,7 @@
     "_id": "563qeeW+VGHr8L6ag9+Taf"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -1485,7 +1531,7 @@
     "_id": "15LZ5a8clCDIngWcFNnh+b"
   },
   {
-    "__type__": "cc.SpriteComponent",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -1567,8 +1613,8 @@
     "_id": "aaN7tnG05ICK0E+MVGplUM"
   },
   {
-    "__type__": "cc.UITransformComponent",
-    "_name": "Label<UITransformComponent>",
+    "__type__": "cc.UITransform",
+    "_name": "Label<UITransform>",
     "_objFlags": 0,
     "node": {
       "__id__": 41
@@ -1588,7 +1634,7 @@
     "_id": "45UqDqw/JAbJiRoflQjAQI"
   },
   {
-    "__type__": "cc.LabelComponent",
+    "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -1624,7 +1670,7 @@
     "_id": "20Zeay76xNz578UFudja6U"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -1645,7 +1691,7 @@
     "_id": "22jFXC/eVEHa/wh2PcVR+g"
   },
   {
-    "__type__": "cc.SpriteComponent",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -1681,7 +1727,7 @@
     "_id": "46c1u7Bs1Ks7iU6nEa5Tci"
   },
   {
-    "__type__": "cc.ToggleComponent",
+    "__type__": "cc.Toggle",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -1842,7 +1888,7 @@
     "_id": "96CShySatPcb0tdFFvVtg5"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -1863,7 +1909,7 @@
     "_id": "f6xh6Yxb9L5a69IrnQ1x+j"
   },
   {
-    "__type__": "cc.LabelComponent",
+    "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -1998,7 +2044,7 @@
     "_id": "0aIUywCjhO9rNUDKBqnUXo"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -2019,7 +2065,7 @@
     "_id": "95GncwLGtFM4W3rErmi96z"
   },
   {
-    "__type__": "cc.SpriteComponent",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -2055,7 +2101,7 @@
     "_id": "9d5NCDdj9Ctq1U1lyMb/Ri"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -2076,7 +2122,7 @@
     "_id": "16JCDPoAlMIajN3KOiJXBZ"
   },
   {
-    "__type__": "cc.SpriteComponent",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -2112,7 +2158,7 @@
     "_id": "adHGgOqYlCb6T5p259kZzp"
   },
   {
-    "__type__": "cc.ToggleComponent",
+    "__type__": "cc.Toggle",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -2268,8 +2314,8 @@
     "_id": "aeq38BT05Gh6SIdHdUmvUg"
   },
   {
-    "__type__": "cc.UITransformComponent",
-    "_name": "Checkmark<UITransformComponent>",
+    "__type__": "cc.UITransform",
+    "_name": "Checkmark<UITransform>",
     "_objFlags": 0,
     "node": {
       "__id__": 59
@@ -2289,8 +2335,8 @@
     "_id": "6dAsnd8RxDibcesCVHTJRo"
   },
   {
-    "__type__": "cc.SpriteComponent",
-    "_name": "Checkmark<SpriteComponent>",
+    "__type__": "cc.Sprite",
+    "_name": "Checkmark<Sprite>",
     "_objFlags": 0,
     "node": {
       "__id__": 59
@@ -2325,7 +2371,7 @@
     "_id": "edsMlJT2NHFZk2ZKzYjamS"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -2346,7 +2392,7 @@
     "_id": "40h/aESlBDg6mzM+UrPLz6"
   },
   {
-    "__type__": "cc.SpriteComponent",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -2382,7 +2428,7 @@
     "_id": "a8P+HVyV9Nk7YE4zUT9ww0"
   },
   {
-    "__type__": "cc.ToggleComponent",
+    "__type__": "cc.Toggle",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -2538,8 +2584,8 @@
     "_id": "8dxFri+K1HcIS6MgBO6l51"
   },
   {
-    "__type__": "cc.UITransformComponent",
-    "_name": "Checkmark<UITransformComponent>",
+    "__type__": "cc.UITransform",
+    "_name": "Checkmark<UITransform>",
     "_objFlags": 0,
     "node": {
       "__id__": 66
@@ -2559,8 +2605,8 @@
     "_id": "a1notpjiZPCYL/Ddil8Wo2"
   },
   {
-    "__type__": "cc.SpriteComponent",
-    "_name": "Checkmark<SpriteComponent>",
+    "__type__": "cc.Sprite",
+    "_name": "Checkmark<Sprite>",
     "_objFlags": 0,
     "node": {
       "__id__": 66
@@ -2595,7 +2641,7 @@
     "_id": "feRQotKmhBg4QBFigFj0+5"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -2616,7 +2662,7 @@
     "_id": "4c+aMHATZA548IvhRBclhq"
   },
   {
-    "__type__": "cc.SpriteComponent",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -2652,7 +2698,7 @@
     "_id": "5684qcLixNnrRzY72cl2Pf"
   },
   {
-    "__type__": "cc.ToggleComponent",
+    "__type__": "cc.Toggle",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -2709,8 +2755,8 @@
     "_id": "d84CymBRtJNonLIGmHsP4y"
   },
   {
-    "__type__": "cc.ToggleContainerComponent",
-    "_name": "New ToggleGroup<ToggleContainerComponent>",
+    "__type__": "cc.ToggleContainer",
+    "_name": "New ToggleGroup<ToggleContainer>",
     "_objFlags": 0,
     "node": {
       "__id__": 47
@@ -2823,7 +2869,7 @@
     "_id": "9diJ2d9khPGJIXRkyOBg6c"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -2844,7 +2890,7 @@
     "_id": "a5a25p8KpHOLupJt4TqBut"
   },
   {
-    "__type__": "cc.LabelComponent",
+    "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -2979,7 +3025,7 @@
     "_id": "83OcO+QKhDFr26RNnjtibr"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -3000,7 +3046,7 @@
     "_id": "1fkGbIyEZBTaJLflb0VwLS"
   },
   {
-    "__type__": "cc.SpriteComponent",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -3036,7 +3082,7 @@
     "_id": "3ahOaaUJtNc6p0WysgEaZX"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -3057,7 +3103,7 @@
     "_id": "97fKFr2KZCUZCKS6PlBIMG"
   },
   {
-    "__type__": "cc.SpriteComponent",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -3093,7 +3139,7 @@
     "_id": "08qBoYIGxLG7vagSYU062V"
   },
   {
-    "__type__": "cc.ToggleComponent",
+    "__type__": "cc.Toggle",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -3249,8 +3295,8 @@
     "_id": "380hCznWpGB522wuFxhqy7"
   },
   {
-    "__type__": "cc.UITransformComponent",
-    "_name": "Checkmark<UITransformComponent>",
+    "__type__": "cc.UITransform",
+    "_name": "Checkmark<UITransform>",
     "_objFlags": 0,
     "node": {
       "__id__": 85
@@ -3270,8 +3316,8 @@
     "_id": "7cIgRhXf5OdqCUBBtakBTx"
   },
   {
-    "__type__": "cc.SpriteComponent",
-    "_name": "Checkmark<SpriteComponent>",
+    "__type__": "cc.Sprite",
+    "_name": "Checkmark<Sprite>",
     "_objFlags": 0,
     "node": {
       "__id__": 85
@@ -3306,7 +3352,7 @@
     "_id": "02if82VCBMzJ3nzOk6WR4c"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -3327,7 +3373,7 @@
     "_id": "daTiF7SQ1LeoyXnMrFXvy1"
   },
   {
-    "__type__": "cc.SpriteComponent",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -3363,7 +3409,7 @@
     "_id": "c6CUvoQQFD6J0V99AETBZK"
   },
   {
-    "__type__": "cc.ToggleComponent",
+    "__type__": "cc.Toggle",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -3519,8 +3565,8 @@
     "_id": "16zd/O/E5NX7ljVtqzaMOz"
   },
   {
-    "__type__": "cc.UITransformComponent",
-    "_name": "Checkmark<UITransformComponent>",
+    "__type__": "cc.UITransform",
+    "_name": "Checkmark<UITransform>",
     "_objFlags": 0,
     "node": {
       "__id__": 92
@@ -3540,8 +3586,8 @@
     "_id": "ffP6FBqWZCuIXo/ADXWoL1"
   },
   {
-    "__type__": "cc.SpriteComponent",
-    "_name": "Checkmark<SpriteComponent>",
+    "__type__": "cc.Sprite",
+    "_name": "Checkmark<Sprite>",
     "_objFlags": 0,
     "node": {
       "__id__": 92
@@ -3576,7 +3622,7 @@
     "_id": "fczqWT7phP3JuMju41KH5H"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -3597,7 +3643,7 @@
     "_id": "fdZPDq8hNIUKerXs7CKkUA"
   },
   {
-    "__type__": "cc.SpriteComponent",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -3633,7 +3679,7 @@
     "_id": "1f5MSLUoxLdK56vabzNqfP"
   },
   {
-    "__type__": "cc.ToggleComponent",
+    "__type__": "cc.Toggle",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -3690,8 +3736,8 @@
     "_id": "cfDe8peChLzr0is9zdOYRo"
   },
   {
-    "__type__": "cc.ToggleContainerComponent",
-    "_name": "New ToggleGroup<ToggleContainerComponent>",
+    "__type__": "cc.ToggleContainer",
+    "_name": "New ToggleGroup<ToggleContainer>",
     "_objFlags": 0,
     "node": {
       "__id__": 73
@@ -3702,7 +3748,7 @@
     "_id": "ddKwy2zqpP1I3lh3j6J3hD"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -3723,7 +3769,7 @@
     "_id": "4eMcREl9BN4KhMcm8ULCuR"
   },
   {
-    "__type__": "cc.CanvasComponent",
+    "__type__": "cc.Canvas",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -3804,14 +3850,14 @@
     "ambient": {
       "__id__": 104
     },
-    "planarShadows": {
-      "__id__": 105
-    },
     "_skybox": {
       "__id__": 106
     },
     "fog": {
       "__id__": 107
+    },
+    "shadows": {
+      "__id__": 105
     }
   },
   {
@@ -3833,7 +3879,7 @@
     }
   },
   {
-    "__type__": "cc.PlanarShadowInfo",
+    "__type__": "cc.ShadowsInfo",
     "_enabled": false,
     "_normal": {
       "__type__": "cc.Vec3",

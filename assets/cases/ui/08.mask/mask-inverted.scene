@@ -184,7 +184,7 @@
     "_id": "1ek+InNZhE7bn246nwnQ3G"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -205,7 +205,7 @@
     "_id": "e3Jf6ksR9J5ZjYNhBGJsER"
   },
   {
-    "__type__": "cc.SpriteComponent",
+    "__type__": "cc.Sprite",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -241,7 +241,7 @@
     "_id": "77H+kPzz5OpLO1ePif0AhN"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -262,7 +262,7 @@
     "_id": "7dJkpX21lIvoCs9CWgqIjL"
   },
   {
-    "__type__": "cc.MaskComponent",
+    "__type__": "cc.Mask",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -344,7 +344,7 @@
     "_id": "e7ANPeMl9IFrN1nejxTMQ2"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -365,7 +365,7 @@
     "_id": "0dpLcHs3tForNU+wFCsLCM"
   },
   {
-    "__type__": "cc.LabelComponent",
+    "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -401,7 +401,7 @@
     "_id": "7d4pgGeTlAcZKMTbmti9bV"
   },
   {
-    "__type__": "cc.WidgetComponent",
+    "__type__": "cc.Widget",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -477,7 +477,7 @@
     "_id": "eezVsccGpFM6N8DkhIENip"
   },
   {
-    "__type__": "cc.UITransformComponent",
+    "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -498,7 +498,7 @@
     "_id": "38bbPeGa5Hk6n/ePvZ5Gow"
   },
   {
-    "__type__": "cc.LabelComponent",
+    "__type__": "cc.Label",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -534,7 +534,7 @@
     "_id": "50MZXL1EhBGadMd1JzLT8o"
   },
   {
-    "__type__": "cc.WidgetComponent",
+    "__type__": "cc.Widget",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -561,8 +561,8 @@
     "_id": "a8ZhEW9dFErYFKKb0t0StL"
   },
   {
-    "__type__": "cc.UITransformComponent",
-    "_name": "Canvas<UITransformComponent>",
+    "__type__": "cc.UITransform",
+    "_name": "Canvas<UITransform>",
     "_objFlags": 0,
     "node": {
       "__id__": 2
@@ -582,8 +582,8 @@
     "_id": "1b0Vq6x9ZGOJvOiqx3jwJQ"
   },
   {
-    "__type__": "cc.CanvasComponent",
-    "_name": "Canvas<CanvasComponent>",
+    "__type__": "cc.Canvas",
+    "_name": "Canvas<Canvas>",
     "_objFlags": 0,
     "node": {
       "__id__": 2
@@ -607,11 +607,11 @@
     "ambient": {
       "__id__": 21
     },
-    "planarShadows": {
-      "__id__": 22
-    },
     "_skybox": {
       "__id__": 23
+    },
+    "shadows": {
+      "__id__": 22
     }
   },
   {
@@ -633,7 +633,7 @@
     }
   },
   {
-    "__type__": "cc.PlanarShadowInfo",
+    "__type__": "cc.ShadowsInfo",
     "_enabled": false,
     "_normal": {
       "__type__": "cc.Vec3",
