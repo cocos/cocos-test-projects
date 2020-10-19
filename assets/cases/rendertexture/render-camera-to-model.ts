@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, RenderTexture, CameraComponent, ModelComponent, cclegacy } from "cc";
+import { _decorator, Component, RenderTexture, CameraComponent, ModelComponent } from 'cc';
 const { ccclass, property, menu } = _decorator;
 
 @ccclass('RenderCameraToModel')
@@ -19,8 +19,6 @@ export class RenderCameraToModel extends Component {
         renderTex.reset({
             width: 256,
             height: 256,
-            colorFormat: cclegacy.director.root.device.colorFormat,
-            depthStencilFormat: cclegacy.director.root.device.depthStencilFormat,
         });
         const cameraComp = this.getComponent(CameraComponent);
         cameraComp.targetTexture = renderTex;

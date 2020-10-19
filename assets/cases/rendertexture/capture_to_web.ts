@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, RenderTexture, SpriteComponent, CameraComponent, SpriteFrame, cclegacy } from "cc";
+import { _decorator, Component, Node, RenderTexture, SpriteComponent, CameraComponent, SpriteFrame, cclegacy } from 'cc';
 const { ccclass, property, menu } = _decorator;
 
 @ccclass('CaptureToWeb')
@@ -27,21 +27,14 @@ export class CaptureToWeb extends Component {
 
         const rendetTex = this._renderTex = new RenderTexture();
         rendetTex.reset({
-            width: 256,
-            height: 256,
-            colorFormat: cclegacy.director.root.device.colorFormat,
-            depthStencilFormat: cclegacy.director.root.device.depthStencilFormat
+            width: 128,
+            height: 128,
         });
         this.camera.targetTexture = rendetTex;
         sp.texture = rendetTex;
         this.sprite.spriteFrame = sp;
         this.scheduleOnce(()=>{
-            rendetTex.reset({
-                width: 512,
-                height: 512,
-                colorFormat: cclegacy.director.root.device.colorFormat,
-                depthStencilFormat: cclegacy.director.root.device.depthStencilFormat
-            });
+            rendetTex.resize(512, 512);
         },2);
     }
 }

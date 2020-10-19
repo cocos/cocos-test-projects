@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, ModelComponent, CanvasComponent, RenderTexture, view, cclegacy } from "cc";
+import { _decorator, Component, ModelComponent, CanvasComponent, RenderTexture, view } from 'cc';
 const { ccclass, property, menu } = _decorator;
 
 @ccclass('RenderUIToModel')
@@ -23,8 +23,6 @@ export class RenderUIToModel extends Component {
         tex.reset({
             width: size.width,
             height: size.height,
-            colorFormat: cclegacy.director.root.device.colorFormat,
-            depthStencilFormat: cclegacy.director.root.device.depthStencilFormat,
         });
 
         this.renderTexture = tex;

@@ -1,59 +1,14 @@
 {
-  "projectSetting": {
-    "modules": {
-      "cache": {
-        "Audio": {
-          "value": true
-        },
-        "Core": {
-          "value": true
-        },
-        "Graphcis API": {
-          "value": true
-        },
-        "Particle System": {
-          "value": true
-        },
-        "Physics": {
-          "option": "0",
-          "value": true
-        },
-        "Terrain": {
-          "value": true
-        },
-        "UI": {
-          "value": true
-        },
-        "WebGL 1.0": {
-          "value": true
-        },
-        "WebGL 2.0": {
-          "value": true
-        },
-        "tween.js Adapter": {
-          "value": true
-        }
-      },
-      "includeModules": [
-        "base",
-        "gfx-webgl",
-        "gfx-webgl2",
-        "ui",
-        "particle",
-        "physics-cannon",
-        "physics-framework",
-        "audio",
-        "tween",
-        "terrain"
-      ]
-    }
-  },
+  "projectSetting": {},
   "textureCompressConfig": {
     "userPreset": {
       "33c0074836a7e03830341d5a99f09f00": {
         "name": "etc1rgb",
         "options": {
           "android": {
+            "etc1_rgb": "fast"
+          },
+          "ios": {
             "etc1_rgb": "fast"
           },
           "miniGame": {
@@ -70,7 +25,9 @@
           "android": {
             "etc1_rgb_a": "fast"
           },
-          "ios": {},
+          "ios": {
+            "etc1_rgb_a": "fast"
+          },
           "miniGame": {
             "etc1_rgb_a": "fast"
           },
@@ -85,7 +42,9 @@
           "android": {
             "etc2_rgb": "fast"
           },
-          "ios": {},
+          "ios": {
+            "etc2_rgb": "fast"
+          },
           "miniGame": {},
           "web": {
             "etc2_rgb": "fast"
@@ -96,6 +55,12 @@
         "name": "etc2rgba",
         "options": {
           "android": {
+            "etc2_rgba": "fast"
+          },
+          "ios": {
+            "etc2_rgba": "fast"
+          },
+          "miniGame": {
             "etc2_rgba": "fast"
           },
           "web": {
@@ -251,11 +216,25 @@
           "ios": {
             "astc_10x10": "-medium"
           },
-          "pc": {
-            "astc_10x10": "-medium"
-          },
           "web": {
             "astc_10x10": "-medium"
+          }
+        }
+      },
+      "afI5JG+ONDCbgGbraJsAx6": {
+        "name": "png",
+        "options": {
+          "android": {
+            "png": 80
+          },
+          "ios": {
+            "png": 80
+          },
+          "miniGame": {
+            "png": 80
+          },
+          "web": {
+            "png": 80
           }
         }
       }
