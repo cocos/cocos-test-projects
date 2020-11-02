@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, loader, SpriteComponent, SpriteAtlas, LabelComponent } from "cc";
+import { _decorator, Component, Node, loader, SpriteComponent, SpriteAtlas, LabelComponent, assetManager } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("loadSubPackages")
@@ -20,10 +20,6 @@ export class loadSubPackages extends Component {
     }
 
     loadSubPackage() {
-        if (CC_ALIPAY || CC_COCOSPLAY || CC_BYTEDANCE || !(CC_MINIGAME || CC_RUNTIME_BASED)) {
-            this.label.string = '该平台暂不支持分包加载';
-            return;
-        }
         this.label.string = 'Load subPackage...';
         loader.downloader.loadSubpackage('subPackage', (err: any) => {
             if (err) {
@@ -38,7 +34,7 @@ export class loadSubPackages extends Component {
     }
 
     loadSpriteAtlas () {
-        loader.loadRes('test_atlas/sheep-subPackage/sheep', SpriteAtlas, (err, atlas) => {
+        assetManager.getBundle('subPackage').load<SpriteAtlas>('sheep', SpriteAtlas, (err, atlas) => {
             if (err) {
                 return console.error(err);
             }
