@@ -34,7 +34,7 @@ export class loadSubPackages extends Component {
     }
 
     loadSpriteAtlas () {
-        assetManager.getBundle('subPackage').load<SpriteAtlas>('test_atlas/sheep-subPackage/sheep', SpriteAtlas, (err, atlas) => {
+        assetManager.getBundle('subPackage').load<SpriteAtlas>('sheep', SpriteAtlas, (err, atlas) => {
             if (err) {
                 return console.error(err);
             }
