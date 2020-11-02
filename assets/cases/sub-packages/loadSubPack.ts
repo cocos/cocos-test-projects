@@ -24,10 +24,6 @@ export class loadSubPack extends Component {
     loadSubPackages() {
         this.createButton_1.node.active = false;
         this.createButton_2.node.active = false;
-        if(CC_ALIPAY || CC_COCOSPLAY || CC_BYTEDANCE || !(CC_MINIGAME || CC_RUNTIME_BASED)) {
-            this.label.string = '该平台暂不支持分包加载';
-            return;
-        }
         this.label.string = 'Load subPackage...';
         loader.downloader.loadSubpackage('sub-pack-01',(err: any) => {
             if(err) {
