@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, ScrollViewComponent, Vec3, ButtonComponent, LayoutComponent, game, LabelComponent, director, Director } from "cc";
+import { _decorator, Component, Node, ScrollViewComponent, Vec3, ButtonComponent, LayoutComponent, game, LabelComponent, director, Director, assetManager } from "cc";
 const { ccclass, property } = _decorator;
 import { sceneArray } from "./scenelist";
 
@@ -20,6 +20,9 @@ export class BackButton extends Component {
         for (let i = 0;  i< array.length; i++) {
             let str = array[i];
             if (str.includes('TestList') || str.includes('subPack') || str.includes('static-ui-replace')) {
+                continue;
+            }
+            if (str.includes('asset-bundle-zip') && !assetManager.downloader.remoteServerAddress) {
                 continue;
             }
             const firstIndex = str.lastIndexOf('/') + 1;
