@@ -1,47 +1,51 @@
-import { _decorator, Component, Node, Slider, VideoPlayer, VideoClip, Label } from 'cc';
-const { ccclass, property } = _decorator;
-
-function getStatus (type) {
-    switch (type) {
-        case VideoPlayer.EventType.PLAYING:
-            return 'PLAYING';
-        case VideoPlayer.EventType.PAUSED:
-            return 'PAUSED';
-        case VideoPlayer.EventType.STOPPED:
-            return 'STOPPED';
-        case VideoPlayer.EventType.COMPLETED:
-            return 'COMPLETED';
-        case VideoPlayer.EventType.META_LOADED:
-            return 'META_LOADED';
-        case VideoPlayer.EventType.CLICKED:
-            return 'CLICKED';
-        case VideoPlayer.EventType.READY_TO_PLAY:
-            return 'READY_TO_PLAY';
-        default:
-            return 'NONE';
-    }
-}
+import { _decorator, Component, Node, Slider, VideoPlayer, VideoClip, Label, sys, director, macro } from 'cc';
+const { ccclass, type } = _decorator;
 
 @ccclass('VideoPlayerCtrl')
 export class VideoPlayerCtrl extends Component {
-    @property(VideoClip)
+    @type(VideoClip)
     videClip = null;
-    @property(VideoPlayer)
+    @type(VideoPlayer)
     videoPlayer = null;
-    @property(Label)
+    @type(Label)
     eventType = null;
-    @property(Label)
+    @type(Label)
     playbackRate = null;
-    @property(Label)
+    @type(Label)
     stayOnBottom = null;
-    @property(Slider)
+    @type(Slider)
     slider = null;
-    @property(Node)
+    @type(Node)
     stayOnBottomTips = null;
+    @type(Node)
+    noSupport = null;
 
     _playbackRate = 1;
 
     start () {
+        // 隐藏不支持 video player 的平台
+        switch (sys.platform) {
+            case sys.DESKTOP_BROWSER:
+            case sys.ANDROID:
+            case sys.OS_IOS:
+            case sys.MACOS:
+            case sys.ALIPAY_MINI_GAME:
+            case sys.BYTEDANCE_MINI_GAME:
+            case sys.COCOSPLAY:
+            case sys.HUAWEI_QUICK_GAME:
+            case sys.OPPO_MINI_GAME:
+            case sys.VIVO_MINI_GAME:
+            case sys.XIAOMI_GAME:
+            case sys.XIAOMI_QUICK_GAME:
+            case sys.BAIDU_MINI_GAME:
+            case sys.WECHAT_GAME:
+            case sys.LINKSURE:
+            case sys.QTT_GAME:
+            case sys.WIN32:
+                this.noSupport.active = true;
+                this.videoPlayer.node.active = false;
+                break;
+        }
         this.eventType.string = '';
     }
 
@@ -75,7 +79,7 @@ export class VideoPlayerCtrl extends Component {
     }
 
     onEventType (target, type) {
-        this.eventType.string = getStatus(type);
+        this.eventType.string = type;
     }
 
     update () {
