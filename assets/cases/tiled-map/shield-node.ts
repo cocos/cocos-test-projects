@@ -5,7 +5,7 @@
 // Learn life-cycle callbacks:
 //  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
-import { _decorator, Component, Node, TiledLayer, loader, Prefab, v2, instantiate, Vec3, SystemEventType } from 'cc';
+import { _decorator, Component, Node, TiledLayer, loader, Prefab, v2, instantiate, Vec3, SystemEventType, EventTouch } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('ShieldNode')
@@ -18,13 +18,13 @@ export class ShieldNode extends Component {
     // serializableDummy = 0;
 
     @property({ type: TiledLayer })
-    tiledLayer: TiledLayer = null;
+    tiledLayer: TiledLayer|null = null;
 
     @property({type: Prefab})
-    nodePrefab: Prefab = null;
+    nodePrefab: Prefab| null= null;
 
     start () {
-        this.initScene(this.nodePrefab);
+        this.initScene(this.nodePrefab!);
     }
 
     initScene (prefab: Prefab) {
@@ -33,9 +33,9 @@ export class ShieldNode extends Component {
         for (let i = 0; i < posArr.length; i++) {
             const shieldNode = instantiate(prefab);
             shieldNode.setPosition(posArr[i].x, posArr[i].y);
-            this.tiledLayer.addUserNode(shieldNode);
-            shieldNode.on(SystemEventType.TOUCH_MOVE, (event) => {
-                const deltaMove = event.getLocation().sub(event.getPreviousLocation());
+            this.tiledLayer!.addUserNode(shieldNode);
+            shieldNode.on(SystemEventType.TOUCH_MOVE, (event:EventTouch) => {
+                const deltaMove = event.getDelta();
                 shieldNode.getPosition(tmpP);
                 tmpP.x += deltaMove.x;
                 tmpP.y += deltaMove.y;
