@@ -25,7 +25,6 @@ export class VideoPlayerCtrl extends Component {
     start () {
         // 隐藏不支持 video player 的平台
         switch (sys.platform) {
-            case sys.DESKTOP_BROWSER:
             case sys.ANDROID:
             case sys.OS_IOS:
             case sys.MACOS:
