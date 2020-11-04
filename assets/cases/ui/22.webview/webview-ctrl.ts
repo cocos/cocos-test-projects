@@ -9,6 +9,8 @@ export class WebviewCtrl extends Component {
     eventTips = null;
     @type(Node)
     noSupport = null;
+    @type(Label)
+    platform = null;
 
     start () {
         // 隐藏不支持 video player 的平台
@@ -22,7 +24,6 @@ export class WebviewCtrl extends Component {
             case sys.HUAWEI_QUICK_GAME:
             case sys.OPPO_MINI_GAME:
             case sys.VIVO_MINI_GAME:
-            case sys.XIAOMI_GAME:
             case sys.XIAOMI_QUICK_GAME:
             case sys.BAIDU_MINI_GAME:
             case sys.WECHAT_GAME:
@@ -33,6 +34,7 @@ export class WebviewCtrl extends Component {
                 this.webview.node.active = false;
                 break;
         }
+        this.platform.string = `platform: ${sys.platform}`;
     }
 
     onGoTo () {

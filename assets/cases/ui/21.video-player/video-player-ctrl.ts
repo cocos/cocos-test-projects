@@ -19,6 +19,8 @@ export class VideoPlayerCtrl extends Component {
     stayOnBottomTips = null;
     @type(Node)
     noSupport = null;
+    @type(Label)
+    platform = null;
 
     _playbackRate = 1;
 
@@ -34,10 +36,8 @@ export class VideoPlayerCtrl extends Component {
             case sys.HUAWEI_QUICK_GAME:
             case sys.OPPO_MINI_GAME:
             case sys.VIVO_MINI_GAME:
-            case sys.XIAOMI_GAME:
             case sys.XIAOMI_QUICK_GAME:
             case sys.BAIDU_MINI_GAME:
-            case sys.WECHAT_GAME:
             case sys.LINKSURE:
             case sys.QTT_GAME:
             case sys.WIN32:
@@ -45,6 +45,7 @@ export class VideoPlayerCtrl extends Component {
                 this.videoPlayer.node.active = false;
                 break;
         }
+        this.platform.string = `platform: ${sys.platform}`;
         this.eventType.string = '';
     }
 
