@@ -46,7 +46,7 @@ export class VideoPlayerCtrl extends Component {
                 break;
         }
         this.platform.string = `platform: ${sys.platform}`;
-        this.eventType.string = '';
+        this.eventType.string = 'nothing';
     }
 
     onStayOnBottom () {
