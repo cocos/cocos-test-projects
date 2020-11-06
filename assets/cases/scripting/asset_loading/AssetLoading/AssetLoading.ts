@@ -22,7 +22,7 @@ export class AssetLoading extends Component {
         Animation: "test_assets/testAnim",
         Scene: "test_assets/testScene",
         TextureCube: "test_assets/cubemap",
-        CORS: "http://tools.itharbors.com/res/logo.png",
+        CORS: "https://download.cocos.org/CocosTest/test-case/logo.png",
         Material: "test_assets/testMat",
         Mesh: "test_assets/Monster/monster.mesh",
         Skeleton: "test_assets/Monster/Armature.skeleton",
