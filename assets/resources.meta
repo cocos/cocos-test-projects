@@ -10,7 +10,7 @@
     "bundleName": "resources",
     "priority": 8,
     "compressionType": {
-      "wechatgame": "zip",
+      "wechatgame": "merge_all_json",
       "windows": "merge_all_json",
       "xiaomi-quick-game": "subpackage",
       "web-mobile": "none",
@@ -18,9 +18,9 @@
       "oppo-mini-game": "subpackage",
       "huawei-quick-game": "none",
       "cocos-play": "merge_all_json",
-      "bytedance-mini-game": "zip",
+      "bytedance-mini-game": "merge_dep",
       "baidu-mini-game": "merge_all_json",
-      "alipay-mini-game": "zip"
+      "alipay-mini-game": "merge_dep"
     },
     "isRemoteBundle": {
       "wechatgame": true,
