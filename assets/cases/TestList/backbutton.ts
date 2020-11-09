@@ -15,8 +15,10 @@ export class BackButton extends Component {
     private sceneName : LabelComponent;
 
     __preload() {
-        const sceneInfo = game._sceneInfos;
-        const array: string[] = sceneInfo.map((i) => i.url).sort();
+        const sceneInfo = assetManager.main!.config.scenes;
+        const array: string[] = [];
+        sceneInfo.forEach((i) => array.push(i.url));
+        array.sort();
         for (let i = 0;  i< array.length; i++) {
             let str = array[i];
             if (str.includes('TestList') || str.includes('subPack') || str.includes('static-ui-replace')) {
