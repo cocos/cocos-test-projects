@@ -13,9 +13,39 @@
       "USE_ALBEDO_MAP": true,
       "USE_PBR_MAP": true,
       "USE_EMISSIVE_MAP": true
+    },
+    {
+      "USE_NORMAL_MAP": true,
+      "USE_ALBEDO_MAP": true,
+      "ALBEDO_UV": "v_uv1",
+      "PBR_UV": "v_uv1",
+      "USE_PBR_MAP": true,
+      "USE_EMISSIVE_MAP": true
+    },
+    {
+      "USE_ALBEDO_MAP": true,
+      "ALBEDO_UV": "v_uv1"
     }
   ],
   "_states": [
+    {
+      "blendState": {
+        "targets": [
+          {}
+        ]
+      },
+      "depthStencilState": {},
+      "rasterizerState": {}
+    },
+    {
+      "blendState": {
+        "targets": [
+          {}
+        ]
+      },
+      "depthStencilState": {},
+      "rasterizerState": {}
+    },
     {
       "blendState": {
         "targets": [
@@ -47,6 +77,8 @@
       "emissiveMap": {
         "__uuid__": "f1e12cdf-e92e-4c48-853b-7626c459a656@6c48a"
       }
-    }
+    },
+    {},
+    {}
   ]
 }
