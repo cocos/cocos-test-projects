@@ -59,6 +59,9 @@
       },
       {
         "__id__": 395
+      },
+      {
+        "__id__": 399
       }
     ],
     "_active": true,
@@ -66,7 +69,7 @@
     "_prefab": null,
     "autoReleaseAssets": false,
     "_globals": {
-      "__id__": 399
+      "__id__": 403
     },
     "_id": "49f0db96-9a18-44be-a9c3-2570c9bc4996"
   },
@@ -11138,6 +11141,7 @@
         "__id__": 384
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 3.64,
@@ -11220,6 +11224,7 @@
         "__id__": 388
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 3.33,
@@ -11301,6 +11306,7 @@
         "__id__": 392
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 3.33,
@@ -11382,6 +11388,7 @@
         "__id__": 396
       }
     ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 3.33,
@@ -11450,18 +11457,100 @@
     "_castShadow": false
   },
   {
-    "__type__": "cc.SceneGlobals",
-    "ambient": {
-      "__id__": 400
+    "__type__": "cc.Node",
+    "_name": "Spot Light-002",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 1
     },
-    "shadows": {
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 400
+      }
+    ],
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -0.663,
+      "y": 1.729,
+      "z": 5.835
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": -0.3007057995042731,
+      "y": 0,
+      "z": 0,
+      "w": 0.9537169507482269
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": -35,
+      "y": 0,
+      "z": 0
+    },
+    "_id": "1bgR2XvDZBu7mb4KJ7qhHH"
+  },
+  {
+    "__type__": "cc.SpotLight",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 399
+    },
+    "_enabled": true,
+    "__prefab": {
       "__id__": 401
     },
-    "_skybox": {
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_useColorTemperature": false,
+    "_colorTemperature": 6550,
+    "_staticSettings": {
       "__id__": 402
     },
+    "_size": 0.3,
+    "_luminance": 844.3431970194815,
+    "_term": 0,
+    "_range": 20,
+    "_spotAngle": 30,
+    "_id": "aain7NDOxMorSnr1DSKdBt"
+  },
+  {
+    "__type__": "cc.CompPrefabInfo ",
+    "fileId": "aain7NDOxMorSnr1DSKdBt"
+  },
+  {
+    "__type__": "cc.StaticLightSettings",
+    "_editorOnly": false,
+    "_bakeable": false,
+    "_castShadow": false
+  },
+  {
+    "__type__": "cc.SceneGlobals",
+    "ambient": {
+      "__id__": 404
+    },
+    "shadows": {
+      "__id__": 405
+    },
+    "_skybox": {
+      "__id__": 406
+    },
     "fog": {
-      "__id__": 403
+      "__id__": 407
     }
   },
   {
@@ -11507,6 +11596,7 @@
     "_far": 20,
     "_aspect": 1,
     "_orthoSize": 2,
+    "_maxReceived": 4,
     "_size": {
       "__type__": "cc.Vec2",
       "x": 512,
