@@ -10,9 +10,9 @@ export class wireFrame extends Component {
         if (wireFrame.lineMat == null) {
             wireFrame.lineMat = new Material();
             wireFrame.lineMat.initialize({
-                effectName: 'builtin-unlit',
+                effectName: 'unlit',
                 states: { primitive: GFXPrimitiveMode.LINE_LIST },
-            })
+            });
 
             wireFrame.lineMat.setProperty('mainColor', new Vec4(0, 0, 0, 1));
         }
