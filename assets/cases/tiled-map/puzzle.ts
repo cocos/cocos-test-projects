@@ -47,20 +47,21 @@ export class Puzzle extends Component {
     successObjectName = 'SuccessPoint';
 
 
-    _player: Node;
-    _touching: boolean;
-    _succeedLayer: Node;
-    _curTile: Vec2;
-    _startTile: Vec2;
-    _endTile: Vec2;
-    _tiledMap: TiledMap;
-    _layerFloor: TiledLayer;
-    _layerBarrier: TiledLayer;
+    @property({type:Node})
+    player:Node|null = null;
+
+    _touching?: boolean;
+    _succeedLayer?: Node;
+    _curTile?: Vec2;
+    _startTile?: Vec2;
+    _endTile?: Vec2;
+    _tiledMap?: TiledMap;
+    _layerFloor?: TiledLayer;
+    _layerBarrier?: TiledLayer;
 
     onLoad () {
-        this._player = this.node.getChildByName('player');
         if (!this._isMapLoaded) {
-            this._player.active = false;
+            this.player.active = false;
         }
 
         systemEvent.on(SystemEventType.KEY_UP, this._onKeyPressed, this);
@@ -148,9 +149,9 @@ export class Puzzle extends Component {
         this._curTile = this._startTile = this._getTilePos(startPos);
         this._endTile = this._getTilePos(endPos);
 
-        if (this._player) {
+        if (this.player) {
             this._updatePlayerPos();
-            this._player.active = true;
+            this.player.active = true;
         }
 
         this._isMapLoaded = true;
@@ -162,7 +163,7 @@ export class Puzzle extends Component {
 
     _updatePlayerPos () {
         const pos = this._layerFloor.getPositionAt(this._curTile);
-        this._player.setPosition(new Vec3(pos.x, pos.y, 0));
+        this.player.setPosition(new Vec3(pos.x, pos.y, 0));
     }
 
     _getTilePos (posInPixel:{x:number, y:number}) {
@@ -231,7 +232,7 @@ export class Puzzle extends Component {
         // get necessary data
         const mapContentSize = this.node._uiProps.uiTransformComp!.contentSize;
         const mapPos = this.node.getPosition();
-        const playerPos = this._player.getPosition();
+        const playerPos = this.player.getPosition();
         const viewSize = view.getVisibleSize();
         const tileSize = this._tiledMap.getTileSize();
         const minDisX = minTilesCount * tileSize.width;
@@ -280,9 +281,9 @@ export class Puzzle extends Component {
             if (newPos.y < minY) newPos.y = minY;
             if (newPos.y > maxY) newPos.y = maxY;
 
-            if (!newPos.equals(mapPos)) {
+            if (newPos.x != mapPos.x || newPos.y != mapPos.y) {
                 console.log('Move the map to new position: ', newPos);
-                this.node.setPosition(newPos);
+                this.node.setPosition(newPos.x, newPos.y);
             }
         }
     }
