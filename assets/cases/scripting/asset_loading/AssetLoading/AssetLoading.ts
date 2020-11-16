@@ -20,7 +20,7 @@ export class AssetLoading extends Component {
         SpriteFrame: "test_assets/image/spriteFrame",
         Prefab: "test_assets/prefab",
         Animation: "test_assets/testAnim",
-        Scene: "test_assets/testScene",
+        Scene: "test_assets/test-scene",
         TextureCube: "test_assets/cubemap",
         CORS: "https://download.cocos.org/CocosTest/test-case/logo.png",
         Material: "test_assets/testMat",
@@ -122,7 +122,7 @@ export class AssetLoading extends Component {
                 loader.loadRes(url, loadCallBack);
                 break;
             case 'Scene':
-                director.loadScene('LoadRes');
+                director.loadScene(url);
                 break;
             case 'CORS':
                 loader.load(url, loadCallBack);
