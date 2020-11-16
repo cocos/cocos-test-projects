@@ -25,7 +25,7 @@ export class PreloadAssets extends Component {
         SpriteFrame: "test_assets/image/spriteFrame",
         Prefab: "test_assets/prefab",
         Animation: "test_assets/testAnim",
-        Scene: "test_assets/testScene",
+        Scene: "test_assets/test-preload-scene",
         TextureCube: "test_assets/cubemap",
         Material: "test_assets/testMat",
         Mesh: "test_assets/Monster/monster",
@@ -125,7 +125,7 @@ export class PreloadAssets extends Component {
                 resources.preload(url, loadCallBack);
                 break;
             case 'Scene':
-                director.preloadScene('LoadRes');
+                director.preloadScene(url, loadCallBack);
                 break;
             case 'Dir':
                 resources.preloadDir(url, loadCallBack);
@@ -190,7 +190,7 @@ export class PreloadAssets extends Component {
                 resources.load(url, (err, asset) => this._createNode(this._curType, asset));
                 break;
             case 'Scene':
-                director.loadScene('LoadRes');
+                director.loadScene(url);
                 break;
             case 'Dir':
                 resources.loadDir(url, (err, asset) => {
