@@ -14,7 +14,7 @@ export class RichTextEvent extends Component {
         let node = instantiate(this.templateTips);
         node.position = this.position;
         node.parent = find('Canvas');
-        let label = node.addComponent(LabelComponent);
+        let label = node.getComponent(LabelComponent);
         label.string = 'Duang Duang';
     }
 }
