@@ -125,7 +125,7 @@ export class PreloadAssets extends Component {
                 resources.preload(url, loadCallBack);
                 break;
             case 'Scene':
-                director.preloadScene(url);
+                director.preloadScene(url, loadCallBack);
                 break;
             case 'Dir':
                 resources.preloadDir(url, loadCallBack);
