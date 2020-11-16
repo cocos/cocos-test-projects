@@ -15,8 +15,6 @@ export class WebviewCtrl extends Component {
     start () {
         // 隐藏不支持 video player 的平台
         switch (sys.platform) {
-            case sys.ANDROID:
-            case sys.OS_IOS:
             case sys.MACOS:
             case sys.ALIPAY_MINI_GAME:
             case sys.BYTEDANCE_MINI_GAME:
