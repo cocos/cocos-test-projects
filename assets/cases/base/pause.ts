@@ -23,6 +23,10 @@ export class newScript extends Component {
         if(this._y >= 2) {
             this.timer=false;
         }
+        if(deltaTime > 1) {
+            // hack for first frame
+            deltaTime = 1;
+        }
         if(this.timer) {
             this._y += 1*deltaTime;
         }
