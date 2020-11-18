@@ -1,4 +1,4 @@
-import { _decorator, Component, LabelComponent, Asset, assert, loader, sys } from 'cc';
+import { _decorator, Component, LabelComponent, Asset, assert, loader, sys, assetManager } from 'cc';
 const { ccclass, property } = _decorator;
 
 // imported from socket-io.js
@@ -112,8 +112,8 @@ export class NetworkCtrl extends Component {
         const respLabel = this.websocket;
         // We should pass the cacert to libwebsockets used in native platform, otherwise the wss connection would be closed.
         let url = this.wssCacert.nativeUrl;
-        if (loader.md5Pipe) {
-            url = loader.md5Pipe.transformURL(url);
+        if (assetManager.cacheManager) {
+            url = assetManager.cacheManager.getCache(url) || url;
         }
         this._wsiSendBinary = new (WebSocket as any)('wss://echo.websocket.org', [], url);
         this._wsiSendBinary.binaryType = 'arraybuffer';
