@@ -36,8 +36,8 @@ export class VideoPlayerCtrl extends Component {
             case sys.VIVO_MINI_GAME:
             case sys.XIAOMI_QUICK_GAME:
             case sys.BAIDU_MINI_GAME:
-            case sys.LINKSURE:
-            case sys.QTT_GAME:
+            case sys.LINKSURE_MINI_GAME:
+            case sys.QTT_MINI_GAME:
             case sys.WIN32:
                 this.noSupport.active = true;
                 this.videoPlayer.node.active = false;
