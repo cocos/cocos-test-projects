@@ -21,7 +21,7 @@ ${
     keys.map((key) => {
         const value = buildTimeConstants[key];
         const valueRep = typeof value === 'boolean' ?
-            (value ? '✓' : '✗'):
+            (value ? 'V' : 'X'):
             value;
         return `${key.padStart(keyNameMaxLen, ' ')} : ${valueRep}`;
     }).join('\n')
