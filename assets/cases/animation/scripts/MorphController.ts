@@ -1,7 +1,7 @@
 import { _decorator, Component, ModelComponent, CCFloat, Mesh, Prefab, instantiate, find, Slider, Label, Layout, EventHandler } from 'cc';
+import { EDITOR } from 'cce.env';
 const { ccclass, property, executeInEditMode } = _decorator;
 
-declare const CC_EDITOR;
 declare const cce;
 
 @ccclass('MorphController')
@@ -78,12 +78,12 @@ export class MorphController extends Component {
         this.weightsControl = new Array(nTargets).fill(0);
 
 
-        if (CC_EDITOR) {
+        if (EDITOR) {
             cce.Node.emit('change', this.node);
             cce.Ipc.forceSend('broadcast', 'scene:change-node', this.node.uuid);
         }
 
-        if (!CC_EDITOR) {
+        if (!EDITOR) {
             this.initUI();
         }
     }
