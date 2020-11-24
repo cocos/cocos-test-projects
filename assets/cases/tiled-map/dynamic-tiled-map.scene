@@ -69,7 +69,7 @@
       "__type__": "cc.Vec3",
       "x": 480,
       "y": 320,
-      "z": 1
+      "z": 0
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -297,6 +297,7 @@
       "__id__": 10
     },
     "_visFlags": 0,
+    "_customMaterial": null,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -306,7 +307,6 @@
       "b": 0,
       "a": 255
     },
-    "_useOriginalSize": true,
     "_string": "CreateTiledMap",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
@@ -321,6 +321,7 @@
     "_isItalic": false,
     "_isBold": false,
     "_isUnderline": false,
+    "_underlineHeight": 2,
     "_cacheMode": 0,
     "_id": "919y8AaONJE5Rnq/SLtbwT"
   },
@@ -368,6 +369,7 @@
       "__id__": 14
     },
     "_visFlags": 0,
+    "_customMaterial": null,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -617,6 +619,7 @@
       "__id__": 23
     },
     "_visFlags": 0,
+    "_customMaterial": null,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -626,7 +629,6 @@
       "b": 0,
       "a": 255
     },
-    "_useOriginalSize": true,
     "_string": "CreateWithTsx",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
@@ -641,6 +643,7 @@
     "_isItalic": false,
     "_isBold": false,
     "_isUnderline": false,
+    "_underlineHeight": 2,
     "_cacheMode": 0,
     "_id": "d1e3gxRAxGI6T1EDXt6i7X"
   },
@@ -688,6 +691,7 @@
       "__id__": 27
     },
     "_visFlags": 0,
+    "_customMaterial": null,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -884,6 +888,7 @@
       "__id__": 35
     },
     "_visFlags": 0,
+    "_customMaterial": null,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -893,7 +898,6 @@
       "b": 255,
       "a": 255
     },
-    "_useOriginalSize": true,
     "_string": "Create TiledMap in code",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
@@ -908,6 +912,7 @@
     "_isItalic": false,
     "_isBold": false,
     "_isUnderline": false,
+    "_underlineHeight": 2,
     "_cacheMode": 0,
     "_id": "fdI1BKTY5GY6sbYSxKBF8T"
   },
@@ -962,7 +967,7 @@
       "r": 56,
       "g": 59,
       "b": 65,
-      "a": 0
+      "a": 255
     },
     "_renderMode": 0,
     "_id": "74B82+OcpEcbwnJ1R8zY2o"
@@ -1078,6 +1083,7 @@
     "_far": 30,
     "_aspect": 1,
     "_orthoSize": 5,
+    "_maxReceived": 4,
     "_size": {
       "__type__": "cc.Vec2",
       "x": 512,

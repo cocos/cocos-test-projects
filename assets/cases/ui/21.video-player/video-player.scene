@@ -174,7 +174,7 @@
       "r": 0,
       "g": 0,
       "b": 0,
-      "a": 0
+      "a": 255
     },
     "_depth": 1,
     "_stencil": 0,
@@ -235,7 +235,7 @@
       "__type__": "cc.Vec3",
       "x": 480,
       "y": 320,
-      "z": 1
+      "z": 0
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -347,7 +347,6 @@
       "b": 0,
       "a": 255
     },
-    "_useOriginalSize": true,
     "_string": "开启 stayOnBottom 功能正常",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
@@ -510,7 +509,6 @@
       "b": 255,
       "a": 255
     },
-    "_useOriginalSize": true,
     "_string": "",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
@@ -973,7 +971,6 @@
       "b": 0,
       "a": 255
     },
-    "_useOriginalSize": true,
     "_string": "x1",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
@@ -1266,7 +1263,6 @@
       "b": 255,
       "a": 255
     },
-    "_useOriginalSize": true,
     "_string": "打开 stayOnBottom",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
@@ -1590,7 +1586,6 @@
       "b": 0,
       "a": 255
     },
-    "_useOriginalSize": true,
     "_string": "播放本地视频",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
@@ -1883,7 +1878,6 @@
       "b": 0,
       "a": 255
     },
-    "_useOriginalSize": true,
     "_string": "播放远程视频",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
@@ -2176,7 +2170,6 @@
       "b": 0,
       "a": 255
     },
-    "_useOriginalSize": true,
     "_string": "暂停视频",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
@@ -2469,7 +2462,6 @@
       "b": 0,
       "a": 255
     },
-    "_useOriginalSize": true,
     "_string": "停止视频",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
@@ -3081,7 +3073,6 @@
       "b": 255,
       "a": 255
     },
-    "_useOriginalSize": true,
     "_string": "当前平台不支持，可以无视",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
@@ -3233,7 +3224,6 @@
       "b": 255,
       "a": 255
     },
-    "_useOriginalSize": true,
     "_string": "label",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
@@ -3521,6 +3511,7 @@
     "_far": 30,
     "_aspect": 1,
     "_orthoSize": 5,
+    "_maxReceived": 4,
     "_size": {
       "__type__": "cc.Vec2",
       "x": 512,
