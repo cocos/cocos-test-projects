@@ -116,9 +116,9 @@ export class Puzzle extends Component {
 
     restartGame () {
         this._succeedLayer.active = false;
-        this._initMapPos();
         this._curTile = this._startTile;
         this._updatePlayerPos();
+        this._initMapPos();
     }
 
     start () {
@@ -158,7 +158,7 @@ export class Puzzle extends Component {
     }
 
     _initMapPos () {
-        // this.node.setPosition(visibleRect.bottomLeft);
+        this.node.setPosition(0, 0);
     }
 
     _updatePlayerPos () {
