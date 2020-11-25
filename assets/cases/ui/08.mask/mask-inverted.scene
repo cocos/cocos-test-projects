@@ -63,7 +63,7 @@
       "__type__": "cc.Vec3",
       "x": 480,
       "y": 320,
-      "z": 1
+      "z": 0
     },
     "_lrot": {
       "__type__": "cc.Quat",
@@ -128,7 +128,7 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 1073741824,
+    "_layer": -301989889,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -214,8 +214,8 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_materials": [],
     "_visFlags": 0,
+    "_customMaterial": null,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -274,8 +274,8 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_materials": [],
     "_visFlags": 0,
+    "_customMaterial": null,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -372,8 +372,8 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_materials": [],
     "_visFlags": 0,
+    "_customMaterial": null,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -383,7 +383,6 @@
       "b": 255,
       "a": 255
     },
-    "_useOriginalSize": true,
     "_string": "反向遮罩测试例",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
@@ -398,6 +397,7 @@
     "_isItalic": false,
     "_isBold": false,
     "_isUnderline": false,
+    "_underlineHeight": 2,
     "_cacheMode": 0,
     "_id": "7d4pgGeTlAcZKMTbmti9bV"
   },
@@ -510,8 +510,8 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_materials": [],
     "_visFlags": 0,
+    "_customMaterial": null,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
     "_color": {
@@ -521,7 +521,6 @@
       "b": 255,
       "a": 255
     },
-    "_useOriginalSize": true,
     "_string": "中间部分镂空，其余部分填充",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
@@ -536,6 +535,7 @@
     "_isItalic": false,
     "_isBold": false,
     "_isUnderline": false,
+    "_underlineHeight": 2,
     "_cacheMode": 0,
     "_id": "50MZXL1EhBGadMd1JzLT8o"
   },
@@ -607,7 +607,7 @@
       "r": 0,
       "g": 0,
       "b": 0,
-      "a": 0
+      "a": 255
     },
     "_renderMode": 0,
     "_id": "98aLx4WC9AopbVfqZDaOKQ"
@@ -699,6 +699,7 @@
     "_far": 30,
     "_aspect": 1,
     "_orthoSize": 5,
+    "_maxReceived": 4,
     "_size": {
       "__type__": "cc.Vec2",
       "x": 512,
