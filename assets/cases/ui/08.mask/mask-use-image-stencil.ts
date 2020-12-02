@@ -22,7 +22,7 @@ export class MaskUseImageStencil extends Component {
         this.scheduleOnce(() => {
             mask.type = Mask.Type.IMAGE_STENCIL;
             this.scheduleOnce(() => {
-                mask.type = Mask.Type.ELLIPSE;
+                mask.type = Mask.Type.GRAPHICS_STENCIL;
                 const g = mask.graphics;
                 g.clear();
                 g.lineWidth = 10;
