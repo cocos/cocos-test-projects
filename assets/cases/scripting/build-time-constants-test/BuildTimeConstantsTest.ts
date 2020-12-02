@@ -1,5 +1,5 @@
 
-import * as buildTimeConstants from 'cce.env';
+import * as buildTimeConstants from 'cce:env';
 import * as cc from 'cc';
 
 // import * as buildTimeConstants from 'build-time-constants';
