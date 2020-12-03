@@ -1,5 +1,5 @@
 import { _decorator, Component, ModelComponent, CCFloat, Mesh, Prefab, instantiate, find, Slider, Label, Layout, EventHandler } from 'cc';
-import { EDITOR } from 'cce.env';
+import { EDITOR } from 'cce:env';
 const { ccclass, property, executeInEditMode } = _decorator;
 
 declare const cce;
