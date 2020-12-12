@@ -113,7 +113,7 @@ export class NetworkCtrl extends Component {
         // We should pass the cacert to libwebsockets used in native platform, otherwise the wss connection would be closed.
         let url = this.wssCacert.nativeUrl;
         if (assetManager.cacheManager) {
-            url = assetManager.cacheManager.getCache(url) || url;
+            url = assetManager.cacheManager.getCache(url) || assetManager.cacheManager.getTemp(url) || url;
         }
         this._wsiSendBinary = new (WebSocket as any)('wss://echo.websocket.org', [], url);
         this._wsiSendBinary.binaryType = 'arraybuffer';
