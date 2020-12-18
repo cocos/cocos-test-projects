@@ -1,24 +1,25 @@
-import { _decorator, Component, Prefab, LabelComponent, PageViewComponent, Color, Node, Vec3, SpriteComponent, instantiate  } from "cc";
+import { _decorator, Component, Prefab, Label, PageView, Color, Node, Vec3, Sprite, instantiate  } from "cc";
 const { ccclass, property, menu } = _decorator;
+
 
 @ccclass("PageViewCtrl")
 @menu('UI/PageViewCtrl')
 export class PageViewCtrl extends Component {
-    public static Direction = PageViewComponent.Direction;
+    public static Direction = PageView.Direction;
     @property
     public curNum = 3;
     @property
     public curTotal = 10;
     @property(Prefab)
-    public pageTeample:Prefab | null = null;
-    @property(PageViewComponent)
-    target: PageViewComponent | null = null;
-    @property(LabelComponent)
-    label: LabelComponent | null = null;
+    public pageTeample:Prefab = null!;
+    @property(PageView)
+    public target: PageView  = null!;
+    @property(Label)
+    public label: Label | null = null;
     @property({
-        type:PageViewComponent.Direction,
+        type:PageView.Direction,
     })
-    direction = PageViewComponent.Direction.Horizontal;
+    public direction = PageView.Direction.Horizontal;
 
     _createPage() {
         const page = instantiate(this.pageTeample) as Node;
@@ -28,7 +29,7 @@ export class PageViewCtrl extends Component {
         color.r = Math.floor(Math.random() * 255);
         color.g = Math.floor(Math.random() * 255);
         color.b = Math.floor(Math.random() * 255);
-        const comp = page.getComponent(SpriteComponent);
+        const comp = page.getComponent(Sprite)!;
         comp.color = color;
         return page;
     }
@@ -40,8 +41,8 @@ export class PageViewCtrl extends Component {
 
     update() {
         // 当前页面索引
-        const extra = this.direction === PageViewComponent.Direction.Vertical ? '\n' : '';
-        this.label.string = `第${extra}` + (this.target.getCurrentPageIndex() + 1) + `${extra}页`;
+        const extra = this.direction === PageView.Direction.Vertical ? '\n' : '';
+        this.label!.string = `第${extra}` + (this.target.getCurrentPageIndex() + 1) + `${extra}页`;
     }
 
     // 返回首页
@@ -115,11 +116,12 @@ export class PageViewCtrl extends Component {
     }
 
     // 监听事件
-    onPageEvent(sender, eventType) {
-        // 翻页事件
-        if (eventType !== PageViewComponent.EventType.PAGE_TURNING) {
-            return;
-        }
+    onPageEvent(sender: PageView, eventType: typeof PageView.EventType) {
+        // // 翻页事件
+        // if (eventType !== PageView.EventType.PAGE_TURNING) {
+        //     return;
+        // }
+
         console.log("当前所在的页面索引:" + sender.getCurrentPageIndex());
     }
 }

@@ -1,4 +1,4 @@
-import { _decorator, Component, game, macro, math, systemEvent, SystemEvent } from 'cc';
+import { _decorator, Component, game, macro, math, systemEvent, SystemEvent, EventMouse, EventKeyboard, EventTouch, Touch } from 'cc';
 const { ccclass, property } = _decorator;
 const { Vec2, Vec3, Quat } = math;
 
@@ -56,7 +56,7 @@ export class FirstPersonCamera extends Component {
         systemEvent.off(SystemEvent.EventType.TOUCH_END, this.onTouchEnd, this);
     }
 
-    public update (dt) {
+    public update (dt: number) {
         // position
         Vec3.transformQuat(v3_1, this._velocity, this.node.rotation);
         Vec3.scaleAndAdd(this._position, this._position, v3_1, this.moveSpeed * this._speedScale);
@@ -68,13 +68,13 @@ export class FirstPersonCamera extends Component {
         this.node.setRotation(qt_1);
     }
 
-    public onMouseWheel (e) {
+    public onMouseWheel (e: EventMouse) {
         const delta = -e.getScrollY() * this.moveSpeed * 0.1; // delta is positive when scroll down
         Vec3.transformQuat(v3_1, Vec3.UNIT_Z, this.node.rotation);
         Vec3.scaleAndAdd(this._position, this.node.position, v3_1, delta);
     }
 
-    public onKeyDown (e) {
+    public onKeyDown (e: EventKeyboard) {
         const v = this._velocity;
         if      (e.keyCode === KEYCODE.SHIFT) { this._speedScale = this.moveSpeedShiftScale; }
         else if (e.keyCode === KEYCODE.W) { if (v.z === 0) { v.z = -1; } }
@@ -85,7 +85,7 @@ export class FirstPersonCamera extends Component {
         else if (e.keyCode === KEYCODE.E) { if (v.y === 0) { v.y =  1; } }
     }
 
-    public onKeyUp (e) {
+    public onKeyUp(e: EventKeyboard) {
         const v = this._velocity;
         if      (e.keyCode === KEYCODE.SHIFT) { this._speedScale = 1; }
         else if (e.keyCode === KEYCODE.W) { if (v.z < 0) { v.z = 0; } }
@@ -96,13 +96,13 @@ export class FirstPersonCamera extends Component {
         else if (e.keyCode === KEYCODE.E) { if (v.y > 0) { v.y = 0; } }
     }
 
-    public onTouchStart (_e) {
-        if (game.canvas.requestPointerLock) { game.canvas.requestPointerLock(); }
+    public onTouchStart () {
+        if (game.canvas!['requestPointerLock']) { game.canvas!.requestPointerLock(); }
     }
 
-    public onTouchMove (e) {
+    public onTouchMove (t: Touch, e: EventTouch) {
         e.getStartLocation(v2_1);
-        if (v2_1.x > game.canvas.width * 0.4) { // rotation
+        if (v2_1.x > game.canvas!.width * 0.4) { // rotation
             e.getDelta(v2_2);
             this._euler.y -= v2_2.x * this.rotateSpeed * 0.1;
             this._euler.x += v2_2.y * this.rotateSpeed * 0.1;
@@ -114,10 +114,10 @@ export class FirstPersonCamera extends Component {
         }
     }
 
-    public onTouchEnd (e) {
+    public onTouchEnd(t: Touch, e: EventTouch) {
         if (document.exitPointerLock) { document.exitPointerLock(); }
         e.getStartLocation(v2_1);
-        if (v2_1.x < game.canvas.width * 0.4) { // position
+        if (v2_1.x < game.canvas!.width * 0.4) { // position
             this._velocity.x = 0;
             this._velocity.z = 0;
         }

@@ -1,10 +1,3 @@
-// Learn TypeScript:
-//  - https://docs.cocos.com/creator/manual/en/scripting/typescript.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
-
 import { _decorator, Component, Node, Label, AudioSource, assetManager, log, Texture2D, Sprite, SpriteFrame, AudioClip, director } from 'cc';
 const { ccclass, property } = _decorator;
 
@@ -14,12 +7,12 @@ export class AssetBundleZip extends Component {
     public loadTips: any = null;
 
     @property(Node)
-    public showWindow: Node = null;
+    public showWindow: Node = null!;
 
     @property({type: [Label]})
     public labels: Array<Label> = [];
 
-    private _audioSource: AudioSource = null;
+    private _audioSource: AudioSource = null!;
 
     private _isLoading: Boolean = false;
 
@@ -66,13 +59,14 @@ export class AssetBundleZip extends Component {
                 log('Error url [' + err + ']');
                 return;
             }
+
             this._isLoading = false;
             this.loadTips.string = "";
             var node = new Node("New Node");
             node.setPosition(0, 0);
             let component = node.addComponent(Sprite);
             const sp = new SpriteFrame();
-            sp.texture = asset;
+            sp.texture = asset!;
             component.spriteFrame = sp;
             this.labels[1].string = "已加载";
             this.showWindow.addChild(node);
@@ -94,12 +88,13 @@ export class AssetBundleZip extends Component {
                 log('Error url [' + err + ']');
                 return;
             }
+
             this._isLoading = false;
             this.loadTips.string = "";
             var node = new Node("New Node");
             node.setPosition(0, 0);
             let component = node.addComponent(AudioSource);
-            component.clip = asset;
+            component.clip = asset!;
             component.play();
             this._audioSource = component;
             this.loadTips.string = "播放音乐";
@@ -125,7 +120,7 @@ export class AssetBundleZip extends Component {
             }
             this._isLoading = false;
             this.loadTips.string = "";
-            director.runScene(asset);
+            director.runScene(asset!);
         });
     }
 

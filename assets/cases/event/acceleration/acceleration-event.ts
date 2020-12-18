@@ -1,14 +1,14 @@
-import { _decorator, Component, Node, systemEvent, SystemEventType, EventAcceleration, Vec2, CCInteger, LabelComponent, ButtonComponent } from 'cc';
+import { _decorator, Component, Node, systemEvent, SystemEventType, EventAcceleration, Vec2, Label } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('accelerationEvent')
 export class accelerationEvent extends Component {
 
     @property(Node)
-    target: Node = null;
+    public target: Node = null!;
 
-    @property(LabelComponent)
-    btnLabel: LabelComponent = null;
+    @property(Label)
+    public btnLabel: Label = null!;
 
     @property
     speed: number = 10;
@@ -26,10 +26,11 @@ export class accelerationEvent extends Component {
         systemEvent.off(SystemEventType.DEVICEMOTION,this.moveBall,this);
     }
 
-    update (dt) {
-        this.target.position.x += this.acc.x * dt * this.speed;
-        this.target.position.z += (-this.acc.y) * dt * this.speed;
-        this.target.setPosition(this.target.position.x,this.target.position.y,this.target.position.z);
+    update (dt: number) {
+        let pos = this.target.position;
+        this.target.setPosition(pos.x + this.acc.x * dt * this.speed, pos.y);
+        pos = this.target.position;
+        this.target.setPosition(pos.x, pos.y, pos.z + (-this.acc.y) * dt * this.speed);
     }
 
     moveBall (event: EventAcceleration) {
@@ -44,6 +45,7 @@ export class accelerationEvent extends Component {
         } else {
             this.btnLabel.string = 'Accelerometer Off';
         }
+
         if (!this.accelerometerEnable) {
             this.acc.x = 0;
             this.acc.y = 0;

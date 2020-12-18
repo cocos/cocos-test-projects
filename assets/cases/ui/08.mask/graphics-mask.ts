@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, MaskComponent } from "cc";
+import { _decorator, Component, Node, Mask } from "cc";
 const { ccclass, property, menu, executeInEditMode } = _decorator;
 
 @ccclass("GraphicsMask")
@@ -11,8 +11,8 @@ export class GraphicsMask extends Component {
     }
 
     drawArc(){
-        const mask = this.getComponent(MaskComponent);
-        const g = mask.graphics;
+        const mask = this.getComponent(Mask)!;
+        const g = mask.graphics!;
 
         g.clear();
         g.lineWidth = 10;

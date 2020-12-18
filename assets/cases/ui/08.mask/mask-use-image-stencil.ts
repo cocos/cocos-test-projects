@@ -1,9 +1,3 @@
-// Learn TypeScript:
-//  - https://docs.cocos.com/creator/manual/en/scripting/typescript.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
 import { _decorator, Component, Node, SpriteFrame, Label, Mask } from 'cc';
 const { ccclass, type } = _decorator;
@@ -11,10 +5,10 @@ const { ccclass, type } = _decorator;
 @ccclass('MaskUseImageStencil')
 export class MaskUseImageStencil extends Component {
     @type(SpriteFrame)
-    image: SpriteFrame = null;
+    public image: SpriteFrame = null!;
 
     @type(Label)
-    label: Label = null;
+    public label: Label = null!;
 
     start(){
         const mask = this.getComponent(Mask)!;
@@ -25,7 +19,7 @@ export class MaskUseImageStencil extends Component {
                 mask.enabled = false;
                 this.scheduleOnce(() => {
                     mask.type = Mask.Type.GRAPHICS_STENCIL;
-                    const g = mask.graphics;
+                    const g = mask.graphics!;
                     g.clear();
                     g.lineWidth = 10;
                     g.fillColor.fromHEX('#ff0000');

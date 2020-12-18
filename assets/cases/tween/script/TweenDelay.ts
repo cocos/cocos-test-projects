@@ -5,16 +5,16 @@ const { ccclass, property, menu } = _decorator;
 @menu("tween/TweenDelay")
 export class TweenDelay extends Component {
 
-    private tweenDelay: Tween;
+    private tweenDelay!: Tween<Node>;
 
     onLoad () {
         this.tweenDelay = tween(this.node)
             // 延迟 1s
             .delay(1)
-            .to(1, { scale: new Vec3(2, 2, 2) }, null)
+            .to(1, { scale: new Vec3(2, 2, 2) })
             // 再延迟 1s
             .delay(1)
-            .to(1, { scale: new Vec3(3, 3, 3) }, null)
+            .to(1, { scale: new Vec3(3, 3, 3) })
     }
 
     onEnable () {

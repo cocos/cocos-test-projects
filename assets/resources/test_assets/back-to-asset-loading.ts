@@ -10,10 +10,6 @@ const { ccclass, property } = _decorator;
 
 @ccclass('BackToAssetLoading')
 export class BackToAssetLoading extends Component {
-    /* class member could be defined like this */
-    // dummy = '';
-
-    /* use `property` decorator if your want the member to be serializable */
     @property
     sceneToBack = '';
 

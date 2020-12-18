@@ -1,13 +1,13 @@
-import { _decorator, Component, Node, systemEvent, SystemEventType, LabelComponent, Touch, EventMouse, view } from "cc";
+import { _decorator, Component, Node, systemEvent, SystemEventType, Label, Touch, EventMouse, view } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("EventInfo")
 @menu('Event/EventInfo')
 export class EventInfo extends Component {
-    @property(LabelComponent)
-    label: LabelComponent = null;
-    @property(LabelComponent)
-    top: LabelComponent = null;
+    @property(Label)
+    public label: Label = null!;
+    @property(Label)
+    public top: Label = null!;
 
     start () {
         this.top.string = `屏幕尺寸: ${view.getCanvasSize()} \n UI 尺寸: ${view.getVisibleSize()}`;

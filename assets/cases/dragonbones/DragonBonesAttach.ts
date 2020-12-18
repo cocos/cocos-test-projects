@@ -1,5 +1,5 @@
 
-import { _decorator, Component, director, instantiate, Label, Color, Node, Prefab, dragonBones, Sprite } from 'cc';
+import { _decorator, Component, instantiate, Label, Color, Prefab, dragonBones, Sprite } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('DragonBonesAttach')
@@ -77,13 +77,13 @@ export default class extends Component {
     }
 
     private createSocket(name:string, color:Color) {
-        let dbnode = new dragonBones.DragonBoneSocket();
-        dbnode.path = this.skeleton!.querySocketPathByName(name)[0];
-        const child = dbnode.target = instantiate(this.targetPrefab!);
+        let dbNode = new dragonBones.DragonBoneSocket();
+        dbNode.path = this.skeleton!.querySocketPathByName(name)[0];
+        const child = dbNode.target = instantiate(this.targetPrefab!);
         child.parent = this.node;
         child.name = name;
         const sp = child.getComponent(Sprite)!;
         sp.color = color;
-        return dbnode;
+        return dbNode;
     }
 }

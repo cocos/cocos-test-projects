@@ -1,11 +1,11 @@
-import { _decorator, Component, systemEvent, SystemEventType, LabelComponent, EventMouse } from "cc";
+import { _decorator, Component, systemEvent, SystemEventType, Label, EventMouse, EventKeyboard } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("systemEventPC")
 export class systemEventPC extends Component {
 
-    @property(LabelComponent)
-    labelShow: LabelComponent = null;
+    @property(Label)
+    public labelShow: Label = null!;
 
     start () {
         systemEvent.on(SystemEventType.MOUSE_DOWN, this.onMouseDown, this);
@@ -45,7 +45,7 @@ export class systemEventPC extends Component {
         this.labelShow.string = 'MOUSE_LEAVE';
     }
 
-    onKeyDown(event){
+    onKeyDown(event: EventKeyboard){
         this.labelShow.string = `KeyDown: ${String.fromCharCode(event.keyCode)}`;
     }
 

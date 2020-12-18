@@ -13,7 +13,7 @@ export default class SpineBoyCtrl extends Component{
         this._setMix('walk', 'run');
         this._setMix('run', 'jump');
         this._setMix('walk', 'jump');
-        
+
         spine.setStartListener(trackEntry => {
             var animationName = trackEntry.animation ? trackEntry.animation.name : "";
             console.log("[track %s][animation %s] start.", trackEntry.trackIndex, animationName);
@@ -35,7 +35,7 @@ export default class SpineBoyCtrl extends Component{
             if (animationName === 'shoot') {
                 this.spine!.clearTrack(1);
             }
-            var loopCount = Math.floor(trackEntry.trackTime / trackEntry.animationEnd); 
+            var loopCount = Math.floor(trackEntry.trackTime / trackEntry.animationEnd);
             console.log("[track %s][animation %s] complete: %s", trackEntry.trackIndex, animationName, loopCount);
         });
         spine.setEventListener(((trackEntry:any, event:any) => {
@@ -45,13 +45,13 @@ export default class SpineBoyCtrl extends Component{
 
         this._hasStop = false;
     }
-    
+
     // OPTIONS
-    
+
     toggleDebugSlots () {
         this.spine!.debugSlots = !this.spine?.debugSlots;
     }
-    
+
     toggleDebugBones () {
         this.spine!.debugBones = !this.spine?.debugBones;
     }
@@ -72,9 +72,9 @@ export default class SpineBoyCtrl extends Component{
             this.spine!.timeScale = 1.0;
         }
     }
-    
+
     // ANIMATIONS
-    
+
     stop () {
         this.spine?.clearTrack(0);
         this._hasStop = true;
@@ -89,7 +89,7 @@ export default class SpineBoyCtrl extends Component{
         this.spine?.setAnimation(0, 'run', true);
         this._hasStop = false;
     }
-    
+
     jump () {
         var oldAnim = this.spine?.animation;
         this.spine?.setAnimation(0, 'jump', false);
@@ -97,22 +97,22 @@ export default class SpineBoyCtrl extends Component{
             this.spine?.addAnimation(0, oldAnim === 'run' ? 'run' : 'walk', true, 0);
         }
     }
-    
+
     shoot () {
         this.spine?.setAnimation(1, 'shoot', false);
     }
-        
+
     idle () {
         this.spine?.setAnimation(0, 'idle', true);
     }
-        
+
     portal () {
         this.spine?.setAnimation(0, 'portal', false);
     }
-    
+
     //
-    
-    _setMix (anim1:string, anim2:string) {
+
+    _setMix (anim1: string, anim2: string) {
         this.spine?.setMix(anim1, anim2, this.mixTime);
         this.spine?.setMix(anim2, anim1, this.mixTime);
     }

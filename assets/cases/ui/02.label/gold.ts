@@ -1,19 +1,14 @@
-import { _decorator, Component, Node, LabelComponent } from "cc";
+import { _decorator, Component, Node, Label } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("gold")
 export class gold extends Component {
-    /* class member could be defined like this */
-    // dummy = '';
 
-    /* use `property` decorator if your want the member to be serializable */
-    // @property
-    // serializableDummy = 0;
 
     @property({
-        type:LabelComponent
+        type: Label
     })
-    label = null;
+    public label: Label = null!;
     private test = 0;
     start () {
         // Your initialization goes here.
@@ -21,7 +16,7 @@ export class gold extends Component {
 
     onButton () {
         this.test += 1;
-        this.label.string = this.test;
+        this.label.string = `${this.test}`;
         if(this.test > 9){
             this.test = 0;
         }

@@ -1,17 +1,12 @@
-import { _decorator, Component, systemEvent, SystemEventType, LabelComponent, EventTouch } from "cc";
+import { _decorator, Component, systemEvent, SystemEventType, Label, EventTouch, EventKeyboard, Touch } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("SystemEvent")
 @menu('Event/SystemEvent')
 export class SystemEvent extends Component {
-    /* class member could be defined like this */
-    // dummy = '';
 
-    /* use `property` decorator if your want the member to be serializable */
-    // @property
-    // serializableDummy = 0;
-    @property(LabelComponent)
-    labelShow: LabelComponent = null;
+    @property(Label)
+    public labelShow: Label = null!;
 
     start () {
         systemEvent.on(SystemEventType.TOUCH_START, this.onTouchStart, this);
@@ -31,23 +26,23 @@ export class SystemEvent extends Component {
         systemEvent.off(SystemEventType.KEY_UP, this.onKeyUp, this);
     }
 
-    onTouchStart(event: EventTouch){
+    onTouchStart(touch: Touch, event: EventTouch){
         this.labelShow.string = `TouchStart: ${event.getLocation()}`;
     }
 
-    onTouchMove(event: EventTouch){
+    onTouchMove(touch: Touch, event: EventTouch){
         this.labelShow.string = `TouchMove: ${event.getLocation()}`;
     }
 
-    onTouchEnd(event: EventTouch){
+    onTouchEnd(touch: Touch, event: EventTouch){
         this.labelShow.string = 'TouchEnd';
     }
 
-    onTouchCancel(event: EventTouch){
+    onTouchCancel(touch: Touch, event: EventTouch){
         this.labelShow.string = 'TouchCancel';
     }
 
-    onKeyDown(event){
+    onKeyDown(event: EventKeyboard){
         this.labelShow.string = `KeyDown: ${String.fromCharCode(event.keyCode)}`;
     }
 

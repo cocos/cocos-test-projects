@@ -1,30 +1,24 @@
-import { _decorator, Component, LabelComponent, EditBoxComponent } from "cc";
+import { _decorator, Component, Label, EditBox } from "cc";
 const { ccclass, property, menu} = _decorator;
 
 @ccclass("EditboxEvent")
 @menu('UI/EditboxEvent')
 export class EditboxEvent extends Component {
-    /* class member could be defined like this */
-    // dummy = '';
+    @property(Label)
+    public showLabel: Label = null!;
 
-    /* use `property` decorator if your want the member to be serializable */
-    // @property
-    // serializableDummy = 0;
-    @property(LabelComponent)
-    showLabel = null;
-
-    _isReturn = false;
+    private _isReturn = false;
 
     start () {
         // Your initialization goes here.
     }
 
-    editBegan(event, custom){
+    editBegan(event: EditBox, custom: string){
         this.showLabel.string = custom;
         this._isReturn = false;
     }
 
-    editEnd(event, custom) {
+    editEnd(event: EditBox, custom: string) {
         if(this._isReturn){
             return;
         }
@@ -32,12 +26,12 @@ export class EditboxEvent extends Component {
         this.showLabel.string = custom;
     }
 
-    editReturn(event, custom){
+    editReturn(event: EditBox, custom: string){
         this.showLabel.string = custom;
         this._isReturn = true;
     }
 
-    editInputing(input, event, custom){
+    editInputing(input: string, event: EditBox, custom: string){
         this.showLabel.string = `${custom}: ${input}`;
     }
 

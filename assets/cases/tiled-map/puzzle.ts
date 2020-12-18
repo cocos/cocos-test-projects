@@ -1,11 +1,5 @@
-// Learn TypeScript:
-//  - https://docs.cocos.com/creator/manual/en/scripting/typescript.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
 
-import { _decorator, Component, Node, ccenum, SystemEventType, TiledMap, Vec2, Vec3, view, macro, TiledLayer, systemEvent, EventKeyboard } from 'cc';
+import { _decorator, Component, Node, ccenum, SystemEventType, TiledMap, Vec2, Vec3, view, macro, TiledLayer, systemEvent, EventKeyboard, Touch, EventTouch } from 'cc';
 const { ccclass, property } = _decorator;
 
 enum MoveDirection {
@@ -26,7 +20,7 @@ ccenum(MoveDirection);
 export class Puzzle extends Component {
 
 
-    _touchStartPos = null;
+    _touchStartPos = new Vec2();
 
     _isMapLoaded = false;
 
@@ -48,16 +42,16 @@ export class Puzzle extends Component {
 
 
     @property({type:Node})
-    player:Node|null = null;
+    player: Node = null!;
 
-    _touching?: boolean;
-    _succeedLayer?: Node;
-    _curTile?: Vec2;
-    _startTile?: Vec2;
-    _endTile?: Vec2;
-    _tiledMap?: TiledMap;
-    _layerFloor?: TiledLayer;
-    _layerBarrier?: TiledLayer;
+    private _touching = false;
+    private _succeedLayer: Node = null!;
+    private _curTile = new Vec2();
+    private _startTile = new Vec2();
+    private _endTile = new Vec2;
+    private _tiledMap: TiledMap = null!;
+    private _layerFloor: TiledLayer = null!;
+    private _layerBarrier: TiledLayer = null!;
 
     onLoad () {
         if (!this._isMapLoaded) {
@@ -66,15 +60,15 @@ export class Puzzle extends Component {
 
         systemEvent.on(SystemEventType.KEY_UP, this._onKeyPressed, this);
 
-        this.node.on(SystemEventType.TOUCH_START, (event) => {
+        this.node.on(SystemEventType.TOUCH_START, (touch: Touch, event: EventTouch) => {
             this._touching = true;
-            this._touchStartPos = event.touch.getLocation();
+            this._touchStartPos.set(touch.getLocation());
         });
-        this.node.on(SystemEventType.TOUCH_END, (event) => {
+        this.node.on(SystemEventType.TOUCH_END, (touch: Touch, event: EventTouch) => {
             if (!this._touching || !this._isMapLoaded || this._succeedLayer.active) return;
 
             this._touching = false;
-            const touchPos = event.touch.getLocation();
+            const touchPos = touch.getLocation();
             const movedX = touchPos.x - this._touchStartPos.x;
             const movedY = touchPos.y - this._touchStartPos.y;
             const movedXValue = Math.abs(movedX);
@@ -115,8 +109,8 @@ export class Puzzle extends Component {
     }
 
     restartGame () {
-        this._succeedLayer.active = false;
-        this._curTile = this._startTile;
+        this._succeedLayer!.active = false;
+        this._curTile.set(this._startTile);
         this._updatePlayerPos();
         this._initMapPos();
     }
@@ -127,7 +121,7 @@ export class Puzzle extends Component {
         this._initMapPos();
 
         // init the succeed layer
-        this._succeedLayer = this.node.getParent().getChildByName('succeedLayer');
+        this._succeedLayer = this.node.getParent()!.getChildByName('succeedLayer')!;
         this._succeedLayer.active = false;
 
         // init the player position
@@ -142,8 +136,8 @@ export class Puzzle extends Component {
         const startPos = new Vec2(startObj.x, startObj.y);
         const endPos = new Vec2(endObj.x, endObj.y);
 
-        this._layerFloor = this._tiledMap.getLayer(this.floorLayerName);
-        this._layerBarrier = this._tiledMap.getLayer(this.barrierLayerName);
+        this._layerFloor = this._tiledMap.getLayer(this.floorLayerName)!;
+        this._layerBarrier = this._tiledMap.getLayer(this.barrierLayerName)!;
         if (!this._layerFloor || !this._layerBarrier) return;
 
         this._curTile = this._startTile = this._getTilePos(startPos);
@@ -162,7 +156,7 @@ export class Puzzle extends Component {
     }
 
     _updatePlayerPos () {
-        const pos = this._layerFloor.getPositionAt(this._curTile);
+        const pos = this._layerFloor.getPositionAt(this._curTile)!;
         this.player.setPosition(new Vec3(pos.x, pos.y, 0));
     }
 

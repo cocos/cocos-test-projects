@@ -1,25 +1,20 @@
-import { _decorator, Component, LabelComponent, Node } from "cc";
+import { _decorator, Component, Label, Node } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("NodeEvent")
 @menu('Event/NodeEvent')
 export class NodeEvent extends Component {
-    /* class member could be defined like this */
-    // dummy = '';
 
-    /* use `property` decorator if your want the member to be serializable */
-    // @property
-    // serializableDummy = 0;
-    @property(LabelComponent)
-    labelComp: LabelComponent = null;
+    @property(Label)
+    public labelComp: Label = null!;
     @property(Node)
-    receiver: Node = null;
+    public receiver: Node = null!;
 
-    _receiver: NodeEvent = null;
+    private _receiver: NodeEvent = null!;
 
     start() {
         if (this.receiver) {
-            this._receiver = this.receiver.getComponent(NodeEvent);
+            this._receiver = this.receiver.getComponent(NodeEvent)!;
         } else {
             this._receiver = this;
         }

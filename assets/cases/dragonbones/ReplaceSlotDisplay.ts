@@ -1,9 +1,8 @@
 
 
 
-import { _decorator, Component, director, instantiate, Label, Color, Vec2, Node, Prefab, dragonBones, macro, SystemEventType, systemEvent, Vec3, Material } from 'cc';
-import { SystemEvent } from '../event/system-event/system-event';
-const { ccclass, property, requireComponent } = _decorator;
+import { _decorator, Component, dragonBones } from 'cc';
+const { ccclass, property } = _decorator;
 
 
 @ccclass('ReplaceSlotDisplay')

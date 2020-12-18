@@ -1,19 +1,14 @@
-// Learn TypeScript:
-//  - https://docs.cocos.com/creator/manual/en/scripting/typescript.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
-
-import { _decorator, Component, Node, SpriteComponent, AudioSourceComponent, builtinResMgr, director, Font, instantiate, LabelComponent, loader, log, Material, ModelComponent, Prefab, SpriteAtlas, SpriteFrame, Texture2D, TextureCube, UIModelComponent, assetManager, resources, Asset } from 'cc';
+import { _decorator, Component, Node, Sprite, AudioSource, builtinResMgr, director, Font, instantiate, Label, loader, log, Material, MeshRenderer, Prefab, SpriteAtlas, SpriteFrame, Texture2D, TextureCube, UIMeshRenderer, assetManager, resources, Asset } from 'cc';
 const { ccclass, property } = _decorator;
+
+type UrlKey = keyof PreloadAssets['_urls'];
 
 @ccclass('PreloadAssets')
 export class PreloadAssets extends Component {
-    private _curType = "";
-    private _lastType = "";
-    private _btnLabel = null;
-    private _audioSource = null;
+    private declare _curType: UrlKey;
+    private _lastType: UrlKey | '' = '';
+    private _btnLabel: Label | null = null;
+    private _audioSource: AudioSource | null = null;
     private _isLoading = false;
     private _urls = {
         Audio: "test_assets/audio",
@@ -34,19 +29,19 @@ export class PreloadAssets extends Component {
     };
 
     @property({ type: Node })
-    showWindow = null;
+    public showWindow: Node = null!;
 
-    @property({ type: LabelComponent})
-    loadTips: LabelComponent = null;
+    @property({ type: Label})
+    public loadTips: Label = null!;
 
     @property({ type: [Node] })
-    loadList = [];
+    public loadList: Node[] = [];
 
     @property({ type: Prefab })
-    loadAnimTestPrefab = null;
+    public loadAnimTestPrefab: Prefab = null!;
 
     @property({ type: SpriteFrame })
-    loadMaterialSpriteFrame = null;
+    public loadMaterialSpriteFrame: SpriteFrame = null!;
 
     // use this for initialization
     onLoad () {
@@ -84,7 +79,7 @@ export class PreloadAssets extends Component {
 
         this._lastType = this._curType;
 
-        this._btnLabel = event.target.getChildByName("Label").getComponent(LabelComponent);
+        this._btnLabel = event.target.getChildByName("Label").getComponent(Label);
 
         this.loadTips.string = this._curType + " Loading....";
         this._isLoading = true;
@@ -135,25 +130,29 @@ export class PreloadAssets extends Component {
         }
     }
 
-    _loadCallBack (err) {
+    _loadCallBack (err: Error | null, data?: Asset | null) {
         this._isLoading = false;
         if (err) {
             log('Error url [' + err + ']');
             return;
         }
-        if (this._curType === "Audio") {
-            this._btnLabel.string = "播放";
+
+        if(this._btnLabel){
+            if (this._curType === "Audio") {
+                this._btnLabel.string = "播放";
+            } else {
+                this._btnLabel.string = "创建";
+            }
+
+            this._btnLabel.string += this._curType;
         }
-        else {
-            this._btnLabel.string = "创建";
-        }
-        this._btnLabel.string += this._curType;
+
         this.loadTips.string = this._curType + " Preloaded Successfully!";
     }
 
     _onClear () {
-        this.showWindow.removeAllChildren(true);
-        if (this._audioSource && this._audioSource instanceof AudioSourceComponent) {
+        this.showWindow.removeAllChildren();
+        if (this._audioSource && this._audioSource instanceof AudioSource) {
             this._audioSource.stop();
         }
     }
@@ -193,9 +192,9 @@ export class PreloadAssets extends Component {
                 director.loadScene(url);
                 break;
             case 'Dir':
-                resources.loadDir(url, (err, asset) => {
+                resources.loadDir(url, (err: Error, assets: Asset[]) => {
                     this.loadTips.string = "The asset loaded: ";
-                    asset.forEach((r) => this.loadTips.string += `${r.name};`);
+                    assets.forEach((r) => this.loadTips.string += `${r.name};`);
                 });
                 break;
             default:
@@ -210,24 +209,24 @@ export class PreloadAssets extends Component {
         let component = null;
         switch (this._curType) {
             case "SpriteFrame":
-                component = node.addComponent(SpriteComponent);
+                component = node.addComponent(Sprite);
                 component.spriteFrame = res;
                 break;
 
             case "SpriteAtlas":
-                component = node.addComponent(SpriteComponent);
+                component = node.addComponent(Sprite);
                 component.spriteFrame = res.getSpriteFrames()[0];
                 break;
             case "Texture2D":
                 let cube = instantiate(this.loadAnimTestPrefab);
-                const model = cube.getComponent(ModelComponent);
+                const model = cube.getComponent(MeshRenderer);
                 model.material.setProperty('albedoMap', res);
                 cube.setPosition(0, 0, 50);
                 cube.setScale(100, 100, 100);
                 cube.parent = this.showWindow;
                 break;
             case 'ImageAsset':
-                component = node.addComponent(SpriteComponent);
+                component = node.addComponent(Sprite);
                 const spriteFrame = new SpriteFrame();
                 const tex = new Texture2D();
                 tex.image = res;
@@ -235,31 +234,31 @@ export class PreloadAssets extends Component {
                 component.spriteFrame = spriteFrame;
                 break;
             case "Audio":
-                component = node.addComponent(AudioSourceComponent);
+                component = node.addComponent(AudioSource);
                 component.clip = res;
                 component.play();
                 this._audioSource = component;
                 this.loadTips.string = "播放音乐。";
                 break;
             case "Txt":
-                component = node.addComponent(LabelComponent);
+                component = node.addComponent(Label);
                 component.lineHeight = 40;
                 component.string = res.text;
                 break;
             case "Material":
-                component = node.addComponent(SpriteComponent);
+                component = node.addComponent(Sprite);
                 component.sharedMaterials = res;
                 component.spriteFrame = this.loadMaterialSpriteFrame;
                 break;
             case "Font":
-                component = node.addComponent(LabelComponent);
+                component = node.addComponent(Label);
                 component.font = res;
                 component.lineHeight = 40;
                 component.string = "This is BitmapFont!";
                 break;
             case 'Mesh':
-                component = node.addComponent(ModelComponent);
-                node.addComponent(UIModelComponent);
+                component = node.addComponent(MeshRenderer);
+                node.addComponent(UIMeshRenderer);
                 node.setPosition(0, 0, 50);
                 node.setScale(5, 5, 5);
                 component.mesh = res;

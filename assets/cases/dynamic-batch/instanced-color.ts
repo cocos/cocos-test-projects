@@ -1,4 +1,4 @@
-import { _decorator, Color, Component, ModelComponent } from 'cc';
+import { _decorator, Color, Component, MeshRenderer } from 'cc';
 const { ccclass } = _decorator;
 
 const _color = new Color();
@@ -7,10 +7,10 @@ const _data = new Float32Array(4);
 @ccclass('InstancedColor')
 export class InstancedColor extends Component {
 
-    private _models: ModelComponent[] = [];
+    private _models: MeshRenderer[] = [];
 
     public start () {
-        this._models = this.node.getComponentsInChildren(ModelComponent);
+        this._models = this.node.getComponentsInChildren(MeshRenderer);
     }
 
     public update (deltaTime: number) {

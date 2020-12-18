@@ -1,13 +1,14 @@
 
-import * as cc from 'cc';
+import { _decorator, Component } from "cc";
+const { ccclass, property, menu } = _decorator;
 import { UILog } from '../../../ui/ui-log';
 
-@cc._decorator.ccclass('AsyncFunctionsTest')
-@cc._decorator.menu('TestCases/Scripting/LanguageFeature/AsyncFunctionsTest')
-export class AsyncFunctionsTest extends cc.Component {
-    @cc._decorator.property(UILog)
-    logPanel: UILog = null;
-    
+@ccclass('AsyncFunctionsTest')
+@menu('TestCases/Scripting/LanguageFeature/AsyncFunctionsTest')
+export class AsyncFunctionsTest extends Component {
+    @property(UILog)
+    public logPanel: UILog = null!;
+
     public start () {
         (async () => { // Directly running an async function should be OK.
             this._getLogPanelChecked().addLabel(`Async function starts at ${new Date()}`);

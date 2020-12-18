@@ -5,7 +5,7 @@ const { ccclass, property, menu } = _decorator;
 @menu("tween/TweenRepeatForever")
 export class TweenRepeatForever extends Component {
 
-    private tweenRF: Tween;
+    private tweenRF!: Tween<Node>;
 
     onLoad () {
         // 一直重复执行下去

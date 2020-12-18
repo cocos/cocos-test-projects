@@ -1,10 +1,3 @@
-// Learn TypeScript:
-//  - https://docs.cocos.com/creator/manual/en/scripting/typescript.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
-
 import { _decorator, Component, Node, PhysicsSystem2D, Contact2DType, Collider2D, Color, Sprite, ParticleSystem2D, EPhysics2DDrawFlags } from 'cc';
 const { ccclass } = _decorator;
 
@@ -16,7 +9,7 @@ export class DragonBonesCollider extends Component {
     private debugDrawFlags:number = 0;
     start () {
         // Your initialization goes here.
-        PhysicsSystem2D.instance.on(Contact2DType.BEGIN_CONTACT, this.onBeinContact, this);
+        PhysicsSystem2D.instance.on(Contact2DType.BEGIN_CONTACT, this.onBeginContact, this);
         PhysicsSystem2D.instance.on(Contact2DType.END_CONTACT, this.onEndContact, this);
         this.debugDrawFlags = PhysicsSystem2D.instance.debugDrawFlags;
     }
@@ -54,7 +47,7 @@ export class DragonBonesCollider extends Component {
         }
     }
 
-    onBeinContact (a: Collider2D, b: Collider2D) {
+    onBeginContact (a: Collider2D, b: Collider2D) {
         this.addContact(a);
         this.addContact(b);
     }

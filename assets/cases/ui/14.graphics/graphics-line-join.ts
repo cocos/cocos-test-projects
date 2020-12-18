@@ -1,18 +1,18 @@
-import { _decorator, Component, Node, GraphicsComponent } from 'cc';
+import { _decorator, Component, Node, Graphics } from 'cc';
 const { ccclass, property } = _decorator;
 
-const LineCap = GraphicsComponent.LineCap;
-const LineJoin = GraphicsComponent.LineJoin;
+const LineCap = Graphics.LineCap;
+const LineJoin = Graphics.LineJoin;
 
 @ccclass('GraphicsLineJoin')
 export class GraphicsLineJoin extends Component {
-    graphics: GraphicsComponent = null;
+    public graphics: Graphics = null!;
     time = 0;
     radius = 100;
 
     start () {
         // Your initialization goes here.
-        this.graphics = this.getComponent(GraphicsComponent);
+        this.graphics = this.getComponent(Graphics)!;
         this.graphics.lineWidth = 20;
 
         this.draw();
@@ -59,7 +59,7 @@ export class GraphicsLineJoin extends Component {
         graphics.stroke();
     }
 
-    update (dt) {
+    update (dt: number) {
         this.time += dt * 0.5;
         this.draw();
     }

@@ -1,35 +1,28 @@
-import { _decorator, Component, Node, instantiate, SystemEventType, EventTouch, Prefab, LabelComponent, ButtonComponent } from 'cc';
-import { button } from '../../base/pauseButton';
+import { _decorator, Component, Node, instantiate, SystemEventType, EventTouch, Prefab, Label, Button } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('eventFirst')
 export class eventFirst extends Component {
-    /* class member could be defined like this */
-    // dummy = '';
-
-    /* use `property` decorator if your want the member to be serializable */
-    // @property
-    // serializableDummy = 0;
 
     @property({
         type: Prefab,
     })
-    prefabNode = null;
+    public prefabNode: Prefab = null!;
 
     @property({
-        type:LabelComponent
+        type:Label
     })
-    labelShow: LabelComponent = null;
+    public labelShow: Label = null!;
 
     @property({
-        type: ButtonComponent,
+        type: Button,
     })
-    button: ButtonComponent = null;
+    public button: Button = null!;
 
     // @property({
     //     type: Node,
     // })
-    item : Node = null;
+    public item: Node = null!;
 
     onLoad () {
         this.item = instantiate(this.prefabNode);

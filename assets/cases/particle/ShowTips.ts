@@ -3,23 +3,20 @@ const { ccclass, property } = _decorator;
 
 @ccclass("ShowTips")
 export class ShowTips extends Component {
-    /* class member could be defined like this */
-    // dummy = '';
 
-    /* use `property` decorator if your want the member to be serializable */
-    // @property
-    // serializableDummy = 0;
-    private tips=null;
-    private ifshow=true;
+    private tips: Node | null = null;
+    private ifShow = true;
 
-    showtip(){
-        if(this.ifshow==false){
-            this.tips.setPosition(0,1000,0);
+    showTip () {
+        if (this.ifShow == false) {
+            this.tips!.setPosition(0, 1000, 0);
         }
-        if(this.ifshow){
-            this.tips.setPosition(0,0,0);
+
+        if (this.ifShow) {
+            this.tips!.setPosition(0, 0, 0);
         }
-        this.ifshow=!this.ifshow;
+
+        this.ifShow = !this.ifShow;
     }
 
     start () {

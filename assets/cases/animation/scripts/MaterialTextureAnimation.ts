@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Texture2D, UniformCurveValueAdapter, AnimationClip, ModelComponent, ComponentModifier, js, AnimationComponent, error } from "cc";
+import { _decorator, Component, Node, Texture2D, UniformCurveValueAdapter, AnimationClip, MeshRenderer, ComponentModifier, js, Animation, error } from "cc";
 const { ccclass, property } = _decorator;
 
 /**
@@ -10,10 +10,10 @@ export class MaterialTextureAnimation extends Component {
      * Textures to be animated.
      */
     @property([Texture2D])
-    textures: Array<Texture2D | null> = [];
+    textures: Texture2D[] = [];
 
     start () {
-        const animationComponent = this.node.getComponent(AnimationComponent);
+        const animationComponent = this.node.getComponent(Animation);
         if (!animationComponent) {
             error(`Animation component is required for this script.`);
             return;
@@ -40,7 +40,7 @@ function createMaterialTextureAnimationClip(textures: Texture2D[]) {
     animationClip.duration = defaultKeys[defaultKeys.length - 1] + 1;
     animationClip.curves = [{
         modifiers: [
-            new ComponentModifier(js.getClassName(ModelComponent)),
+            new ComponentModifier(js.getClassName(MeshRenderer)),
             'sharedMaterials',
             0,
         ],

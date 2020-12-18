@@ -1,14 +1,14 @@
-import { _decorator, Component, Node, CameraComponent, LabelComponent, systemEvent, SystemEventType, EventTouch, Touch, geometry, director, Layers, CanvasComponent, UITransformComponent } from "cc";
+import { _decorator, Component, Node, Camera, Label, systemEvent, SystemEventType, EventTouch, Touch, geometry, director, Layers, Canvas, UITransform } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("RaycastCanvasTest")
 export class RaycastCanvasTest extends Component {
 
-    @property({ type: CanvasComponent })
-    readonly canvas: CanvasComponent = null;
+    @property({ type: Canvas })
+    readonly canvas: Canvas = null!;
 
-    @property({ type: LabelComponent })
-    readonly label: LabelComponent = null;
+    @property({ type: Label })
+    readonly label: Label = null!;
 
     private _ray = new geometry.ray();
     private _aabb = new geometry.aabb();
@@ -24,10 +24,11 @@ export class RaycastCanvasTest extends Component {
     onTouchStart (touch: Touch, event: EventTouch) {
         this.label.string = '点击文字测试射线检测';
         const uiCamera = this.canvas.camera;
-        uiCamera.screenPointToRay(this._ray, touch._point.x, touch._point.y);
-        const uitrans = this.label.getComponent(UITransformComponent);
-        uitrans.getComputeAABB(this._aabb);
-        if (geometry.intersect.ray_aabb(this._ray, this._aabb)) {
+        const point = touch.getLocation();
+        uiCamera.screenPointToRay(this._ray, point.x, point.y);
+        const uiTrans = this.label.getComponent(UITransform)!;
+        uiTrans.getComputeAABB(this._aabb);
+        if (geometry.intersect.rayAABB(this._ray, this._aabb)) {
             this.label.string = '检测成功';
         }
     }

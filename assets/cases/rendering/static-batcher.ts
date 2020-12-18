@@ -1,24 +1,19 @@
-import { _decorator, Component, Node, BatchingUtility, LabelComponent } from 'cc';
+import { _decorator, Component, Node, BatchingUtility, Label } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('StaticBatcher')
 export class StaticBatcher extends Component {
-    /* class member could be defined like this */
-    // dummy = '';
 
-    /* use `property` decorator if your want the member to be serializable */
-    // @property
-    // serializableDummy = 0;
 
     @property({
         type: Node,
     })
-    staticNode = null;
+    public staticNode: Node = null!;
 
     @property({
-        type: LabelComponent,
+        type: Label,
     })
-    buttonLabel = null;
+    public buttonLabel: Label = null!;
 
     _batched = false;
 

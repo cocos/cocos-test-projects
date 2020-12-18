@@ -1,17 +1,17 @@
-import { _decorator, Component, Node, Prefab, Vec3, LabelComponent, instantiate, director, widgetManager } from "cc";
+import { _decorator, Component, Node, Prefab, Vec3, Label, instantiate, director, widgetManager } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("WidgetDestroy")
 export class WidgetDestroy extends Component {
 
     @property ({type:Prefab})
-    defaultPre = null;
+    public defaultPre: Prefab = null!;
 
-    @property ({type:LabelComponent})
-    coinNumber: LabelComponent = null;
+    @property ({type:Label})
+    public coinNumber: Label = null!;
 
-    @property ({type:LabelComponent})
-    activeWidgetNum = null;
+    @property ({type:Label})
+    public activeWidgetNum: Label = null!;
 
     movePos = new Vec3(-200, 0, 0);
 
@@ -33,7 +33,7 @@ export class WidgetDestroy extends Component {
     }
 
     updateLabel() {
-        this.coinNumber.string = ('The Coin Num is:' + director.getScene().children[2].children[3].children.length);
+        this.coinNumber.string = ('The Coin Num is:' + director.getScene()!.children[2].children[3].children.length);
         this.activeWidgetNum.string = 'The active Widget Num is:' + (widgetManager._activeWidgetsIterator.length - 5);
         // 此处的 5 为当前场景非create出的组件的widget数量
         // 提示中的 activeNode 和 iconNum 的差值为常驻节点的 widget 数量（目前也为5）

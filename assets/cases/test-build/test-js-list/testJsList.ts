@@ -1,15 +1,21 @@
-import { _decorator, Component, Node, LabelComponent } from "cc";
+import { _decorator, Component, Node, Label } from "cc";
 const { ccclass, property } = _decorator;
 
-@ccclass("testJsList")
-export class testJsList extends Component {
+declare global {
+    namespace globalThis {
+        var JS_LIST_TIPS: string;
+    }
+}
+@ccclass("TestJsList")
+export class TestJsList extends Component {
 
-    @property({type: LabelComponent})
-    label = null;
+    @property({type: Label})
+    public label: Label = null!;
 
     start () {
-        if (window.JS_LIST_TIPS) {
-            this.label.string = window.JS_LIST_TIPS;
+        const str: string = globalThis['JS_LIST_TIPS'];
+        if (str.length) {
+            this.label.string = str;
         }
     }
 }

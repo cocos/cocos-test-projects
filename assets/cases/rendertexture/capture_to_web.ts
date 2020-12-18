@@ -1,40 +1,40 @@
-import { _decorator, Component, Node, RenderTexture, SpriteComponent, CameraComponent, SpriteFrame, cclegacy } from 'cc';
+import { _decorator, Component, Node, RenderTexture, Sprite, Camera, SpriteFrame } from 'cc';
 const { ccclass, property, menu } = _decorator;
 
 @ccclass('CaptureToWeb')
 @menu('RenderTexture/CaptureToWeb')
 export class CaptureToWeb extends Component {
-    @property(SpriteComponent)
-    sprite: SpriteComponent = null;
-    @property(CameraComponent)
-    camera: CameraComponent = null;
+    @property(Sprite)
+    public sprite: Sprite = null!;
+    @property(Camera)
+    public camera: Camera = null!;
 
-    protected _renderTex: RenderTexture = null;
+    protected _renderTex: RenderTexture = null!;
 
     start () {
-        const spriteframe = this.sprite.spriteFrame;
+        const spriteFrame = this.sprite.spriteFrame!;
         const sp = new SpriteFrame();
         sp.reset({
-            originalSize: spriteframe.getOriginalSize(),
-            rect: spriteframe.getRect(),
-            offset: spriteframe.getOffset(),
-            isRotate: spriteframe.isRotated(),
-            borderTop: spriteframe.insetTop,
-            borderLeft: spriteframe.insetLeft,
-            borderBottom: spriteframe.insetBottom,
-            borderRight: spriteframe.insetRight,
+            originalSize: spriteFrame.originalSize,
+            rect: spriteFrame.rect,
+            offset: spriteFrame.offset,
+            isRotate: spriteFrame.rotated,
+            borderTop: spriteFrame.insetTop,
+            borderLeft: spriteFrame.insetLeft,
+            borderBottom: spriteFrame.insetBottom,
+            borderRight: spriteFrame.insetRight,
         });
 
-        const rendetTex = this._renderTex = new RenderTexture();
-        rendetTex.reset({
+        const renderTex = this._renderTex = new RenderTexture();
+        renderTex.reset({
             width: 128,
             height: 128,
         });
-        this.camera.targetTexture = rendetTex;
-        sp.texture = rendetTex;
+        this.camera.targetTexture = renderTex;
+        sp.texture = renderTex;
         this.sprite.spriteFrame = sp;
         this.scheduleOnce(()=>{
-            rendetTex.resize(512, 512);
+            renderTex.resize(512, 512);
         },2);
     }
 }

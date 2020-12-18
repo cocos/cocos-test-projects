@@ -5,7 +5,7 @@ const { ccclass, property, menu } = _decorator;
 @menu("tween/TweenStop")
 export class TweenStop extends Component {
 
-    private tweenStop: Tween;
+    private tweenStop!: Tween<Node>;
 
     onLoad () {
         let scale = tween().to(1, { scale: new Vec3(3, 3, 3) })

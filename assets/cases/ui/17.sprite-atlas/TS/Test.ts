@@ -1,84 +1,91 @@
-import { _decorator, Component, director, LabelComponent, SpriteComponent, EditBoxComponent, SpriteFrame, Vec3 } from "cc";
+import { _decorator, Component, Label, Sprite, EditBox, SpriteFrame, Vec3, find } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("Test")
 export class Test extends Component {
-    
-    @property({type:EditBoxComponent})
-    editbox=null;
+
+    @property({type:EditBox})
+    public editbox: EditBox = null!;
 
     @property({type:SpriteFrame})
-    sf=null;
+    public sf: SpriteFrame = null!;
 
     @property({type:SpriteFrame})
-    sea=null;
+    public sea: SpriteFrame = null!;
 
     @property({type:SpriteFrame})
-    lake=null;
+    public lake: SpriteFrame = null!;
 
     @property({type:SpriteFrame})
-    mountain=null;
+    public mountain: SpriteFrame = null!;
 
-    private tiplabel=null;
-    private showlabel=null;
-    private _sprite=null;
+    private tipLabel: Label = null!;
+    private showLabel: Label = null!;
+    private _sprite: Sprite = null!;
     private _label:string='替换成功';
 
     start () {
-        var canvas= director.getScene().getChildByName('Canvas');
-        this.tiplabel= canvas.getChildByName('Label-1');
-        this.showlabel= canvas.getChildByName('Label-2');
+        const canvas = find('Canvas');
+        this.tipLabel = canvas?.getChildByName('Label-1')?.getComponent(Label)!;
+        this.showLabel = canvas?.getChildByName('Label-2')?.getComponent(Label)!;
 
-        this._sprite=this.node.getComponent(SpriteComponent);
+        this._sprite = this.node.getComponent(Sprite)!;
     }
 
     test(name:string){
-        this.node.getComponent(SpriteComponent).changeSpriteFrameFromAtlas(name);
+        this._sprite.changeSpriteFrameFromAtlas(name);
     }
     button(){
-        this.tiplabel.setPosition(0,1000,0);
+        this.tipLabel.node.setPosition(0, 1000, 0);
     }
     button1(){
         this.test(this.editbox.string);
-        if(this._sprite.spriteFrame!=null){
-        this.showlabel.getComponent(LabelComponent).string=this._label+' '+this.editbox.string;
+        if (this._sprite.spriteFrame !== null) {
+            this.showLabel.string = this._label + ' ' + this.editbox.string;
         }
-        if(this._sprite.spriteAtlas==null){
-            this.showlabel.getComponent(LabelComponent).string="替换失败"+this.editbox.string;
+
+        if (this._sprite.spriteAtlas === null) {
+            this.showLabel.string = "替换失败" + this.editbox.string;
         }
-        if(this._sprite.spriteAtlas!=null&&this._sprite.spriteFrame==null){
-            this.showlabel.getComponent(LabelComponent).string="请输入正确的名字";
+
+        if (this._sprite.spriteAtlas != null && this._sprite.spriteFrame == null) {
+            this.showLabel.string = "请输入正确的名字";
         }
-        this.tiplabel.setPosition(0,1000,0);
+
+        this.tipLabel.node.setPosition(0, 1000, 0);
     }
     button2(){
-        this._sprite.spriteAtlas=null;
-        this.showlabel.getComponent(LabelComponent).string='清除图集';
-        this._label='替换失败';
+        this._sprite.spriteAtlas = null;
+        this.showLabel.string = '清除图集';
+        this._label = '替换失败';
     }
     button3(name:string){
         this.name = this.editbox.string;
-        if(this.name == 'tree'){
-            this._sprite.spriteFrame=this.sf;      
-            this.showlabel.getComponent(LabelComponent).string='更换图片 tree';
+        if (this.name == 'tree') {
+            this._sprite.spriteFrame = this.sf;
+            this.showLabel.string = '更换图片 tree';
         }
-        if(this.name == 'sea'){
-            this._sprite.spriteFrame=this.sea;
-            this.showlabel.getComponent(LabelComponent).string='更换图片 sea';
+
+        if (this.name == 'sea') {
+            this._sprite.spriteFrame = this.sea;
+            this.showLabel.string = '更换图片 sea';
         }
-        if(this.name == 'lake'){
-            this._sprite.spriteFrame=this.lake;
-            this.showlabel.getComponent(LabelComponent).string='更换图片 lake';
+
+        if (this.name == 'lake') {
+            this._sprite.spriteFrame = this.lake;
+            this.showLabel.string = '更换图片 lake';
         }
-        if(this.name == 'mountain'){
-            this._sprite.spriteFrame=this.mountain;
-            this.showlabel.getComponent(LabelComponent).string='更换图片 mountain';
+
+        if (this.name == 'mountain') {
+            this._sprite.spriteFrame = this.mountain;
+            this.showLabel.string = '更换图片 mountain';
         }
-        if(this.name != 'mountain' && this.name != 'lake' && this.name != 'sea' && this.name != 'tree'){
-            this.showlabel.getComponent(LabelComponent).string='请输入正确的名字';
+
+        if (this.name != 'mountain' && this.name != 'lake' && this.name != 'sea' && this.name != 'tree') {
+            this.showLabel.string = '请输入正确的名字';
         }
     }
     button4(){
-        this.tiplabel.position = new Vec3(90,72,0);
+        this.tipLabel.node.position = new Vec3(90, 72, 0);
     }
 }

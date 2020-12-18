@@ -1,14 +1,14 @@
-import { _decorator, Component, director, instantiate, LabelComponent, Node, Prefab, SliderComponent } from 'cc';
+import { _decorator, Component, director, instantiate, Label, Node, Prefab, Slider } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('BatchTester')
 export class BatchTester extends Component {
     @property(Prefab)
-    public prefab = null;
-    @property(LabelComponent)
-    public label = null;
-    @property(SliderComponent)
-    public slider = null;
+    public prefab: Prefab = null!;
+    @property(Label)
+    public label: Label = null!;
+    @property(Slider)
+    public slider: Slider = null!;
 
     @property
     public count = 15;
@@ -45,7 +45,7 @@ export class BatchTester extends Component {
         }
     }
 
-    public setCount (e: SliderComponent) {
+    public setCount (e: Slider) {
         const count = Math.floor(e.progress * this.maxCount);
         if (count > this.count) {
             for (let i = this.count; i < count; i++) {
@@ -54,11 +54,13 @@ export class BatchTester extends Component {
                 }
             }
         } else {
-            for (let i = count; i < this.count; i++) {
-                for (let j = 0; j < 10; j++) {
-                    const idx = count * 100;
-                    this._nodes.splice(idx, 10)[0].parent.setParent(null);
-                    this._delays.splice(idx, 10);
+            if(this._nodes.length > 0){
+                for (let i = count; i < this.count; i++) {
+                    for (let j = 0; j < 10; j++) {
+                        const idx = count * 100;
+                        this._nodes.splice(idx, 10)[0].parent?.setParent(null);
+                        this._delays.splice(idx, 10);
+                    }
                 }
             }
         }

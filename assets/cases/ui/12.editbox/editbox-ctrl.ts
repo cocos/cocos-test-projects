@@ -1,31 +1,26 @@
-import { _decorator, Component, Node, EditBoxComponent } from "cc";
+import { _decorator, Component, Node, EditBox } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("EditboxCtrl")
 @menu('UI/EditboxCtrl')
 export class EditboxCtrl extends Component {
-    /* class member could be defined like this */
-    // dummy = '';
 
-    /* use `property` decorator if your want the member to be serializable */
-    // @property
-    // serializableDummy = 0;
-    @property(EditBoxComponent)
-    editBox1: EditBoxComponent = null;
-    @property(EditBoxComponent)
-    editBox2: EditBoxComponent = null;
-    @property(EditBoxComponent)
-    editBox3: EditBoxComponent = null;
+    @property(EditBox)
+    public editBox1: EditBox = null!;
+    @property(EditBox)
+    public editBox2: EditBox = null!;
+    @property(EditBox)
+    public editBox3: EditBox = null!;
 
     start () {
         // Your initialization goes here.
     }
 
-    setFocus(event, custom){
+    setFocus (event: EditBox, custom: string) {
         if(custom === '1'){
             this.editBox1.setFocus();
         } else if (custom === '2') {
-            this.editBox2.setFocus();
+            this.editBox1.setFocus();
         } else if (custom === '3') {
             this.editBox3.setFocus();
         }

@@ -1,14 +1,16 @@
-import { _decorator, Component, Node, LabelComponent, director, Rect, SpriteAtlas, Prefab, Material, builtinResMgr, Texture2D, SpriteComponent, loader, UIModelComponent, SpriteFrame, AnimationComponent, ModelComponent, AudioSourceComponent, Font, instantiate, TextureCube, log } from "cc";
+import { _decorator, Component, Node, director, SpriteAtlas, Prefab, Material, builtinResMgr, Texture2D, Sprite, loader, UIMeshRenderer, SpriteFrame, AudioSource, Font, instantiate, TextureCube, log, Label, Touch, EventTouch, MeshRenderer } from "cc";
 const { ccclass, property } = _decorator;
+
+type UrlKey = keyof AssetLoading['_urls'];
 
 @ccclass("AssetLoading")
 export class AssetLoading extends Component {
-    
-    private _curType = "";
-    private _lastType = "";
-    private _curRes = null;
-    private _btnLabel = null;
-    private _audioSource = null;
+
+    private declare _curType: UrlKey;
+    private _lastType: UrlKey | '' = '';
+    private _curRes: any = null;
+    private _btnLabel: Label | null = null;
+    private _audioSource: AudioSource | null = null;
     private _isLoading = false;
     private _urls = {
         Audio: "test_assets/audio",
@@ -29,19 +31,19 @@ export class AssetLoading extends Component {
     };
 
     @property({ type: Node })
-    showWindow = null;
+    public showWindow: Node = null!;
 
-    @property({ type: LabelComponent})
-    loadTips = null;
+    @property({ type: Label})
+    public loadTips: Label = null!;
 
     @property({ type: [Node] })
-    loadList = [];
+    public loadList: Node[] = [];
 
     @property({ type: Prefab })
-    loadAnimTestPrefab = null;
+    public loadAnimTestPrefab: Prefab = null!;
 
     @property({ type: SpriteFrame })
-    loadMaterialSpriteFrame = null;
+    public loadMaterialSpriteFrame: SpriteFrame = null!;
 
     // use this for initialization
     onLoad () {
@@ -57,18 +59,25 @@ export class AssetLoading extends Component {
 
     _onRegisteredEvent () {
         for (var i = 0; i < this.loadList.length; ++i) {
-            this.loadList[i].on(Node.EventType.TOUCH_END, this._onClick.bind(this));
+            this.loadList[i].on(Node.EventType.TOUCH_END, this._onClick);
         }
     }
 
-    _onClick (event: any) {
+    _onClick (touch: Touch, event: EventTouch) {
         if (this._isLoading) {
             return;
         }
 
         this._onClear();
 
-        this._curType = event.target.name.split('_')[1];
+        const target = event.target as Node;
+        if (target) {
+            const curType = target.name.split('_')[1];
+            if (curType in this._urls) {
+                this._curType = curType as UrlKey;
+            }
+        }
+
         if (this._lastType !== "" && this._curType === this._lastType) {
             this.loadTips.string = ''
             this._onShowResClick(event);
@@ -80,8 +89,9 @@ export class AssetLoading extends Component {
         }
 
         this._lastType = this._curType;
-
-        this._btnLabel = event.target.getChildByName("Label").getComponent(LabelComponent);
+        if (target) {
+            this._btnLabel = target.getChildByName("Label")!.getComponent(Label);
+        }
 
         this.loadTips.string = this._curType + " Loading....";
         this._isLoading = true;
@@ -90,7 +100,7 @@ export class AssetLoading extends Component {
     }
 
     _load () {
-        var url = this._urls[this._curType];
+        const url = this._urls[this._curType];
         var loadCallBack = this._loadCallBack.bind(this);
         switch (this._curType) {
             case 'SpriteFrame':
@@ -134,7 +144,7 @@ export class AssetLoading extends Component {
         }
     }
 
-    _loadCallBack (err, res) {
+    _loadCallBack (err: Error | null, res: any) {
         this._isLoading = false;
         if (err) {
             log('Error url [' + err + ']');
@@ -146,19 +156,22 @@ export class AssetLoading extends Component {
         } else {
             this._curRes = res;
         }
-        if (this._curType === "Audio") {
-            this._btnLabel.string = "播放";
+
+        if (this._btnLabel) {
+            if (this._curType === "Audio") {
+                this._btnLabel.string = "播放";
+            } else {
+                this._btnLabel.string = "创建";
+            }
+            this._btnLabel.string += this._curType;
         }
-        else {
-            this._btnLabel.string = "创建";
-        }
-        this._btnLabel.string += this._curType;
+
         this.loadTips.string = this._curType + " Loaded Successfully!";
     }
 
     _onClear () {
-        this.showWindow.removeAllChildren(true);
-        if (this._audioSource && this._audioSource instanceof AudioSourceComponent) {
+        this.showWindow.removeAllChildren();
+        if (this._audioSource && this._audioSource instanceof AudioSource) {
             this._audioSource.stop();
         }
     }
@@ -171,61 +184,61 @@ export class AssetLoading extends Component {
     }
 
     _createNode (type: string, res: any) {
-        this.loadTips.textKey = "";
+        this.loadTips.string = "";
         const node = new Node("New " + type);
         node.setPosition(0, 0, 0);
         let component = null;
         switch (this._curType) {
             case "SpriteFrame":
-                component = node.addComponent(SpriteComponent);
+                component = node.addComponent(Sprite);
                 component.spriteFrame = res;
                 break;
 
             case "SpriteAtlas":
-                component = node.addComponent(SpriteComponent);
+                component = node.addComponent(Sprite);
                 component.spriteFrame = res.getSpriteFrames()[0];
                 break;
             case "Texture2D":
                 let cube = instantiate(this.loadAnimTestPrefab);
-                const model = cube.getComponent(ModelComponent);
-                model.material.setProperty('albedoMap', res);
+                const model = cube.getComponent(MeshRenderer)!;
+                model.material!.setProperty('albedoMap', res);
                 cube.setPosition(0, 0, 50);
                 cube.setScale(100, 100, 100);
                 cube.parent = this.showWindow;
                 break;
             case 'ImageAsset':
             case "CORS":
-                component = node.addComponent(SpriteComponent);
+                component = node.addComponent(Sprite);
                 const spriteFrame = new SpriteFrame();
                 spriteFrame.texture = res;
                 component.spriteFrame = spriteFrame;
                 break;
             case "Audio":
-                component = node.addComponent(AudioSourceComponent);
+                component = node.addComponent(AudioSource);
                 component.clip = res;
                 component.play();
                 this._audioSource = component;
                 this.loadTips.string = "播放音乐。";
                 break;
             case "Txt":
-                component = node.addComponent(LabelComponent);
+                component = node.addComponent(Label);
                 component.lineHeight = 40;
                 component.string = res.text;
                 break;
             case "Material":
-                component = node.addComponent(SpriteComponent);
+                component = node.addComponent(Sprite);
                 component.sharedMaterials = res;
                 component.spriteFrame = this.loadMaterialSpriteFrame;
                 break;
             case "Font":
-                component = node.addComponent(LabelComponent);
+                component = node.addComponent(Label);
                 component.font = res;
                 component.lineHeight = 40;
                 component.string = "This is BitmapFont!";
                 break;
             case 'Mesh':
-                component = node.addComponent(ModelComponent);
-                node.addComponent(UIModelComponent);
+                component = node.addComponent(MeshRenderer);
+                node.addComponent(UIMeshRenderer);
                 node.setPosition(0, 0, 50);
                 node.setScale(5, 5, 5);
                 component.mesh = res;

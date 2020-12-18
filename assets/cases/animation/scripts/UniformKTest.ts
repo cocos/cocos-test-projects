@@ -1,11 +1,11 @@
-import { _decorator, Component, AnimationClip, UniformCurveValueAdapter, math, AnimationComponent, animation, js, ModelComponent } from 'cc';
+import { _decorator, Component, AnimationClip, UniformCurveValueAdapter, math, Animation, animation, js, MeshRenderer } from 'cc';
+const { ccclass } = _decorator;
 
-
-@_decorator.ccclass('UniformKTest')
+@ccclass('UniformKTest')
 export class UniformKTest extends Component {
     public start() {
         const testClip = this._makeTestClip();
-        const animationComponent = this.node.addComponent(AnimationComponent);
+        const animationComponent = this.node.addComponent(Animation);
         animationComponent.clips = [ testClip ];
         animationComponent.defaultClip = testClip;
         animationComponent.playOnLoad = true;
@@ -25,7 +25,7 @@ export class UniformKTest extends Component {
         animationClip.curves =[{
             modifiers: [
                 new animation.HierarchyPath('Nested'),
-                new animation.ComponentPath(js.getClassName(ModelComponent)),
+                new animation.ComponentPath(js.getClassName(MeshRenderer)),
                 "sharedMaterials",
                 0,
             ],
