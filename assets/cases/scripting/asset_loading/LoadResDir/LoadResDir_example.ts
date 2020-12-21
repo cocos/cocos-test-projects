@@ -2,15 +2,15 @@ import { _decorator, Component, Node, Prefab, instantiate, LabelComponent, Sprit
 const { ccclass, property } = _decorator;
 
 const builtInEffectList = [
-    '711ebe11-f673-4cd9-9a83-63c60ba54c5b.json',
-    '971bdb23-3ff6-43eb-b422-1c30165a3663.json',
-    '17debcc3-0a6b-4b8a-b00b-dc58b885581e.json',
-    'd1346436-ac96-4271-b863-1f4fdead95b0.json',
-    '60f7195c-ec2a-45eb-ba94-8955f60e81d0.json',
-    '1baf0fc9-befa-459c-8bdd-af1a450a0319.json',
-    '1d08ef62-a503-4ce2-8b9a-46c90873f7d3.json',
-    'a7612b54-35e3-4238-a1a9-4a7b54635839.json',
-    'a3cd009f-0ab0-420d-9278-b9fdab939bbc.json',
+    '711ebe11-f673-4cd9-9a83-63c60ba54c5b',
+    '971bdb23-3ff6-43eb-b422-1c30165a3663',
+    '17debcc3-0a6b-4b8a-b00b-dc58b885581e',
+    'd1346436-ac96-4271-b863-1f4fdead95b0',
+    '60f7195c-ec2a-45eb-ba94-8955f60e81d0',
+    '1baf0fc9-befa-459c-8bdd-af1a450a0319',
+    '1d08ef62-a503-4ce2-8b9a-46c90873f7d3',
+    'a7612b54-35e3-4238-a1a9-4a7b54635839',
+    'a3cd009f-0ab0-420d-9278-b9fdab939bbc',
 ];
 
 @ccclass("LoadResDirexample")
