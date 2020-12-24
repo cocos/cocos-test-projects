@@ -4,6 +4,11 @@
 
   /* Add your custom configuration here. */
   "compilerOptions": {
-      "lib": ["DOM", "ES2015", "ES2016", "ES2017"]
-  }
+      "lib": ["DOM", "ES2015", "ES2016", "ES2017"],
+      "skipLibCheck": true,
+  },
+
+  "include": [
+      "assets/**/*.ts"
+  ]
 }
