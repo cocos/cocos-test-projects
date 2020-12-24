@@ -32,7 +32,6 @@ export class VideoPlayerCtrl extends Component {
             case sys.BYTEDANCE_MINI_GAME:
             case sys.COCOSPLAY:
             case sys.HUAWEI_QUICK_GAME:
-            case sys.OPPO_MINI_GAME:
             case sys.VIVO_MINI_GAME:
             case sys.XIAOMI_QUICK_GAME:
             case sys.BAIDU_MINI_GAME:
