@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, SpriteComponent, UITransformComponent, Vec2, GraphicsComponent, Size, Color } from "cc";
+import { _decorator, Component, Node, Sprite, UITransform, Vec2, Graphics, Size, Color } from "cc";
 const { ccclass, property, executeInEditMode, menu } = _decorator;
 
 @ccclass("Trimmed")
@@ -8,37 +8,33 @@ export class Trimmed extends Component {
     @property({
         type:Node
     })
-    trimmed : Node = null;
+    public trimmed : Node = null!;
 
     @property({
         type:Node
     })
-    noTrimmed : Node = null;
-
-    private _trimmedContentSize : Size;
-    private _noTrimmedContentSize : Size;
-    private _gra : GraphicsComponent;
+    public noTrimmed : Node = null!;
 
     start () {
-        this._gra = this.node.getComponent(GraphicsComponent);
-        this._trimmedContentSize = this.trimmed.getComponent(UITransformComponent).contentSize;
-        this._noTrimmedContentSize = this.noTrimmed.getComponent(UITransformComponent).contentSize;
+        const g = this.node.getComponent(Graphics)!;
+        const trimmedContentSize = this.trimmed.getComponent(UITransform)!.contentSize;
+        const noTrimmedContentSize = this.noTrimmed.getComponent(UITransform)!.contentSize;
 
-        this._gra.clear();
-        this._gra.lineWidth = 2;
-        this._gra.strokeColor = Color.RED;
-        this._gra.moveTo(this.trimmed.position.x - this._trimmedContentSize.width/2 + 1, this._trimmedContentSize.height /2 - 1);
-        this._gra.lineTo(this.trimmed.position.x + this._trimmedContentSize.width/2 - 1, this._trimmedContentSize.height /2 - 1);
-        this._gra.lineTo(this.trimmed.position.x + this._trimmedContentSize.width/2 - 1, - this._trimmedContentSize.height /2 + 1);
-        this._gra.lineTo(this.trimmed.position.x - this._trimmedContentSize.width/2 + 1, - this._trimmedContentSize.height /2 + 1);
-        this._gra.lineTo(this.trimmed.position.x - this._trimmedContentSize.width/2 + 1, this._trimmedContentSize.height /2 - 1);
+        g.clear();
+        g.lineWidth = 2;
+        g.strokeColor = Color.RED;
+        g.moveTo(this.trimmed.position.x - trimmedContentSize.width/2 + 1, trimmedContentSize.height /2 - 1);
+        g.lineTo(this.trimmed.position.x + trimmedContentSize.width/2 - 1, trimmedContentSize.height /2 - 1);
+        g.lineTo(this.trimmed.position.x + trimmedContentSize.width/2 - 1, - trimmedContentSize.height /2 + 1);
+        g.lineTo(this.trimmed.position.x - trimmedContentSize.width/2 + 1, - trimmedContentSize.height /2 + 1);
+        g.lineTo(this.trimmed.position.x - trimmedContentSize.width/2 + 1, trimmedContentSize.height /2 - 1);
 
-        this._gra.moveTo(this.noTrimmed.position.x - this._noTrimmedContentSize.width/2 + 1, this._noTrimmedContentSize.height /2 - 1);
-        this._gra.lineTo(this.noTrimmed.position.x + this._noTrimmedContentSize.width/2 - 1, this._noTrimmedContentSize.height /2 - 1);
-        this._gra.lineTo(this.noTrimmed.position.x + this._noTrimmedContentSize.width/2 - 1, - this._noTrimmedContentSize.height /2 + 1);
-        this._gra.lineTo(this.noTrimmed.position.x - this._noTrimmedContentSize.width/2 + 1, - this._noTrimmedContentSize.height /2 + 1);
-        this._gra.lineTo(this.noTrimmed.position.x - this._noTrimmedContentSize.width/2 + 1, this._noTrimmedContentSize.height /2 - 1);
-        this._gra.stroke();
+        g.moveTo(this.noTrimmed.position.x - noTrimmedContentSize.width/2 + 1, noTrimmedContentSize.height /2 - 1);
+        g.lineTo(this.noTrimmed.position.x + noTrimmedContentSize.width/2 - 1, noTrimmedContentSize.height /2 - 1);
+        g.lineTo(this.noTrimmed.position.x + noTrimmedContentSize.width/2 - 1, - noTrimmedContentSize.height /2 + 1);
+        g.lineTo(this.noTrimmed.position.x - noTrimmedContentSize.width/2 + 1, - noTrimmedContentSize.height /2 + 1);
+        g.lineTo(this.noTrimmed.position.x - noTrimmedContentSize.width/2 + 1, noTrimmedContentSize.height /2 - 1);
+        g.stroke();
     }
 
     // update (deltaTime: number) {

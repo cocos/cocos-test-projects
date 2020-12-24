@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, ScrollViewComponent, LabelComponent, ButtonComponent, Vec3, UITransformComponent, instantiate, error } from "cc";
+import { _decorator, Component, Node, ScrollView, Label, Button, Vec3, UITransform, instantiate, error } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 const _temp_vec3 = new Vec3();
@@ -7,9 +7,9 @@ const _temp_vec3 = new Vec3();
 @menu('UI/ListViewCtrl')
 export class ListViewCtrl extends Component {
     @property(Node)
-    public itemTemplate: Node  = null;
-    @property(ScrollViewComponent)
-    public scrollView: ScrollViewComponent  = null;
+    public itemTemplate: Node  = null!;
+    @property(ScrollView)
+    public scrollView: ScrollView  = null!;
     @property
     public spawnCount = 0; // 初始化 item 数量
     @property
@@ -18,27 +18,27 @@ export class ListViewCtrl extends Component {
     public spacing = 0; // item 垂直排布间隔
     @property
     public bufferZone = 0; // when item is away from bufferZone, we relocate it
-    @property(ButtonComponent)
-    public btnAddItem: ButtonComponent  = null;
-    @property(ButtonComponent)
-    public btnRemoveItem: ButtonComponent  = null;
-    @property(ButtonComponent)
-    public btnJumpToPosition: ButtonComponent  = null;
-    @property(LabelComponent)
-    public lblJumpPosition: LabelComponent  = null;
-    @property(LabelComponent)
-    lblTotalItems: LabelComponent  = null;
+    @property(Button)
+    public btnAddItem: Button  = null!;
+    @property(Button)
+    public btnRemoveItem: Button  = null!;
+    @property(Button)
+    public btnJumpToPosition: Button  = null!;
+    @property(Label)
+    public lblJumpPosition: Label  = null!;
+    @property(Label)
+    public lblTotalItems: Label  = null!;
 
-    _content: Node = null;
-    _items: Node[] = [];
-    _updateTimer = 0;
-    _updateInterval = 0.2;
-    _lastContentPosY = 0;
-    _itemTemplateUITrans: UITransformComponent;
-    _contentUITrans: UITransformComponent;
+    private _content: Node = null!;
+    private _items: Node[] = [];
+    private _updateTimer = 0;
+    private _updateInterval = 0.2;
+    private _lastContentPosY = 0;
+    private _itemTemplateUITrans!: UITransform;
+    private _contentUITrans!: UITransform;
 
     onLoad() {
-        this._content = this.scrollView.content;
+        this._content = this.scrollView.content!;
         this.initialize();
         this._updateTimer = 0;
         this._updateInterval = 0.2;
@@ -47,15 +47,15 @@ export class ListViewCtrl extends Component {
 
     // 初始化 item
     initialize() {
-        this._itemTemplateUITrans = this.itemTemplate._uiProps.uiTransformComp;
-        this._contentUITrans = this._content._uiProps.uiTransformComp
+        this._itemTemplateUITrans = this.itemTemplate._uiProps.uiTransformComp!;
+        this._contentUITrans = this._content._uiProps.uiTransformComp!;
         this._contentUITrans.height = this.totalCount * (this._itemTemplateUITrans.height + this.spacing) + this.spacing; // get total content height
         for (let i = 0; i < this.spawnCount; ++i) { // spawn items, we only need to do this once
             let item = instantiate(this.itemTemplate) as Node;
             this._content.addChild(item);
-            let itemUITrans = item._uiProps.uiTransformComp;
+            let itemUITrans = item._uiProps.uiTransformComp!;
             item.setPosition(0, -itemUITrans.height * (0.5 + i) - this.spacing * (i + 1), 0);
-            const labelComp = item.getComponentInChildren(LabelComponent);
+            const labelComp = item.getComponentInChildren(Label)!;
             labelComp.string = `item_${i}`;
             this._items.push(item);
         }
@@ -63,18 +63,18 @@ export class ListViewCtrl extends Component {
 
     getPositionInView(item: Node) {
         // get item position in scrollview's node space
-        let worldPos = item.parent.getComponent(UITransformComponent).convertToWorldSpaceAR(item.position);
-        let viewPos = this.scrollView.node.getComponent(UITransformComponent).convertToNodeSpaceAR(worldPos);
+        let worldPos = item.parent!.getComponent(UITransform)!.convertToWorldSpaceAR(item.position);
+        let viewPos = this.scrollView.node.getComponent(UITransform)!.convertToNodeSpaceAR(worldPos);
         return viewPos;
     }
 
-    update(dt) {
+    update(dt: number) {
         this._updateTimer += dt;
         if (this._updateTimer < this._updateInterval) return; // we don't need to do the math every frame
         this._updateTimer = 0;
         let items = this._items;
         let buffer = this.bufferZone;
-        let isDown = this.scrollView.content.position.y < this._lastContentPosY; // scrolling direction
+        let isDown = this.scrollView.content!.position.y < this._lastContentPosY; // scrolling direction
         let offset = (this._itemTemplateUITrans.height + this.spacing) * items.length;
         for (let i = 0; i < items.length; ++i) {
             let viewPos = this.getPositionInView(items[i]);
@@ -94,7 +94,7 @@ export class ListViewCtrl extends Component {
             }
         }
         // update lastContentPosY
-        this._lastContentPosY = this.scrollView.content.position.y;
+        this._lastContentPosY = this.scrollView.content!.position.y;
         this.lblTotalItems.string = "Total Items: " + this.totalCount;
     }
 

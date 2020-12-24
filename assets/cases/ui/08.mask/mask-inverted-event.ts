@@ -1,14 +1,14 @@
-import { _decorator, Component, Node, LabelComponent, SystemEventType } from "cc";
+import { _decorator, Component, Node, Label, SystemEventType } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("MaskInvertedEvent")
 @menu('UI/MaskInvertedEvent')
 export class MaskInvertedEvent extends Component {
-    @property(LabelComponent)
-    label: LabelComponent = null;
+    @property(Label)
+    public label: Label = null!;
 
     @property
-    string = '';
+    public string = '';
 
     start () {
         this.node.on(SystemEventType.TOUCH_START, this.callback, this);

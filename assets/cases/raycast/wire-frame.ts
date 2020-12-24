@@ -1,10 +1,10 @@
-import { _decorator, Component, Node, ModelComponent, primitives, utils, Material, Vec4, GFXPrimitiveMode } from 'cc';
+import { _decorator, Component, Node, MeshRenderer, primitives, utils, Material, Vec4, GFXPrimitiveMode } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('wireFrame')
 export class wireFrame extends Component {
 
-    static lineMat: Material = null;
+    static lineMat: Material | null = null;
 
     onEnable () {
         if (wireFrame.lineMat == null) {
@@ -16,12 +16,12 @@ export class wireFrame extends Component {
 
             wireFrame.lineMat.setProperty('mainColor', new Vec4(0, 0, 0, 1));
         }
-        const model = this.getComponent(ModelComponent);
+        const model = this.getComponent(MeshRenderer);
         if (model && model.mesh && model.mesh.subMeshCount > 0) {
-            const newModel = this.addComponent(ModelComponent);
+            const newModel = this.addComponent(MeshRenderer)!;
             const geo = {
                 positions: model.mesh.renderingSubMeshes[0].geometricInfo.positions.slice(),
-                indices: model.mesh.renderingSubMeshes[0].geometricInfo.indices.slice(),
+                indices: model.mesh.renderingSubMeshes[0].geometricInfo.indices!.slice(),
             }
             const mesh = utils.createMesh(primitives.wireframed(geo as any));
             newModel.material = wireFrame.lineMat;

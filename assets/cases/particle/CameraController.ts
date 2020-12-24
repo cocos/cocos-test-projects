@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, math, Vec3, Quat, Event } from "cc";
+import { _decorator, Component, math, Vec3, Quat } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("CameraController")
@@ -14,12 +14,6 @@ export class CameraController extends Component {
 
     private _temp_vec3: Vec3 = new Vec3();
     private _temp_quat: Quat = new Quat();
-    /* class member could be defined like this */
-    // dummy = '';
-
-    /* use `property` decorator if your want the member to be serializable */
-    // @property
-    // serializableDummy = 0;
 
     start () {
         // Your initialization goes here.
@@ -30,12 +24,12 @@ export class CameraController extends Component {
     //     // Your update function goes here.
     // }
 
-    translate (leftRight, backForth, dt) {
+    translate (leftRight: number, backForth: number, dt: number) {
         Vec3.set(this._temp_vec3, leftRight * this.translateDelta * dt, 0, backForth * this.translateDelta * dt);
         this.node.translate(this._temp_vec3);
     }
 
-    rotate (longitudinal, perpendicular, dt) {
+    rotate (longitudinal: number, perpendicular: number, dt: number) {
         Quat.fromEuler(this._temp_quat, perpendicular * this.rotateDelta * dt, longitudinal * this.rotateDelta * dt, 0);
         this.node.rotate(this._temp_quat);
     }

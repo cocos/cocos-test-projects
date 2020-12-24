@@ -1,22 +1,17 @@
-import { _decorator, Component, Node, director, LabelComponent } from "cc";
+import { _decorator, Component, Node, director, Label } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("subScript02")
 export class subScript02 extends Component {
-    /* class member could be defined like this */
-    // dummy = '';
 
-    /* use `property` decorator if your want the member to be serializable */
-    // @property
-    // serializableDummy = 0;
-    @property({type: LabelComponent})
-    tips = null;
+    @property({type: Label})
+    public tips: Label = null!;
 
-    backRoot: Node = null;
+    public backRoot: Node | null = null!;
 
     start () {
         // Your initialization goes here.
-        this.backRoot = this.node.getParent().getChildByName('backRoot');
+        this.backRoot = this.node.getParent()!.getChildByName('backRoot');
         if(this.backRoot) {
             this.backRoot.active = false;
         }

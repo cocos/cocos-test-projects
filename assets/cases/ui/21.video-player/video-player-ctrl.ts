@@ -1,26 +1,26 @@
-import { _decorator, Component, Node, Slider, VideoPlayer, VideoClip, Label, sys, director, macro } from 'cc';
+import { _decorator, Component, Node, Slider, VideoPlayer, VideoClip, Label, sys, director, macro, Sprite } from 'cc';
 const { ccclass, type } = _decorator;
 
 @ccclass('VideoPlayerCtrl')
 export class VideoPlayerCtrl extends Component {
     @type(VideoClip)
-    videClip = null;
+    public videClip: VideoClip = null!;
     @type(VideoPlayer)
-    videoPlayer = null;
+    public videoPlayer: VideoPlayer = null!;
     @type(Label)
-    eventType = null;
+    public eventType: Label = null!;
     @type(Label)
-    playbackRate = null;
+    public playbackRate: Label = null!;
     @type(Label)
-    stayOnBottom = null;
+    public stayOnBottom: Label = null!;
     @type(Slider)
-    slider = null;
+    public slider: Slider = null!;
     @type(Node)
-    stayOnBottomTips = null;
+    public stayOnBottomTips: Sprite = null!;
     @type(Node)
-    noSupport = null;
+    public noSupport: Node = null!;
     @type(Label)
-    platform = null;
+    public platform: Label = null!;
 
     _playbackRate = 1;
 
@@ -51,7 +51,7 @@ export class VideoPlayerCtrl extends Component {
         this.videoPlayer.stayOnBottom = !this.videoPlayer.stayOnBottom;
         let state = this.videoPlayer.stayOnBottom ? '关闭' : '打开';
         this.stayOnBottom.string = `${state} stayOnBottom`;
-        this.stayOnBottomTips.active = this.videoPlayer.stayOnBottom;
+        this.stayOnBottomTips.node.active = this.videoPlayer.stayOnBottom;
     }
 
     onPlaybackRate () {
@@ -60,7 +60,7 @@ export class VideoPlayerCtrl extends Component {
         this.playbackRate.string = `x${this._playbackRate}`;
     }
 
-    onSlider (slider) {
+    onSlider (slider: Slider) {
         this.videoPlayer.currentTime = slider.progress * this.videoPlayer.duration;
     }
 
@@ -76,7 +76,7 @@ export class VideoPlayerCtrl extends Component {
         this.videoPlayer.play();
     }
 
-    onEventType (target, type) {
+    onEventType (type: string, target: VideoPlayerCtrl) {
         this.eventType.string = type;
     }
 

@@ -1,9 +1,8 @@
 
 
 
-import { _decorator, Component, sp, Size, Prefab, Label } from 'cc';
+import { _decorator, Component, sp, Label } from 'cc';
 const { ccclass, property } = _decorator;
-
 
 @ccclass('SpineAttach')
 export default class extends Component {

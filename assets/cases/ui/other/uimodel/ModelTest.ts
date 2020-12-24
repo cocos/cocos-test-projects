@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Mesh, ModelComponent, Material, UIModelComponent, LabelComponent, Prefab, instantiate } from "cc";
+import { _decorator, Component, Node, Mesh, MeshRenderer, Material, UIMeshRenderer, Label, Prefab, instantiate } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("ModelTest")
@@ -8,25 +8,20 @@ export class ModelTest extends Component {
     @property({
         type: Node,
     })
-    public mount: Node = null;
+    public mount: Node = null!;
 
     @property({
         type: Prefab,
     })
-    public prefab: Prefab = null;
+    public prefab: Prefab = null!;
 
     private _meshMounted = false;
-    private _buttonLabel: LabelComponent = null;
-    /* class member could be defined like this */
-    // dummy = '';
+    private _buttonLabel: Label = null!;
 
-    /* use `property` decorator if your want the member to be serializable */
-    // @property
-    // serializableDummy = 0;
 
     start () {
         // Your initialization goes here.
-        this._buttonLabel = this.node.children[0].getComponent(LabelComponent);
+        this._buttonLabel = this.node.children[0].getComponent(Label)!;
     }
 
     // update (deltaTime: number) {
@@ -44,7 +39,7 @@ export class ModelTest extends Component {
             const c = instantiate(this.prefab) as Node;
             c.setScale(100, 100, 100);
             this.mount.addChild(c);
-            c.addComponent(UIModelComponent);
+            c.addComponent(UIMeshRenderer);
             this._buttonLabel.string = 'Remove';
             this._meshMounted = true;
         }

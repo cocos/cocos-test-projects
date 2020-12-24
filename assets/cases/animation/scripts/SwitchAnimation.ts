@@ -1,16 +1,11 @@
-import { _decorator, Component, Node, systemEvent, SystemEventType, AnimationComponent, SliderComponent } from "cc";
+import { _decorator, Component, Animation, Slider } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("SwitchAnimation")
 export class SwitchAnimation extends Component {
-    /* class member could be defined like this */
-    // dummy = '';
 
-    /* use `property` decorator if your want the member to be serializable */
-    // @property
-    // serializableDummy = 0;
     private num = 0;
-    private animationComponent: AnimationComponent;
+    private animationComponent!: Animation;
     private _duration = 0.3;
 
     @property
@@ -33,12 +28,12 @@ export class SwitchAnimation extends Component {
         this.num ++;
     }
 
-    onDurationEditBoxChange(slider: SliderComponent) {
+    onDurationEditBoxChange(slider: Slider) {
         this._duration = (this.maxDuration - this.minDuration) * slider.progress;
     }
 
     start () {
-        this.animationComponent = this.node.getComponent(AnimationComponent);
+        this.animationComponent = this.node.getComponent(Animation)!;
     }
 
     // update (deltaTime: number) {

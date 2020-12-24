@@ -1,23 +1,18 @@
-import { _decorator, Component, LabelComponent } from "cc";
+import { _decorator, Component, Label, Button } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("ClickAndListener")
 @menu('UI/ClickAndListener')
 export class ClickAndListener extends Component {
-    /* class member could be defined like this */
-    // dummy = '';
 
-    /* use `property` decorator if your want the member to be serializable */
-    // @property
-    // serializableDummy = 0;
-    _label: LabelComponent | null = null;
+    _label: Label | null = null;
 
     start () {
-        this._label = this.getComponent(LabelComponent);
+        this._label = this.getComponent(Label);
     }
 
-    clickCallback(event, data){
-        this._label.string = data;
+    clickCallback (event: Button, data: any) {
+        this._label!.string = data;
     }
 
     // update (deltaTime: number) {

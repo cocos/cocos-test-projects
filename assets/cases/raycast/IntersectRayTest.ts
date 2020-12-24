@@ -1,23 +1,27 @@
-import { _decorator, Component, Node, Prefab, CameraComponent, systemEvent, SystemEventType, EventTouch, geometry, Touch, ModelComponent, instantiate, Vec3, GFXAttributeName, Vec2, LabelComponent, Color } from 'cc';
+import { _decorator, Component, Node, Prefab, Camera, systemEvent, SystemEventType, EventTouch, Touch, MeshRenderer, instantiate, Vec3, GFXAttributeName, Vec2, Label, Color, geometry, renderer } from 'cc';
 const { ccclass, property } = _decorator;
 
-const map = {};
+// const { Model } = renderer.scene
+
+type Map = { [name: string]: number };
+
+const map: Map = {};
 
 @ccclass('IntersectRayTest')
 export class IntersectRayTest extends Component {
 
-    @property({ type: LabelComponent })
-    tips: LabelComponent = null;
+    @property({ type: Label })
+    public tips: Label = null!;
 
     @property({ type: Prefab })
-    point: Prefab = null;
+    public point: Prefab = null!;
 
-    @property({ type: CameraComponent })
-    mainCamera: CameraComponent = null;
+    @property({ type: Camera })
+    public mainCamera: Camera = null!;
 
     private _ray: geometry.ray = new geometry.ray();
-    private _modelComs: ModelComponent[] = [];
-    private _container: Node;
+    private _modelComps: MeshRenderer[] = [];
+    private _container!: Node;
     private _points: Node[] = [];
 
     onLoad () {
@@ -26,7 +30,7 @@ export class IntersectRayTest extends Component {
         this._points.push(instantiate(this.point)); this._points.push(instantiate(this.point)); this._points.push(instantiate(this.point));
         this._container.addChild(this._points[0]); this._container.addChild(this._points[1]); this._container.addChild(this._points[2]);
         this._points[0].active = false; this._points[1].active = false; this._points[2].active = false;
-        this._modelComs = this.getComponentsInChildren(ModelComponent);
+        this._modelComps = this.getComponentsInChildren(MeshRenderer);
     }
 
     onEnable () {
@@ -41,9 +45,9 @@ export class IntersectRayTest extends Component {
         this._points[0].active = false; this._points[1].active = false; this._points[2].active = false;
         const loc = touch.getLocation();
         this.mainCamera.screenPointToRay(loc.x, loc.y, this._ray);
-        for (let i = 0; i < this._modelComs.length; i++) {
-            const mo = this._modelComs[i].model;
-            const me = this._modelComs[i].mesh;
+        for (let i = 0; i < this._modelComps.length; i++) {
+            const mo = this._modelComps[i].model!;
+            const me = this._modelComps[i].mesh!;
             const opt: geometry.IRayModelOptions = {
                 'mode': geometry.ERaycastMode.CLOSEST,
                 'distance': Infinity,
@@ -51,7 +55,7 @@ export class IntersectRayTest extends Component {
                 'subIndices': [],
                 'doubleSided': false
             }
-            const dis = geometry.intersect.ray_model(this._ray, mo, opt);
+            const dis = geometry.intersect.rayModel(this._ray, mo, opt);
             if (dis) {
                 console.log(mo.node.name, dis);
 
@@ -66,7 +70,7 @@ export class IntersectRayTest extends Component {
                 if (r_cube && r_cube_nus) this.testEquals(r_cube, r_cube_nus, 4);
 
 
-                const r = opt.result;
+                const r = opt.result!;
                 const s = opt.subIndices;
 
                 // test dis is equals result[0]

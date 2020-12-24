@@ -3,11 +3,8 @@ const { ccclass, property } = _decorator;
 
 @ccclass("button")
 export class button extends Component {
-    /* class member could be defined like this */
-    // dummy = '';
 
-    /* use `property` decorator if your want the member to be serializable */
-    private isPaused =false;
+    private isPaused = false;
     start () {
         // Your initialization goes here.
         game.on(Game.EVENT_SHOW, this.resumeState, this);

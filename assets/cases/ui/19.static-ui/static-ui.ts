@@ -1,17 +1,17 @@
-import { _decorator, Component, Node, SpriteFrame, SpriteComponent, LabelComponent, UIStaticBatchComponent, director, sys } from "cc";
+import { _decorator, Component, Node, Label, UIStaticBatch, director, sys } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("StaticUI")
 @menu('UI/StaticUI')
 export class StaticUI extends Component {
-    @property(LabelComponent)
-    tipLabel: LabelComponent = null;
+    @property(Label)
+    public tipLabel: Label = null!;
     @property
     newSceneName = '';
     @property({
-        type: [UIStaticBatchComponent]
+        type: [UIStaticBatch]
     })
-    uiStaticBatchCompList: UIStaticBatchComponent[] = [];
+    uiStaticBatchCompList: UIStaticBatch[] = [];
 
     start () {
         this.scheduleOnce(this.func, 1.5);

@@ -1,5 +1,5 @@
 
-import { _decorator, CameraComponent, CanvasComponent, Color, Component, Font, LabelComponent, Node, Vec3, quat } from 'cc';
+import { _decorator, Camera, Canvas, Color, Component, Font, Label, Node, Vec3, quat, UITransform } from 'cc';
 const { ccclass, property, menu } = _decorator;
 
 @ccclass('LabelModelComponent')
@@ -64,21 +64,21 @@ export class LabelModelComponent extends Component {
     @property
     private _priority = 0;
 
-    private _label: LabelComponent | null = null;
-    private _camera: CameraComponent | null = null;
+    private _label: Label | null = null;
+    private _camera: Camera | null = null;
     private _worldRot = quat();
-    private _lastCameraWpos = new Vec3();
-    private _wpos = new Vec3();
-    private _cameraWpos = new Vec3();
-    private _lastWpos = new Vec3();
+    private _lastCameraWPos = new Vec3();
+    private _wPos = new Vec3();
+    private _cameraWPos = new Vec3();
+    private _lastWPos = new Vec3();
 
     public onEnable () {
-        this._camera = this.node.scene.getComponentInChildren('cc.CameraComponent') as CameraComponent;
+        this._camera = this.node.scene.getComponentInChildren(Camera) as Camera;
         if (this.labelInit()) {
             return;
         }
 
-        const canvas = this.node.scene.getComponentInChildren('cc.CanvasComponent') as CanvasComponent;
+        const canvas = this.node.scene.getComponentInChildren(Canvas);
         if (!canvas) {
             return;
         }
@@ -88,40 +88,41 @@ export class LabelModelComponent extends Component {
             root = new Node('label-model-manager');
             root.setParent(canvas.node);
             root.setSiblingIndex(0);
-            root.addComponent('cc.UITransformComponent');
+            root.addComponent(UITransform);
         }
 
         const labelNode = new Node(this._typeName);
         labelNode.setParent(root);
-        const label = labelNode.addComponent('cc.LabelComponent') as LabelComponent;
-        labelNode.setContentSize(200, 50);
-        label.horizontalAlign = LabelComponent.HorizontalAlign.CENTER;
-        label.verticalAlign = LabelComponent.VerticalAlign.CENTER;
+        const labelTrans = labelNode.getComponent(UITransform)!;
+        const label = labelNode.addComponent(Label);
+        labelTrans.setContentSize(200, 50);
+        label.horizontalAlign = Label.HorizontalAlign.CENTER;
+        label.verticalAlign = Label.VerticalAlign.CENTER;
         this._label = label;
         this.labelInit();
     }
 
     public lateUpdate () {
-        this._camera.node.getWorldRotation(this._worldRot);
+        this._camera!.node.getWorldRotation(this._worldRot);
         this.node.setWorldRotation(this._worldRot);
         if (!this._camera || !this._label) {
             return;
         }
 
-        this.node.getWorldPosition(this._wpos);
-        this._camera.node.getWorldPosition(this._cameraWpos);
-        if (this._cameraWpos.equals(this._lastCameraWpos) && this._wpos.equals(this._lastWpos)) {
+        this.node.getWorldPosition(this._wPos);
+        this._camera.node.getWorldPosition(this._cameraWPos);
+        if (this._cameraWPos.equals(this._lastCameraWPos) && this._wPos.equals(this._lastWPos)) {
             return;
         }
 
-        this._lastCameraWpos.set(this._cameraWpos);
-        this._lastWpos.set(this._wpos);
+        this._lastCameraWPos.set(this._cameraWPos);
+        this._lastWPos.set(this._wPos);
 
         // [HACK]
         // @ts-ignore
         this._camera._camera.update();
-        cc.pipelineUtils.WorldNode3DToLocalNodeUI(this._camera, this._wpos, this._label.node.parent, this._wpos);
-        this._label.node.setPosition(this._wpos);
+        this._camera.convertToUINode(this._wPos, this._label.node.parent!, this._wPos);
+        this._label.node.setPosition(this._wPos);
 
     }
 

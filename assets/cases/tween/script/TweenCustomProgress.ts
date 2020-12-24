@@ -5,7 +5,7 @@ const { ccclass, property, menu } = _decorator;
 @menu("tween/TweenCustomProgress")
 export class TweenCustomProgress extends Component {
 
-    private tweenCP: Tween;
+    private tweenCP!: Tween<Node>;
 
     onLoad () {
         // 对所有属性自定义 progress
@@ -18,15 +18,11 @@ export class TweenCustomProgress extends Component {
 
         // 对单个属性自定义 progress
         this.tweenCP = tween(this.node)
-            .to(2, {
-                position: {
-                    value: new Vec3(2, 2, -2),
-                    progress: (start: number, end: number, current: number, ratio: number) => {
-                        return start + (end - start) * ratio * ratio * ratio;
-                    }
+            .to(2, { position: new Vec3(2, 2, -2) }, {
+                progress: (start: number, end: number, current: number, ratio: number) => {
+                    return start + (end - start) * ratio * ratio * ratio;
                 }
-            })
-            .reverseTime(scaleTween)
+            }).reverseTime(scaleTween)
     }
 
     onEnable () {

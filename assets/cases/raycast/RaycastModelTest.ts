@@ -1,20 +1,20 @@
-import { _decorator, Component, Node, Material, CameraComponent, ModelComponent, geometry, systemEvent, SystemEventType, EventTouch, Touch, Director, director } from "cc";
+import { _decorator, Component, Node, Material, Camera, MeshRenderer, geometry, systemEvent, SystemEventType, EventTouch, Touch, Director, director } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("RaycastModelTest")
 export class RaycastModelTest extends Component {
 
     @property({ type: Material })
-    readonly defaultMaterial: Material = null;
+    readonly defaultMaterial: Material = null!;
 
     @property({ type: Material })
-    readonly rayMaterial: Material = null;
+    readonly rayMaterial: Material = null!;
 
-    @property({ type: CameraComponent })
-    readonly cameraCom: CameraComponent = null;
+    @property({ type: Camera })
+    readonly cameraCom: Camera = null!;
 
-    @property({ type: ModelComponent })
-    readonly modelCom: ModelComponent = null;
+    @property({ type: MeshRenderer })
+    readonly modelCom: MeshRenderer = null!;
 
     private _ray: geometry.ray = new geometry.ray();
 
@@ -27,8 +27,9 @@ export class RaycastModelTest extends Component {
     }
 
     onTouchStart (touch: Touch, event: EventTouch) {
-        this.cameraCom.screenPointToRay(touch._point.x, touch._point.y, this._ray);
-        if (geometry.intersect.ray_model(this._ray, this.modelCom.model)) {
+        const point = touch.getLocation();
+        this.cameraCom.screenPointToRay(point.x, point.y, this._ray);
+        if (geometry.intersect.rayModel(this._ray, this.modelCom.model!)) {
             this.modelCom.material = this.rayMaterial;
         } else {
             this.modelCom.material = this.defaultMaterial;

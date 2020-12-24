@@ -3,12 +3,7 @@ const { ccclass, property } = _decorator;
 
 @ccclass("newScript")
 export class newScript extends Component {
-    /* class member could be defined like this */
-    // dummy = '';
 
-    /* use `property` decorator if your want the member to be serializable */
-    // @property
-    // serializableDummy = 0;
     private timer = false;
     private _y = 0;
     start () {

@@ -4,13 +4,13 @@ const { ccclass, type } = _decorator;
 @ccclass('WebviewCtrl')
 export class WebviewCtrl extends Component {
     @type(WebView)
-    webview = null;
+    public webview: WebView = null!;
     @type(Label)
-    eventTips = null;
+    public eventTips: Label = null!;
     @type(Node)
-    noSupport = null;
+    public noSupport: Node = null!;
     @type(Label)
-    platform = null;
+    public platform: Label = null!;
 
     start () {
         // 隐藏不支持 video player 的平台
@@ -39,7 +39,7 @@ export class WebviewCtrl extends Component {
         this.webview.url = 'https://www.baidu.com';
     }
 
-    onEventTypes (target, eventType: WebView.EventType) {
+    onEventTypes (target: WebView, eventType: typeof WebView.EventType) {
         this.eventTips.string = '触发事件：' + eventType;
     }
 }

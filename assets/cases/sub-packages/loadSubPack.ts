@@ -1,19 +1,14 @@
-import { _decorator, Component, LabelComponent, Node, ButtonComponent, Prefab, instantiate, loader, director } from "cc";
+import { _decorator, Component, Label, Node, Button, Prefab, instantiate, loader, director } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("loadSubPack")
 export class loadSubPack extends Component {
-    /* class member could be defined like this */
-    // dummy = '';
 
-    /* use `property` decorator if your want the member to be serializable */
-    // @property
-    // serializableDummy = 0;
-    @property({type: LabelComponent})
+    @property({type: Label})
     label = null;
-    @property({type: ButtonComponent})
+    @property({type: Button})
     createButton_1 = null;
-    @property({type: ButtonComponent})
+    @property({type: Button})
     createButton_2 = null;
 
     start () {

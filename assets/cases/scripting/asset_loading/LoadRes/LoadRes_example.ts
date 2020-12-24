@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, loader, SpriteComponent, SpriteAtlas, Prefab, instantiate, v2, director } from "cc";
+import { _decorator, Component, Node, loader, Sprite, SpriteAtlas, Prefab, instantiate, v2, director, Asset, Constructor } from "cc";
 const { ccclass, property } = _decorator;
 
 const builtInEffectList = [
@@ -13,25 +13,25 @@ const builtInEffectList = [
     'a3cd009f-0ab0-420d-9278-b9fdab939bbc.json',
 ];
 
-@ccclass("LoadResexample")
-export class LoadResexample extends Component {
+@ccclass("LoadResExample")
+export class LoadResExample extends Component {
 
     private _url = ["test_assets/atlas", "test_assets/prefab"];
 
     @property({type: Node})
-    content = null;
+    public content: Node = null!;
 
     loadSpriteFrame () {
         const url = this._url[0];
         this._releaseResource(url, SpriteAtlas);
         loader.loadRes(url, SpriteAtlas, (err, atlas) => {
             this._removeAllChildren();
-            loader.setAutoRelease(atlas, true);
+            loader.setAutoRelease(atlas!, true);
             const node = new Node();
             this.content.addChild(node);
             node.setPosition(0, 0, 0);
-            const sprite = node.addComponent(SpriteComponent);
-            sprite.spriteFrame = atlas.getSpriteFrame('sheep_run_0');
+            const sprite = node.addComponent(Sprite);
+            sprite.spriteFrame = atlas!.getSpriteFrame('sheep_run_0');
         });
     }
 
@@ -40,8 +40,8 @@ export class LoadResexample extends Component {
         this._releaseResource(url, Prefab);
         loader.loadRes(url, Prefab, (err, prefab) => {
             this._removeAllChildren();
-            loader.setAutoRelease(prefab, true);
-            const node = instantiate(prefab);
+            loader.setAutoRelease(prefab!, true);
+            const node = instantiate(prefab!);
             this.content.addChild(node);
             node.setPosition(0, 0, 0);
         });
@@ -53,18 +53,18 @@ export class LoadResexample extends Component {
     }
 
     _removeAllChildren () {
-        this.content.removeAllChildren(true);
+        this.content.removeAllChildren();
     }
 
-    _releaseResource (url, type) {
+    _releaseResource (url: string, type: Constructor<Asset>) {
         this._removeAllChildren();
-        const res = loader.getRes(url, type);
-        const all = loader.getDependsRecursively(res);
+        const res = loader.getRes(url, type!);
+        const all = loader.getDependsRecursively(res!);
         this._removeBuiltInEffect(all);
         loader.release(all);
     }
 
-    _removeBuiltInEffect (deps) {
+    _removeBuiltInEffect (deps: string[]) {
         let cache = [];
         for (let  i = 0; i < deps.length; i++) {
             for (let j = 0; j < builtInEffectList.length; j++) {

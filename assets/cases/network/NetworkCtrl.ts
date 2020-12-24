@@ -1,4 +1,4 @@
-import { _decorator, Component, LabelComponent, Asset, assert, loader, sys, assetManager } from 'cc';
+import { _decorator, Component, Label, Asset, assert, loader, sys, assetManager } from 'cc';
 const { ccclass, property } = _decorator;
 
 // imported from socket-io.js
@@ -7,27 +7,27 @@ declare var io:any;
 @ccclass('NetworkCtrl')
 export class NetworkCtrl extends Component {
 
-    @property({type: LabelComponent})
-    xhr: LabelComponent = null;
+    @property({type: Label})
+    public xhr: Label = null!;
 
-    @property({type: LabelComponent})
-    xhrAB: LabelComponent = null;
+    @property({type: Label})
+    public xhrAB: Label = null!;
 
-    @property({type: LabelComponent})
-    xhrTimeout: LabelComponent = null;
+    @property({type: Label})
+    public xhrTimeout: Label = null!;
 
-    @property({type: LabelComponent})
-    websocket: LabelComponent = null;
+    @property({type: Label})
+    public websocket: Label = null!;
 
     @property({type: Asset})
-    wssCacert: Asset = null;
+    public wssCacert: Asset = null!;
 
     private  _reconnectCount = 0;
 
-    private _xhrXHR : XMLHttpRequest = null;
-    private _xhrHRAB: XMLHttpRequest = null;
-    private _xhrXHRTimeout: XMLHttpRequest = null;
-    private _wsiSendBinary: WebSocket = null;
+    private _xhrXHR : XMLHttpRequest | null = null;
+    private _xhrHRAB: XMLHttpRequest | null = null;
+    private _xhrXHRTimeout: XMLHttpRequest | null = null;
+    private  _wsiSendBinary: WebSocket | null = null;
     private _sioClient: any = null;
 
     private tag: string = '';
@@ -108,14 +108,14 @@ export class NetworkCtrl extends Component {
 
     prepareWebSocket () {
         const self = this;
-        const websocketLabel = this.websocket.node.getParent().getComponent(LabelComponent);
+        const websocketLabel = this.websocket.node.getParent()!.getComponent(Label)!;
         const respLabel = this.websocket;
         // We should pass the cacert to libwebsockets used in native platform, otherwise the wss connection would be closed.
         let url = this.wssCacert.nativeUrl;
         if (assetManager.cacheManager) {
             url = assetManager.cacheManager.getCache(url) || assetManager.cacheManager.getTemp(url) || url;
         }
-        this._wsiSendBinary = new (WebSocket as any)('wss://echo.websocket.org', [], url);
+        this._wsiSendBinary = new WebSocket('wss://echo.websocket.org', []);
         this._wsiSendBinary.binaryType = 'arraybuffer';
         this._wsiSendBinary.onopen = function (evt) {
             respLabel.string = 'Opened!';
@@ -157,8 +157,8 @@ export class NetworkCtrl extends Component {
         this.scheduleOnce(this.sendWebSocketBinary, 1);
     }
 
-    sendWebSocketBinary (sender) {
-        let websocketLabel = this.websocket.node.getParent().getComponent(LabelComponent);
+    sendWebSocketBinary () {
+        let websocketLabel = this.websocket.node.getParent()!.getComponent(Label)!;
         if (!this._wsiSendBinary) { return; }
         if (this._wsiSendBinary.readyState === WebSocket.OPEN){
             websocketLabel.string = 'WebSocket: sendbinary';
@@ -175,27 +175,27 @@ export class NetworkCtrl extends Component {
             let warningStr = 'send binary websocket instance wasn\'t ready...';
             websocketLabel.string = 'WebSocket: not ready';
             this.websocket.string = warningStr;
-            this.scheduleOnce(function () {
+            this.scheduleOnce(()=> {
                 this.sendWebSocketBinary();
             }, 1);
         }
     }
 
-    streamXHREventsToLabel ( xhr:XMLHttpRequest, label:LabelComponent, method:string, responseHandler?:(string)=>string ) {
+    streamXHREventsToLabel (xhr: XMLHttpRequest, label: Label, method: string, responseHandler?: (str: string) => string) {
         let handler = responseHandler || function (response) {
             return method + ' Response (30 chars): ' + response.substring(0, 30) + '...';
         };
 
-        const eventLabel = label.node.getParent().getComponent(LabelComponent);
+        const eventLabel = label.node.getParent()!.getComponent(Label)!;
         let eventLabelOrigin = eventLabel.string;
         // Simple events
-        ['loadstart', 'abort', 'error', 'load', 'loadend', 'timeout'].forEach(function (eventname) {
-            xhr['on' + eventname] = function () {
-                eventLabel.string = eventLabelOrigin + '\nEvent : ' + eventname;
-                if (eventname === 'timeout') {
+        ['loadstart', 'abort', 'error', 'load', 'loadend', 'timeout'].forEach(function (eventName) {
+            xhr[('on' + eventName) as 'onloadstart' | 'onabort' | 'onerror' | 'onload' | 'onloadend' | 'ontimeout'] = function () {
+                eventLabel.string = eventLabelOrigin + '\nEvent : ' + eventName;
+                if (eventName === 'timeout') {
                     label.string += '(timeout)';
                 }
-                else if (eventname === 'loadend') {
+                else if (eventName === 'loadend') {
                     label.string += '...loadend!';
                 }
             };
@@ -205,31 +205,27 @@ export class NetworkCtrl extends Component {
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status >= 200) {
                 label.string = handler(xhr.responseText);
-            }
-            else if (xhr.status === 404) {
+            } else if (xhr.status === 404) {
                 label.string = '404 page not found!'
-            }
-            else if (xhr.readyState === 3) {
+            } else if (xhr.readyState === 3) {
                 label.string = 'Request dealing!';
-            }
-            else if (xhr.readyState === 2) {
+            } else if (xhr.readyState === 2) {
                 label.string = 'Request received!';
-            }
-            else if (xhr.readyState === 1) {
+            } else if (xhr.readyState === 1) {
                 label.string = 'Server connection established! Request hasn\'t been received';
-            }
-            else if (xhr.readyState === 0) {
+            } else if (xhr.readyState === 0) {
                 label.string = 'Request hasn\'t been initiated!';
             }
         };
     }
 
-    rmXhrEventListener (xhr) {
+    rmXhrEventListener (xhr: any) {
         if (!xhr) {
             return;
         }
-        ['loadstart', 'abort', 'error', 'load', 'loadend', 'timeout'].forEach(function (eventname) {
-            xhr['on' + eventname] = null;
+
+        ['loadstart', 'abort', 'error', 'load', 'loadend', 'timeout'].forEach((eventName) => {
+            xhr['on' + eventName] = null;
         });
         xhr.onreadystatechange = null;
     }

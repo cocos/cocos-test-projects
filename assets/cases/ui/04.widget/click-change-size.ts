@@ -1,17 +1,12 @@
-import { _decorator, Component, Node, Size } from "cc";
+import { _decorator, Component, Node, Size, UITransform } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("ClickChangeSize")
 @menu('UI/ClickChangeSize')
 export class ClickChangeSize extends Component {
-    /* class member could be defined like this */
-    // dummy = '';
 
-    /* use `property` decorator if your want the member to be serializable */
-    // @property
-    // serializableDummy = 0;
     @property(Node)
-    target: Node | null = null;
+    public target: Node = null!;
     @property(Size)
     size = new Size();
 
@@ -20,9 +15,10 @@ export class ClickChangeSize extends Component {
         this.node.on('click', this.click, this);
     }
 
-    click(){
-        if(this.target){
-            this.target.setContentSize(this.size);
+    click () {
+        if (this.target) {
+            const uiTrans = this.target.getComponent(UITransform);
+            uiTrans!.contentSize = this.size;
         }
     }
 

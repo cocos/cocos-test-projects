@@ -3,7 +3,7 @@ const { ccclass, property } = _decorator;
 
 @ccclass("TweenActionCallBack")
 export class TweenActionCallBack extends Component {
-    private tween: Tween;
+    private tween!: Tween<Vec3>;
     private _scale = new Vec3(1, 1, 1);
     onLoad () {
         const that = this;

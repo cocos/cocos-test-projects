@@ -1,7 +1,9 @@
-import { _decorator, Component, Node, CCObject, LabelComponent } from 'cc';
+import { _decorator, Component, Label } from 'cc';
 const { ccclass, property } = _decorator;
 
 import { LastTimeResult } from './ByteCodeCache';
+
+declare const jsb: any;
 
 declare function require(pkg: string): any;
 
@@ -9,12 +11,12 @@ declare function require(pkg: string): any;
 export class ByteCodeCache extends Component {
 
 
-    @property({ type: LabelComponent })
-    statusLabel: LabelComponent = null;
+    @property({ type: Label })
+    public statusLabel: Label = null!;
 
 
-    @property({ type: LabelComponent })
-    titleLabel: LabelComponent = null;
+    @property({ type: Label })
+    public titleLabel: Label = null!;
 
     start() {
         setTimeout(this.runTest.bind(this), 0);

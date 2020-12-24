@@ -1,28 +1,28 @@
 
 
-import { _decorator, Component, director, instantiate, Label, Color, Vec2, Node, Prefab, dragonBones, macro, SystemEventType, systemEvent, Vec3, Material } from 'cc';
-import { SystemEvent } from '../event/system-event/system-event';
-const { ccclass, property, requireComponent } = _decorator;
+import { _decorator, Component, Label, dragonBones, Material } from 'cc';
+
+const { ccclass, property } = _decorator;
 
 
 @ccclass('DragonBonesMode')
 export class DragonBonesMode extends Component {
     @property({ type: Material })
-    grayMaterial: Material | null = null;
+    grayMaterial: Material = null!;
     @property({ type: Material })
-    normalMaterial: Material | null = null;
+    normalMaterial: Material = null!;
     @property({ type: dragonBones.ArmatureDisplay })
-    db0: dragonBones.ArmatureDisplay | null = null;
+    db0: dragonBones.ArmatureDisplay = null!;
     @property({ type: dragonBones.ArmatureDisplay })
-    db1: dragonBones.ArmatureDisplay | null = null;
+    db1: dragonBones.ArmatureDisplay = null!;
     @property({ type: dragonBones.ArmatureDisplay })
-    db2: dragonBones.ArmatureDisplay | null = null;
+    db2: dragonBones.ArmatureDisplay = null!;
     @property({ type: Label })
-    batchLabel: Label | null = null;
+    batchLabel: Label = null!;
     @property({ type: Label })
-    cacheLabel: Label | null = null;
+    cacheLabel: Label = null!;
     @property({ type: Label })
-    matLabel: Label | null = null;
+    matLabel: Label = null!;
 
     @property
     isGray = false;
@@ -32,7 +32,7 @@ export class DragonBonesMode extends Component {
 
     @property
     isCache = false;
-    
+
     onGray () {
         this.isGray = !this.isGray;
 
@@ -60,9 +60,9 @@ export class DragonBonesMode extends Component {
         if (this.isBatch) label = "no batch";
         this.batchLabel!.string = label;
 
-        this.db0!.enableBatch = this.isBatch;
-        this.db1!.enableBatch = this.isBatch;
-        this.db2!.enableBatch = this.isBatch;
+        // this.db0!.enableBatch = this.isBatch;
+        // this.db1!.enableBatch = this.isBatch;
+        // this.db2!.enableBatch = this.isBatch;
     }
     onCache () {
         this.isCache = !this.isCache;

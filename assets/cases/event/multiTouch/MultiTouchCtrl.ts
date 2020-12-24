@@ -1,14 +1,18 @@
-import { _decorator, Component, systemEvent, SystemEventType, EventTouch, ToggleComponent, Node, macro, Touch, Vec2 } from "cc";
+import { _decorator, Component, systemEvent, SystemEventType, EventTouch, Toggle, Node, macro, Touch, Vec2 } from "cc";
 const { ccclass, property } = _decorator;
+
+const _temp_vec2_1 = new Vec2();
+const _temp_vec2_2 = new Vec2();
+const _temp_delta = new Vec2();
 
 @ccclass("MultiTouchCtrl")
 export class MultiTouchCtrl extends Component {
 
-    @property(ToggleComponent)
-    toggle: ToggleComponent = null;
+    @property(Toggle)
+    public toggle: Toggle = null!;
 
     @property(Node)
-    target: Node = null;
+    public target: Node = null!;
 
     start () {
         systemEvent.on(SystemEventType.TOUCH_MOVE, this.onTouchMove, this);
@@ -31,8 +35,8 @@ export class MultiTouchCtrl extends Component {
         const touches = event.getAllTouches();
         const changedTouches = event.getTouches();
         if (macro.ENABLE_MULTI_TOUCH && touches.length > 1) {
-            let touch1: Touch = null;
-            let touch2: Touch = null;
+            let touch1: Touch = null!;
+            let touch2: Touch = null!;
             const delta2 = new Vec2();
             if (changedTouches.length > 1) {
                 touch1 = touches[0];
@@ -53,10 +57,9 @@ export class MultiTouchCtrl extends Component {
                 }
             }
 
-
-            const delta1 = touch1.getDelta();
-            const touchPoint1 = touch1.getLocation();
-            const touchPoint2 = touch2.getLocation();
+            const delta1 = touch1.getDelta(_temp_delta);
+            const touchPoint1 = touch1.getLocation(_temp_vec2_1);
+            const touchPoint2 = touch2.getLocation(_temp_vec2_2);
             const distance = touchPoint1.subtract(touchPoint2);
             const delta = delta1.subtract(delta2);
             if (Math.abs(distance.x) > Math.abs(distance.y)) {

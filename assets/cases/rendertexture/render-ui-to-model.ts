@@ -1,22 +1,17 @@
-import { _decorator, Component, ModelComponent, CanvasComponent, RenderTexture, view } from 'cc';
+import { _decorator, Component, MeshRenderer, Canvas, RenderTexture, view } from 'cc';
 const { ccclass, property, menu } = _decorator;
 
 @ccclass('RenderUIToModel')
 @menu('RenderTexture/RenderUIToModel')
 export class RenderUIToModel extends Component {
-    /* class member could be defined like this */
-    // dummy = '';
 
-    /* use `property` decorator if your want the member to be serializable */
-    // @property
-    // serializableDummy = 0;
-    @property(ModelComponent)
-    model: ModelComponent = null;
+    @property(MeshRenderer)
+    public model: MeshRenderer = null!;
 
-    renderTexture: RenderTexture = null;
+    public renderTexture: RenderTexture | null = null;
 
     start () {
-        const canvas = this.getComponent(CanvasComponent);
+        const canvas = this.getComponent(Canvas)!;
         const tex = new RenderTexture();
         tex.name = 'render-ui-to-model';
         const size = view.getVisibleSize();
@@ -28,7 +23,7 @@ export class RenderUIToModel extends Component {
         this.renderTexture = tex;
 
         canvas.targetTexture = tex;
-        const mat = this.model.material;
+        const mat = this.model.material!;
         mat.setProperty('mainTexture', tex);
     }
 

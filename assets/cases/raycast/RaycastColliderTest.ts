@@ -1,20 +1,20 @@
-import { _decorator, Component, Material, CameraComponent, geometry, systemEvent, SystemEventType, EventTouch, Touch, PhysicsSystem, ModelComponent } from "cc";
+import { _decorator, Component, Material, Camera, geometry, systemEvent, SystemEventType, EventTouch, Touch, PhysicsSystem, MeshRenderer } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("RaycastColliderTest")
 export class RaycastColliderTest extends Component {
 
     @property({ type: Material })
-    readonly defaultMaterial: Material = null;
+    readonly defaultMaterial: Material = null!;
 
     @property({ type: Material })
-    readonly rayMaterial: Material = null;
+    readonly rayMaterial: Material = null!;
 
-    @property({ type: CameraComponent })
-    readonly cameraCom: CameraComponent = null;
+    @property({ type: Camera })
+    readonly cameraCom: Camera = null!;
 
-    @property({ type: ModelComponent })
-    readonly modelCom: ModelComponent = null;
+    @property({ type: MeshRenderer })
+    readonly modelCom: MeshRenderer = null!;
 
     private _ray: geometry.ray = new geometry.ray();
 

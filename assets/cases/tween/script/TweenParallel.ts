@@ -5,7 +5,7 @@ const { ccclass, property, menu } = _decorator;
 @menu("tween/TweenParallel")
 export class TweenParallel extends Component {
 
-    private tweenParallel: Tween;
+    private tweenParallel!: Tween<Node>;
 
     onLoad () {
         this.tweenParallel = tween(this.node)

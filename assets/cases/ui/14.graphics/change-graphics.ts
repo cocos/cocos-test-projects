@@ -1,22 +1,15 @@
-import { _decorator, Component, GraphicsComponent } from "cc";
+import { _decorator, Component, Graphics } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("ChangeGraphics")
 @menu('UI/ChangeGraphics')
 export class ChangeGraphics extends Component {
-    /* class member could be defined like this */
-    // dummy = '';
-
-    /* use `property` decorator if your want the member to be serializable */
-    // @property
-    // serializableDummy = 0;
-
     start () {
         // Your initialization goes here.
     }
 
     drawRect(){
-        const g = this.getComponent(GraphicsComponent);
+        const g = this.getComponent(Graphics)!;
 
         g.clear();
         g.lineWidth = 10;
@@ -33,7 +26,7 @@ export class ChangeGraphics extends Component {
     }
 
     drawArc(){
-        const g = this.getComponent(GraphicsComponent);
+        const g = this.getComponent(Graphics)!;
 
         g.clear();
         g.lineWidth = 5;
@@ -57,7 +50,7 @@ export class ChangeGraphics extends Component {
     }
 
     drawLineTo(){
-        const g = this.getComponent(GraphicsComponent);
+        const g = this.getComponent(Graphics)!;
 
         g.clear();
         g.lineWidth = 10;
@@ -74,7 +67,7 @@ export class ChangeGraphics extends Component {
     }
 
     drawEllipse(){
-        const g = this.getComponent(GraphicsComponent);
+        const g = this.getComponent(Graphics)!;
 
         g.clear();
         g.lineWidth = 10;

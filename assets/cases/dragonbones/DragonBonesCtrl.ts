@@ -1,6 +1,5 @@
 
-import { _decorator, Component, director, instantiate, Label, Color, Vec2, Node, Prefab, dragonBones, macro, SystemEventType, systemEvent, Vec3 } from 'cc';
-import { SystemEvent } from '../event/system-event/system-event';
+import { _decorator, Component, Node, dragonBones, macro, SystemEventType, systemEvent, Vec3 } from 'cc';
 const { ccclass, property, requireComponent } = _decorator;
 
 
@@ -452,7 +451,7 @@ export default class DragonBonesCtrl extends Component {
                 pos.x = maxX;
             }
             this.node.setPosition(pos);
-            
+
         }
 
         if (this._speedY != 0) {
@@ -553,7 +552,7 @@ export default class DragonBonesCtrl extends Component {
 
 @ccclass('DragonBullet')
 export class DragonBullet {
-    
+
     _speedX= 0;
     _speedY = 0;
 

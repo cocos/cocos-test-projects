@@ -5,7 +5,7 @@ const { ccclass, property, menu } = _decorator;
 @menu("tween/TweenRepeat")
 export class TweenRepeat extends Component {
 
-    private tweenRepeat: Tween;
+    private tweenRepeat!: Tween<Node>;
 
     onLoad () {
         this.tweenRepeat = tween(this.node)

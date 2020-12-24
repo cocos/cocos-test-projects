@@ -1,12 +1,13 @@
 
-import * as cc from 'cc';
+import { _decorator, Component, Node } from 'cc';
+const { ccclass, property, menu } = _decorator;
 import { UILog } from '../../../ui/ui-log';
 
-@cc._decorator.ccclass('CoreJsTest')
-@cc._decorator.menu('TestCases/Scripting/LanguageFeature/CoreJsTest')
-export class CoreJsTest extends cc.Component {
-    @cc._decorator.property(UILog)
-    logPanel: UILog = null;
+@ccclass('CoreJsTest')
+@menu('TestCases/Scripting/LanguageFeature/CoreJsTest')
+export class CoreJsTest extends Component {
+    @property(UILog)
+    public logPanel: UILog = null!;
 
     public start() {
 

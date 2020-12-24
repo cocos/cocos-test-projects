@@ -1,4 +1,4 @@
-import { _decorator, Component, ModelComponent, ToggleComponent, Node, SliderComponent, Material, Color, GFXCullMode, LabelComponent, director } from "cc";
+import { _decorator, Component, MeshRenderer, Toggle, Node, Slider, Material, Color, GFXCullMode, Label, director } from "cc";
 const { ccclass, property } = _decorator;
 
 const color = Color.WHITE.clone();
@@ -7,18 +7,18 @@ const color = Color.WHITE.clone();
 export class MaterialTest extends Component {
 
     @property(Node)
-    manualAlbedo: Node = null;
+    public manualAlbedo: Node = null!;
 
     @property(Node)
-    manualMetallic: Node = null;
+    public manualMetallic: Node = null!;
 
     @property(Node)
-    manualAlphaTest: Node = null;
+    public manualAlphaTest: Node = null!;
 
-    _material: Material = null;
+    private _material: Material = null!;
 
     start () {
-        this._material = this.node.getComponent(ModelComponent).material;
+        this._material = this.node.getComponent(MeshRenderer)!.material!;
     }
 
     update () {
@@ -27,39 +27,39 @@ export class MaterialTest extends Component {
 
     // callbacks
 
-    useAlbedoMap (e: ToggleComponent) {
+    useAlbedoMap (e: Toggle) {
         this._material.recompileShaders({ USE_ALBEDO_MAP: e.isChecked });
         this.manualAlbedo.active = !e.isChecked;
     }
 
-    useMetallicMap (e: ToggleComponent) {
+    useMetallicMap (e: Toggle) {
         this._material.recompileShaders({ USE_METALLIC_ROUGHNESS_MAP: e.isChecked });
         this.manualMetallic.active = !e.isChecked;
     }
 
-    useAlphaTest (e: ToggleComponent) {
+    useAlphaTest (e: Toggle) {
         this._material.recompileShaders({ USE_ALPHA_TEST: e.isChecked });
         this.manualAlphaTest.active = e.isChecked;
     }
 
-    setAlbedo (e: SliderComponent) {
+    setAlbedo (e: Slider) {
         const li = e.progress * 255;
         color.set(li, li, li, li);
         this._material.setProperty('albedo', color);
-        this.manualAlbedo.getComponentInChildren(LabelComponent).string = e.progress.toFixed(1);
+        this.manualAlbedo.getComponentInChildren(Label)!.string = e.progress.toFixed(1);
     }
 
-    setMetallic (e: SliderComponent) {
+    setMetallic (e: Slider) {
         this._material.setProperty('metallic', e.progress);
-        this.manualMetallic.getComponentInChildren(LabelComponent).string = e.progress.toFixed(1);
+        this.manualMetallic.getComponentInChildren(Label)!.string = e.progress.toFixed(1);
     }
 
-    setAlphaThreshold (e: SliderComponent) {
+    setAlphaThreshold (e: Slider) {
         this._material.setProperty('alphaThreshold', e.progress);
-        this.manualAlphaTest.getComponentInChildren(LabelComponent).string = e.progress.toFixed(1);
+        this.manualAlphaTest.getComponentInChildren(Label)!.string = e.progress.toFixed(1);
     }
 
-    cullFrontFace (e: ToggleComponent) {
+    cullFrontFace (e: Toggle) {
         this._material.overridePipelineStates({
             rasterizerState: {
                 cullMode: e.isChecked ? GFXCullMode.FRONT : GFXCullMode.BACK,
