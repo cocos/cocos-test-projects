@@ -33,6 +33,8 @@ export class ListItem extends Component {
     public updateItem(idx: number, name: string) {
         this.index = idx;
         this._name = name;
-        this.label.string = name;
+        if (this.label) {
+            this.label.string = name;
+        }
     }
 }

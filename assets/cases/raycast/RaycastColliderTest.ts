@@ -27,7 +27,7 @@ export class RaycastColliderTest extends Component {
     }
 
     onTouchStart (touch: Touch, event: EventTouch) {
-        this.cameraCom.screenPointToRay(touch._point.x, touch._point.y, this._ray);
+        this.cameraCom.screenPointToRay(touch.getLocationX(), touch.getLocationY(), this._ray);
         if (PhysicsSystem.instance.raycast(this._ray)) {
             const r = PhysicsSystem.instance.raycastResults;
             for (let i = 0; i < r.length; i++) {

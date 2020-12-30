@@ -92,7 +92,7 @@ export class LoadResDirExample extends Component {
         this.scrollView.scrollToTop();
         this.btnClearAll.active = false;  // 防止加载的过程中清除资源
 
-        loader.loadResDir("test_assets", (err: Error, assets: Asset[]) => {
+        loader.loadResDir("test_assets", (err: Error | null, assets: Asset[]) => {
             if (!this.isValid && err) {
                 return;
             }
@@ -125,7 +125,7 @@ export class LoadResDirExample extends Component {
         this.scrollView.scrollToTop();
         this.btnClearAll.active = false;  // 防止加载的过程中清除资源
 
-        loader.loadResDir("test_assets", SpriteFrame, (err: Error, assets: Asset[]) => {
+        loader.loadResDir("test_assets", SpriteFrame, (err: Error | null, assets: Asset[]) => {
             if (!this.isValid) {
                 return;
             }
