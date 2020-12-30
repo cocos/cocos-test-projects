@@ -121,7 +121,6 @@ export class AssetLoading extends Component {
                 break;
             case 'Animation':
             case 'Prefab':
-            case 'EffectAsset':
             case 'Skeleton':
             case 'Mesh':
             case 'ImageAsset':
