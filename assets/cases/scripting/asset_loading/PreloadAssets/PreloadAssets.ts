@@ -109,7 +109,6 @@ export class PreloadAssets extends Component {
                 break;
             case 'Animation':
             case 'Prefab':
-            case 'EffectAsset':
             case 'Skeleton':
             case 'Mesh':
             case 'ImageAsset':
@@ -178,7 +177,6 @@ export class PreloadAssets extends Component {
                 break;
             case 'Animation':
             case 'Prefab':
-            case 'EffectAsset':
             case 'Skeleton':
             case 'Mesh':
             case 'ImageAsset':
@@ -192,7 +190,7 @@ export class PreloadAssets extends Component {
                 director.loadScene(url);
                 break;
             case 'Dir':
-                resources.loadDir(url, (err: Error | null, assets: Asset[]) => {
+                resources.loadDir(url, (err, assets) => {
                     this.loadTips.string = "The asset loaded: ";
                     assets.forEach((r) => this.loadTips.string += `${r.name};`);
                 });
