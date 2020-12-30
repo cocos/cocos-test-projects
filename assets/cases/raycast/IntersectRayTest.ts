@@ -48,7 +48,9 @@ export class IntersectRayTest extends Component {
         for (let i = 0; i < this._modelComps.length; i++) {
             const mo = this._modelComps[i].model!;
             const me = this._modelComps[i].mesh!;
-            const opt: geometry.IRayModelOptions = {
+            const opt: geometry.IRayModelOptions & {
+                subIndices: NonNullable<geometry.IRayModelOptions['subIndices']>;
+            } = {
                 'mode': geometry.ERaycastMode.CLOSEST,
                 'distance': Infinity,
                 'result': [],

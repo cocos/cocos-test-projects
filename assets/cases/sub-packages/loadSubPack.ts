@@ -1,15 +1,15 @@
-import { _decorator, Component, Label, Node, Button, Prefab, instantiate, loader, director } from "cc";
+import { _decorator, Component, Label, Node, Button, Prefab, instantiate, loader, director, math } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("loadSubPack")
 export class loadSubPack extends Component {
 
     @property({type: Label})
-    label = null;
+    label!: Label;
     @property({type: Button})
-    createButton_1 = null;
+    createButton_1!: Button;
     @property({type: Button})
-    createButton_2 = null;
+    createButton_2!: Button;
 
     start () {
         // Your initialization goes here.
@@ -23,7 +23,7 @@ export class loadSubPack extends Component {
         loader.downloader.loadSubpackage('sub-pack-01',(err: any) => {
             if(err) {
                 this.label.string = 'load sub-pack-01 failed!';
-                this.label.color = 'red';
+                this.label.color = math.Color.RED;
                 return console.error(err);
             }
             this.label.string = 'load sub-pack-01 success!';
@@ -33,7 +33,7 @@ export class loadSubPack extends Component {
             loader.downloader.loadSubpackage('sub-pack-02',(err: any) => {
                 if(err) {
                     this.label.string = 'load sub-pack-02 failed!';
-                    this.label.color = 'red';
+                    this.label.color = math.Color.RED;
                     return console.error(err);
                 }
                 this.label.string += '\n load sub-pack-02 success!';

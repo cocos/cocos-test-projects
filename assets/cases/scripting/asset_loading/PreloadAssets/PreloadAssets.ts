@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Sprite, AudioSource, builtinResMgr, director, Font, instantiate, Label, loader, log, Material, MeshRenderer, Prefab, SpriteAtlas, SpriteFrame, Texture2D, TextureCube, UIMeshRenderer, assetManager, resources, Asset } from 'cc';
+import { _decorator, Component, Node, Sprite, AudioSource, builtinResMgr, director, Font, instantiate, Label, loader, log, Material, MeshRenderer, Prefab, SpriteAtlas, SpriteFrame, Texture2D, TextureCube, UIMeshRenderer, assetManager, resources, Asset, AssetManager, SceneAsset } from 'cc';
 const { ccclass, property } = _decorator;
 
 type UrlKey = keyof PreloadAssets['_urls'];
@@ -130,7 +130,7 @@ export class PreloadAssets extends Component {
         }
     }
 
-    _loadCallBack (err: Error | null, data?: Asset | null) {
+    _loadCallBack (err: Error | null, data?: AssetManager.RequestItem[] | SceneAsset) {
         this._isLoading = false;
         if (err) {
             log('Error url [' + err + ']');
@@ -192,7 +192,7 @@ export class PreloadAssets extends Component {
                 director.loadScene(url);
                 break;
             case 'Dir':
-                resources.loadDir(url, (err: Error, assets: Asset[]) => {
+                resources.loadDir(url, (err: Error | null, assets: Asset[]) => {
                     this.loadTips.string = "The asset loaded: ";
                     assets.forEach((r) => this.loadTips.string += `${r.name};`);
                 });
@@ -220,7 +220,7 @@ export class PreloadAssets extends Component {
             case "Texture2D":
                 let cube = instantiate(this.loadAnimTestPrefab);
                 const model = cube.getComponent(MeshRenderer);
-                model.material.setProperty('albedoMap', res);
+                model?.material?.setProperty('albedoMap', res);
                 cube.setPosition(0, 0, 50);
                 cube.setScale(100, 100, 100);
                 cube.parent = this.showWindow;
