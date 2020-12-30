@@ -84,7 +84,8 @@ export class MorphController extends Component {
 
         if (EDITOR) {
             cce.Node.emit('change', this.node);
-            cce.Ipc.forceSend('broadcast', 'scene:change-node', this.node.uuid);
+            // @ts-ignore
+            Editor.Message.broadcast('scene:change-node', this.node.uuid);
         }
 
         if (!EDITOR) {
