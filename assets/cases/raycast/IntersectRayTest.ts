@@ -19,7 +19,7 @@ export class IntersectRayTest extends Component {
     @property({ type: Camera })
     public mainCamera: Camera = null!;
 
-    private _ray: geometry.ray = new geometry.ray();
+    private _ray: geometry.Ray = new geometry.Ray();
     private _modelComps: MeshRenderer[] = [];
     private _container!: Node;
     private _points: Node[] = [];
