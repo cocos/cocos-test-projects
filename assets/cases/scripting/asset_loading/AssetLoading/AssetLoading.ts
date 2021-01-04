@@ -63,7 +63,7 @@ export class AssetLoading extends Component {
         }
     }
 
-    _onClick (touch: Touch, event: EventTouch) {
+    _onClick (event: EventTouch) {
         if (this._isLoading) {
             return;
         }
