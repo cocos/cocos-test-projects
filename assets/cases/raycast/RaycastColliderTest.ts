@@ -16,7 +16,7 @@ export class RaycastColliderTest extends Component {
     @property({ type: MeshRenderer })
     readonly modelCom: MeshRenderer = null!;
 
-    private _ray: geometry.ray = new geometry.ray();
+    private _ray: geometry.Ray = new geometry.Ray();
 
     onEnable () {
         systemEvent.on(SystemEventType.TOUCH_START, this.onTouchStart, this);
