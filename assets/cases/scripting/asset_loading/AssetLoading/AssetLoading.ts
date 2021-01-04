@@ -59,7 +59,7 @@ export class AssetLoading extends Component {
 
     _onRegisteredEvent () {
         for (var i = 0; i < this.loadList.length; ++i) {
-            this.loadList[i].on(Node.EventType.TOUCH_END, this._onClick);
+            this.loadList[i].on(Node.EventType.TOUCH_END, this._onClick.bind(this));
         }
     }
 
