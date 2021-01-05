@@ -41,7 +41,7 @@ export class AsyncFunctionsTest extends cc.Component {
 }
 
 async function sleep (duration: number) { // Define an async function should be OK.
-    return await new Promise((resolve, reject) => { // `await` in async function should be OK.
+    return await new Promise<void>((resolve, reject) => { // `await` in async function should be OK.
         setTimeout(() => {
             resolve();
         }, duration);
@@ -49,7 +49,7 @@ async function sleep (duration: number) { // Define an async function should be 
 }
 
 const sleepThrow = async (at: number) => { // Define an async lambda should be OK.
-    return await new Promise((resolve, reject) => { // `await` in lambda should be OK.
+    return await new Promise<void>((resolve, reject) => { // `await` in lambda should be OK.
         setTimeout(() => {
             reject(new Error(`Oops...`));
         }, at);
