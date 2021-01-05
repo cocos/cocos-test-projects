@@ -10,8 +10,8 @@ export class RaycastCanvasTest extends Component {
     @property({ type: Label })
     readonly label: Label = null!;
 
-    private _ray = new geometry.ray();
-    private _aabb = new geometry.aabb();
+    private _ray = new geometry.Ray();
+    private _aabb = new geometry.AABB();
     onEnable () {
         this.label.string = '点击文字测试射线检测';
         systemEvent.on(SystemEventType.TOUCH_START, this.onTouchStart, this);
