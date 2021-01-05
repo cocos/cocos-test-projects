@@ -241,6 +241,9 @@
       },
       {
         "__id__": 47
+      },
+      {
+        "__id__": 53
       }
     ],
     "_prefab": null,
@@ -350,11 +353,6 @@
       "__id__": 8
     },
     "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "56c602be-5870-4e22-b255-d2c4f3c2489a"
-      }
-    ],
     "_visFlags": 0,
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 4,
@@ -381,7 +379,10 @@
     "_isTrimmedMode": true,
     "_useGrayscale": false,
     "_atlas": null,
-    "_id": "19Re5cGi1J/5Xc39SajVg8"
+    "_id": "19Re5cGi1J/5Xc39SajVg8",
+    "_customMaterial": {
+      "__uuid__": "56c602be-5870-4e22-b255-d2c4f3c2489a"
+    }
   },
   {
     "__type__": "0e601yHzVhLwYhF9dgYNzIT",
@@ -473,11 +474,6 @@
       "__id__": 12
     },
     "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "56c602be-5870-4e22-b255-d2c4f3c2489a"
-      }
-    ],
     "_visFlags": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
@@ -504,7 +500,10 @@
     "_isTrimmedMode": true,
     "_useGrayscale": false,
     "_atlas": null,
-    "_id": "f5sfMuS/VMQrJAc7GJwcL7"
+    "_id": "f5sfMuS/VMQrJAc7GJwcL7",
+    "_customMaterial": {
+      "__uuid__": "56c602be-5870-4e22-b255-d2c4f3c2489a"
+    }
   },
   {
     "__type__": "0e601yHzVhLwYhF9dgYNzIT",
@@ -593,11 +592,6 @@
       "__id__": 16
     },
     "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "f8fc7a96-b4a0-48a1-ac48-b7bb48568bb2"
-      }
-    ],
     "_visFlags": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
@@ -624,7 +618,10 @@
     "_isTrimmedMode": true,
     "_useGrayscale": false,
     "_atlas": null,
-    "_id": "4f5CgWQ9NP8L0K13iQR0LK"
+    "_id": "4f5CgWQ9NP8L0K13iQR0LK",
+    "_customMaterial": {
+      "__uuid__": "f8fc7a96-b4a0-48a1-ac48-b7bb48568bb2"
+    }
   },
   {
     "__type__": "cc.Node",
@@ -701,11 +698,6 @@
       "__id__": 19
     },
     "_enabled": true,
-    "_materials": [
-      {
-        "__uuid__": "bece030c-318f-4a70-8288-857aac6481fc"
-      }
-    ],
     "_visFlags": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
@@ -732,7 +724,10 @@
     "_isTrimmedMode": true,
     "_useGrayscale": false,
     "_atlas": null,
-    "_id": "8avHd6JDhA2YVSccf7Je1u"
+    "_id": "8avHd6JDhA2YVSccf7Je1u",
+    "_customMaterial": {
+      "__uuid__": "bece030c-318f-4a70-8288-857aac6481fc"
+    }
   },
   {
     "__type__": "cc.Node",
@@ -809,7 +804,6 @@
       "__id__": 22
     },
     "_enabled": true,
-    "_materials": [],
     "_visFlags": 0,
     "_srcBlendFactor": 1,
     "_dstBlendFactor": 4,
@@ -913,7 +907,6 @@
       "__id__": 25
     },
     "_enabled": true,
-    "_materials": [],
     "_visFlags": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
@@ -1016,7 +1009,6 @@
       "__id__": 28
     },
     "_enabled": true,
-    "_materials": [],
     "_visFlags": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
@@ -1119,7 +1111,6 @@
       "__id__": 31
     },
     "_enabled": true,
-    "_materials": [],
     "_visFlags": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
@@ -1222,7 +1213,6 @@
       "__id__": 34
     },
     "_enabled": true,
-    "_materials": [],
     "_visFlags": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
@@ -1325,7 +1315,6 @@
       "__id__": 37
     },
     "_enabled": true,
-    "_materials": [],
     "_visFlags": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
@@ -1428,7 +1417,6 @@
       "__id__": 40
     },
     "_enabled": true,
-    "_materials": [],
     "_visFlags": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
@@ -1531,7 +1519,6 @@
       "__id__": 43
     },
     "_enabled": true,
-    "_materials": [],
     "_visFlags": 0,
     "_srcBlendFactor": 2,
     "_dstBlendFactor": 4,
@@ -1677,5 +1664,32 @@
     "_fogAtten": 5,
     "_fogTop": 1.5,
     "_fogRange": 1.2
+  },
+  {
+    "__type__": "cc.Widget",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 7
+    },
+    "_enabled": true,
+    "__prefab": null,
+    "_alignFlags": 45,
+    "_target": null,
+    "_left": 0,
+    "_right": 0,
+    "_top": 0,
+    "_bottom": 0,
+    "_horizontalCenter": 0,
+    "_verticalCenter": 0,
+    "_isAbsLeft": true,
+    "_isAbsRight": true,
+    "_isAbsTop": true,
+    "_isAbsBottom": true,
+    "_isAbsHorizontalCenter": true,
+    "_isAbsVerticalCenter": true,
+    "_originalWidth": 0,
+    "_originalHeight": 0,
+    "_alignMode": 2,
+    "_lockFlags": 0
   }
 ]
