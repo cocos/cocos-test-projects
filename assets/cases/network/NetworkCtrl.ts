@@ -110,12 +110,13 @@ export class NetworkCtrl extends Component {
         const self = this;
         const websocketLabel = this.websocket.node.getParent()!.getComponent(Label)!;
         const respLabel = this.websocket;
-        // We should pass the cacert to libwebsockets used in native platform, otherwise the wss connection would be closed.
         let url = this.wssCacert.nativeUrl;
         if (assetManager.cacheManager) {
             url = assetManager.cacheManager.getCache(url) || assetManager.cacheManager.getTemp(url) || url;
         }
-        this._wsiSendBinary = new WebSocket('wss://echo.websocket.org', []);
+        // We should pass the cacert to libwebsockets used in native platform, otherwise the wss connection would be closed.
+        // @ts-ignore
+        this._wsiSendBinary = new WebSocket('wss://echo.websocket.org', [], url);
         this._wsiSendBinary.binaryType = 'arraybuffer';
         this._wsiSendBinary.onopen = function (evt) {
             respLabel.string = 'Opened!';
