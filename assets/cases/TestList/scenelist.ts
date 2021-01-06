@@ -18,6 +18,10 @@ export class SceneManager extends Component {
         }
     }
 
-    start () {
+    onDestroy () {
+        let length = sceneArray.length;
+        for(let i = 0; i < length; i++) {
+            sceneArray.pop();
+        }
     }
 }
