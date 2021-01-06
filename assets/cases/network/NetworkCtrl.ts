@@ -115,7 +115,8 @@ export class NetworkCtrl extends Component {
         if (assetManager.cacheManager) {
             url = assetManager.cacheManager.getCache(url) || assetManager.cacheManager.getTemp(url) || url;
         }
-        this._wsiSendBinary = new WebSocket('wss://echo.websocket.org', []);
+        // @ts-ignore
+        this._wsiSendBinary = new WebSocket('wss://echo.websocket.org', [], url);
         this._wsiSendBinary.binaryType = 'arraybuffer';
         this._wsiSendBinary.onopen = function (evt) {
             respLabel.string = 'Opened!';
