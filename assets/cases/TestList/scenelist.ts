@@ -17,11 +17,4 @@ export class SceneManager extends Component {
             }
         }
     }
-
-    onDestroy () {
-        let length = sceneArray.length;
-        for(let i = 0; i < length; i++) {
-            sceneArray.pop();
-        }
-    }
 }

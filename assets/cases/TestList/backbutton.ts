@@ -79,6 +79,13 @@ export class BackButton extends Component {
         director.on(Director.EVENT_BEFORE_SCENE_LOADING,this.switchSceneName,this);
     }
 
+    onDestroy () {
+        let length = sceneArray.length;
+        for(let i = 0; i < length; i++) {
+            sceneArray.pop();
+        }
+    }
+
     switchSceneName () {
         if (this.getSceneName() == null) {
             return;
@@ -88,9 +95,7 @@ export class BackButton extends Component {
     }
 
     backToList () {
-        if (game.isPaused()) {
-            game.resume();
-        }
+        director.resume();
         BackButton._blockInput.active = true;
         director.loadScene('TestList', ()=> {
             this.sceneName.node.active = false;
@@ -107,9 +112,7 @@ export class BackButton extends Component {
     }
 
     nextScene () {
-        if(game.isPaused()){
-            game.resume();
-        }
+        director.resume();
         BackButton._blockInput.active = true;
         this.updateSceneIndex(true);
         director.loadScene(this.getSceneName(), function () {
@@ -118,9 +121,7 @@ export class BackButton extends Component {
     }
 
     preScene () {
-        if(game.isPaused()){
-            game.resume();
-        }
+        director.resume();
         BackButton._blockInput.active = true;
         this.updateSceneIndex(false);
         director.loadScene(this.getSceneName(), function() {
