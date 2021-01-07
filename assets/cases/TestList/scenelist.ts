@@ -17,7 +17,4 @@ export class SceneManager extends Component {
             }
         }
     }
-
-    start () {
-    }
 }
