@@ -75,7 +75,7 @@ export class VideoPlayerCtrl extends Component {
         this.videoPlayer.play();
     }
 
-    onEventType (type: string, target: VideoPlayerCtrl) {
+    onEventType (target: VideoPlayerCtrl, type: string) {
         this.eventType.string = type;
     }
 
