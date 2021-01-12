@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Mesh, MeshRenderer, Material, UIMeshRenderer, Label, Prefab, instantiate } from "cc";
+import { _decorator, Component, Node, Mesh, MeshRenderer, Material, UIMeshRenderer, Label, Prefab, instantiate, Layers } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("ModelTest")
@@ -37,6 +37,7 @@ export class ModelTest extends Component {
             this._meshMounted = false;
         } else {
             const c = instantiate(this.prefab) as Node;
+            c.layer = Layers.Enum.UI_2D;
             c.setScale(100, 100, 100);
             this.mount.addChild(c);
             c.addComponent(UIMeshRenderer);

@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, dragonBones, macro, SystemEventType, systemEvent, Vec3 } from 'cc';
+import { _decorator, Component, Node, dragonBones, macro, SystemEventType, systemEvent, Vec3, director } from 'cc';
 const { ccclass, property, requireComponent } = _decorator;
 
 
@@ -439,7 +439,7 @@ export default class DragonBonesCtrl extends Component {
     }
 
     _updatePosition () {
-        const camera = this.node._uiProps.uiTransformComp!._canvas!.camera!;
+        const camera = director.root!.ui.getFirstRenderCamera(this.node)!;
         const pos = this.node.getPosition();
         if (this._speedX !== 0) {
             pos.x += this._speedX;
@@ -600,7 +600,7 @@ export class DragonBullet {
         armatureNode.setPosition(pos);
         const uiTrans = armatureNode.parent!._uiProps.uiTransformComp!;
         var worldPos = uiTrans.convertToWorldSpaceAR(armatureNode.getPosition());
-        const camera = armatureNode._uiProps.uiTransformComp!._canvas!.camera!;
+        const camera = director.root!.ui.getFirstRenderCamera(armatureNode)!;
         if (
             worldPos.x < -100 || worldPos.x >= camera.width + 100 ||
             worldPos.y < -100 || worldPos.y >= camera.height + 100

@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, director, SpriteAtlas, Prefab, Material, builtinResMgr, Texture2D, Sprite, loader, UIMeshRenderer, SpriteFrame, AudioSource, Font, instantiate, TextureCube, log, Label, Touch, EventTouch, MeshRenderer } from "cc";
+import { _decorator, Component, Node, director, SpriteAtlas, Prefab, Material, builtinResMgr, Texture2D, Sprite, loader, UIMeshRenderer, SpriteFrame, AudioSource, Font, instantiate, TextureCube, log, Label, Touch, EventTouch, MeshRenderer, Layers } from "cc";
 const { ccclass, property } = _decorator;
 
 type UrlKey = keyof AssetLoading['_urls'];
@@ -185,6 +185,7 @@ export class AssetLoading extends Component {
     _createNode (type: string, res: any) {
         this.loadTips.string = "";
         const node = new Node("New " + type);
+        node.layer = Layers.Enum.UI_2D;
         node.setPosition(0, 0, 0);
         let component = null;
         switch (this._curType) {

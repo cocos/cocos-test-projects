@@ -10,6 +10,9 @@ export class VisibilityChanged extends Component {
     start() {
         this.scheduleOnce(()=>{
             this.node.setParent(this.target);
+            this.node.walk((child) => {
+                child.layer = this.target!.layer;
+            })
         }, 1);
     }
 }

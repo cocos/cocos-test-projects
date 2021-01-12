@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, loader, Sprite, SpriteAtlas, Prefab, instantiate, v2, director, Asset, Constructor } from "cc";
+import { _decorator, Component, Node, loader, Sprite, SpriteAtlas, Prefab, instantiate, v2, director, Asset, Constructor, Layers } from "cc";
 const { ccclass, property } = _decorator;
 
 const builtInEffectList = [
@@ -28,6 +28,7 @@ export class LoadResExample extends Component {
             this._removeAllChildren();
             loader.setAutoRelease(atlas!, true);
             const node = new Node();
+            node.layer = Layers.Enum.UI_2D;
             this.content.addChild(node);
             node.setPosition(0, 0, 0);
             const sprite = node.addComponent(Sprite);
@@ -42,6 +43,7 @@ export class LoadResExample extends Component {
             this._removeAllChildren();
             loader.setAutoRelease(prefab!, true);
             const node = instantiate(prefab!);
+            node.layer = Layers.Enum.UI_2D;
             this.content.addChild(node);
             node.setPosition(0, 0, 0);
         });
