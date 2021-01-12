@@ -64,7 +64,7 @@ export class BackButton extends Component {
 
     start () {
         let camera = this.node.getComponent(Canvas)!.cameraComponent!;
-        if (camera.visibility | Layers.Enum.UI_2D) camera.visibility = ~Layers.Enum.UI_2D;
+        if (camera.visibility & Layers.Enum.UI_2D) camera.visibility &= ~Layers.Enum.UI_2D;
         this.sceneName = find("backRoot")!.getChildByName("sceneName")!.getComponent(Label)!;
         game.addPersistRootNode(this.node);
         BackButton._scrollNode = this.node.getParent()!.getChildByPath('Canvas/ScrollView') as Node;
