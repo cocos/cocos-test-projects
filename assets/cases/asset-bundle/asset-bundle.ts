@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, Label, AudioSource, assetManager, log, Texture2D, Sprite, SpriteFrame, AudioClip, director } from 'cc';
+import { _decorator, Component, Node, Label, AudioSource, assetManager, log, Texture2D, Sprite, SpriteFrame, AudioClip, director, Layers } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('AssetBundle')
@@ -63,6 +63,7 @@ export class AssetBundle extends Component {
             this._isLoading = false;
             this.loadTips.string = "";
             var node = new Node("New Node");
+            node.layer = Layers.Enum.UI_2D;
             node.setPosition(0, 0);
             let component = node.addComponent(Sprite);
             const sp = new SpriteFrame();
@@ -91,6 +92,7 @@ export class AssetBundle extends Component {
             this._isLoading = false;
             this.loadTips.string = "";
             var node = new Node("New Node");
+            node.layer = Layers.Enum.UI_2D;
             node.setPosition(0, 0);
             let component = node.addComponent(AudioSource);
             component.clip = asset!;
