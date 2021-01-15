@@ -16,7 +16,7 @@ export class VideoPlayerCtrl extends Component {
     @type(Slider)
     public slider: Slider = null!;
     @type(Node)
-    public stayOnBottomTips: Sprite = null!;
+    public stayOnBottomTips: Node = null!;
     @type(Node)
     public noSupport: Node = null!;
     @type(Label)
@@ -50,7 +50,7 @@ export class VideoPlayerCtrl extends Component {
         this.videoPlayer.stayOnBottom = !this.videoPlayer.stayOnBottom;
         let state = this.videoPlayer.stayOnBottom ? '关闭' : '打开';
         this.stayOnBottom.string = `${state} stayOnBottom`;
-        this.stayOnBottomTips.node.active = this.videoPlayer.stayOnBottom;
+        this.stayOnBottomTips.active = this.videoPlayer.stayOnBottom;
     }
 
     onPlaybackRate () {
