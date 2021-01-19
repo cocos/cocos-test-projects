@@ -14,7 +14,7 @@ export class NodeMove extends Component {
             x += dt;
             vec3.x = x;
             this.node.setPosition(vec3);
-            if( x >= 5) {
+            if (x >= 5) {
                 x = -5;
             }
         });
