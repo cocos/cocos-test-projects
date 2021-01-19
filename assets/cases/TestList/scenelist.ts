@@ -10,6 +10,8 @@ export class SceneManager extends Component {
     itemPrefab: Prefab | null  = null;
 
     onLoad() {
+        // 场景排序
+        sceneArray.sort((a, b) => a.toLowerCase() > b.toLowerCase() ? 1 : -1);
         if(this.itemPrefab){
             for(let i = 0; i<sceneArray.length; i++ ) {
                 let item = instantiate(this.itemPrefab);
