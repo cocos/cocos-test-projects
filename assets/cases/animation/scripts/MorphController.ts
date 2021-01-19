@@ -1,5 +1,5 @@
 import { _decorator, Component, CCFloat, Mesh, Prefab, instantiate, find, Slider, Label, Layout, EventHandler, MeshRenderer } from 'cc';
-import { EDITOR } from 'cc/env';
+import { BYTEDANCE, EDITOR } from 'cc/env';
 const { ccclass, property, executeInEditMode } = _decorator;
 
 declare const cce: any;
@@ -114,7 +114,9 @@ export class MorphController extends Component {
     }
 
     public onSliderChanged(target: Slider, customEventData: any) {
-        console.log(target, customEventData);
+        if (!BYTEDANCE) {
+            console.log(target, customEventData);
+        }
         let index = Number.parseInt(customEventData);
         this.weightsControl[index] = target.progress;
         this.weightsControl = this.weightsControl;
