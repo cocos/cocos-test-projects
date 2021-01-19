@@ -30,6 +30,7 @@ export class RenderUIToModel extends Component {
     onDestroy () {
         if(this.renderTexture){
             this.renderTexture.destroy();
+            this.renderTexture = null;
         }
     }
 }

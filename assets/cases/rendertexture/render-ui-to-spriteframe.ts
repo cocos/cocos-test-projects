@@ -8,6 +8,8 @@ export class RenderUIToSpriteFrame extends Component {
     @property(Sprite)
     public content: Sprite = null!;
 
+    protected _renderTex: RenderTexture | null = null;
+
     start () {
         const spriteFrame = this.content.spriteFrame!;
         const sp = new SpriteFrame();
@@ -22,7 +24,7 @@ export class RenderUIToSpriteFrame extends Component {
             borderRight: spriteFrame.insetRight,
         });
 
-        const renderTex = new RenderTexture();
+        const renderTex = this._renderTex = new RenderTexture();
         const size = view.getVisibleSize();
         renderTex.reset({
             width: size.width,
@@ -34,6 +36,13 @@ export class RenderUIToSpriteFrame extends Component {
 
         sp.texture = renderTex;
         this.content.spriteFrame = sp;
+    }
+
+    onDestroy () {
+        if (this._renderTex) {
+            this._renderTex.destroy();
+            this._renderTex = null;
+        }
     }
 
     // update (deltaTime: number) {

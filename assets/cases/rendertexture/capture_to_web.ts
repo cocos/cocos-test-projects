@@ -9,7 +9,7 @@ export class CaptureToWeb extends Component {
     @property(Camera)
     public camera: Camera = null!;
 
-    protected _renderTex: RenderTexture = null!;
+    protected _renderTex: RenderTexture | null = null;
 
     start () {
         const spriteFrame = this.sprite.spriteFrame!;
@@ -36,5 +36,12 @@ export class CaptureToWeb extends Component {
         this.scheduleOnce(()=>{
             renderTex.resize(512, 512);
         },2);
+    }
+
+    onDestroy () {
+        if (this._renderTex) {
+            this._renderTex.destroy();
+            this._renderTex = null;
+        }
     }
 }
