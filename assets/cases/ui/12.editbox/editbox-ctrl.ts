@@ -20,7 +20,7 @@ export class EditboxCtrl extends Component {
         if(custom === '1'){
             this.editBox1.setFocus();
         } else if (custom === '2') {
-            this.editBox1.setFocus();
+            this.editBox2.setFocus();
         } else if (custom === '3') {
             this.editBox3.setFocus();
         }
