@@ -16,7 +16,8 @@ export class SpineMove extends Component {
         let x = -5;
         this.schedule((dt:number) => {
             x += dt;
-            this.node.position = new Vec3(x, 0 , 0);
+            let z = this.node.position.z;
+            this.node.position = new Vec3(x, 0 , z);
             if( x >= 5) {
                 x = -5;
             }
