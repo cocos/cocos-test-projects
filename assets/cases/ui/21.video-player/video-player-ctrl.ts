@@ -66,17 +66,18 @@ export class VideoPlayerCtrl extends Component {
     onPlayLocalVideo () {
         this.videoPlayer.resourceType = VideoPlayer.ResourceType.LOCAL;
         this.videoPlayer.clip = this.videClip;
-        this.videoPlayer.play();
     }
 
     onPlayRemoteVideo () {
         this.videoPlayer.resourceType = VideoPlayer.ResourceType.REMOTE;
         this.videoPlayer.remoteURL = 'http://download.cocos.org/CocosTest/test-case/movie.mp4';
-        this.videoPlayer.play();
     }
 
     onEventType (target: VideoPlayerCtrl, type: string) {
         this.eventType.string = type;
+        if (type === VideoPlayer.EventType.READY_TO_PLAY) {
+            this.videoPlayer.play();
+        }
     }
 
     update () {
