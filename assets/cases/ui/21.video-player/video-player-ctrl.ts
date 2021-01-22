@@ -75,8 +75,11 @@ export class VideoPlayerCtrl extends Component {
 
     onEventType (target: VideoPlayerCtrl, type: string) {
         this.eventType.string = type;
-        if (type === VideoPlayer.EventType.READY_TO_PLAY) {
-            this.videoPlayer.play();
+        switch (type) {
+            case VideoPlayer.EventType.READY_TO_PLAY:
+            case VideoPlayer.EventType.META_LOADED:
+                this.videoPlayer.play();
+                break;
         }
     }
 
