@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, dragonBones, macro, SystemEventType, systemEvent, Vec3, director } from 'cc';
+import { _decorator, Component, Node, dragonBones, macro, SystemEventType, systemEvent, Vec3, director, EventTouch } from 'cc';
 const { ccclass, property, requireComponent } = _decorator;
 
 
@@ -96,21 +96,19 @@ export default class DragonBonesCtrl extends Component {
         this._updateAnimation();
 
         if (this.touchHandler) {
-            // touch events
-            this.touchHandler.on(SystemEventType.TOUCH_START, (event: { getTouches: () => any; }) => {
+            // touch event
+            this.touchHandler.on(SystemEventType.TOUCH_START, (event: EventTouch) => {
                 this._mouseDown_ = true;
-                var touches = event.getTouches();
-                var touchLoc = touches[0].getLocation();
+                var touchLoc = event.getUILocation();
                 this.aim(touchLoc.x, touchLoc.y);
                 this.attack(true);
             } , this);
-            this.touchHandler.on(SystemEventType.TOUCH_END, (event: any) => {
+            this.touchHandler.on(SystemEventType.TOUCH_END, (event: EventTouch) => {
                 this._mouseDown_ = false;
                 this.attack(false);
             }, this);
-            this.touchHandler.on(SystemEventType.TOUCH_MOVE, (event: { getTouches: () => any; }) => {
-                var touches = event.getTouches();
-                var touchLoc = touches[0].getLocation();
+            this.touchHandler.on(SystemEventType.TOUCH_MOVE, (event: EventTouch) => {
+                var touchLoc = event.getUILocation();
                 this.aim(touchLoc.x, touchLoc.y);
             }, this);
         }
@@ -311,7 +309,7 @@ export default class DragonBonesCtrl extends Component {
             this._aimDir = 10;
         }
 
-        this._target = this.node.parent!._uiProps.uiTransformComp!.convertToNodeSpaceAR(new Vec3(x, y, 0));
+        const t = this._target = this.node.parent!._uiProps.uiTransformComp!.convertToNodeSpaceAR(new Vec3(x, y, 0));
     }
 
     update (dt: any) {
