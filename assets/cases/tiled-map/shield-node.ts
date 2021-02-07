@@ -24,7 +24,7 @@ export class ShieldNode extends Component {
             shieldNode.setPosition(posArr[i].x, posArr[i].y);
             this.tiledLayer!.addUserNode(shieldNode);
             shieldNode.on(SystemEventType.TOUCH_MOVE, (event:EventTouch) => {
-                const deltaMove = event.getDelta();
+                const deltaMove = event.getUIDelta();
                 shieldNode.getPosition(tmpP);
                 tmpP.x += deltaMove.x;
                 tmpP.y += deltaMove.y;
