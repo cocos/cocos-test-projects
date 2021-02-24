@@ -188,7 +188,7 @@
     "_shutter": 7,
     "_iso": 0,
     "_screenScale": 1,
-    "_visibility": 1822425087,
+    "_visibility": 1820327937,
     "_targetTexture": null,
     "_id": "7dWQTpwS5LrIHnc1zAPUtf"
   },
@@ -205,10 +205,12 @@
       }
     ],
     "_active": true,
-    "_components": [],
-    "_prefab": {
-      "__id__": 22
-    },
+    "_components": [
+      {
+        "__id__": 33
+      }
+    ],
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -251,9 +253,7 @@
     ],
     "_active": true,
     "_components": [],
-    "_prefab": {
-      "__id__": 21
-    },
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -299,9 +299,7 @@
         "__id__": 12
       }
     ],
-    "_prefab": {
-      "__id__": 20
-    },
+    "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -353,7 +351,8 @@
     "_shadowCastingMode": 0,
     "_shadowReceivingMode": 1,
     "_enableMorph": true,
-    "_id": "b2+bb/p0BKX4w/1dMiXN7r"
+    "_id": "b2+bb/p0BKX4w/1dMiXN7r",
+    "__prefab": null
   },
   {
     "__type__": "cc.ModelLightmapSettings",
@@ -385,7 +384,8 @@
     "itemLayout": {
       "__id__": 13
     },
-    "_id": "5exlaqc15Kj5+PaGeDkArv"
+    "_id": "5exlaqc15Kj5+PaGeDkArv",
+    "__prefab": null
   },
   {
     "__type__": "cc.Layout",
@@ -454,7 +454,7 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 33554432,
+    "_layer": 524288,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -473,6 +473,9 @@
     "_children": [
       {
         "__id__": 14
+      },
+      {
+        "__id__": 29
       }
     ],
     "_active": true,
@@ -507,7 +510,7 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 1073741824,
+    "_layer": 524288,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -556,7 +559,11 @@
       "a": 0
     },
     "_renderMode": 0,
-    "_id": "64EVG+MQ9PIrPrj+0Uqpdk"
+    "_id": "64EVG+MQ9PIrPrj+0Uqpdk",
+    "_cameraComponent": {
+      "__id__": 30
+    },
+    "_alignCanvasWithScreen": true
   },
   {
     "__type__": "cc.UITransform",
@@ -765,5 +772,110 @@
     "_originalHeight": 0,
     "_alignMode": 2,
     "_lockFlags": 0
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "UICamera_Canvas",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 15
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 30
+      }
+    ],
+    "_prefab": null,
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 524288,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": "39Is4ltlJE2JYaQJ4euSPM"
+  },
+  {
+    "__type__": "cc.Camera",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 29
+    },
+    "_enabled": true,
+    "__prefab": null,
+    "_projection": 0,
+    "_priority": 1073741824,
+    "_fov": 45,
+    "_fovAxis": 0,
+    "_orthoHeight": 10,
+    "_near": 1,
+    "_far": 2000,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 0
+    },
+    "_depth": 1,
+    "_stencil": 0,
+    "_clearFlags": 6,
+    "_rect": {
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    "_aperture": 19,
+    "_shutter": 7,
+    "_iso": 0,
+    "_screenScale": 1,
+    "_visibility": 42467328,
+    "_targetTexture": null,
+    "_id": "09rEQrdHZCfYmzh0EtQzqS"
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "deDH2E8fRMj50ZNv96KYqi"
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "9eI5f9z5JGab27la25fHrt"
+  },
+  {
+    "__type__": "cc.PrefabLink",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 7
+    },
+    "_enabled": true,
+    "__prefab": null,
+    "prefab": {
+      "__uuid__": "e1ec1aea-16e3-4213-8fea-5911bbeeb907@aa48e"
+    },
+    "_id": "a6NH7Dj9tMVbatCdgoxYyz"
   }
 ]
