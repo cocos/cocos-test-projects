@@ -44,6 +44,9 @@
       },
       {
         "__id__": 9
+      },
+      {
+        "__id__": 34
       }
     ],
     "_active": true,
@@ -81,7 +84,7 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 33554432,
+    "_layer": 524288,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -127,7 +130,7 @@
       "y": 0.8,
       "z": 1
     },
-    "_layer": 1073741824,
+    "_layer": 524288,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -235,7 +238,7 @@
       "y": 0.8,
       "z": 1
     },
-    "_layer": 1073741824,
+    "_layer": 524288,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -346,7 +349,7 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 33554432,
+    "_layer": 524288,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -392,7 +395,7 @@
       "y": 1,
       "z": 1
     },
-    "_layer": 33554432,
+    "_layer": 524288,
     "_euler": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -426,7 +429,7 @@
     "_id": "0f+Qk/Zr1LpKG98IUzFlNW"
   },
   {
-    "__type__": "cc.CompPrefabInfo ",
+    "__type__": "cc.CompPrefabInfo",
     "fileId": "0f+Qk/Zr1LpKG98IUzFlNW"
   },
   {
@@ -470,7 +473,7 @@
     "_id": "5fICIY+stEYqX8vkBuvD8N"
   },
   {
-    "__type__": "cc.CompPrefabInfo ",
+    "__type__": "cc.CompPrefabInfo",
     "fileId": "5fICIY+stEYqX8vkBuvD8N"
   },
   {
@@ -498,7 +501,7 @@
     "_id": "8cJjPkffBBWIWzlvQxuzaZ"
   },
   {
-    "__type__": "cc.CompPrefabInfo ",
+    "__type__": "cc.CompPrefabInfo",
     "fileId": "8cJjPkffBBWIWzlvQxuzaZ"
   },
   {
@@ -542,7 +545,7 @@
     "_id": "9f+za8Zl5J76F3EC3d5ZQq"
   },
   {
-    "__type__": "cc.CompPrefabInfo ",
+    "__type__": "cc.CompPrefabInfo",
     "fileId": "9f+za8Zl5J76F3EC3d5ZQq"
   },
   {
@@ -611,7 +614,7 @@
     "_id": "5cM2HKfs1HmZUoF0gMRXBd"
   },
   {
-    "__type__": "cc.CompPrefabInfo ",
+    "__type__": "cc.CompPrefabInfo",
     "fileId": "5cM2HKfs1HmZUoF0gMRXBd"
   },
   {
@@ -649,7 +652,7 @@
     "_id": "90qCcXyoxIQZpV4KSI4E7p"
   },
   {
-    "__type__": "cc.CompPrefabInfo ",
+    "__type__": "cc.CompPrefabInfo",
     "fileId": "90qCcXyoxIQZpV4KSI4E7p"
   },
   {
@@ -674,10 +677,14 @@
       "a": 255
     },
     "_renderMode": 0,
-    "_id": "970U8NNJVH/4pl/JAKgExn"
+    "_id": "970U8NNJVH/4pl/JAKgExn",
+    "_cameraComponent": {
+      "__id__": 35
+    },
+    "_alignCanvasWithScreen": true
   },
   {
-    "__type__": "cc.CompPrefabInfo ",
+    "__type__": "cc.CompPrefabInfo",
     "fileId": "970U8NNJVH/4pl/JAKgExn"
   },
   {
@@ -712,7 +719,7 @@
     "_id": "b2NVq0pC1JxqWol76LT8Ig"
   },
   {
-    "__type__": "cc.CompPrefabInfo ",
+    "__type__": "cc.CompPrefabInfo",
     "fileId": "b2NVq0pC1JxqWol76LT8Ig"
   },
   {
@@ -818,5 +825,88 @@
     "_fogAtten": 5,
     "_fogTop": 1.5,
     "_fogRange": 1.2
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "UICamera_Canvas",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 35
+      }
+    ],
+    "_prefab": null,
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 524288,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": "03ihm8OgRJH43DvuWGnjl5"
+  },
+  {
+    "__type__": "cc.Camera",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 34
+    },
+    "_enabled": true,
+    "__prefab": null,
+    "_projection": 0,
+    "_priority": 1073741824,
+    "_fov": 45,
+    "_fovAxis": 0,
+    "_orthoHeight": 10,
+    "_near": 1,
+    "_far": 2000,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    },
+    "_depth": 1,
+    "_stencil": 0,
+    "_clearFlags": 7,
+    "_rect": {
+      "x": 0,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    "_aperture": 19,
+    "_shutter": 7,
+    "_iso": 0,
+    "_screenScale": 1,
+    "_visibility": 42467328,
+    "_targetTexture": null,
+    "_id": "0fUsiDCsdEKJDOh6w2Kj54"
   }
 ]
