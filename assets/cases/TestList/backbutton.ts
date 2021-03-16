@@ -1,6 +1,7 @@
-import { _decorator, Component, Node, ScrollView, Vec3, Layout, game, Label, director, Director, assetManager, find, Canvas, Layers } from "cc";
+import { _decorator, Component, Node, ScrollView, Vec3, Layout, game, Label, director, Director, assetManager, find, Canvas, Layers, CCString, CCInteger, resources, JsonAsset, profiler } from "cc";
 const { ccclass, property } = _decorator;
 import { sceneArray } from "./scenelist";
+import { ReceivedCode, StateCode, TestFramework } from "./TestFramework";
 
 @ccclass("BackButton")
 export class BackButton extends Component {
@@ -13,6 +14,20 @@ export class BackButton extends Component {
     private static _prevNode : Node;
     private static _nextNode : Node;
     private sceneName! : Label;
+
+    @property(CCString)
+    public testServerAddress = '127.0.0.1';
+
+    @property(CCInteger)
+    public testServerPort = 8080;
+
+    @property(CCInteger)
+    public timeout = 5000;
+
+    @property(CCInteger)
+    public retryTime = 3;
+
+    private autoTest = false;
 
     __preload() {
         const sceneInfo = assetManager.main!.config.scenes;
@@ -31,6 +46,20 @@ export class BackButton extends Component {
             const lastIndex = str.lastIndexOf('.scene');
             sceneArray.push(str.substring(firstIndex, lastIndex));
         }
+    }
+
+    public manuallyControl () {
+        this.node.getChildByName('PrevButton')!.active = true;
+        this.node.getChildByName('NextButton')!.active = true;
+        this.node.getChildByName('back')!.active = true;
+        profiler.showStats();
+    }
+
+    public autoControl () {
+        this.node.getChildByName('PrevButton')!.active = false;
+        this.node.getChildByName('NextButton')!.active = false;
+        this.node.getChildByName('back')!.active = false;
+        profiler.hideStats();
     }
 
     public static get offset() {
@@ -79,6 +108,34 @@ export class BackButton extends Component {
             BackButton.refreshButton();
         }
         director.on(Director.EVENT_BEFORE_SCENE_LOADING,this.switchSceneName,this);
+        TestFramework.instance.connect(this.testServerAddress, this.testServerPort, this.timeout, this.retryTime, (err) => {
+            if (err) {
+                this.autoTest = false;
+            }
+            else {
+                TestFramework.instance.startTest({ time: Date.now() }, (err) => {
+                    if (err) {
+                        this.autoTest = false;
+                    }
+                    else {
+                        this.autoTest = true;
+                        this.autoControl();
+                        TestFramework.instance.onmessage = (state, message) => {
+                            if (state === ReceivedCode.CHANGE_SCENE) {
+                                this.nextScene();
+                            }
+                        };
+                        resources.load('auto-test-list', JsonAsset, (err, asset) => {
+                            let staticScenes = (asset.json as Record<string, any>)!["static-scenes"] as string[];
+                            let testList = sceneArray.filter(x => staticScenes.indexOf(x) !== -1);
+                            sceneArray.length = 0;
+                            sceneArray.push(...testList);
+                            this.nextScene();
+                        });
+                    }
+                })
+            }
+        });
     }
 
     onDestroy () {
@@ -117,7 +174,22 @@ export class BackButton extends Component {
         director.resume();
         BackButton._blockInput.active = true;
         this.updateSceneIndex(true);
-        director.loadScene(this.getSceneName(), function () {
+        director.loadScene(this.getSceneName(), () => {
+            if (this.autoTest) {
+                TestFramework.instance.postMessage(StateCode.SCENE_CHANGED, this.getSceneName(), '', (err) => {
+                    if (err) {
+                        this.manuallyControl();
+                    }
+                    else if (BackButton._sceneIndex === sceneArray.length - 1) {
+                        TestFramework.instance.endTest('', () => {
+                            this.manuallyControl();
+                        });
+                    }
+                    else {
+                        this.nextScene();
+                    }
+                });
+            }
             BackButton._blockInput.active = false;
         });
     }
