@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, ScrollView, Vec3, Layout, game, Label, director, Director, assetManager, find, Canvas, Layers, CCString, CCInteger, resources, JsonAsset, profiler } from "cc";
+import { _decorator, Component, Node, ScrollView, Vec3, Layout, game, Label, director, Director, assetManager, find, Canvas, Layers, CCString, CCInteger, resources, JsonAsset, profiler, CCBoolean } from "cc";
 const { ccclass, property } = _decorator;
 import { sceneArray } from "./scenelist";
 import { ReceivedCode, StateCode, TestFramework } from "./TestFramework";
@@ -28,6 +28,9 @@ export class BackButton extends Component {
     public retryTime = 3;
 
     private autoTest = false;
+
+    @property(CCBoolean)
+    public manuallyTest = false;
 
     __preload() {
         const sceneInfo = assetManager.main!.config.scenes;
@@ -108,6 +111,7 @@ export class BackButton extends Component {
             BackButton.refreshButton();
         }
         director.on(Director.EVENT_BEFORE_SCENE_LOADING,this.switchSceneName,this);
+        if (this.manuallyTest) return;
         TestFramework.instance.connect(this.testServerAddress, this.testServerPort, this.timeout, this.retryTime, (err) => {
             if (err) {
                 this.autoTest = false;
