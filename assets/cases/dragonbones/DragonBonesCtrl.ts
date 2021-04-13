@@ -437,7 +437,7 @@ export default class DragonBonesCtrl extends Component {
     }
 
     _updatePosition () {
-        const camera = director.root!.ui.getFirstRenderCamera(this.node)!;
+        const camera = director.root!.batcher2D.getFirstRenderCamera(this.node)!;
         const pos = this.node.getPosition();
         if (this._speedX !== 0) {
             pos.x += this._speedX;
@@ -598,7 +598,7 @@ export class DragonBullet {
         armatureNode.setPosition(pos);
         const uiTrans = armatureNode.parent!._uiProps.uiTransformComp!;
         var worldPos = uiTrans.convertToWorldSpaceAR(armatureNode.getPosition());
-        const camera = director.root!.ui.getFirstRenderCamera(armatureNode)!;
+        const camera = director.root!.batcher2D.getFirstRenderCamera(armatureNode)!;
         if (
             worldPos.x < -100 || worldPos.x >= camera.width + 100 ||
             worldPos.y < -100 || worldPos.y >= camera.height + 100

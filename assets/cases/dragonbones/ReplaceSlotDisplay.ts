@@ -38,10 +38,10 @@ export class ReplaceSlotDisplay extends Component {
         this._rightDisplayIndex %= this._rightDisplayNames.length;
         let armature = this.armatureDisplay!.armature();
         let slot = armature.getSlot("weapon_hand_r");
+        let replaceArmatureName = this.replaceArmatureDisplay!.armatureName;
         const displayName = this._rightDisplayNames[this._rightDisplayIndex];
         let factory = dragonBones.CCFactory.getInstance() as any;
-        factory.replaceSlotDisplay(this.replaceArmatureDisplay!.getArmatureKey(), "weapon", "weapon_r", displayName, slot);
-
+        factory.replaceSlotDisplay(this.replaceArmatureDisplay!.getArmatureKey(), replaceArmatureName , "weapon_r", displayName, slot);
         let offset = this._rightDisplayOffset[this._rightDisplayIndex];
         slot.parent.offset.x = offset.x;
         slot.parent.offset.y = offset.y;
