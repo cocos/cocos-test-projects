@@ -7,6 +7,8 @@ export class Client {
 
     private _timer: number = 0;
 
+    private _maxRetryTime: number = 3;
+
     public get connected (): Boolean {
 
         return this._connected;
@@ -14,7 +16,7 @@ export class Client {
     }
 
     constructor (address: string = '127.0.0.1', port: number = 8080) {
-
+        let retryTime = 0;
         const init = () => {
 
             this._socket = new WebSocket('ws://' + address + ':' + port);
@@ -30,7 +32,10 @@ export class Client {
 
             this._socket.onerror = () => {
                 this._connected = false;
-                this._timer = setTimeout(init, 1000);
+                retryTime++;
+                if (retryTime <= this._maxRetryTime) {
+                    this._timer = setTimeout(init, 1000);
+                }
             };
 
             this._socket.onclose = () => {
