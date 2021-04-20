@@ -1,4 +1,4 @@
-import { _decorator, Component, MeshRenderer, Toggle, Node, Slider, Material, Color, GFXCullMode, Label, director } from "cc";
+import { _decorator, Component, MeshRenderer, Toggle, Node, Slider, Material, Color, gfx, Label, director } from "cc";
 const { ccclass, property } = _decorator;
 
 const color = Color.WHITE.clone();
@@ -62,7 +62,7 @@ export class MaterialTest extends Component {
     cullFrontFace (e: Toggle) {
         this._material.overridePipelineStates({
             rasterizerState: {
-                cullMode: e.isChecked ? GFXCullMode.FRONT : GFXCullMode.BACK,
+                cullMode: e.isChecked ? gfx.CullMode.FRONT : gfx.CullMode.BACK,
             }
         });
     }

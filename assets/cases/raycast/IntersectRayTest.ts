@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Prefab, Camera, systemEvent, SystemEventType, EventTouch, Touch, MeshRenderer, instantiate, Vec3, GFXAttributeName, Vec2, Label, Color, geometry, renderer } from 'cc';
+import { _decorator, Component, Node, Prefab, Camera, systemEvent, SystemEventType, EventTouch, Touch, MeshRenderer, instantiate, Vec3, gfx, Vec2, Label, Color, geometry, renderer } from 'cc';
 const { ccclass, property } = _decorator;
 
 // const { Model } = renderer.scene
@@ -100,7 +100,7 @@ export class IntersectRayTest extends Component {
                     this._points[0].active = true; this._points[1].active = true; this._points[2].active = true;
 
                     /**GET UV  */
-                    const tex_coord = me.readAttribute(s[0], GFXAttributeName.ATTR_TEX_COORD);
+                    const tex_coord = me.readAttribute(s[0], gfx.AttributeName.ATTR_TEX_COORD);
                     if (tex_coord) {
                         const uv = new Vec2();
 
