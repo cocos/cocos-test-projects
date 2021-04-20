@@ -65,6 +65,12 @@ export class PlaybackRange extends Component {
         this._state.play();
     }
 
+    public onDestroy () {
+        if (this._state) {
+            this._state.destroy();
+        }
+    }
+
     public onSliderChanged () {
         const totalFrames = this.totalFrames;
         const minFrames = Math.floor(totalFrames * this.sliderMin.progress);
