@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, MeshRenderer, primitives, utils, Material, Vec4, GFXPrimitiveMode } from 'cc';
+import { _decorator, Component, Node, MeshRenderer, primitives, utils, Material, Vec4, gfx } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('wireFrame')
@@ -11,7 +11,7 @@ export class wireFrame extends Component {
             wireFrame.lineMat = new Material();
             wireFrame.lineMat.initialize({
                 effectName: 'unlit',
-                states: { primitive: GFXPrimitiveMode.LINE_LIST },
+                states: { primitive: gfx.PrimitiveMode.LINE_LIST },
             });
 
             wireFrame.lineMat.setProperty('mainColor', new Vec4(0, 0, 0, 1));
