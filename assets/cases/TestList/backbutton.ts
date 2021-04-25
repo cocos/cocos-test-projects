@@ -178,21 +178,27 @@ export class BackButton extends Component {
         director.resume();
         BackButton._blockInput.active = true;
         this.updateSceneIndex(true);
-        director.loadScene(this.getSceneName(), () => {
+        director.loadScene(this.getSceneName(), (err) => {
             if (this.autoTest) {
-                TestFramework.instance.postMessage(StateCode.SCENE_CHANGED, this.getSceneName(), '', (err) => {
-                    if (err) {
+                if (err) {
+                    TestFramework.instance.endTest('', () => {
                         this.manuallyControl();
-                    }
-                    else if (BackButton._sceneIndex === sceneArray.length - 1) {
-                        TestFramework.instance.endTest('', () => {
+                    });
+                } else {
+                    TestFramework.instance.postMessage(StateCode.SCENE_CHANGED, this.getSceneName(), '', (err) => {
+                        if (err) {
                             this.manuallyControl();
-                        });
-                    }
-                    else {
-                        this.nextScene();
-                    }
-                });
+                        }
+                        else if (BackButton._sceneIndex === sceneArray.length - 1) {
+                            TestFramework.instance.endTest('', () => {
+                                this.manuallyControl();
+                            });
+                        }
+                        else {
+                            this.nextScene();
+                        }
+                    });
+                }
             }
             BackButton._blockInput.active = false;
         });
