@@ -181,7 +181,7 @@ export class BackButton extends Component {
         director.loadScene(this.getSceneName(), (err) => {
             if (this.autoTest) {
                 if (err) {
-                    TestFramework.instance.endTest('', () => {
+                    TestFramework.instance.postMessage(StateCode.SCENE_ERROR, this.getSceneName(), '', () => {
                         this.manuallyControl();
                     });
                 } else {

@@ -6,6 +6,7 @@ export enum StateCode {
     ERROR = 'Error',
     END = 'End',
     SCENE_CHANGED = 'SceneChanged',
+    SCENE_ERROR = 'SceneError',
     PERFORMANCE = 'Performance',
 }
 
