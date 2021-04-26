@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, MeshRenderer, RenderTexture } from 'cc';
+import { _decorator, Component, Node, Material, MeshRenderer, RenderTexture } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('UseRenderTextureToModel')
@@ -16,9 +16,14 @@ export class UseRenderTextureToModel extends Component {
             if(!material){
                 return;
             }
-
-            this.quad.setMaterialInstance(0, material);
-            material.setProperty('mainTexture', this.rtTexture, 0);
+            const defines = { SAMPLE_FROM_RT: true, ...material.passes[0].defines };
+            const renderMat = new Material();
+            renderMat.initialize({
+                effectAsset: material.effectAsset,
+                defines,
+            });
+            this.quad.setMaterialInstance(0, renderMat);
+            renderMat.setProperty('mainTexture', this.rtTexture, 0);
         }, 3);
     }
 
