@@ -16,9 +16,13 @@ export class LayoutChangeOrder extends Component {
 
     start () {
         const children = this.node.children;
-        const uiTrans = children[2].getComponent(UITransform)!;
         if (this.changePriority) {
-            uiTrans.priority = 1;
+            children[0].getComponent(UITransform).priority = 0;
+            children[1].getComponent(UITransform).priority = 2;
+            children[2].getComponent(UITransform).priority = 1;
+            children[3].getComponent(UITransform).priority = 3;
+            children[4].getComponent(UITransform).priority = 4;
+            children[5].getComponent(UITransform).priority = 5;
         } else {
             children[2].setSiblingIndex(1);
         }
