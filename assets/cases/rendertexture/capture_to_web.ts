@@ -33,6 +33,7 @@ export class CaptureToWeb extends Component {
         this.camera.targetTexture = renderTex;
         sp.texture = renderTex;
         this.sprite.spriteFrame = sp;
+        this.sprite.updateMaterial();
         this.scheduleOnce(()=>{
             renderTex.resize(512, 512);
         },2);

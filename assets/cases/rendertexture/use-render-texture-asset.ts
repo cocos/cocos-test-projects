@@ -26,6 +26,7 @@ export class UseRenderTextureAsset extends Component {
         sp.texture = renderTex;
 
         this.content.spriteFrame = sp;
+        this.content.updateMaterial();
     }
 
     // update (deltaTime: number) {
