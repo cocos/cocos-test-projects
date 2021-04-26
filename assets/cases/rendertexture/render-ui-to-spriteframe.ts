@@ -36,6 +36,7 @@ export class RenderUIToSpriteFrame extends Component {
 
         sp.texture = renderTex;
         this.content.spriteFrame = sp;
+        this.content.updateMaterial();
     }
 
     onDestroy () {
