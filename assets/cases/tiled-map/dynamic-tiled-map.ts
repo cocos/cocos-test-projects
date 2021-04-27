@@ -31,6 +31,7 @@ export class DynamicTiledMap extends Component {
         this.targetNode!.destroyAllChildren();
         const node = new Node();
         this.targetNode.addChild(node);
+        node.layer = this.targetNode.layer;
         const tileMap = node.addComponent(TiledMap);
         tileMap.tmxAsset = tmxAsset;
     }
