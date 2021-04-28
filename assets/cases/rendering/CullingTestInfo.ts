@@ -1,4 +1,4 @@
-import { _decorator, Component, Label, renderer, director } from "cc";
+import { _decorator, Component, Label, renderer, director, Camera } from "cc";
 const { ccclass } = _decorator;
 
 interface CullingState {
@@ -15,13 +15,25 @@ export class CullingTestInfo extends Component {
 
     start () {
         const models = director.getScene()!.renderScene!.models;
+        const cameraNode = director.getScene()!.getChildByName('Camera');
+        const cameraComponent = cameraNode?.getComponent('cc.Camera');
+        const camera = (cameraComponent as Camera)?.camera;
+
         for (let i = 0; i < models.length; i++) {
             const model = models[i];
             const oldFn = this._oldFns[i] = model.updateUBOs.bind(model);
-            model.updateUBOs = (...args: any[]) => {
-                this._states[i].visible = true;
-                return oldFn(args.length > 0 ? args[0] : 0);
+
+            if(model.node && ((camera.visibility & model.node.layer) === model.node.layer)
+            || (camera.visibility & model.visFlags)) {
+                model.updateUBOs = (...args: any[]) => {
+                    model.updateUBOs = (...args: any[]) => {
+                        this._states[i].visible = true;
+                        
+                        return oldFn(args.length > 0 ? args[0] : 0);
+                    }
+                }
             }
+
             this._states.push({ model, visible: false });
         }
         this._label = this.node.getComponent(Label)!;
