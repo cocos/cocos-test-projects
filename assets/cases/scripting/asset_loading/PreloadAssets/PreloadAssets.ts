@@ -8,7 +8,7 @@ export class PreloadAssets extends Component {
     private declare _curType: UrlKey;
     private _lastType: UrlKey | '' = '';
     private _btnLabel: Label | null = null;
-    private _audioSource: AudioSource | null = null;
+    private _audioSources: AudioSource[] = [];
     private _isLoading = false;
     private _urls = {
         Audio: "test_assets/audio",
@@ -151,9 +151,10 @@ export class PreloadAssets extends Component {
 
     _onClear () {
         this.showWindow.removeAllChildren();
-        if (this._audioSource && this._audioSource instanceof AudioSource) {
-            this._audioSource.stop();
-        }
+        this._audioSources.forEach(audioSource => {
+            audioSource.stop();
+        });
+        this._audioSources.length = 0;
     }
 
     _onShowResClick (event: any) {
@@ -236,7 +237,7 @@ export class PreloadAssets extends Component {
                 component = node.addComponent(AudioSource);
                 component.clip = res;
                 component.play();
-                this._audioSource = component;
+                this._audioSources.push(component);
                 this.loadTips.string = "播放音乐。";
                 break;
             case "Txt":
