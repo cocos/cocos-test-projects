@@ -26,11 +26,15 @@ export class CullingTestInfo extends Component {
             if(model.node && ((camera.visibility & model.node.layer) === model.node.layer)
             || (camera.visibility & model.visFlags)) {
                 model.updateUBOs = (...args: any[]) => {
-                    model.updateUBOs = (...args: any[]) => {
-                        this._states[i].visible = true;
-                        
-                        return oldFn(args.length > 0 ? args[0] : 0);
-                    }
+                    this._states[i].visible = true;
+
+                    return oldFn(args.length > 0 ? args[0] : 0);
+                }
+            } else {
+                model.updateUBOs = (...args: any[]) => {
+                    this._states[i].visible = false;
+
+                    return oldFn(args.length > 0 ? args[0] : 0);
                 }
             }
 
