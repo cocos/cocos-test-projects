@@ -6,8 +6,7 @@
     "_native": "",
     "scene": {
       "__id__": 1
-    },
-    "asyncLoadAssets": false
+    }
   },
   {
     "__type__": "cc.Scene",
@@ -212,7 +211,8 @@
     "__prefab": null,
     "_materials": [
       {
-        "__uuid__": "a2063c10-50b1-439d-b8ec-1f4bcbfe4fdb"
+        "__uuid__": "a2063c10-50b1-439d-b8ec-1f4bcbfe4fdb",
+        "__expectedType__": "cc.Material"
       }
     ],
     "_visFlags": 0,
@@ -220,7 +220,8 @@
       "__id__": 8
     },
     "_mesh": {
-      "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@fc873"
+      "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@fc873",
+      "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
     "_shadowReceivingMode": 1,
@@ -351,7 +352,8 @@
       "__id__": 11
     },
     "asset": {
-      "__uuid__": "054daf25-262f-4267-92ba-e8bd2d1c2bb7@5f176"
+      "__uuid__": "054daf25-262f-4267-92ba-e8bd2d1c2bb7@5f176",
+      "__expectedType__": "cc.Prefab"
     },
     "fileId": "659iv6lwZVcIMkE+q6g+t0",
     "instance": {
@@ -363,6 +365,7 @@
     "fileId": "d4iKuTGXRIpLxUuvr8mt5D",
     "prefabRootNode": null,
     "mountedChildren": [],
+    "mountedComponents": [],
     "propertyOverrides": [
       {
         "__id__": 14
@@ -582,7 +585,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 521.7,
@@ -722,10 +724,9 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 320,
+      "width": 593.32,
       "height": 63
     },
     "_anchorPoint": {
@@ -755,7 +756,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "可以看到一个有侧面鸭子图案的面片",
+    "_string": "可以看到一个有侧面鸭子图案的面片(该场景材质暂不支持延迟管线)",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 20,
@@ -897,7 +898,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 960,
@@ -1008,6 +1008,10 @@
     "_autoAdapt": true,
     "_pcf": 0,
     "_bias": 0.00001,
+    "_packing": false,
+    "_linear": true,
+    "_selfShadow": false,
+    "_normalBias": 0,
     "_near": 1,
     "_far": 30,
     "_aspect": 1,
