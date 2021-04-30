@@ -4,16 +4,17 @@ const { ccclass } = _decorator;
 @ccclass('UniformKTest')
 export class UniformKTest extends Component {
     public start() {
-        const testClip = this._makeTestClip();
+        const testClip = this._makeTestClip(0);
+        const testClip2 = this._makeTestClip(1);
         const animationComponent = this.node.addComponent(Animation);
-        animationComponent.clips = [ testClip ];
+        animationComponent.clips = [ testClip, testClip2 ];
         animationComponent.defaultClip = testClip;
         animationComponent.playOnLoad = true;
     }
 
-    private _makeTestClip() {
+    private _makeTestClip(passIndex: number) {
         const uniformValueAdapter = new UniformCurveValueAdapter();
-        uniformValueAdapter.passIndex = 0;
+        uniformValueAdapter.passIndex = passIndex;
         uniformValueAdapter.uniformName = 'albedo';
 
         const animationClip = new AnimationClip();
