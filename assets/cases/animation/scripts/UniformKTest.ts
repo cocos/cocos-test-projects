@@ -5,11 +5,17 @@ const { ccclass } = _decorator;
 export class UniformKTest extends Component {
     public start() {
         const testClip = this._makeTestClip(0);
+        testClip.name = 'forward';
         const testClip2 = this._makeTestClip(1);
+        testClip2.name = 'deferred';
         const animationComponent = this.node.addComponent(Animation);
         animationComponent.clips = [ testClip, testClip2 ];
         animationComponent.defaultClip = testClip;
-        animationComponent.playOnLoad = true;
+        //animationComponent.playOnLoad = true;
+        const state1 = animationComponent.getAnimationState('forward');
+        state1.play();
+        const state2 = animationComponent.getAnimationState('deferred');
+        state2.play();
     }
 
     private _makeTestClip(passIndex: number) {
