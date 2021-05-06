@@ -126,7 +126,14 @@ export class BackButton extends Component {
                         this.autoControl();
                         TestFramework.instance.onmessage = (state, message) => {
                             if (state === ReceivedCode.CHANGE_SCENE) {
-                                this.nextScene();
+                                if (BackButton._sceneIndex === sceneArray.length - 1) {
+                                    TestFramework.instance.endTest('', () => {
+                                        this.manuallyControl();
+                                    });
+                                }
+                                else {
+                                    this.nextScene();
+                                }
                             }
                         };
                         resources.load('auto-test-list', JsonAsset, (err, asset) => {
@@ -178,24 +185,17 @@ export class BackButton extends Component {
         director.resume();
         BackButton._blockInput.active = true;
         this.updateSceneIndex(true);
-        director.loadScene(this.getSceneName(), (err) => {
+        const sceneName = this.getSceneName();
+        director.loadScene(sceneName, (err) => {
             if (this.autoTest) {
                 if (err) {
-                    TestFramework.instance.postMessage(StateCode.SCENE_ERROR, this.getSceneName(), '', () => {
+                    TestFramework.instance.postMessage(StateCode.SCENE_ERROR, sceneName, '', () => {
                         this.manuallyControl();
                     });
                 } else {
-                    TestFramework.instance.postMessage(StateCode.SCENE_CHANGED, this.getSceneName(), '', (err) => {
+                    TestFramework.instance.postMessage(StateCode.SCENE_CHANGED, sceneName, '', (err) => {
                         if (err) {
                             this.manuallyControl();
-                        }
-                        else if (BackButton._sceneIndex === sceneArray.length - 1) {
-                            TestFramework.instance.endTest('', () => {
-                                this.manuallyControl();
-                            });
-                        }
-                        else {
-                            this.nextScene();
                         }
                     });
                 }
