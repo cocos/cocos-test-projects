@@ -25,6 +25,11 @@ export default class extends Component {
     }
 
     changeAttach() {
+        let isCached = this.skeleton!.isAnimationCached();
+        if (isCached) {
+            return;
+        }
+
         if (!this.backSockets) {
             this.backSockets = this.skeleton!.sockets;
             this.skeleton!.sockets = [];
@@ -39,10 +44,10 @@ export default class extends Component {
         let isCached = this.skeleton!.isAnimationCached();
         if (isCached) {
             this.skeleton!.setAnimationCacheMode(sp.Skeleton.AnimationCacheMode.REALTIME);
-            this.modeLabel!.string = "cache";
+            this.modeLabel!.string = "realtime";
         } else {
             this.skeleton!.setAnimationCacheMode(sp.Skeleton.AnimationCacheMode.SHARED_CACHE);
-            this.modeLabel!.string = "realtime";
+            this.modeLabel!.string = "cache";
         }
     }
 }
