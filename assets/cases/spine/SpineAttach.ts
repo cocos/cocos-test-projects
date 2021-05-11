@@ -1,7 +1,7 @@
 
 
 
-import { _decorator, Component, sp, Label, Node } from 'cc';
+import { _decorator, Component, sp, Label, Node, Button } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('SpineAttach')
@@ -15,6 +15,9 @@ export default class extends Component {
 
     @property({ type: Label })
     modeLabel: Label = null!;
+
+    @property({ type: Button })
+    attachBtn: Button = null!;
 
     backSockets: sp.SpineSocket[] = null!;
 
@@ -43,11 +46,13 @@ export default class extends Component {
     changeMode() {
         let isCached = this.skeleton!.isAnimationCached();
         if (isCached) {
-            this.skeleton!.setAnimationCacheMode(sp.Skeleton.AnimationCacheMode.REALTIME);
-            this.modeLabel!.string = "realtime";
+            this.skeleton.setAnimationCacheMode(sp.Skeleton.AnimationCacheMode.REALTIME);
+            this.modeLabel.string = "realtime";
+            this.attachBtn.interactable = true;
         } else {
-            this.skeleton!.setAnimationCacheMode(sp.Skeleton.AnimationCacheMode.SHARED_CACHE);
-            this.modeLabel!.string = "cache";
+            this.skeleton.setAnimationCacheMode(sp.Skeleton.AnimationCacheMode.SHARED_CACHE);
+            this.modeLabel.string = "cache";
+            this.attachBtn.interactable = false;
         }
     }
 }
