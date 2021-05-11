@@ -28,11 +28,6 @@ export default class extends Component {
     }
 
     changeAttach() {
-        let isCached = this.skeleton!.isAnimationCached();
-        if (isCached) {
-            return;
-        }
-
         if (!this.backSockets) {
             this.backSockets = this.skeleton!.sockets;
             this.skeleton!.sockets = [];
