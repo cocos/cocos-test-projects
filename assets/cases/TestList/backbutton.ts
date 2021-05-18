@@ -112,7 +112,7 @@ export class BackButton extends Component {
         }
         director.on(Director.EVENT_BEFORE_SCENE_LOADING,this.switchSceneName,this);
         if (this.manuallyTest) return;
-        TestFramework.instance.connect(this.testServerAddress, this.testServerPort, this.timeout, this.retryTime, (err) => {
+        TestFramework.instance.connect(this.testServerAddress, this.testServerPort, this.timeout, (err) => {
             if (err) {
                 this.autoTest = false;
             }
@@ -124,11 +124,6 @@ export class BackButton extends Component {
                     else {
                         this.autoTest = true;
                         this.autoControl();
-                        TestFramework.instance.onmessage = (state, message) => {
-                            if (state === ReceivedCode.CHANGE_SCENE) {
-                                this.nextScene();
-                            }
-                        };
                         resources.load('auto-test-list', JsonAsset, (err, asset) => {
                             let staticScenes = (asset.json as Record<string, any>)!["static-scenes"] as string[];
                             let testList = sceneArray.filter(x => staticScenes.indexOf(x) !== -1);
@@ -178,14 +173,15 @@ export class BackButton extends Component {
         director.resume();
         BackButton._blockInput.active = true;
         this.updateSceneIndex(true);
-        director.loadScene(this.getSceneName(), (err) => {
+        const sceneName = this.getSceneName();
+        director.loadScene(sceneName, (err) => {
             if (this.autoTest) {
                 if (err) {
-                    TestFramework.instance.postMessage(StateCode.SCENE_ERROR, this.getSceneName(), '', () => {
+                    TestFramework.instance.postMessage(StateCode.SCENE_ERROR, sceneName, '', () => {
                         this.manuallyControl();
                     });
                 } else {
-                    TestFramework.instance.postMessage(StateCode.SCENE_CHANGED, this.getSceneName(), '', (err) => {
+                    TestFramework.instance.postMessage(StateCode.SCENE_CHANGED, sceneName, '', (err) => {
                         if (err) {
                             this.manuallyControl();
                         }

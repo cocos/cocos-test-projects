@@ -52,8 +52,6 @@ export class TestFramework {
 
     private _timeout: number = 5000;
 
-    private _maxRetryTime: number = 3;
-
     private _client: Client | null = null;
 
     private _eventQueue: Record<number, TestEvent> = {};
@@ -63,9 +61,7 @@ export class TestFramework {
     private _timeoutTimer: number = 0;
 
 
-    connect (address: string = '127.0.0.1', port: number = 8080, timeout: number = 5000, maxRetryTime: number = 3, cb: TestCallback ) {
-
-        this._maxRetryTime = maxRetryTime;
+    connect (address: string = '127.0.0.1', port: number = 8080, timeout: number = 5000, cb: TestCallback ) {
 
         this._timeout = timeout;
 
@@ -121,7 +117,7 @@ export class TestFramework {
 
         let msgId  = ++this._msgId;
 
-        this._eventQueue[msgId] = { id: msgId, state, sceneName, message, cb, startTime: Date.now(), retry: 0};
+        this._eventQueue[msgId] = { id: msgId, state, sceneName, message, cb, startTime: Date.now(), retry: 0 };
 
         if (!this._timeoutTimer) {
 
@@ -135,22 +131,9 @@ export class TestFramework {
 
                     if (now - event.startTime > this._timeout) {
                         
-                        if (event.retry > this._maxRetryTime) {
+                        delete this._eventQueue[id];
 
-                            delete this._eventQueue[id];
-
-                            event.cb(new Error('connection disconected'));
-
-                        }
-                        else {
-
-                            event.retry++;
-
-                            event.startTime = Date.now();
-
-                            this._client!.postMessage({ id: event.id, state: event.state, sceneName: event.sceneName, message: event.message, time: Date.now() });
-
-                        }
+                        event.cb(new Error('connection disconected'));
                         
                     }
     

@@ -6,12 +6,11 @@
     "_native": "",
     "scene": {
       "__id__": 1
-    },
-    "asyncLoadAssets": false
+    }
   },
   {
     "__type__": "cc.Scene",
-    "_name": "",
+    "_name": "canvasUseRenderTex",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -231,7 +230,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 162.83,
@@ -337,7 +335,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 480,
@@ -371,7 +368,8 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "cea506fc-84e0-4e06-aa96-1db22f4e6a74@f9941"
+      "__uuid__": "cea506fc-84e0-4e06-aa96-1db22f4e6a74@f9941",
+      "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 0,
     "_fillType": 0,
@@ -443,7 +441,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 480.06,
@@ -576,7 +573,8 @@
     "_screenScale": 1,
     "_visibility": 42467328,
     "_targetTexture": {
-      "__uuid__": "1139cf34-bc71-4782-a90e-76d17d482121"
+      "__uuid__": "1139cf34-bc71-4782-a90e-76d17d482121",
+      "__expectedType__": "cc.RenderTexture"
     },
     "_id": "199AF2myNLNIrPJMGn/YTp"
   },
@@ -589,7 +587,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 960,
@@ -787,7 +784,8 @@
     "__prefab": null,
     "_materials": [
       {
-        "__uuid__": "c3310fce-6783-4158-853a-ea5fe6dfc121"
+        "__uuid__": "c3310fce-6783-4158-853a-ea5fe6dfc121",
+        "__expectedType__": "cc.Material"
       }
     ],
     "_visFlags": 0,
@@ -795,7 +793,8 @@
       "__id__": 24
     },
     "_mesh": {
-      "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@fc873"
+      "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@fc873",
+      "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
     "_shadowReceivingMode": 1,
@@ -831,7 +830,8 @@
       "__id__": 23
     },
     "rtTexture": {
-      "__uuid__": "1139cf34-bc71-4782-a90e-76d17d482121"
+      "__uuid__": "1139cf34-bc71-4782-a90e-76d17d482121",
+      "__expectedType__": "cc.RenderTexture"
     },
     "_id": "8f3hiihrdB+IUOERQNz7et"
   },
@@ -912,7 +912,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": -280,
+      "y": -270,
       "z": 0
     },
     "_lrot": {
@@ -946,11 +946,10 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 479.33,
-      "height": 67.8
+      "height": 97.8
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -979,7 +978,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "通过TargetTexture使用 RenderTexture 资源\n三秒后可以看到图片变小且变为图片+文字",
+    "_string": "通过TargetTexture使用 RenderTexture 资源\n三秒后可以看到图片变小且变为图片+文字\n(该场景材质暂不支持延迟管线)",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 25,
@@ -1065,7 +1064,7 @@
     },
     "_depth": 1,
     "_stencil": 0,
-    "_clearFlags": 6,
+    "_clearFlags": 0,
     "_rect": {
       "__type__": "cc.Rect",
       "x": 0,
@@ -1090,7 +1089,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 960,
@@ -1201,6 +1199,10 @@
     "_autoAdapt": true,
     "_pcf": 0,
     "_bias": 0.00001,
+    "_packing": false,
+    "_linear": true,
+    "_selfShadow": false,
+    "_normalBias": 0,
     "_near": 1,
     "_far": 30,
     "_aspect": 1,
