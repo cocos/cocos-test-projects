@@ -125,7 +125,7 @@ export class KeyboardEvent extends Component {
     onKeyboardDown (event: EventKeyboard) {
         let keyCode = event.keyCode.toString();
         let keyName = keyCode2KeyName[keyCode];
-        log('key down: ', keyName);
+        console.log('key down: ', keyName);
         let keyNode = this.getChildRecursively(this.node, keyName);
         if (keyNode) {
             this.showKeyNodeWithColor(keyNode, Color.RED);
@@ -135,7 +135,7 @@ export class KeyboardEvent extends Component {
     onKyeboardUp (event: EventKeyboard) {
         let keyCode = event.keyCode.toString();
         let keyName = keyCode2KeyName[keyCode];
-        log('key up: ', keyName);
+        console.log('key up: ', keyName);
         let keyNode = this.getChildRecursively(this.node, keyName);
         if (keyNode) {
             this.showKeyNodeWithColor(keyNode, Color.BLUE);
