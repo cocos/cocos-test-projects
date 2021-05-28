@@ -75,7 +75,7 @@ const keyCode2KeyName: Record<string, string> = {
     "107": "+",
     "109": "-",
     "110": "numdel",
-    "111": "/",
+    "111": "backwardslash",  // "/" can't be named in Editor
     "112": "f1",
     "113": "f2",
     "114": "f3",
