@@ -3,6 +3,16 @@ const { ccclass, property } = _decorator;
 import { sceneArray } from "./scenelist";
 import { ReceivedCode, StateCode, TestFramework } from "./TestFramework";
 
+declare class AutoTestConfigJson extends JsonAsset {
+    json: {
+        enabled: boolean,
+        server: string,
+        port: number,
+        timeout: number,
+        maxRetryTimes: number,
+        sceneList: string[],
+    }
+}
 @ccclass("BackButton")
 export class BackButton extends Component {
     private static _offset = new Vec3();
@@ -15,22 +25,10 @@ export class BackButton extends Component {
     private static _nextNode : Node;
     private sceneName! : Label;
 
-    @property(CCString)
-    public testServerAddress = '127.0.0.1';
+    @property(JsonAsset)
+    public autoTestConfig: AutoTestConfigJson | null = null;
 
-    @property(CCInteger)
-    public testServerPort = 8080;
-
-    @property(CCInteger)
-    public timeout = 5000;
-
-    @property(CCInteger)
-    public retryTime = 3;
-
-    private autoTest = false;
-
-    @property(CCBoolean)
-    public manuallyTest = false;
+    private isAutoTesting: boolean = false;
 
     __preload() {
         const sceneInfo = assetManager.main!.config.scenes;
@@ -111,26 +109,24 @@ export class BackButton extends Component {
             BackButton.refreshButton();
         }
         director.on(Director.EVENT_BEFORE_SCENE_LOADING,this.switchSceneName,this);
-        if (this.manuallyTest) return;
-        TestFramework.instance.connect(this.testServerAddress, this.testServerPort, this.timeout, (err) => {
+        if (!this.autoTestConfig!.json.enabled) return;
+        TestFramework.instance.connect(this.autoTestConfig!.json.server, this.autoTestConfig!.json.port, this.autoTestConfig!.json.timeout, (err) => {
             if (err) {
-                this.autoTest = false;
+                this.isAutoTesting = false;
             }
             else {
                 TestFramework.instance.startTest({ time: Date.now() }, (err) => {
                     if (err) {
-                        this.autoTest = false;
+                        this.isAutoTesting = false;
                     }
                     else {
-                        this.autoTest = true;
+                        this.isAutoTesting = true;
                         this.autoControl();
-                        resources.load('auto-test-list', JsonAsset, (err, asset) => {
-                            let staticScenes = (asset.json as Record<string, any>)!["static-scenes"] as string[];
-                            let testList = sceneArray.filter(x => staticScenes.indexOf(x) !== -1);
-                            sceneArray.length = 0;
-                            sceneArray.push(...testList);
-                            this.nextScene();
-                        });
+                        let sceneList = this.autoTestConfig!.json.sceneList;
+                        let testList = sceneArray.filter(x => sceneList.indexOf(x) !== -1);
+                        sceneArray.length = 0;
+                        sceneArray.push(...testList);
+                        this.nextScene();
                     }
                 })
             }
@@ -163,7 +159,7 @@ export class BackButton extends Component {
             if (BackButton._scrollNode) {
                 BackButton._scrollCom = BackButton._scrollNode.getComponent(ScrollView);
                 BackButton._scrollCom!.content!.getComponent(Layout)!.updateLayout();
-                BackButton._scrollCom!.scrollToOffset(BackButton.offset,0.1,true);
+                BackButton._scrollCom!.scrollToOffset(BackButton.offset, 0.1, true);
             }
             BackButton._blockInput.active = false;
         });
@@ -175,7 +171,7 @@ export class BackButton extends Component {
         this.updateSceneIndex(true);
         const sceneName = this.getSceneName();
         director.loadScene(sceneName, (err) => {
-            if (this.autoTest) {
+            if (this.isAutoTesting) {
                 if (err) {
                     TestFramework.instance.postMessage(StateCode.SCENE_ERROR, sceneName, '', () => {
                         this.manuallyControl();
