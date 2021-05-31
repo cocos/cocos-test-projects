@@ -153,7 +153,7 @@ export class KeyboardEvent extends Component {
     }
     
     onKeyboardDown (event: EventKeyboard) {
-        let keyCode = event.keyCode.toString();
+        let keyCode = event.keyCode;
         let keyName = keyCode2KeyName[keyCode];
         console.log('key down: ', keyName);
         let keyNode = this.getChildRecursively(this.node, keyName);
