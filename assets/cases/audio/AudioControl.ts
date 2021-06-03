@@ -35,20 +35,6 @@ export class AudioControl extends Component {
     onLoad () {
         this.progressSlider1.node.on('slide', this.onSlide1, this);
         this.progressSlider2.node.on('slide', this.onSlide2, this);
-        // 测试播放队列
-        this.source1.stop();
-        this.source1.pause();
-        this.source1.play();
-        this.source1.stop();
-        this.source1.stop();
-        this.source1.pause();
-        this.source1.play();
-        this.source1.pause();
-        this.source1.play();
-        this.source1.play();
-        this.source1.play();
-        this.source1.stop();
-        this.source1.play();
     }
 
     onDestroy () {
