@@ -20,6 +20,9 @@ export class AudioControl extends Component {
     @property(Slider)
     progressSlider1: Slider = null!;
 
+    @property(Label)
+    eventLabel1: Label = null!;
+
     @property(AudioSource)
     source2: AudioSource = null!;
 
@@ -32,13 +35,25 @@ export class AudioControl extends Component {
     @property(Slider)
     progressSlider2: Slider = null!;
 
+    @property(Label)
+    eventLabel2: Label = null!;
+
     onLoad () {
         this.progressSlider1.node.on('slide', this.onSlide1, this);
         this.progressSlider2.node.on('slide', this.onSlide2, this);
+        this.source1.node.on(AudioSource.EventType.STARTED, this.onStarted, this);
+        this.source1.node.on(AudioSource.EventType.ENDED, this.onEnded, this);
+        this.source2.node.on(AudioSource.EventType.STARTED, this.onStarted, this);
+        this.source2.node.on(AudioSource.EventType.ENDED, this.onEnded, this);
     }
 
     onDestroy () {
         this.progressSlider1.node.off('slide', this.onSlide1, this);
+        this.progressSlider2.node.off('slide', this.onSlide2, this);
+        this.source1.node.off(AudioSource.EventType.STARTED, this.onStarted, this);
+        this.source1.node.off(AudioSource.EventType.ENDED, this.onEnded, this);
+        this.source2.node.off(AudioSource.EventType.STARTED, this.onStarted, this);
+        this.source2.node.off(AudioSource.EventType.ENDED, this.onEnded, this);
     }
     
     playOneShot () {
@@ -66,6 +81,24 @@ export class AudioControl extends Component {
     onSlide2 (slider: Slider) {
         let currentTime = slider.progress * this.source2.duration;
         this.source2.currentTime = currentTime;
+    }
+
+    onStarted (audioSource: AudioSource) {
+        let eventLabel = audioSource === this.source1 ? this.eventLabel1 : this.eventLabel2;
+        this.showEventLabel(eventLabel, 'STARTED', 1);
+    }
+
+    onEnded (audioSource: AudioSource) {
+        let eventLabel = audioSource === this.source1 ? this.eventLabel1 : this.eventLabel2;
+        this.showEventLabel(eventLabel, 'ENDED', 1);
+    }
+
+    showEventLabel (eventLabel: Label, text: string, timeInSeconds: number) {
+        eventLabel.string = text;
+        eventLabel.node.active = true;
+        this.scheduleOnce(() => {
+            eventLabel.node.active = false;
+        }, timeInSeconds);
     }
 }
 
