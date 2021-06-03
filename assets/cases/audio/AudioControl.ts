@@ -1,5 +1,5 @@
 
-import { _decorator, Component, AudioClip, AudioSource, Slider, Label } from 'cc';
+import { _decorator, Component, AudioClip, AudioSource, Slider, Label, Toggle } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('AudioControl')
@@ -23,6 +23,9 @@ export class AudioControl extends Component {
     @property(Label)
     eventLabel1: Label = null!;
 
+    @property(Toggle)
+    toggle1: Toggle = null!
+
     @property(AudioSource)
     source2: AudioSource = null!;
 
@@ -38,9 +41,16 @@ export class AudioControl extends Component {
     @property(Label)
     eventLabel2: Label = null!;
 
+    @property(Toggle)
+    toggle2: Toggle = null!
+
     onLoad () {
-        this.progressSlider1.node.on('slide', this.onSlide1, this);
-        this.progressSlider2.node.on('slide', this.onSlide2, this);
+        this.source1.loop = this.toggle1.isChecked;
+        this.source2.loop = this.toggle2.isChecked;
+        this.progressSlider1.node.on('slide', this.onSlide, this);
+        this.progressSlider2.node.on('slide', this.onSlide, this);
+        this.toggle1.node.on(Toggle.EventType.TOGGLE, this.onToggle, this);
+        this.toggle2.node.on(Toggle.EventType.TOGGLE, this.onToggle, this);
         this.source1.node.on(AudioSource.EventType.STARTED, this.onStarted, this);
         this.source1.node.on(AudioSource.EventType.ENDED, this.onEnded, this);
         this.source2.node.on(AudioSource.EventType.STARTED, this.onStarted, this);
@@ -48,8 +58,10 @@ export class AudioControl extends Component {
     }
 
     onDestroy () {
-        this.progressSlider1.node.off('slide', this.onSlide1, this);
-        this.progressSlider2.node.off('slide', this.onSlide2, this);
+        this.progressSlider1.node.off('slide', this.onSlide, this);
+        this.progressSlider2.node.off('slide', this.onSlide, this);
+        this.toggle1.node.off(Toggle.EventType.TOGGLE, this.onToggle, this);
+        this.toggle2.node.off(Toggle.EventType.TOGGLE, this.onToggle, this);
         this.source1.node.off(AudioSource.EventType.STARTED, this.onStarted, this);
         this.source1.node.off(AudioSource.EventType.ENDED, this.onEnded, this);
         this.source2.node.off(AudioSource.EventType.STARTED, this.onStarted, this);
@@ -73,14 +85,15 @@ export class AudioControl extends Component {
         slider.progress = currentTime / duration;
     }
 
-    onSlide1 (slider: Slider) {
-        let currentTime = slider.progress * this.source1.duration;
-        this.source1.currentTime = currentTime;
+    onSlide (slider: Slider) {
+        let source = slider === this.progressSlider1 ? this.source1 : this.source2;
+        let currentTime = slider.progress * source.duration;
+        source.currentTime = currentTime;
     }
 
-    onSlide2 (slider: Slider) {
-        let currentTime = slider.progress * this.source2.duration;
-        this.source2.currentTime = currentTime;
+    onToggle (toggle: Toggle) {
+        let source = toggle === this.toggle1 ? this.source1 : this.source2;
+        source.loop = toggle.isChecked;
     }
 
     onStarted (audioSource: AudioSource) {
@@ -101,14 +114,3 @@ export class AudioControl extends Component {
         }, timeInSeconds);
     }
 }
-
-/**
- * [1] Class member could be defined like this.
- * [2] Use `property` decorator if your want the member to be serializable.
- * [3] Your initialization goes here.
- * [4] Your update function goes here.
- *
- * Learn more about scripting: https://docs.cocos.com/creator/3.0/manual/en/scripting/
- * Learn more about CCClass: https://docs.cocos.com/creator/3.0/manual/en/scripting/ccclass.html
- * Learn more about life-cycle callbacks: https://docs.cocos.com/creator/3.0/manual/en/scripting/life-cycle-callbacks.html
- */
