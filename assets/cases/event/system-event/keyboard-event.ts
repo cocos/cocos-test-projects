@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, systemEvent, SystemEventType, EventKeyboard, tween, log, Color, Sprite, Toggle, SystemEvent } from 'cc';
+import { _decorator, Component, Node, systemEvent, SystemEventType, EventKeyboard, tween, log, Color, Sprite, Toggle, SystemEvent, sys } from 'cc';
 const { ccclass, property } = _decorator;
 
 const keyCode2KeyName: Record<number, string> = {
@@ -123,7 +123,19 @@ export class KeyboardEvent extends Component {
     @property(Toggle)
     public legacyEventToggle!: Toggle;
 
+    @property(Node)
+    public noSupport: Node = null!
+
     onLoad () {
+        if (sys.platform === sys.Platform.WIN32 ||
+            sys.platform === sys.Platform.MACOS ||
+            sys.platform === sys.Platform.DESKTOP_BROWSER ||
+            sys.platform === sys.Platform.WECHAT_GAME && !sys.isMobile) {
+            this.noSupport.active = false;
+        } else {
+            this.noSupport.active = true;
+            return;
+        }
         this.legacyEventToggle.node.on(Toggle.EventType.TOGGLE, this.onToggle, this);
         this.updateEventType();
     }
