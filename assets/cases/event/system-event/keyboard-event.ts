@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, systemEvent, SystemEventType, EventKeyboard, tween, log, Color, Sprite, Toggle } from 'cc';
+import { _decorator, Component, Node, systemEvent, SystemEventType, EventKeyboard, tween, log, Color, Sprite, Toggle, SystemEvent } from 'cc';
 const { ccclass, property } = _decorator;
 
 const keyCode2KeyName: Record<number, string> = {
@@ -117,8 +117,8 @@ const keyCode2KeyName: Record<number, string> = {
 @ccclass('KeyboardEvent')
 export class KeyboardEvent extends Component {
     private _keyNode2TimeoutId: WeakMap<Node, number | null> = new WeakMap();
-    private _keyDownEventType = SystemEventType.KEYBOARD_DOWN;
-    private _keyUpEventType = SystemEventType.KEYBOARD_UP;
+    private _keyDownEventType: any = SystemEvent.KeyboardEvent.KEY_DOWN;
+    private _keyUpEventType: any = SystemEvent.KeyboardEvent.KEY_UP;
 
     @property(Toggle)
     public legacyEventToggle!: Toggle;
@@ -141,8 +141,8 @@ export class KeyboardEvent extends Component {
             this._keyDownEventType = SystemEventType.KEY_DOWN;
             this._keyUpEventType = SystemEventType.KEY_UP;
         } else {
-            this._keyDownEventType = SystemEventType.KEYBOARD_DOWN;
-            this._keyUpEventType = SystemEventType.KEYBOARD_UP;
+            this._keyDownEventType = SystemEvent.KeyboardEvent.KEY_DOWN;
+            this._keyUpEventType = SystemEvent.KeyboardEvent.KEY_UP;
         }
         systemEvent.on(this._keyDownEventType, this.onKeyboardDown, this);
         systemEvent.on(this._keyUpEventType, this.onKyeboardUp, this);
