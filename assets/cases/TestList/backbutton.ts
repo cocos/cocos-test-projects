@@ -1,7 +1,9 @@
-import { _decorator, Component, Node, ScrollView, Vec3, Layout, game, Label, director, Director, assetManager, find, Canvas, Layers, CCString, CCInteger, resources, JsonAsset, profiler, CCBoolean } from "cc";
+import { _decorator, Component, Node, ScrollView, Vec3, Layout, game, Label, director, Director, assetManager, find, Canvas, Layers, CCString, CCInteger, resources, JsonAsset, profiler, CCBoolean, log, Game } from "cc";
 const { ccclass, property } = _decorator;
 import { sceneArray } from "./scenelist";
 import { ReceivedCode, StateCode, TestFramework } from "./TestFramework";
+
+
 
 declare class AutoTestConfigJson extends JsonAsset {
     json: {
@@ -109,6 +111,20 @@ export class BackButton extends Component {
             BackButton.refreshButton();
         }
         director.on(Director.EVENT_BEFORE_SCENE_LOADING,this.switchSceneName,this);
+        
+        window.addEventListener('error',(event)=>{
+            var msg : string;
+            msg = "错误发生于："+event.filename+"，错误类型为"+event.error+"错误详细信息为"+event.message;
+            if (this.isAutoTesting){
+                TestFramework.instance.postMessage(StateCode.ERROR, this.getSceneName(), msg, () => {
+                    //this.manuallyControl();
+                });
+            }
+
+        })
+        
+        
+        
         if (!this.autoTestConfig!.json.enabled) return;
         TestFramework.instance.connect(this.autoTestConfig!.json.server, this.autoTestConfig!.json.port, this.autoTestConfig!.json.timeout, (err) => {
             if (err) {
