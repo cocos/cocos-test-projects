@@ -45,6 +45,8 @@ export class AudioControl extends Component {
     toggle2: Toggle = null!
 
     onLoad () {
+        console.log('AudioSource1 loadMode: ', this.source1.clip?.loadMode);
+        console.log('AudioSource2 loadMode: ', this.source2.clip?.loadMode);
         this.source1.loop = this.toggle1.isChecked;
         this.source2.loop = this.toggle2.isChecked;
         this.progressSlider1.node.on('slide', this.onSlide, this);
