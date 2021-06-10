@@ -81,11 +81,13 @@ export default class SpineBoyCtrl extends Component{
     }
 
     walk () {
+        this.spine?.setToSetupPose();
         this.spine?.setAnimation(0, 'walk', true);
         this._hasStop = false;
     }
 
     run () {
+        this.spine?.setToSetupPose();
         this.spine?.setAnimation(0, 'run', true);
         this._hasStop = false;
     }
