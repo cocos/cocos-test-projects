@@ -112,20 +112,12 @@ export class BackButton extends Component {
         }
         director.on(Director.EVENT_BEFORE_SCENE_LOADING,this.switchSceneName,this);
         
-        window.addEventListener('error',(event)=>{
-            var msg : string;
-            msg = "错误发生于："+event.filename+"，错误类型为"+event.error+"错误详细信息为"+event.message;
-            if (this.isAutoTesting){
-                TestFramework.instance.postMessage(StateCode.ERROR, this.getSceneName(), msg, () => {
-                    //this.manuallyControl();
-                });
-            }
-
-        })
         
         
         
         if (!this.autoTestConfig!.json.enabled) return;
+
+        console.log("config is"+this.autoTestConfig!.json.server );
         TestFramework.instance.connect(this.autoTestConfig!.json.server, this.autoTestConfig!.json.port, this.autoTestConfig!.json.timeout, (err) => {
             if (err) {
                 this.isAutoTesting = false;
@@ -147,6 +139,34 @@ export class BackButton extends Component {
                 })
             }
         });
+        window.addEventListener('error',(event)=>{
+            var msg : string;
+            msg = "错误发生于："+event.filename+"，错误类型为"+event.error+"错误详细信息为"+event.message;
+            if (this.isAutoTesting){
+                TestFramework.instance.postMessage(StateCode.ERROR, this.getSceneName(), msg, () => {
+                    this.manuallyControl();
+                });
+            }
+
+        });
+        window.onerror = (msg, url, lineNo, columnNo, error) => 
+        {
+            var string = msg;
+            var substring = "script error";
+            var message = [
+                'Message: ' + msg,
+                'URL: ' + url,
+                'Line: ' + lineNo,
+                'Column: ' + columnNo,
+                'Error object: ' + JSON.stringify(error)
+            ].join(' - ');
+            if (this.isAutoTesting){
+                TestFramework.instance.postMessage(StateCode.ERROR, this.getSceneName(), message, () => {
+                    this.manuallyControl();
+                });
+            }
+        };
+        
     }
 
     onDestroy () {
