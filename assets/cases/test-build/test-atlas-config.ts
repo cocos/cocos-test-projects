@@ -2,8 +2,8 @@
 import { _decorator, Component, Node, Label, loader, assetManager, AssetManager, Texture2D, ImageAsset, SpriteAtlas } from 'cc';
 const { ccclass, property } = _decorator;
 
-@ccclass('Typescript')
-export class Typescript extends Component {
+@ccclass('TestAtlasConfig')
+export class TestAtlasConfig extends Component {
     // [1]
     // dummy = '';
     @property({type: [Label]})
