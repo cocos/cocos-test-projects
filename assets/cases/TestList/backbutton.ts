@@ -32,6 +32,9 @@ export class BackButton extends Component {
     @property(CCBoolean)
     public manuallyTest = false;
 
+    @property({type: Label})
+    public engineVersionLabel!: Label;
+
     __preload() {
         const sceneInfo = assetManager.main!.config.scenes;
         const array: string[] = [];
@@ -95,6 +98,8 @@ export class BackButton extends Component {
     }
 
     start () {
+        // @ts-ignore
+        this.engineVersionLabel.string = 'v' + CocosEngine;
         let camera = this.node.getComponent(Canvas)!.cameraComponent!;
         if (camera.visibility & Layers.Enum.UI_2D) camera.visibility &= ~Layers.Enum.UI_2D;
         this.sceneName = find("backRoot")!.getChildByName("sceneName")!.getComponent(Label)!;
@@ -135,6 +140,7 @@ export class BackButton extends Component {
                 })
             }
         });
+
     }
 
     onDestroy () {
