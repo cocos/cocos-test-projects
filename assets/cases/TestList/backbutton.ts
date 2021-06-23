@@ -8,6 +8,7 @@ import { ReceivedCode, StateCode, TestFramework } from "./TestFramework";
 declare class AutoTestConfigJson extends JsonAsset {
     json: {
         enabled: boolean,
+        isWechat: boolean,
         server: string,
         port: number,
         timeout: number,
@@ -118,7 +119,7 @@ export class BackButton extends Component {
         if (!this.autoTestConfig!.json.enabled) return;
 
         console.log("config is"+this.autoTestConfig!.json.server );
-        TestFramework.instance.connect(this.autoTestConfig!.json.server, this.autoTestConfig!.json.port, this.autoTestConfig!.json.timeout, (err) => {
+        TestFramework.instance.connect(this.autoTestConfig!.json.server, this.autoTestConfig!.json.port, this.autoTestConfig!.json.isWechat, this.autoTestConfig!.json.timeout, (err) => {
             if (err) {
                 this.isAutoTesting = false;
             }
