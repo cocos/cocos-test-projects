@@ -61,11 +61,11 @@ export class TestFramework {
     private _timeoutTimer: number = 0;
 
 
-    connect (address: string = '127.0.0.1', port: number = 8080, timeout: number = 5000, cb: TestCallback ) {
+    connect (address: string = '127.0.0.1', port: number = 8080, isWechat: boolean = false, timeout: number = 5000, cb: TestCallback ) {
 
         this._timeout = timeout;
 
-        this._client = new Client(address, port);
+        this._client = new Client(address, port, isWechat);
 
         var timer = setTimeout(() => {
 
