@@ -117,7 +117,6 @@ export class BackButton extends Component {
         
         if (!this.autoTestConfig!.json.enabled) return;
 
-        console.log("config is"+this.autoTestConfig!.json.server );
         TestFramework.instance.connect(this.autoTestConfig!.json.server, this.autoTestConfig!.json.port, this.autoTestConfig!.json.timeout, (err) => {
             if (err) {
                 this.isAutoTesting = false;
