@@ -117,8 +117,8 @@ const keyCode2KeyName: Record<number, string> = {
 @ccclass('KeyboardEvent')
 export class KeyboardEvent extends Component {
     private _keyNode2TimeoutId: WeakMap<Node, number | null> = new WeakMap();
-    private _keyDownEventType: any = SystemEvent.KeyboardEvent.KEY_DOWN;
-    private _keyUpEventType: any = SystemEvent.KeyboardEvent.KEY_UP;
+    private _keyDownEventType: SystemEvent.EventType = SystemEvent.EventType.KEY_PRESS;
+    private _keyUpEventType: SystemEvent.EventType = SystemEvent.EventType.KEY_RELEASE;
 
     @property(Toggle)
     public legacyEventToggle!: Toggle;
@@ -150,11 +150,11 @@ export class KeyboardEvent extends Component {
         systemEvent.off(this._keyDownEventType, this.onKeyboardDown, this);
         systemEvent.off(this._keyUpEventType, this.onKyeboardUp, this);
         if (this.legacyEventToggle.isChecked) {
-            this._keyDownEventType = SystemEventType.KEY_DOWN;
-            this._keyUpEventType = SystemEventType.KEY_UP;
+            this._keyDownEventType = SystemEvent.EventType.KEY_DOWN;
+            this._keyUpEventType = SystemEvent.EventType.KEY_UP;
         } else {
-            this._keyDownEventType = SystemEvent.KeyboardEvent.KEY_DOWN;
-            this._keyUpEventType = SystemEvent.KeyboardEvent.KEY_UP;
+            this._keyDownEventType = SystemEvent.EventType.KEY_PRESS;
+            this._keyUpEventType = SystemEvent.EventType.KEY_RELEASE;
         }
         systemEvent.on(this._keyDownEventType, this.onKeyboardDown, this);
         systemEvent.on(this._keyUpEventType, this.onKyeboardUp, this);
