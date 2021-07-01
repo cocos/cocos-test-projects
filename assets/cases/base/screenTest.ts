@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, Toggle, screen, sys } from 'cc';
+import { _decorator, Component, Node, Toggle, screen, sys, log } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('ScreenTest')
@@ -25,9 +25,13 @@ export class ScreenTest extends Component {
 
     onToggle (toggle: Toggle) {
         if (toggle.isChecked) {
-            screen.requestFullScreen();
+            screen.requestFullScreen().then(() => {
+                log('on enter fullscreen');
+            }).catch(e => {});;
         } else {
-            screen.exitFullScreen();
+            screen.exitFullScreen().then(() => {
+                log('on exit fullscreen');
+            }).catch(e => {});
         }
     }
 }
