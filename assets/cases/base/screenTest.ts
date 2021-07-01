@@ -12,8 +12,7 @@ export class ScreenTest extends Component {
     public noSupport: Node = null!
 
     start () {
-        if (sys.platform === sys.Platform.MOBILE_BROWSER ||
-            sys.platform === sys.Platform.DESKTOP_BROWSER) {
+        if (screen.supportsFullScreen) {
             this.noSupport.active = false;
         } else {
             this.noSupport.active = true;
