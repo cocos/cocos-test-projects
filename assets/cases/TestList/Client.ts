@@ -1,3 +1,4 @@
+import { WECHAT } from "cc/env";
 
 export class Client {
 
@@ -19,8 +20,13 @@ export class Client {
         let retryTime = 0;
         const init = () => {
 
-            this._socket = new WebSocket('ws://' + address + ':' + port);
-
+            if (WECHAT) {
+                this._socket = new WebSocket('wss://' + address);
+            }
+            else {
+                this._socket = new WebSocket('ws://' + address + ':' + port);
+            }
+            
             this._socket.onmessage = (event) => {
                 this.onmessage && this.onmessage(event);
             };
