@@ -1,4 +1,10 @@
-{ "static-scenes": [
+{
+  "enabled": false,
+  "server": "127.0.0.1",
+  "port": 8000,
+  "timeout": 30000,
+  "maxRetryTimes": 3,
+  "sceneList": [
     "atlas-compress",
     "audio",
     "dependAsset",
@@ -45,7 +51,6 @@
     "layout-grid-expand",
     "layout-scrollview",
     "layout-size-changed",
-    "list-view",
     "scroll-view-events",
     "scroll-view-rotation",
     "rich-text-align",
@@ -58,7 +63,9 @@
     "mask",
     "graphics-draw-before-init",
     "multi-canvas",
+    "safe-area",
     "camera-layout",
     "opacity",
     "priority"
-]}
+  ]
+}
