@@ -121,7 +121,7 @@ export class BackButton extends Component {
                         this.isAutoTesting = false; 
                     }
                     else {
-                        this.isAutoTesting = false; 
+                        this.isAutoTesting = true; 
                         this.autoControl();
                         let sceneList = this.autoTestConfig!.json.sceneList; 
                         let testList = sceneArray.filter(x => sceneList.indexOf(x) !== -1); 
