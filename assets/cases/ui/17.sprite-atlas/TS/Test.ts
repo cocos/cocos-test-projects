@@ -86,6 +86,6 @@ export class Test extends Component {
         }
     }
     button4(){
-        this.tipLabel.node.position = new Vec3(90, 72, 0);
+        this.tipLabel.node.active = !this.tipLabel.node.active;
     }
 }
