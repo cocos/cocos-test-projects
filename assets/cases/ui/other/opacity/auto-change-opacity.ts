@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, instantiate, Renderable2D, UIOpacity } from 'cc';
+import { _decorator, Component, Node, instantiate, Renderable2D, UIOpacity, Color } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('AutoChangeOpacity')
@@ -10,8 +10,10 @@ export class AutoChangeOpacity extends Component {
     // [2]
     // @property
     // serializableDummy = 0;
-    private opacity = 255;
+    private opacity = 0;
     private isColor = false;
+    private disappear = true;
+    private tempColor = new Color();
 
     @property({
         type: Renderable2D
@@ -24,11 +26,13 @@ export class AutoChangeOpacity extends Component {
     public opacityComp: UIOpacity = null!;
 
     start () {
-        // [3]
-        this.opacity = 255;
+        this.disappear = true;
+        // For test renderFlag is false when game start
+        this.opacity = -1;
         if (this.renderComp) {
             this.isColor = true;
-        } else if (this.opacityComp){
+            this.tempColor = this.renderComp.color.clone();
+        } else if (this.opacityComp) {
             this.isColor = false;
         }
     }
@@ -39,12 +43,18 @@ export class AutoChangeOpacity extends Component {
 
     update (deltaTime: number) {
         if (this.opacity <= 0) {
-            this.opacity = 255;
-        } else {
-            this.opacity -= 2;
+            this.disappear = false;
+        } else if (this.opacity >= 255) {
+            this.disappear = true;
+        }
+        if(this.disappear) {
+            this.opacity -= 1;            
+        }else {
+            this.opacity += 1;
         }
         if (this.isColor) {
-            this.renderComp.color.a = this.opacity;
+            this.tempColor.a = this.opacity;
+            this.renderComp.color = this.tempColor;
         } else {
             this.opacityComp.opacity = this.opacity;
         }
