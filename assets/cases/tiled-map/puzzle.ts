@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, ccenum, SystemEventType, TiledMap, Vec2, Vec3, view, macro, TiledLayer, systemEvent, EventKeyboard, Touch, EventTouch } from 'cc';
+import { _decorator, Component, Node, ccenum, SystemEventType, TiledMap, Vec2, Vec3, view, macro, TiledLayer, systemEvent, EventKeyboard, Touch, EventTouch, KeyCode } from 'cc';
 const { ccclass, property } = _decorator;
 
 enum MoveDirection {
@@ -175,19 +175,19 @@ export class Puzzle extends Component {
         const newTile = new Vec2(this._curTile.x, this._curTile.y);
         let mapMoveDir = MoveDirection.NONE;
         switch (event.keyCode) {
-            case macro.KEY.up:
+            case KeyCode.ARROW_UP:
                 newTile.y -= 1;
                 mapMoveDir = MoveDirection.DOWN;
                 break;
-            case macro.KEY.down:
+            case KeyCode.ARROW_DOWN:
                 newTile.y += 1;
                 mapMoveDir = MoveDirection.UP;
                 break;
-            case macro.KEY.left:
+            case KeyCode.ARROW_LEFT:
                 newTile.x -= 1;
                 mapMoveDir = MoveDirection.RIGHT;
                 break;
-            case macro.KEY.right:
+            case KeyCode.ARROW_RIGHT:
                 newTile.x += 1;
                 mapMoveDir = MoveDirection.LEFT;
                 break;
