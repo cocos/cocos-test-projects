@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, dragonBones, macro, SystemEventType, systemEvent, Vec3, director, EventTouch } from 'cc';
+import { _decorator, Component, Node, dragonBones, macro, SystemEventType, systemEvent, Vec3, director, EventTouch, KeyCode } from 'cc';
 const { ccclass, property, requireComponent } = _decorator;
 
 
@@ -172,37 +172,37 @@ export default class DragonBonesCtrl extends Component {
 
     _keyHandler (keyCode: number, isDown: boolean) {
         switch (keyCode) {
-            case macro.KEY.a:
-            case macro.KEY.left:
+            case KeyCode.KEY_A:
+            case KeyCode.ARROW_LEFT:
                 this._left = isDown;
                 this._updateMove(-1);
                 break;
-            case macro.KEY.d:
-            case macro.KEY.right:
+            case KeyCode.KEY_D:
+            case KeyCode.ARROW_RIGHT:
                 this._right = isDown;
                 this._updateMove(1);
                 break;
-            case macro.KEY.w:
-            case macro.KEY.up:
+            case KeyCode.KEY_W:
+            case KeyCode.ARROW_UP:
                 if (isDown) {
                     this.jump();
                 }
                 break;
-            case macro.KEY.s:
-            case macro.KEY.down:
+            case KeyCode.KEY_S:
+            case KeyCode.ARROW_DOWN:
                 this.squat(isDown);
                 break;
-            case macro.KEY.q:
+            case KeyCode.KEY_Q:
                 if (isDown) {
                     this.switchWeaponR();
                 }
                 break;
-            case macro.KEY.e:
+            case KeyCode.KEY_E:
                 if (isDown) {
                     this.switchWeaponL();
                 }
                 break;
-            case macro.KEY.space:
+            case KeyCode.SPACE:
                 if (isDown) {
                     this.switchWeaponR();
                     this.switchWeaponL();
