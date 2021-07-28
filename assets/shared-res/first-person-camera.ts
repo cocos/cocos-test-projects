@@ -1,4 +1,4 @@
-import { _decorator, Component, game, macro, math, systemEvent, SystemEvent, EventMouse, EventKeyboard, EventTouch, Touch } from 'cc';
+import { _decorator, Component, game, math, systemEvent, SystemEvent, EventMouse, EventKeyboard, EventTouch, Touch, KeyCode } from 'cc';
 const { ccclass, property } = _decorator;
 const { Vec2, Vec3, Quat } = math;
 
@@ -13,7 +13,7 @@ const KEYCODE = {
     D: 'D'.charCodeAt(0),
     Q: 'Q'.charCodeAt(0),
     E: 'E'.charCodeAt(0),
-    SHIFT: macro.KEY.shift,
+    SHIFT: KeyCode.SHIFT_LEFT,
 };
 
 @ccclass
