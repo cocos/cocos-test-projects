@@ -3,8 +3,6 @@ const { ccclass, property } = _decorator;
 import { sceneArray } from "./scenelist";
 import { ReceivedCode, StateCode, TestFramework } from "./TestFramework";
 
-
-
 declare class AutoTestConfigJson extends JsonAsset {
     json: {
         enabled: boolean,
@@ -14,8 +12,7 @@ declare class AutoTestConfigJson extends JsonAsset {
         maxRetryTimes: number,
         sceneList: string[],
     }
-}
-@ccclass("BackButton")
+}@ccclass("BackButton")
 export class BackButton extends Component {
     private static _offset = new Vec3();
     public static _scrollNode : Node | null  = null;
@@ -111,12 +108,7 @@ export class BackButton extends Component {
             BackButton.refreshButton();
         }
         director.on(Director.EVENT_BEFORE_SCENE_LOADING,this.switchSceneName,this);
-        
-        
-        
-        
         if (!this.autoTestConfig!.json.enabled) return;
-
         TestFramework.instance.connect(this.autoTestConfig!.json.server, this.autoTestConfig!.json.port, this.autoTestConfig!.json.timeout, (err) => {
             if (err) {
                 this.isAutoTesting = false;

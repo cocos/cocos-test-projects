@@ -19,13 +19,14 @@ export class Client {
     constructor (address: string = '127.0.0.1', port: number = 8080) {
         let retryTime = 0;
         const init = () => {
-            
+
             if (WECHAT) {
                 this._socket = new WebSocket('wss://' + address);
             }
             else {
                 this._socket = new WebSocket('ws://' + address + ':' + port);
             }
+            
             this._socket.onmessage = (event) => {
                 this.onmessage && this.onmessage(event);
             };
