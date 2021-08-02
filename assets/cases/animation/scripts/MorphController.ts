@@ -114,9 +114,6 @@ export class MorphController extends Component {
     }
 
     public onSliderChanged(target: Slider, customEventData: any) {
-        if (!BYTEDANCE) {
-            console.log(target, customEventData);
-        }
         let index = Number.parseInt(customEventData);
         this.weightsControl[index] = target.progress;
         this.weightsControl = this.weightsControl;
