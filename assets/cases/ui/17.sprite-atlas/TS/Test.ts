@@ -52,7 +52,7 @@ export class Test extends Component {
             this.showLabel.string = "请输入正确的名字";
         }
 
-        this.tipLabel.node.setPosition(0, 1000, 0);
+        this.tipLabel.node.active = false;
     }
     button2(){
         this._sprite.spriteAtlas = null;
