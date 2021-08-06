@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Prefab, instantiate, Label, SpriteFrame, loader, js, JsonAsset, ScrollView, UITransform, Asset } from "cc";
+import { _decorator, Component, Node, Prefab, instantiate, Label, SpriteFrame, loader, js, JsonAsset, ScrollView, UITransform, Asset, assetManager } from "cc";
 const { ccclass, property } = _decorator;
 
 const builtInEffectList = [
@@ -54,9 +54,7 @@ export class LoadResDirExample extends Component {
         for (let i = 0; i < this._assets.length; ++i) {
             const asset = this._assets[i];
             // 需要释放所有资源依赖
-            const deps = loader.getDependsRecursively(asset);
-            this._removeBuiltInEffect(deps);
-            loader.release(deps);
+            assetManager.releaseAsset(asset);
         }
         this._assets = [];
     }
