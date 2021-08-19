@@ -36,7 +36,7 @@ export class Test extends Component {
         this._sprite.changeSpriteFrameFromAtlas(name);
     }
     button(){
-        this.tipLabel.node.setPosition(0, 1000, 0);
+        this.tipLabel.node.active = !this.tipLabel.node.active;
     }
     button1(){
         this.test(this.editbox.string);
