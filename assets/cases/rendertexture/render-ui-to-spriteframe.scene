@@ -6,12 +6,11 @@
     "_native": "",
     "scene": {
       "__id__": 1
-    },
-    "asyncLoadAssets": false
+    }
   },
   {
     "__type__": "cc.Scene",
-    "_name": "",
+    "_name": "render-ui-to-spriteframe",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -237,7 +236,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 960,
@@ -271,7 +269,8 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "5c4847ba-7145-41ca-b78a-26a44dbda85b@f9941"
+      "__uuid__": "5c4847ba-7145-41ca-b78a-26a44dbda85b@f9941",
+      "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 1,
     "_fillType": 0,
@@ -374,7 +373,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 400,
@@ -408,7 +406,8 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "093b45c8-80d9-49a8-ac5c-bcdbaed2c6bf@f9941"
+      "__uuid__": "093b45c8-80d9-49a8-ac5c-bcdbaed2c6bf@f9941",
+      "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 0,
     "_fillType": 0,
@@ -480,7 +479,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 400,
@@ -514,7 +512,8 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "093b45c8-80d9-49a8-ac5c-bcdbaed2c6bf@f9941"
+      "__uuid__": "093b45c8-80d9-49a8-ac5c-bcdbaed2c6bf@f9941",
+      "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 0,
     "_fillType": 0,
@@ -589,7 +588,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 593.34,
@@ -729,7 +727,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 700,
@@ -904,7 +901,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 960,
@@ -1128,7 +1124,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 22.25,
@@ -1188,7 +1183,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 100,
@@ -1222,7 +1216,8 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "877e09bf-ded6-4b38-a1a5-eab3f11b099e@f9941"
+      "__uuid__": "877e09bf-ded6-4b38-a1a5-eab3f11b099e@f9941",
+      "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 0,
     "_fillType": 0,
@@ -1395,7 +1390,8 @@
     "__prefab": null,
     "_materials": [
       {
-        "__uuid__": "54146e62-e98f-4092-bb73-6b8374a3256a"
+        "__uuid__": "ffbda7c0-1a88-4393-89c3-46133cd1c36d",
+        "__expectedType__": "cc.Material"
       }
     ],
     "_visFlags": 0,
@@ -1403,7 +1399,8 @@
       "__id__": 40
     },
     "_mesh": {
-      "__uuid__": "054daf25-262f-4267-92ba-e8bd2d1c2bb7@82fcb"
+      "__uuid__": "054daf25-262f-4267-92ba-e8bd2d1c2bb7@82fcb",
+      "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
     "_shadowReceivingMode": 1,
@@ -1446,7 +1443,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 100,
@@ -1528,7 +1524,8 @@
     "_enabled": true,
     "__prefab": null,
     "prefab": {
-      "__uuid__": "054daf25-262f-4267-92ba-e8bd2d1c2bb7@5f176"
+      "__uuid__": "054daf25-262f-4267-92ba-e8bd2d1c2bb7@5f176",
+      "__expectedType__": "cc.Prefab"
     },
     "_id": "a6NH7Dj9tMVbatCdgoxYyz"
   },
@@ -1625,7 +1622,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 960,
@@ -1834,16 +1830,17 @@
     "_autoAdapt": true,
     "_pcf": 0,
     "_bias": 0.00001,
+    "_normalBias": 0,
     "_near": 1,
     "_far": 30,
-    "_aspect": 1,
     "_orthoSize": 5,
     "_maxReceived": 4,
     "_size": {
       "__type__": "cc.Vec2",
       "x": 512,
       "y": 512
-    }
+    },
+    "_saturation": 0.2980392156862745
   },
   {
     "__type__": "cc.SkyboxInfo",
