@@ -1,0 +1,170 @@
+{
+  "ver": "2.1.4",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "6d15dfa5-2d34-4da7-a54e-a0de2b2f39b0",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "b2060": {
+      "importer": "gltf-mesh",
+      "uuid": "6d15dfa5-2d34-4da7-a54e-a0de2b2f39b0@b2060",
+      "displayName": "",
+      "id": "b2060",
+      "name": "businessMan.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1f586": {
+      "importer": "gltf-animation",
+      "uuid": "6d15dfa5-2d34-4da7-a54e-a0de2b2f39b0@1f586",
+      "displayName": "",
+      "id": "1f586",
+      "name": "idle.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 2
+        },
+        "events": [],
+        "speed": 1
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "438fe": {
+      "importer": "gltf-skeleton",
+      "uuid": "6d15dfa5-2d34-4da7-a54e-a0de2b2f39b0@438fe",
+      "displayName": "",
+      "id": "438fe",
+      "name": "UnnamedSkeleton.skeleton",
+      "userData": {
+        "gltfIndex": 0,
+        "jointsLength": 34
+      },
+      "ver": "1.0.1",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "41ead": {
+      "importer": "gltf-embeded-image",
+      "uuid": "6d15dfa5-2d34-4da7-a54e-a0de2b2f39b0@41ead",
+      "displayName": "",
+      "id": "41ead",
+      "name": "businessman.png.image",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".png",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "28cc5": {
+      "importer": "texture",
+      "uuid": "6d15dfa5-2d34-4da7-a54e-a0de2b2f39b0@28cc5",
+      "displayName": "",
+      "id": "28cc5",
+      "name": "businessMan.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "6d15dfa5-2d34-4da7-a54e-a0de2b2f39b0@41ead"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "5d7fe": {
+      "importer": "gltf-scene",
+      "uuid": "6d15dfa5-2d34-4da7-a54e-a0de2b2f39b0@5d7fe",
+      "displayName": "",
+      "id": "5d7fe",
+      "name": "businessMan.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "businessman.png",
+        "uri": "6d15dfa5-2d34-4da7-a54e-a0de2b2f39b0@41ead"
+      }
+    ],
+    "legacyFbxImporter": true,
+    "animationImportSettings": [
+      {
+        "name": "Take 001",
+        "duration": 2,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "idle",
+            "from": 0,
+            "to": 2,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "6d15dfa5-2d34-4da7-a54e-a0de2b2f39b0@5d7fe",
+    "assetFinder": {
+      "meshes": [
+        "6d15dfa5-2d34-4da7-a54e-a0de2b2f39b0@b2060"
+      ],
+      "skeletons": [
+        "6d15dfa5-2d34-4da7-a54e-a0de2b2f39b0@438fe"
+      ],
+      "textures": [
+        "6d15dfa5-2d34-4da7-a54e-a0de2b2f39b0@28cc5"
+      ],
+      "materials": [
+        "ecf7f04a-5267-4bee-add2-fe60e8036a19"
+      ],
+      "scenes": [
+        "6d15dfa5-2d34-4da7-a54e-a0de2b2f39b0@5d7fe"
+      ]
+    },
+    "dumpMaterials": true,
+    "materialDumpDir": "db://assets/res/model/npc/businessMan",
+    "disableMeshSplit": true
+  }
+}

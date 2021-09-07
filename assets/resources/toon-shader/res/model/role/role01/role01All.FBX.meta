@@ -1,0 +1,273 @@
+{
+  "ver": "2.1.4",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "36dc4ba3-93f3-43b1-898b-46e9b392a617",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "fd7d6": {
+      "importer": "gltf-mesh",
+      "uuid": "36dc4ba3-93f3-43b1-898b-46e9b392a617@fd7d6",
+      "displayName": "",
+      "id": "fd7d6",
+      "name": "role01.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1f586": {
+      "importer": "gltf-animation",
+      "uuid": "36dc4ba3-93f3-43b1-898b-46e9b392a617@1f586",
+      "displayName": "",
+      "id": "1f586",
+      "name": "idle.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 1.3333333333333333
+        },
+        "events": [],
+        "speed": 1
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "989ed": {
+      "importer": "gltf-animation",
+      "uuid": "36dc4ba3-93f3-43b1-898b-46e9b392a617@989ed",
+      "displayName": "",
+      "id": "989ed",
+      "name": "attack.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 2.3333333333333335,
+          "to": 3.6666666666666665
+        },
+        "events": [
+          {
+            "frame": 0.8333333333333334,
+            "func": "onFrameAttackLoose",
+            "params": []
+          }
+        ],
+        "speed": 1
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "b4251": {
+      "importer": "gltf-animation",
+      "uuid": "36dc4ba3-93f3-43b1-898b-46e9b392a617@b4251",
+      "displayName": "",
+      "id": "b4251",
+      "name": "die.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 4.666666666666667,
+          "to": 6.166666666666667
+        },
+        "events": []
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "6c359": {
+      "importer": "gltf-animation",
+      "uuid": "36dc4ba3-93f3-43b1-898b-46e9b392a617@6c359",
+      "displayName": "",
+      "id": "6c359",
+      "name": "revive.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 7,
+          "to": 8.4
+        },
+        "events": []
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "cf5ee": {
+      "importer": "gltf-animation",
+      "uuid": "36dc4ba3-93f3-43b1-898b-46e9b392a617@cf5ee",
+      "displayName": "",
+      "id": "cf5ee",
+      "name": "run.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 9.333333333333334,
+          "to": 10
+        },
+        "events": [
+          {
+            "frame": 0.13333333333333333,
+            "func": "",
+            "params": []
+          },
+          {
+            "frame": 0.13333333333333333,
+            "func": "",
+            "params": []
+          },
+          {
+            "frame": 0.13333333333333333,
+            "func": "onFrameRun",
+            "params": []
+          },
+          {
+            "frame": 0.4666666666666667,
+            "func": "",
+            "params": []
+          },
+          {
+            "frame": 0.4666666666666667,
+            "func": "onFrameRun",
+            "params": []
+          }
+        ],
+        "speed": 1
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "438fe": {
+      "importer": "gltf-skeleton",
+      "uuid": "36dc4ba3-93f3-43b1-898b-46e9b392a617@438fe",
+      "displayName": "",
+      "id": "438fe",
+      "name": "UnnamedSkeleton.skeleton",
+      "userData": {
+        "gltfIndex": 0,
+        "jointsLength": 70
+      },
+      "ver": "1.0.1",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "3f561": {
+      "importer": "gltf-scene",
+      "uuid": "36dc4ba3-93f3-43b1-898b-46e9b392a617@3f561",
+      "displayName": "",
+      "id": "3f561",
+      "name": "role01All.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": true,
+    "animationImportSettings": [
+      {
+        "name": "Take 001",
+        "duration": 11.5,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "idle",
+            "from": 0,
+            "to": 1.3333333333333333,
+            "wrapMode": 2
+          },
+          {
+            "name": "attack",
+            "from": 2.3333333333333335,
+            "to": 3.6666666666666665,
+            "wrapMode": 2
+          },
+          {
+            "name": "die",
+            "from": 4.666666666666667,
+            "to": 6.166666666666667,
+            "wrapMode": 2
+          },
+          {
+            "name": "revive",
+            "from": 7,
+            "to": 8.4,
+            "wrapMode": 2
+          },
+          {
+            "name": "run",
+            "from": 9.333333333333334,
+            "to": 10,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "36dc4ba3-93f3-43b1-898b-46e9b392a617@3f561",
+    "assetFinder": {
+      "meshes": [
+        "36dc4ba3-93f3-43b1-898b-46e9b392a617@fd7d6"
+      ],
+      "skeletons": [
+        "36dc4ba3-93f3-43b1-898b-46e9b392a617@438fe"
+      ],
+      "textures": [],
+      "materials": [
+        "2bebd9de-a66a-444a-b52a-a559f12ec593"
+      ],
+      "scenes": [
+        "36dc4ba3-93f3-43b1-898b-46e9b392a617@3f561"
+      ]
+    },
+    "dumpMaterials": true,
+    "disableMeshSplit": true,
+    "materialDumpDir": "db://assets/res/model/role/role01"
+  }
+}
