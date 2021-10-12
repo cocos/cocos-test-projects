@@ -81,21 +81,27 @@ export default class SpineBoyCtrl extends Component{
     }
 
     walk () {
+        if (this._hasStop) {
+            this.spine?.setToSetupPose();
+        }
         this.spine?.setAnimation(0, 'walk', true);
         this._hasStop = false;
     }
 
     run () {
+        if (this._hasStop) {
+            this.spine?.setToSetupPose();
+        }
         this.spine?.setAnimation(0, 'run', true);
         this._hasStop = false;
     }
 
     jump () {
-        var oldAnim = this.spine?.animation;
-        this.spine?.setAnimation(0, 'jump', false);
-        if (oldAnim && !this._hasStop) {
-            this.spine?.addAnimation(0, oldAnim === 'run' ? 'run' : 'walk', true, 0);
+        if (this._hasStop) {
+            this.spine?.setToSetupPose();
         }
+        this.spine?.setAnimation(0, 'jump', true);
+        this._hasStop = false;
     }
 
     shoot () {
@@ -103,10 +109,12 @@ export default class SpineBoyCtrl extends Component{
     }
 
     idle () {
+        this.spine?.setToSetupPose();
         this.spine?.setAnimation(0, 'idle', true);
     }
 
     portal () {
+        this.spine?.setToSetupPose();
         this.spine?.setAnimation(0, 'portal', false);
     }
 

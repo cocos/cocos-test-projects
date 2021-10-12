@@ -36,7 +36,7 @@ export class Test extends Component {
         this._sprite.changeSpriteFrameFromAtlas(name);
     }
     button(){
-        this.tipLabel.node.setPosition(0, 1000, 0);
+        this.tipLabel.node.active = !this.tipLabel.node.active;
     }
     button1(){
         this.test(this.editbox.string);
@@ -52,7 +52,7 @@ export class Test extends Component {
             this.showLabel.string = "请输入正确的名字";
         }
 
-        this.tipLabel.node.setPosition(0, 1000, 0);
+        this.tipLabel.node.active = false;
     }
     button2(){
         this._sprite.spriteAtlas = null;
@@ -86,6 +86,6 @@ export class Test extends Component {
         }
     }
     button4(){
-        this.tipLabel.node.position = new Vec3(90, 72, 0);
+        this.tipLabel.node.active = !this.tipLabel.node.active;
     }
 }

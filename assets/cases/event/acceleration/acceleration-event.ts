@@ -16,6 +16,8 @@ export class accelerationEvent extends Component {
     acc: Vec2 = new Vec2(0, 0);
     accelerometerEnable: boolean = false;
 
+    private _skipCallback = false;
+
     start () {
         this.accelerometerEnable = false;
         systemEvent.setAccelerometerInterval(0.5);
@@ -34,6 +36,11 @@ export class accelerationEvent extends Component {
     }
 
     moveBall (event: EventAcceleration) {
+        // on some platforms, stopping accelerometer is an asynchronous operation.
+        // need to skip this callback after stopping.
+        if (this._skipCallback) {
+            return;
+        }
         this.acc.x =  event.acc.x;
         this.acc.y =  event.acc.y;
     }
@@ -51,6 +58,7 @@ export class accelerationEvent extends Component {
             this.acc.y = 0;
         }
         systemEvent.setAccelerometerEnabled(this.accelerometerEnable);
+        this._skipCallback = !this.accelerometerEnable;
     }
 
     resetPosition () {

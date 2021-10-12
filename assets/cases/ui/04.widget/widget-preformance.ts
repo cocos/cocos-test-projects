@@ -16,8 +16,6 @@ export class WidgetPreformance extends Component {
         let i = 0;
         this.nodeA = instantiate(this.performancePrefab);
         this.node.addChild(this.nodeA);
-        const uiTrans = this.node.getComponent(UITransform)!;
-        uiTrans.setContentSize(400, 500);
         const sprite = this.nodeA.getComponent(Sprite)!;
         sprite.spriteFrame = this.bgTex;
         const arr = [true, false];

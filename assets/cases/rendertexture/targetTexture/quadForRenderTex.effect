@@ -37,6 +37,7 @@ CCProgram standard-vs %{
   #include <cc-global>
   #include <cc-local-batch>
   #include <shared-ubos>
+  #include <common>
 
   #if USE_VERTEX_COLOR
     in vec3 a_color;
@@ -56,7 +57,9 @@ CCProgram standard-vs %{
     vec4 pos = matWorld * In.position;
 
     v_uv = a_texCoord * tilingOffset.xy + tilingOffset.zw;
-
+    #if SAMPLE_FROM_RT
+      CC_HANDLE_RT_SAMPLE_FLIP(v_uv);
+    #endif
     // #if USE_VERTEX_COLOR
     //   v_color = a_color;
     // #endif

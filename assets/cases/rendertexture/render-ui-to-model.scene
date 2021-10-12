@@ -6,12 +6,11 @@
     "_native": "",
     "scene": {
       "__id__": 1
-    },
-    "asyncLoadAssets": false
+    }
   },
   {
     "__type__": "cc.Scene",
-    "_name": "",
+    "_name": "render-ui-to-model",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -234,7 +233,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 960,
@@ -268,7 +266,8 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "093b45c8-80d9-49a8-ac5c-bcdbaed2c6bf@f9941"
+      "__uuid__": "093b45c8-80d9-49a8-ac5c-bcdbaed2c6bf@f9941",
+      "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 0,
     "_fillType": 0,
@@ -472,7 +471,8 @@
     "__prefab": null,
     "_materials": [
       {
-        "__uuid__": "54146e62-e98f-4092-bb73-6b8374a3256a"
+        "__uuid__": "54146e62-e98f-4092-bb73-6b8374a3256a",
+        "__expectedType__": "cc.Material"
       }
     ],
     "_visFlags": 0,
@@ -480,7 +480,8 @@
       "__id__": 14
     },
     "_mesh": {
-      "__uuid__": "054daf25-262f-4267-92ba-e8bd2d1c2bb7@82fcb"
+      "__uuid__": "054daf25-262f-4267-92ba-e8bd2d1c2bb7@82fcb",
+      "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
     "_shadowReceivingMode": 1,
@@ -523,7 +524,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 100,
@@ -605,7 +605,8 @@
     "_enabled": true,
     "__prefab": null,
     "prefab": {
-      "__uuid__": "054daf25-262f-4267-92ba-e8bd2d1c2bb7@5f176"
+      "__uuid__": "054daf25-262f-4267-92ba-e8bd2d1c2bb7@5f176",
+      "__expectedType__": "cc.Prefab"
     },
     "_id": "a6NH7Dj9tMVbatCdgoxYyz"
   },
@@ -714,7 +715,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 100,
@@ -757,7 +757,8 @@
     "_overflow": 1,
     "_enableWrapText": false,
     "_font": {
-      "__uuid__": "5b9cbc23-76b3-41ff-9953-4219fdbea72c"
+      "__uuid__": "5b9cbc23-76b3-41ff-9953-4219fdbea72c",
+      "__expectedType__": "cc.TTFFont"
     },
     "_isSystemFontUsed": false,
     "_isItalic": false,
@@ -776,7 +777,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 80,
@@ -810,7 +810,8 @@
       "a": 255
     },
     "_spriteFrame": {
-      "__uuid__": "877e09bf-ded6-4b38-a1a5-eab3f11b099e@f9941"
+      "__uuid__": "877e09bf-ded6-4b38-a1a5-eab3f11b099e@f9941",
+      "__expectedType__": "cc.SpriteFrame"
     },
     "_type": 0,
     "_fillType": 0,
@@ -920,7 +921,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 960,
@@ -973,7 +973,8 @@
     "__prefab": null,
     "_materials": [
       {
-        "__uuid__": "a2063c10-50b1-439d-b8ec-1f4bcbfe4fdb"
+        "__uuid__": "a2063c10-50b1-439d-b8ec-1f4bcbfe4fdb",
+        "__expectedType__": "cc.Material"
       }
     ],
     "_visFlags": 0,
@@ -981,7 +982,8 @@
       "__id__": 36
     },
     "_mesh": {
-      "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@fc873"
+      "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@fc873",
+      "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
     "_shadowReceivingMode": 1,
@@ -1281,11 +1283,10 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 420,
-      "height": 90.4
+      "height": 130.4
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1314,7 +1315,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "如果是横屏的，可以看到一只横向被压扁的鸭子\n如果是竖屏的，可以看到一只纵向被压扁的鸭子",
+    "_string": "如果是横屏的，可以看到一只横向被压扁的鸭子\n如果是竖屏的，可以看到一只纵向被压扁的鸭子\n(该场景材质暂不支持延迟管线）",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 20,
@@ -1348,7 +1349,7 @@
     "_left": 0,
     "_right": 0,
     "_top": 0,
-    "_bottom": 44.8,
+    "_bottom": 24.799999999999997,
     "_horizontalCenter": 0,
     "_verticalCenter": 0,
     "_isAbsLeft": true,
@@ -1421,7 +1422,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 303.35,
@@ -1596,7 +1596,6 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "_priority": 0,
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 960,
@@ -1707,6 +1706,10 @@
     "_autoAdapt": true,
     "_pcf": 0,
     "_bias": 0.00001,
+    "_packing": false,
+    "_linear": true,
+    "_selfShadow": false,
+    "_normalBias": 0,
     "_near": 1,
     "_far": 30,
     "_aspect": 1,

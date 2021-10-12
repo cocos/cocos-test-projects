@@ -10,18 +10,18 @@
   "_defines": [
     {
       "USE_TEXTURE": true,
-      "FLIP_UV": true
+      "SAMPLE_FROM_RT": true
     }
   ],
   "_states": [
     {
+      "rasterizerState": {},
+      "depthStencilState": {},
       "blendState": {
         "targets": [
           {}
         ]
-      },
-      "depthStencilState": {},
-      "rasterizerState": {}
+      }
     }
   ],
   "_props": [

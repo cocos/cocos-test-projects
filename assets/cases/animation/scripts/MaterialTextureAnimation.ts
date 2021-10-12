@@ -18,20 +18,27 @@ export class MaterialTextureAnimation extends Component {
             error(`Animation component is required for this script.`);
             return;
         }
-        const clip = createMaterialTextureAnimationClip(this.textures);
-        animationComponent.clips = [ clip ];
+        const clip = createMaterialTextureAnimationClip(this.textures, 0);
+        clip.name = 'forward';
+        const clip2 = createMaterialTextureAnimationClip(this.textures, 1);
+        clip2.name = 'deferred';
+        animationComponent.clips = [ clip, clip2 ];
         animationComponent.defaultClip = clip;
-        animationComponent.playOnLoad = true;
+        //animationComponent.playOnLoad = true;
+        const state1 = animationComponent.getAnimationState('forward');
+        state1.play();
+        const state2 = animationComponent.getAnimationState('deferred');
+        state2.play();
     }
 }
 
-function createMaterialTextureAnimationClip(textures: Texture2D[]) {
+function createMaterialTextureAnimationClip(textures: Texture2D[], passIndex: number) {
     // Animate every texture for 1 sec.
     const defaultKeys = textures.map((texture, index) => index);
 
     // Setup the value adapter.
     const uca = new UniformCurveValueAdapter();
-    uca.passIndex = 0;
+    uca.passIndex = passIndex;
     uca.uniformName = 'albedoMap';
 
     const animationClip = new AnimationClip();
