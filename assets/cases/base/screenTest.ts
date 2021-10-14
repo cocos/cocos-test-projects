@@ -8,18 +8,13 @@ export class ScreenTest extends Component {
     @property(Toggle)
     toggleFullscreen: Toggle = null!;
 
-    @property(Node)
-    public noSupport: Node = null!
-
     start () {
         if (screen.supportsFullScreen) {
-            this.noSupport.active = false;
+            this.toggleFullscreen.isChecked = screen.fullScreen();
+            this.toggleFullscreen.node.on(Toggle.EventType.TOGGLE, this.onToggle, this);
         } else {
-            this.noSupport.active = true;
-            return;
+            this.toggleFullscreen.node.active = false;
         }
-        this.toggleFullscreen.isChecked = screen.fullScreen();
-        this.toggleFullscreen.node.on(Toggle.EventType.TOGGLE, this.onToggle, this);
     }
 
     onToggle (toggle: Toggle) {
@@ -32,5 +27,21 @@ export class ScreenTest extends Component {
                 log('on exit fullscreen');
             }).catch(e => {});
         }
+    }
+
+    scaleTo_0_1_X () {
+        screen.resolutionScale = 0.1;
+    }
+
+    scaleTo_0_5_X () {
+        screen.resolutionScale = 0.5;
+    }
+
+    scaleTo_1_0_X () {
+        screen.resolutionScale = 1;
+    }
+    
+    scaleTo_2_0_X () {
+        screen.resolutionScale = 2;
     }
 }
