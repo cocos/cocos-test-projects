@@ -22,16 +22,8 @@ export class RenderTextureSample extends Component {
     @property(RenderTexture)
     public renderTexture2: RenderTexture | null = null;
 
-    @property(MeshRenderer)
-    public meshRenderer1: MeshRenderer | null = null;
-
-    @property(MeshRenderer)
-    public meshRenderer2: MeshRenderer | null = null;
-
     start () {
         this.renderTexture1!.setWrapMode(RenderTexture.WrapMode.CLAMP_TO_EDGE, RenderTexture.WrapMode.CLAMP_TO_EDGE);
-        this.meshRenderer1!.getMaterial(0)!.setProperty('mainTexture', this.renderTexture1);
-        this.meshRenderer2!.getMaterial(0)!.setProperty('mainTexture', this.renderTexture2);
     }
 
     // update (deltaTime: number) {

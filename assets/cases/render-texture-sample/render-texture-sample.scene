@@ -30,7 +30,7 @@
         "__id__": 18
       },
       {
-        "__id__": 22
+        "__id__": 21
       },
       {
         "__id__": 24
@@ -38,10 +38,12 @@
     ],
     "_active": true,
     "_components": [],
-    "_prefab": null,
+    "_prefab": {
+      "__id__": 36
+    },
     "autoReleaseAssets": false,
     "_globals": {
-      "__id__": 36
+      "__id__": 37
     },
     "_id": "4ce0df5e-949c-4a3b-ac2c-ed37b80e2ff6"
   },
@@ -109,7 +111,9 @@
     "_staticSettings": {
       "__id__": 4
     },
+    "_illuminanceHDR": 65000,
     "_illuminance": 65000,
+    "_illuminanceLDR": 1.6927083333333335,
     "_id": "597uMYCbhEtJQc0ffJlcgA"
   },
   {
@@ -666,41 +670,7 @@
       "__uuid__": "e5a1d832-677a-40ca-8b08-753f1c2fabdb",
       "__expectedType__": "cc.RenderTexture"
     },
-    "meshRenderer1": {
-      "__id__": 16
-    },
-    "meshRenderer2": {
-      "__id__": 21
-    },
     "_id": "baA7f3Bd1IRqErR4fhGd4m"
-  },
-  {
-    "__type__": "cc.MeshRenderer",
-    "_name": "Quad<ModelComponent>",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 22
-    },
-    "_enabled": true,
-    "__prefab": null,
-    "_materials": [
-      {
-        "__uuid__": "f56257b6-0cf6-4e7c-8426-30e582df5633",
-        "__expectedType__": "cc.Material"
-      }
-    ],
-    "_visFlags": 0,
-    "lightmapSettings": {
-      "__id__": 23
-    },
-    "_mesh": {
-      "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@fc873",
-      "__expectedType__": "cc.Mesh"
-    },
-    "_shadowCastingMode": 0,
-    "_shadowReceivingMode": 1,
-    "_enableMorph": true,
-    "_id": "d3Hl5S0A9MhapR7ccsH8LK"
   },
   {
     "__type__": "cc.Node",
@@ -713,7 +683,7 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 21
+        "__id__": 22
       }
     ],
     "_prefab": null,
@@ -744,6 +714,34 @@
       "z": 0
     },
     "_id": "62g/pZ6mJGYaSGnr7S849C"
+  },
+  {
+    "__type__": "cc.MeshRenderer",
+    "_name": "Quad<ModelComponent>",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 21
+    },
+    "_enabled": true,
+    "__prefab": null,
+    "_materials": [
+      {
+        "__uuid__": "f56257b6-0cf6-4e7c-8426-30e582df5633",
+        "__expectedType__": "cc.Material"
+      }
+    ],
+    "_visFlags": 0,
+    "lightmapSettings": {
+      "__id__": 23
+    },
+    "_mesh": {
+      "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@fc873",
+      "__expectedType__": "cc.Mesh"
+    },
+    "_shadowCastingMode": 0,
+    "_shadowReceivingMode": 1,
+    "_enableMorph": true,
+    "_id": "d3Hl5S0A9MhapR7ccsH8LK"
   },
   {
     "__type__": "cc.ModelLightmapSettings",
@@ -876,7 +874,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 320,
+    "_orthoHeight": 375.2112676056338,
     "_near": 1,
     "_far": 2000,
     "_color": {
@@ -1180,36 +1178,70 @@
     "_id": "f9h8hi5bFEKZ0hFgbYeAsj"
   },
   {
+    "__type__": "cc.PrefabInfo",
+    "fileId": "4ce0df5e-949c-4a3b-ac2c-ed37b80e2ff6"
+  },
+  {
     "__type__": "cc.SceneGlobals",
     "ambient": {
-      "__id__": 37
-    },
-    "shadows": {
       "__id__": 38
     },
-    "_skybox": {
+    "shadows": {
       "__id__": 39
     },
-    "fog": {
+    "_skybox": {
       "__id__": 40
+    },
+    "fog": {
+      "__id__": 41
     }
   },
   {
     "__type__": "cc.AmbientInfo",
-    "_skyColor": {
-      "__type__": "cc.Color",
-      "r": 51,
-      "g": 128,
-      "b": 204,
-      "a": 1
+    "_skyColorHDR": {
+      "__type__": "cc.Vec4",
+      "x": 0.2,
+      "y": 0.5019607843137255,
+      "z": 0.8,
+      "w": 0.520833125
     },
+    "_skyColor": {
+      "__type__": "cc.Vec4",
+      "x": 0.2,
+      "y": 0.5019607843137255,
+      "z": 0.8,
+      "w": 0.520833125
+    },
+    "_skyIllumHDR": 20000,
     "_skyIllum": 20000,
+    "_groundAlbedoHDR": {
+      "__type__": "cc.Vec4",
+      "x": 0.2,
+      "y": 0.2,
+      "z": 0.2,
+      "w": 1
+    },
     "_groundAlbedo": {
-      "__type__": "cc.Color",
-      "r": 51,
-      "g": 51,
-      "b": 51,
-      "a": 255
+      "__type__": "cc.Vec4",
+      "x": 0.2,
+      "y": 0.2,
+      "z": 0.2,
+      "w": 1
+    },
+    "_skyColorLDR": {
+      "__type__": "cc.Vec4",
+      "x": 0.2,
+      "y": 0.5019607843137255,
+      "z": 0.8,
+      "w": 0.00392156862745098
+    },
+    "_skyIllumLDR": 0.78125,
+    "_groundAlbedoLDR": {
+      "__type__": "cc.Vec4",
+      "x": 0.2,
+      "y": 0.2,
+      "z": 0.2,
+      "w": 1
     }
   },
   {
@@ -1230,6 +1262,7 @@
       "b": 76,
       "a": 255
     },
+    "_firstSetCSM": false,
     "_fixedArea": false,
     "_pcf": 0,
     "_bias": 0.00001,
@@ -1249,10 +1282,15 @@
   },
   {
     "__type__": "cc.SkyboxInfo",
+    "_applyDiffuseMap": false,
+    "_envmapHDR": null,
     "_envmap": null,
-    "_isRGBE": false,
+    "_envmapLDR": null,
+    "_diffuseMapHDR": null,
+    "_diffuseMapLDR": null,
     "_enabled": false,
-    "_useIBL": false
+    "_useIBL": false,
+    "_useHDR": true
   },
   {
     "__type__": "cc.FogInfo",
