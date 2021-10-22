@@ -23,7 +23,7 @@ export class RenderTextureSample extends Component {
     public renderTexture2: RenderTexture | null = null;
 
     start () {
-        this.renderTexture1!.setWrapMode(RenderTexture.WrapMode.CLAMP_TO_EDGE, RenderTexture.WrapMode.CLAMP_TO_EDGE);
+        // this.renderTexture1!.setWrapMode(RenderTexture.WrapMode.CLAMP_TO_EDGE, RenderTexture.WrapMode.CLAMP_TO_EDGE);
     }
 
     // update (deltaTime: number) {
