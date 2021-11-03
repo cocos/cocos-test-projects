@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, ScrollView } from 'cc';
+import { _decorator, Component, Node, ScrollView, Label, find } from 'cc';
 const { ccclass, property } = _decorator;
 
 /**
@@ -23,17 +23,35 @@ export class ScrollViewBounceBack extends Component {
     // @property
     // serializableDummy = 0;
 
+    logLabel:Label = null!;
+    scrollingCounter: number = 0;
+
     start () {
         // [3]
         let com = this.node.getComponent(ScrollView);
-        com?.node.on('scrolling',()=>{
-            console.log('scrolling')
-        },this)
+        this.logLabel = find('Canvas/LogLabel')?.getComponent<Label>(Label)!;
+
+        this.logLabel.string = '拖动以查看log打印次数';
+
+        com?.node.on('scrolling', this.onScrollingCallback, this);
+        com?.node.on(Node.EventType.TOUCH_START, this.onTouchStartCallback, this, true);
     }
 
     // update (deltaTime: number) {
     //     // [4]
     // }
+
+
+    protected onScrollingCallback() {
+        console.log('scrolling')
+        this.scrollingCounter++;
+        this.logLabel.string = `scrolling * ${this.scrollingCounter}`;
+    }
+
+    protected onTouchStartCallback () {
+        this.scrollingCounter = 0;
+        this.logLabel.string = '';
+    }
 }
 
 /**
