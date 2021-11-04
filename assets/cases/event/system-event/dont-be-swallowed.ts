@@ -41,7 +41,7 @@ const { ccclass, property } = _decorator;
      }
  
      dontBeSwallowed (event: EventMouse | EventTouch) {
-         event.swallowEvent = false;
+         event.preventSwallow = true;
      }
  }
 
