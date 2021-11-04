@@ -20,7 +20,6 @@ const { ccclass, property } = _decorator;
          this.node.on(Node.EventType.MOUSE_DOWN, this.dontBeSwallowed, this);
          this.node.on(Node.EventType.MOUSE_MOVE, this.dontBeSwallowed, this);
          this.node.on(Node.EventType.MOUSE_UP, this.dontBeSwallowed, this);
-         this.node.on(Node.EventType.MOUSE_UP, this.dontBeSwallowed, this);
          this.node.on(Node.EventType.MOUSE_WHEEL, this.dontBeSwallowed, this);
          this.node.on(Node.EventType.TOUCH_START, this.dontBeSwallowed, this);
          this.node.on(Node.EventType.TOUCH_MOVE, this.dontBeSwallowed, this);
@@ -31,7 +30,6 @@ const { ccclass, property } = _decorator;
      onDestroy () {
          this.node.off(Node.EventType.MOUSE_DOWN, this.dontBeSwallowed, this);
          this.node.off(Node.EventType.MOUSE_MOVE, this.dontBeSwallowed, this);
-         this.node.off(Node.EventType.MOUSE_UP, this.dontBeSwallowed, this);
          this.node.off(Node.EventType.MOUSE_UP, this.dontBeSwallowed, this);
          this.node.off(Node.EventType.MOUSE_WHEEL, this.dontBeSwallowed, this);
          this.node.off(Node.EventType.TOUCH_START, this.dontBeSwallowed, this);
