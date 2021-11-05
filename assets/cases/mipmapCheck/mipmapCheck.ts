@@ -73,6 +73,7 @@ export class MipmapCheck extends Component {
             return;
         }
         if (this.moveCount >= 2) {
+            this.mat!.setProperty('albedoMap', null);
             this.textureUsed?.destroy();
             this.textureUsed = null;
             return;
