@@ -23,10 +23,12 @@
     ],
     "_active": true,
     "_components": [],
-    "_prefab": null,
+    "_prefab": {
+      "__id__": 140
+    },
     "autoReleaseAssets": false,
     "_globals": {
-      "__id__": 131
+      "__id__": 141
     },
     "_id": "0541b77f-69bc-48f5-ae14-51dbd4047dec"
   },
@@ -94,7 +96,9 @@
     "_staticSettings": {
       "__id__": 4
     },
+    "_illuminanceHDR": 65000,
     "_illuminance": 65000,
+    "_illuminanceLDR": 1.6927083333333335,
     "_id": "597uMYCbhEtJQc0ffJlcgA"
   },
   {
@@ -132,21 +136,24 @@
       },
       {
         "__id__": 62
+      },
+      {
+        "__id__": 124
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 124
+        "__id__": 133
       },
       {
-        "__id__": 126
+        "__id__": 135
       },
       {
-        "__id__": 128
+        "__id__": 137
       },
       {
-        "__id__": 130
+        "__id__": 139
       }
     ],
     "_prefab": null,
@@ -1355,7 +1362,7 @@
       "__id__": 5
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 53
@@ -1368,7 +1375,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 167.348,
+      "y": 147.348,
       "z": 0
     },
     "_lrot": {
@@ -1406,7 +1413,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 612.55,
+      "width": 645.88,
       "height": 290.4
     },
     "_anchorPoint": {
@@ -1442,7 +1449,7 @@
       "b": 255,
       "a": 255
     },
-    "_string": "预期：\n- FULL SCREEN 开关在不支持的平台上不显示, 已知不支持的平台：小游戏和 runtime 平台\n- 勾上 FULL SCREEN，测试例进入全屏模式\n- 取消 FULL SCREEN，测试例退出全屏模式\n- FULL SCREEN 勾选状态应该和屏幕状态同步，即使从另一个场景进入\n- 点击清晰度按钮，会修改画面清晰度，其中 2.0X 是超清，在大部分平台上跟 1.0X 差异不大\n- 任何情况下，EditBox 都应该能够正常输入, 按钮也可以正常使用",
+    "_string": "预期：\n- FULL SCREEN 开关在不支持的平台上不显示, 已知不支持的平台：小游戏, runtime  和 原生平台\n- 勾上 FULL SCREEN，测试例进入全屏模式\n- 取消 FULL SCREEN，测试例退出全屏模式\n- FULL SCREEN 勾选状态应该和屏幕状态同步，即使从另一个场景进入\n- 点击清晰度按钮，会修改画面清晰度，其中 2.0X 是超清，在大部分平台上跟 1.0X 差异不大\n- 任何情况下，EditBox 都应该能够正常输入, 按钮也可以正常使用",
     "_horizontalAlign": 0,
     "_verticalAlign": 1,
     "_actualFontSize": 15,
@@ -1466,7 +1473,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "Label-001",
+    "_name": "Label2",
     "_objFlags": 0,
     "_parent": {
       "__id__": 5
@@ -1485,7 +1492,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 3.022,
+      "y": 79.021,
       "z": 0
     },
     "_lrot": {
@@ -1508,7 +1515,7 @@
       "y": 0,
       "z": 0
     },
-    "_id": "5exKPfKzxLD41/2T9KKePs"
+    "_id": "82+Alwgo1Gc5T9bc8gcD2L"
   },
   {
     "__type__": "cc.UITransform",
@@ -1523,15 +1530,15 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 614.78,
-      "height": 50.4
+      "width": 476.69,
+      "height": 210.4
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
       "x": 0.5,
       "y": 0.5
     },
-    "_id": "ecgyCjzoZKaKRil4/Oz+Fu"
+    "_id": "4ah99BqPdFkqUyBQu9Sye0"
   },
   {
     "__type__": "cc.CompPrefabInfo",
@@ -1554,12 +1561,12 @@
     "_dstBlendFactor": 4,
     "_color": {
       "__type__": "cc.Color",
-      "r": 211,
-      "g": 132,
-      "b": 132,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
-    "_string": "- 不支持修改清晰度的平台：OPPO, vivo, 华为快游戏, 连尚, CocosPlay, 趣头条，百度 iOS 端",
+    "_string": "预期：\n- 勾上 FULL SCREEN，测试例进入全屏模式\n- 取消 FULL SCREEN，测试例退出全屏模式\n- FULL SCREEN 勾选状态应该和屏幕状态同步，即使从另一个场景进入\n- 任何情况下，EditBox 都应该能够正常输入, 按钮也可以正常使用",
     "_horizontalAlign": 0,
     "_verticalAlign": 1,
     "_actualFontSize": 15,
@@ -1575,7 +1582,7 @@
     "_isUnderline": false,
     "_underlineHeight": 2,
     "_cacheMode": 0,
-    "_id": "8e6VS47cBKw5t1lT4B2hVE"
+    "_id": "16W/olaMNJ36m9URUolh78"
   },
   {
     "__type__": "cc.CompPrefabInfo",
@@ -1605,7 +1612,7 @@
         "__id__": 107
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 120
@@ -3139,6 +3146,126 @@
     "fileId": "eaGEkmlCpANK+GS6CImtZa"
   },
   {
+    "__type__": "cc.Node",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 5
+    },
+    "_prefab": {
+      "__id__": 125
+    }
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 124
+    },
+    "asset": {
+      "__uuid__": "ef1f3d75-3557-486e-bab0-7171f2455a6b",
+      "__expectedType__": "cc.Prefab"
+    },
+    "fileId": "29Y+NKVVdCX63oTAREo4MJ",
+    "instance": {
+      "__id__": 126
+    }
+  },
+  {
+    "__type__": "cc.PrefabInstance",
+    "fileId": "0dt6Gc9FRLWKvkWAqggX3W",
+    "mountedChildren": [],
+    "mountedComponents": [],
+    "propertyOverrides": [
+      {
+        "__id__": 127
+      },
+      {
+        "__id__": 129
+      },
+      {
+        "__id__": 130
+      },
+      {
+        "__id__": 131
+      },
+      {
+        "__id__": 132
+      }
+    ],
+    "removedComponents": []
+  },
+  {
+    "__type__": "CCPropertyOverrideInfo",
+    "targetInfo": {
+      "__id__": 128
+    },
+    "propertyPath": [
+      "_name"
+    ],
+    "value": "NotSupportTip"
+  },
+  {
+    "__type__": "cc.TargetInfo",
+    "localID": [
+      "29Y+NKVVdCX63oTAREo4MJ"
+    ]
+  },
+  {
+    "__type__": "CCPropertyOverrideInfo",
+    "targetInfo": {
+      "__id__": 128
+    },
+    "propertyPath": [
+      "_lpos"
+    ],
+    "value": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    }
+  },
+  {
+    "__type__": "CCPropertyOverrideInfo",
+    "targetInfo": {
+      "__id__": 128
+    },
+    "propertyPath": [
+      "_lrot"
+    ],
+    "value": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    }
+  },
+  {
+    "__type__": "CCPropertyOverrideInfo",
+    "targetInfo": {
+      "__id__": 128
+    },
+    "propertyPath": [
+      "_euler"
+    ],
+    "value": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    }
+  },
+  {
+    "__type__": "CCPropertyOverrideInfo",
+    "targetInfo": {
+      "__id__": 128
+    },
+    "propertyPath": [
+      "_active"
+    ],
+    "value": false
+  },
+  {
     "__type__": "cc.UITransform",
     "_name": "",
     "_objFlags": 0,
@@ -3147,7 +3274,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 125
+      "__id__": 134
     },
     "_contentSize": {
       "__type__": "cc.Size",
@@ -3174,7 +3301,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 127
+      "__id__": 136
     },
     "_cameraComponent": {
       "__id__": 7
@@ -3195,7 +3322,7 @@
     },
     "_enabled": true,
     "__prefab": {
-      "__id__": 129
+      "__id__": 138
     },
     "_alignFlags": 45,
     "_target": null,
@@ -3230,42 +3357,84 @@
     },
     "_enabled": true,
     "__prefab": null,
+    "nonSupportTop": {
+      "__id__": 124
+    },
     "toggleFullscreen": {
       "__id__": 49
     },
     "_id": "54OWpUa79OTbqg1axz4Hs6"
   },
   {
+    "__type__": "cc.PrefabInfo",
+    "fileId": "0541b77f-69bc-48f5-ae14-51dbd4047dec",
+    "nestedPrefabInstanceRoots": [
+      {
+        "__id__": 124
+      }
+    ]
+  },
+  {
     "__type__": "cc.SceneGlobals",
     "ambient": {
-      "__id__": 132
+      "__id__": 142
     },
     "shadows": {
-      "__id__": 133
+      "__id__": 143
     },
     "_skybox": {
-      "__id__": 134
+      "__id__": 144
     },
     "fog": {
-      "__id__": 135
+      "__id__": 145
     }
   },
   {
     "__type__": "cc.AmbientInfo",
-    "_skyColor": {
-      "__type__": "cc.Color",
-      "r": 51,
-      "g": 128,
-      "b": 204,
-      "a": 1
+    "_skyColorHDR": {
+      "__type__": "cc.Vec4",
+      "x": 0.2,
+      "y": 0.5019607843137255,
+      "z": 0.8,
+      "w": 0.520833125
     },
+    "_skyColor": {
+      "__type__": "cc.Vec4",
+      "x": 0.2,
+      "y": 0.5019607843137255,
+      "z": 0.8,
+      "w": 0.520833125
+    },
+    "_skyIllumHDR": 20000,
     "_skyIllum": 20000,
+    "_groundAlbedoHDR": {
+      "__type__": "cc.Vec4",
+      "x": 0.2,
+      "y": 0.2,
+      "z": 0.2,
+      "w": 1
+    },
     "_groundAlbedo": {
-      "__type__": "cc.Color",
-      "r": 51,
-      "g": 51,
-      "b": 51,
-      "a": 255
+      "__type__": "cc.Vec4",
+      "x": 0.2,
+      "y": 0.2,
+      "z": 0.2,
+      "w": 1
+    },
+    "_skyColorLDR": {
+      "__type__": "cc.Vec4",
+      "x": 0.2,
+      "y": 0.5019607843137255,
+      "z": 0.8,
+      "w": 0.00392156862745098
+    },
+    "_skyIllumLDR": 0.78125,
+    "_groundAlbedoLDR": {
+      "__type__": "cc.Vec4",
+      "x": 0.2,
+      "y": 0.2,
+      "z": 0.2,
+      "w": 1
     }
   },
   {
@@ -3286,12 +3455,15 @@
       "b": 76,
       "a": 255
     },
-    "_autoAdapt": true,
+    "_firstSetCSM": false,
+    "_fixedArea": false,
     "_pcf": 0,
     "_bias": 0.1,
     "_normalBias": 0,
     "_near": 1,
     "_far": 30,
+    "_shadowDistance": 3.4641016151377544,
+    "_invisibleOcclusionRange": 200,
     "_orthoSize": 5,
     "_maxReceived": 4,
     "_size": {
@@ -3303,10 +3475,15 @@
   },
   {
     "__type__": "cc.SkyboxInfo",
+    "_applyDiffuseMap": false,
+    "_envmapHDR": null,
     "_envmap": null,
-    "_isRGBE": false,
+    "_envmapLDR": null,
+    "_diffuseMapHDR": null,
+    "_diffuseMapLDR": null,
     "_enabled": false,
-    "_useIBL": false
+    "_useIBL": false,
+    "_useHDR": true
   },
   {
     "__type__": "cc.FogInfo",
@@ -3324,6 +3501,7 @@
     "_fogEnd": 300,
     "_fogAtten": 5,
     "_fogTop": 1.5,
-    "_fogRange": 1.2
+    "_fogRange": 1.2,
+    "_accurate": false
   }
 ]
