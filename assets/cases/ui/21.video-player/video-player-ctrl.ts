@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Slider, VideoPlayer, VideoClip, Label, sys, director, macro, Sprite } from 'cc';
+import { _decorator, Component, Node, Slider, VideoPlayer, VideoClip, Label, sys, director, macro, Sprite, input } from 'cc';
 const { ccclass, type } = _decorator;
 
 @ccclass('VideoPlayerCtrl')
@@ -23,6 +23,14 @@ export class VideoPlayerCtrl extends Component {
     public platform: Label = null!;
 
     _playbackRate = 1;
+
+    onLoad () {
+        input.dispatchImmediately = true;
+    }
+
+    onDestroy () {
+        input.dispatchImmediately = false;
+    }
 
     start () {
         // 隐藏不支持 video player 的平台
