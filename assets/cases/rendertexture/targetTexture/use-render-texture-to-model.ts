@@ -20,6 +20,7 @@ export class UseRenderTextureToModel extends Component {
             const renderMat = new Material();
             renderMat.initialize({
                 effectAsset: material.effectAsset,
+                technique: material.technique,
                 defines,
             });
             this.quad.setMaterialInstance(0, renderMat);
