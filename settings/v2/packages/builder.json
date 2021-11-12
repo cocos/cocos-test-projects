@@ -55,7 +55,10 @@
             "etc2_rgb": "fast",
             "png": 80
           },
-          "miniGame": {},
+          "miniGame": {
+            "etc2_rgb": "fast",
+            "png": 80
+          },
           "web": {
             "etc2_rgb": "fast",
             "png": 80
@@ -175,6 +178,7 @@
       "b5b67369a666804c56cd0fbdcf37450d": {
         "name": "pvr4rgb_a",
         "options": {
+          "android": {},
           "ios": {
             "pvrtc_4bits_rgb_a": "normal",
             "png": 80
@@ -231,15 +235,19 @@
         "name": "astc4x4",
         "options": {
           "android": {
-            "astc_4x4": "-medium",
+            "astc_4x4": "medium",
             "png": 80
           },
           "ios": {
-            "astc_4x4": "-medium",
+            "astc_4x4": "medium",
             "png": 80
           },
           "web": {
-            "astc_4x4": "-medium",
+            "astc_4x4": "medium",
+            "png": 80
+          },
+          "miniGame": {
+            "astc_4x4": "medium",
             "png": 80
           }
         }
@@ -248,14 +256,19 @@
         "name": "astc10x10",
         "options": {
           "android": {
-            "astc_10x10": "-medium"
+            "astc_10x10": "medium",
+            "png": 80
           },
           "ios": {
-            "astc_10x10": "-medium",
+            "astc_10x10": "medium",
             "png": 80
           },
           "web": {
-            "astc_10x10": "-medium",
+            "astc_10x10": "medium",
+            "png": 80
+          },
+          "miniGame": {
+            "astc_10x10": "medium",
             "png": 80
           }
         }
@@ -280,5 +293,5 @@
     }
   },
   "hasSetSplash": true,
-  "__version__": "1.2.8"
+  "__version__": "1.3.0"
 }
