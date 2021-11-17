@@ -4,17 +4,27 @@ const { ccclass, property } = _decorator;
 
 @ccclass('ScreenTest')
 export class ScreenTest extends Component {
+    @property(Node)
+    nonSupportTop!: Node;
     
     @property(Toggle)
     toggleFullscreen: Toggle = null!;
 
     start () {
-        if (screen.supportsFullScreen) {
-            this.toggleFullscreen.isChecked = screen.fullScreen();
-            this.toggleFullscreen.node.on(Toggle.EventType.TOGGLE, this.onToggle, this);
-        } else {
-            this.toggleFullscreen.node.active = false;
+        if (!screen.supportsFullScreen) {
+            this.nonSupportTop.active = true;
+            return;
         }
+        this.toggleFullscreen.isChecked = screen.fullScreen();
+        this.toggleFullscreen.node.on(Toggle.EventType.TOGGLE, this.onToggle, this);
+
+
+        // if (screen.supportsFullScreen) {
+        //     this.toggleFullscreen.isChecked = screen.fullScreen();
+        //     this.toggleFullscreen.node.on(Toggle.EventType.TOGGLE, this.onToggle, this);
+        // } else {
+        //     this.toggleFullscreen.node.active = false;
+        // }
     }
 
     onToggle (toggle: Toggle) {
