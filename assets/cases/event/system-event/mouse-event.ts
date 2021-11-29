@@ -58,6 +58,7 @@ export class systemEventPC extends Component {
             }
             this._timeoutId = setTimeout(() => {
                 this._ignoreMoveEvent = false;
+                this._timeoutId = -1
             }, 100);
         }
         this.labelShow.string = `MOUSE_UP: ${event.getLocation()}`;
