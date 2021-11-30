@@ -235,11 +235,16 @@ export class GeometryCreator extends Component {
         renderer.addTriangle(triangleV0, triangleV1, triangleV2, this.getNextColor(), this._wireframe, this._depthTest, this._unlit);
 
         pos.x += stepX;
-        const lineV0 = new Vec3(pos.x - 2.0, pos.y - 3.0, pos.z - 2.0);
-        const lineV1 = new Vec3(pos.x + 2.0, pos.y + 3.0, pos.z + 2.0);
+        const lineV0 = new Vec3(pos.x - 2.0, pos.y - 3.0, pos.z);
+        const lineV1 = new Vec3(pos.x + 2.0, pos.y + 3.0, pos.z);
         renderer.addLine(lineV0, lineV1, this.getNextColor(), this._depthTest);
 
         pos.x += stepX;
+        const dashedLineV0 = new Vec3(pos.x - 2.0, pos.y - 3.0, pos.z);
+        const dashedLineV1 = new Vec3(pos.x + 2.0, pos.y + 3.0, pos.z);
+        renderer.addDashedLine(dashedLineV0, dashedLineV1, this.getNextColor(), this._depthTest);
+
+        pos.x += stepX / 3.0;
         renderer.addCross(pos, 0.5, this.getNextColor(), this._depthTest);
     }
 
