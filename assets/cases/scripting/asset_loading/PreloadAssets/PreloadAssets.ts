@@ -68,7 +68,7 @@ export class PreloadAssets extends Component {
 
         this._curType = event.target.name.split('_')[1];
         if (this._lastType !== "" && this._curType === this._lastType) {
-            this.loadTips.string = ''
+            this.loadTips.string = this._curType + " Loading....";
             this._onShowResClick(event);
             return;
         }
