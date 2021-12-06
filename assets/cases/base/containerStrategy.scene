@@ -1793,7 +1793,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 825.02,
+      "width": 950.91,
       "height": 97.8
     },
     "_anchorPoint": {
@@ -1823,14 +1823,14 @@
       "b": 223,
       "a": 255
     },
-    "_string": "测试方法：\n- 可以通过 chrome 调试的真机模拟，来测试窗口拖动，开启真机模拟后需要刷新页面\n- 或者通过 PC 浏览器测试 Web-Mobile 平台也可以验证",
+    "_string": "测试方法：\n- 可以通过浏览器预览，chrome 调试的真机模拟，来测试窗口拖动，开启真机模拟后需要刷新页面，见下图\n- 或者通过 PC 浏览器测试 Web-Mobile 平台也可以验证",
     "_horizontalAlign": 0,
     "_verticalAlign": 1,
-    "_actualFontSize": 22,
+    "_actualFontSize": 20,
     "_fontSize": 22,
     "_fontFamily": "Arial",
     "_lineHeight": 30,
-    "_overflow": 0,
+    "_overflow": 2,
     "_enableWrapText": true,
     "_font": null,
     "_isSystemFontUsed": true,
@@ -2223,6 +2223,9 @@
     },
     "fog": {
       "__id__": 77
+    },
+    "octree": {
+      "__id__": 78
     }
   },
   {
@@ -2339,5 +2342,22 @@
     "_fogTop": 1.5,
     "_fogRange": 1.2,
     "_accurate": false
+  },
+  {
+    "__type__": "cc.OctreeInfo",
+    "_enabled": false,
+    "_minPos": {
+      "__type__": "cc.Vec3",
+      "x": -1024,
+      "y": -1024,
+      "z": -1024
+    },
+    "_maxPos": {
+      "__type__": "cc.Vec3",
+      "x": 1024,
+      "y": 1024,
+      "z": 1024
+    },
+    "_depth": 8
   }
 ]
