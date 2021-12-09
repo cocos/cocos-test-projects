@@ -41,7 +41,7 @@ export class Terrain123 extends Component {
     onToggle (toggle: Toggle) {
         const terrain = this.terrainNode.getComponent(Terrain) as Terrain;
         if (terrain != null) {
-            terrain.LodEnable = toggle.isChecked;
+            terrain.lodEnable = toggle.isChecked;
         }
     }
 }
