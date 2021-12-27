@@ -209,19 +209,53 @@ export class BuiltinTexturesTest extends Component {
         });
         defaultRenderMatCanvas.setProperty('mainTexture', defaultTextureCanvas, 0);
 
-        this.nodeBlack.getComponent(MeshRenderer).material   = blackRenderMat;
-        this.nodeWhite.getComponent(MeshRenderer).material   = whiteRenderMat;
-        this.nodeGrey.getComponent(MeshRenderer).material    = greyRenderMat;
-        this.nodeEmpty.getComponent(MeshRenderer).material   = emptyRenderMat;
-        this.nodeNormal.getComponent(MeshRenderer).material  = normalRenderMat;
-        this.nodeDefault.getComponent(MeshRenderer).material = defaultRenderMat;
+        if (this.nodeBlack) {
+            this.nodeBlack.getComponent(MeshRenderer).material   = blackRenderMat;
+        }
 
-        this.nodeBlack1.getComponent(MeshRenderer).material   = blackRenderMatCanvas;
-        this.nodeWhite1.getComponent(MeshRenderer).material   = whiteRenderMatCanvas;
-        this.nodeGrey1.getComponent(MeshRenderer).material    = greyRenderMatCanvas;
-        this.nodeEmpty1.getComponent(MeshRenderer).material   = emptyRenderMatCanvas;
-        this.nodeNormal1.getComponent(MeshRenderer).material  = normalRenderMatCanvas;
-        this.nodeDefault1.getComponent(MeshRenderer).material = defaultRenderMatCanvas;
+        if (this.nodeWhite) {
+            this.nodeWhite.getComponent(MeshRenderer).material   = whiteRenderMat;
+        }
+
+        if (this.nodeGrey) {
+            this.nodeGrey.getComponent(MeshRenderer).material    = greyRenderMat;
+        }
+
+        if (this.nodeEmpty) {
+            this.nodeEmpty.getComponent(MeshRenderer).material   = emptyRenderMat;
+        }
+
+        if (this.nodeNormal) {
+            this.nodeNormal.getComponent(MeshRenderer).material  = normalRenderMat;
+        }
+
+        if (this.nodeDefault) {
+            this.nodeDefault.getComponent(MeshRenderer).material = defaultRenderMat;
+        }
+
+        if (this.nodeBlack1) {
+            this.nodeBlack1.getComponent(MeshRenderer).material   = blackRenderMatCanvas;
+        }
+
+        if (this.nodeWhite1) {
+            this.nodeWhite1.getComponent(MeshRenderer).material   = whiteRenderMatCanvas;
+        }
+
+        if (this.nodeGrey1) {
+            this.nodeGrey1.getComponent(MeshRenderer).material    = greyRenderMatCanvas;
+        }
+
+        if (this.nodeEmpty1) {
+            this.nodeEmpty1.getComponent(MeshRenderer).material   = emptyRenderMatCanvas;
+        }
+
+        if (this.nodeNormal1) {
+            this.nodeNormal1.getComponent(MeshRenderer).material  = normalRenderMatCanvas;
+        }
+
+        if (this.nodeDefault1) {
+            this.nodeDefault1.getComponent(MeshRenderer).material = defaultRenderMatCanvas;
+        }
 
         const defaultCubeTexture = builtinResMgr.get<TextureCube>("default-cube-texture");
         director.getScene().globals.skybox.envmap = defaultCubeTexture;
