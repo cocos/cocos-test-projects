@@ -26,13 +26,13 @@ export class event_order extends Component {
     @property(Label)
     tip!: Label;
 
-    onLoad () {
+    onEnable () {
         this.btn1.on(Node.EventType.TOUCH_START, this.touchBtn1, this);
         this.btn2.on(Node.EventType.TOUCH_START, this.touchBtn2, this);
         input.on(Input.EventType.TOUCH_START, this.inputTouch, this);
     }
 
-    onDestroy () {
+    onDisable () {
         this.btn1.off(Node.EventType.TOUCH_START, this.touchBtn1, this);
         this.btn2.off(Node.EventType.TOUCH_START, this.touchBtn2, this);
         input.off(Input.EventType.TOUCH_START, this.inputTouch, this);
