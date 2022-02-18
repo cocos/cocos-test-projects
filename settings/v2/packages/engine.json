@@ -46,7 +46,7 @@
       },
       "physics-2d": {
         "_value": true,
-        "_option": "physics-2d-box2d"
+        "_option": "physics-2d-builtin"
       },
       "physics-2d-box2d": {
         "_value": true
@@ -89,6 +89,9 @@
       },
       "dragon-bones": {
         "_value": true
+      },
+      "marionette": {
+        "_value": true
       }
     },
     "includeModules": [
@@ -99,6 +102,7 @@
       "video",
       "webview",
       "tween",
+      "marionette",
       "3d",
       "particle",
       "physics-cannon",
@@ -106,7 +110,7 @@
       "terrain",
       "2d",
       "ui",
-      "physics-2d-box2d",
+      "physics-2d-builtin",
       "intersection-2d",
       "particle-2d",
       "tiled-map",
