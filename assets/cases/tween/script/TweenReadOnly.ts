@@ -48,13 +48,19 @@ export class TweenReadOnly extends Component {
     tweenStart() {
         tween(this.spriteRed.node)
             .to(2,{position:new Vec3(this.oriRedPos.x,-200,0)})
-            .call(()=>{this.spriteRed.node.position = new Vec3(this.oriRedPos.x,0,0)})
+            .call(()=> {
+                if(this.spriteRed && this.spriteRed.node) {
+                    this.spriteRed.node.position = new Vec3(this.oriRedPos.x,0,0)
+            }})
             .union()
             .repeatForever()
             .start();
         tween(this.spriteGreen.node.position)
             .to(2,{y:-200})
-            .call(()=>{this.spriteRed.node.position = new Vec3(this.oriRedPos.x,0,0)})
+            .call(()=>{
+                if(this.spriteGreen && this.spriteGreen.node) {
+                    this.spriteGreen.node.position = new Vec3(this.oriGreenPos.x,0,0)
+            }})
             .union()
             .repeatForever()
             .start();
