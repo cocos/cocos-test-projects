@@ -3,10 +3,10 @@ CCEffect %{
   - passes:
     - vert: complex-vs:vert
       frag: complex-fs:frag
-      priority: max - 10
+      properties: &props
+        mainTexture: { target: cubeMap, editor: { displayName: cubeMap } }
       rasterizerState:
         cullMode: back
-      embeddedMacros: { USE_RGBE_CUBEMAP: true }
       depthStencilState:
         depthTest: true
         depthWrite: false
@@ -16,7 +16,6 @@ CCEffect %{
           blendSrc: src_alpha
           blendDst: one_minus_src_alpha
           blendDstAlpha: one_minus_src_alpha
-
 }%
 
 CCProgram complex-vs %{

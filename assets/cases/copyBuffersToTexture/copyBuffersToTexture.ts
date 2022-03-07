@@ -177,6 +177,7 @@ export class copyBuffersToTexture extends Component {
             this.planarMat!.setProperty('albedoMap', this.planarTexture);
             this.cubeMat!.setProperty('cubeMap', this.cubeTexture);
             this.ready = true;
+            director.getScene()!.globals.skybox.envmap = this.cubeTexture;
         }, 1);
     }
 }
