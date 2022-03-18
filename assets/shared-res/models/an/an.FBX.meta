@@ -1,5 +1,5 @@
 {
-  "ver": "2.1.4",
+  "ver": "2.1.10",
   "importer": "fbx",
   "imported": true,
   "uuid": "a01bd6de-537f-46e2-b381-4e133073b368",
@@ -56,40 +56,6 @@
       ],
       "subMetas": {}
     },
-    "edc98": {
-      "importer": "gltf-embeded-image",
-      "uuid": "a01bd6de-537f-46e2-b381-4e133073b368@edc98",
-      "displayName": "",
-      "id": "edc98",
-      "name": "3.png.image",
-      "userData": {
-        "gltfIndex": 0
-      },
-      "ver": "1.0.3",
-      "imported": true,
-      "files": [
-        ".png",
-        ".json"
-      ],
-      "subMetas": {}
-    },
-    "bb6d2": {
-      "importer": "gltf-embeded-image",
-      "uuid": "a01bd6de-537f-46e2-b381-4e133073b368@bb6d2",
-      "displayName": "",
-      "id": "bb6d2",
-      "name": "youanzong.png.image",
-      "userData": {
-        "gltfIndex": 1
-      },
-      "ver": "1.0.3",
-      "imported": true,
-      "files": [
-        ".png",
-        ".json"
-      ],
-      "subMetas": {}
-    },
     "b10ef": {
       "importer": "texture",
       "uuid": "a01bd6de-537f-46e2-b381-4e133073b368@b10ef",
@@ -103,8 +69,8 @@
         "magfilter": "linear",
         "mipfilter": "none",
         "anisotropy": 0,
-        "isUuid": true,
-        "imageUuidOrDatabaseUri": "a01bd6de-537f-46e2-b381-4e133073b368@edc98"
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/shared-res/models/an/3.png"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -126,8 +92,8 @@
         "magfilter": "linear",
         "mipfilter": "none",
         "anisotropy": 0,
-        "isUuid": true,
-        "imageUuidOrDatabaseUri": "a01bd6de-537f-46e2-b381-4e133073b368@bb6d2"
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/shared-res/models/an/youanzong.png"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -156,12 +122,12 @@
   "userData": {
     "imageMetas": [
       {
-        "name": "3.png",
-        "uri": "a01bd6de-537f-46e2-b381-4e133073b368@edc98"
+        "name": "3",
+        "uri": "db://assets/shared-res/models/an/3.png"
       },
       {
-        "name": "youanzong.png",
-        "uri": "a01bd6de-537f-46e2-b381-4e133073b368@bb6d2"
+        "name": "youanzong",
+        "uri": "db://assets/shared-res/models/an/youanzong.png"
       }
     ],
     "legacyFbxImporter": true,

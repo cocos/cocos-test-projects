@@ -95,6 +95,7 @@ CCProgram toon-vs %{
   precision highp float;
   #include <input-standard>
   #include <cc-global>
+  #include <decode-base>
   #include <cc-local-batch>
   #include <shared-ubos>
   #include <cc-shadow-map-vs>
@@ -166,7 +167,7 @@ CCProgram toon-fs %{
   #endif
 
   #if USE_ALPHA_TEST
-    #pragma define ALPHA_TEST_CHANNEL options([a, r, g, b])
+    #pragma define-meta ALPHA_TEST_CHANNEL options([a, r, g, b])
   #endif
 
   void surf (out ToonSurface s) {
@@ -238,6 +239,7 @@ CCProgram toon-fs %{
 CCProgram shadow-caster-vs %{
   precision highp float;
   #include <input-standard>
+  #include <decode-base>
   #include <cc-local-batch>
   #include <shared-ubos>
   #include <cc-shadow>
@@ -275,7 +277,7 @@ CCProgram shadow-caster-fs %{
   #endif
 
   #if USE_ALPHA_TEST
-    #pragma define ALPHA_TEST_CHANNEL options([a, r, g, b])
+    #pragma define-meta ALPHA_TEST_CHANNEL options([a, r, g, b])
   #endif
 
   vec4 frag () {

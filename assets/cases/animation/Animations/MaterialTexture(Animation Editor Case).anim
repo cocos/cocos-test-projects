@@ -7,92 +7,44 @@
     "sample": 1,
     "speed": 1,
     "wrapMode": 2,
-    "events": [],
     "enableTrsBlending": false,
     "_duration": 5,
-    "_keys": [
-      [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      [
-        0,
-        2,
-        4
-      ]
-    ],
-    "_stepness": 0,
-    "_curves": [
+    "_hash": 268957066,
+    "_tracks": [
       {
-        "modifiers": [
-          {
-            "__id__": 1
-          },
-          "materials",
-          0
-        ],
-        "valueAdapter": {
-          "__id__": 2
-        },
-        "data": {
-          "keys": 0,
-          "values": [
-            {
-              "__uuid__": "955ddf8f-65a0-4d76-b84d-542310d6ebee@6c48a",
-              "__expectedType__": "cc.Texture2D"
-            },
-            null,
-            {
-              "__uuid__": "b765d1e8-3909-48fe-9163-35c04c6f0e0b@6c48a",
-              "__expectedType__": "cc.Texture2D"
-            },
-            null,
-            {
-              "__uuid__": "293b879a-48d1-452a-93d6-073b11587d46@6c48a",
-              "__expectedType__": "cc.Texture2D"
-            },
-            null
-          ],
-          "easingMethods": {}
-        }
+        "__id__": 1
       },
       {
-        "modifiers": [
-          {
-            "__id__": 3
-          },
-          "materials",
-          0
-        ],
-        "valueAdapter": {
-          "__id__": 4
-        },
-        "data": {
-          "keys": 1,
-          "values": [
-            {
-              "__uuid__": "955ddf8f-65a0-4d76-b84d-542310d6ebee@6c48a",
-              "__expectedType__": "cc.Texture2D"
-            },
-            {
-              "__uuid__": "b765d1e8-3909-48fe-9163-35c04c6f0e0b@6c48a",
-              "__expectedType__": "cc.Texture2D"
-            },
-            {
-              "__uuid__": "293b879a-48d1-452a-93d6-073b11587d46@6c48a",
-              "__expectedType__": "cc.Texture2D"
-            }
-          ],
-          "easingMethods": {}
-        }
+        "__id__": 7
       }
     ],
-    "_commonTargets": [],
-    "_hash": 268957066
+    "_events": [],
+    "_exoticAnimation": null
+  },
+  {
+    "__type__": "cc.animation.ObjectTrack",
+    "_binding": {
+      "__type__": "cc.animation.TrackBinding",
+      "path": {
+        "__id__": 2
+      },
+      "proxy": {
+        "__id__": 4
+      }
+    },
+    "_channel": {
+      "__id__": 5
+    }
+  },
+  {
+    "__type__": "cc.animation.TrackPath",
+    "_paths": [
+      {
+        "__id__": 3
+      },
+      "materials",
+      0
+    ]
   },
   {
     "__type__": "cc.animation.ComponentPath",
@@ -104,6 +56,65 @@
     "uniformName": "albedoMap"
   },
   {
+    "__type__": "cc.animation.Channel",
+    "_curve": {
+      "__id__": 6
+    }
+  },
+  {
+    "__type__": "cc.ObjectCurve",
+    "_times": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "_values": [
+      {
+        "__uuid__": "955ddf8f-65a0-4d76-b84d-542310d6ebee@6c48a",
+        "__expectedType__": "cc.Texture2D"
+      },
+      null,
+      {
+        "__uuid__": "b765d1e8-3909-48fe-9163-35c04c6f0e0b@6c48a",
+        "__expectedType__": "cc.Texture2D"
+      },
+      null,
+      {
+        "__uuid__": "293b879a-48d1-452a-93d6-073b11587d46@6c48a",
+        "__expectedType__": "cc.Texture2D"
+      },
+      null
+    ]
+  },
+  {
+    "__type__": "cc.animation.ObjectTrack",
+    "_binding": {
+      "__type__": "cc.animation.TrackBinding",
+      "path": {
+        "__id__": 8
+      },
+      "proxy": {
+        "__id__": 10
+      }
+    },
+    "_channel": {
+      "__id__": 11
+    }
+  },
+  {
+    "__type__": "cc.animation.TrackPath",
+    "_paths": [
+      {
+        "__id__": 9
+      },
+      "materials",
+      0
+    ]
+  },
+  {
     "__type__": "cc.animation.ComponentPath",
     "component": "cc.MeshRenderer"
   },
@@ -111,5 +122,33 @@
     "__type__": "cc.animation.UniformProxyFactory",
     "passIndex": 1,
     "uniformName": "albedoMap"
+  },
+  {
+    "__type__": "cc.animation.Channel",
+    "_curve": {
+      "__id__": 12
+    }
+  },
+  {
+    "__type__": "cc.ObjectCurve",
+    "_times": [
+      0,
+      2,
+      4
+    ],
+    "_values": [
+      {
+        "__uuid__": "955ddf8f-65a0-4d76-b84d-542310d6ebee@6c48a",
+        "__expectedType__": "cc.Texture2D"
+      },
+      {
+        "__uuid__": "b765d1e8-3909-48fe-9163-35c04c6f0e0b@6c48a",
+        "__expectedType__": "cc.Texture2D"
+      },
+      {
+        "__uuid__": "293b879a-48d1-452a-93d6-073b11587d46@6c48a",
+        "__expectedType__": "cc.Texture2D"
+      }
+    ]
   }
 ]

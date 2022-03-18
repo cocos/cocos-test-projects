@@ -8,6 +8,7 @@ CCEffect %{
 CCProgram unlit-vs %{
   precision highp float;
   #include <cc-global>
+  #include <decode-base>
   #include <cc-local-batch>
   #include <input>
 
