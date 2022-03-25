@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, Sprite, Vec3, tween } from 'cc';
+import { _decorator, Component, Node, Sprite, Vec3, tween, Tween } from 'cc';
 const { ccclass, property } = _decorator;
 
 /**
@@ -23,6 +23,8 @@ export class TweenReadOnly extends Component {
     // @property
     // serializableDummy = 0;
 
+    tweenRed: Tween<Node> = null!;
+    tweenGreen: Tween<Readonly<Vec3>> = null!;
 
     spriteRed: Sprite = null!;
     spriteGreen: Sprite = null!;
@@ -44,9 +46,18 @@ export class TweenReadOnly extends Component {
     //     // [4]
     // }
 
+    onDisable () {
+        this.tweenRed.stop();
+        this.tweenGreen.stop();
+    }
+
+    onDestroy () {
+        this.tweenRed.stop();
+        this.tweenGreen.stop();
+    }
 
     tweenStart() {
-        tween(this.spriteRed.node)
+        this.tweenRed = new Tween(this.spriteRed.node)
             .to(2,{position:new Vec3(this.oriRedPos.x,-200,0)})
             .call(()=> {
                 if(this.spriteRed && this.spriteRed.node) {
@@ -55,7 +66,8 @@ export class TweenReadOnly extends Component {
             .union()
             .repeatForever()
             .start();
-        tween(this.spriteGreen.node.position)
+
+        this.tweenGreen = new Tween(this.spriteGreen.node.position)
             .to(2,{y:-200})
             .call(()=>{
                 if(this.spriteGreen && this.spriteGreen.node) {
@@ -65,6 +77,8 @@ export class TweenReadOnly extends Component {
             .repeatForever()
             .start();
     }
+
+    
 }
 
 /**
