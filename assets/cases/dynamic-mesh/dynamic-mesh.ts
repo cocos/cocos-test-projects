@@ -24,7 +24,7 @@
  THE SOFTWARE.
  */
 
-import { _decorator, Component, director, MeshRenderer, gfx, BaseNode, primitives, utils, Color, Button, Vec3, geometry } from 'cc';
+import { _decorator, Component, director, MeshRenderer, gfx, BaseNode, primitives, utils, Color, Button, Vec3, Mesh, resources, renderer, CameraComponent } from 'cc';
 
 const { ccclass, property } = _decorator;
 
@@ -40,103 +40,116 @@ export class DynamicMeshCreator extends Component {
     @property(Button)
     btnUpdateDynamicMesh: Button = null!;
     
+    private _mainCamera: renderer.scene.Camera = null!;
     private _increaseVertexCount = 900;
     private _subMeshes: IDragonSubMesh[] = [];
     private _options: primitives.ICreateDynamicMeshOptions = null!;
     private _geometries: primitives.IDynamicGeometry[] = [];
-    private _dynamicDragon: BaseNode = null!;
+    private _dragon: BaseNode = null!;
+    private _initialize: boolean = false;
 
     // debug only
     private _showBoundingBox = false;
     private _boundingBoxColor = new Color(255, 255, 255, 255);
 
+    private initCamera() {
+        const scene = director.getScene();
+        const node = scene?.getChildByName("Main Camera")!;
+        const component = node.getComponent(CameraComponent) as CameraComponent;
+        this._mainCamera = component.camera;
+    }
+    
     private initUI() {
         this.btnUpdateDynamicMesh.node.on(Button.EventType.CLICK, this.onButtonUpdateDynamicMesh, this);
     }
 
     private initMesh() {
-        this.readFromStaticMesh();
-        this.initDynamicMesh();
-    }
+        let names: string[] = [];
+        for (let i = 0; i < 9; i++) {
+            let name = `dynamic-mesh/dragon/Object_${i}`;
+            names.push(name);
+        }
 
-    private readFromStaticMesh() {
-        const scene = director.getScene();
-        const nodes = scene?.getChildByName("StaticDragon")?.getChildByName("Sketchfab_model")?.getChildByName("Geode")?.children!;
+        resources.load(names, Mesh, (err, meshes) => {
+            if (err) {
+                console.log('Load gltf failed, error: ', err);
+                return;
+            }
+            
+            let options: primitives.ICreateDynamicMeshOptions = {
+                maxSubMeshes: 0,
+                maxSubMeshVertices: 0,
+                maxSubMeshIndices: 0};
+    
+            for (let index = 0; index < meshes.length; index++) {
+                const mesh = meshes[index];
+                const positions = mesh.readAttribute(0, gfx.AttributeName.ATTR_POSITION) as Float32Array;
+                const normals = mesh.readAttribute(0, gfx.AttributeName.ATTR_NORMAL) as Float32Array;
+                const indices = mesh.readIndices(0) as Uint32Array;
+    
+                let newPositions = new Float32Array(indices.length * 3);
+                let newNormals = new Float32Array(indices.length * 3);
+                let minPos = new Vec3(Infinity, Infinity, Infinity);
+                let maxPos = new Vec3(-Infinity, -Infinity, -Infinity);
+                let newPos = new Vec3();
+    
+                for (let i = 0; i < indices.length; i++) {
+                    const index = indices[i];
+                    for (let k = 0; k < 3; k++) {
+                        newPositions[i * 3 + k] = positions[index * 3 + k];
+                        newNormals[i * 3 + k] = normals[index * 3 + k];
+                    }
+    
+                    newPos.set(newPositions[i * 3], newPositions[i * 3 + 1], newPositions[i * 3 + 2]);
+                    Vec3.min(minPos, minPos, newPos);
+                    Vec3.max(maxPos, maxPos, newPos);
+                }
+    
+                const subMesh: IDragonSubMesh = {
+                    positions: newPositions,
+                    normals: newNormals,
+                    minPos,
+                    maxPos,
+                };
+    
+                this._subMeshes.push(subMesh);
+                options.maxSubMeshVertices = Math.max(options.maxSubMeshVertices, newPositions.length / 3);
+            }
+    
+            options.maxSubMeshes = this._subMeshes.length;
+            this._options = options;
+            this._dragon = director.getScene()?.getChildByName("DynamicDragon")!;
 
-        let options: primitives.ICreateDynamicMeshOptions = {
-            maxSubMeshes: 0,
-            maxSubMeshVertices: 0,
-            maxSubMeshIndices: 0};
-
-        // A complete dragon model is composed of several sub nodes.
-        for (let node of nodes) {
-            const meshRenderer = node.getComponent(MeshRenderer) as MeshRenderer;
-            const mesh = meshRenderer.mesh!;
-
-            const positions = mesh.readAttribute(0, gfx.AttributeName.ATTR_POSITION) as Float32Array;
-            const normals = mesh.readAttribute(0, gfx.AttributeName.ATTR_NORMAL) as Float32Array;
-            const indices = mesh.readIndices(0) as Uint32Array;
-
-            let newPositions = new Float32Array(indices.length * 3);
-            let newNormals = new Float32Array(indices.length * 3);
-            let minPos = new Vec3(Infinity, Infinity, Infinity);
-            let maxPos = new Vec3(-Infinity, -Infinity, -Infinity);
-            let newPos = new Vec3();
-
-            for (let i = 0; i < indices.length; i++) {
-                const index = indices[i];
-                for (let k = 0; k < 3; k++) {
-                    newPositions[i * 3 + k] = positions[index * 3 + k];
-                    newNormals[i * 3 + k] = normals[index * 3 + k];
+            for (let i = 0; i < this._options.maxSubMeshes; i++) {
+                let geometry: primitives.IDynamicGeometry = {
+                    positions: this._subMeshes[i].positions,
+                    normals: this._subMeshes[i].normals,
+                    minPos: this._subMeshes[i].minPos,
+                    maxPos: this._subMeshes[i].maxPos,
                 }
 
-                newPos.set(newPositions[i * 3], newPositions[i * 3 + 1], newPositions[i * 3 + 2]);
-                Vec3.min(minPos, minPos, newPos);
-                Vec3.max(maxPos, maxPos, newPos);
+                this._geometries.push(geometry);
+            }
+            
+            const mesh = utils.MeshUtils.createDynamicMesh(0, this._geometries[0], undefined, this._options);
+            for (let i = 1; i < this._options.maxSubMeshes; i++) {
+                mesh.updateSubMesh(i, this._geometries[i]);
             }
 
-            const subMesh: IDragonSubMesh = {
-                positions: newPositions,
-                normals: newNormals,
-                minPos,
-                maxPos,
-            };
+            const meshRenderer = this._dragon.getComponent(MeshRenderer) as MeshRenderer;
+            meshRenderer.mesh = mesh;
+            meshRenderer.onGeometryChanged();
 
-            this._subMeshes.push(subMesh);
-            options.maxSubMeshVertices = Math.max(options.maxSubMeshVertices, newPositions.length / 3);
-        }
-
-        options.maxSubMeshes = this._subMeshes.length;
-        this._options = options;
-    }
-
-    private initDynamicMesh() {
-        const scene = director.getScene();
-        this._dynamicDragon = scene?.getChildByName("DynamicDragon")!;
-
-        for (let i = 0; i < this._options.maxSubMeshes; i++) {
-            let geometry: primitives.IDynamicGeometry = {
-                positions: this._subMeshes[i].positions,
-                normals: this._subMeshes[i].normals,
-                minPos: this._subMeshes[i].minPos,
-                maxPos: this._subMeshes[i].maxPos,
-            }
-
-            this._geometries.push(geometry);
-        }
-        
-        const mesh = utils.MeshUtils.createDynamicMesh(0, this._geometries[0], undefined, this._options);
-        for (let i = 1; i < this._options.maxSubMeshes; i++) {
-            mesh.updateSubMesh(i, this._geometries[i]);
-        }
-
-        const meshRenderer = this._dynamicDragon.getComponent(MeshRenderer) as MeshRenderer;
-        meshRenderer.mesh = mesh;
-        meshRenderer.onGeometryChanged();
+            this._initialize = true;
+        });
     }
 
     public onButtonUpdateDynamicMesh (btn: Button) {
-        const meshRenderer = this._dynamicDragon.getComponent(MeshRenderer) as MeshRenderer;
+        if (!this._initialize) {
+            return;
+        }
+
+        const meshRenderer = this._dragon.getComponent(MeshRenderer) as MeshRenderer;
         for (let i = 0; i < this._options.maxSubMeshes; i++) {
             const subMesh = this._subMeshes[i];
             const geometry = this._geometries[i];
@@ -150,13 +163,18 @@ export class DynamicMeshCreator extends Component {
     }
 
     start() {
+        this.initCamera();
         this.initUI();
         this.initMesh();
     }
 
     update (deltaTime: number) {
+        if (!this._initialize) {
+            return;
+        }
+
         let dirty = false;
-        const meshRenderer = this._dynamicDragon.getComponent(MeshRenderer) as MeshRenderer;
+        const meshRenderer = this._dragon.getComponent(MeshRenderer) as MeshRenderer;
         for (let i = 0; i < this._options.maxSubMeshes; i++) {
             const subMesh = this._subMeshes[i];
             const geometry = this._geometries[i];
@@ -177,10 +195,10 @@ export class DynamicMeshCreator extends Component {
         }
         
         if (this._showBoundingBox) {
-            const meshRenderer = this._dynamicDragon.getComponent(MeshRenderer) as MeshRenderer;
+            const meshRenderer = this._dragon.getComponent(MeshRenderer) as MeshRenderer;
             const worldBound = meshRenderer.model!.worldBounds;
             if (worldBound) {
-                let renderer = director!.root!.pipeline.geometryRenderer;
+                let renderer = this._mainCamera.geometryRenderer;
                 renderer.addBoundingBox(worldBound, this._boundingBoxColor, true, true, false);
             }
         }
