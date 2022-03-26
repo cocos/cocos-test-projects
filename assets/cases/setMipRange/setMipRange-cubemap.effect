@@ -1,0 +1,54 @@
+CCEffect %{
+  techniques:
+  - passes:
+    - vert: complex-vs:vert
+      frag: complex-fs:frag
+      properties: &props
+        mainTexture: { target: cubeMap, editor: { displayName: cubeMap } }
+      rasterizerState:
+        cullMode: back
+      depthStencilState:
+        depthTest: true
+        depthWrite: false
+      blendState:
+        targets:
+        - blend: true
+          blendSrc: src_alpha
+          blendDst: one_minus_src_alpha
+          blendDstAlpha: one_minus_src_alpha
+}%
+
+CCProgram complex-vs %{
+  precision highp float;
+  #include <cc-global>
+  #include <decode>
+
+  out mediump vec4 viewDir;
+
+  vec4 vert () {
+    CCDecode(viewDir);
+    return cc_matViewProj * viewDir;
+  }
+}%
+
+CCProgram complex-fs %{
+  precision mediump float;
+  #include <cc-global>
+  #include <cc-environment>
+  #include <unpack>
+  #include <gamma>
+  #include <output-standard>
+
+  in mediump vec4 viewDir;
+
+  uniform samplerCube cubeMap;
+
+  vec4 frag () {
+    #if USE_RGBE_CUBEMAP
+      vec3 c = unpackRGBE(texture(cubeMap, viewDir.xyz));
+    #else
+      vec3 c = SRGBToLinear(texture(cubeMap, viewDir.xyz).rgb);
+    #endif
+    return CCFragOutput(vec4(c * cc_ambientSky.w, 1.0));
+  }
+}%
