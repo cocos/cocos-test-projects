@@ -17,10 +17,7 @@
         "_value": true
       },
       "2d": {
-        "_value": true,
-        "flags": {
-          "UI_GPU_DRIVEN": true
-        }
+        "_value": true
       },
       "ui": {
         "_value": true
@@ -46,7 +43,7 @@
       },
       "physics-2d": {
         "_value": true,
-        "_option": "physics-2d-box2d"
+        "_option": "physics-2d-builtin"
       },
       "physics-2d-box2d": {
         "_value": true
@@ -89,41 +86,37 @@
       },
       "dragon-bones": {
         "_value": true
+      },
+      "marionette": {
+        "_value": true
       }
     },
     "includeModules": [
-      "2d",
-      "3d",
-      "animation",
-      "audio",
       "base",
-      "dragon-bones",
       "gfx-webgl",
-      "intersection-2d",
+      "profiler",
+      "audio",
+      "video",
+      "webview",
+      "tween",
       "marionette",
+      "3d",
       "particle",
-      "particle-2d",
-      "physics-2d-box2d",
       "physics-cannon",
       "primitive",
-      "profiler",
-      "skeletal-animation",
-      "spine",
       "terrain",
-      "tiled-map",
-      "tween",
+      "2d",
       "ui",
-      "video",
-      "webview"
+      "physics-2d-builtin",
+      "intersection-2d",
+      "particle-2d",
+      "tiled-map",
+      "spine",
+      "dragon-bones"
     ],
     "noDeprecatedFeatures": {
       "value": false,
       "version": ""
-    },
-    "flags": {
-      "2d": {
-        "UI_GPU_DRIVEN": true
-      }
     }
   },
   "__version__": "1.0.5",
