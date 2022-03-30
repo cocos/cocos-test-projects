@@ -39,6 +39,8 @@ interface IDragonSubMesh {
 export class DynamicMeshCreator extends Component {
     @property(Button)
     btnUpdateDynamicMesh: Button = null!;
+    @property(CameraComponent)
+    cameraComp: CameraComponent = null!
     
     private _mainCamera: renderer.scene.Camera = null!;
     private _increaseVertexCount = 900;
@@ -53,10 +55,7 @@ export class DynamicMeshCreator extends Component {
     private _boundingBoxColor = new Color(255, 255, 255, 255);
 
     private initCamera() {
-        const scene = director.getScene();
-        const node = scene?.getChildByName("Main Camera")!;
-        const component = node.getComponent(CameraComponent) as CameraComponent;
-        this._mainCamera = component.camera;
+        this._mainCamera = this.cameraComp.camera;
     }
     
     private initUI() {
