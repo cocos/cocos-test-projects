@@ -44,11 +44,9 @@ CCProgram complex-fs %{
   uniform samplerCube cubeMap;
 
   vec4 frag () {
-    #if USE_RGBE_CUBEMAP
-      vec3 c = unpackRGBE(texture(cubeMap, viewDir.xyz));
-    #else
-      vec3 c = SRGBToLinear(texture(cubeMap, viewDir.xyz).rgb);
-    #endif
-    return CCFragOutput(vec4(c * cc_ambientSky.w, 1.0));
+    vec4 color = texture(cubeMap, viewDir.xyz);
+    if(color.a < 1.0)
+      color = vec4(mix(vec3(0.0), color.rgb, color.a), 1.0);
+    return color;
   }
 }%

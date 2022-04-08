@@ -54,16 +54,18 @@ export class setMipRange_cubemap extends Component {
 
         this.cubeTexture.mipmaps = images;
         this.cubeTexture.setMipFilter(2);
+        this.cubeTexture!.setMipRange(0, mipCount);
+        this.cubeMat!.setProperty('cubeMap', this.cubeTexture);
 
         this.schedule(() => {
             this.cubeTexture!.setMipRange(0, mipCount);
             this.cubeMat!.setProperty('cubeMap', this.cubeTexture);
-        }, 6, macro.REPEAT_FOREVER, 1.5);
+        }, 6, macro.REPEAT_FOREVER, 0);
 
         this.schedule(() => {
             this.cubeTexture!.setMipRange(1, mipCount);
             this.cubeMat!.setProperty('cubeMap', this.cubeTexture);
-        }, 6, macro.REPEAT_FOREVER, 4.5);
+        }, 6, macro.REPEAT_FOREVER, 3);
         this.ready = true;
     }
 }
