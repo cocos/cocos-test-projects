@@ -12,43 +12,53 @@ export class UniformKTest extends Component {
         animationComponent.clips = [ testClip, testClip2 ];
         animationComponent.defaultClip = testClip;
         //animationComponent.playOnLoad = true;
-        const state1 = animationComponent.getAnimationState('forward');
+        const state1 = animationComponent.getState('forward');
         state1.play();
-        const state2 = animationComponent.getAnimationState('deferred');
+        const state2 = animationComponent.getState('deferred');
         state2.play();
     }
 
     private _makeTestClip(passIndex: number) {
-        const uniformValueAdapter = new UniformCurveValueAdapter();
+        const uniformValueAdapter = new animation.UniformProxyFactory();
         uniformValueAdapter.passIndex = passIndex;
         uniformValueAdapter.uniformName = 'albedo';
 
         const animationClip = new AnimationClip();
         animationClip.wrapMode = AnimationClip.WrapMode.Loop;
         animationClip.duration = 2.0;
-        animationClip.keys = [
-            [0, 0.3, 0.5, 1.0, 1.7, 2.0],
+        const track = new animation.ColorTrack();
+        track.path.toHierarchy('Nested');
+        track.path.toComponent(MeshRenderer);
+        track.path.toProperty("sharedMaterials");
+        track.path.toElement(0);
+        track.proxy = uniformValueAdapter;
+        const [r, g, b, a] = track.channels();
+        const keys = [0, 0.3, 0.5, 1.0, 1.7, 2.0];
+        const colors = [
+            new math.Color(0),
+            new math.Color(10),
+            new math.Color(70),
+            new math.Color(80),
+            new math.Color(150),
+            new math.Color(255),
         ];
-        animationClip.curves =[{
-            modifiers: [
-                new animation.HierarchyPath('Nested'),
-                new animation.ComponentPath(js.getClassName(MeshRenderer)),
-                "sharedMaterials",
-                0,
-            ],
-            valueAdapter: uniformValueAdapter,
-            data: {
-                keys: 0,
-                values: [
-                    new math.Color(0),
-                    new math.Color(10),
-                    new math.Color(70),
-                    new math.Color(80),
-                    new math.Color(150),
-                    new math.Color(255),
-                ],
-            },
-        }];
+        r.curve.assignSorted(
+            keys,
+            colors.map((c) => c.r),
+        );
+        g.curve.assignSorted(
+            keys,
+            colors.map((c) => c.g),
+        );
+        b.curve.assignSorted(
+            keys,
+            colors.map((c) => c.b),
+        );
+        a.curve.assignSorted(
+            keys,
+            colors.map((c) => c.a),
+        );
+        animationClip.addTrack(track);
         return animationClip;
     }
 }
