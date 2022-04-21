@@ -89,30 +89,36 @@
       },
       "marionette": {
         "_value": true
+      },
+      "animation": {
+        "_value": true
+      },
+      "skeletal-animation": {
+        "_value": true
       }
     },
     "includeModules": [
-      "base",
-      "gfx-webgl",
-      "profiler",
-      "audio",
-      "video",
-      "webview",
-      "tween",
-      "marionette",
+      "2d",
       "3d",
+      "audio",
+      "base",
+      "dragon-bones",
+      "gfx-webgl",
+      "intersection-2d",
+      "marionette",
       "particle",
+      "particle-2d",
+      "physics-2d-builtin",
       "physics-cannon",
       "primitive",
-      "terrain",
-      "2d",
-      "ui",
-      "physics-2d-builtin",
-      "intersection-2d",
-      "particle-2d",
-      "tiled-map",
+      "profiler",
       "spine",
-      "dragon-bones"
+      "terrain",
+      "tiled-map",
+      "tween",
+      "ui",
+      "video",
+      "webview"
     ],
     "noDeprecatedFeatures": {
       "value": false,

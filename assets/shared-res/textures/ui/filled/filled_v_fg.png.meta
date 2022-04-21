@@ -1,5 +1,5 @@
 {
-  "ver": "1.0.21",
+  "ver": "1.0.22",
   "importer": "image",
   "imported": true,
   "uuid": "c1d929f9-82db-4326-9436-3c1a0cb9ba50",
@@ -21,8 +21,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "wrapModeS": "repeat",
-        "wrapModeT": "repeat",
+        "wrapModeS": "clamp-to-edge",
+        "wrapModeT": "clamp-to-edge",
         "minfilter": "linear",
         "magfilter": "linear",
         "mipfilter": "none",
@@ -77,6 +77,7 @@
   "userData": {
     "type": "sprite-frame",
     "redirect": "c1d929f9-82db-4326-9436-3c1a0cb9ba50@f9941",
-    "hasAlpha": true
+    "hasAlpha": true,
+    "fixAlphaTransparencyArtifacts": false
   }
 }
