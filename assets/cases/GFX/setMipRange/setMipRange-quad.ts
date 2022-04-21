@@ -23,16 +23,18 @@ export class setMipRange_quad extends Component {
 
         this.textureUsed.mipmaps = this.mipMaps;
         this.textureUsed.setMipFilter(2);
+        this.textureUsed!.setMipRange(0, this.mipMaps.length);
+        this.mat!.setProperty('albedoMap', this.textureUsed);
 
         this.schedule(() => {
             this.textureUsed!.setMipRange(0, this.mipMaps.length);
             this.mat!.setProperty('albedoMap', this.textureUsed);
-        }, 6, macro.REPEAT_FOREVER, 1.5);
+        }, 6, macro.REPEAT_FOREVER, 0);
 
         this.schedule(() => {
             this.textureUsed!.setMipRange(1, this.mipMaps.length);
             this.mat!.setProperty('albedoMap', this.textureUsed);
-        }, 6, macro.REPEAT_FOREVER, 4.5);
+        }, 6, macro.REPEAT_FOREVER, 3);
 
         this.ready = true;
     }

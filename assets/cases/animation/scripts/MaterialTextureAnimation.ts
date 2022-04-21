@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Texture2D, UniformCurveValueAdapter, AnimationClip, MeshRenderer, ComponentModifier, js, Animation, error } from "cc";
+import { _decorator, Component, Node, Texture2D, UniformCurveValueAdapter, AnimationClip, MeshRenderer, ComponentModifier, js, Animation, error, animation } from "cc";
 const { ccclass, property } = _decorator;
 
 /**
@@ -25,9 +25,9 @@ export class MaterialTextureAnimation extends Component {
         animationComponent.clips = [ clip, clip2 ];
         animationComponent.defaultClip = clip;
         //animationComponent.playOnLoad = true;
-        const state1 = animationComponent.getAnimationState('forward');
+        const state1 = animationComponent.getState('forward');
         state1.play();
-        const state2 = animationComponent.getAnimationState('deferred');
+        const state2 = animationComponent.getState('deferred');
         state2.play();
     }
 }
@@ -37,25 +37,17 @@ function createMaterialTextureAnimationClip(textures: Texture2D[], passIndex: nu
     const defaultKeys = textures.map((texture, index) => index);
 
     // Setup the value adapter.
-    const uca = new UniformCurveValueAdapter();
+    const uca = new animation.UniformProxyFactory();
     uca.passIndex = passIndex;
     uca.uniformName = 'albedoMap';
 
     const animationClip = new AnimationClip();
     animationClip.wrapMode = AnimationClip.WrapMode.Loop;
-    animationClip.keys = [ defaultKeys ];
     animationClip.duration = defaultKeys[defaultKeys.length - 1] + 1;
-    animationClip.curves = [{
-        modifiers: [
-            new ComponentModifier(js.getClassName(MeshRenderer)),
-            'sharedMaterials',
-            0,
-        ],
-        valueAdapter: uca,
-        data: {
-            keys: 0,
-            values: textures,
-        },
-    }];
+    const track = new animation.ObjectTrack();
+    animationClip.addTrack(track);
+    track.path.toComponent(MeshRenderer).toProperty('sharedMaterials').toElement(0);
+    track.proxy = uca;
+    track.channel.curve.assignSorted(defaultKeys, textures);
     return animationClip;
 }
