@@ -1,6 +1,6 @@
 import { _decorator, Component, Node, ScrollView, Vec3, Layout, game, Label, director, Director, assetManager, find, Canvas, Layers, CCString, CCInteger, resources, JsonAsset, profiler, CCBoolean } from "cc";
 const { ccclass, property } = _decorator;
-import { sceneArray } from "./scenelist";
+import { SceneList } from "./scenelist";
 import { ReceivedCode, StateCode, TestFramework } from "./TestFramework";
 
 declare class AutoTestConfigJson extends JsonAsset {
@@ -45,7 +45,10 @@ export class BackButton extends Component {
             }
             const firstIndex = str.lastIndexOf('/') + 1;
             const lastIndex = str.lastIndexOf('.scene');
-            sceneArray.push(str.substring(firstIndex, lastIndex));
+            SceneList.sceneArray.push(str.substring(firstIndex, lastIndex));
+            const firstIndexFold= str.indexOf('/cases/') + 7;
+            const lastIndexFolf = str.indexOf('/',firstIndexFold);
+            SceneList.sceneFold.push(str.substring(firstIndexFold, lastIndexFolf));
         }
     }
 
@@ -123,9 +126,9 @@ export class BackButton extends Component {
                         this.isAutoTesting = true;
                         this.autoControl();
                         let sceneList = this.autoTestConfig!.json.sceneList;
-                        let testList = sceneArray.filter(x => sceneList.indexOf(x) !== -1);
-                        sceneArray.length = 0;
-                        sceneArray.push(...testList);
+                        let testList = SceneList.sceneArray.filter(x => sceneList.indexOf(x) !== -1);
+                        SceneList.sceneArray.length = 0;
+                        SceneList.sceneArray.push(...testList);
                         this.nextScene();
                     }
                 })
@@ -134,9 +137,9 @@ export class BackButton extends Component {
     }
 
     onDestroy () {
-        let length = sceneArray.length;
+        let length = SceneList.sceneArray.length;
         for(let i = 0; i < length; i++) {
-            sceneArray.pop();
+            SceneList.sceneArray.pop();
         }
     }
 
@@ -145,7 +148,7 @@ export class BackButton extends Component {
             return;
         }
         this.sceneName.node.active = true;
-        this.sceneName.string = this.getSceneName();
+        this.sceneName.string = this.getFoldName() +' : '+ this.getSceneName();
     }
 
     backToList () {
@@ -181,7 +184,7 @@ export class BackButton extends Component {
                         if (err) {
                             this.manuallyControl();
                         }
-                        else if (BackButton._sceneIndex === sceneArray.length - 1) {
+                        else if (BackButton._sceneIndex === SceneList.sceneArray.length - 1) {
                             TestFramework.instance.endTest('', () => {
                                 this.manuallyControl();
                             });
@@ -207,13 +210,17 @@ export class BackButton extends Component {
 
     updateSceneIndex (next:Boolean) {
         if (next) {
-            (BackButton._sceneIndex + 1) >= sceneArray.length ? BackButton._sceneIndex = 0 : BackButton._sceneIndex += 1;
+            (BackButton._sceneIndex + 1) >= SceneList.sceneArray.length ? BackButton._sceneIndex = 0 : BackButton._sceneIndex += 1;
         }else {
-            (BackButton._sceneIndex - 1) < 0 ? BackButton._sceneIndex = sceneArray.length - 1 : BackButton._sceneIndex -= 1;
+            (BackButton._sceneIndex - 1) < 0 ? BackButton._sceneIndex = SceneList.sceneArray.length - 1 : BackButton._sceneIndex -= 1;
         }
     }
 
     getSceneName () {
-        return sceneArray[BackButton._sceneIndex];
+        return SceneList.sceneArray[BackButton._sceneIndex];
+    }
+
+    getFoldName () {
+        return SceneList.sceneFold[BackButton._sceneIndex];
     }
 }

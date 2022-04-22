@@ -1,5 +1,5 @@
 import { _decorator, Component, Node, Label, director } from "cc";
-import { sceneArray } from "./scenelist";
+import { SceneList, SceneManager } from "./scenelist";
 import { BackButton } from "./backbutton";
 const { ccclass, property } = _decorator;
 
@@ -16,12 +16,12 @@ export class ListItem extends Component {
 
     start () {
         // Your initialization goes here.
-        this.index = this.node.getSiblingIndex();
+        this.index = this.node.getSiblingIndex() - SceneList.foldCount;
         this._name = "";
         if(this.node){
             this.label = this.node.getComponentInChildren(Label) as Label;
         }
-        this.updateItem(this.index,sceneArray[this.index]);
+        this.updateItem(this.index,SceneList.sceneArray[this.index]);
     }
 
     public loadScene() {
