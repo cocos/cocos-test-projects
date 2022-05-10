@@ -1,5 +1,5 @@
 // @ts-ignore
-import { captureOneImage, loadScene, runScene, sleep, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
+import { captureOneImage, waitForNextFrame,loadScene, runScene, sleep, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { delayTime, sceneNameList } from '../static-scene-list';
 
 @testClass('StaticScene')
