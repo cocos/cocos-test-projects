@@ -13,6 +13,7 @@ export class StaticScene {
             await sleep(this._delay);
             await loadScene(sceneNameList[i])?.catch((e: any) => { console.log(e) });
             // 截图 or 断言
+            await waitForNextFrame();
             await captureOneImage(sceneNameList[i]);
         };
     };
