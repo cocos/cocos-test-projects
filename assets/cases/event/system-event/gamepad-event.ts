@@ -95,8 +95,8 @@ export class gamepad_event extends Component {
         this.Left.progress = gamepad.getValue(GamepadCode.DPAD_LEFT);
         this.Right.progress = gamepad.getValue(GamepadCode.DPAD_RIGHT);
 
-        this.Share.progress = gamepad.getValue(GamepadCode.SHARE);
-        this.Options.progress = gamepad.getValue(GamepadCode.OPTIONS);
+        this.Share.progress = gamepad.getValue(GamepadCode.SHARE) || gamepad.getValue(GamepadCode.NS_MINUS);
+        this.Options.progress = gamepad.getValue(GamepadCode.OPTIONS) || gamepad.getValue(GamepadCode.NS_PLUS);
         this.Home.progress = gamepad.getValue(GamepadCode.HOME);
         this.Touchpad.progress = gamepad.getValue(GamepadCode.TOUCHPAD);
 
