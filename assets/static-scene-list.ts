@@ -69,5 +69,5 @@ export const sceneNameList = [
 	"render-texture-sample",
 	"label-spacing-x",
 	"compressWithGray",
-	"cailbration"
+	"cailbration" 
 ];
