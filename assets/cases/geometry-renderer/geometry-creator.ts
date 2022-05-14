@@ -24,10 +24,12 @@
  THE SOFTWARE.
  */
 
-import { _decorator, Component, director, Vec3, Color, geometry, Mat4, Toggle, CameraComponent, renderer } from 'cc';
+import { _decorator, Component, director, Vec3, Color, geometry, Mat4, Toggle } from 'cc';
+import { NATIVE } from 'cc/env';
 
 const { ccclass, property } = _decorator;
 
+ 
 @ccclass('GeometryCreator')
 export class GeometryCreator extends Component {
     @property(Toggle)
@@ -44,7 +46,6 @@ export class GeometryCreator extends Component {
     private _unlit = false;
     private _rotate = false;
 
-    private _mainCamera: renderer.scene.Camera = null!;
     private _meshVertices = new Array<Vec3>();
     private _meshIndices = new Array<number>();
 
@@ -55,17 +56,9 @@ export class GeometryCreator extends Component {
     private _angle = 0.0;
 
     start () {
-        this.initCamera();
         this.initColors();
         this.initMesh();
         this.initUI();
-    }
-
-    private initCamera() {
-        const scene = director.getScene();
-        const node = scene?.getChildByName("Main Camera")!;
-        const component = node.getComponent(CameraComponent) as CameraComponent;
-        this._mainCamera = component.camera;
     }
 
     private initUI() {
@@ -140,7 +133,7 @@ export class GeometryCreator extends Component {
     }
 
     update (deltaTime: number) {
-        let renderer = this._mainCamera.geometryRenderer;
+        let renderer = director!.root!.pipeline.geometryRenderer;
         this.updateAngle(deltaTime);
         this._colorIndex = 0;
 
