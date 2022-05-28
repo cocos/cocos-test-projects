@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, ProgressBar, EventGamepad, input, Input, GamepadCode, Vec2, UITransform, Vec3, v3, Graphics, Color, sys } from 'cc';
+import { _decorator, Component, Node, ProgressBar, EventGamepad, input, Input, GamepadCode, Vec2, UITransform, Vec3, v3, Graphics, Color, sys, Gamepad } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('gamepad_event')
@@ -21,13 +21,13 @@ export class gamepad_event extends Component {
     public R3: ProgressBar = null!;
 
     @property(ProgressBar)
-    public BtnA: ProgressBar = null!;
+    public BtnSouth: ProgressBar = null!;
     @property(ProgressBar)
-    public BtnB: ProgressBar = null!;
+    public BtnEast: ProgressBar = null!;
     @property(ProgressBar)
-    public BtnX: ProgressBar = null!;
+    public BtnWest: ProgressBar = null!;
     @property(ProgressBar)
-    public BtnY: ProgressBar = null!;
+    public BtnNorth: ProgressBar = null!;
 
     @property(ProgressBar)
     public Up: ProgressBar = null!;
@@ -45,7 +45,7 @@ export class gamepad_event extends Component {
     @property(ProgressBar)
     public Home: ProgressBar = null!;
     @property(ProgressBar)
-    public Touchpad: ProgressBar = null!;
+    public TouchPad: ProgressBar = null!;
 
     @property(Graphics)
     public graphicsLeft: Graphics = null!;
@@ -77,36 +77,35 @@ export class gamepad_event extends Component {
     }
 
     gamepadInput (e: EventGamepad) {
-        const gamepad = e.gamepads[0];
-        this.L1.progress =  gamepad.getValue(GamepadCode.L1);
-        this.L2.progress = gamepad.getValue(GamepadCode.L2);
-        this.L3.progress = gamepad.getValue(GamepadCode.L3);
-        this.R1.progress = gamepad.getValue(GamepadCode.R1);
-        this.R2.progress = gamepad.getValue(GamepadCode.R2);
-        this.R3.progress = gamepad.getValue(GamepadCode.R3);
+        const gp = e.gamepad;
 
-        this.BtnA.progress =  gamepad.getValue(GamepadCode.A);
-        this.BtnB.progress = gamepad.getValue(GamepadCode.B);
-        this.BtnX.progress = gamepad.getValue(GamepadCode.X);
-        this.BtnY.progress = gamepad.getValue(GamepadCode.Y);
+        this.L1.progress =  gp.buttonL1.getValue();
+        this.L2.progress = gp.buttonL2.getValue();
+        this.L3.progress = gp.buttonL3.getValue();
+        this.R1.progress = gp.buttonR1.getValue();
+        this.R2.progress = gp.buttonR2.getValue();
+        this.R3.progress = gp.buttonR3.getValue();
 
-        this.Up.progress =  gamepad.getValue(GamepadCode.DPAD_UP);
-        this.Down.progress = gamepad.getValue(GamepadCode.DPAD_DOWN);
-        this.Left.progress = gamepad.getValue(GamepadCode.DPAD_LEFT);
-        this.Right.progress = gamepad.getValue(GamepadCode.DPAD_RIGHT);
+        this.BtnSouth.progress =  gp.buttonSouth.getValue();
+        this.BtnEast.progress = gp.buttonEast.getValue();
+        this.BtnWest.progress = gp.buttonWest.getValue();
+        this.BtnNorth.progress = gp.buttonNorth.getValue();
 
-        this.Share.progress = gamepad.getValue(GamepadCode.SHARE) || gamepad.getValue(GamepadCode.NS_MINUS);
-        this.Options.progress = gamepad.getValue(GamepadCode.OPTIONS) || gamepad.getValue(GamepadCode.NS_PLUS);
-        this.Home.progress = gamepad.getValue(GamepadCode.HOME);
-        this.Touchpad.progress = gamepad.getValue(GamepadCode.TOUCHPAD);
+        this.Up.progress =  gp.dpad.up.getValue();
+        this.Down.progress = gp.dpad.down.getValue();
+        this.Left.progress = gp.dpad.left.getValue();
+        this.Right.progress = gp.dpad.right.getValue();
 
-        const lAxisX = gamepad.getValue(GamepadCode.AXIS_LEFT_STICK_X);
-        const lAxisY = gamepad.getValue(GamepadCode.AXIS_LEFT_STICK_Y);
-        const rAxisX = gamepad.getValue(GamepadCode.AXIS_RIGHT_STICK_X);
-        const rAxisY = gamepad.getValue(GamepadCode.AXIS_RIGHT_STICK_Y);
+        this.Share.progress = gp.buttonShare.getValue();
+        this.Options.progress = gp.buttonOptions.getValue();
+        this.Home.progress = gp.buttonHome.getValue();
 
-        this.L3.node.setPosition(v3(this._leftStickPos.x + this._stickMoveDistance * lAxisX, this._leftStickPos.y + this._stickMoveDistance * lAxisY, 0));
-        this.R3.node.setPosition(v3(this._rightStickPos.x + this._stickMoveDistance * rAxisX, this._rightStickPos.y + this._stickMoveDistance * rAxisY, 0));
+        this.TouchPad.progress = gp.buttonTouchPad.getValue();
+
+        const ls = gp.leftStick.getValue();
+        const rs = gp.rightStick.getValue();
+        this.L3.node.setPosition(v3(this._leftStickPos.x + this._stickMoveDistance * ls.x, this._leftStickPos.y + this._stickMoveDistance * ls.y, 0));
+        this.R3.node.setPosition(v3(this._rightStickPos.x + this._stickMoveDistance * rs.x, this._rightStickPos.y + this._stickMoveDistance * rs.y, 0));
     }
 }
 
