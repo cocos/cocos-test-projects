@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, ProgressBar, EventGamepad, input, Input, GamepadCode, Vec2, UITransform, Vec3, v3, Graphics, Color, sys, Gamepad } from 'cc';
+import { _decorator, Component, Node, ProgressBar, EventGamepad, input, Input, GamepadCode, Vec2, UITransform, Vec3, v3, Graphics, Color, sys, Gamepad, view } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('gamepad_event')
@@ -42,10 +42,10 @@ export class gamepad_event extends Component {
     public Share: ProgressBar = null!;
     @property(ProgressBar)
     public Options: ProgressBar = null!;
-    @property(ProgressBar)
-    public Home: ProgressBar = null!;
-    @property(ProgressBar)
-    public TouchPad: ProgressBar = null!;
+    // @property(ProgressBar)
+    // public Home: ProgressBar = null!;
+    // @property(ProgressBar)
+    // public TouchPad: ProgressBar = null!;
 
     @property(Graphics)
     public graphicsLeft: Graphics = null!;
@@ -78,7 +78,6 @@ export class gamepad_event extends Component {
 
     gamepadInput (e: EventGamepad) {
         const gp = e.gamepad;
-
         this.L1.progress =  gp.buttonL1.getValue();
         this.L2.progress = gp.buttonL2.getValue();
         this.L3.progress = gp.buttonL3.getValue();
@@ -98,9 +97,9 @@ export class gamepad_event extends Component {
 
         this.Share.progress = gp.buttonShare.getValue();
         this.Options.progress = gp.buttonOptions.getValue();
-        this.Home.progress = gp.buttonHome.getValue();
+        // this.Home.progress = gp.buttonHome.getValue();
 
-        this.TouchPad.progress = gp.buttonTouchPad.getValue();
+        // this.TouchPad.progress = gp.buttonTouchPad.getValue();
 
         const ls = gp.leftStick.getValue();
         const rs = gp.rightStick.getValue();
