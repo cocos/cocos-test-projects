@@ -131,9 +131,9 @@
     "_shadowSaturation": 1,
     "_shadowDistance": 30,
     "_shadowInvisibleOcclusionRange": 200,
-    "_shadowCSMLevel": 4,
-    "_shadowCSMLambda": 0.75,
-    "_shadowCSMPerformanceOptimizationMode": 2,
+    "_shadowCascadeLevel": 4,
+    "_csmLayerLambda": 0.75,
+    "_csmOptimizationMode": 2,
     "_shadowFixedArea": false,
     "_shadowNear": 0.1,
     "_shadowFar": 10,
@@ -28533,8 +28533,8 @@
     "_maxReceived": 100,
     "_size": {
       "__type__": "cc.Vec2",
-      "x": 512,
-      "y": 512
+      "x": 1024,
+      "y": 1024
     }
   },
   {
@@ -28546,7 +28546,8 @@
     "_diffuseMapHDR": null,
     "_diffuseMapLDR": null,
     "_enabled": false,
-    "_useHDR": true
+    "_useHDR": true,
+    "_editableMaterial": null
   },
   {
     "__type__": "cc.FogInfo",
