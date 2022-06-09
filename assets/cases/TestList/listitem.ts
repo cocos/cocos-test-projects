@@ -29,6 +29,12 @@ export class ListItem extends Component {
                 this.label.color = this.color;
             this.resetPostion(this.label);
         }
+
+        this.node.on(Node.EventType.MOUSE_ENTER, (event: MouseEvent) => {
+            BackButton.focusButtonIndex = this.node.getSiblingIndex();
+            BackButton.isControllerMode = false;
+        });
+
     }
 
     private resetPostion(label: Label) {
@@ -48,6 +54,7 @@ export class ListItem extends Component {
     }
 
     public loadScene() {
+        BackButton.focusButtonIndex = this.node.getSiblingIndex();
         BackButton.saveOffset();
         BackButton.saveIndex(this.index);
         director.loadScene(this._name);
