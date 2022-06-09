@@ -161,7 +161,7 @@ export class BackButton extends Component {
             BackButton._scrollNode = this.node.parent!.getChildByPath('Canvas/ScrollView') as Node;
             if (BackButton._scrollNode) {
                 BackButton._scrollCom = BackButton._scrollNode.getComponent(ScrollView);
-                BackButton._scrollCom!.content!.getComponent(Layout)!.updateLayout();
+                //BackButton._scrollCom!.content!.getComponent(Layout)!.updateLayout();
                 BackButton._scrollCom!.scrollToOffset(BackButton.offset, 0.1, true);
             }
             BackButton._blockInput.active = false;
