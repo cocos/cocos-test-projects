@@ -7,9 +7,9 @@ import { Size } from 'cc'
 
 export class SceneList {
 
-    static sceneArray : string[] = [];
-    static sceneFold : string[] = [];
-    static foldCount : number = 0;
+    static sceneArray: string[] = [];
+    static sceneFold: string[] = [];
+    static foldCount: number = 0;
 
 }
 
@@ -77,7 +77,7 @@ export class SceneManager extends Component {
         this._height = this._totalCount * (this._itemTemplateUITrans.height + this._spacing) + this._spacing; // get total content height
         this._contentUITrans.height = this._height;
         this._displaySize = this.node.parent!.getComponent(UITransform)!.height;
-        this._spawnCount = Math.ceil(this._displaySize / (this._itemTemplateUITrans.height + this._spacing)) + 3;
+        this._spawnCount = Math.ceil(this._displaySize / (this._itemTemplateUITrans.height + this._spacing)) + 16;
         for (let j = 0; j < this._spawnCount; j++) {
             let item = instantiate(this.itemPrefab);
             item.getComponent(ListItem)!.updateItem(this._displayItems[j].type, this._displayItems[j].index);
