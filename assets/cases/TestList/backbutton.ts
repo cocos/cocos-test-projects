@@ -243,7 +243,7 @@ export class BackButton extends Component {
         const axisPrecision = 0.03;
 
         let currentSence = director.getScene();
-        if (currentSence?.name == "" || (currentSence?.name == "TestList")) {
+        if (currentSence?.name == "" || (currentSence?.name == "TestList") || (currentSence?.name == "gamepad-event")) {
             return;
         }
         if ((this.lastPressTimestamp != 0) && ((Date.now() - this.lastPressTimestamp) < pressSensitiveTime)) {
