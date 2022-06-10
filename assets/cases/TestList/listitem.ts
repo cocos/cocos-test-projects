@@ -4,8 +4,8 @@ import { BackButton } from "./backbutton";
 const { ccclass, property } = _decorator;
 
 export enum ItemType {
-    SCENSE = 0,
-    FOLD = 1,
+    SCENSE_ITEM = 0,
+    SCENSE_FOLD = 1,
 }
 
 
@@ -15,7 +15,7 @@ export class ListItem extends Component {
     index = -1;
     label: Label | null = null;
     color: Color | null = null;
-    type: ItemType = ItemType.FOLD;
+    type: ItemType = ItemType.SCENSE_FOLD;
     xpos: number = -1;
     onload() {
     }
@@ -46,9 +46,9 @@ export class ListItem extends Component {
             this.xpos = position.x;
         }
 
-        if (this.type == ItemType.FOLD && this.xpos == position.x) {
+        if (this.type == ItemType.SCENSE_FOLD && this.xpos == position.x) {
             label.node.setPosition(position.x - 20, position.y, position.z);
-        } else if (this.type == ItemType.SCENSE && this.xpos != position.x) {
+        } else if (this.type == ItemType.SCENSE_ITEM && this.xpos != position.x) {
             label.node.setPosition(this.xpos, position.y, position.z);
         }
     }
@@ -67,7 +67,7 @@ export class ListItem extends Component {
         let sprite = this.node.getComponent(Sprite);
         let button = this.node.getComponent(Button);
 
-        if (type == ItemType.SCENSE) {
+        if (type == ItemType.SCENSE_ITEM) {
             button!.enabled = true;
             sprite!.enabled = true;
             this._name = SceneList.sceneArray[idx];

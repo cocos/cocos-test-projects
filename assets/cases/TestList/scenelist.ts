@@ -2,8 +2,6 @@ import { Sprite, Button, input, Input, Vec2, _decorator, Component, Node, Scroll
 import { FoldItem } from "./folditem";
 import { ItemType, ListItem } from "./listitem";
 const { ccclass, property } = _decorator;
-import { screen } from 'cc'
-import { Size } from 'cc'
 import { BackButton } from "./backbutton";
 
 export class SceneList {
@@ -29,10 +27,7 @@ export class SceneManager extends Component {
     foldPrefab: Prefab | null = null;
     @property({ type: ScrollView })
     scrollView: ScrollView = null!;
-    @property
-    public bufferZone = 0; // when item is away from bufferZone, we relocate it
 
-    private _content: Node = null!;
     private _items: Node[] = [];
     private _updateTimer = 0;
     private _updateInterval = 0.2;
@@ -41,48 +36,40 @@ export class SceneManager extends Component {
     private _contentUITrans!: UITransform;
     private _spacing = 10; // item vertical spacing
     private _spawnCount = 10; // Initialize item number
-    private _totalCount = 0; // The total number of items in the scrolling list
-    private _height = 0;
-    private _displaySize = 0;
+    private _reserveSize = 16;
+    private _displayHeight = 0;
     private _displayItems: DisplayItems[] = [];
-
-    private  lastFocusIndex : number = -1;
-    private  lastPressTimestamp : number = 0;
+    private lastFocusIndex: number = -1;
+    private lastPressTimestamp: number = 0;
 
     onLoad() {
-        //screen.windowSize = new Size(1024, 2048);
-        this._content = this.scrollView.content!;
-
         this._itemTemplateUITrans = this.itemPrefab!.data.getComponent(UITransform)!;
-        this._contentUITrans = this._content._uiProps.uiTransformComp!;
+        this._contentUITrans = this.scrollView.content!.getComponent(UITransform)!;
 
         SceneList.foldCount = 0;
         if (!this.itemPrefab) {
             return;
         }
-        let k = 0;
-        let flodItem = new DisplayItems;
-        flodItem.index = 0;
-        flodItem.type = ItemType.FOLD;
-        this._displayItems.push(flodItem);
+        let sceneFlod = new DisplayItems;
+        sceneFlod.index = 0;
+        sceneFlod.type = ItemType.SCENSE_FOLD;
+        this._displayItems.push(sceneFlod);
         // Recombine item and fold for sliding the entire queue
         for (let i = 0; i < SceneList.sceneArray.length; i++) {
             let scenseItem = new DisplayItems;
-            scenseItem.index = k++;
-            scenseItem.type = ItemType.SCENSE;
+            scenseItem.index = i;
+            scenseItem.type = ItemType.SCENSE_ITEM;
             this._displayItems.push(scenseItem);
             if (i + 1 < SceneList.sceneFold.length && SceneList.sceneFold[i] !== SceneList.sceneFold[i + 1]) {
-                let flodItem = new DisplayItems;
-                flodItem.index = i + 1;
-                flodItem.type = ItemType.FOLD;
-                this._displayItems.push(flodItem);
+                let sceneFlod = new DisplayItems;
+                sceneFlod.index = i + 1;
+                sceneFlod.type = ItemType.SCENSE_FOLD;
+                this._displayItems.push(sceneFlod);
             }
         }
-        this._totalCount = this._displayItems.length;
-        this._height = this._totalCount * (this._itemTemplateUITrans.height + this._spacing) + this._spacing; // get total content height
-        this._contentUITrans.height = this._height;
-        this._displaySize = this.node.parent!.getComponent(UITransform)!.height;
-        this._spawnCount = Math.ceil(this._displaySize / (this._itemTemplateUITrans.height + this._spacing)) + 16;
+        this._contentUITrans.height = this._displayItems.length * (this._itemTemplateUITrans.height + this._spacing) + this._spacing; // get total content height
+        this._displayHeight = this.node.parent!.getComponent(UITransform)!.height;
+        this._spawnCount = Math.ceil(this._displayHeight / (this._itemTemplateUITrans.height + this._spacing)) + this._reserveSize;
         for (let j = 0; j < this._spawnCount; j++) {
             let item = instantiate(this.itemPrefab);
             item.getComponent(ListItem)!.updateItem(this._displayItems[j].type, this._displayItems[j].index);
@@ -92,6 +79,7 @@ export class SceneManager extends Component {
             this._items.push(item);
         }
         input.on(Input.EventType.GAMEPAD_INPUT, this.onGamepadInput, this);
+        this.update(this._updateInterval);
     }
 
     getPositionInView(item: Node) {
@@ -115,15 +103,15 @@ export class SceneManager extends Component {
             let isChange = false;
             if (isDown) {
                 // if away from buffer zone and not reaching top of content
-                if (viewPos.y < -this._displaySize && _temp_vec3.y + offset <= 0) {
+                if (viewPos.y < -this._displayHeight && _temp_vec3.y + offset <= 0) {
                     _temp_vec3.y += offset;
                     items[i].setPosition(_temp_vec3);
                     isChange = true;
                 }
             } else {
                 // if away from buffer zone and not reaching bottom of content
-                if (viewPos.y > this._displaySize && _temp_vec3.y - offset > -this._height) {
-                    let n = Math.floor((viewPos.y - this._displaySize) / (offset));
+                if (viewPos.y > this._displayHeight && _temp_vec3.y - offset > -this._contentUITrans.height) {
+                    let n = Math.floor((viewPos.y - this._displayHeight) / (offset));
                     _temp_vec3.y -= offset * (n + 1);
                     items[i].setPosition(_temp_vec3);
                     isChange = true;
@@ -152,14 +140,14 @@ export class SceneManager extends Component {
     }
 
     addFocusIndex() {
-        BackButton.focusButtonIndex ++;
+        BackButton.focusButtonIndex++;
         if (BackButton.focusButtonIndex >= this.node.children.length) {
             BackButton.focusButtonIndex = 0;
         }
     }
 
     decFocusIndex() {
-        BackButton.focusButtonIndex --;
+        BackButton.focusButtonIndex--;
         if (BackButton.focusButtonIndex < 0) {
             BackButton.focusButtonIndex = this.node.children.length - 1;
         }
@@ -175,24 +163,24 @@ export class SceneManager extends Component {
         }
     }
 
-    getCurrentFoucusNode() : Node {
+    getCurrentFoucusNode(): Node {
         return this.node.children[BackButton.focusButtonIndex];
     }
 
-    isCurrentFocusNodeFold() : boolean {
-        return !!(this.getCurrentFoucusNode().getComponent(ListItem)?.type == ItemType.FOLD);
+    isCurrentFocusNodeFold(): boolean {
+        return !!(this.getCurrentFoucusNode().getComponent(ListItem)?.type == ItemType.SCENSE_FOLD);
     }
 
-    isControllerButtonPress(val : number) : boolean {
+    isControllerButtonPress(val: number): boolean {
         let ret = !!(val > 0);
         return ret;
     }
 
-    isCurrentFocusOnEnd() : boolean {
+    isCurrentFocusOnEnd(): boolean {
         return (this.getCurrentFoucusNode().getComponent(ListItem)?.index == SceneList.sceneArray.length - 1);
     }
 
-    isCurrentFocusOnBegin() : boolean {
+    isCurrentFocusOnBegin(): boolean {
         return (this.getCurrentFoucusNode().getComponent(ListItem)?.index == 0);
     }
 
@@ -200,7 +188,7 @@ export class SceneManager extends Component {
         const gp = event.gamepad;
         const axisPrecision = 0.03;
         const pressSensitiveTime = 25; //ms
-        
+
         if ((this.lastPressTimestamp != 0) && ((Date.now() - this.lastPressTimestamp) < pressSensitiveTime)) {
             return;
         }
@@ -250,7 +238,7 @@ export class SceneManager extends Component {
         //hight light
         this.highlightFocusNode();
 
-        let viewHeightCenter = (this.scrollView.view?.getComponent(UITransform)?.height - this.getCurrentFoucusNode().getComponent(UITransform)?.height) / 2;
+        let viewHeightCenter = (this.scrollView.view!.getComponent(UITransform)!.height - this.getCurrentFoucusNode().getComponent(UITransform)!.height) / 2;
         //let viewCenter = this.scrollView.getComponent(UITransform)._contentSize.height / 2;
 
         this.scrollView.scrollToOffset(new Vec2(0, -this.getCurrentFoucusNode().getPosition().y - viewHeightCenter), 0.4);

@@ -16,18 +16,18 @@ declare class AutoTestConfigJson extends JsonAsset {
 @ccclass("BackButton")
 export class BackButton extends Component {
     private static _offset = new Vec3();
-    public static _scrollNode : Node | null  = null;
-    private static _scrollCom : ScrollView | null = null;
+    public static _scrollNode: Node | null = null;
+    private static _scrollCom: ScrollView | null = null;
 
-    private static _sceneIndex : number = -1;
-    private static _blockInput : Node;
-    private static _prevNode : Node;
-    private static _nextNode : Node;
-    private sceneName! : Label;
+    private static _sceneIndex: number = -1;
+    private static _blockInput: Node;
+    private static _prevNode: Node;
+    private static _nextNode: Node;
+    private sceneName!: Label;
 
-    public static focusButtonIndex : number = 0;
-    public static isControllerMode : boolean = false;
-    private  lastPressTimestamp : number = 0;
+    public static focusButtonIndex: number = 0;
+    public static isControllerMode: boolean = false;
+    private lastPressTimestamp: number = 0;
 
     @property(JsonAsset)
     public autoTestConfig: AutoTestConfigJson | null = null;
@@ -39,7 +39,7 @@ export class BackButton extends Component {
         const array: string[] = [];
         sceneInfo.forEach((i) => array.push(i.url));
         array.sort();
-        for (let i = 0;  i< array.length; i++) {
+        for (let i = 0; i < array.length; i++) {
             let str = array[i];
             if (str.includes('TestList') || str.includes('subPack') || str.includes('static-ui-replace')) {
                 continue;
@@ -50,8 +50,8 @@ export class BackButton extends Component {
             const firstIndex = str.lastIndexOf('/') + 1;
             const lastIndex = str.lastIndexOf('.scene');
             SceneList.sceneArray.push(str.substring(firstIndex, lastIndex));
-            const firstIndexFold= str.indexOf('/cases/') + 7;
-            const lastIndexFolf = str.indexOf('/',firstIndexFold);
+            const firstIndexFold = str.indexOf('/cases/') + 7;
+            const lastIndexFolf = str.indexOf('/', firstIndexFold);
             SceneList.sceneFold.push(str.substring(firstIndexFold, lastIndexFolf));
         }
     }
@@ -60,14 +60,14 @@ export class BackButton extends Component {
         input.on(Input.EventType.GAMEPAD_INPUT, this.onGamepadInput, this);
     }
 
-    public manuallyControl () {
+    public manuallyControl() {
         this.node.getChildByName('PrevButton')!.active = true;
         this.node.getChildByName('NextButton')!.active = true;
         this.node.getChildByName('back')!.active = true;
         profiler.showStats();
     }
 
-    public autoControl () {
+    public autoControl() {
         this.node.getChildByName('PrevButton')!.active = false;
         this.node.getChildByName('NextButton')!.active = false;
         this.node.getChildByName('back')!.active = false;
@@ -78,22 +78,22 @@ export class BackButton extends Component {
         return BackButton._offset;
     }
 
-    public static set offset( value ) {
+    public static set offset(value) {
         BackButton._offset = value;
     }
 
-    public static saveOffset () {
-        if (BackButton._scrollNode ) {
+    public static saveOffset() {
+        if (BackButton._scrollNode) {
             BackButton._offset = new Vec3(0, BackButton._scrollCom!.getScrollOffset().y, 0);
         }
     }
 
-    public static saveIndex ( index : number) {
+    public static saveIndex(index: number) {
         BackButton._sceneIndex = index;
         BackButton.refreshButton();
     }
 
-    public static refreshButton () {
+    public static refreshButton() {
         if (BackButton._sceneIndex === -1) {
             BackButton._prevNode.active = false;
             BackButton._nextNode.active = false;
@@ -103,7 +103,7 @@ export class BackButton extends Component {
         }
     }
 
-    start () {
+    start() {
         let camera = this.node.getComponent(Canvas)!.cameraComponent!;
         if (camera.visibility & Layers.Enum.UI_2D) camera.visibility &= ~Layers.Enum.UI_2D;
         this.sceneName = find("backRoot")!.getChildByName("sceneName")!.getComponent(Label)!;
@@ -119,7 +119,7 @@ export class BackButton extends Component {
         if (BackButton._prevNode && BackButton._nextNode) {
             BackButton.refreshButton();
         }
-        director.on(Director.EVENT_BEFORE_SCENE_LOADING,this.switchSceneName,this);
+        director.on(Director.EVENT_BEFORE_SCENE_LOADING, this.switchSceneName, this);
         if (!this.autoTestConfig!.json.enabled) return;
         TestFramework.instance.connect(this.autoTestConfig!.json.server, this.autoTestConfig!.json.port, this.autoTestConfig!.json.timeout, (err) => {
             if (err) {
@@ -144,26 +144,26 @@ export class BackButton extends Component {
         });
     }
 
-    onDestroy () {
+    onDestroy() {
         let length = SceneList.sceneArray.length;
-        for(let i = 0; i < length; i++) {
+        for (let i = 0; i < length; i++) {
             SceneList.sceneArray.pop();
         }
         input.off(Input.EventType.GAMEPAD_INPUT, this.onGamepadInput, this);
     }
 
-    switchSceneName () {
+    switchSceneName() {
         if (this.getSceneName() == null) {
             return;
         }
         this.sceneName.node.active = true;
-        this.sceneName.string = this.getFoldName() +' : '+ this.getSceneName();
+        this.sceneName.string = this.getFoldName() + ' : ' + this.getSceneName();
     }
 
-    backToList () {
+    backToList() {
         director.resume();
         BackButton._blockInput.active = true;
-        director.loadScene('TestList', ()=> {
+        director.loadScene('TestList', () => {
             this.sceneName.node.active = false;
             BackButton._sceneIndex = -1;
             BackButton.refreshButton();
@@ -177,7 +177,7 @@ export class BackButton extends Component {
         });
     }
 
-    nextScene () {
+    nextScene() {
         director.resume();
         BackButton._blockInput.active = true;
         this.updateSceneIndex(true);
@@ -208,37 +208,37 @@ export class BackButton extends Component {
         });
     }
 
-    preScene () {
+    preScene() {
         director.resume();
         BackButton._blockInput.active = true;
         this.updateSceneIndex(false);
-        director.loadScene(this.getSceneName(), function() {
+        director.loadScene(this.getSceneName(), function () {
             BackButton._blockInput.active = false;
         });
     }
 
-    updateSceneIndex (next:Boolean) {
+    updateSceneIndex(next: Boolean) {
         if (next) {
             (BackButton._sceneIndex + 1) >= SceneList.sceneArray.length ? BackButton._sceneIndex = 0 : BackButton._sceneIndex += 1;
-        }else {
+        } else {
             (BackButton._sceneIndex - 1) < 0 ? BackButton._sceneIndex = SceneList.sceneArray.length - 1 : BackButton._sceneIndex -= 1;
         }
     }
 
-    getSceneName () {
+    getSceneName() {
         return SceneList.sceneArray[BackButton._sceneIndex];
     }
 
-    getFoldName () {
+    getFoldName() {
         return SceneList.sceneFold[BackButton._sceneIndex];
     }
 
-    isControllerButtonPress(val : number) : boolean {
+    isControllerButtonPress(val: number): boolean {
         let ret = !!(val > 0);
         return ret;
     }
 
-    onGamepadInput(event : EventGamepad) {
+    onGamepadInput(event: EventGamepad) {
         const pressSensitiveTime = 250; //ms
         const axisPrecision = 0.03;
 
