@@ -77,7 +77,7 @@ export class SceneManager extends Component {
             this._items.push(item);
         }
         input.on(Input.EventType.GAMEPAD_INPUT, this.onGamepadInput, this);
-        input.on(Input.EventType.TOUCH_START, this.onTouchInput, this);
+        this.scrollView.node.on(Node.EventType.TOUCH_START, this.onTouchInput, this);
         this.update(this._updateInterval);
     }
 
