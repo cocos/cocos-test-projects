@@ -1,7 +1,7 @@
-import { EventGamepad, GamepadCode, input, Input, _decorator, Component, Node, ScrollView, Vec3, Layout, game, Label, director, Director, assetManager, find, Canvas, Layers, CCString, CCInteger, resources, JsonAsset, profiler, CCBoolean } from "cc";
+import { EventGamepad, input, Input, _decorator, Component, Node, ScrollView, Vec3, Layout, game, Label, director, Director, assetManager, find, Canvas, Layers, JsonAsset, profiler } from "cc";
 const { ccclass, property } = _decorator;
 import { SceneList } from "./scenelist";
-import { ReceivedCode, StateCode, TestFramework } from "./TestFramework";
+import { StateCode, TestFramework } from "./TestFramework";
 
 declare class AutoTestConfigJson extends JsonAsset {
     json: {

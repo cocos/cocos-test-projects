@@ -1,5 +1,4 @@
-import { Sprite, Button, input, Input, Vec2, _decorator, Component, Node, ScrollView, Prefab, instantiate, EventGamepad, GamepadCode, EventHandler, find, Vec3, UITransform, Layout, View } from "cc";
-import { FoldItem } from "./folditem";
+import { Sprite, Button, input, Input, Vec2, _decorator, Component, Node, ScrollView, Prefab, instantiate, EventGamepad, Vec3, UITransform } from "cc";
 import { ItemType, ListItem } from "./listitem";
 const { ccclass, property } = _decorator;
 import { BackButton } from "./backbutton";
@@ -40,7 +39,6 @@ export class SceneManager extends Component {
     private _displayHeight = 0;
     private _displayItems: DisplayItems[] = [];
     private lastFocusIndex: number = -1;
-    private lastPressTimestamp: number = 0;
 
     onLoad() {
         this._itemTemplateUITrans = this.itemPrefab!.data.getComponent(UITransform)!;
@@ -187,12 +185,6 @@ export class SceneManager extends Component {
     onGamepadInput(event: EventGamepad) {
         const gp = event.gamepad;
         const axisPrecision = 0.03;
-        const pressSensitiveTime = 25; //ms
-
-        if ((this.lastPressTimestamp != 0) && ((Date.now() - this.lastPressTimestamp) < pressSensitiveTime)) {
-            return;
-        }
-        this.lastPressTimestamp = Date.now();
 
         BackButton.isControllerMode = true;
 
