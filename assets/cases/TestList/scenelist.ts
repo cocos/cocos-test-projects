@@ -1,4 +1,4 @@
-import { Sprite, Button, input, Input, Vec2, _decorator, Component, Node, ScrollView, Prefab, instantiate, EventGamepad, Vec3, UITransform } from "cc";
+import { Sprite, Button, input, Input, Vec2, _decorator, Component, Node, ScrollView, Prefab, instantiate, EventGamepad, Vec3, UITransform, ScrollBar, EventTouch } from "cc";
 import { ItemType, ListItem } from "./listitem";
 const { ccclass, property } = _decorator;
 import { BackButton } from "./backbutton";
@@ -77,6 +77,7 @@ export class SceneManager extends Component {
             this._items.push(item);
         }
         input.on(Input.EventType.GAMEPAD_INPUT, this.onGamepadInput, this);
+        input.on(Input.EventType.TOUCH_START, this.onTouchInput, this);
         this.update(this._updateInterval);
     }
 
@@ -182,12 +183,20 @@ export class SceneManager extends Component {
         return (this.getCurrentFoucusNode().getComponent(ListItem)?.index == 0);
     }
 
+    onTouchInput(event: EventTouch) {
+        if(!this.scrollView.verticalScrollBar!.node.active)
+            this.scrollView.verticalScrollBar!.node.active = true;
+    }
+
     onGamepadInput(event: EventGamepad) {
+        if(this.scrollView.verticalScrollBar!.node.active)
+            this.scrollView.verticalScrollBar!.node.active = false;
+
         const gp = event.gamepad;
         const axisPrecision = 0.03;
 
         BackButton.isControllerMode = true;
-
+        
         const ls = gp.leftStick.getValue();
         const isUp = this.isControllerButtonPress(gp.dpad.up.getValue()) || ls.y > axisPrecision;
         const isDown = this.isControllerButtonPress(gp.dpad.down.getValue()) || (ls.y < -axisPrecision);
