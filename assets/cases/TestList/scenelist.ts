@@ -77,7 +77,7 @@ export class SceneManager extends Component {
             this._items.push(item);
         }
         input.on(Input.EventType.GAMEPAD_INPUT, this.onGamepadInput, this);
-        this.scrollView.node.on(Node.EventType.TOUCH_START, this.onTouchInput, this);
+        this.scrollView.node.on(Node.EventType.TOUCH_START, this.onTouchStart, this);
         this.update(this._updateInterval);
     }
 
@@ -183,7 +183,7 @@ export class SceneManager extends Component {
         return (this.getCurrentFoucusNode().getComponent(ListItem)?.index == 0);
     }
 
-    onTouchInput(event: EventTouch) {
+    onTouchStart(event: EventTouch) {
         if(!this.scrollView.verticalScrollBar!.node.active)
             this.scrollView.verticalScrollBar!.node.active = true;
     }
