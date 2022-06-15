@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, ScrollView, Vec3, Layout, game, Label, director, Director, assetManager, find, Canvas, Layers, CCString, CCInteger, resources, JsonAsset, profiler, CCBoolean } from "cc";
+import { _decorator, Component, Node, ScrollView, Vec3, Layout, game, Label, director, Director, assetManager, find, Canvas, Layers, CCString, CCInteger, resources, JsonAsset, profiler, CCBoolean, sys } from "cc";
 const { ccclass, property } = _decorator;
 import { SceneList } from "./scenelist";
 import { ReceivedCode, StateCode, TestFramework } from "./TestFramework";
@@ -42,6 +42,12 @@ export class BackButton extends Component {
             }
             if (str.includes('asset-bundle-zip') && !assetManager.downloader.remoteServerAddress) {
                 continue;
+            }
+            if (sys.platform === sys.Platform.NX){
+                if (str.includes('rich-text-long-string-truncation') || str.includes('rich-text-align') || str.includes('geometry-renderer') || str.includes('particle-align')
+                || str.includes('particle-renderer') || str.includes('particle-trail3') || str.includes('particle-culling') || str.includes('boxes-unbatched') || str.includes('network')) {
+                    continue;
+                }
             }
             const firstIndex = str.lastIndexOf('/') + 1;
             const lastIndex = str.lastIndexOf('.scene');
