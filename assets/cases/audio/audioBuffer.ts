@@ -59,7 +59,7 @@ export class audioBuffer extends Component {
         this.slider.node.off('slide', this.onSliderChange, this);
     }
 
-    async drawBufferFromChannel (graphics: Graphics, buffer?: Float32Array) {
+    drawBufferFromChannel (graphics: Graphics, buffer?: Float32Array) {
         if (!buffer) {
             return;
         }
@@ -81,7 +81,7 @@ export class audioBuffer extends Component {
         graphics.stroke();
     }
 
-    async drawAudioBuffer () {
+    drawAudioBuffer () {
         this.graphics1.clear();
         this.graphics2.clear();
         
@@ -89,7 +89,7 @@ export class audioBuffer extends Component {
         this.drawBufferFromChannel(this.graphics2, this._buffer2);
     }
 
-    async onDragMove (event: EventTouch) {
+    onDragMove (event: EventTouch) {
         let deltaX = event.getDeltaX();
         let pos1 = this.graphics1.node.position;
         let pos2 = this.graphics2.node.position;
@@ -103,7 +103,7 @@ export class audioBuffer extends Component {
         this.graphics2.node.setPosition(v3(posX2, pos2.y, pos2.z));
     }
 
-    async onSliderChange (slider: Slider) {
+    onSliderChange (slider: Slider) {
         const progress = slider.progress;
         this._currentScaleX = progress * this._maxScaleX;
         this._currentScaleX = clamp(this._currentScaleX, 1, this._maxScaleX);
@@ -111,7 +111,7 @@ export class audioBuffer extends Component {
         this._uiTrans2.width = this._originalWidth2 * this._currentScaleX;
 
         this._correctPosition();
-        await this.drawAudioBuffer();
+        this.drawAudioBuffer();
     }
 
     private _correctPosition () {
