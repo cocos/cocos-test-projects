@@ -23,6 +23,9 @@ export class audioBuffer extends Component {
     private _originalWidth1 = 0;
     private _originalWidth2 = 0;
 
+    private _sampleRate = 0;
+    private _bitDepth = 1;
+
     private _uiTrans1: UITransform = null!;
     private _uiTrans2: UITransform = null!;
 
@@ -31,12 +34,14 @@ export class audioBuffer extends Component {
     private _visibleSize!: Size;
 
     async onEnable () {
-        this._buffer1 = await this.audioSource.getBufferAtChannel(0);
-        this._buffer2 = await this.audioSource.getBufferAtChannel(1);
+        this._buffer1 = await this.audioSource.getPCMBuffer(0);
+        this._buffer2 = await this.audioSource.getPCMBuffer(1);
         if (!this._buffer1 && !this._buffer2) {
             this.noSupported.active = true;
             return;
         }
+        this._sampleRate = await this.audioSource.getSampleRate();
+        this._bitDepth = await this.audioSource.getBitDepth();
         this._originalWidth1 = this.graphics1.getComponent(UITransform)!.contentSize.width;
         this._originalWidth2 = this.graphics2.getComponent(UITransform)!.contentSize.width;
         this._uiTrans1 = this.graphics1.getComponent(UITransform)!;
@@ -58,7 +63,8 @@ export class audioBuffer extends Component {
         if (!buffer) {
             return;
         }
-        const startSamplePoint = Math.ceil(buffer.length/2);
+        // sample from 42 seconds
+        const startSamplePoint = 42 * this._sampleRate;
         const maxSampleLength = 15000;
         const sampleLength = Math.min(buffer.length-startSamplePoint, maxSampleLength);
         const contentSize = graphics.node.getComponent(UITransform)!.contentSize;
@@ -68,7 +74,7 @@ export class audioBuffer extends Component {
         graphics.moveTo(startDrawingPoint, 0);
         const endSamplePoint = startSamplePoint + sampleLength;
         for (let i = startSamplePoint; i < endSamplePoint; i++) {
-            const data = buffer[i];
+            const data = buffer[i] / this._bitDepth;  // Normalize data
             const y = data * contentSize.height/2;
             graphics.lineTo(startDrawingPoint + (i-startSamplePoint)*drawingStep, y);
         }
