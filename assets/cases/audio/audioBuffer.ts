@@ -48,7 +48,7 @@ export class audioBuffer extends Component {
         this._uiTrans2 = this.graphics2.getComponent(UITransform)!;
         this._visibleSize = view.getVisibleSize();
 
-        await this.drawAudioBuffer();
+        this.drawAudioBuffer();
 
         input.on(Input.EventType.TOUCH_MOVE, this.onDragMove, this);
         this.slider.node.on('slide', this.onSliderChange, this);
