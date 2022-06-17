@@ -16,16 +16,15 @@ export class BuildTimeConstantsTest extends Component {
     public start() {
         const label = this.labelNode.getComponent(Label)!;
         const keyNameMaxLen = keys.reduce((len, key) => Math.max(len, key.length), 0);
-        label.string = `\
-            ${keys.map((key) => {
-            const value = buildTimeConstants[key];
-            const valueRep = typeof value === 'boolean' ?
-                (value ? 'V' : 'X') :
-                value;
-                'abc'.codePointAt
-            return `${key.padStart(keyNameMaxLen, ' ')} : ${valueRep}`;
-        }).join('\n')
+        let resultString = '';
+        keys.forEach((key) => {
+            if (key === 'LINKSURE' || key === 'QTT') {
+                return;
             }
-`;
+            const value = buildTimeConstants[key];
+            const valueRep = (value ? 'V' : 'X');
+            resultString += `${key.padStart(keyNameMaxLen, ' ')} : ${valueRep}\n`;
+        });
+        label.string = resultString;
     }
 }
