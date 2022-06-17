@@ -1,7 +1,7 @@
-import { _decorator, Component, Node, ScrollView, Vec3, Layout, game, Label, director, Director, assetManager, find, Canvas, Layers, CCString, CCInteger, resources, JsonAsset, profiler, CCBoolean, sys } from "cc";
+import { EventGamepad, input, Input, _decorator, Component, Node, ScrollView, Vec3, game, Label, director, Director, assetManager, find, Canvas, Layers, JsonAsset, profiler, sys } from "cc";
 const { ccclass, property } = _decorator;
 import { SceneList } from "./scenelist";
-import { ReceivedCode, StateCode, TestFramework } from "./TestFramework";
+import { StateCode, TestFramework } from "./TestFramework";
 
 declare class AutoTestConfigJson extends JsonAsset {
     json: {
@@ -24,6 +24,10 @@ export class BackButton extends Component {
     private static _prevNode : Node;
     private static _nextNode : Node;
     private sceneName! : Label;
+
+    public static focusButtonIndex: number = 0;
+    public static isControllerMode: boolean = false;
+    private lastPressTimestamp: number = 0;
 
     @property(JsonAsset)
     public autoTestConfig: AutoTestConfigJson | null = null;
@@ -56,6 +60,10 @@ export class BackButton extends Component {
             const lastIndexFolf = str.indexOf('/',firstIndexFold);
             SceneList.sceneFold.push(str.substring(firstIndexFold, lastIndexFolf));
         }
+    }
+
+    onLoad() {
+        input.on(Input.EventType.GAMEPAD_INPUT, this.onGamepadInput, this);
     }
 
     public manuallyControl () {
@@ -147,6 +155,7 @@ export class BackButton extends Component {
         for(let i = 0; i < length; i++) {
             SceneList.sceneArray.pop();
         }
+        input.off(Input.EventType.GAMEPAD_INPUT, this.onGamepadInput, this);
     }
 
     switchSceneName () {
@@ -228,5 +237,38 @@ export class BackButton extends Component {
 
     getFoldName () {
         return SceneList.sceneFold[BackButton._sceneIndex];
+    }
+
+    isControllerButtonPress(val: number): boolean {
+        let ret = !!(val > 0);
+        return ret;
+    }
+
+    onGamepadInput(event: EventGamepad) {
+        const pressSensitiveTime = 250; //ms
+        const axisPrecision = 0.03;
+
+        let currentSence = director.getScene();
+        if (currentSence?.name == "" || (currentSence?.name == "TestList") || (currentSence?.name == "gamepad-event")) {
+            return;
+        }
+        if ((this.lastPressTimestamp != 0) && ((Date.now() - this.lastPressTimestamp) < pressSensitiveTime)) {
+            return;
+        }
+        this.lastPressTimestamp = Date.now();
+
+        const gp = event.gamepad;
+        const ls = gp.leftStick.getValue();
+
+        const isLeft = this.isControllerButtonPress(gp.dpad.left.getValue()) || ls.x > axisPrecision;
+        const isRight = this.isControllerButtonPress(gp.dpad.right.getValue()) || (ls.x < -axisPrecision);
+        const isBack = this.isControllerButtonPress(gp.buttonEast.getValue());
+        if (isBack) {
+            this.backToList();
+        } else if (isLeft) {
+            this.preScene();
+        } else if (isRight) {
+            this.nextScene();
+        }
     }
 }
