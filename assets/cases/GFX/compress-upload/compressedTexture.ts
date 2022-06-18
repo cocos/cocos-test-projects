@@ -165,15 +165,27 @@ export class CompressedTexture extends Component {
             director.root?.device.copyBuffersToTexture([data], this.texture6!.getGFXTexture()!, [copyRegion6]);
             director.root?.device.copyBuffersToTexture([data], this.texture7!.getGFXTexture()!, [copyRegion7]);
         } else if (buffer instanceof HTMLImageElement) {
-            const data = getImageData(buffer);
-            director.root?.device.copyBuffersToTexture([data], this.texture0!.getGFXTexture()!, [copyRegion0]);
-            director.root?.device.copyBuffersToTexture([data], this.texture1!.getGFXTexture()!, [copyRegion1]);
-            director.root?.device.copyBuffersToTexture([data], this.texture2!.getGFXTexture()!, [copyRegion2]);
-            director.root?.device.copyBuffersToTexture([data], this.texture3!.getGFXTexture()!, [copyRegion3]);
-            director.root?.device.copyBuffersToTexture([data], this.texture4!.getGFXTexture()!, [copyRegion4]);
-            director.root?.device.copyBuffersToTexture([data], this.texture5!.getGFXTexture()!, [copyRegion5]);
-            director.root?.device.copyBuffersToTexture([data], this.texture6!.getGFXTexture()!, [copyRegion6]);
-            director.root?.device.copyBuffersToTexture([data], this.texture7!.getGFXTexture()!, [copyRegion7]);
+            if (director.root?.device.gfxAPI! < gfx.API.WEBGL) {
+                const data = buffer;
+                director.root?.device.copyTexImagesToTexture([data], this.texture0!.getGFXTexture()!, [copyRegion0]);
+                director.root?.device.copyTexImagesToTexture([data], this.texture1!.getGFXTexture()!, [copyRegion1]);
+                director.root?.device.copyTexImagesToTexture([data], this.texture2!.getGFXTexture()!, [copyRegion2]);
+                director.root?.device.copyTexImagesToTexture([data], this.texture3!.getGFXTexture()!, [copyRegion3]);
+                director.root?.device.copyTexImagesToTexture([data], this.texture4!.getGFXTexture()!, [copyRegion4]);
+                director.root?.device.copyTexImagesToTexture([data], this.texture5!.getGFXTexture()!, [copyRegion5]);
+                director.root?.device.copyTexImagesToTexture([data], this.texture6!.getGFXTexture()!, [copyRegion6]);
+                director.root?.device.copyTexImagesToTexture([data], this.texture7!.getGFXTexture()!, [copyRegion7]);
+            } else {
+                const data = getImageData(buffer);
+                director.root?.device.copyBuffersToTexture([data], this.texture0!.getGFXTexture()!, [copyRegion0]);
+                director.root?.device.copyBuffersToTexture([data], this.texture1!.getGFXTexture()!, [copyRegion1]);
+                director.root?.device.copyBuffersToTexture([data], this.texture2!.getGFXTexture()!, [copyRegion2]);
+                director.root?.device.copyBuffersToTexture([data], this.texture3!.getGFXTexture()!, [copyRegion3]);
+                director.root?.device.copyBuffersToTexture([data], this.texture4!.getGFXTexture()!, [copyRegion4]);
+                director.root?.device.copyBuffersToTexture([data], this.texture5!.getGFXTexture()!, [copyRegion5]);
+                director.root?.device.copyBuffersToTexture([data], this.texture6!.getGFXTexture()!, [copyRegion6]);
+                director.root?.device.copyBuffersToTexture([data], this.texture7!.getGFXTexture()!, [copyRegion7]);
+            }
         } else {
             assert(false);
         }
