@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, AudioSource, Graphics, view, UITransform, input, Input, EventMouse, clamp, v3, Size, EventTouch, Slider } from 'cc';
+import { _decorator, Component, Node, AudioSource, Graphics, view, UITransform, input, Input, EventMouse, clamp, v3, Size, EventTouch, Slider, AudioArrayBuffer } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('audioBuffer')
@@ -17,8 +17,8 @@ export class audioBuffer extends Component {
     @property(Node)
     noSupported: Node = null!;
 
-    private _buffer1?: Float32Array;
-    private _buffer2?: Float32Array;
+    private _buffer1?: AudioArrayBuffer;
+    private _buffer2?: AudioArrayBuffer;
 
     private _originalWidth1 = 0;
     private _originalWidth2 = 0;
@@ -59,7 +59,7 @@ export class audioBuffer extends Component {
         this.slider.node.off('slide', this.onSliderChange, this);
     }
 
-    drawBufferFromChannel (graphics: Graphics, buffer?: Float32Array) {
+    drawBufferFromChannel (graphics: Graphics, buffer?: AudioArrayBuffer) {
         if (!buffer) {
             return;
         }
