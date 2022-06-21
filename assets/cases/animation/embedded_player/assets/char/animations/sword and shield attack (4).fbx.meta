@@ -1,0 +1,124 @@
+{
+  "ver": "2.2.0",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "500d1011-de7a-487c-8266-640618bbf585",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "18d6f": {
+      "importer": "gltf-animation",
+      "uuid": "500d1011-de7a-487c-8266-640618bbf585@18d6f",
+      "displayName": "",
+      "id": "18d6f",
+      "name": "mixamo.com.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 1
+        },
+        "events": [],
+        "embeddedPlayers": [
+          {
+            "begin": 0.26666666666666666,
+            "end": 0.8666666666666667,
+            "reconciledSpeed": false,
+            "editorExtras": {
+              "group": "1655374674415"
+            },
+            "playable": {
+              "path": "/Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/Sword_joint/ParticleSwordTest",
+              "type": "particle-system"
+            }
+          },
+          {
+            "begin": 0.03333333333333333,
+            "end": 1,
+            "reconciledSpeed": false,
+            "editorExtras": {
+              "group": "1655374672837"
+            },
+            "playable": {
+              "path": "/Paladin_J_Nordstrom_Sword",
+              "clip": "6b1a71b7-471c-44b2-9797-4517f79720a1",
+              "type": "animation-clip"
+            }
+          }
+        ],
+        "editorExtras": {
+          "embeddedPlayerGroups": [
+            {
+              "key": "1655374672837",
+              "name": "animation-clip",
+              "type": "animation-clip"
+            },
+            {
+              "key": "1655374674415",
+              "name": "particle-system",
+              "type": "particle-system"
+            }
+          ]
+        },
+        "speed": 1
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "c07c0": {
+      "importer": "gltf-scene",
+      "uuid": "500d1011-de7a-487c-8266-640618bbf585@c07c0",
+      "displayName": "",
+      "id": "c07c0",
+      "name": "sword and shield attack (4).prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "animationImportSettings": [
+      {
+        "name": "mixamo.com",
+        "duration": 1,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "mixamo.com",
+            "from": 0,
+            "to": 1,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "500d1011-de7a-487c-8266-640618bbf585@c07c0",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "500d1011-de7a-487c-8266-640618bbf585@c07c0"
+      ]
+    },
+    "fbx": {
+      "smartMaterialEnabled": false
+    }
+  }
+}
