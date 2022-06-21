@@ -260,8 +260,8 @@ export class BackButton extends Component {
         const gp = event.gamepad;
         const ls = gp.leftStick.getValue();
 
-        const isLeft = this.isControllerButtonPress(gp.dpad.left.getValue()) || ls.x > axisPrecision;
-        const isRight = this.isControllerButtonPress(gp.dpad.right.getValue()) || (ls.x < -axisPrecision);
+        const isLeft = this.isControllerButtonPress(gp.dpad.left.getValue()) || ls.x < -axisPrecision;
+        const isRight = this.isControllerButtonPress(gp.dpad.right.getValue()) || (ls.x > axisPrecision);
         const isBack = this.isControllerButtonPress(gp.buttonEast.getValue());
         if (isBack) {
             this.backToList();
