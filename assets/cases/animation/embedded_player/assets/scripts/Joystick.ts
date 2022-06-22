@@ -6,29 +6,29 @@ const { ccclass, property } = _decorator;
 export default class Joystick extends Component {
 
 
-    @property({displayName: "canvas下的相机，只拍UI的那个", tooltip: "canvas下的相机，只拍UI的那个", type: CameraComponent})
+    @property({displayName: "UI Canvas Camera", tooltip: "UI Canvas Camera", type: CameraComponent})
     camera: CameraComponent = null!;
 
 
-    @property({displayName: "父节点", tooltip: "摇杆中心点和背景的父节点，需要用这个节点来做坐标转换", type: UITransformComponent})
+    @property({displayName: "Parent Node", tooltip: "Parent node of background and joystick center，this node is used to convert location matrix.", type: UITransformComponent})
     parent: UITransformComponent = null!;
 
 
 
-    @property({displayName: "摇杆背景", tooltip: "摇杆背景", type: Node})
+    @property({displayName: "JoyStick Background", tooltip: "Joystick Background.", type: Node})
     bg: Node = null!;
 
-    @property({displayName: "摇杆中心点", tooltip: "摇杆中心点", type: Node})
+    @property({displayName: "Joystick Center", tooltip: "Joystick Center", type: Node})
     joystick: Node = null!;
 
 
 
-    @property({displayName: "最大半径", tooltip: "摇杆移动的最大半径", type: CCFloat})
+    @property({displayName: "Joystick Max Radius", tooltip: "Max move radius of Joystick.", type: CCFloat})
     max_R: number = 135;
 
     
 
-    @property({displayName: "是否禁用摇杆", tooltip: "是否禁用摇杆，禁用后摇杆将不能摇动"})
+    @property({displayName: "Disable Joy Stick Movement", tooltip: "Disable Joy Stick Movement."})
     is_forbidden: boolean = false;
 
 
@@ -54,15 +54,6 @@ export default class Joystick extends Component {
 
         // 如果没有禁用摇杆
         if(this.is_forbidden == false){
-
-            /*
-            通过点击屏幕获得的点的坐标是屏幕坐标
-            必须先用相机从屏幕坐标转到世界坐标
-            再从世界坐标转到节点坐标
-
-            就这个问题折腾了很久
-            踩坑踩坑踩坑
-            */
 
             // 获取触点的位置，屏幕坐标
             let point = new Vec2(event.getLocationX(), event.getLocationY());

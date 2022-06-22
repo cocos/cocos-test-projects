@@ -9,21 +9,21 @@ const { ccclass, property } = _decorator;
 export default class Player extends Component {
 
 
-    @property({displayName: "摇杆脚本所在节点", tooltip: "摇杆脚本Joystick所在脚本", type: joy})
+    @property({displayName: "Joy Stick Node", tooltip: "node where Joystick script locates", type: joy})
     joy: joy = null!;
 
 
-    @property({displayName: "角色", tooltip: "角色", type: RigidBodyComponent})
+    @property({displayName: "Character", tooltip: "Character", type: RigidBodyComponent})
     player: RigidBodyComponent = null!;
 
-    @property({displayName: "动画控制", tooltip: "动画图所在节点", type: animation.AnimationController})
+    @property({displayName: "Animation Controller", tooltip: "Node where animation controller locates", type: animation.AnimationController})
     animCtrl: animation.AnimationController = null!;
 
-    @property({displayName: "是否禁锢角色", tooltip: "是否禁锢角色，如果角色被禁锢，角色就动不了了"})
+    @property({displayName: "Lock Character Movement", tooltip: "Lock Character Movement"})
     is_fbd_player: boolean = false;
 
 
-    @property({displayName: "角色移动速度", tooltip: "角色移动速度，不建议太大，1-10最好", type: CCFloat})
+    @property({displayName: "Character Movement Speed", tooltip: "Character Movement Speed，suggest to set between 1 to 10.", type: CCFloat})
     speed: number = 3;
 
 
@@ -46,10 +46,10 @@ export default class Player extends Component {
             let y = dir.y * this.speed;
 
             this.animCtrl.setValue('VelocityX', x)
-            console.log(`VelocityX now: ${x}`);
+            //console.log(`VelocityX now: ${x}`);
 
             this.animCtrl.setValue('VelocityY', y)
-            console.log(`VelocityY now: ${y}`);
+            //console.log(`VelocityY now: ${y}`);
             // 获取角色当前移动向量
             let vc = new Vec3(0, 0, 0);
             this.player.getLinearVelocity(vc);

@@ -8,37 +8,37 @@ const { ccclass, property } = _decorator;
 export class UI extends Component {
 
 
-    @property({displayName: "Player脚本所在节点", tooltip: "Player脚本所在节点", type: player})
+    @property({displayName: "Player Script Node", tooltip: "Node where player script is applied.", type: player})
     player: player = null!;
 
 
     @property({
-        displayName: "移动视角事件目标节点", 
-        tooltip: "代码将把移动视角的事件绑定到这个节点上，推荐把这个节点的宽高设置成和canvas一样，并给四个方向加上widget", 
+        displayName: "Camera movement event processing node", 
+        tooltip: "Scripts binds camera movement event on this node，suggest to set the height and width the same with canvas with widgets.", 
         type: Node
     })
     target: Node = null!;
 
-    @property({displayName: "相机", tooltip: "相机", type: Node})
+    @property({displayName: "Camera", tooltip: "Camera", type: Node})
     camera: Node = null!;
 
 
-    @property({displayName: "相机移动速度", tooltip: "相机移动速度", type: CCFloat})
+    @property({displayName: "Camera Move Speed.", tooltip: "Camera move speed.", type: CCFloat})
     angle_speed: number = 0.1;
 
-    @property({displayName: "跳跃的高度", tooltip: "跳跃的高度，代码会根据这个值设置角色刚体的Y线性速度", type: CCFloat})
+    @property({displayName: "Jump Height", tooltip: "Jump height, the script calculates y direction speed based on this.", type: CCFloat})
     jump_height: number = 5;
 
-    @property({displayName: "跳跃按钮禁用时间", tooltip: "按一次跳跃按钮禁用多长时间，单位是秒", type: CCFloat})
+    @property({displayName: "Jump Button Break Time", tooltip: "Break time in seconds before jump button can be pressed again.", type: CCFloat})
     jump_btn_time: number = 1;
 
-    @property({displayName: "攻击按钮禁用时间", tooltip: "按一次攻击按钮禁用多长时间，单位是秒", type: CCFloat})
+    @property({displayName: "Attack Button Break Time", tooltip: "Break time in seconds before attack button can be pressed again.", type: CCFloat})
     attack_btn_time: number = 1;
 
-    @property({displayName: "相机上下移动限制", tooltip: "限制相机X旋转，X是向上移动限制的角度，Y是向下移动限制的角度"})
+    @property({displayName: "Camera Vertical Movement Limit ", tooltip: "Limit camera rotation on x axis, X is the limit upward, Y is the limit downward."})
     cam_att: Vec2 = new Vec2(-25, -50);
 
-    @property({displayName: "动画控制", tooltip: "动画图所在节点", type: animation.AnimationController})
+    @property({displayName: "Animation Controller Node", tooltip: "Node where animation graph is applied", type: animation.AnimationController})
     animCtrl: animation.AnimationController = null!;
 
     // 是否可以跳跃
@@ -92,7 +92,6 @@ export class UI extends Component {
             this.player.player.getLinearVelocity(vc);
             // 设置角色Y的移动向量，让角色跳起来
             this.player.player.setLinearVelocity(new Vec3(vc.x, this.jump_height, vc.z));
-            console.log("点击了跳跃按钮");
 
             this.animCtrl.setValue('Jump', true)
 
