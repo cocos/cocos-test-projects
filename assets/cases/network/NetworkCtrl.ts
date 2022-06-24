@@ -116,7 +116,7 @@ export class NetworkCtrl extends Component {
         }
         // We should pass the cacert to libwebsockets used in native platform, otherwise the wss connection would be closed.
         // @ts-ignore
-        this._wsiSendBinary = new WebSocket('wss://echo.websocket.org', [], url);
+        this._wsiSendBinary = new WebSocket('wss://echo.websocket.events', [], url);
         this._wsiSendBinary.binaryType = 'arraybuffer';
         this._wsiSendBinary.onopen = function (evt) {
             respLabel.string = 'Opened!';

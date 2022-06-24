@@ -1,5 +1,6 @@
 
-import { _decorator, Component, Node, Label, sys } from 'cc';
+import { _decorator, Component, Node, Label, sys, native } from 'cc';
+import { NATIVE } from 'cc/env';
 const { ccclass, property } = _decorator;
 
 @ccclass('NetworkDownload')
@@ -11,27 +12,16 @@ export class NetworkDownload extends Component {
     @property(Label)
     status: Label = null!;
 
-    @property(Node)
-    public noSupport: Node = null!
-
-    onLoad () {
-        if (sys.isNative && (sys.platform === sys.Platform.WIN32 ||
-            sys.platform === sys.Platform.MACOS ||
-            sys.platform === sys.Platform.ANDROID ||
-            sys.platform === sys.Platform.IOS)) {
-            this.noSupport.active = false;
-        } else {
-            this.noSupport.active = true;
-            return;
-        }
-    }
-
     start() {
         this.status.string = "status: Not start"
     }
 
     download () {
-        let downloader = new jsb.Downloader();
+        if (!NATIVE) return;
+        const hints: native.DownloaderHints = {
+            timeoutInSeconds: 200,
+        };
+        let downloader = new native.Downloader(hints);
         downloader.setOnTaskProgress((task, bytesReceived, totalBytesReceived, totalBytesExpected)=>{
             console.log(bytesReceived, totalBytesReceived, totalBytesExpected)
             let progress = (totalBytesReceived / totalBytesExpected * 100).toFixed(1);
