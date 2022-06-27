@@ -48,7 +48,7 @@ export class BackButton extends Component {
                 continue;
             }
             if (sys.platform === sys.Platform.NX){
-                if (str.includes('rich-text-long-string-truncation') || str.includes('rich-text-align') || str.includes('geometry-renderer') 
+                if (str.includes('rich-text-long-string-truncation') || str.includes('rich-text-align') || str.includes('geometry-renderer') || str.includes('particle-culling') 
                 || str.includes('boxes-unbatched') || str.includes('network') || str.includes('webview') || str.includes('video-player')) {
                     continue;
                 }
