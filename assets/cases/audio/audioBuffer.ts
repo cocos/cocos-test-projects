@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, AudioSource, Graphics, view, UITransform, input, Input, EventMouse, clamp, v3, Size, EventTouch, Slider, AudioArrayBuffer } from 'cc';
+import { _decorator, Component, Node, AudioSource, Graphics, view, UITransform, input, Input, EventMouse, clamp, v3, Size, EventTouch, Slider, AudioPCMDataView } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('audioBuffer')
@@ -17,14 +17,13 @@ export class audioBuffer extends Component {
     @property(Node)
     noSupported: Node = null!;
 
-    private _buffer1?: AudioArrayBuffer;
-    private _buffer2?: AudioArrayBuffer;
+    private _dataView1?: AudioPCMDataView;
+    private _dataView2?: AudioPCMDataView;
 
     private _originalWidth1 = 0;
     private _originalWidth2 = 0;
 
     private _sampleRate = 0;
-    private _bitDepth = 1;
 
     private _uiTrans1: UITransform = null!;
     private _uiTrans2: UITransform = null!;
@@ -34,14 +33,13 @@ export class audioBuffer extends Component {
     private _visibleSize!: Size;
 
     async onEnable () {
-        this._buffer1 = await this.audioSource.getPCMBuffer(0);
-        this._buffer2 = await this.audioSource.getPCMBuffer(1);
-        if (!this._buffer1 && !this._buffer2) {
+        this._dataView1 = await this.audioSource.getPCMData(0);
+        this._dataView2 = await this.audioSource.getPCMData(1);
+        if (!this._dataView1 && !this._dataView2) {
             this.noSupported.active = true;
             return;
         }
         this._sampleRate = await this.audioSource.getSampleRate();
-        this._bitDepth = await this.audioSource.getBitDepth();
         this._originalWidth1 = this.graphics1.getComponent(UITransform)!.contentSize.width;
         this._originalWidth2 = this.graphics2.getComponent(UITransform)!.contentSize.width;
         this._uiTrans1 = this.graphics1.getComponent(UITransform)!;
@@ -59,14 +57,14 @@ export class audioBuffer extends Component {
         this.slider.node.off('slide', this.onSliderChange, this);
     }
 
-    drawBufferFromChannel (graphics: Graphics, buffer?: AudioArrayBuffer) {
-        if (!buffer) {
+    drawBufferFromChannel (graphics: Graphics, dataView?: AudioPCMDataView) {
+        if (!dataView) {
             return;
         }
         // sample from 42 seconds
         const startSamplePoint = 42 * this._sampleRate;
         const maxSampleLength = 15000;
-        const sampleLength = Math.min(buffer.length-startSamplePoint, maxSampleLength);
+        const sampleLength = Math.min(dataView.length-startSamplePoint, maxSampleLength);
         const contentSize = graphics.node.getComponent(UITransform)!.contentSize;
 
         const startDrawingPoint = 0;
@@ -74,7 +72,7 @@ export class audioBuffer extends Component {
         graphics.moveTo(startDrawingPoint, 0);
         const endSamplePoint = startSamplePoint + sampleLength;
         for (let i = startSamplePoint; i < endSamplePoint; i++) {
-            const data = buffer[i] / this._bitDepth;  // Normalize data
+            const data = dataView.getData(i);
             const y = data * contentSize.height/2;
             graphics.lineTo(startDrawingPoint + (i-startSamplePoint)*drawingStep, y);
         }
@@ -85,8 +83,8 @@ export class audioBuffer extends Component {
         this.graphics1.clear();
         this.graphics2.clear();
         
-        this.drawBufferFromChannel(this.graphics1, this._buffer1);
-        this.drawBufferFromChannel(this.graphics2, this._buffer2);
+        this.drawBufferFromChannel(this.graphics1, this._dataView1);
+        this.drawBufferFromChannel(this.graphics2, this._dataView2);
     }
 
     onDragMove (event: EventTouch) {
