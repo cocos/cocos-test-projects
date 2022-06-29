@@ -65,6 +65,7 @@ export class GeometryCreator extends Component {
 
     private initCamera() {
         this._mainCamera = this.cameraComp.camera;
+        this._mainCamera.initGeometryRenderer();
     }
 
     private initUI() {
