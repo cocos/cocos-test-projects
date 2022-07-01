@@ -49,6 +49,7 @@ export class DynamicMeshCreator extends Component {
     private _geometries: primitives.IDynamicGeometry[] = [];
     private _dragon: BaseNode = null!;
     private _initialize: boolean = false;
+    private _destroyed: boolean = false;
 
     // debug only
     private _showBoundingBox = false;
@@ -70,6 +71,10 @@ export class DynamicMeshCreator extends Component {
         }
 
         resources.load(names, Mesh, (err, meshes) => {
+            if (this._destroyed) {
+                return;
+            }
+            
             if (err) {
                 console.log('Load gltf failed, error: ', err);
                 return;
@@ -165,6 +170,10 @@ export class DynamicMeshCreator extends Component {
         this.initCamera();
         this.initUI();
         this.initMesh();
+    }
+
+    onDestroy () {
+        this._destroyed = true;
     }
 
     update (deltaTime: number) {
