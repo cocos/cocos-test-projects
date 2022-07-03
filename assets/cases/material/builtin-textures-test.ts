@@ -69,7 +69,7 @@ export class BuiltinTexturesTest extends Component {
         const blackRenderMat = new Material();
         blackRenderMat._uuid = "black";
         blackRenderMat.initialize({
-            effectName: 'unlit',
+            effectName: 'builtin-unlit',
             defines: { USE_TEXTURE: true },
         });
         blackRenderMat.setProperty('mainTexture', blackTexture, 0);
@@ -77,7 +77,7 @@ export class BuiltinTexturesTest extends Component {
         const whiteRenderMat = new Material();
         whiteRenderMat._uuid = "white";
         whiteRenderMat.initialize({
-            effectName: 'unlit',
+            effectName: 'builtin-unlit',
             defines: { USE_TEXTURE: true },
         });
         whiteRenderMat.setProperty('mainTexture', whiteTexture, 0);
@@ -85,7 +85,7 @@ export class BuiltinTexturesTest extends Component {
         const greyRenderMat = new Material();
         greyRenderMat._uuid = "grey";
         greyRenderMat.initialize({
-            effectName: 'unlit',
+            effectName: 'builtin-unlit',
             defines: { USE_TEXTURE: true },
         });
         greyRenderMat.setProperty('mainTexture', greyTexture, 0);
@@ -93,7 +93,7 @@ export class BuiltinTexturesTest extends Component {
         const emptyRenderMat = new Material();
         emptyRenderMat._uuid = "empty";
         emptyRenderMat.initialize({
-            effectName: 'unlit',
+            effectName: 'builtin-unlit',
             defines: { USE_TEXTURE: true },
         });
         emptyRenderMat.setProperty('mainTexture', emptyTexture, 0);
@@ -101,7 +101,7 @@ export class BuiltinTexturesTest extends Component {
         const normalRenderMat = new Material();
         normalRenderMat._uuid = "normal";
         normalRenderMat.initialize({
-            effectName: 'unlit',
+            effectName: 'builtin-unlit',
             defines: { USE_TEXTURE: true },
         });
         normalRenderMat.setProperty('mainTexture', normalTexture, 0);
@@ -109,7 +109,7 @@ export class BuiltinTexturesTest extends Component {
         const defaultRenderMat = new Material();
         defaultRenderMat._uuid = "default";
         defaultRenderMat.initialize({
-            effectName: 'unlit',
+            effectName: 'builtin-unlit',
             defines: { USE_TEXTURE: true },
         });
         defaultRenderMat.setProperty('mainTexture', defaultTexture, 0);
@@ -164,7 +164,7 @@ export class BuiltinTexturesTest extends Component {
         const blackRenderMatCanvas = new Material();
         blackRenderMatCanvas._uuid = "black1";
         blackRenderMatCanvas.initialize({
-            effectName: 'unlit',
+            effectName: 'builtin-unlit',
             defines: { USE_TEXTURE: true },
         });
         blackRenderMatCanvas.setProperty('mainTexture', blackTextureCanvas, 0);
@@ -172,7 +172,7 @@ export class BuiltinTexturesTest extends Component {
         const whiteRenderMatCanvas = new Material();
         whiteRenderMatCanvas._uuid = "white1";
         whiteRenderMatCanvas.initialize({
-            effectName: 'unlit',
+            effectName: 'builtin-unlit',
             defines: { USE_TEXTURE: true },
         });
         whiteRenderMatCanvas.setProperty('mainTexture', whiteTextureCanvas, 0);
@@ -180,7 +180,7 @@ export class BuiltinTexturesTest extends Component {
         const greyRenderMatCanvas = new Material();
         greyRenderMatCanvas._uuid = "grey1";
         greyRenderMatCanvas.initialize({
-            effectName: 'unlit',
+            effectName: 'builtin-unlit',
             defines: { USE_TEXTURE: true },
         });
         greyRenderMatCanvas.setProperty('mainTexture', greyTextureCanvas, 0);
@@ -188,7 +188,7 @@ export class BuiltinTexturesTest extends Component {
         const emptyRenderMatCanvas = new Material();
         emptyRenderMatCanvas._uuid = "empty1";
         emptyRenderMatCanvas.initialize({
-            effectName: 'unlit',
+            effectName: 'builtin-unlit',
             defines: { USE_TEXTURE: true },
         });
         emptyRenderMatCanvas.setProperty('mainTexture', emptyTextureCanvas, 0);
@@ -196,7 +196,7 @@ export class BuiltinTexturesTest extends Component {
         const normalRenderMatCanvas = new Material();
         normalRenderMatCanvas._uuid = "normal1";
         normalRenderMatCanvas.initialize({
-            effectName: 'unlit',
+            effectName: 'builtin-unlit',
             defines: { USE_TEXTURE: true },
         });
         normalRenderMatCanvas.setProperty('mainTexture', normalTextureCanvas, 0);
@@ -204,7 +204,7 @@ export class BuiltinTexturesTest extends Component {
         const defaultRenderMatCanvas = new Material();
         defaultRenderMatCanvas._uuid = "default1";
         defaultRenderMatCanvas.initialize({
-            effectName: 'unlit',
+            effectName: 'builtin-unlit',
             defines: { USE_TEXTURE: true },
         });
         defaultRenderMatCanvas.setProperty('mainTexture', defaultTextureCanvas, 0);
