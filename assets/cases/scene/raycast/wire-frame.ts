@@ -10,7 +10,7 @@ export class wireFrame extends Component {
         if (wireFrame.lineMat == null) {
             wireFrame.lineMat = new Material();
             wireFrame.lineMat.initialize({
-                effectName: 'unlit',
+                effectName: 'builtin-unlit',
                 states: { primitive: gfx.PrimitiveMode.LINE_LIST },
             });
 
