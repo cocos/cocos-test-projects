@@ -1,0 +1,23 @@
+{
+  "GlobalConfig": {
+    "localLanguage": "zh-Hans-CN",
+    "scanOptions": [
+      {
+        "dirs": [
+          "cases/localization-editor"
+        ],
+        "extNames": [],
+        "excludes": [
+          "cases/localization-editor/resources/l10n/en-US"
+        ]
+      }
+    ],
+    "translateProviderConfig": {
+      "name": "有道翻译",
+      "url": "https://openapi.youdao.com/api",
+      "appKey": "2aab55e212acb39f",
+      "appSecret": "GbgSmGopbnGHoGJqRgOwRGGnTvAv0WLm",
+      "qps": 500
+    }
+  }
+}
