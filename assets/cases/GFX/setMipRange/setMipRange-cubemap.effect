@@ -20,8 +20,8 @@ CCEffect %{
 
 CCProgram complex-vs %{
   precision highp float;
-  #include <builtin/uniforms/cc-global>
-  #include <legacy/decode>
+  #include <cc-global>
+  #include <decode>
 
   out mediump vec4 viewDir;
 
@@ -33,11 +33,11 @@ CCProgram complex-vs %{
 
 CCProgram complex-fs %{
   precision mediump float;
-  #include <builtin/uniforms/cc-global>
-  #include <builtin/uniforms/cc-environment>
-  #include <common/data/unpack>
-  #include <common/color/gamma>
-  #include <legacy/output-standard>
+  #include <cc-global>
+  #include <cc-environment>
+  #include <unpack>
+  #include <gamma>
+  #include <output-standard>
 
   in mediump vec4 viewDir;
 

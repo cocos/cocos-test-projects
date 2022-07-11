@@ -22,7 +22,7 @@ CCEffect %{
 
 CCProgram sprite-vs %{
   precision highp float;
-  #include <builtin/uniforms/cc-global>
+  #include <cc-global>
 
   in vec3 a_position;
   in vec2 a_texCoord;
@@ -46,8 +46,8 @@ CCProgram sprite-vs %{
 
 CCProgram sprite-fs %{
   precision highp float;
-  #include <builtin/internal/embedded-alpha>
-  #include <builtin/internal/sprite-texture>
+  #include <embedded-alpha>
+  #include <cc-sprite-texture>
 
   in vec4 color;
   in vec2 uv0;

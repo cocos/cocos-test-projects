@@ -86,13 +86,13 @@ CCProgram shared-ubos %{
 
 CCProgram standard-vs %{
   precision highp float;
-  #include <legacy/input-standard>
-  #include <builtin/uniforms/cc-global>
-  #include <legacy/decode-base>
-  #include <legacy/local-batch>
+  #include <input-standard>
+  #include <cc-global>
+  #include <decode-base>
+  #include <cc-local-batch>
   #include <shared-ubos>
-  #include <legacy/fog-vs>
-  #include <legacy/shadow-map-vs>
+  #include <cc-fog-vs>
+  #include <cc-shadow-map-vs>
 
   #if USE_VERTEX_COLOR
     in vec4 a_color;
@@ -113,12 +113,12 @@ CCProgram standard-vs %{
     out vec3 v_bitangent;
   #endif
 
-  #if HAS_SECOND_UV || CC_USE_LIGHTMAP
+  #if HAS_SECOND_UV || USE_LIGHTMAP
     in vec2 a_texCoord1;
   #endif
 
-  #if CC_USE_LIGHTMAP && !USE_BATCHING && !CC_FORWARD_ADD
-    #include <legacy/lightingmap-vs>
+  #if USE_LIGHTMAP && !USE_BATCHING && !CC_FORWARD_ADD
+    #include <lightingmap-vs>
   #endif
 
   void main () {
@@ -165,7 +165,7 @@ CCProgram standard-vs %{
     CC_TRANSFER_FOG(pos);
     CC_TRANSFER_SHADOW(pos);
 
-    #if CC_USE_LIGHTMAP && !USE_BATCHING && !CC_FORWARD_ADD
+    #if USE_LIGHTMAP && !USE_BATCHING && !CC_FORWARD_ADD
       CCLightingMapCaclUV();
     #endif
 
@@ -175,12 +175,12 @@ CCProgram standard-vs %{
 
 CCProgram standard-fs %{
   precision highp float;
-  #include <builtin/uniforms/cc-global>
+  #include <cc-global>
   #include <shared-ubos>
-  #include <legacy/fog-fs>
-  #include <legacy/standard-surface-entry>
-  #if CC_USE_LIGHTMAP && !USE_BATCHING && !CC_FORWARD_ADD
-    #include <legacy/lightingmap-fs>
+  #include <cc-fog-fs>
+  #include <standard-surface-entry>
+  #if USE_LIGHTMAP && !USE_BATCHING && !CC_FORWARD_ADD
+    #include <lightingmap-fs>
   #endif
 
   in vec3 v_position;
@@ -248,9 +248,9 @@ CCProgram standard-fs %{
       if (s.albedo.ALPHA_TEST_CHANNEL < albedoScaleAndCutoff.w) discard;
     #endif
 
-    #if CC_USE_LIGHTMAP && !USE_BATCHING && !CC_FORWARD_ADD
+    #if USE_LIGHTMAP && !USE_BATCHING && !CC_FORWARD_ADD
       vec4 lightColor = texture(cc_lightingMap, v_luv.xy);
-      s.lightmap = lightColor.rgb;
+      s.lightmap = UnpackLightingmap(lightColor);
       s.lightmap_test = v_luv.z; /*u scale*/
     #endif
 
@@ -302,13 +302,13 @@ CCProgram standard-fs %{
 
 CCProgram shadow-caster-vs %{
   precision highp float;
-  #include <legacy/input-standard>
-  #include <legacy/decode-base>
-  #include <legacy/local-batch>
+  #include <input-standard>
+  #include <decode-base>
+  #include <cc-local-batch>
   #include <shared-ubos>
-  #include <builtin/uniforms/cc-shadow>
+  #include <cc-shadow>
 
-  #if HAS_SECOND_UV || CC_USE_LIGHTMAP
+  #if HAS_SECOND_UV || USE_LIGHTMAP
     in vec2 a_texCoord1;
   #endif
 
@@ -342,8 +342,8 @@ CCProgram shadow-caster-vs %{
 CCProgram shadow-caster-fs %{
   precision highp float;
   #include <shared-ubos>
-  #include <common/data/packing>
-  #include <legacy/shadow-map-base>
+  #include <packing>
+  #include <cc-shadow-map-base>
 
   in vec2 v_uv;
   in vec2 v_uv1;
