@@ -1,11 +1,11 @@
 {
-  "ver": "1.0.23",
+  "ver": "1.0.24",
   "importer": "image",
   "imported": true,
   "uuid": "ee4e2c8e-e009-4290-b3d2-9d01b1e7eb7f",
   "files": [
-    ".png",
-    ".json"
+    ".json",
+    ".png"
   ],
   "subMetas": {
     "6c48a": {
@@ -14,7 +14,7 @@
       "displayName": "bubble",
       "id": "6c48a",
       "name": "texture",
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "imported": true,
       "files": [
         ".json"
@@ -29,11 +29,12 @@
         "premultiplyAlpha": false,
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "ee4e2c8e-e009-4290-b3d2-9d01b1e7eb7f"
+        "imageUuidOrDatabaseUri": "ee4e2c8e-e009-4290-b3d2-9d01b1e7eb7f",
+        "visible": false
       }
     },
     "f9941": {
-      "ver": "1.0.9",
+      "ver": "1.0.11",
       "importer": "sprite-frame",
       "uuid": "ee4e2c8e-e009-4290-b3d2-9d01b1e7eb7f@f9941",
       "imported": true,
@@ -67,7 +68,65 @@
         "isUuid": true,
         "imageUuidOrDatabaseUri": "ee4e2c8e-e009-4290-b3d2-9d01b1e7eb7f@6c48a",
         "atlasUuid": "",
-        "packable": true
+        "packable": true,
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [
+            -24.5,
+            -32,
+            0,
+            24.5,
+            -32,
+            0,
+            -24.5,
+            32,
+            0,
+            24.5,
+            32,
+            0
+          ],
+          "indexes": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            3
+          ],
+          "uv": [
+            1,
+            64,
+            50,
+            64,
+            1,
+            0,
+            50,
+            0
+          ],
+          "nuv": [
+            0.02,
+            0,
+            1,
+            0,
+            0.02,
+            1,
+            1,
+            1
+          ],
+          "minPos": [
+            -24.5,
+            -32,
+            0
+          ],
+          "maxPos": [
+            24.5,
+            32,
+            0
+          ]
+        }
       },
       "displayName": "bubble",
       "id": "f9941",

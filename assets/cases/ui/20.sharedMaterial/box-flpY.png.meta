@@ -1,11 +1,11 @@
 {
-  "ver": "1.0.23",
+  "ver": "1.0.24",
   "importer": "image",
   "imported": true,
   "uuid": "d407091f-7731-4ac2-b93d-c2861f69f32e",
   "files": [
-    ".png",
-    ".json"
+    ".json",
+    ".png"
   ],
   "subMetas": {
     "6c48a": {
@@ -14,7 +14,7 @@
       "displayName": "box-flpY",
       "id": "6c48a",
       "name": "texture",
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "imported": true,
       "files": [
         ".json"
@@ -28,7 +28,8 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "d407091f-7731-4ac2-b93d-c2861f69f32e"
+        "imageUuidOrDatabaseUri": "d407091f-7731-4ac2-b93d-c2861f69f32e",
+        "visible": false
       }
     },
     "f9941": {
@@ -37,7 +38,7 @@
       "displayName": "box-flpY",
       "id": "f9941",
       "name": "spriteFrame",
-      "ver": "1.0.9",
+      "ver": "1.0.11",
       "imported": true,
       "files": [
         ".json"
@@ -62,7 +63,65 @@
         "isUuid": true,
         "imageUuidOrDatabaseUri": "d407091f-7731-4ac2-b93d-c2861f69f32e@6c48a",
         "atlasUuid": "",
-        "packable": true
+        "packable": true,
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [
+            -99.5,
+            -82,
+            0,
+            99.5,
+            -82,
+            0,
+            -99.5,
+            82,
+            0,
+            99.5,
+            82,
+            0
+          ],
+          "indexes": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            3
+          ],
+          "uv": [
+            6,
+            193,
+            205,
+            193,
+            6,
+            29,
+            205,
+            29
+          ],
+          "nuv": [
+            0.02857142857142857,
+            0.1380952380952381,
+            0.9761904761904762,
+            0.1380952380952381,
+            0.02857142857142857,
+            0.919047619047619,
+            0.9761904761904762,
+            0.919047619047619
+          ],
+          "minPos": [
+            -99.5,
+            -82,
+            0
+          ],
+          "maxPos": [
+            99.5,
+            82,
+            0
+          ]
+        }
       }
     }
   },

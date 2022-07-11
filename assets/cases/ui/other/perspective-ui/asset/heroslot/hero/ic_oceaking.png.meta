@@ -1,11 +1,11 @@
 {
-  "ver": "1.0.23",
+  "ver": "1.0.24",
   "importer": "image",
   "imported": true,
   "uuid": "71187f7f-36f2-4383-afc5-5d40a827013a",
   "files": [
-    ".png",
-    ".json"
+    ".json",
+    ".png"
   ],
   "subMetas": {
     "6c48a": {
@@ -22,7 +22,8 @@
         "magfilter": "linear",
         "mipfilter": "none",
         "anisotropy": 0,
-        "isUuid": true
+        "isUuid": true,
+        "visible": false
       },
       "ver": "1.0.22",
       "imported": true,
@@ -32,7 +33,7 @@
       "subMetas": {}
     },
     "f9941": {
-      "ver": "1.0.10",
+      "ver": "1.0.11",
       "importer": "sprite-frame",
       "uuid": "71187f7f-36f2-4383-afc5-5d40a827013a@f9941",
       "imported": true,
@@ -66,7 +67,65 @@
         "isUuid": true,
         "imageUuidOrDatabaseUri": "71187f7f-36f2-4383-afc5-5d40a827013a@6c48a",
         "atlasUuid": "",
-        "packable": true
+        "packable": true,
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [
+            -46,
+            -53,
+            0,
+            46,
+            -53,
+            0,
+            -46,
+            53,
+            0,
+            46,
+            53,
+            0
+          ],
+          "indexes": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            3
+          ],
+          "uv": [
+            29,
+            124,
+            121,
+            124,
+            29,
+            18,
+            121,
+            18
+          ],
+          "nuv": [
+            0.19333333333333333,
+            0.12,
+            0.8066666666666666,
+            0.12,
+            0.19333333333333333,
+            0.8266666666666667,
+            0.8066666666666666,
+            0.8266666666666667
+          ],
+          "minPos": [
+            -46,
+            -53,
+            0
+          ],
+          "maxPos": [
+            46,
+            53,
+            0
+          ]
+        }
       },
       "displayName": "ic_oceaking",
       "id": "f9941",

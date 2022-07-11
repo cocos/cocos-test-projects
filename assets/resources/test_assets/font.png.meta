@@ -1,11 +1,11 @@
 {
-  "ver": "1.0.23",
+  "ver": "1.0.24",
   "importer": "image",
   "imported": true,
   "uuid": "a78fff63-2db3-4f61-bd12-8d27e306c403",
   "files": [
-    ".png",
-    ".json"
+    ".json",
+    ".png"
   ],
   "subMetas": {
     "6c48a": {
@@ -14,7 +14,7 @@
       "displayName": "font",
       "id": "6c48a",
       "name": "texture",
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "imported": true,
       "files": [
         ".json"
@@ -29,11 +29,12 @@
         "premultiplyAlpha": false,
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "a78fff63-2db3-4f61-bd12-8d27e306c403"
+        "imageUuidOrDatabaseUri": "a78fff63-2db3-4f61-bd12-8d27e306c403",
+        "visible": false
       }
     },
     "f9941": {
-      "ver": "1.0.9",
+      "ver": "1.0.11",
       "importer": "sprite-frame",
       "uuid": "a78fff63-2db3-4f61-bd12-8d27e306c403@f9941",
       "imported": true,
@@ -67,7 +68,65 @@
         "isUuid": true,
         "imageUuidOrDatabaseUri": "a78fff63-2db3-4f61-bd12-8d27e306c403@6c48a",
         "atlasUuid": "",
-        "packable": true
+        "packable": true,
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [
+            -248.5,
+            -116,
+            0,
+            248.5,
+            -116,
+            0,
+            -248.5,
+            116,
+            0,
+            248.5,
+            116,
+            0
+          ],
+          "indexes": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            3
+          ],
+          "uv": [
+            3,
+            253,
+            500,
+            253,
+            3,
+            21,
+            500,
+            21
+          ],
+          "nuv": [
+            0.005859375,
+            0.08203125,
+            0.9765625,
+            0.08203125,
+            0.005859375,
+            0.98828125,
+            0.9765625,
+            0.98828125
+          ],
+          "minPos": [
+            -248.5,
+            -116,
+            0
+          ],
+          "maxPos": [
+            248.5,
+            116,
+            0
+          ]
+        }
       },
       "displayName": "font",
       "id": "f9941",

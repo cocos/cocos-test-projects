@@ -1,11 +1,11 @@
 {
-  "ver": "1.0.23",
+  "ver": "1.0.24",
   "importer": "image",
   "imported": true,
   "uuid": "8ca10654-ef18-40f2-a805-5db379abc7c2",
   "files": [
-    ".png",
-    ".json"
+    ".json",
+    ".png"
   ],
   "subMetas": {
     "6c48a": {
@@ -22,7 +22,8 @@
         "magfilter": "linear",
         "mipfilter": "none",
         "anisotropy": 0,
-        "isUuid": true
+        "isUuid": true,
+        "visible": false
       },
       "ver": "1.0.22",
       "imported": true,
@@ -32,7 +33,7 @@
       "subMetas": {}
     },
     "f9941": {
-      "ver": "1.0.10",
+      "ver": "1.0.11",
       "importer": "sprite-frame",
       "uuid": "8ca10654-ef18-40f2-a805-5db379abc7c2@f9941",
       "imported": true,
@@ -66,7 +67,65 @@
         "isUuid": true,
         "imageUuidOrDatabaseUri": "8ca10654-ef18-40f2-a805-5db379abc7c2@6c48a",
         "atlasUuid": "",
-        "packable": true
+        "packable": true,
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [
+            -57.5,
+            -55.5,
+            0,
+            57.5,
+            -55.5,
+            0,
+            -57.5,
+            55.5,
+            0,
+            57.5,
+            55.5,
+            0
+          ],
+          "indexes": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            3
+          ],
+          "uv": [
+            24,
+            131,
+            139,
+            131,
+            24,
+            20,
+            139,
+            20
+          ],
+          "nuv": [
+            0.16,
+            0.13333333333333333,
+            0.9266666666666666,
+            0.13333333333333333,
+            0.16,
+            0.8733333333333333,
+            0.9266666666666666,
+            0.8733333333333333
+          ],
+          "minPos": [
+            -57.5,
+            -55.5,
+            0
+          ],
+          "maxPos": [
+            57.5,
+            55.5,
+            0
+          ]
+        }
       },
       "displayName": "ic_cat_queen",
       "id": "f9941",
