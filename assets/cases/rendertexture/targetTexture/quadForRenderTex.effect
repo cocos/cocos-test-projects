@@ -33,12 +33,12 @@ CCProgram shared-ubos %{
 
 CCProgram standard-vs %{
   precision highp float;
-  #include <input-standard>
-  #include <cc-global>
-  #include <decode-base>
-  #include <cc-local-batch>
+  #include <legacy/input-standard>
+  #include <builtin/uniforms/cc-global>
+  #include <legacy/decode-base>
+  #include <legacy/local-batch>
   #include <shared-ubos>
-  #include <common>
+  #include <common/common-define>
 
   #if USE_VERTEX_COLOR
     in vec3 a_color;
@@ -71,12 +71,12 @@ CCProgram standard-vs %{
 
 CCProgram standard-fs %{
   precision highp float;
-  #include <cc-global>
-  // #include <shading-standard>
-  // #include <output-standard>
-  // #include <gamma>
+  #include <builtin/uniforms/cc-global>
+  // #include <legacy/shading-standard>
+  // #include <legacy/output-standard>
+  // #include <common/color/gamma>
   #include <shared-ubos>
-  #include <embedded-alpha>
+  #include <builtin/internal/embedded-alpha>
 
 #if USE_TEXTURE
   in vec2 v_uv;

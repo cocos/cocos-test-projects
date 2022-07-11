@@ -41,9 +41,9 @@ CCEffect %{
 
 CCProgram add-vs %{
   precision mediump float;
-  #include <cc-global>
-  #include <cc-local>
-  #include <input>
+  #include <builtin/uniforms/cc-global>
+  #include <builtin/uniforms/cc-local>
+  #include <legacy/input>
 
   
   in lowp vec4 a_color;
@@ -71,7 +71,7 @@ CCProgram add-vs %{
 
 CCProgram add-fs %{
   precision mediump float;
-  #include <output>
+  #include <legacy/output>
 
   in vec2 uv0;
 #if USE_VERTEX_COLOR

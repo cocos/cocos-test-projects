@@ -7,10 +7,10 @@ CCEffect %{
 
 CCProgram unlit-vs %{
   precision highp float;
-  #include <cc-global>
-  #include <decode-base>
-  #include <cc-local-batch>
-  #include <input>
+  #include <builtin/uniforms/cc-global>
+  #include <legacy/decode-base>
+  #include <legacy/local-batch>
+  #include <legacy/input>
 
   #if USE_INSTANCING
     in vec4 a_color_instanced;
@@ -36,7 +36,7 @@ CCProgram unlit-vs %{
 
 CCProgram unlit-fs %{
   precision highp float;
-  #include <output>
+  #include <legacy/output>
 
   #if USE_INSTANCING
     in vec4 v_color;
