@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Camera, Label, systemEvent, SystemEventType, EventTouch, Touch, geometry, director, Layers, Canvas, UITransform } from "cc";
+import { _decorator, Component, Node, Camera, Label, input, Input, EventTouch, Touch, geometry, director, Layers, Canvas, UITransform } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("RaycastCanvasTest")
@@ -14,14 +14,15 @@ export class RaycastCanvasTest extends Component {
     private _aabb = new geometry.AABB();
     onEnable () {
         this.label.string = '点击文字测试射线检测';
-        systemEvent.on(SystemEventType.TOUCH_START, this.onTouchStart, this);
+        input.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
     }
 
     onDisable () {
-        systemEvent.off(SystemEventType.TOUCH_START, this.onTouchStart, this);
+        input.off(Input.EventType.TOUCH_START, this.onTouchStart, this);
     }
 
-    onTouchStart (touch: Touch, event: EventTouch) {
+    onTouchStart (event: EventTouch) {
+        const touch = event.touch!;
         this.label.string = '点击文字测试射线检测';
         const uiCamera = this.canvas.camera;
         const point = touch.getLocation();

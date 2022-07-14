@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, TiledLayer, loader, Prefab, v2, instantiate, Vec3, SystemEventType, EventTouch } from 'cc';
+import { _decorator, Component, Node, TiledLayer, loader, Prefab, v2, instantiate, Vec3, EventTouch } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('ShieldNode')
@@ -23,7 +23,7 @@ export class ShieldNode extends Component {
             const shieldNode = instantiate(prefab);
             shieldNode.setPosition(posArr[i].x, posArr[i].y);
             this.tiledLayer!.addUserNode(shieldNode);
-            shieldNode.on(SystemEventType.TOUCH_MOVE, (event:EventTouch) => {
+            shieldNode.on(Node.EventType.TOUCH_MOVE, (event:EventTouch) => {
                 const deltaMove = event.getUIDelta();
                 shieldNode.getPosition(tmpP);
                 tmpP.x += deltaMove.x;

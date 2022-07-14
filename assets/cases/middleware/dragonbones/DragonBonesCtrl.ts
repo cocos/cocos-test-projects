@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, dragonBones, macro, SystemEventType, systemEvent, Vec3, director, EventTouch, KeyCode } from 'cc';
+import { _decorator, Component, Node, dragonBones, macro, Input, input, Vec3, director, EventTouch, KeyCode } from 'cc';
 const { ccclass, property, requireComponent } = _decorator;
 
 
@@ -97,75 +97,75 @@ export default class DragonBonesCtrl extends Component {
 
         if (this.touchHandler) {
             // touch event
-            this.touchHandler.on(SystemEventType.TOUCH_START, (event: EventTouch) => {
+            this.touchHandler.on(Node.EventType.TOUCH_START, (event: EventTouch) => {
                 this._mouseDown_ = true;
                 var touchLoc = event.getUILocation();
                 this.aim(touchLoc.x, touchLoc.y);
                 this.attack(true);
             } , this);
-            this.touchHandler.on(SystemEventType.TOUCH_END, (event: EventTouch) => {
+            this.touchHandler.on(Node.EventType.TOUCH_END, (event: EventTouch) => {
                 this._mouseDown_ = false;
                 this.attack(false);
             }, this);
-            this.touchHandler.on(SystemEventType.TOUCH_MOVE, (event: EventTouch) => {
+            this.touchHandler.on(Node.EventType.TOUCH_MOVE, (event: EventTouch) => {
                 var touchLoc = event.getUILocation();
                 this.aim(touchLoc.x, touchLoc.y);
             }, this);
         }
 
         if (this.upButton) {
-            this.upButton.on(SystemEventType.TOUCH_START, (event: any) => {
+            this.upButton.on(Node.EventType.TOUCH_START, (event: any) => {
                 this.jump();
             }, this);
         }
 
         if (this.downButton) {
-            this.downButton.on(SystemEventType.TOUCH_START, (event: any) => {
+            this.downButton.on(Node.EventType.TOUCH_START, (event: any) => {
                 this.squat(true);
             } ,this);
-            this.downButton.on(SystemEventType.TOUCH_END, (event: any) => {
+            this.downButton.on(Node.EventType.TOUCH_END, (event: any) => {
                 this.squat(false);
             } ,this);
-            this.downButton.on(SystemEventType.TOUCH_CANCEL, (event: any) => {
+            this.downButton.on(Node.EventType.TOUCH_CANCEL, (event: any) => {
                 this.squat(false);
             } ,this);
         }
 
         if (this.leftButton) {
-            this.leftButton.on(SystemEventType.TOUCH_START, (event: any) => {
+            this.leftButton.on(Node.EventType.TOUCH_START, (event: any) => {
                 this._left = true;
                 this._updateMove(-1);
             } ,this);
-            this.leftButton.on(SystemEventType.TOUCH_END, (event: any) => {
+            this.leftButton.on(Node.EventType.TOUCH_END, (event: any) => {
                 this._left = false;
                 this._updateMove(-1);
             } ,this);
-            this.leftButton.on(SystemEventType.TOUCH_CANCEL, (event: any) => {
+            this.leftButton.on(Node.EventType.TOUCH_CANCEL, (event: any) => {
                 this._left = false;
                 this._updateMove(-1);
             } ,this);
         }
 
         if (this.rightButton) {
-            this.rightButton.on(SystemEventType.TOUCH_START, (event: any) => {
+            this.rightButton.on(Node.EventType.TOUCH_START, (event: any) => {
                 this._right = true;
                 this._updateMove(1);
             } ,this);
-            this.rightButton.on(SystemEventType.TOUCH_END, (event: any) => {
+            this.rightButton.on(Node.EventType.TOUCH_END, (event: any) => {
                 this._right = false;
                 this._updateMove(1);
             }, this);
-            this.rightButton.on(SystemEventType.TOUCH_CANCEL, (event: any) => {
+            this.rightButton.on(Node.EventType.TOUCH_CANCEL, (event: any) => {
                 this._right = false;
                 this._updateMove(1);
             } ,this);
         }
 
         // keyboard events
-        systemEvent.on(SystemEventType.KEY_DOWN,  (event) => {
+        input.on(Input.EventType.KEY_DOWN,  (event) => {
             this._keyHandler(event!.keyCode, true);
         }, this);
-        systemEvent.on(SystemEventType.KEY_UP,  (event) => {
+        input.on(Input.EventType.KEY_UP,  (event) => {
             this._keyHandler(event!.keyCode, false);
         },this);
     }

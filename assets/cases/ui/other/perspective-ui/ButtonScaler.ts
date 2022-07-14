@@ -1,4 +1,4 @@
-import { _decorator, Component, Vec3, Button, tween, SystemEventType, EventTouch} from "cc";
+import { _decorator, Component, Vec3, Button, tween, EventTouch, Node } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass
@@ -32,9 +32,9 @@ export class ButtonScaler extends Component {
             tweenDown.stop();
             tewenUp.start();
         }
-        this.node.on(SystemEventType.TOUCH_START, onTouchDown, this);
-        this.node.on(SystemEventType.TOUCH_END, onTouchUp, this);
-        this.node.on(SystemEventType.TOUCH_CANCEL, onTouchUp, this);
+        this.node.on(Node.EventType.TOUCH_START, onTouchDown, this);
+        this.node.on(Node.EventType.TOUCH_END, onTouchUp, this);
+        this.node.on(Node.EventType.TOUCH_CANCEL, onTouchUp, this);
     }
 
     update() {

@@ -1,4 +1,4 @@
-import { _decorator, Component, systemEvent, Label, EventMouse, SystemEvent, view, sys, Node } from "cc";
+import { _decorator, Component, input, Label, EventMouse, Input, view, sys, Node } from "cc";
 import { HTML5 } from "cc/env";
 const { ccclass, property } = _decorator;
 
@@ -25,17 +25,17 @@ export class systemEventPC extends Component {
         const canvasSize = view.getCanvasSize();
         this.tip.string = this.tip.string.replace('{{width}}', canvasSize.width.toString());
         this.tip.string = this.tip.string.replace('{{height}}', canvasSize.height.toString());
-        systemEvent.on(SystemEvent.EventType.MOUSE_DOWN, this.onMouseDown, this);
-        systemEvent.on(SystemEvent.EventType.MOUSE_UP, this.onMouseUp, this);
-        systemEvent.on(SystemEvent.EventType.MOUSE_MOVE, this.onMouseMove, this);
-        systemEvent.on(SystemEvent.EventType.MOUSE_WHEEL, this.onMouseScroll, this);
+        input.on(Input.EventType.MOUSE_DOWN, this.onMouseDown, this);
+        input.on(Input.EventType.MOUSE_UP, this.onMouseUp, this);
+        input.on(Input.EventType.MOUSE_MOVE, this.onMouseMove, this);
+        input.on(Input.EventType.MOUSE_WHEEL, this.onMouseScroll, this);
     }
 
     onDestroy(){
-        systemEvent.off(SystemEvent.EventType.MOUSE_DOWN, this.onMouseDown, this);
-        systemEvent.off(SystemEvent.EventType.MOUSE_UP, this.onMouseUp, this);
-        systemEvent.off(SystemEvent.EventType.MOUSE_MOVE, this.onMouseMove, this);
-        systemEvent.off(SystemEvent.EventType.MOUSE_WHEEL, this.onMouseScroll, this);
+        input.off(Input.EventType.MOUSE_DOWN, this.onMouseDown, this);
+        input.off(Input.EventType.MOUSE_UP, this.onMouseUp, this);
+        input.off(Input.EventType.MOUSE_MOVE, this.onMouseMove, this);
+        input.off(Input.EventType.MOUSE_WHEEL, this.onMouseScroll, this);
     }
 
     onMouseDown(event: EventMouse) {

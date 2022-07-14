@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, systemEvent, SystemEventType, EventKeyboard, tween, log, Color, Sprite, Toggle, SystemEvent, sys, input, Input } from 'cc';
+import { _decorator, Component, Node, systemEvent, EventKeyboard, tween, log, Color, Sprite, Toggle, SystemEvent, sys, input, Input } from 'cc';
 const { ccclass, property } = _decorator;
 
 const keyCode2KeyName: Record<number, string> = {
