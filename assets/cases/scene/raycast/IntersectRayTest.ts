@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Prefab, Camera, systemEvent, SystemEventType, EventTouch, Touch, MeshRenderer, instantiate, Vec3, gfx, Vec2, Label, Color, geometry, renderer } from 'cc';
+import { _decorator, Component, Node, Prefab, Camera, input, Input, EventTouch, Touch, MeshRenderer, instantiate, Vec3, gfx, Vec2, Label, Color, geometry, renderer } from 'cc';
 const { ccclass, property } = _decorator;
 
 // const { Model } = renderer.scene
@@ -34,14 +34,15 @@ export class IntersectRayTest extends Component {
     }
 
     onEnable () {
-        systemEvent.on(SystemEventType.TOUCH_START, this.onTouchStart, this);
+        input.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
     }
 
     onDisable () {
-        systemEvent.off(SystemEventType.TOUCH_START, this.onTouchStart, this);
+        input.off(Input.EventType.TOUCH_START, this.onTouchStart, this);
     }
 
-    onTouchStart (touch: Touch, event: EventTouch) {
+    onTouchStart (event: EventTouch) {
+        const touch = event.touch!;
         this._points[0].active = false; this._points[1].active = false; this._points[2].active = false;
         const loc = touch.getLocation();
         this.mainCamera.screenPointToRay(loc.x, loc.y, this._ray);

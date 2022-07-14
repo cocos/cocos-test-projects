@@ -1,4 +1,4 @@
-import { _decorator, Component, Material, Camera, geometry, systemEvent, SystemEventType, EventTouch, Touch, PhysicsSystem, MeshRenderer } from "cc";
+import { _decorator, Component, Material, Camera, geometry, input, Input, EventTouch, Touch, PhysicsSystem, MeshRenderer } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("RaycastColliderTest")
@@ -19,14 +19,15 @@ export class RaycastColliderTest extends Component {
     private _ray: geometry.Ray = new geometry.Ray();
 
     onEnable () {
-        systemEvent.on(SystemEventType.TOUCH_START, this.onTouchStart, this);
+        input.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
     }
 
     onDisable () {
-        systemEvent.off(SystemEventType.TOUCH_START, this.onTouchStart, this);
+        input.off(Input.EventType.TOUCH_START, this.onTouchStart, this);
     }
 
-    onTouchStart (touch: Touch, event: EventTouch) {
+    onTouchStart (event: EventTouch) {
+        const touch = event.touch!;
         this.cameraCom.screenPointToRay(touch.getLocationX(), touch.getLocationY(), this._ray);
         if (PhysicsSystem.instance.raycast(this._ray)) {
             const r = PhysicsSystem.instance.raycastResults;

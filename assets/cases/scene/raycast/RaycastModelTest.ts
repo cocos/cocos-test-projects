@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Material, Camera, MeshRenderer, geometry, systemEvent, SystemEventType, EventTouch, Touch, Director, director } from "cc";
+import { _decorator, Component, Node, Material, Camera, MeshRenderer, geometry, input, Input, EventTouch, Touch, Director, director } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("RaycastModelTest")
@@ -19,14 +19,15 @@ export class RaycastModelTest extends Component {
     private _ray: geometry.Ray = new geometry.Ray();
 
     onEnable () {
-        systemEvent.on(SystemEventType.TOUCH_START, this.onTouchStart, this);
+        input.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
     }
 
     onDisable () {
-        systemEvent.off(SystemEventType.TOUCH_START, this.onTouchStart, this);
+        input.off(Input.EventType.TOUCH_START, this.onTouchStart, this);
     }
 
-    onTouchStart (touch: Touch, event: EventTouch) {
+    onTouchStart (event: EventTouch) {
+        const touch = event.touch!;
         const point = touch.getLocation();
         this.cameraCom.screenPointToRay(point.x, point.y, this._ray);
         if (geometry.intersect.rayModel(this._ray, this.modelCom.model!)) {

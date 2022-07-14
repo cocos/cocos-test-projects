@@ -1,4 +1,4 @@
-import { _decorator, Component, systemEvent, SystemEventType, EventTouch, Toggle, Node, macro, Touch, Vec2 } from "cc";
+import { _decorator, Component, input, Input, EventTouch, Toggle, Node, macro, Touch, Vec2 } from "cc";
 const { ccclass, property } = _decorator;
 
 const _temp_vec2_1 = new Vec2();
@@ -15,12 +15,12 @@ export class MultiTouchCtrl extends Component {
     public target: Node = null!;
 
     start () {
-        systemEvent.on(SystemEventType.TOUCH_MOVE, this.onTouchMove, this);
+        input.on(Input.EventType.TOUCH_MOVE, this.onTouchMove, this);
         this.changeMulti();
     }
 
     onDestroy () {
-        systemEvent.off(SystemEventType.TOUCH_MOVE, this.onTouchMove, this);
+        input.off(Input.EventType.TOUCH_MOVE, this.onTouchMove, this);
     }
 
     changeMulti () {
@@ -31,7 +31,8 @@ export class MultiTouchCtrl extends Component {
         }
     }
 
-    onTouchMove (touch: Touch, event: EventTouch) {
+    onTouchMove (event: EventTouch) {
+        const touch = event.touch!;
         const touches = event.getAllTouches();
         const changedTouches = event.getTouches();
         if (macro.ENABLE_MULTI_TOUCH && touches.length > 1) {

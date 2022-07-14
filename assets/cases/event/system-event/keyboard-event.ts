@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, systemEvent, SystemEventType, EventKeyboard, tween, log, Color, Sprite, Toggle, SystemEvent, sys, input, Input } from 'cc';
+import { _decorator, Component, Node, EventKeyboard, tween, log, Color, Sprite, Toggle, sys, input, Input } from 'cc';
 const { ccclass, property } = _decorator;
 
 const keyCode2KeyName: Record<number, string> = {
@@ -118,9 +118,6 @@ const keyCode2KeyName: Record<number, string> = {
 export class KeyboardEvent extends Component {
     private _keyNode2TimeoutId: WeakMap<Node, number | null> = new WeakMap();
 
-    @property(Toggle)
-    public legacyEventToggle!: Toggle;
-
     @property(Node)
     public noSupport: Node = null!
 
@@ -134,24 +131,13 @@ export class KeyboardEvent extends Component {
             this.noSupport.active = true;
             return;
         }
-        this.legacyEventToggle.node.on(Toggle.EventType.TOGGLE, this.onToggle, this);
-        this.updateEventType();
+        this.registerEvent();
     }
 
     onDestroy () {
         this.unregisterEvent();
-        this.unregisterLegacyEvent();
     }
 
-    updateEventType () {
-        if (this.legacyEventToggle.isChecked) {
-            this.unregisterEvent();
-            this.registerLegacyEvent();
-        } else {
-            this.unregisterLegacyEvent();
-            this.registerEvent();
-        }
-    }
     registerEvent () {
         input.on(Input.EventType.KEY_DOWN, this.onKeyboardDown, this);
         input.on(Input.EventType.KEY_PRESSING, this.onKeyboardPressing, this);
@@ -164,20 +150,6 @@ export class KeyboardEvent extends Component {
         input.off(Input.EventType.KEY_UP, this.onKeyboardUp, this);
     }
 
-    registerLegacyEvent () {
-        systemEvent.on(SystemEvent.EventType.KEY_DOWN, this.onKeyboardDown, this);
-        systemEvent.on(SystemEvent.EventType.KEY_UP, this.onKeyboardUp, this);
-    }
-
-    unregisterLegacyEvent () {
-        systemEvent.off(SystemEvent.EventType.KEY_DOWN, this.onKeyboardDown, this);
-        systemEvent.off(SystemEvent.EventType.KEY_UP, this.onKeyboardUp, this);
-    }
-
-    onToggle (toggle: Toggle) {
-        this.updateEventType();
-    }
-    
     onKeyboardDown (event: EventKeyboard) {
         let keyCode = event.keyCode;
         let keyName = keyCode2KeyName[keyCode];

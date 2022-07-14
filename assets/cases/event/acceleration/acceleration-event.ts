@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, systemEvent, SystemEventType, EventAcceleration, Vec2, Label } from 'cc';
+import { _decorator, Component, Node, input, Input, EventAcceleration, Vec2, Label } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('accelerationEvent')
@@ -20,12 +20,12 @@ export class accelerationEvent extends Component {
 
     start () {
         this.accelerometerEnable = false;
-        systemEvent.setAccelerometerInterval(0.5);
-        systemEvent.on(SystemEventType.DEVICEMOTION,this.moveBall,this);
+        input.setAccelerometerInterval(0.5);
+        input.on(Input.EventType.DEVICEMOTION,this.moveBall,this);
     }
 
     onDestroy () {
-        systemEvent.off(SystemEventType.DEVICEMOTION,this.moveBall,this);
+        input.off(Input.EventType.DEVICEMOTION,this.moveBall,this);
     }
 
     update (dt: number) {
@@ -57,7 +57,7 @@ export class accelerationEvent extends Component {
             this.acc.x = 0;
             this.acc.y = 0;
         }
-        systemEvent.setAccelerometerEnabled(this.accelerometerEnable);
+        input.setAccelerometerEnabled(this.accelerometerEnable);
         this._skipCallback = !this.accelerometerEnable;
     }
 
