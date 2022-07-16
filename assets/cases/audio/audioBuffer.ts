@@ -32,6 +32,10 @@ export class audioBuffer extends Component {
     private _maxScaleX = 10;
     private _visibleSize!: Size;
 
+    private _currentProgress: number = -1;
+    private _updateInterval = 0.05;
+    private _updateTimer = 0;
+
     async onEnable () {
         this._dataView1 = await this.audioSource.getPCMData(0);
         this._dataView2 = await this.audioSource.getPCMData(1);
@@ -49,12 +53,10 @@ export class audioBuffer extends Component {
         this.drawAudioBuffer();
 
         input.on(Input.EventType.TOUCH_MOVE, this.onDragMove, this);
-        this.slider.node.on('slide', this.onSliderChange, this);
     }
     
     onDisabled () {
         input.off(Input.EventType.TOUCH_MOVE, this.onDragMove, this);
-        this.slider.node.off('slide', this.onSliderChange, this);
     }
 
     drawBufferFromChannel (graphics: Graphics, dataView?: AudioPCMDataView) {
@@ -101,8 +103,16 @@ export class audioBuffer extends Component {
         this.graphics2.node.setPosition(v3(posX2, pos2.y, pos2.z));
     }
 
-    onSliderChange (slider: Slider) {
-        const progress = slider.progress;
+    update (dt: number) {
+        if (this.slider.progress === this._currentProgress) {
+            return;
+        }
+        if (this._updateTimer < this._updateInterval) {
+            this._updateTimer += dt;
+            return;
+        }
+        this._updateTimer -= this._updateInterval;
+        const progress = this._currentProgress = this.slider.progress;
         this._currentScaleX = progress * this._maxScaleX;
         this._currentScaleX = clamp(this._currentScaleX, 1, this._maxScaleX);
         this._uiTrans1.width = this._originalWidth1 * this._currentScaleX;
