@@ -1,6 +1,6 @@
 import { _decorator, Component, Node, Label } from 'cc';
-import intl from 'db://localization-editor/core/L10nManager';
-import I18nComponent from 'db://localization-editor/components/L10nComponent';
+import intl from 'db://localization-editor/core/l10n-manager';
+import I18nComponent from 'db://localization-editor/components/l10n-component';
 const { ccclass, property, executeInEditMode } = _decorator;
 
 @ccclass('NewComponent1')
