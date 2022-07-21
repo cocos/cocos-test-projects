@@ -1,5 +1,5 @@
 import { _decorator, Component, game } from 'cc';
-import intl from 'db://localization-editor/core/L10nManager';
+import intl from 'db://localization-editor/core/l10n-manager';
 const { ccclass, property } = _decorator;
 
 @ccclass('ChangeLanguage')
