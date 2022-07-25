@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, ccenum, SystemEventType, TiledMap, Vec2, Vec3, view, macro, TiledLayer, systemEvent, EventKeyboard, Touch, EventTouch, KeyCode } from 'cc';
+import { _decorator, Component, Node, ccenum, Input, TiledMap, Vec2, Vec3, view, macro, TiledLayer, input, EventKeyboard, Touch, EventTouch, KeyCode } from 'cc';
 const { ccclass, property } = _decorator;
 
 enum MoveDirection {
@@ -58,13 +58,13 @@ export class Puzzle extends Component {
             this.player.active = false;
         }
 
-        systemEvent.on(SystemEventType.KEY_UP, this._onKeyPressed, this);
+        input.on(Input.EventType.KEY_UP, this._onKeyPressed, this);
 
-        this.node.on(SystemEventType.TOUCH_START, (touch: Touch, event: EventTouch) => {
+        this.node.on(Input.EventType.TOUCH_START, (touch: Touch, event: EventTouch) => {
             this._touching = true;
             this._touchStartPos.set(touch.getLocation());
         });
-        this.node.on(SystemEventType.TOUCH_END, (touch: Touch, event: EventTouch) => {
+        this.node.on(Input.EventType.TOUCH_END, (touch: Touch, event: EventTouch) => {
             if (!this._touching || !this._isMapLoaded || this._succeedLayer.active) return;
 
             this._touching = false;
@@ -105,7 +105,7 @@ export class Puzzle extends Component {
     }
 
     onDestroy () {
-        systemEvent.off(SystemEventType.KEY_UP, this._onKeyPressed, this);
+        input.off(Input.EventType.KEY_UP, this._onKeyPressed, this);
     }
 
     restartGame () {

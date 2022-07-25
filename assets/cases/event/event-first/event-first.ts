@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, instantiate, SystemEventType, EventTouch, Prefab, Label, Button } from 'cc';
+import { _decorator, Component, Node, instantiate, EventTouch, Prefab, Label, Button } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('eventFirst')
@@ -37,10 +37,10 @@ export class eventFirst extends Component {
     }
 
     eventOn() {
-        this.item.on(SystemEventType.TOUCH_START, this.onTouchStart, this);
-        this.item.on(SystemEventType.TOUCH_END, this.onTouchEnd, this);
-        this.item.on(SystemEventType.TOUCH_MOVE, this.onTouchMove, this);
-        this.item.on(SystemEventType.TOUCH_CANCEL, this.onTouchCancel, this);
+        this.item.on(Node.EventType.TOUCH_START, this.onTouchStart, this);
+        this.item.on(Node.EventType.TOUCH_END, this.onTouchEnd, this);
+        this.item.on(Node.EventType.TOUCH_MOVE, this.onTouchMove, this);
+        this.item.on(Node.EventType.TOUCH_CANCEL, this.onTouchCancel, this);
     }
 
     // update (deltaTime: number) {
@@ -48,10 +48,10 @@ export class eventFirst extends Component {
     // }
 
     onDisable() {
-        this.item.off(SystemEventType.TOUCH_START, this.onTouchStart, this);
-        this.item.off(SystemEventType.TOUCH_END, this.onTouchEnd, this);
-        this.item.off(SystemEventType.TOUCH_MOVE, this.onTouchMove, this);
-        this.item.off(SystemEventType.TOUCH_CANCEL, this.onTouchCancel, this);
+        this.item.off(Node.EventType.TOUCH_START, this.onTouchStart, this);
+        this.item.off(Node.EventType.TOUCH_END, this.onTouchEnd, this);
+        this.item.off(Node.EventType.TOUCH_MOVE, this.onTouchMove, this);
+        this.item.off(Node.EventType.TOUCH_CANCEL, this.onTouchCancel, this);
     }
 
     onTouchStart(event: EventTouch){

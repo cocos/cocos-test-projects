@@ -1,4 +1,4 @@
-import { _decorator, Component, systemEvent, Label, EventTouch, Touch, SystemEvent, Node, sys, view } from "cc";
+import { _decorator, Component, input, Label, EventTouch, Touch, Input, Node, sys, view } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("SystemEventTest")
@@ -22,32 +22,32 @@ export class SystemEventTest extends Component {
         const canvasSize = view.getCanvasSize();
         this.tip.string = this.tip.string.replace('{{width}}', canvasSize.width.toString());
         this.tip.string = this.tip.string.replace('{{height}}', canvasSize.height.toString());
-        systemEvent.on(SystemEvent.EventType.TOUCH_START, this.onTouchStart, this);
-        systemEvent.on(SystemEvent.EventType.TOUCH_END, this.onTouchEnd, this);
-        systemEvent.on(SystemEvent.EventType.TOUCH_MOVE, this.onTouchMove, this);
-        systemEvent.on(SystemEvent.EventType.TOUCH_CANCEL, this.onTouchCancel, this);
+        input.on(Input.EventType.TOUCH_START, this.onTouchStart, this);
+        input.on(Input.EventType.TOUCH_END, this.onTouchEnd, this);
+        input.on(Input.EventType.TOUCH_MOVE, this.onTouchMove, this);
+        input.on(Input.EventType.TOUCH_CANCEL, this.onTouchCancel, this);
     }
 
     onDestroy(){
-        systemEvent.off(SystemEvent.EventType.TOUCH_START, this.onTouchStart, this);
-        systemEvent.off(SystemEvent.EventType.TOUCH_END, this.onTouchEnd, this);
-        systemEvent.off(SystemEvent.EventType.TOUCH_MOVE, this.onTouchMove, this);
-        systemEvent.off(SystemEvent.EventType.TOUCH_CANCEL, this.onTouchCancel, this);
+        input.off(Input.EventType.TOUCH_START, this.onTouchStart, this);
+        input.off(Input.EventType.TOUCH_END, this.onTouchEnd, this);
+        input.off(Input.EventType.TOUCH_MOVE, this.onTouchMove, this);
+        input.off(Input.EventType.TOUCH_CANCEL, this.onTouchCancel, this);
     }
 
-    onTouchStart(touch: Touch, event: EventTouch){
+    onTouchStart(event: EventTouch){
         this.labelShow.string = `TouchStart: ${event.getLocation()}`;
     }
 
-    onTouchMove(touch: Touch, event: EventTouch){
+    onTouchMove(event: EventTouch){
         this.labelShow.string = `TouchMove: ${event.getLocation()}`;
     }
 
-    onTouchEnd(touch: Touch, event: EventTouch){
+    onTouchEnd(event: EventTouch){
         this.labelShow.string = `TouchEnd: ${event.getLocation()}`;
     }
 
-    onTouchCancel(touch: Touch, event: EventTouch){
+    onTouchCancel(event: EventTouch){
         this.labelShow.string = `TouchCancel`;
     }
 }

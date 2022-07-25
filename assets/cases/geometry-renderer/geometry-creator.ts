@@ -38,6 +38,8 @@ export class GeometryCreator extends Component {
     toggleUnlit: Toggle = null!;
     @property(Toggle)
     toggleRotate: Toggle = null!;
+    @property(CameraComponent)
+    cameraComp: CameraComponent = null!
     
     private _wireframe = false;
     private _depthTest = false;
@@ -62,10 +64,8 @@ export class GeometryCreator extends Component {
     }
 
     private initCamera() {
-        const scene = director.getScene();
-        const node = scene?.getChildByName("Main Camera")!;
-        const component = node.getComponent(CameraComponent) as CameraComponent;
-        this._mainCamera = component.camera;
+        this._mainCamera = this.cameraComp.camera;
+        this._mainCamera.initGeometryRenderer();
     }
 
     private initUI() {
@@ -141,16 +141,20 @@ export class GeometryCreator extends Component {
 
     update (deltaTime: number) {
         let renderer = this._mainCamera.geometryRenderer;
+        if (!renderer) {
+            return ;
+        }
+        
         this.updateAngle(deltaTime);
         this._colorIndex = 0;
 
         const useTransform = true;
         let startX = -20.0;
-        let startY = 12.0;
+        let startY = 18.0;
         let stepX  = 12.0;
         let stepY  = -10.0;
 
-        // first row
+        // The first row
         let pos = new Vec3(startX, startY, 0.0);
         let transform = this.rotate(Math.PI / 6.0 + this._angle, pos);
         let box = geometry.AABB.create(pos.x, pos.y, pos.z, 2.0, 2.0, 2.0);
@@ -172,7 +176,7 @@ export class GeometryCreator extends Component {
         transform = this.rotate(Math.PI / 4.0 + this._angle, pos);
         renderer.addCone(pos, 2.0, 4.0, this.getNextColor(), 32, this._wireframe, this._depthTest, this._unlit, useTransform, transform);
 
-        // second row
+        // The second row
         pos.y += stepY;
         pos.x = startX;
         transform = this.rotate(Math.PI / 4.0 + this._angle, pos);
@@ -194,7 +198,7 @@ export class GeometryCreator extends Component {
         transform = this.rotate(Math.PI + this._angle, pos);
         renderer.addIndexedMesh(pos, this._meshVertices, this._meshIndices, this.getNextColor(), this._depthTest, useTransform, transform);
 
-        // third row
+        // The third row
         pos.y += stepY;
         pos.x = startX;
         transform = this.rotate(Math.PI / 2.0 + this._angle, pos);
@@ -220,7 +224,7 @@ export class GeometryCreator extends Component {
         const bezierV3 = new Vec3(pos.x + 4.0, pos.y, pos.z);
         renderer.addBezier(bezierV0, bezierV1, bezierV2, bezierV3, this.getNextColor(), 32, this._depthTest, useTransform, transform);
 
-        // fourth row
+        // The fourth row
         pos.y += stepY;
         pos.x = startX;
         let view = new Mat4();
@@ -251,8 +255,42 @@ export class GeometryCreator extends Component {
         const dashedLineV1 = new Vec3(pos.x + 2.0, pos.y + 3.0, pos.z);
         renderer.addDashedLine(dashedLineV0, dashedLineV1, this.getNextColor(), this._depthTest);
 
-        pos.x += stepX / 3.0;
-        renderer.addCross(pos, 0.5, this.getNextColor(), this._depthTest);
+        // The fifth row
+        pos.y += stepY;
+        pos.x = startX;
+        let knots: Vec3[] = [];
+        knots.push(new Vec3(pos.x - 3, pos.y, pos.z));
+        knots.push(new Vec3(pos.x, pos.y + 3, pos.z));
+        knots.push(new Vec3(pos.x + 3, pos.y, pos.z));
+        knots.push(new Vec3(pos.x + 6, pos.y + 3, pos.z));
+        knots.push(new Vec3(pos.x + 9, pos.y, pos.z));
+        knots.push(new Vec3(pos.x + 12, pos.y + 3, pos.z));
+
+        const whole_index = 0xffffffff;
+        let spline = geometry.Spline.create(geometry.SplineMode.LINEAR, knots);
+        renderer.addSpline(spline, this.getNextColor(), whole_index, 0.5, 64, this._depthTest);
+
+        pos.x += 2.0 * stepX;
+        knots = [];
+        knots.push(new Vec3(pos.x - 5, pos.y, pos.z));
+        knots.push(new Vec3(pos.x - 2, pos.y + 3, pos.z));
+        knots.push(new Vec3(pos.x + 2, pos.y, pos.z));
+        knots.push(new Vec3(pos.x + 5, pos.y + 3, pos.z));
+
+        spline = geometry.Spline.create(geometry.SplineMode.BEZIER, knots);
+        renderer.addSpline(spline, this.getNextColor(), whole_index, 0.5, 64, this._depthTest);
+
+        pos.x += stepX;
+        knots = [];
+        knots.push(new Vec3(pos.x - 3, pos.y, pos.z));
+        knots.push(new Vec3(pos.x, pos.y + 3, pos.z));
+        knots.push(new Vec3(pos.x + 3, pos.y, pos.z));
+        knots.push(new Vec3(pos.x + 6, pos.y + 3, pos.z));
+        knots.push(new Vec3(pos.x + 9, pos.y, pos.z));
+        knots.push(new Vec3(pos.x + 12, pos.y + 3, pos.z));
+
+        spline = geometry.Spline.create(geometry.SplineMode.CATMULL_ROM, knots);
+        renderer.addSpline(spline, this.getNextColor(), whole_index, 0.5, 64, this._depthTest);
     }
 
     public createPerspective(fov: number, aspect: number, start: number, end: number, m: Mat4) {
