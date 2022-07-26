@@ -1,4 +1,4 @@
-import { _decorator, Component, CCFloat, Mesh, Prefab, instantiate, find, Slider, Label, Layout, EventHandler, MeshRenderer } from 'cc';
+import { _decorator, Component, CCFloat, Mesh, Prefab, instantiate, find, Slider, Label, Layout, EventHandler, MeshRenderer, cclegacy } from 'cc';
 import { EDITOR } from 'cc/env';
 const { ccclass, property, executeInEditMode } = _decorator;
 
@@ -138,7 +138,7 @@ export class MorphController extends Component {
             Editor.Message.broadcast('scene:change-node', this.node.uuid);
         }
 
-        if (!EDITOR) {
+        if (!EDITOR || cclegacy.GAME_VIEW) {
             this.initUI();
         }
     }
