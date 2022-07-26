@@ -1,5 +1,4 @@
 import { _decorator, Component, Node, Label, director, Button, Sprite, Color } from "cc";
-import { SceneList } from "./scenelist";
 import { BackButton } from "./backbutton";
 const { ccclass, property } = _decorator;
 
@@ -60,7 +59,7 @@ export class ListItem extends Component {
         director.loadScene(this._name);
     }
 
-    public updateItem(type: ItemType, idx: number) {
+    public updateItem(type: ItemType, idx: number, name: string) {
         this.index = idx;
         this.type = type;
 
@@ -70,12 +69,12 @@ export class ListItem extends Component {
         if (type == ItemType.SCENSE_ITEM) {
             button!.enabled = true;
             sprite!.enabled = true;
-            this._name = SceneList.sceneArray[idx];
+            this._name = name;
             this.color = new Color(0, 0, 0, 255);
         } else {
             button!.enabled = false;
             sprite!.enabled = false;
-            this._name = SceneList.sceneFold[idx];
+            this._name = name;
             this.color = new Color(255, 255, 255, 255);
         }
         if (this.label) {
