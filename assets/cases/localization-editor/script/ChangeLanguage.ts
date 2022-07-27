@@ -1,5 +1,5 @@
 import { _decorator, Component, game } from 'cc';
-import { l10n } from 'db://localization-editor/l10n';
+import intl from 'db://localization-editor/core/l10n-manager';
 const { ccclass, property } = _decorator;
 
 @ccclass('ChangeLanguage')
@@ -15,13 +15,13 @@ export class ChangeLanguage extends Component {
     }
 
     async changeLanguage() {
-        const languages = l10n.languages;
+        const languages = intl.languages;
         console.log(languages);
-        const currentLanguage = l10n.currentLanguage;
+        const currentLanguage = intl.currentLanguage;
         let currentLanguageIndex = languages.findIndex(lan => lan === currentLanguage);
         currentLanguageIndex = (currentLanguageIndex + 1) % languages.length
         console.log(`will change to ${languages[currentLanguageIndex]}`)
-        await l10n.changeLanguage(languages[currentLanguageIndex])
+        await intl.changeLanguage(languages[currentLanguageIndex])
     }
 }
 

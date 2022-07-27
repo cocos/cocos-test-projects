@@ -1,19 +1,14 @@
-import { l10n } from 'db://localization-editor/l10n';
 import { _decorator, Component, Node, Label } from 'cc';
+import intl from 'db://localization-editor/core/l10n-manager';
+import I18nComponent from 'db://localization-editor/components/l10n-component';
 const { ccclass, property, executeInEditMode } = _decorator;
 
 @ccclass('NewComponent1')
-export class NewComponent1 extends Component {
-    label?: Label | null = undefined;
-
-    protected onLoad() {
-        this.label = this.node.getComponent(Label);
-    }
-
-
-    onStart() {
+@executeInEditMode(true)
+export class NewComponent1 extends I18nComponent {
+    render() {
         if (this.label) {
-            this.label.string = l10n.t('this_is_script')
+            this.preview(intl.t('this_is_script'))
         }
     }
 }
