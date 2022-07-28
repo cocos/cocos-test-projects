@@ -70,7 +70,10 @@ export class SceneManager extends Component {
         this._spawnCount = Math.ceil(this._displayHeight / (this._itemTemplateUITrans.height + this._spacing)) + this._reserveSize;
         for (let j = 0; j < this._spawnCount; j++) {
             let item = instantiate(this.itemPrefab);
-            item.getComponent(ListItem)!.updateItem(this._displayItems[j].type, this._displayItems[j].index);
+            let type = this._displayItems[j].type;
+            let index = this._displayItems[j].index;
+            let name = this.getItemName(this._displayItems[j]);
+            item.getComponent(ListItem)!.updateItem(type, index, name);
             this.node.addChild(item);
             let itemUITrans = item.getComponent(UITransform)!;
             item.setPosition(0, -itemUITrans.height * (0.1 + j) - this._spacing * (j + 1), 0);
@@ -87,7 +90,12 @@ export class SceneManager extends Component {
         let viewPos = this.scrollView.node.getComponent(UITransform)!.convertToNodeSpaceAR(worldPos);
         return viewPos;
     }
-
+    getItemName(item: DisplayItems) : string {
+        if(item.type == ItemType.SCENSE_ITEM) {
+            return SceneList.sceneArray[item.index];
+        } 
+        return SceneList.sceneFold[item.index];
+    }
     update(dt: number) {
         this._updateTimer += dt;
         if (this._updateTimer < this._updateInterval) return; // we don't need to do the math every frame
@@ -120,9 +128,13 @@ export class SceneManager extends Component {
             // Does not need to be refreshed every frame, only calculated when it changes
             if (isChange || yPos < offset) {
                 // Quickly locate the corresponding index for returning from a specific scene
-                let index = Math.floor(yPos / offset) * this._spawnCount + i;
-                if (index >= 0 && index < this._displayItems.length)
-                    items[i].getComponent(ListItem)?.updateItem(this._displayItems[index].type, this._displayItems[index].index);
+                let idx = Math.floor(yPos / offset) * this._spawnCount + i;
+                if (idx >= 0 && idx < this._displayItems.length) {
+                    let type = this._displayItems[idx].type;
+                    let index = this._displayItems[idx].index;
+                    let name = this.getItemName(this._displayItems[idx]);
+                    items[i].getComponent(ListItem)?.updateItem(type, index, name);
+                }
             }
 
         }
