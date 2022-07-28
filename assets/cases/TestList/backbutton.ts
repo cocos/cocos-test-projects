@@ -1,6 +1,6 @@
 import { EventGamepad, input, Input, _decorator, Component, Node, ScrollView, Vec3, game, Label, director, Director, assetManager, find, Canvas, Layers, JsonAsset, profiler, sys } from "cc";
 const { ccclass, property } = _decorator;
-import { SceneList } from "./scenelist";
+import { SceneList } from "./common";
 import { StateCode, TestFramework } from "./TestFramework";
 
 declare class AutoTestConfigJson extends JsonAsset {

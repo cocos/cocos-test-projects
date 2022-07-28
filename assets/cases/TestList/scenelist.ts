@@ -2,14 +2,7 @@ import { Sprite, Button, input, Input, Vec2, _decorator, Component, Node, Scroll
 import { ItemType, ListItem } from "./listitem";
 const { ccclass, property } = _decorator;
 import { BackButton } from "./backbutton";
-
-export class SceneList {
-
-    static sceneArray: string[] = [];
-    static sceneFold: string[] = [];
-    static foldCount: number = 0;
-
-}
+import { SceneList } from "./common";
 
 class DisplayItems {
     index: number = -1;
