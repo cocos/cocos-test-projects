@@ -1,5 +1,6 @@
 import { _decorator, Component, Node, Label, director } from "cc";
-import { SceneList, SceneManager } from "./scenelist";
+import { SceneManager } from "./scenelist";
+import { SceneList } from "./common";
 import { BackButton } from "./backbutton";
 const { ccclass, property } = _decorator;
 
