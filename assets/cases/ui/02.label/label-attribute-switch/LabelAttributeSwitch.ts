@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Label, UITransform, Size, Color, math, HorizontalTextAlignment, Font, Overflow, CacheMode } from 'cc';
+import { _decorator, Component, Node, Label, UITransform, Size, Color, math, HorizontalTextAlignment, Font, Overflow, CacheMode, LabelOutline, LabelShadow, color, Vec2, LabelComponent } from 'cc';
 const { ccclass, property } = _decorator;
 
 const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -9,11 +9,18 @@ export class LabelAttributeSwitch extends Component {
     private label: Label = null!;
     private stateLabel: Label = null!;
     private transform: UITransform = null!;
+    private outline: LabelOutline = null!;
+    private shadow: LabelShadow = null!;
 
     private oriSize: Size = new Size(200, 200);
     private oriColor: Color = new Color(255, 255, 255, 255);
     private oriFontSize: number = 0;
     private oriFont: Font = null!;
+    private oriOutlineColor = new Color(0, 0, 0, 255);
+    private oriOutlineWidth = 3;
+    private oriShadowColor = new Color(0, 0, 0, 255);
+    private oriShadowOffset = new Vec2(3, 3);
+    private oriShadowBlur = 3;
 
     @property({ type: Font })
     public font: Font = null!;
@@ -23,6 +30,8 @@ export class LabelAttributeSwitch extends Component {
         this.label = this.node.getChildByName('Label')?.getComponent<Label>(Label)!;
         this.stateLabel = this.node.getChildByName('state')?.getComponent<Label>(Label)!;
         this.transform = this.label.getComponent<UITransform>(UITransform)!;
+        this.outline = this.label.getComponent<LabelOutline>(LabelOutline)!;
+        this.shadow = this.label.getComponent<LabelShadow>(LabelShadow)!;
 
         this.oriFontSize = this.label.fontSize;
         this.oriFont = this.label.font!;
@@ -47,7 +56,7 @@ export class LabelAttributeSwitch extends Component {
     public switchContentSize() {
         const randX = math.random();
         const randY = math.random();
-        this.transform.contentSize = new Size(this.oriSize.x * randX, this.oriSize.y * randY);
+        this.transform.contentSize = new Size(this.oriSize.x * 2 * randX, this.oriSize.y * 2 * randY);
         this.updateState();
     }
 
@@ -122,6 +131,52 @@ export class LabelAttributeSwitch extends Component {
         this.updateState();
     }
 
+
+    public switchOutline() {
+        this.outline.enabled = !this.outline.enabled;
+        this.updateState();
+    }
+
+    public switchOutlineColor() {
+        const randR = math.random();
+        const randG = math.random();
+        const randB = math.random();
+        const randA = math.random();
+        this.outline.color = new Color(255 * randR, 255 * randG, 255 * randB, 255 * randA);
+        this.updateState();
+    }
+    public switchOutlineWidth() {
+        this.outline.width = this.oriOutlineWidth * 2 * math.random();
+        this.updateState();
+    }
+
+    public switchShadow() {
+        this.shadow.enabled = !this.shadow.enabled;
+        this.updateState();
+    }
+
+    public switchShadowColor() {
+        const randR = math.random();
+        const randG = math.random();
+        const randB = math.random();
+        const randA = math.random();
+        this.shadow.color = new Color(255 * randR, 255 * randG, 255 * randB, 255 * randA);
+        this.updateState();
+    }
+
+    public switchShadowOffset() {
+        const randX = math.random();
+        const randY = math.random();
+        this.shadow.offset = new Vec2(this.oriShadowOffset.x * 2 * randX, this.oriShadowOffset.y * 2 * randY);
+        this.updateState();
+    }
+
+    public switchShadowBlur() {
+        this.shadow.blur = this.oriShadowBlur * 2 * math.random();
+        this.updateState();
+    }
+
+
     public reset() {
         this.label.node.active = true;
         this.label.enabled = true;
@@ -134,6 +189,13 @@ export class LabelAttributeSwitch extends Component {
         this.label.fontSize = this.oriFontSize;
         this.label.overflow = Overflow.SHRINK;
         this.label.cacheMode = CacheMode.NONE;
+        this.outline.enabled = true;
+        this.outline.color = this.oriOutlineColor;
+        this.outline.width = this.oriOutlineWidth;
+        this.shadow.enabled = true;
+        this.shadow.color = this.oriShadowColor;
+        this.shadow.offset = this.oriShadowOffset;
+        this.shadow.blur = this.oriShadowBlur;
 
         this.updateState();
     }
@@ -150,6 +212,13 @@ useSystemFont = ${this.label.useSystemFont}
 fontSize = ${this.label.fontSize}
 overflow = ${this.label.overflow.toString()}
 cacheMode = ${this.label.cacheMode.toString()}
+outline.enabled = ${this.outline.enabled}
+outline.color = ${this.outline.color}
+outline.width = ${this.outline.width}
+shadow.enabled = ${this.shadow.enabled}
+shadow.color = ${this.shadow.color}
+shadow.offset = ${this.shadow.offset}
+shadow.blur = ${this.shadow.blur}
 `;
         this.stateLabel.string = state;
     }

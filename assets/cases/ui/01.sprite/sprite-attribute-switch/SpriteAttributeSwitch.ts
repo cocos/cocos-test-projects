@@ -50,7 +50,7 @@ export class SpriteAttributeSwitch extends Component {
     public switchContentSize() {
         const randX = math.random();
         const randY = math.random();
-        this.transform.contentSize = new Size(this.oriSize.x * randX, this.oriSize.y * randY);
+        this.transform.contentSize = new Size(this.oriSize.x * 2 * randX, this.oriSize.y * 2 * randY);
         this.updateState();
     }
 
