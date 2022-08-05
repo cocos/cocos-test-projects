@@ -48,10 +48,21 @@ export class SpriteAttributeSwitch extends Component {
     }
 
     public switchContentSize() {
-
         const randX = math.random();
         const randY = math.random();
-        this.transform.contentSize = new Size(this.oriSize.x * randX, this.oriSize.y * randY);
+        this.transform.contentSize = new Size(this.oriSize.x * 2 * randX, this.oriSize.y * 2 * randY);
+        this.updateState();
+    }
+
+    public switchAnchorX() {
+        const randX = math.random();
+        this.transform.anchorX = randX;
+        this.updateState();
+    }
+
+    public switchAnchorY() {
+        const randY = math.random();
+        this.transform.anchorY = randY;
         this.updateState();
     }
 
@@ -87,6 +98,8 @@ export class SpriteAttributeSwitch extends Component {
         this.sprite.node.active = true;
         this.sprite.enabled = true;
         this.transform.contentSize = this.oriSize;
+        this.transform.anchorX = 0.5;
+        this.transform.anchorY = 0.5;
         this.sprite.color = this.oriColor;
         this.sprite.spriteFrame = this.oriFrame;
         this.sprite.type = 0;
@@ -100,6 +113,7 @@ export class SpriteAttributeSwitch extends Component {
         const state = `active = ${this.sprite.node.active}
 enabled = ${this.sprite.enabled}
 contentSize = ${this.transform.contentSize}
+anchor = ${this.transform.anchorPoint}
 color = ${this.sprite.color}
 spriteFrame = ${this.sprite.spriteFrame!.name}
 spriteType = ${spriteTypeList[this.curSpriteTypeIndex]}
