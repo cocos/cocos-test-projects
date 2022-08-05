@@ -45,10 +45,21 @@ export class LabelAttributeSwitch extends Component {
     }
 
     public switchContentSize() {
-
         const randX = math.random();
         const randY = math.random();
         this.transform.contentSize = new Size(this.oriSize.x * randX, this.oriSize.y * randY);
+        this.updateState();
+    }
+
+    public switchAnchorX() {
+        const randX = math.random();
+        this.transform.anchorX = randX;
+        this.updateState();
+    }
+
+    public switchAnchorY() {
+        const randY = math.random();
+        this.transform.anchorY = randY;
         this.updateState();
     }
 
@@ -115,6 +126,8 @@ export class LabelAttributeSwitch extends Component {
         this.label.node.active = true;
         this.label.enabled = true;
         this.transform.contentSize = this.oriSize;
+        this.transform.anchorX = 0.5;
+        this.transform.anchorY = 0.5;
         this.label.color = this.oriColor;
         this.label.string = 'label';
         this.label.font = this.oriFont;
@@ -129,6 +142,7 @@ export class LabelAttributeSwitch extends Component {
         const state = `active = ${this.label.node.active}
 enabled = ${this.label.enabled}
 contentSize = ${this.transform.contentSize}
+anchor = ${this.transform.anchorPoint}
 color = ${this.label.color}
 string = ${this.label.string}
 font = ${this.label.font?.name}
