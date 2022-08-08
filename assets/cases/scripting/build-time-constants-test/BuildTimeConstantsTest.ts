@@ -5,6 +5,7 @@ const { ccclass, property, menu, executeInEditMode } = _decorator;
 // import * as buildTimeConstants from 'build-time-constants';
 
 const keys = (Object.keys(buildTimeConstants) as (keyof typeof buildTimeConstants)[]).sort();
+const ccKeys = Object.keys(globalThis).filter(key => key.startsWith('CC_'));
 
 @ccclass('BuildTimeConstantsTest')
 @menu('TestCases/Scripting/BuildTimeConstantsTest')
@@ -13,7 +14,10 @@ export class BuildTimeConstantsTest extends Component {
     @property(Node)
     public labelNode: Node = null!;
 
-    public start() {
+    @property(Node)
+    public ccLabelNode: Node = null!;
+
+    public onLoad() {
         const label = this.labelNode.getComponent(Label)!;
         const keyNameMaxLen = keys.reduce((len, key) => Math.max(len, key.length), 0);
         let resultString = '';
@@ -26,5 +30,20 @@ export class BuildTimeConstantsTest extends Component {
             resultString += `${key.padStart(keyNameMaxLen, ' ')} : ${valueRep}\n`;
         });
         label.string = resultString;
+
+        const ccLabel = this.ccLabelNode.getComponent(Label)!;
+        const ccKeyNameMaxLen = ccKeys.reduce((len, key) => Math.max(len, key.length), 0);
+        resultString = '';
+        ccKeys.forEach((key) => {
+            if (key === 'CC_LINKSURE' || key === 'CC_QTT') {
+                return;
+            }
+            // @ts-ignore
+            const value = globalThis[key];
+            const valueRep = (value ? 'V' : 'X');
+            resultString += `${key.padStart(ccKeyNameMaxLen, ' ')} : ${valueRep}\n`;
+        });
+        ccLabel.string = resultString;
+
     }
 }
