@@ -99,7 +99,7 @@ export class WebsocketTest extends Component {
             // After close, it's no longer possible to use it again,
             // if you want to send another request, you need to create a new websocket instance
             self._wsiSendBinary = null;
-            respLabel.string = 'client is close!';
+            respLabel.string = 'client is closed!';
         };
 
         this.scheduleOnce(this.sendWebSocketBinary, 1);
