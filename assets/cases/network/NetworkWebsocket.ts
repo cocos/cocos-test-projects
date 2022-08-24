@@ -2,8 +2,8 @@ import { _decorator, Component, Label, Asset, assert, loader, sys, assetManager 
 import { NATIVE } from 'cc/env';
 const { ccclass, property } = _decorator;
 
-@ccclass('NetworkWebsocket')
-export class WebsocketTest extends Component {
+@ccclass('NetworkWebSocket')
+export class WebSocketTest extends Component {
 
     @property({type: Label})
     public wsStatus: Label = null!;
@@ -22,7 +22,7 @@ export class WebsocketTest extends Component {
     private  _wsServer: WebSocketServer | null = null; // only for native usage
     
     start() {
-        if (NATIVE) {
+        if (NATIVE && typeof WebSocketServer !== "undefined") {
             this.wsServerStatus.string  = 'waiting..';
             this.prepareWebSocketServer();
     
@@ -33,7 +33,7 @@ export class WebsocketTest extends Component {
     }
 
     onDestroy () {
-        if (NATIVE) {
+        if (NATIVE && typeof WebSocketServer !== "undefined") {
             let wsiSendBinary = this._wsiSendBinary;
             if (wsiSendBinary) {
                 wsiSendBinary.onopen = null;
@@ -130,11 +130,9 @@ export class WebsocketTest extends Component {
     }
 
     prepareWebSocketServer() {
-        if (NATIVE) {
             const self = this;
             const wsServerLabel = this.wsServer;
             const respLabel = this.wsServerStatus;
-            // let s = new WebSocketServer();
             this._wsServer = new WebSocketServer();
 
             this._wsServer.listen(8080, (err) => {
@@ -174,7 +172,6 @@ export class WebsocketTest extends Component {
             this._wsServer.onclose = function () {
                 wsServerLabel.string = 'WebSocketServer: onclose'
                 respLabel.string = 'server is closed!';
-                // this._wsServer!.connections
                 self._wsServer = null;
                 console.log("server is closed!");
             }
@@ -184,7 +181,6 @@ export class WebsocketTest extends Component {
                     this._wsServer.close();
                 }
             }, 5000);
-        }
     }
 }
 

@@ -10,7 +10,7 @@
   },
   {
     "__type__": "cc.Scene",
-    "_name": "network-websocketServer",
+    "_name": "network-websocket-server",
     "_objFlags": 0,
     "_parent": null,
     "_children": [
@@ -292,8 +292,8 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 509.75,
-      "height": 50.4
+      "width": 516.7,
+      "height": 90.4
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -321,7 +321,7 @@
       "b": 49,
       "a": 255
     },
-    "_string": "该场景只适用于原生平台, web平台请直接跳过",
+    "_string": "该场景只适用于原生平台, web平台请直接跳过.\n请确保功能裁切中勾选了WebSocket Server",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 25,
@@ -929,7 +929,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 342.85714285714283,
+    "_orthoHeight": 405.98388952819334,
     "_near": 1,
     "_far": 2000,
     "_color": {
@@ -955,6 +955,8 @@
     "_screenScale": 1,
     "_visibility": 42467328,
     "_targetTexture": null,
+    "_cameraType": -1,
+    "_trackingType": 0,
     "_id": "0ePiM8+SBM3JXuVS0EDVpP"
   },
   {
@@ -1157,7 +1159,8 @@
     "_useHDR": true,
     "_editableMaterial": null,
     "_reflectionHDR": null,
-    "_reflectionLDR": null
+    "_reflectionLDR": null,
+    "_rotationAngle": 0
   },
   {
     "__type__": "cc.FogInfo",
