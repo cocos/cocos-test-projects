@@ -3,9 +3,6 @@ const { ccclass, type } = _decorator;
 
 @ccclass('mask_type_change')
 export class mask_type_change extends Component {
-    @type(Mask)
-    public maskParent: Mask = null!;
-
     @type(SpriteFrame)
     public image: SpriteFrame = null!;
 
@@ -14,23 +11,19 @@ export class mask_type_change extends Component {
 
     start() {
         const mask = this.getComponent(Mask)!;
-        const maskParent = this.maskParent;
         this.scheduleOnce(() => {
             mask.type = Mask.Type.ELLIPSE;
             this.scheduleOnce(() => {
                 mask.inverted = true;
-                maskParent.enabled = true;
                 this.scheduleOnce(() => {
                     mask.segments = 3;
                     mask.inverted = false;
                     this.scheduleOnce(() => {
-                        maskParent.enabled = false;
                         mask.type = Mask.Type.RECT;
                         mask.inverted = true;
                         this.scheduleOnce(() => {
                             mask.enabled = false;
                             this.scheduleOnce(() => {
-                                maskParent.enabled = false;
                                 mask.type = Mask.Type.GRAPHICS_STENCIL;
                                 const g = mask.graphics!;
                                 g.clear();
@@ -47,7 +40,6 @@ export class mask_type_change extends Component {
                                 g.fill();
                                 mask.enabled = true;
                                 this.scheduleOnce(() => {
-                                    maskParent.enabled = true;
                                     mask.inverted = false;
                                     mask.spriteFrame = mask.spriteFrame = this.image;
                                     mask.type = Mask.Type.IMAGE_STENCIL;
