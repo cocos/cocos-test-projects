@@ -136,16 +136,25 @@ export class NetworkWebSocket extends Component {
             this._wsServer = new WebSocketServer();
 
             this._wsServer.listen(8080, (err) => {
-                 if (!err)
-                 console.log("server booted!");
+                 if (!err) {
+                    console.log("server booted!");
+                 } else {
+                    console.log("error when listen:", err);
+                 }
             });
 
             this._wsServer.onconnection = function (conn) {
                 wsServerLabel.string = 'WebSocketServer: onconnection'
                 respLabel.string = 'server is connected!';
-                conn.ondata = function (data) {
+                conn.onmessage = function (data) {
                     wsServerLabel.string = 'WebSocketServer: onmessage'
-                    conn.send(data, (err) => {});
+                    conn.send(data, (err) => {
+                        if (!err) {
+                            console.log("server send success!");
+                         } else {
+                            console.log("error when send:", err);
+                         }
+                    });
 
                     const binary = new Uint8Array(data);
                     let binaryStr = 'response bin msg: ';
