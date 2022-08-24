@@ -1,9 +1,9 @@
-import { _decorator, Component, Label, Asset, assert, loader, sys, assetManager } from 'cc';
+import { _decorator, Component, Label, assert } from 'cc';
 import { NATIVE } from 'cc/env';
 const { ccclass, property } = _decorator;
 
 @ccclass('NetworkWebSocket')
-export class WebSocketTest extends Component {
+export class NetworkWebSocket extends Component {
 
     @property({type: Label})
     public wsStatus: Label = null!;
