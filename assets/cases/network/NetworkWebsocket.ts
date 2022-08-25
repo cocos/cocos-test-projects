@@ -139,6 +139,8 @@ export class NetworkWebSocket extends Component {
                  if (!err) {
                     console.log("server booted!");
                  } else {
+                    wsServerLabel.string = 'WebSocketServer: listen error'
+                    respLabel.string = 'error when listen!'
                     console.log("error when listen:", err);
                  }
             });
