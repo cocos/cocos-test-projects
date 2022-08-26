@@ -5,7 +5,10 @@ const { ccclass, property, menu, executeInEditMode } = _decorator;
 // import * as buildTimeConstants from 'build-time-constants';
 
 const keys = (Object.keys(buildTimeConstants) as (keyof typeof buildTimeConstants)[]).sort();
-const ccKeys = Object.keys(globalThis).filter(key => key.startsWith('CC_'));
+const ccKeys = (Object.keys(globalThis).filter(key => key.startsWith('CC_'))).sort();
+
+
+const RemovedList = ['LINKSURE', 'QTT', 'ALIPAY'];
 
 @ccclass('BuildTimeConstantsTest')
 @menu('TestCases/Scripting/BuildTimeConstantsTest')
@@ -22,7 +25,7 @@ export class BuildTimeConstantsTest extends Component {
         const keyNameMaxLen = keys.reduce((len, key) => Math.max(len, key.length), 0);
         let resultString = '';
         keys.forEach((key) => {
-            if (key === 'LINKSURE' || key === 'QTT') {
+            if (RemovedList.includes(key)) {
                 return;
             }
             const value = buildTimeConstants[key];
@@ -39,7 +42,7 @@ export class BuildTimeConstantsTest extends Component {
         const ccKeyNameMaxLen = ccKeys.reduce((len, key) => Math.max(len, key.length), 0);
         resultString = '';
         ccKeys.forEach((key) => {
-            if (key === 'CC_LINKSURE' || key === 'CC_QTT') {
+            if (RemovedList.includes(key.substring(3))) {
                 return;
             }
             // @ts-ignore
