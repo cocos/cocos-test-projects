@@ -26,8 +26,12 @@ export class BuildTimeConstantsTest extends Component {
                 return;
             }
             const value = buildTimeConstants[key];
-            const valueRep = (value ? 'V' : 'X');
-            resultString += `${key.padStart(keyNameMaxLen, ' ')} : ${valueRep}\n`;
+            if (typeof value === 'boolean') {
+                const valueRep = (value ? 'V' : 'X');
+                resultString += `${key.padStart(keyNameMaxLen, ' ')} : ${valueRep}\n`;
+            } else { // number type
+                resultString += `${key.padStart(keyNameMaxLen, ' ')} : ${value}\n`;
+            }
         });
         label.string = resultString;
 
