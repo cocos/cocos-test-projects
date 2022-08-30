@@ -11,7 +11,7 @@
  * are sure there is no conflict
  */
 
- import { _decorator, Node, director, Director, game, BaseNode, Canvas, Camera } from 'cc';
+ import { _decorator, Node, director, Director, game, BaseNode, Canvas, Camera, cclegacy } from 'cc';
  import { EDITOR } from 'cc/env';
  
  const customLayerMask = 0x000fffff;
@@ -57,7 +57,7 @@
  
  let setParentEngine = Node.prototype.setParent;
  
- if(!EDITOR) {
+ if(!EDITOR || cclegacy.GAME_VIEW) {
      Node.prototype.setParent = function(value, keepWorldTransform) {
          setParentEngine.call(this, value, keepWorldTransform);
          if (!value) return;
