@@ -14,7 +14,7 @@ export class MaskUseImageStencil extends Component {
         const mask = this.getComponent(Mask)!;
 
         this.scheduleOnce(() => {
-            mask.type = Mask.Type.IMAGE_STENCIL;
+            mask.type = Mask.Type.SPRITE_STENCIL;
             this.scheduleOnce(()=>{
                 mask.enabled = false;
                 this.scheduleOnce(() => {
@@ -34,11 +34,11 @@ export class MaskUseImageStencil extends Component {
                     g.fill();
                     mask.enabled = true;
                     this.scheduleOnce(() => {
-                        mask.spriteFrame = mask.spriteFrame = this.image;
-                        mask.type = Mask.Type.IMAGE_STENCIL;
+                        mask.type = Mask.Type.SPRITE_STENCIL;
+                        mask.spriteFrame = this.image;
                         mask.alphaThreshold = 0.1;
                         this.scheduleOnce(() => {
-                            mask.type = Mask.Type.RECT;
+                            mask.type = Mask.Type.GRAPHICS_RECT;
                             this.label.string = '测试完成';
                         }, 2);
                     }, 2);

@@ -16,7 +16,7 @@ export class mask_type_change extends Component {
         const mask = this.getComponent(Mask)!;
         const maskParent = this.maskParent;
         this.scheduleOnce(() => {
-            mask.type = Mask.Type.ELLIPSE;
+            mask.type = Mask.Type.GRAPHICS_ELLIPSE;
             this.scheduleOnce(() => {
                 mask.inverted = true;
                 maskParent.enabled = true;
@@ -25,7 +25,7 @@ export class mask_type_change extends Component {
                     mask.inverted = false;
                     this.scheduleOnce(() => {
                         maskParent.enabled = false;
-                        mask.type = Mask.Type.RECT;
+                        mask.type = Mask.Type.GRAPHICS_RECT;
                         mask.inverted = true;
                         this.scheduleOnce(() => {
                             mask.enabled = false;
@@ -49,15 +49,15 @@ export class mask_type_change extends Component {
                                 this.scheduleOnce(() => {
                                     maskParent.enabled = true;
                                     mask.inverted = false;
-                                    mask.spriteFrame = mask.spriteFrame = this.image;
-                                    mask.type = Mask.Type.IMAGE_STENCIL;
+                                    mask.type = Mask.Type.SPRITE_STENCIL;
+                                    mask.spriteFrame = this.image;
                                     mask.alphaThreshold = 0.1;
                                     this.scheduleOnce(() => {
                                         mask.enabled = false;
                                         this.scheduleOnce(() => {
                                             mask.enabled = true;
                                             this.scheduleOnce(() => {
-                                                mask.type = Mask.Type.RECT;
+                                                mask.type = Mask.Type.GRAPHICS_RECT;
                                                 this.label.string = '测试完成';
                                             }, 2);
                                         }, 2);
