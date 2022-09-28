@@ -17,8 +17,6 @@ CCProgram unlit-vs %{
     out vec4 v_color;
   #endif
 
-  out vec3 v_position;
-
   vec4 vert () {
     vec4 position;
     CCVertInput(position);
