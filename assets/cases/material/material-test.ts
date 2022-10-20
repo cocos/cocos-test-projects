@@ -22,7 +22,7 @@ export class MaterialTest extends Component {
     }
 
     update () {
-        this.node.setRotationFromEuler(0, director.getCurrentTime() * 0.01, 0);
+        this.node.setRotationFromEuler(0, director.getTotalFrames() * 0.1, 0);
     }
 
     // callbacks
