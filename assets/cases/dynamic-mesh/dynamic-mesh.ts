@@ -24,7 +24,7 @@
  THE SOFTWARE.
  */
 
-import { _decorator, Component, director, MeshRenderer, gfx, BaseNode, primitives, utils, Color, Button, Vec3, Mesh, resources, renderer, CameraComponent } from 'cc';
+import { _decorator, Component, director, MeshRenderer, gfx, Node, primitives, utils, Color, Button, Vec3, Mesh, resources, renderer, CameraComponent } from 'cc';
 
 const { ccclass, property } = _decorator;
 
@@ -47,7 +47,7 @@ export class DynamicMeshCreator extends Component {
     private _subMeshes: IDragonSubMesh[] = [];
     private _options: primitives.ICreateDynamicMeshOptions = null!;
     private _geometries: primitives.IDynamicGeometry[] = [];
-    private _dragon: BaseNode = null!;
+    private _dragon: Node = null!;
     private _initialize: boolean = false;
     private _destroyed: boolean = false;
 
