@@ -25,10 +25,10 @@
  */
 
 
-import { _decorator, Component, Vec3, CameraComponent, LODGroup, Label, instantiate, director, Prefab, v3, Toggle, Button, NodeEventType, Vec2, EventTouch, UITransform, PipelineSceneData, MeshRenderer, Mesh, Director, PipelineEventType } from 'cc';
+import { _decorator, Component, Vec3, CameraComponent, LODGroup, Label, instantiate, director, Prefab, v3, Toggle, Button, NodeEventType, Vec2, EventTouch, UITransform, PipelineSceneData, MeshRenderer, Mesh, Director, PipelineEventType, Slider } from 'cc';
 const { ccclass, property } = _decorator;
 
-const MAX_COUNT_TO_ADD = 20;
+const MAX_COUNT_TO_ADD = 10;
 const RECALCULATE_RENDER_TIME_DURATION = 500;
 
 @ccclass('LodTest')
@@ -47,6 +47,8 @@ export class LodTest extends Component {
     renderTimeLabel: Label = null!;
     @property(Prefab)
     prefab: Prefab = null!;
+    @property(Slider)
+    distanceSlider: Slider = null!;
     
     private _lodGroups: LODGroup[] = [];
     private _enableMove: boolean = false;
@@ -61,12 +63,12 @@ export class LodTest extends Component {
     private _sceneData: PipelineSceneData | null = null;
 
     public onAddButton () {
-        let column = 10;
+        let column = 18;
         let groupIndex = this._lodGroups.length / MAX_COUNT_TO_ADD / column; 
         for (; column > 0; column--) {   
             for (let i = 0; i < MAX_COUNT_TO_ADD; i++) {
                 const node = instantiate(this.prefab);
-                let pos = v3(i * 0.005 + (5 - column) * 0.02, (i + groupIndex * MAX_COUNT_TO_ADD) * 0.008, -0.2 + column * 0.05);
+                let pos = v3((column - 6.5) * 0.009, (i + groupIndex * MAX_COUNT_TO_ADD) * 0.0115, 0);
                 node.setPosition(pos);
                 const lodGroup = node.getComponent(LODGroup);
                 node.parent = director.getScene();
@@ -89,6 +91,10 @@ export class LodTest extends Component {
         });
     }
 
+    public onSliderChange(slider: Slider) {
+        this.cameraComp.node.setPosition(this._cameraPos.x, this._cameraPos.y, 1.015 + slider.progress * 2);
+    }
+
     start() {
         this._cameraPos = this.cameraComp.node.getPosition();
         this.cameraButton.node.on(NodeEventType.TOUCH_START, this._onTouchStart, this);
@@ -98,14 +104,15 @@ export class LodTest extends Component {
         this._moveBtnSize = this.cameraButton.node.getComponent(UITransform)?.contentSize.width || 0;
         this._sceneData = director.getScene()?.renderScene?.root.pipeline.pipelineSceneData || null;
         director.getScene()?.renderScene?.root.pipelineEvent.on(PipelineEventType.RENDER_CAMERA_END, this._afterCulling, this);
-        director.on(Director.EVENT_BEFORE_DRAW, this._beforeDraw, this);
-        director.on(Director.EVENT_AFTER_DRAW, this._afterDraw, this);
+        // director.on(Director.EVENT_BEFORE_DRAW, this._beforeDraw, this);
+        // director.on(Director.EVENT_AFTER_DRAW, this._afterDraw, this);
+
+        this.onAddButton();
     }
 
     onDestroy () {
         //
     }
-    
 
     update (deltaTime: number) {
         const frameRate = director.getScene()?.renderScene?.root.fps || 0;
@@ -115,17 +122,17 @@ export class LodTest extends Component {
         }
     }
 
-    private _beforeDraw() {
-        this._lastRenderTime = performance.now();
-    }
+    // private _beforeDraw() {
+    //     this._lastRenderTime = performance.now();
+    // }
 
-    private _afterDraw() {
-        const now = performance.now();
-        if (now - this._lastUpdateTime < RECALCULATE_RENDER_TIME_DURATION) return;
-        this._lastUpdateTime = now;
-        const elapseTime = now - this._lastRenderTime;
-        this.renderTimeLabel.string = elapseTime.toFixed(3);
-    }
+    // private _afterDraw() {
+    //     const now = performance.now();
+    //     if (now - this._lastUpdateTime < RECALCULATE_RENDER_TIME_DURATION) return;
+    //     this._lastUpdateTime = now;
+    //     const elapseTime = now - this._lastRenderTime;
+    //     this.renderTimeLabel.string = elapseTime.toFixed(3);
+    // }
 
     private _afterCulling(target: any) {
         if (target !== this.cameraComp.camera) return;
@@ -146,10 +153,6 @@ export class LodTest extends Component {
             this._lastTriangleCount = count;
             this.triangleCountLabel.string = "" + count;
         }
-    }
-
-    private _getTriangleCount() {
-        let count = 0;
     }
 
     private _onTouchStart(event: EventTouch) {
@@ -181,7 +184,7 @@ export class LodTest extends Component {
         }
         const z = Math.abs(diffX + diffY) / 100;
         this.cameraButton.node.setPosition(this._cameraBtnPos.x + diffX, this._cameraBtnPos.y + diffY);
-        this.cameraComp.node.setPosition(this._cameraPos.x + diffX / 100, this._cameraPos.y + diffY / 100, 1.015 + z);
+        this.cameraComp.node.setPosition(this._cameraPos.x, this._cameraPos.y, 1.015 + z);
     }
 
 }
