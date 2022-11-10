@@ -6,7 +6,9 @@ import { captureOneImage, waitForNextFrame, runScene, testCase, testClass } from
 export class object_group_image {
     @testCase
     async startPlay() {
-        await waitForNextFrame();
+        for (let i = 0; i < 10; i++){
+            await waitForNextFrame();
+        } 
         await captureOneImage();
     }
 }
