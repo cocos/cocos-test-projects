@@ -28,7 +28,7 @@
 import { _decorator, Component, Vec3, CameraComponent, LODGroup, Label, instantiate, director, Prefab, v3, Toggle, Button, NodeEventType, Vec2, EventTouch, UITransform, PipelineSceneData, MeshRenderer, Mesh, Director, PipelineEventType, Slider } from 'cc';
 const { ccclass, property } = _decorator;
 
-const MAX_COUNT_TO_ADD = 10;
+const MAX_COUNT_TO_ADD = 40;
 const RECALCULATE_RENDER_TIME_DURATION = 500;
 
 @ccclass('LodTest')
@@ -63,12 +63,12 @@ export class LodTest extends Component {
     private _sceneData: PipelineSceneData | null = null;
 
     public onAddButton () {
-        let column = 18;
+        let column = 28;
         let groupIndex = this._lodGroups.length / MAX_COUNT_TO_ADD / column; 
         for (; column > 0; column--) {   
             for (let i = 0; i < MAX_COUNT_TO_ADD; i++) {
                 const node = instantiate(this.prefab);
-                let pos = v3((column - 6.5) * 0.009, (i + groupIndex * MAX_COUNT_TO_ADD) * 0.0115, 0);
+                let pos = v3(( i - MAX_COUNT_TO_ADD / 2) * 0.016, 0.03, 1 + column*0.05);
                 node.setPosition(pos);
                 const lodGroup = node.getComponent(LODGroup);
                 node.parent = director.getScene();
@@ -92,7 +92,7 @@ export class LodTest extends Component {
     }
 
     public onSliderChange(slider: Slider) {
-        this.cameraComp.node.setPosition(this._cameraPos.x, this._cameraPos.y, 1.015 + slider.progress * 2);
+        this.cameraComp.node.setPosition(this._cameraPos.x, this._cameraPos.y, 2 - slider.progress);
     }
 
     start() {
@@ -182,9 +182,9 @@ export class LodTest extends Component {
         } else if (diffY < 0 && diffY < -this._moveBtnSize) {
             diffY = -this._moveBtnSize;
         }
-        const z = Math.abs(diffX + diffY) / 100;
+        // const z = Math.abs(diffX + diffY) / 100;
         this.cameraButton.node.setPosition(this._cameraBtnPos.x + diffX, this._cameraBtnPos.y + diffY);
-        this.cameraComp.node.setPosition(this._cameraPos.x, this._cameraPos.y, 1.015 + z);
+        this.cameraComp.node.setPosition(this._cameraPos.x + diffX * 0.005, this._cameraPos.y, 2 + diffY*0.012);
     }
 
 }

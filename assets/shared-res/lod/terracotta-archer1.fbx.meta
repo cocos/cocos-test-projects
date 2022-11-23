@@ -1,0 +1,192 @@
+{
+  "ver": "2.3.2",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "bdd21b80-ae5f-43af-a870-6218baefe045",
+  "files": [],
+  "subMetas": {
+    "98766": {
+      "importer": "gltf-material",
+      "uuid": "bdd21b80-ae5f-43af-a870-6218baefe045@98766",
+      "displayName": "",
+      "id": "98766",
+      "name": "model.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "027c1": {
+      "importer": "gltf-mesh",
+      "uuid": "bdd21b80-ae5f-43af-a870-6218baefe045@027c1",
+      "displayName": "",
+      "id": "027c1",
+      "name": "default.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "5fcc4": {
+      "importer": "gltf-embeded-image",
+      "uuid": "bdd21b80-ae5f-43af-a870-6218baefe045@5fcc4",
+      "displayName": "",
+      "id": "5fcc4",
+      "name": "Diffuse Texture.image",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "bb7f2": {
+      "importer": "texture",
+      "uuid": "bdd21b80-ae5f-43af-a870-6218baefe045@bb7f2",
+      "displayName": "",
+      "id": "bb7f2",
+      "name": "Diffuse Texture.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "bdd21b80-ae5f-43af-a870-6218baefe045@5fcc4"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a60f1": {
+      "importer": "gltf-scene",
+      "uuid": "bdd21b80-ae5f-43af-a870-6218baefe045@a60f1",
+      "displayName": "",
+      "id": "a60f1",
+      "name": "terracotta-archer1.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Diffuse Texture",
+        "uri": "bdd21b80-ae5f-43af-a870-6218baefe045@5fcc4"
+      }
+    ],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "bdd21b80-ae5f-43af-a870-6218baefe045@a60f1",
+    "assetFinder": {
+      "meshes": [
+        "bdd21b80-ae5f-43af-a870-6218baefe045@027c1"
+      ],
+      "skeletons": [],
+      "textures": [
+        "bdd21b80-ae5f-43af-a870-6218baefe045@bb7f2"
+      ],
+      "materials": [
+        "bdd21b80-ae5f-43af-a870-6218baefe045@98766"
+      ],
+      "scenes": [
+        "bdd21b80-ae5f-43af-a870-6218baefe045@a60f1"
+      ]
+    },
+    "materials": {
+      "bdd21b80-ae5f-43af-a870-6218baefe045@98766": {
+        "__type__": "cc.Material",
+        "_name": "",
+        "_objFlags": 0,
+        "_native": "",
+        "_effectAsset": {
+          "__uuid__": "f648964e-8d32-41fc-9ac9-7a1e714dd17b",
+          "__expectedType__": "cc.EffectAsset"
+        },
+        "_techIdx": 0,
+        "_defines": [
+          {
+            "USE_ALBEDO_MAP": true
+          },
+          {},
+          {}
+        ],
+        "_states": [
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          },
+          {
+            "rasterizerState": {},
+            "depthStencilState": {},
+            "blendState": {
+              "targets": [
+                {}
+              ]
+            }
+          }
+        ],
+        "_props": [
+          {
+            "mainTexture": {
+              "__uuid__": "4ac3470b-03a5-4d28-a219-560865582412@6c48a",
+              "__expectedType__": "cc.Texture2D"
+            },
+            "shininessExponent": 0,
+            "specularColor": {
+              "__type__": "cc.Color",
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 255
+            }
+          },
+          {},
+          {}
+        ]
+      }
+    }
+  }
+}
