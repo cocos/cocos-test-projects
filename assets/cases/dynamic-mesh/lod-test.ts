@@ -68,7 +68,7 @@ export class LodTest extends Component {
         for (; column > 0; column--) {   
             for (let i = 0; i < MAX_COUNT_TO_ADD; i++) {
                 const node = instantiate(this.prefab);
-                let pos = v3(( i - MAX_COUNT_TO_ADD / 2) * 0.016, 0.03, 1 + column*0.05);
+                let pos = v3(( i - MAX_COUNT_TO_ADD / 2) * 2.5, 0, 10 -column*3.5);
                 node.setPosition(pos);
                 const lodGroup = node.getComponent(LODGroup);
                 node.parent = director.getScene();
@@ -81,11 +81,11 @@ export class LodTest extends Component {
 
     public onToggleChanged(toggle: Toggle) {
         let level = toggle.isChecked ? -1 : 0;
-        if (toggle.isChecked) {
-            this.enableLodLabel.string = "关闭LOD";
-        } else {
-            this.enableLodLabel.string = "启用LOD";
-        }
+        // if (toggle.isChecked) {
+        //     this.enableLodLabel.string = "Disable LOD";
+        // } else {
+        //     this.enableLodLabel.string = "Enable LOD";
+        // }
         this._lodGroups.forEach(lodGroup => {
             lodGroup.forceLOD(level);
         });
@@ -107,7 +107,7 @@ export class LodTest extends Component {
         // director.on(Director.EVENT_BEFORE_DRAW, this._beforeDraw, this);
         // director.on(Director.EVENT_AFTER_DRAW, this._afterDraw, this);
 
-        this.onAddButton();
+         this.onAddButton();
     }
 
     onDestroy () {
@@ -184,7 +184,7 @@ export class LodTest extends Component {
         }
         // const z = Math.abs(diffX + diffY) / 100;
         this.cameraButton.node.setPosition(this._cameraBtnPos.x + diffX, this._cameraBtnPos.y + diffY);
-        this.cameraComp.node.setPosition(this._cameraPos.x + diffX * 0.005, this._cameraPos.y, 2 + diffY*0.012);
+        this.cameraComp.node.setPosition(this._cameraPos.x + diffX * 0.8, this._cameraPos.y, 2 + diffY*2.1);
     }
 
 }
