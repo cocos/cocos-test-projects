@@ -9,7 +9,11 @@ export class BackToAssetBundle extends Component {
         // Your initialization goes here.
     }
 
-    onClick () {
-        director.loadScene('asset-bundle');
+    onClick() {
+        return new Promise<void>(resovle => {
+            director.loadScene('asset-bundle', () => {
+                resovle();
+            });
+        })
     }
 }

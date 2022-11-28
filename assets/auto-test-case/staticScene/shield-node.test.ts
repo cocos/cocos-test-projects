@@ -1,12 +1,14 @@
 // @ts-ignore
 import { captureOneImage, waitForNextFrame, runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
+import { screenshot_custom } from '../dynamic/common/utils';
 
 @runScene('shield-node')
-@testClass('shield_node')
-export class shield_node {
+// @testClass('ShieldNode')
+export class ShieldNode {
+    _dt = 10;
+
     @testCase
     async startPlay() {
-        await waitForNextFrame();
-        await captureOneImage();
+        await screenshot_custom(this._dt)
     }
 }

@@ -1,12 +1,14 @@
 // @ts-ignore
-import { captureOneImage, waitForNextFrame, runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
+import { runScene, testCase, testClass } from "db://automation-framework/runtime/test-framework.mjs";
+import { screenshot_custom } from "../dynamic/common/utils";
 
-@runScene('puzzle')
-@testClass('puzzle')
-export class puzzle {
+@runScene("puzzle")
+// @testClass('Puzzle')
+export class Puzzle {
+    _dt = 10;
+
     @testCase
     async startPlay() {
-        await waitForNextFrame();
-        await captureOneImage();
+        await screenshot_custom(this._dt);
     }
 }

@@ -31,24 +31,27 @@ export class StaticUI extends Component {
     }
 
     func() {
-        const local = sys.localStorage;
-        const item = local.getItem('ui-static-level');
-        if (item) {
-            let level = parseInt(item);
-            if (level > 5) {
-                local.removeItem('ui-static-level');
-                return;
+        return new Promise<void>((resovle, reject) => {
+            const local = sys.localStorage;
+            const item = local.getItem('ui-static-level');
+            if (item) {
+                let level = parseInt(item);
+                if (level > 5) {
+                    local.removeItem('ui-static-level');
+                    return;
+                }
+
+                level++;
+                if (this.newSceneName === 'static-ui') {
+                    local.setItem('ui-static-level', `${level}`);
+                }
+
+            } else if (this.newSceneName === 'static-ui'){
+                local.setItem('ui-static-level', '1');
             }
-
-            level++;
-            if (this.newSceneName === 'static-ui') {
-                local.setItem('ui-static-level', `${level}`);
-            }
-
-        } else if (this.newSceneName === 'static-ui'){
-            local.setItem('ui-static-level', '1');
-        }
-
-        director.loadScene(this.newSceneName);
+            director.loadScene(this.newSceneName, (error: any) => {
+                error ? reject(error) : resovle();
+            });
+        });
     }
 }
