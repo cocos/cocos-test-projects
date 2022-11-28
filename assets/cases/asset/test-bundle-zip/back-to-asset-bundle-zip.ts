@@ -5,7 +5,11 @@ const { ccclass, property } = _decorator;
 @ccclass('BackToAssetBundleZip')
 export class BackToAssetBundleZip extends Component {
 
-    onClick () {
-        director.loadScene('asset-bundle-zip');
+    onClick() {
+        return new Promise<void>(resovle => {
+            director.loadScene('asset-bundle-zip', () => {
+                resovle();
+            });
+        });
     }
 }

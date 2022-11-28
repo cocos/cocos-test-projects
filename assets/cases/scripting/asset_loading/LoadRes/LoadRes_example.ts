@@ -81,7 +81,11 @@ export class LoadResExample extends Component {
         cache = [];
     }
 
-    backToAssetLoading () {
-        director.loadScene('AssetLoading');
+    backToAssetLoading() {
+        return new Promise<void>(resovle => {
+            director.loadScene('AssetLoading', () => {
+                resovle();
+            });
+        });
     }
 }

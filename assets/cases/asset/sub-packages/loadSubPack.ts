@@ -45,11 +45,21 @@ export class loadSubPack extends Component {
         });
     }
 
-    jumpToSubScene01() {
-        director.loadScene('subPack01');
+    async jumpToSubScene01() {
+        return new Promise<void>((resolve) => {
+            director.loadScene('subPack01', () => {
+                console.log('subpack01');
+                resolve();
+            });
+        })
     }
 
     jumpToSubScene02() {
-        director.loadScene('subPack02');
+        return new Promise<void>((resolve) => {
+            director.loadScene('subPack02', () => {
+                console.log('subPack02');
+                resolve();
+            });
+        });
     }
 }
