@@ -1,4 +1,4 @@
-import { _decorator, Component, Prefab, Label, PageView, Color, Node, Vec3, Sprite, instantiate  } from "cc";
+import { _decorator, Component, Prefab, Label, PageView, Color, Node, Vec3, Sprite, instantiate } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 
@@ -11,24 +11,32 @@ export class PageViewCtrl extends Component {
     @property
     public curTotal = 10;
     @property(Prefab)
-    public pageTeample:Prefab = null!;
+    public pageTeample: Prefab = null!;
     @property(PageView)
-    public target: PageView  = null!;
+    public target: PageView = null!;
     @property(Label)
     public label: Label | null = null;
     @property({
-        type:PageView.Direction,
+        type: PageView.Direction,
     })
     public direction = PageView.Direction.Horizontal;
 
+    private colorIndex = 0;
+
     _createPage() {
+        this.colorIndex = (this.curNum) % 3;
+
         const page = instantiate(this.pageTeample) as Node;
         page.name = `page_${this.curNum}`;
         page.setPosition(new Vec3());
-        const color = new Color();
-        color.r = Math.floor(Math.random() * 255);
-        color.g = Math.floor(Math.random() * 255);
-        color.b = Math.floor(Math.random() * 255);
+        let color: Color = Color.WHITE;
+        if (this.colorIndex === 0) {
+            color = Color.RED;
+        } else if (this.colorIndex === 1) {
+            color = Color.GREEN;
+        } else if (this.colorIndex === 2) {
+            color = Color.BLUE;
+        }
         const comp = page.getComponent(Sprite)!;
         comp.color = color;
         return page;
@@ -92,7 +100,7 @@ export class PageViewCtrl extends Component {
         this.lessPageNum(() => {
             var pages = this.target.getPages();
             this.target.removePage(pages[pages.length - 1]);
-            if(this.curNum === 0){
+            if (this.curNum === 0) {
                 this.onAddPage();
             }
         });
