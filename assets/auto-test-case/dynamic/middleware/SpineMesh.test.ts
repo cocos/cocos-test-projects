@@ -11,17 +11,17 @@ export class SpineMesh {
 
     @testCase
     async startPlay() {
-        // 进来先截一张图
+        // start screenshot
         await screenshot_custom();
-        // 点击1下按钮，再截1张图
+        // click button
         find('Canvas/Button')!.getComponent(Button)?.clickEvents[0].emit([]);
         await screenshot_custom(this._dt);
 
-        // 点击1下按钮，再截1张图
+        // click button
         find('Canvas/Button')!.getComponent(Button)?.clickEvents[0].emit([]);
         await screenshot_custom(this._dt);
         
-        // 点击1下按钮，再截1张图
+        // click button
         find('Canvas/Button')!.getComponent(Button)?.clickEvents[0].emit([]);
         await screenshot_custom(this._dt);
     }
