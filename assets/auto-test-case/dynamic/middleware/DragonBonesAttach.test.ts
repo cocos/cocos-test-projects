@@ -4,7 +4,7 @@ import { runScene, testCase, testClass } from 'db://automation-framework/runtime
 import { screenshot_custom } from '../common/utils';
 
 @runScene('DragonBonesAttach')
-// @testClass('DragonBonesAttach')
+@testClass('DragonBonesAttach')
 export class DragonBonesAttach {
     _delay = 0.1
 
@@ -44,36 +44,36 @@ export class DragonBonesAttach {
 
     @testCase
     async cacheNodes() {
-        // 显示所有星星
+        // Show all stars
         find('Canvas/ctrl/Button-004')!.getComponent(Button)?.clickEvents[0].emit([]);
-        await screenshot_custom();// 截图 or 断言
-        // 销毁所有星星
+        await screenshot_custom();
+        // Destroy all the stars
         find('Canvas/ctrl/delete all')!.getComponent(Button)?.clickEvents[0].emit([]);
-        await screenshot_custom();// 截图 or 断言
-        // 显示一个星星
+        await screenshot_custom();
+        // Show a star
         find('Canvas/ctrl/Button-003')!.getComponent(Button)?.clickEvents[0].emit([]);
-        await screenshot_custom();// 截图 or 断言
-        // 销毁一个星星
+        await screenshot_custom();
+        // Destroy a star
         find('Canvas/ctrl/Button-002')!.getComponent(Button)?.clickEvents[0].emit([]);
-        await screenshot_custom();// 截图 or 断言
+        await screenshot_custom();
     }
 
     @testCase
     async realtimeNodes() {
-        // 切换到realtime
+        // clikck realtime
         find('Canvas/ctrl/Button-001')!.getComponent(Button)?.clickEvents[0].emit([]);
-        await screenshot_custom();// 截图 or 断言
-        // 显示所有星星
+        await screenshot_custom();
+        // Show all stars
         find('Canvas/ctrl/Button-004')!.getComponent(Button)?.clickEvents[0].emit([]);
-        await screenshot_custom();// 截图 or 断言
-        // 销毁所有星星
+        await screenshot_custom();
+        // Destroy all the stars
         find('Canvas/ctrl/delete all')!.getComponent(Button)?.clickEvents[0].emit([]);
-        await screenshot_custom();// 截图 or 断言
-        // 显示一个星星
+        await screenshot_custom();
+         // Show a star
         find('Canvas/ctrl/Button-003')!.getComponent(Button)?.clickEvents[0].emit([]);
-        await screenshot_custom();// 截图 or 断言
-        // 销毁一个星星
+        await screenshot_custom();
+         // Destroy a star
         find('Canvas/ctrl/Button-002')!.getComponent(Button)?.clickEvents[0].emit([]);
-        await screenshot_custom();// 截图 or 断言
+        await screenshot_custom();
     }
 }
