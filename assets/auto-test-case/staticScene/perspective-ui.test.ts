@@ -4,7 +4,7 @@ import { runScene, testCase, testClass, sleep } from 'db://automation-framework/
 import { screenshot_custom } from '../dynamic/common/utils';
 
 @runScene('perspective-ui')
-@testClass('Perspectiveui')
+//@testClass('Perspectiveui')
 export class Perspectiveui {
     _dt = 10;
 
