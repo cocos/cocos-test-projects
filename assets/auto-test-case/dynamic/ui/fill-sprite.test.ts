@@ -17,6 +17,7 @@ export class FillSprite {
         for (let i = 0; i < 11; i++) {
             await screenshot_custom(this._dt);
         }
+        await screenshot_custom(this._dt * 2);
     }
 
 }

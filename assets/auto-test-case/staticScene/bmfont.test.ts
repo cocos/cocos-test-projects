@@ -4,7 +4,7 @@ import { screenshot_custom } from '../dynamic/common/utils'
 import { find } from 'cc'
 
 @runScene('bmfont')
-// @testClass('Bmfont')
+@testClass('Bmfont')
 export class Bmfont {
     _dt = 10;
     @testCase

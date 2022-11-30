@@ -2,7 +2,7 @@
 import { captureOneImage, waitForNextFrame, runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
 
 @runScene('label-cacheMode')
-// @testClass('LabelCacheMode')
+@testClass('LabelCacheMode')
 export class LabelCacheMode {
     @testCase
     async startPlay() {

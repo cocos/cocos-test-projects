@@ -14,5 +14,6 @@ export class PartAnimation {
             // 截图 or 断言
             await screenshot_custom(this._dt);
         };
+        await screenshot_custom(this._dt + 10);
     }
 }
