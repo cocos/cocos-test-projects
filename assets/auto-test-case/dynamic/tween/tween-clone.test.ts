@@ -18,7 +18,11 @@ export class TweenClone {
     async captureChangBig() {
         await screenshot_custom(2 * this._dt);
         await screenshot_custom(3 * this._dt);
-        await screenshot_custom(5 * this._dt);
     }
 
+    @testCase
+    async captureStop(){
+        await screenshot_custom(5 * this._dt);
+        await screenshot_custom(5 * this._dt);
+    }
 }

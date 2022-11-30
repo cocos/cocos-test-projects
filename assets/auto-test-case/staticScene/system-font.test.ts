@@ -2,7 +2,7 @@
 import { captureOneImage, waitForNextFrame, runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
 
 @runScene('system-font')
-// @testClass('SystemFont')
+@testClass('SystemFont')
 export class SystemFont {
     @testCase
     async startPlay() {

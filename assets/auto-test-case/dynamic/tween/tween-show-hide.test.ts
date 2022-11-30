@@ -20,7 +20,7 @@ export class TweenShowHide {
 
     @testCase
     async end() {
-        await screenshot_custom(this._dt + 5);
+        await screenshot_custom(this._dt + 10);
     }
 }
 
