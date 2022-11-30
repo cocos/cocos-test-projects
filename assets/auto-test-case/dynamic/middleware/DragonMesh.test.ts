@@ -14,7 +14,6 @@ export class DragonMesh {
         for (let i = 0; i < 3; i++) {
             await screenshot_custom(this._dt);
         }
-        
     };
 
     loadResource(){
