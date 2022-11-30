@@ -13,10 +13,9 @@ export class T2dRenderingIn3d {
     }
 
     @testCase
-    async play_02() {
-        await screenshot_custom(this._dt + 40);
+    async play_03() {
+        await screenshot_custom(this._dt * 2-70);
     }
-
 }
 
 

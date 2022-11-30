@@ -2,7 +2,7 @@
 import { captureOneImage, waitForNextFrame, runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../dynamic/common/utils'
 @runScene('multi-canvas')
-// @testClass('MultiCanvas')
+//@testClass('MultiCanvas')
 export class MultiCanvas {
     _dt = 5
     @testCase
@@ -15,7 +15,7 @@ export class MultiCanvas {
     async clickLeftButton() {
         for (let i = 0; i < 5; i++) {
             //@ts-ignore
-            find(`Canvas${i}/Button0-${i}`).getComponent('ClickEvent').onButtonClick();
+            find(`Canvas${i}/Button0-${i}`).getComponent('cc.Button').clickEvents[0].emit([]);
             await screenshot_custom(this._dt)
         }
     }

@@ -72,8 +72,15 @@ export class StaticBatching {
         this.addOrReduce('');
         this.addOrReduce('');
         this.addOrReduce('');
+        this.addOrReduce('');
+        this.addOrReduce('');
+        this.addOrReduce('');
+        this.addOrReduce('');
+        this.addOrReduce('');
         await screenshot_custom(this._dt)
     }
+
+    
     async addOrReduce(funStr: string) {
         //@ts-ignore
         if (find('Camera')) {

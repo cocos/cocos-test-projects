@@ -4,7 +4,7 @@ import { runScene, testCase, testClass } from 'db://automation-framework/runtime
 import { screenshot_custom } from '../common/utils';
 
 @runScene('editbox-ctrl')
-@testClass('EditboxCtrl')
+//@testClass('EditboxCtrl')
 export class EditboxCtrl {
     _dt = 5;
 
@@ -14,7 +14,6 @@ export class EditboxCtrl {
     }
 
    
-
     @testCase
     async focusOne() {
         // @ts-ignore
@@ -23,10 +22,24 @@ export class EditboxCtrl {
     }
 
     @testCase
+    async focusTwo() {
+        // @ts-ignore
+        find('Canvas/ctrl').getComponent('EditboxCtrl').setFocus('cc.EditBox', '2')
+        await screenshot_custom(this._dt);
+    }
+
+    @testCase
+    async focusThree() {
+        // @ts-ignore
+        find('Canvas/ctrl').getComponent('EditboxCtrl').setFocus('cc.EditBox', '2')
+        await screenshot_custom(this._dt);
+    }
+
+    @testCase
     async input() {
-        // // @ts-ignore
-        // find('Canvas/ctrl').getComponent('EditboxCtrl').editBox1.string = 'input01'
-        // await screenshot_custom(this._dt);
+        // @ts-ignore
+        find('Canvas/ctrl').getComponent('EditboxCtrl').editBox1.string = 'input01'
+        await screenshot_custom(this._dt);
         // @ts-ignore
         find('Canvas/ctrl').getComponent('EditboxCtrl').editBox2.string = 'input02'
         await screenshot_custom(this._dt);

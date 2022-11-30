@@ -3,7 +3,7 @@ import { runScene, testCase, testClass, sleep } from 'db://automation-framework/
 import { screenshot_custom } from '../dynamic/common/utils'
 
 @runScene('builtin-textures')
-@testClass('BuiltinTextures')
+//@testClass('BuiltinTextures')
 export class BuiltinTextures {
     _dt = 50;
     _delay = 0.5;
