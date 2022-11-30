@@ -4,7 +4,7 @@ import { captureOneImage, runScene, testCase, testClass } from 'db://automation-
 import { screenshot_custom } from '../common/utils';
 
 @runScene('ReplaceSlotDisplay')
-// @testClass('ReplaceSlotDisplay')
+@testClass('ReplaceSlotDisplay')
 export class ReplaceSlotDisplay {
     _dt = 10;
 
