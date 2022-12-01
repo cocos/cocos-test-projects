@@ -1,7 +1,7 @@
 // @ts-ignore
 import { runScene, testCase, testClass,sleep } from "db://automation-framework/runtime/test-framework.mjs";
-import { screenshot_custom } from "../dynamic/common/utils";
 import { find } from "cc";
+import { screenshot_custom } from "../common/utils";
 
 
 @runScene("puzzle")
