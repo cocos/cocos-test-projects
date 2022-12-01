@@ -9,8 +9,6 @@ import { find } from "cc";
 export class Puzzle {
     _dt = 10;
     
-    //find("Canvas/wrapper/succeedLayer/restartBtn").getComponent("cc.Button").clickEvents[0].emit([]) re
-
     @testCase
     async startPlay() {
         await screenshot_custom(this._dt);
