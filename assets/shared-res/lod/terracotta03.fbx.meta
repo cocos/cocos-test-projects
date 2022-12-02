@@ -1,16 +1,16 @@
 {
   "ver": "2.3.2",
-  "importer": "gltf",
+  "importer": "fbx",
   "imported": true,
-  "uuid": "b64915aa-9fcd-4513-af38-7e5248173986",
+  "uuid": "199f05ea-407a-4ebd-9eb5-6b0ca19a1a07",
   "files": [],
   "subMetas": {
-    "96831": {
+    "460cc": {
       "importer": "gltf-mesh",
-      "uuid": "b64915aa-9fcd-4513-af38-7e5248173986@96831",
+      "uuid": "199f05ea-407a-4ebd-9eb5-6b0ca19a1a07@460cc",
       "displayName": "",
-      "id": "96831",
-      "name": "Archmodels_64_032_0.mesh",
+      "id": "460cc",
+      "name": "Archmodels_64_032_0.002.mesh",
       "userData": {
         "gltfIndex": 0
       },
@@ -22,35 +22,12 @@
       ],
       "subMetas": {}
     },
-    "e39f7": {
-      "importer": "texture",
-      "uuid": "b64915aa-9fcd-4513-af38-7e5248173986@e39f7",
-      "displayName": "",
-      "id": "e39f7",
-      "name": "UnnamedTexture.texture",
-      "userData": {
-        "wrapModeS": "repeat",
-        "wrapModeT": "repeat",
-        "minfilter": "linear",
-        "magfilter": "linear",
-        "mipfilter": "linear",
-        "anisotropy": 0,
-        "isUuid": false,
-        "imageUuidOrDatabaseUri": "db://assets/shared-res/lod/textures/Archmodels_64_032_diffuse.jpeg"
-      },
-      "ver": "1.0.22",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {}
-    },
-    "7bcda": {
+    "7680a": {
       "importer": "gltf-material",
-      "uuid": "b64915aa-9fcd-4513-af38-7e5248173986@7bcda",
+      "uuid": "199f05ea-407a-4ebd-9eb5-6b0ca19a1a07@7680a",
       "displayName": "",
-      "id": "7bcda",
-      "name": "Archmodels_64_032.material",
+      "id": "7680a",
+      "name": "Archmodels_64_032.002.material",
       "userData": {
         "gltfIndex": 0
       },
@@ -61,12 +38,12 @@
       ],
       "subMetas": {}
     },
-    "ab2c2": {
+    "4614c": {
       "importer": "gltf-scene",
-      "uuid": "b64915aa-9fcd-4513-af38-7e5248173986@ab2c2",
+      "uuid": "199f05ea-407a-4ebd-9eb5-6b0ca19a1a07@4614c",
       "displayName": "",
-      "id": "ab2c2",
-      "name": "terracotta01.prefab",
+      "id": "4614c",
+      "name": "terracotta03.prefab",
       "userData": {
         "gltfIndex": 0
       },
@@ -79,39 +56,26 @@
     }
   },
   "userData": {
-    "imageMetas": [
-      {
-        "uri": "db://assets/shared-res/lod/textures/Archmodels_64_032_diffuse.jpeg"
-      }
-    ],
-    "redirect": "b64915aa-9fcd-4513-af38-7e5248173986@ab2c2",
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "redirect": "199f05ea-407a-4ebd-9eb5-6b0ca19a1a07@4614c",
     "assetFinder": {
       "meshes": [
-        "b64915aa-9fcd-4513-af38-7e5248173986@96831"
+        "199f05ea-407a-4ebd-9eb5-6b0ca19a1a07@460cc"
       ],
       "skeletons": [],
-      "textures": [
-        "b64915aa-9fcd-4513-af38-7e5248173986@e39f7"
-      ],
+      "textures": [],
       "materials": [
-        "b64915aa-9fcd-4513-af38-7e5248173986@7bcda"
+        "199f05ea-407a-4ebd-9eb5-6b0ca19a1a07@7680a"
       ],
       "scenes": [
-        "b64915aa-9fcd-4513-af38-7e5248173986@ab2c2"
+        "199f05ea-407a-4ebd-9eb5-6b0ca19a1a07@4614c"
       ]
     },
-    "meshOptimizer": {
-      "simplifyOptions": {
-        "targetRatio": 0.7,
-        "maxIterationCount": 100,
-        "agressiveness": 5,
-        "enableSmartLink": true
-      },
-      "enable": true
-    },
-    "disableMeshSplit": true,
     "materials": {
-      "b64915aa-9fcd-4513-af38-7e5248173986@7bcda": {
+      "199f05ea-407a-4ebd-9eb5-6b0ca19a1a07@7680a": {
         "__type__": "cc.Material",
         "_name": "",
         "_objFlags": 0,
@@ -123,7 +87,6 @@
         "_techIdx": 0,
         "_defines": [
           {
-            "USE_INSTANCING": true,
             "DCC_APP_NAME": 4,
             "USE_ALBEDO_MAP": true
           },
@@ -132,9 +95,7 @@
         ],
         "_states": [
           {
-            "rasterizerState": {
-              "cullMode": 0
-            },
+            "rasterizerState": {},
             "depthStencilState": {},
             "blendState": {
               "targets": [
@@ -164,14 +125,14 @@
         "_props": [
           {
             "mainTexture": {
-              "__uuid__": "b64915aa-9fcd-4513-af38-7e5248173986@e39f7",
+              "__uuid__": "27afe8e5-632c-409e-bcd0-3bd7e92e55f6@6c48a",
               "__expectedType__": "cc.Texture2D"
             },
-            "specularColor": {
+            "mainColor": {
               "__type__": "cc.Color",
-              "r": 0,
-              "g": 0,
-              "b": 0,
+              "r": 231,
+              "g": 231,
+              "b": 231,
               "a": 255
             }
           },

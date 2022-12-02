@@ -25,7 +25,7 @@
  */
 
 
-import { _decorator, Component, Vec3, CameraComponent, LODGroup, Label, instantiate, director, Prefab, v3, Toggle, Button, NodeEventType, Vec2, EventTouch, UITransform, PipelineSceneData, MeshRenderer, Mesh, Director, PipelineEventType, Slider } from 'cc';
+import { _decorator, Component, Vec3, CameraComponent, LODGroup, Label, instantiate, director, Prefab, v3, Toggle, Button, NodeEventType, Vec2, EventTouch, UITransform, PipelineSceneData, MeshRenderer, Mesh, Director, PipelineEventType, Slider, gfx } from 'cc';
 const { ccclass, property } = _decorator;
 
 const MAX_COUNT_TO_ADD = 40;
@@ -61,6 +61,7 @@ export class LodTest extends Component {
     private _lastRenderTime: number = 0;
     private _lastUpdateTime: number = 0;
     private _sceneData: PipelineSceneData | null = null;
+    private _device: gfx.Device = null!;
 
     public onAddButton () {
         let column = 28;
@@ -96,14 +97,15 @@ export class LodTest extends Component {
     }
 
     start() {
+        this._device = gfx.deviceManager.gfxDevice;
         this._cameraPos = this.cameraComp.node.getPosition();
         this.cameraButton.node.on(NodeEventType.TOUCH_START, this._onTouchStart, this);
         this.cameraButton.node.on(NodeEventType.TOUCH_MOVE, this._onTouchMove, this);
         this.cameraButton.node.on(NodeEventType.TOUCH_END, this._onTouchEnd, this);
         this.cameraButton.node.on(NodeEventType.TOUCH_CANCEL, this._onTouchEnd, this);
         this._moveBtnSize = this.cameraButton.node.getComponent(UITransform)?.contentSize.width || 0;
-        this._sceneData = director.getScene()?.renderScene?.root.pipeline.pipelineSceneData || null;
-        director.getScene()?.renderScene?.root.pipelineEvent.on(PipelineEventType.RENDER_CAMERA_END, this._afterCulling, this);
+        // this._sceneData = director.getScene()?.renderScene?.root.pipeline.pipelineSceneData || null;
+        // director.getScene()?.renderScene?.root.pipelineEvent.on(PipelineEventType.RENDER_CAMERA_END, this._afterCulling, this);
         // director.on(Director.EVENT_BEFORE_DRAW, this._beforeDraw, this);
         // director.on(Director.EVENT_AFTER_DRAW, this._afterDraw, this);
 
@@ -119,6 +121,10 @@ export class LodTest extends Component {
         if (this._lastFrameRate !== frameRate) {
             this._lastFrameRate = frameRate;
             this.frameRateLabel.string = "" + frameRate;
+        }
+        if (this._lastTriangleCount != this._device.numTris) {
+            this._lastTriangleCount = this._device.numTris;
+            this.triangleCountLabel.string = "" + this._lastTriangleCount;
         }
     }
 
