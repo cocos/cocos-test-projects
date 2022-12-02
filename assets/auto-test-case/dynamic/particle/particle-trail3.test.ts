@@ -3,14 +3,14 @@ import { runScene, testCase, testClass } from 'db://automation-framework/runtime
 import { screenshot_custom } from '../common/utils';
 
 @runScene('particle-trail3')
-// @testClass('ParticleTrail3')
+@testClass('ParticleTrail3')
 export class ParticleTrail3 {
-    _delay = 0.2;
-    _dt = 10;
+    _dt = 15;
 
     @testCase
     async startPlay() {
-        for (let i = 0; i < 5; i++) {
+        await screenshot_custom();
+        for (let i = 0; i < 4; i++) {
             await screenshot_custom(this._dt);
         };
     }

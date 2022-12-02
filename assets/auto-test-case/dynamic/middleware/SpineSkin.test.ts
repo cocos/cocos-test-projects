@@ -4,14 +4,15 @@ import { runScene, testCase, testClass } from 'db://automation-framework/runtime
 import { screenshot_custom } from '../common/utils';
 
 @runScene('SpineSkin')
-// @testClass('SpineSkin')
+@testClass('SpineSkin')
 export class SpineSkin {
     _delay = 0.5;
     _dt = 10;
 
     @testCase
     async startPlay() {
-        for (let i = 0; i < 5; i++) {
+        await screenshot_custom(this._dt);
+        for (let i = 0; i < 4; i++) {
             // @ts-ignore
             find('Canvas').getComponent('SpineSkin').change();
             await screenshot_custom(this._dt);
