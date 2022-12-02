@@ -3,7 +3,7 @@ import { captureOneImage, waitForNextFrame, runScene, testCase, testClass } from
 import { screenshot_custom } from '../dynamic/common/utils';
 
 @runScene('shield-node')
-//@testClass('ShieldNode')
+// @testClass('ShieldNode')
 export class ShieldNode {
     _dt = 10;
 
