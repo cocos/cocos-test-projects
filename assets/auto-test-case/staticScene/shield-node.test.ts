@@ -3,7 +3,7 @@ import { captureOneImage, waitForNextFrame, runScene, testCase, testClass } from
 import { screenshot_custom } from '../dynamic/common/utils';
 
 @runScene('shield-node')
-@testClass('ShieldNode')
+//@testClass('ShieldNode')
 export class ShieldNode {
     _dt = 10;
 
@@ -30,6 +30,5 @@ export class ShieldNode {
         //@ts-ignore
         find("Canvas/Node").getComponent("ShieldNode").setPerfabPosition(4,{x:10,y:10,z:0});
         await screenshot_custom(this._dt);
-        
     }
 }
