@@ -11,9 +11,11 @@ export class ShieldNode extends Component {
 
     @property({type: Prefab})
     public nodePrefab: Prefab | null = null;
+    
+    private perfabMap: Map<number, Node> = new Map();
 
     start () {
-        this.initScene(this.nodePrefab!);
+       this.initScene(this.nodePrefab!);
     }
 
     initScene (prefab: Prefab) {
@@ -23,6 +25,7 @@ export class ShieldNode extends Component {
             const shieldNode = instantiate(prefab);
             shieldNode.setPosition(posArr[i].x, posArr[i].y);
             this.tiledLayer!.addUserNode(shieldNode);
+            this.perfabMap.set(i,shieldNode)
             shieldNode.on(Node.EventType.TOUCH_MOVE, (event:EventTouch) => {
                 const deltaMove = event.getUIDelta();
                 shieldNode.getPosition(tmpP);
@@ -31,5 +34,10 @@ export class ShieldNode extends Component {
                 shieldNode.setPosition(tmpP);
             });
         }
+    }
+
+    setPerfabPosition(index : number, vec : Vec3){
+        let node : Node | undefined = this.perfabMap.get(index);
+        node!.setPosition(vec);
     }
 }
