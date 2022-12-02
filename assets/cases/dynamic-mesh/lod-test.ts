@@ -28,7 +28,7 @@
 import { _decorator, Component, Vec3, CameraComponent, LODGroup, Label, instantiate, director, Prefab, v3, Toggle, Button, NodeEventType, Vec2, EventTouch, UITransform, PipelineSceneData, MeshRenderer, Mesh, Director, PipelineEventType, Slider, gfx } from 'cc';
 const { ccclass, property } = _decorator;
 
-const MAX_COUNT_TO_ADD = 40;
+const MAX_COUNT_TO_ADD = 16;
 const RECALCULATE_RENDER_TIME_DURATION = 500;
 
 @ccclass('LodTest')
@@ -64,12 +64,11 @@ export class LodTest extends Component {
     private _device: gfx.Device = null!;
 
     public onAddButton () {
-        let column = 28;
-        let groupIndex = this._lodGroups.length / MAX_COUNT_TO_ADD / column; 
+        let column = 14;
         for (; column > 0; column--) {   
             for (let i = 0; i < MAX_COUNT_TO_ADD; i++) {
                 const node = instantiate(this.prefab);
-                let pos = v3(( i - MAX_COUNT_TO_ADD / 2) * 2.5, 0, 10 -column*3.5);
+                let pos = v3(( i - MAX_COUNT_TO_ADD / 2) * 5, 0, 10 - column*6);
                 node.setPosition(pos);
                 const lodGroup = node.getComponent(LODGroup);
                 node.parent = director.getScene();
