@@ -61,7 +61,7 @@ export class LodTest extends Component {
     private _lastRenderTime: number = 0;
     private _lastUpdateTime: number = 0;
     private _sceneData: PipelineSceneData | null = null;
-    private _device: any;
+    private _device: gfx.Device = null!;
 
     public onAddButton () {
         let column = 28;
