@@ -5,7 +5,7 @@ import { screenshot_custom } from '../dynamic/common/utils';
 import { find, sys } from 'cc';
 
 @runScene('static-batching')
-@testClass('StaticBatching')
+// @testClass('StaticBatching')
 export class StaticBatching {
     _dt = 10
     _delay = 0.5
