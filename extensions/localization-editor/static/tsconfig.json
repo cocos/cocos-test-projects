@@ -1,0 +1,36 @@
+{
+    "compilerOptions": {
+        "module": "CommonJS",
+        "target": "ES2017",
+        "lib": [
+            "DOM",
+            "ES5",
+            "ES6",
+            "ES7",
+            "ES2015",
+            "ES2016",
+            "ES2017",
+            "ES2018",
+            "ES2019",
+            "ES2020",
+            "ES2021",
+            "ESNext"
+        ],
+        "rootDir": "./assets",
+        "declaration": true,
+        "declarationDir": "../@types/runtime",
+        "emitDeclarationOnly": true,
+        "experimentalDecorators": true,
+        "skipLibCheck": true,
+        "typeRoots": ["../@types"],
+        "types": [
+            "intl",
+            "../../../@types/cc",
+            "../../../@types/editor",
+            "@editor/library-type"
+        ],
+    },
+    "exclude": [
+        "../@types/**/*"
+    ],
+}
