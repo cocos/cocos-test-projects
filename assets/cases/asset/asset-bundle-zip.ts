@@ -104,24 +104,28 @@ export class AssetBundleZip extends Component {
     }
 
     onClickScene () {
-        if (this._isLoading) return;
-        var testBundle = assetManager.getBundle('TestBundleZip');
-        if (!testBundle) {
-            this.loadTips.string = "操作失败，请先加载 Asset Bundle";
-            return;
-        }
-        this._onClear()
-        this._isLoading = true;
-        this.loadTips.string = "Scene Loading....";
-        testBundle.loadScene("sub-scene", (err, asset) => {
-            if (err) {
-                log('Error url [' + err + ']');
+        return new Promise<void>((resovle) => {
+            if (this._isLoading) return;
+            var testBundle = assetManager.getBundle('TestBundleZip');
+            if (!testBundle) {
+                this.loadTips.string = "操作失败，请先加载 Asset Bundle";
                 return;
             }
-            this._isLoading = false;
-            this.loadTips.string = "";
-            director.runScene(asset!);
-        });
+            this._onClear()
+            this._isLoading = true;
+            this.loadTips.string = "Scene Loading....";
+            testBundle.loadScene("sub-scene", (err, asset) => {
+                if (err) {
+                    log('Error url [' + err + ']');
+                    return;
+                }
+                this._isLoading = false;
+                this.loadTips.string = "";
+                director.runScene(asset!, undefined, () => {
+                    resovle();
+                });
+            });
+        });    
     }
 
     onClickDestroy () {
