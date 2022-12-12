@@ -2,8 +2,8 @@
 import { captureOneImage, waitForNextFrame, runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
 
 @runScene('layout-grid-contraint')
-@testClass('layout_grid_contraint')
-export class layout_grid_contraint {
+@testClass('LayoutGridContraint')
+export class LayoutGridContraint {
     @testCase
     async startPlay() {
         await waitForNextFrame();

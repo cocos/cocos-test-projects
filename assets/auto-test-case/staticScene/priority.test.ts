@@ -2,8 +2,8 @@
 import { captureOneImage, waitForNextFrame, runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
 
 @runScene('priority')
-@testClass('priority')
-export class priority {
+@testClass('Priority')
+export class Priority {
     @testCase
     async startPlay() {
         await waitForNextFrame();
