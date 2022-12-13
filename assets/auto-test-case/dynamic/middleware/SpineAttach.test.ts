@@ -4,7 +4,7 @@ import { runScene, testCase, testClass, sleep } from 'db://automation-framework/
 import { screenshot_custom } from '../common/utils';
 
 @runScene('SpineAttach')
-@testClass('SpineAttach')
+//@testClass('SpineAttach')
 export class SpineAttach {
     _delay = 2;
     _dt = 20;
