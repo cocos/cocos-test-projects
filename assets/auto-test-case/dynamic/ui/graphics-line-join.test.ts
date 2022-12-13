@@ -19,7 +19,7 @@ export class GraphicsLineJoin {
             await screenshot_custom(this._dt * 20);
         }
 
-        for (let i = 5; i < 15; i++) {
+        for (let i = 5; i < 12; i++) {
             await screenshot_custom(this._dt * 30);
         }
     }

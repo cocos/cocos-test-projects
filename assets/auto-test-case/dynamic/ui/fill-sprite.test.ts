@@ -3,7 +3,7 @@ import { runScene, testCase, testClass } from 'db://automation-framework/runtime
 import { screenshot_custom } from '../common/utils';
 
 @runScene('fill-sprite')
-@testClass('FillSprite')
+//@testClass('FillSprite')
 export class FillSprite {
     _dt = 65;
 
@@ -14,7 +14,7 @@ export class FillSprite {
 
     @testCase
     async play() {
-        for (let i = 0; i < 11; i++) {
+        for (let i = 0; i < 10; i++) {
             await screenshot_custom(this._dt);
         }
         await screenshot_custom(this._dt * 2);

@@ -7,10 +7,15 @@ import { screenshot_custom } from '../common/utils';
 export class MaterialTextureAnimation {
     _delay = 2;
     _dt = 60;
+    
+    @testCase
+    async index(){
+        await screenshot_custom();
+    }
 
     @testCase
     async startPlay() {
-        for (let index = 0; index < 5; index++) {
+        for (let index = 0; index < 4; index++) {
             // 截图 or 断言
             await screenshot_custom(this._dt);
         };

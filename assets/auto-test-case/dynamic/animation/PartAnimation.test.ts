@@ -1,5 +1,6 @@
+import { director } from 'cc';
 // @ts-ignore
-import { runScene, sleep, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
+import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
 
 @runScene('PartAnimation')
@@ -8,12 +9,12 @@ export class PartAnimation {
     _dt = 2;
 
     @testCase
-    async startPlay() {
+    async white() {
+        await screenshot_custom();
+    }
 
-        for (let index = 0; index < 5; index++) {
-            // 截图 or 断言
-            await screenshot_custom(this._dt);
-        };
-        await screenshot_custom(this._dt + 10);
+    @testCase
+    async yellow(){
+        await screenshot_custom(7939);
     }
 }

@@ -50,7 +50,7 @@ export class SwitchAnimation {
         find('scene').getComponent('SwitchAnimation').onDurationEditBoxChange(find('Canvas/switch/Slider').getComponent('cc.Slider'));
         // @ts-ignore
         find('scene')!.getComponent('SwitchAnimation')!.switch();
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 4; i++) {
             await screenshot_custom(this._dt * 3);
         };
     }

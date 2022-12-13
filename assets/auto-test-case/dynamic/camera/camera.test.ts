@@ -3,7 +3,7 @@ import { runScene, testCase, testClass, sleep } from "db://automation-framework/
 import { screenshot_custom } from "../common/utils";
 
 @runScene("camera")
-@testClass("Camera")
+//@testClass("Camera")
 export class Camera {
     _delay = 0.5;
     _dt = 10;

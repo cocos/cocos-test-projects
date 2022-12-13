@@ -4,7 +4,7 @@ import { screenshot_custom } from '../dynamic/common/utils'
 import { find } from 'cc'
 
 @runScene('sort')
-@testClass('Sort')
+//@testClass('Sort')
 export class Sort {
     _dt = 10;
     _delay = 0.5;

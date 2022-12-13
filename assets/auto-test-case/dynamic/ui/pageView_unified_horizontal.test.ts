@@ -15,25 +15,24 @@ export class PageViewUnifiedHorizontal {
     }
 
     @testCase
-    async addOnePage(){
-        //先切换到第三页
-        this.setCurrentPageIndex(2);
+    async removeThreeCurrentPage(){
+        //点击3次移除仍然展示第一页
+        for(let i=0;i<3;i++){
+            await sleep(0.5)
+            this.removeCurrentP();
+        }
         await sleep(this._delay);
-        //点击插入按钮
-        this.addPage();
-        //再切到第三页查看
-        this.setCurrentPageIndex(3);
-        await sleep(this._delay);
-        //再截图
         await screenshot_custom();
     }
     
     @testCase
-    async returnIndex(){
-        //移除当前的页面
-        this.returnHomePage();
+    async addEightTimesToLastPage(){
+       //点击8次添加页面并右翻页到第9页
+        for(let i=0;i<8;i++){
+            this.addPage();
+        }
+        this.setCurrentPageIndex(8);
         await sleep(this._delay);
-        //查看当前页
         await screenshot_custom();
     }
 
@@ -44,35 +43,40 @@ export class PageViewUnifiedHorizontal {
         this.insertCurrentPage();
         //再截图
         await screenshot_custom();
-        //查看最后一页
-        this.setCurrentPageIndex(4);
+        //翻页到第10页
+        this.setCurrentPageIndex(9);
         await sleep(this._delay);
-        //存在第四页，证明是在前面插入的
         await screenshot_custom();
-        //再切换回插入页面
-        this.setCurrentPageIndex(3);
+    }
+
+    @testCase
+    async removePages(){
+        //点击移除返回第9页
+        this.removePage();
         await sleep(this._delay);
-        //切换回插入页面截图
+        //查看当前页
         await screenshot_custom();
     }
 
     @testCase
     async removeLastPage(){
-        //移除最后一页
-        this.removePage();
-        //移除到已经被删除的地方
-        this.setCurrentPageIndex(4)
+        //点击移除当前页到第8页
+        this.removeCurrentP();
         await sleep(this._delay);
-        //查看当前页
         await screenshot_custom();
     }
 
     @testCase
-    async removeCurrentPage(){
-        //移除当前的页面
-        this.removeCurrentP();
+    async turnToCurrentPageIndex(){
+        //左翻到第7页
+        this.setCurrentPageIndex(6);
         await sleep(this._delay);
-        //查看当前页
+        await screenshot_custom();
+    }
+    @testCase
+    async backToHomePage(){
+        this.returnHomePage()
+        await sleep(this._delay);
         await screenshot_custom();
     }
 

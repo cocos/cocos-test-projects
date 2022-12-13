@@ -4,7 +4,7 @@ import { runScene, testCase, testClass, sleep } from 'db://automation-framework/
 import { screenshot_custom } from '../common/utils';
 
 @runScene('DragonMesh')
-//@testClass('DragonMesh')
+@testClass('DragonMesh')
 export class DragonMesh {
     _dt = 30;
     _delay = 0.5;

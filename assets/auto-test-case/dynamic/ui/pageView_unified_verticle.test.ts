@@ -8,62 +8,139 @@ import { screenshot_custom } from '../common/utils';
 export class PageViewUnifiedVerticle {
     _dt = 4;
     _delay = 2;
-
     @testCase
     async startPlay() {
         await screenshot_custom(this._dt);
     }
 
     @testCase
-    async addOnePage(){
-        this.setCurrentPageIndex(2);
-        await sleep(this._delay);
-        this.addPage();
-        this.setCurrentPageIndex(3);
+    async removeThreeCurrentPage(){
+        //点击3次移除仍然展示第一页
+        for(let i=0;i<3;i++){
+            this.removeCurrentP();
+        }
         await sleep(this._delay);
         await screenshot_custom();
     }
     
     @testCase
-    async returnIndex(){
-        this.returnHomePage();
+    async addEightTimesToLastPage(){
+       //点击8次添加页面并右翻页到第9页
+        for(let i=0;i<8;i++){
+            this.addPage();
+        }
+        this.setCurrentPageIndex(8);
         await sleep(this._delay);
-        await screenshot_custom(this._dt);
+        await screenshot_custom();
     }
 
     @testCase
     async addCurrentPage(){
+        //验证用例插入当前页面的数据
+        //上一个用例再第4页,直接插入一张
         this.insertCurrentPage();
+        //再截图
         await screenshot_custom();
-        this.setCurrentPageIndex(4);
+        //翻页到第10页
+        this.setCurrentPageIndex(9);
         await sleep(this._delay);
         await screenshot_custom();
-        this.setCurrentPageIndex(3);
+    }
+
+    @testCase
+    async removePages(){
+        //点击移除返回第9页
+        this.removePage();
         await sleep(this._delay);
+        //查看当前页
         await screenshot_custom();
     }
 
     @testCase
     async removeLastPage(){
-        this.removePage();
-        this.setCurrentPageIndex(4)
+        //点击移除当前页到第8页
+        this.removeCurrentP();
         await sleep(this._delay);
         await screenshot_custom();
     }
 
     @testCase
-    async removeCurrentPage(){
-        this.removeCurrentP();
+    async turnToCurrentPageIndex(){
+        //左翻到第7页
+        this.setCurrentPageIndex(6);
         await sleep(this._delay);
-        await screenshot_custom(this._dt);
+        await screenshot_custom();
+    }
+    @testCase
+    async backToHomePage(){
+        this.returnHomePage()
+        await sleep(this._delay);
+        await screenshot_custom();
     }
 
     @testCase
     async clearAll(){
+        //移除当前的页面
         this.clearAllPage();
         await sleep(this._delay);
-        await screenshot_custom(this._dt);
+        //查看当前页
+        await screenshot_custom();
     }
+    // @testCase
+    // async startPlay() {
+    //     await screenshot_custom(this._dt);
+    // }
+
+    // @testCase
+    // async addOnePage(){
+    //     this.setCurrentPageIndex(2);
+    //     await sleep(this._delay);
+    //     this.addPage();
+    //     this.setCurrentPageIndex(3);
+    //     await sleep(this._delay);
+    //     await screenshot_custom();
+    // }
+    
+    // @testCase
+    // async returnIndex(){
+    //     this.returnHomePage();
+    //     await sleep(this._delay);
+    //     await screenshot_custom(this._dt);
+    // }
+
+    // @testCase
+    // async addCurrentPage(){
+    //     this.insertCurrentPage();
+    //     await screenshot_custom();
+    //     this.setCurrentPageIndex(4);
+    //     await sleep(this._delay);
+    //     await screenshot_custom();
+    //     this.setCurrentPageIndex(3);
+    //     await sleep(this._delay);
+    //     await screenshot_custom();
+    // }
+
+    // @testCase
+    // async removeLastPage(){
+    //     this.removePage();
+    //     this.setCurrentPageIndex(4)
+    //     await sleep(this._delay);
+    //     await screenshot_custom();
+    // }
+
+    // @testCase
+    // async removeCurrentPage(){
+    //     this.removeCurrentP();
+    //     await sleep(this._delay);
+    //     await screenshot_custom(this._dt);
+    // }
+
+    // @testCase
+    // async clearAll(){
+    //     this.clearAllPage();
+    //     await sleep(this._delay);
+    //     await screenshot_custom(this._dt);
+    // }
 
     setCurrentPageIndex(index:number){
         // @ts-ignore
