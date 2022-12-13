@@ -4,7 +4,7 @@ import { runScene, testCase, testClass, sleep } from 'db://automation-framework/
 import { screenshot_custom } from '../common/utils';
 
 @runScene('PlaybackRange')
-@testClass('PlaybackRange')
+// @testClass('PlaybackRange')
 export class PlaybackRange {
     _dt = 70
     _delay = 2;

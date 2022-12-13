@@ -3,7 +3,7 @@ import { runScene, testCase, testClass } from 'db://automation-framework/runtime
 import { screenshot_custom } from '../common/utils';
 
 @runScene('DragonBonesCollider')
-//@testClass('DragonBonesCollider')
+@testClass('DragonBonesCollider')
 export class DragonBonesCollider {
     _delay = 0.2;
     _dt = 30;

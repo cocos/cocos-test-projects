@@ -5,11 +5,11 @@ import { screenshot_custom } from '../common/utils';
 @runScene('anim-widget')
 @testClass('AnimWidget')
 export class AnimWidget {
-    _dt = 10;
+    _dt = 20;
 
     @testCase
     async startPlay() {
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 5; i++) {
             await screenshot_custom(this._dt);
         };
     }

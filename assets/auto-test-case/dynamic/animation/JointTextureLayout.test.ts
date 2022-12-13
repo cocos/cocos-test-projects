@@ -1,3 +1,4 @@
+import { director } from 'cc';
 // @ts-ignore
 import { runScene, testCase, testClass, sleep } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
@@ -9,9 +10,12 @@ export class JointTextureLayout {
     _delay = 2;
 
     @testCase
-    async startPlay() {
-        for (let index = 0; index < 2; index++) {
-            await screenshot_custom(this._dt);
-        };
+    async stand() {
+        await screenshot_custom(this._dt);
+    }
+
+    @testCase
+    async comeDown() {
+        await screenshot_custom(3652);
     }
 }

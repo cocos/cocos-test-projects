@@ -14,16 +14,16 @@ export class Graphics {
     }
 
     @testCase
-    async drawRect() {
+    async drawArc() {
         // @ts-ignore
-        find('Canvas/draw').getComponent('ChangeGraphics').drawRect()
+        find('Canvas/draw').getComponent('ChangeGraphics').drawArc()
         await screenshot_custom(this._dt);
     }
 
     @testCase
-    async drawArc() {
+    async drawEllipse() {
         // @ts-ignore
-        find('Canvas/draw').getComponent('ChangeGraphics').drawArc()
+        find('Canvas/draw').getComponent('ChangeGraphics').drawEllipse()
         await screenshot_custom(this._dt);
     }
 
@@ -35,10 +35,10 @@ export class Graphics {
     }
 
     @testCase
-    async drawEllipse() {
+    async drawRect() {
         // @ts-ignore
-        find('Canvas/draw').getComponent('ChangeGraphics').drawEllipse()
+        find('Canvas/draw').getComponent('ChangeGraphics').drawRect()
         await screenshot_custom(this._dt);
     }
 
-}
+ }

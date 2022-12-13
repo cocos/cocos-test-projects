@@ -5,7 +5,7 @@ import { screenshot_custom } from '../common/utils';
 @runScene('progress')
 @testClass('Progress')
 export class Progress {
-    _dt = 40;
+    _dt = 90;
 
     @testCase
     async index() {
@@ -14,7 +14,7 @@ export class Progress {
 
     @testCase
     async play() {
-        for (let i = 0; i < 7; i++) {
+        for (let i = 0; i < 3; i++) {
             await screenshot_custom(this._dt * 2);
         }
     }

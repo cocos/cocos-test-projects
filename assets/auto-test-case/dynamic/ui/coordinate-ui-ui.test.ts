@@ -3,7 +3,7 @@ import { runScene, testCase, testClass } from 'db://automation-framework/runtime
 import { screenshot_custom } from '../common/utils';
 
 @runScene('coordinate-ui-ui')
-@testClass('CoordinateUiUi')
+//@testClass('CoordinateUiUi')
 export class CoordinateUiUi {
     _delay = 0.2;
     _dt = 80;
