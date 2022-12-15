@@ -3,7 +3,7 @@ import { runScene, testCase, testClass } from 'db://automation-framework/runtime
 import { screenshot_custom } from '../common/utils';
 
 @runScene('fill-sprite')
-//@testClass('FillSprite')
+@testClass('FillSprite')
 export class FillSprite {
     _dt = 65;
 
