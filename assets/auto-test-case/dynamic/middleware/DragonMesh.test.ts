@@ -1,18 +1,18 @@
 import { find, dragonBones, loader } from 'cc';
 // @ts-ignore
 import { runScene, testCase, testClass, sleep } from 'db://automation-framework/runtime/test-framework.mjs';
-import { screenshot_custom } from '../common/utils';
+import { screenshot_custom_by_wait } from '../common/utils';
 
 @runScene('DragonMesh')
 @testClass('DragonMesh')
 export class DragonMesh {
-    _dt = 30;
+    _dt = 21;
     _delay = 0.5;
     @testCase
     async startLoad() {
         // await screenshot_custom(this._dt);
         for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this._dt);
+            await screenshot_custom_by_wait(this._dt);
         }
     };
 
@@ -54,7 +54,7 @@ export class DragonMesh {
             // await screenshot_custom(this._dt);
             await this.loadResource();
             for (let i = 0; i < 3; i++) {
-                await screenshot_custom(this._dt);
+                await screenshot_custom_by_wait(this._dt);
             }
             
             

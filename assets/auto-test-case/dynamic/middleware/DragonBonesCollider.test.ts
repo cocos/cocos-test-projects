@@ -1,6 +1,6 @@
 // @ts-ignore
 import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
-import { screenshot_custom } from '../common/utils';
+import { screenshot_custom_by_wait } from '../common/utils';
 
 @runScene('DragonBonesCollider')
 @testClass('DragonBonesCollider')
@@ -10,9 +10,10 @@ export class DragonBonesCollider {
 
     @testCase
     async startPlay() {
-        for (let i = 0; i < 4; i++) {
+        await screenshot_custom_by_wait(15);
+        for (let i = 0; i < 3; i++) {
             // 截图 or 断言
-            await screenshot_custom(this._dt);
+            await screenshot_custom_by_wait(this._dt);
         }
     }
 
