@@ -1,7 +1,7 @@
 import { Button, find } from 'cc';
 // @ts-ignore
-import { runScene, testCase, testClass, sleep } from 'db://automation-framework/runtime/test-framework.mjs';
-import { screenshot_custom } from '../common/utils';
+import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
+import { screenshot_custom_by_wait } from '../common/utils';
 
 @runScene('SpineAttach')
 @testClass('SpineAttach')
@@ -13,19 +13,19 @@ export class SpineAttach {
     async cacheNodes1() {
         // 点击cache按钮
         find('Canvas/Node-001/toggle cache')!.getComponent(Button)?.clickEvents[0].emit([]);
-        await screenshot_custom();// 马上截图
+        await screenshot_custom_by_wait();// 马上截图
         for (let i = 0; i < 2; i++) { //每个20dt，再截一次图
-            await screenshot_custom(this._dt); 
+            await screenshot_custom_by_wait(this._dt); 
         };
     }
 
     @testCase
     async cacheNodes2() {
-        // 点击cache按钮
+        // 点击cache按钮-2次
         find('Canvas/Node-001/toggle cache')!.getComponent(Button)?.clickEvents[0].emit([]);
-        await screenshot_custom();// 马上截图
+        await screenshot_custom_by_wait();// 马上截图
         for (let i = 0; i < 2; i++) { //每个20dt，再截一次图
-            await screenshot_custom(this._dt); 
+            await screenshot_custom_by_wait(this._dt); 
         };
     }
 
@@ -33,9 +33,9 @@ export class SpineAttach {
     async attachNodes() {
         // 点击attach按钮
         find('Canvas/Node-001/toggle attach')!.getComponent(Button)?.clickEvents[0].emit([]);
-        await screenshot_custom();// 马上截图
+        await screenshot_custom_by_wait();// 马上截图
         for (let i = 0; i < 2; i++) { //每个20dt，再截一次图
-            await screenshot_custom(this._dt); 
+            await screenshot_custom_by_wait(this._dt); 
         };
     }
 
