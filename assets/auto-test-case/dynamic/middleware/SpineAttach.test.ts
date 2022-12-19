@@ -1,4 +1,4 @@
-import { Button, find } from 'cc';
+import { Button, director, find } from 'cc';
 // @ts-ignore
 import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom_by_wait } from '../common/utils';
@@ -8,14 +8,15 @@ import { screenshot_custom_by_wait } from '../common/utils';
 export class SpineAttach {
     _delay = 2;
     _dt = 20;
+    _totalFrames = 0;
 
     @testCase
     async cacheNodes1() {
+        this._totalFrames = director.getTotalFrames();
         // 点击cache按钮
         find('Canvas/Node-001/toggle cache')!.getComponent(Button)?.clickEvents[0].emit([]);
-        await screenshot_custom_by_wait();// 马上截图
-        for (let i = 0; i < 2; i++) { //每个20dt，再截一次图
-            await screenshot_custom_by_wait(this._dt); 
+        for (let i = 0; i < 3; i++) { //每个20dt，再截一次图
+            await screenshot_custom_by_wait(this._dt*(i+1) + this._totalFrames - director.getTotalFrames()); 
         };
     }
 
@@ -23,9 +24,8 @@ export class SpineAttach {
     async cacheNodes2() {
         // 点击cache按钮-2次
         find('Canvas/Node-001/toggle cache')!.getComponent(Button)?.clickEvents[0].emit([]);
-        await screenshot_custom_by_wait();// 马上截图
-        for (let i = 0; i < 2; i++) { //每个20dt，再截一次图
-            await screenshot_custom_by_wait(this._dt); 
+        for (let i = 0; i < 3; i++) { //每个20dt，再截一次图
+            await screenshot_custom_by_wait(this._dt*(i+4) + this._totalFrames - director.getTotalFrames()); 
         };
     }
 
@@ -33,9 +33,9 @@ export class SpineAttach {
     async attachNodes() {
         // 点击attach按钮
         find('Canvas/Node-001/toggle attach')!.getComponent(Button)?.clickEvents[0].emit([]);
-        await screenshot_custom_by_wait();// 马上截图
-        for (let i = 0; i < 2; i++) { //每个20dt，再截一次图
-            await screenshot_custom_by_wait(this._dt); 
+        for (let i = 0; i < 3; i++) { //每个20dt，再截一次图
+            let xx = this._dt*(i+7) + this._totalFrames - director.getTotalFrames();
+            await screenshot_custom_by_wait(xx); 
         };
     }
 
