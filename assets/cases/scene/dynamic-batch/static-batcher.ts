@@ -1,4 +1,4 @@
-import { _decorator, Component, director, instantiate, Label, Node, Prefab, Slider, BatchingUtility, Toggle, game, Director, Button } from 'cc';
+import { _decorator, Component, director, instantiate, Label, Node, Prefab, Slider, BatchingUtility, Toggle, game, Director, Button, profiler } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('StaticBatcher')
@@ -11,6 +11,8 @@ export class StaticBatcher extends Component {
     public static_box: Node = null!;
     @property(Node)
     public root: Node = null!;
+    @property(Label)
+    public profile: Label = null!;
 
     @property
     public count = 5;
@@ -25,7 +27,12 @@ export class StaticBatcher extends Component {
 
     public _nodes: Node[] = [];
     public _delays: number[] = [];
-    private _batchState = true;
+    private _batchState = false;
+    private _recoveryProfiler = false;
+
+    public onLoad(){
+        this._recoveryProfiler = profiler.isShowingStats();
+    }
 
     public start () {
         for (let i = 0; i < this.count; i++) {
@@ -33,22 +40,39 @@ export class StaticBatcher extends Component {
                 this._createBatch(i, j);
             }
         }
+        if(this._batchState){
+            this._changeBatchState(true);
+        }
 
-        BatchingUtility.batchStaticModel(this.root, this.static_box);
         this.label.string = 'Boxes: ' + this.count * 100;
         // this.slider.progress = this.count / this.maxCount;
     }
 
-    // public update () {
-    //     const t = game.frameStartTime;
-    //     for (let i = 0; i < this._nodes.length; i++) {
-    //         const node = this._nodes[i];
-    //         const delay = this._delays[i];
-    //         const position = node.position;
-    //         const y = Math.sin(delay + t * this.hoverSpeed);
-    //         node.setPosition(position.x, y, position.z);
-    //     }
-    // }
+    public onEnable(){
+        if(!this._recoveryProfiler){
+            profiler.showStats();
+        }
+    }
+
+    public onDisable(){
+        if(!this._recoveryProfiler){
+            profiler.hideStats();
+        }
+    }
+
+    public update () {
+        // @ts-ignore
+        let state = profiler._stats;
+        if(!state){
+            this.profile.string = `DrawCall: ${director.root?.device.numDrawCalls}`;
+            return;
+        }
+
+        this.profile.string = `
+        FPS: ${state.fps.counter.human()}
+        DrawCall: ${director.root?.device.numDrawCalls}
+        `;
+    }
 
     public setCount (e: Button, state: string) {
         return new Promise<void>((resovle)=>{
