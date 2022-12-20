@@ -14,7 +14,7 @@ export class Progress {
 
     @testCase
     async play() {
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 4; i++) {
             await screenshot_custom(this._dt * 2);
         }
     }

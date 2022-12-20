@@ -16,11 +16,11 @@ export class Editbox {
     @testCase
     async edit() {
         // @ts-ignore
-        find('Canvas/single/New EditBox').getComponent('cc.EditBox').string = 'hellowoinput01$%测试567891011121131415';
+        find('Canvas/single/New EditBox').getComponent('cc.EditBox').string = 'h测试01$%ellowoinput567891011121131415';
         // @ts-ignore
-        find('Canvas/password/New EditBox').getComponent('cc.EditBox').string = 'helloworlinput01,a%测试78910111212121';
+        find('Canvas/password/New EditBox').getComponent('cc.EditBox').string = 'hel%测试loworlinput01,a%测试78910111212121';
         // @ts-ignore
-        find('Canvas/mutiple/New EditBox').getComponent('cc.EditBox').string = 'helloworld12input03！~测试9101112113141532434';
+        find('Canvas/mutiple/New EditBox').getComponent('cc.EditBox').string = 'he#测试oworld12input03！~测试9101112113141532434';
         await screenshot_custom(this._dt);
     }
 
