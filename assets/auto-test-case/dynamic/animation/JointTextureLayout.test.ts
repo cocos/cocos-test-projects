@@ -15,6 +15,6 @@ export class JointTextureLayout {
 
     @testCase
     async comeDown() {
-        await screenshot_custom_by_wait(70);
+        await screenshot_custom_by_wait(69);
     }
 }
