@@ -36,7 +36,7 @@ export class ShieldNode extends Component {
         }
     }
 
-    setSheildNodePosition(index : number, vec : Vec3){
+    setShieldNodePosition(index : number, vec : Vec3){
         let node : Node | undefined = this.shieldNodeMap.get(index);
         node!.setPosition(vec);
     }
