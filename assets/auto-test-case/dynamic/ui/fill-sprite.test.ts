@@ -1,9 +1,9 @@
 // @ts-ignore
 import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
-import { screenshot_custom } from '../common/utils';
+import { screenshot_custom,screenshot_custom_by_wait } from '../common/utils';
 
 @runScene('fill-sprite')
-//@testClass('FillSprite')
+@testClass('FillSprite')
 export class FillSprite {
     _dt = 65;
 
@@ -15,9 +15,9 @@ export class FillSprite {
     @testCase
     async play() {
         for (let i = 0; i < 10; i++) {
-            await screenshot_custom(this._dt);
+            await screenshot_custom_by_wait(this._dt);
         }
-        await screenshot_custom(this._dt * 2);
+        await screenshot_custom_by_wait(this._dt * 2);
     }
 
 }

@@ -75,36 +75,33 @@ export class StaticBatcher extends Component {
     }
 
     public setCount (e: Button, state: string) {
-        return new Promise<void>((resovle)=>{
-            if(this._batchState && this.count > 0){
-                this._changeBatchState(false);
+        if(this._batchState && this.count > 0){
+            this._changeBatchState(false);
+        }
+
+        const count = state === 'add' ? this.count + 1 > this.maxCount ? this.maxCount : this.count + 1 : this.count - 1 < 0 ? 1 : this.count - 1;
+        if (count > this.count) {
+            for (let i = this.count; i < count; i++) {
+                for (let j = 0; j < 10; j++) {
+                    this._createBatch(i, j);
+                }
             }
-    
-            const count = state === 'add' ? this.count + 1 > this.maxCount ? this.maxCount : this.count + 1 : this.count - 1 < 0 ? 1 : this.count - 1;
-            if (count > this.count) {
-                for (let i = this.count; i < count; i++) {
+        } else {
+            if(this._nodes.length > 0){
+                for (let i = count; i < this.count; i++) {
                     for (let j = 0; j < 10; j++) {
-                        this._createBatch(i, j);
-                    }
-                }
-            } else {
-                if(this._nodes.length > 0){
-                    for (let i = count; i < this.count; i++) {
-                        for (let j = 0; j < 10; j++) {
-                            const idx = count * 100;
-                            this._nodes.splice(idx, 10)[0].parent?.setParent(null);
-                            this._delays.splice(idx, 10);
-                        }
+                        const idx = count * 100;
+                        this._nodes.splice(idx, 10)[0].parent?.setParent(null);
+                        this._delays.splice(idx, 10);
                     }
                 }
             }
-            this.count = count;
-            this.label.string = 'Boxes: ' + this.count * 100;
-            if(this._batchState && count > 0){
-                this._changeBatchState(true);
-            }
-            resovle();
-        });
+        }
+        this.count = count;
+        this.label.string = 'Boxes: ' + this.count * 100;
+        if(this._batchState && count > 0){
+            this._changeBatchState(true);
+        }
     }
 
     public _createBatch (i: number, j: number) {

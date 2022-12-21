@@ -82,9 +82,9 @@ export class LoadResExample extends Component {
     }
 
     backToAssetLoading() {
-        return new Promise<void>(resovle => {
-            director.loadScene('AssetLoading', () => {
-                resovle();
+        return new Promise<void>((resovle, reject) => {
+            director.loadScene('AssetLoading', (err) => {
+                err ? reject(err) : resovle();
             });
         });
     }

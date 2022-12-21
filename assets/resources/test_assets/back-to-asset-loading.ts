@@ -18,9 +18,9 @@ export class BackToAssetLoading extends Component {
     }
 
     onClick() {
-        return new Promise<void>((resovle) => {
-            director.loadScene(this.sceneToBack, () => {
-                resovle();
+        return new Promise<void>((resovle, reject) => {
+            director.loadScene(this.sceneToBack, (err) => {
+               err ? reject(err) : resovle();
             });
         });
     }

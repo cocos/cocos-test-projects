@@ -9,9 +9,10 @@ export class SharedMaterial {
 
     @testCase
     async startPlay() {
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < 5; i++) {
             await screenshot_custom(this._dt);
         };
+        await screenshot_custom(this._dt-2);
     }
 
 }

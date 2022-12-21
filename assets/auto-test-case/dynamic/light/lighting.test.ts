@@ -5,19 +5,34 @@ import { screenshot_custom } from '../common/utils';
 @runScene('lighting')
 @testClass('Lighting')
 export class Lighting {
-    _dt = 180;
+    _dt = 216;
     _delay = 0.1;
 
     @testCase
-    async index() {
-        await screenshot_custom();
+    async oneFourPinkAppearTobox() {
+        await screenshot_custom(this._dt);
     }
 
     @testCase
-    async play() {
+    async pinkMoveDisappear() {
         // 截图 or 断言
-        for (let i = 0; i < 7; i++) {
-            await screenshot_custom(this._dt);
-        }
+        await screenshot_custom(350-this._dt);
+    }
+    
+    @testCase
+    async oneFourColorAppear() {
+        // 截图 or 断言
+        await screenshot_custom(518-350);
+    }
+
+    @testCase
+    async twoFourPinkAppearTobox(){
+        await screenshot_custom(750-518);
+    }
+
+    @testCase
+    async twofourColorAppear() {
+        // 截图 or 断言
+        await screenshot_custom(843-750);
     }
 }

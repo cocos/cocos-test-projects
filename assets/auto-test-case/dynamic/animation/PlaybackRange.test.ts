@@ -1,12 +1,12 @@
 import { find } from 'cc';
 // @ts-ignore
 import { runScene, testCase, testClass, sleep } from 'db://automation-framework/runtime/test-framework.mjs';
-import { screenshot_custom } from '../common/utils';
+import { screenshot_custom,screenshot_custom_by_wait} from '../common/utils';
 
 @runScene('PlaybackRange')
-// @testClass('PlaybackRange')
+@testClass('PlaybackRange')
 export class PlaybackRange {
-    _dt = 70
+    _dt = 92
     _delay = 2;
 
     @testCase
@@ -15,58 +15,51 @@ export class PlaybackRange {
     }
 
     @testCase
-    async sliderMin_00_Max_00() {
-        // @ts-ignore
-        find('scene')!.getComponent('PlaybackRange')!.sliderMin.progress = 0;
-        this.setMinLabelString();
-        // @ts-ignore
-        find('scene')!.getComponent('PlaybackRange')!.sliderMax.progress = 0.5;
-
-        this.setMaxLabelString();
-        await screenshot_custom(170);
-    }
-
-    @testCase
-    async sliderMin_00_Max_03() {
+    async headLeftRightWalk(){
         // @ts-ignore
         find('scene')!.getComponent('PlaybackRange')!.sliderMin.progress = 0;
         this.setMinLabelString();
         // @ts-ignore
         find('scene')!.getComponent('PlaybackRange')!.sliderMax.progress = 0.3;
-
         this.setMaxLabelString();
-        for (let i = 0; i < 5; i++) {
-            await screenshot_custom(this._dt);
-        };
+        //head left
+        await screenshot_custom(this._dt);
+        //head right
+        await screenshot_custom_by_wait(82);
+        //walk one picture
+        await screenshot_custom_by_wait(258);
+        //walk two picture
+        await screenshot_custom_by_wait(18);
+
     }
 
 
-
     @testCase
-    async sliderMin_03_Max_05() {
+    async walk(){
         // @ts-ignore
         find('scene')!.getComponent('PlaybackRange')!.sliderMin.progress = 0.3;
         this.setMinLabelString();
         // @ts-ignore
         find('scene')!.getComponent('PlaybackRange')!.sliderMax.progress = 0.7;
         this.setMaxLabelString();
-        for (let i = 0; i < 5; i++) {
-            await screenshot_custom(this._dt);
-        };
-
+        //walk three picture
+        await screenshot_custom(this._dt+4);
     }
 
     @testCase
-    async sliderMin_07_Max_10() {
+    async run() {
         // @ts-ignore
         find('scene')!.getComponent('PlaybackRange')!.sliderMin.progress = 0.7;
         this.setMinLabelString();
         // @ts-ignore
         find('scene')!.getComponent('PlaybackRange')!.sliderMax.progress = 1;
         this.setMaxLabelString();
-        for (let i = 0; i < 5; i++) {
-            await screenshot_custom(this._dt);
-        };
+        await screenshot_custom_by_wait(130);
+        await screenshot_custom_by_wait(30);
+        await screenshot_custom_by_wait(20);
+        await screenshot_custom_by_wait(20);
+        await screenshot_custom_by_wait(20);
+        await screenshot_custom_by_wait(this._dt*3-12);
     }
 
     //数据初始化
