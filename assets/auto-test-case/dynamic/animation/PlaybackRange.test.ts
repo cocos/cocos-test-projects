@@ -62,7 +62,7 @@ export class PlaybackRange {
         await screenshot_custom_by_wait(this._dt*3-12);
     }
 
-    //数据初始化
+    //init data
     getInitData() {
         // @ts-ignore
         let min = find('scene')!.getComponent('PlaybackRange')!.labeledSliderMin.min;

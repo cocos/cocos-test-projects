@@ -12,7 +12,6 @@ export class DragonBonesCollider {
     async startPlay() {
         await screenshot_custom_by_wait(25);
         for (let i = 0; i < 3; i++) {
-            // 截图 or 断言
             await screenshot_custom_by_wait(this._dt);
         }
     }

@@ -9,7 +9,6 @@ export class Morph {
     @testCase
     async startPlay() {
         for (let i = 0; i < 5; i++) {
-            // 截图 or 断言
             await screenshot_custom(this._dt);
         }
     }

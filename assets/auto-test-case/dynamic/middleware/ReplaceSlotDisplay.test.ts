@@ -10,7 +10,6 @@ export class ReplaceSlotDisplay {
 
     @testCase
     async start() {
-        // 截图
         await screenshot_custom(this._dt);
     }
 
@@ -19,7 +18,6 @@ export class ReplaceSlotDisplay {
         if (find('Canvas')) {
             // @ts-ignore
             find('Canvas')!.getComponent('ReplaceSlotDisplay')!.left();
-            // 截图
             await screenshot_custom(this._dt);
         } else {
             console.error('【TestCaseScript】 ReplaceSlotDisplay scene is error,can not find Canvas Node')
@@ -35,7 +33,6 @@ export class ReplaceSlotDisplay {
             if (find('Canvas')) {
                 // @ts-ignore
                 find('Canvas')!.getComponent('ReplaceSlotDisplay')!.right();
-                // 截图
                 await screenshot_custom(this._dt);
             } else {
                 console.error('【TestCaseScript】 ReplaceSlotDisplay scene is error,can not find Canvas Node')
