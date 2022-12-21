@@ -15,13 +15,11 @@ export class Lighting {
 
     @testCase
     async pinkMoveDisappear() {
-        // 截图 or 断言
         await screenshot_custom(350-this._dt);
     }
     
     @testCase
     async oneFourColorAppear() {
-        // 截图 or 断言
         await screenshot_custom(518-350);
     }
 
@@ -32,7 +30,6 @@ export class Lighting {
 
     @testCase
     async twofourColorAppear() {
-        // 截图 or 断言
         await screenshot_custom(843-750);
     }
 }

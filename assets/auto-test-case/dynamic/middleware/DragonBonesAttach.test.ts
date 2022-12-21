@@ -13,7 +13,6 @@ export class DragonBonesAttach {
     async generateAllNodes() {
         // @ts-ignore
         find('Canvas/dragonTest')!.getComponent('DragonBonesAttach')!.generateAllNodes();
-        // 截图 or 断言
         await screenshot_custom();
     };
 
@@ -21,7 +20,6 @@ export class DragonBonesAttach {
     async destroyAllNodes() {
         // @ts-ignore
         find('Canvas/dragonTest')!.getComponent('DragonBonesAttach')!.destroyAllNodes();
-        // 截图 or 断言
         await screenshot_custom();
     };
 
@@ -29,7 +27,6 @@ export class DragonBonesAttach {
     async generateSomeNodes() {
         // @ts-ignore
         find('Canvas/dragonTest')!.getComponent('DragonBonesAttach')!.generateSomeNodes();
-        // 截图 or 断言
         await screenshot_custom();
     }
 
@@ -37,7 +34,6 @@ export class DragonBonesAttach {
     async destroySomeNodes() {
         // @ts-ignore
         find('Canvas/dragonTest')!.getComponent('DragonBonesAttach')!.destroySomeNodes();
-        // 截图 or 断言
         await screenshot_custom();
     };
      */

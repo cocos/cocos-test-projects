@@ -44,7 +44,6 @@ export class Audio {
     async onVolumeSliderChanged() {
         //@ts-ignore
         find('AudioController')?.getComponent('AudioController').onButtonClicked(null, 6);
-        //注意此处是无法完全模拟界面上的触发事件的需要引擎组改变用例
         //@ts-ignore
         find('AudioController')?.getComponent('AudioController').onVolumeSliderChanged((find('Canvas/Volume/VolumeSlider').getComponent('cc.Slider').progress = 0.5));
         await screenshot_custom();

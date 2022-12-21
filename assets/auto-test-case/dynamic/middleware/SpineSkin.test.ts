@@ -16,7 +16,7 @@ export class SpineSkin {
         for (let i = 0; i < 4; i++) {
             // @ts-ignore
             find('Canvas').getComponent('SpineSkin').change();
-            await screenshot_custom_by_wait(this._dt); //直接截图
+            await screenshot_custom_by_wait(this._dt); 
         };
     }
 }
