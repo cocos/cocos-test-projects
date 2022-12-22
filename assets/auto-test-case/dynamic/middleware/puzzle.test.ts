@@ -48,7 +48,7 @@ export class Puzzle {
 
     @testCase
     async play_block() {
-        this.move(KeyCode.ARROW_LEFT)
+        this.move(KeyCode.ARROW_LEFT);
         //@ts-ignore
         if(this.puzzle.blockedValue = 'This way is blocked!'){
             await screenshot_custom(this._dt);
@@ -67,22 +67,18 @@ export class Puzzle {
          for(let i=0;i<3;i++){
             this.move(KeyCode.ARROW_UP);
         }
-
         //right:3
         for(let i=0;i<3;i++){
             this.move(KeyCode.ARROW_RIGHT);
         }  
-        
         //down:3
         for(let i=0;i<3;i++){
             this.move(KeyCode.ARROW_DOWN);
         }  
-     
          //right:3
          for(let i=0;i<3;i++){
             this.move(KeyCode.ARROW_RIGHT);
         } 
-
          //up:5
          for(let i=0;i<5;i++){
             this.move(KeyCode.ARROW_UP);
@@ -127,7 +123,6 @@ export class Puzzle {
         for(let i=0;i<2;i++){
             this.move(KeyCode.ARROW_RIGHT);
         } 
-
         //down:7
         for(let i=0;i<7;i++){
             this.move(KeyCode.ARROW_DOWN);
@@ -178,13 +173,13 @@ export class Puzzle {
     move(key:KeyCode){
         //UP = 1, DOWN = 2, LEFT = 3, RIGHT = 4
         //@ts-ignore
-        this.puzzle._onKeyPressed(new EventKeyboard(key))
+        this.puzzle._onKeyPressed(new EventKeyboard(key));
     }
 
 
     restartGame(){
         //@ts-ignore
-        find("Canvas/wrapper/succeedLayer/restartBtn").getComponent("cc.Button").clickEvents[0].emit([]) 
+        find("Canvas/wrapper/succeedLayer/restartBtn").getComponent("cc.Button").clickEvents[0].emit([]);
     }
 
 }
