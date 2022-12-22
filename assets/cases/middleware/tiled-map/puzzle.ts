@@ -205,9 +205,11 @@ export class Puzzle extends Component {
         if (newTile.x < 0 || newTile.x >= mapSize.width) return;
         if (newTile.y < 0 || newTile.y >= mapSize.height) return;
 
-        if (this._layerBarrier.getTileGIDAt(newTile.x, newTile.y) as unknown as any && !this.isBlocked) {
-            this.isBlocked = true
+        if (this._layerBarrier.getTileGIDAt(newTile.x, newTile.y) as unknown as any) {
+            this.isBlocked = true;
             return false;
+        }else{
+            this.isBlocked = false;
         }
 
         // update the player position
