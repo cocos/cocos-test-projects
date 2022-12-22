@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, ccenum, Input, TiledMap, Vec2, Vec3, view, macro, TiledLayer, input, EventKeyboard, Touch, EventTouch, KeyCode } from 'cc';
+import { _decorator, Component, Node, ccenum, Input, TiledMap, Vec2, Vec3, view, macro, TiledLayer, input, EventKeyboard, Touch, EventTouch, KeyCode, CCBoolean } from 'cc';
 const { ccclass, property } = _decorator;
 
 enum MoveDirection {
@@ -39,8 +39,8 @@ export class Puzzle extends Component {
     @property
     successObjectName = 'SuccessPoint';
 
-    @property
-    blockedValue = '';
+    @property({ type: Boolean })
+    isBlocked = false;
 
 
     @property({type:Node})
@@ -205,8 +205,8 @@ export class Puzzle extends Component {
         if (newTile.x < 0 || newTile.x >= mapSize.width) return;
         if (newTile.y < 0 || newTile.y >= mapSize.height) return;
 
-        if (this._layerBarrier.getTileGIDAt(newTile.x, newTile.y) as unknown as any) {
-            this.blockedValue = 'This way is blocked!'
+        if (this._layerBarrier.getTileGIDAt(newTile.x, newTile.y) as unknown as any && !this.isBlocked) {
+            this.isBlocked = true
             return false;
         }
 
