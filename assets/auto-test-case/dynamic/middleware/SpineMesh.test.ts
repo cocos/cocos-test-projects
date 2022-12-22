@@ -12,9 +12,11 @@ export class SpineMesh {
     @testCase
     async startPlay() {
         // start screenshot
-        await screenshot_custom_by_wait();
+        await screenshot_custom_by_wait(this._dt);
+        await screenshot_custom_by_wait(this._dt);
         // click button
         find('Canvas/Button')!.getComponent(Button)?.clickEvents[0].emit([]);
+        await screenshot_custom_by_wait(this._dt);
         await screenshot_custom_by_wait(this._dt);
 
         // click button
@@ -23,6 +25,7 @@ export class SpineMesh {
         
         // click button
         find('Canvas/Button')!.getComponent(Button)?.clickEvents[0].emit([]);
+        await screenshot_custom_by_wait(this._dt);
         await screenshot_custom_by_wait(this._dt);
     }
 }

@@ -4,8 +4,8 @@ import { runScene, testCase, testClass } from 'db://automation-framework/runtime
 import { screenshot_custom_by_wait } from '../common/utils';
 
 @runScene('audioBuffer')
-@testClass('audioBuffer')
-export class audioBuffer {
+@testClass('AudioBuffer')
+export class AudioBuffer {
   _dt = 10;
   @testCase
   async startPlay() {
