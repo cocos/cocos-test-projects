@@ -21,18 +21,18 @@ export class MipMapCheck {
     }
 
     @testCase
-    async play_small_case() { 
+    async play_small_coin() { 
         await screenshot_custom(this._dt+1+20); 
     }
 
     @testCase
-    async play_big_coin() { 
-        await screenshot_custom(this._dt*2-5); 
+    async play_small_case() { 
+        await screenshot_custom(this._dt*2-15); 
     }
 
     @testCase
-    async play_small_coin() {
-        await screenshot_custom(this._dt*2+32);
+    async play_big_coin() {
+        await screenshot_custom(this._dt*2+30);
     }
    
     @testCase

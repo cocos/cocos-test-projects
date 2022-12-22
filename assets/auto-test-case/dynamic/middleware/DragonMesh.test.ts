@@ -52,7 +52,6 @@ export class DragonMesh {
             //find('Canvas').getComponent('LoadDragonBones').dynamicCreate();
             // director.tick(1);
             // director.pause();
-            // 截图 or 断言
             // await screenshot_custom(this._dt);
             await this.loadResource();
             for (let i = 0; i < 3; i++) {

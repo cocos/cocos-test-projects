@@ -8,7 +8,6 @@ export class UniformKTest {
     _delay = 0.5;
     @testCase
     async startPlay() {
-        // 截图 or 断言
         await screenshot_custom(0);
     }
 

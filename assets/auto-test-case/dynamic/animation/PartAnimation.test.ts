@@ -1,12 +1,12 @@
 import { director } from 'cc';
 // @ts-ignore
 import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
-import { screenshot_custom } from '../common/utils';
+import { screenshot_custom,screenshot_custom_by_wait } from '../common/utils';
 
 @runScene('PartAnimation')
 @testClass('PartAnimation')
 export class PartAnimation {
-    _dt = 2;
+    _dt = 60;
 
     @testCase
     async white() {
@@ -15,6 +15,6 @@ export class PartAnimation {
 
     @testCase
     async yellow(){
-        await screenshot_custom(7939);
+        await screenshot_custom_by_wait(this._dt);
     }
 }

@@ -10,25 +10,21 @@ export class ParticleColor {
 
   @testCase
   async startPlay() {
-    //随机截图三张
     await screenshot_custom_by_wait(this._dt);
     await screenshot_custom_by_wait(this._dt);
     await screenshot_custom_by_wait(this._dt);
-    //移动截图一张
     //@ts-ignore
     find('Camera').getComponent('first-person-camera')._euler = {x: 6.0, y: -5.5, z: 0};
     await screenshot_custom_by_wait(this._dt);
-    //缩小截图一张
     await this.onMouseWheel(20);
     await screenshot_custom_by_wait(this._dt);
     
-    //放大截图一张
     await this.onMouseWheel(-22);
     await screenshot_custom_by_wait(this._dt);
   }
 
   
-
+  // zoom
   public onMouseWheel (delta=1) {
     //const delta = -e.getScrollY() * this.moveSpeed * 0.01; // delta is positive when scroll down
     return new Promise((resolve, reject)=>{

@@ -11,7 +11,7 @@ export class BoxesUnbatched {
   @testCase
   async startPlay() {
     await screenshot_custom_by_wait(this._dt);
-    // 进度条调整截图
+    // Screenshot of progress bar adjustment
     find('New Canvas/New Slider')!.getComponent(Slider)!.progress = 0;
     find('Camera')?.getComponent('BatchTester')!.setCount(find('New Canvas/New Slider')!.getComponent(Slider));
     await screenshot_custom_by_wait(this._dt);
@@ -24,21 +24,21 @@ export class BoxesUnbatched {
     find('New Canvas/New Slider')!.getComponent(Slider)!.progress = 1;
     find('Camera')?.getComponent('BatchTester')!.setCount(find('New Canvas/New Slider')!.getComponent(Slider));
     await screenshot_custom_by_wait(this._dt);
-    //移动截图一张
+
     //@ts-ignore
     find('Camera').getComponent('first-person-camera')._euler = {x: -14.50, y: -193.20, z: 0};
     await screenshot_custom_by_wait(this._dt);
-    //缩小截图一张
+
     await this.onMouseWheel(50);
     await screenshot_custom_by_wait(this._dt);
     
-    //放大截图一张
+
     await this.onMouseWheel(-60);
     await screenshot_custom_by_wait(this._dt);
   }
 
   
-
+  // zoom
   public onMouseWheel (delta=1) {
     //const delta = -e.getScrollY() * this.moveSpeed * 0.01; // delta is positive when scroll down
     return new Promise((resolve, reject)=>{

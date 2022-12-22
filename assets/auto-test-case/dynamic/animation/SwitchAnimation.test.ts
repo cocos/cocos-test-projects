@@ -11,7 +11,6 @@ export class SwitchAnimation {
 
     @testCase
     async startPlay() {
-        // 截图 or 断言
         await screenshot_custom(this._dt);
     }
 

@@ -11,20 +11,20 @@ export class ParticleMain {
 
     @testCase
     async startPlay() {
-        // 起始一下
+        // begin start to screenshot
         await screenshot_custom();
-        // 30帧后截图一下， 当列一个粒子
+        // take a screenshot after 30 frames, when listing a particle
         await screenshot_custom(this._dt*2);
-        // 90帧截图一下， 单列4个粒子
+        // take a screenshot at 90 frames, 4 particles in a single row
         await screenshot_custom(this._dt*6);
-        // 90帧截图一下， 单列5个粒子
+        // take a screenshot at 90 frames, 5 grains in a single row
         await screenshot_custom(this._dt*2);
 
-        // 按钮一下
+        // button click
         find('Canvas//Button')!.getComponent(Button)?.clickEvents[0].emit([]);
         await screenshot_custom();
 
-        // 文字出现后移动一下
+        // move after the text appears
         //@ts-ignore
         find('Camera').getComponent('first-person-camera')._euler = {x: -8.600000000000007, y: -2.20000000000001, z: 0}
         await screenshot_custom(this._dt);

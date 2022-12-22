@@ -11,21 +11,18 @@ export class ParticleAlign {
   @testCase
   async startPlay() {
     await screenshot_custom_by_wait(this._dt);
-    //移动截图一张
     //@ts-ignore
     find('Main Camera').getComponent('first-person-camera')._euler = {x: -11.70, y: -120.70, z: 0};
     await screenshot_custom_by_wait(this._dt);
-    //缩小截图一张
     await this.onMouseWheel(30);
     await screenshot_custom_by_wait(this._dt);
     
-    //放大截图一张
     await this.onMouseWheel(-45);
     await screenshot_custom_by_wait(this._dt);
   }
 
   
-
+  //zoom
   public onMouseWheel (delta=1) {
     //const delta = -e.getScrollY() * this.moveSpeed * 0.01; // delta is positive when scroll down
     return new Promise((resolve, reject)=>{

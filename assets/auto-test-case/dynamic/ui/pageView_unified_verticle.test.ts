@@ -15,7 +15,7 @@ export class PageViewUnifiedVerticle {
 
     @testCase
     async removeThreeCurrentPage(){
-        //点击3次移除仍然展示第一页
+        //click 3 times to exit and still show the first page
         for(let i=0;i<3;i++){
             this.removeCurrentP();
         }
@@ -25,7 +25,7 @@ export class PageViewUnifiedVerticle {
     
     @testCase
     async addEightTimesToLastPage(){
-       //点击8次添加页面并右翻页到第9页
+       //click 8 times to add a page and turn right to page 9
         for(let i=0;i<8;i++){
             this.addPage();
         }
@@ -36,12 +36,12 @@ export class PageViewUnifiedVerticle {
 
     @testCase
     async addCurrentPage(){
-        //验证用例插入当前页面的数据
-        //上一个用例再第4页,直接插入一张
+        //validate the data inserted into the current page by the use case
+        //the last use case is on page 4, insert a page directly
         this.insertCurrentPage();
-        //再截图
+        //take another screenshot
         await screenshot_custom();
-        //翻页到第10页
+        //turn to page 10
         this.setCurrentPageIndex(9);
         await sleep(this._delay);
         await screenshot_custom();
@@ -49,16 +49,16 @@ export class PageViewUnifiedVerticle {
 
     @testCase
     async removePages(){
-        //点击移除返回第9页
+        //click to remove to return to page 9
         this.removePage();
         await sleep(this._delay);
-        //查看当前页
+        //view current page
         await screenshot_custom();
     }
 
     @testCase
     async removeLastPage(){
-        //点击移除当前页到第8页
+        //click to remove current page to page 8
         this.removeCurrentP();
         await sleep(this._delay);
         await screenshot_custom();
@@ -66,7 +66,7 @@ export class PageViewUnifiedVerticle {
 
     @testCase
     async turnToCurrentPageIndex(){
-        //左翻到第7页
+        //turn left to page 7
         this.setCurrentPageIndex(6);
         await sleep(this._delay);
         await screenshot_custom();
@@ -80,10 +80,10 @@ export class PageViewUnifiedVerticle {
 
     @testCase
     async clearAll(){
-        //移除当前的页面
+        //remove current page
         this.clearAllPage();
         await sleep(this._delay);
-        //查看当前页
+        //view current page
         await screenshot_custom();
     }
     // @testCase

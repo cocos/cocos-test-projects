@@ -13,27 +13,28 @@ export class SpineAttach {
     @testCase
     async cacheNodes1() {
         this._totalFrames = director.getTotalFrames();
-        // 点击cache按钮
+        // click the cache button
         find('Canvas/Node-001/toggle cache')!.getComponent(Button)?.clickEvents[0].emit([]);
-        for (let i = 0; i < 3; i++) { //每个20dt，再截一次图
+        for (let i = 0; i < 3; i++) { //each 20dt, take another screenshot
             await screenshot_custom_by_wait(this._dt*(i+1) + this._totalFrames - director.getTotalFrames()); 
+
         };
     }
 
     @testCase
     async cacheNodes2() {
-        // 点击cache按钮-2次
+        // click the cache button 2 times
         find('Canvas/Node-001/toggle cache')!.getComponent(Button)?.clickEvents[0].emit([]);
-        for (let i = 0; i < 3; i++) { //每个20dt，再截一次图
+        for (let i = 0; i < 3; i++) { //each 20dt, take another screenshot
             await screenshot_custom_by_wait(this._dt*(i+4) + this._totalFrames - director.getTotalFrames()); 
         };
     }
 
     @testCase
     async attachNodes() {
-        // 点击attach按钮
+        // click attach button
         find('Canvas/Node-001/toggle attach')!.getComponent(Button)?.clickEvents[0].emit([]);
-        for (let i = 0; i < 3; i++) { //每个20dt，再截一次图
+        for (let i = 0; i < 3; i++) { //each 20dt, take another screenshot
             let xx = this._dt*(i+7) + this._totalFrames - director.getTotalFrames();
             await screenshot_custom_by_wait(xx); 
         };

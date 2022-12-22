@@ -9,8 +9,9 @@ export class EasingMethods {
     @testCase
     async startPlay() {
         for (let index = 0; index < 3; index++) {
-            // 截图 or 断言
             await screenshot_custom(this._dt);
         };
+        await screenshot_custom(this._dt-13);
+        await screenshot_custom(this._dt-14);
     }
 }

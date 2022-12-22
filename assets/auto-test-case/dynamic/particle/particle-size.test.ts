@@ -12,7 +12,7 @@ export class ParticleSize {
         await screenshot_custom();
         await screenshot_custom(this._dt*20);
 
-        // 移动后再截图
+        // screenshot after moving
         //@ts-ignore
         find('Camera').getComponent('first-person-camera')._euler = {x: -10.600000000000007, y: 5.20000000000001, z: 0}
         await screenshot_custom();

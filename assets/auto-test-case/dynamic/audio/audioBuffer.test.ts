@@ -20,12 +20,12 @@ export class audioBuffer {
     await screenshot_custom_by_wait(this._dt);
     find('Canvas/Slider')!.getComponent(Slider)!.progress = 1;
     await screenshot_custom_by_wait(this._dt);
-    //模拟触摸横移事件
+    // Simulates the touch traverse event
     await this.onDragMove(-100);
     await screenshot_custom_by_wait(this._dt*2);
   }
 
-  //模拟触摸横移事件
+  // Simulates the touch traverse event
   onDragMove (deltaX=-1) {
     return new Promise((resolve, reject)=>{
       let selfAudio = find('Canvas')!.getComponent('audioBuffer')!;

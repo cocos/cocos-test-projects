@@ -1,11 +1,10 @@
 // @ts-ignore
 import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
-import { screenshot_custom } from '../common/utils';
+import { screenshot_custom ,screenshot_custom_by_wait} from '../common/utils';
 
 @runScene('coordinate-ui-ui')
 @testClass('CoordinateUiUi')
 export class CoordinateUiUi {
-    _delay = 0.2;
     _dt = 13;
 
     @testCase
@@ -21,8 +20,8 @@ export class CoordinateUiUi {
 
     @testCase
     async difference() {
-        await screenshot_custom(this._dt * 306);
-        await screenshot_custom(this._dt * 307);
-        await screenshot_custom(this._dt * 308);
+        await screenshot_custom_by_wait(this._dt *58);
+        await screenshot_custom_by_wait(this._dt);
+        await screenshot_custom_by_wait(this._dt);
     }
 }

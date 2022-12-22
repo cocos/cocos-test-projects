@@ -86,8 +86,18 @@ export class LodTest extends Component {
         // } else {
         //     this.enableLodLabel.string = "Enable LOD";
         // }
+        let enabled = toggle.isChecked;
         this._lodGroups.forEach(lodGroup => {
-            lodGroup.forceLOD(level);
+           // lodGroup.forceLOD(level);
+           lodGroup.enabled = enabled;
+           for (let i = 1; i < lodGroup.lodCount; i++) {
+                for (let k = 0; k < lodGroup.LODs[i].rendererCount; k++) {
+                    let mr = lodGroup.LODs[i].getRenderer(k)
+                    if (mr) {
+                        mr.enabled = enabled;
+                    }
+                }
+            };
         });
     }
 

@@ -14,7 +14,6 @@ export class MorphHead {
         // @ts-ignore
         // tslint:disable-next-line: max-line-length
         find('head/soldier_head_look_up/soldier_head_look_up_Soldier_american_skin_test_0')!.getComponent('MorphController')!.weightsControl = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        // 截图 or 断言
         await screenshot_custom(this._dt);
     }
 
@@ -27,7 +26,6 @@ export class MorphHead {
         morph_slider.progress = 0.5;
         // @ts-ignore
         find('head/soldier_head_look_up/soldier_head_look_up_Soldier_american_skin_test_0').getComponent('MorphController').onSliderChanged(morph_slider, '0,0');
-        // 截图 or 断言
         await screenshot_custom(this._dt);
         // @ts-ignore
         morph_slider.progress = 0;
@@ -44,8 +42,6 @@ export class MorphHead {
         morph_slider.progress = 1;
         // @ts-ignore
         find('head/soldier_head_look_up/soldier_head_look_up_Soldier_american_skin_test_0').getComponent('MorphController').onSliderChanged(morph_slider, '0,0');
-
-        // 截图 or 断言
         await screenshot_custom(this._dt);
         // @ts-ignore
         morph_slider.progress = 0;
@@ -57,7 +53,6 @@ export class MorphHead {
 
     @testCase
     async look_right_05() {
-
         // @ts-ignore
         let morph_slider = find("Canvas/ScrollView/view/content").children[2].getChildByName("Slider").getComponent(cc.Slider);
         // @ts-ignore
@@ -75,7 +70,6 @@ export class MorphHead {
     }
     @testCase
     async look_right_10() {
-
         // @ts-ignore
         let morph_slider = find("Canvas/ScrollView/view/content").children[2].getChildByName("Slider").getComponent(cc.Slider);
         // @ts-ignore
@@ -94,14 +88,12 @@ export class MorphHead {
 
     @testCase
     async angry_05() {
-
         // @ts-ignore
         let morph_slider = find("Canvas/ScrollView/view/content").children[3].getChildByName("Slider").getComponent(cc.Slider);
         // @ts-ignore
         morph_slider.progress = 0.5;
         // @ts-ignore
         find('head/soldier_head_look_up/soldier_head_look_up_Soldier_american_skin_test_0').getComponent('MorphController').onSliderChanged(morph_slider, '0,2');
-        // 截图 or 断言
         await screenshot_custom(this._dt);
         // @ts-ignore
         morph_slider.progress = 0;
@@ -111,14 +103,12 @@ export class MorphHead {
     }
     @testCase
     async angry_10() {
-
         // @ts-ignore
         let morph_slider = find("Canvas/ScrollView/view/content").children[3].getChildByName("Slider").getComponent(cc.Slider);
         // @ts-ignore
         morph_slider.progress = 1;
         // @ts-ignore
         find('head/soldier_head_look_up/soldier_head_look_up_Soldier_american_skin_test_0').getComponent('MorphController').onSliderChanged(morph_slider, '0,2');
-        // 截图 or 断言
         await screenshot_custom(this._dt);
         // @ts-ignore
         morph_slider.progress = 0;
@@ -137,7 +127,6 @@ export class MorphHead {
         morph_slider.progress = 0.5;
         // @ts-ignore
         find('head/soldier_head_look_up/soldier_head_look_up_Soldier_american_skin_test_0').getComponent('MorphController').onSliderChanged(morph_slider, '0,3');
-        // 截图 or 断言
         await screenshot_custom(this._dt);
         // @ts-ignore
         morph_slider.progress = 0;
@@ -147,14 +136,12 @@ export class MorphHead {
     }
     @testCase
     async cry_10() {
-
         // @ts-ignore
         let morph_slider = find("Canvas/ScrollView/view/content").children[4].getChildByName("Slider").getComponent(cc.Slider);
         // @ts-ignore
         morph_slider.progress = 1;
         // @ts-ignore
         find('head/soldier_head_look_up/soldier_head_look_up_Soldier_american_skin_test_0').getComponent('MorphController').onSliderChanged(morph_slider, '0,3');
-        // 截图 or 断言
         await screenshot_custom(this._dt);
         // @ts-ignore
         morph_slider.progress = 0;
@@ -166,14 +153,12 @@ export class MorphHead {
 
     @testCase
     async stern_05() {
-
         // @ts-ignore
         let morph_slider = find("Canvas/ScrollView/view/content").children[5].getChildByName("Slider").getComponent(cc.Slider);
         // @ts-ignore
         morph_slider.progress = 0.5;
         // @ts-ignore
         find('head/soldier_head_look_up/soldier_head_look_up_Soldier_american_skin_test_0').getComponent('MorphController').onSliderChanged(morph_slider, '0,4');
-        // 截图 or 断言
         await screenshot_custom(this._dt);
         // @ts-ignore
         morph_slider.progress = 0;
@@ -190,7 +175,6 @@ export class MorphHead {
         morph_slider.progress = 1;
         // @ts-ignore
         find('head/soldier_head_look_up/soldier_head_look_up_Soldier_american_skin_test_0').getComponent('MorphController').onSliderChanged(morph_slider, '0,4');
-        // 截图 or 断言
         await screenshot_custom(this._dt);
         // @ts-ignore
         morph_slider.progress = 0;
@@ -202,14 +186,12 @@ export class MorphHead {
 
     @testCase
     async laugh_05() {
-
         // @ts-ignore
         let morph_slider = find("Canvas/ScrollView/view/content").children[6].getChildByName("Slider").getComponent(cc.Slider);
         // @ts-ignore
         morph_slider.progress = 0.5;
         // @ts-ignore
         find('head/soldier_head_look_up/soldier_head_look_up_Soldier_american_skin_test_0').getComponent('MorphController').onSliderChanged(morph_slider, '0,5');
-        // 截图 or 断言
         await screenshot_custom(this._dt);
         // @ts-ignore
         morph_slider.progress = 0;
@@ -219,14 +201,12 @@ export class MorphHead {
     }
     @testCase
     async laugh_10() {
-
         // @ts-ignore
         let morph_slider = find("Canvas/ScrollView/view/content").children[6].getChildByName("Slider").getComponent(cc.Slider);
         // @ts-ignore
         morph_slider.progress = 1;
         // @ts-ignore
         find('head/soldier_head_look_up/soldier_head_look_up_Soldier_american_skin_test_0').getComponent('MorphController').onSliderChanged(morph_slider, '0,5');
-        // 截图 or 断言
         await screenshot_custom(this._dt);
         // @ts-ignore
         morph_slider.progress = 0;
@@ -238,14 +218,12 @@ export class MorphHead {
 
     @testCase
     async smile_sly_05() {
-
         // @ts-ignore
         let morph_slider = find("Canvas/ScrollView/view/content").children[7].getChildByName("Slider").getComponent(cc.Slider);
         // @ts-ignore
         morph_slider.progress = 0.5;
         // @ts-ignore
         find('head/soldier_head_look_up/soldier_head_look_up_Soldier_american_skin_test_0').getComponent('MorphController').onSliderChanged(morph_slider, '0,6');
-        // 截图 or 断言
         await screenshot_custom(this._dt);
         // @ts-ignore
         morph_slider.progress = 0;
@@ -263,7 +241,6 @@ export class MorphHead {
         morph_slider.progress = 1;
         // @ts-ignore
         find('head/soldier_head_look_up/soldier_head_look_up_Soldier_american_skin_test_0').getComponent('MorphController').onSliderChanged(morph_slider, '0,6');
-        // 截图 or 断言
         await screenshot_custom(this._dt);
         // @ts-ignore
         morph_slider.progress = 0;
@@ -282,8 +259,6 @@ export class MorphHead {
         morph_slider.progress = 0.5;
         // @ts-ignore
         find('head/soldier_head_look_up/soldier_head_look_up_Soldier_american_skin_test_0').getComponent('MorphController').onSliderChanged(morph_slider, '0,7');
-
-        // 截图 or 断言
         await screenshot_custom(this._dt);
         // @ts-ignore
         morph_slider.progress = 0;
@@ -293,36 +268,29 @@ export class MorphHead {
     }
     @testCase
     async terror_10() {
-
         // @ts-ignore
         let morph_slider = find("Canvas/ScrollView/view/content").children[8].getChildByName("Slider").getComponent(cc.Slider);
         // @ts-ignore
         morph_slider.progress = 1;
         // @ts-ignore
         find('head/soldier_head_look_up/soldier_head_look_up_Soldier_american_skin_test_0').getComponent('MorphController').onSliderChanged(morph_slider, '0,7');
-
-        // 截图 or 断言
         await screenshot_custom(this._dt);
         // @ts-ignore
         morph_slider.progress = 0;
         // @ts-ignore
         find('head/soldier_head_look_up/soldier_head_look_up_Soldier_american_skin_test_0').getComponent('MorphController').onSliderChanged(morph_slider, '0,7');
-
     }
 
 
 
     @testCase
     async disgust_05() {
-
         // @ts-ignore
         let morph_slider = find("Canvas/ScrollView/view/content").children[9].getChildByName("Slider").getComponent(cc.Slider);
         // @ts-ignore
         morph_slider.progress = 0.5;
         // @ts-ignore
         find('head/soldier_head_look_up/soldier_head_look_up_Soldier_american_skin_test_0').getComponent('MorphController').onSliderChanged(morph_slider, '0,8');
-
-        // 截图 or 断言
         await screenshot_custom(this._dt);
         // @ts-ignore
         morph_slider.progress = 0;
@@ -339,8 +307,6 @@ export class MorphHead {
         morph_slider.progress = 1;
         // @ts-ignore
         find('head/soldier_head_look_up/soldier_head_look_up_Soldier_american_skin_test_0').getComponent('MorphController').onSliderChanged(morph_slider, '0,8');
-
-        // 截图 or 断言
         await screenshot_custom(this._dt);
         // @ts-ignore
         morph_slider.progress = 0;
@@ -352,15 +318,12 @@ export class MorphHead {
 
     @testCase
     async shock_05() {
-
         // @ts-ignore
         let morph_slider = find("Canvas/ScrollView/view/content").children[10].getChildByName("Slider").getComponent(cc.Slider);
         // @ts-ignore
         morph_slider.progress = 0.5;
         // @ts-ignore
         find('head/soldier_head_look_up/soldier_head_look_up_Soldier_american_skin_test_0').getComponent('MorphController').onSliderChanged(morph_slider, '0,9');
-
-        // 截图 or 断言
         await screenshot_custom(this._dt);
         // @ts-ignore
         morph_slider.progress = 0;
@@ -370,14 +333,12 @@ export class MorphHead {
     }
     @testCase
     async shock_10() {
-
         // @ts-ignore
         let morph_slider = find("Canvas/ScrollView/view/content").children[10].getChildByName("Slider").getComponent(cc.Slider);
         // @ts-ignore
         morph_slider.progress = 1;
         // @ts-ignore
         find('head/soldier_head_look_up/soldier_head_look_up_Soldier_american_skin_test_0').getComponent('MorphController').onSliderChanged(morph_slider, '0,9');
-        // 截图 or 断言
         await screenshot_custom(this._dt);
         // @ts-ignore
         morph_slider.progress = 0

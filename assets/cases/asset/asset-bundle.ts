@@ -105,7 +105,7 @@ export class AssetBundle extends Component {
     }
 
     onClickScene () {
-        return new Promise<void>((resovle) => {
+        return new Promise<void>((resovle, reject) => {
             if (this._isLoading) return;
             var testBundle = assetManager.getBundle('TestBundle');
             if (!testBundle) {
@@ -118,12 +118,13 @@ export class AssetBundle extends Component {
             testBundle.loadScene("sub-scene", (err, asset) => {
                 if (err) {
                     log('Error url [' + err + ']');
+                    reject(err);
                     return;
                 }
                 this._isLoading = false;
                 this.loadTips.string = "";
-                director.runScene(asset!, undefined, () => {
-                    resovle();
+                director.runScene(asset!, undefined, (err) => {
+                   err ? reject(err) : resovle();
                 });
             });
         });
