@@ -1,4 +1,3 @@
-
 import { _decorator, Component, Node, ccenum, Input, TiledMap, Vec2, Vec3, view, macro, TiledLayer, input, EventKeyboard, Touch, EventTouch, KeyCode } from 'cc';
 const { ccclass, property } = _decorator;
 
@@ -40,8 +39,6 @@ export class Puzzle extends Component {
     @property
     successObjectName = 'SuccessPoint';
 
-    @property
-    string = '';
 
     @property({type:Node})
     player: Node = null!;
@@ -153,35 +150,6 @@ export class Puzzle extends Component {
         this._isMapLoaded = true;
     }
 
-    simulateMove (keyCode: number) {
-        if (!this._isMapLoaded || this._succeedLayer.active) return;
-    
-        const newTile = new Vec2(this._curTile.x, this._curTile.y);
-        let mapMoveDir = MoveDirection.NONE;
-        switch (keyCode) {
-            case 1:
-                newTile.y -= 1;
-                mapMoveDir = MoveDirection.UP;
-                break;
-            case 2:
-                newTile.y += 1;
-                mapMoveDir = MoveDirection.DOWN;
-                break;
-            case 3:
-                newTile.x -= 1;
-                mapMoveDir = MoveDirection.RIGHT;
-                break;
-            case 4:
-                newTile.x += 1;
-                mapMoveDir = MoveDirection.LEFT;
-                break;
-            default:
-                return;
-        }
-    
-        this._tryMoveToNewTile(newTile, mapMoveDir);
-    }
-
     _initMapPos () {
         this.node.setPosition(0, 0);
     }
@@ -235,7 +203,7 @@ export class Puzzle extends Component {
         if (newTile.y < 0 || newTile.y >= mapSize.height) return;
 
         if (this._layerBarrier.getTileGIDAt(newTile.x, newTile.y) as unknown as any) {
-            this.string='This way is blocked!'
+            console.log('This way is blocked!');
             return false;
         }
 
