@@ -19,10 +19,10 @@ export class ReplaceSlotDisplay {
             find('Canvas')!.getComponent('ReplaceSlotDisplay')!.right();
             await screenshot_custom_by_wait(this._dt);
             // @ts-ignore
-            find('Canvas')!.getComponent('ReplaceSlotDisplay')!.right();
+            find('Canvas')!.getComponent('ReplaceSlotDisplay')!.left();
             await screenshot_custom_by_wait(this._dt);
             // @ts-ignore
-            find('Canvas')!.getComponent('ReplaceSlotDisplay')!.left();
+            find('Canvas')!.getComponent('ReplaceSlotDisplay')!.right();
             await screenshot_custom_by_wait(this._dt);
         } else {
             console.error('【TestCaseScript】 ReplaceSlotDisplay scene is error,can not find Canvas Node')
