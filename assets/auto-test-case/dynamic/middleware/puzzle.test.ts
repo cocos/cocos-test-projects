@@ -50,7 +50,7 @@ export class Puzzle {
     async play_block() {
         this.move(KeyCode.ARROW_LEFT);
         //@ts-ignore
-        if(this.puzzle.blockedValue = 'This way is blocked!'){
+        if(this.puzzle?.isBlocked){
             await screenshot_custom(this._dt);
         }
     }
