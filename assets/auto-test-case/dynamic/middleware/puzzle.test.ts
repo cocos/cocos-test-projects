@@ -36,13 +36,13 @@ export class Puzzle {
 
     @testCase
     async play_right() {
-        this.move(KeyCode.ARROW_RIGHT)
+        this.move(KeyCode.ARROW_RIGHT);
         await screenshot_custom(this._dt);
     }
 
     @testCase
     async play_left() {
-        this.move(KeyCode.ARROW_LEFT)
+        this.move(KeyCode.ARROW_LEFT);
         await screenshot_custom(this._dt);
     }
 
@@ -158,7 +158,7 @@ export class Puzzle {
             await sleep(2);
             await screenshot_custom(this._dt);
         }else{
-            console.error(`【script error】className:${Puzzle.name},functionName:${this.playing.name} can't find restartBtn`)
+            console.error(`【script error】className:${Puzzle.name},functionName:${this.playing.name} can't find restartBtn`);
         }
     }
 
