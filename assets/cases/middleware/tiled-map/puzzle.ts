@@ -39,6 +39,9 @@ export class Puzzle extends Component {
     @property
     successObjectName = 'SuccessPoint';
 
+    @property
+    blockedValue = '';
+
 
     @property({type:Node})
     player: Node = null!;
@@ -203,7 +206,7 @@ export class Puzzle extends Component {
         if (newTile.y < 0 || newTile.y >= mapSize.height) return;
 
         if (this._layerBarrier.getTileGIDAt(newTile.x, newTile.y) as unknown as any) {
-            console.log('This way is blocked!');
+            this.blockedValue = 'This way is blocked!'
             return false;
         }
 

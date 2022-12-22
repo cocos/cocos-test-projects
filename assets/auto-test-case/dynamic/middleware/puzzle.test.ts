@@ -14,7 +14,7 @@ export class Puzzle {
     @beforeClass
     async initData(){
         //@ts-ignore
-        this.puzzle = find("Canvas/wrapper/map").getComponent("Puzzle")
+        this.puzzle = find("Canvas/wrapper/map").getComponent("Puzzle");
     }
 
     @testCase
@@ -50,7 +50,7 @@ export class Puzzle {
     async play_block() {
         this.move(KeyCode.ARROW_LEFT)
         //@ts-ignore
-        if(this.puzzle._layerBarrier.getTileGIDAt(newTile.x, newTile.y) as unknown as any){
+        if(this.puzzle.blockedValue = 'This way is blocked!'){
             await screenshot_custom(this._dt);
         }
     }
