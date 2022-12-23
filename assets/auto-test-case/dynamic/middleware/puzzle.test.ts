@@ -11,14 +11,16 @@ export class Puzzle {
     _dt = 10;
     puzzle: PuzzleObj | undefined;
 
-    @beforeClass
-    async initData(){
-        //@ts-ignore
-        this.puzzle = find("Canvas/wrapper/map").getComponent("Puzzle");
-    }
+    // @beforeClass
+    // async initData(){
+    //     //@ts-ignore
+    //     this.puzzle = find("Canvas/wrapper/map").getComponent("Puzzle");
+    // }
 
     @testCase
     async startPlay() {
+        //@ts-ignore
+        this.puzzle = find("Canvas/wrapper/map").getComponent("Puzzle");
         await screenshot_custom(this._dt);
     }
 
@@ -172,10 +174,13 @@ export class Puzzle {
 
     move(key:KeyCode){
         //UP = 1, DOWN = 2, LEFT = 3, RIGHT = 4
-        //@ts-ignore
-        this.puzzle._onKeyPressed(new EventKeyboard(key));
+        if(this.puzzle){
+            //@ts-ignore
+            this.puzzle._onKeyPressed(new EventKeyboard(key));
+        }else{
+            console.log('puzzle object is undefined')
+        }
     }
-
 
     restartGame(){
         //@ts-ignore

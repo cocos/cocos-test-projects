@@ -39,7 +39,7 @@ export class Puzzle extends Component {
     @property
     successObjectName = 'SuccessPoint';
 
-    @property({ type: Boolean })
+    @property
     isBlocked = false;
 
 
