@@ -178,7 +178,7 @@ export class Puzzle {
             //@ts-ignore
             this.puzzle._onKeyPressed(new EventKeyboard(key));
         }else{
-            console.log('puzzle object is undefined')
+            console.warn('puzzle object is undefined');
         }
     }
 
