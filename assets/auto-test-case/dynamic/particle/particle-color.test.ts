@@ -4,7 +4,7 @@ import { runScene, testCase, testClass } from 'db://automation-framework/runtime
 import { screenshot_custom_by_wait } from '../common/utils';
 
 @runScene('particle-color')
-//@testClass('ParticleColor')
+@testClass('ParticleColor')
 export class ParticleColor {
   _dt = 19;
 
