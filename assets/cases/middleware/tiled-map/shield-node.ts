@@ -25,7 +25,7 @@ export class ShieldNode extends Component {
             const shieldNode = instantiate(prefab);
             shieldNode.setPosition(posArr[i].x, posArr[i].y);
             this.tiledLayer!.addUserNode(shieldNode);
-            this.shieldNodeMap .set(i,shieldNode)
+            this.shieldNodeMap.set(i,shieldNode);
             shieldNode.on(Node.EventType.TOUCH_MOVE, (event:EventTouch) => {
                 const deltaMove = event.getUIDelta();
                 shieldNode.getPosition(tmpP);
@@ -39,5 +39,9 @@ export class ShieldNode extends Component {
     setShieldNodePosition(index : number, vec : Vec3){
         let node : Node | undefined = this.shieldNodeMap.get(index);
         node!.setPosition(vec);
+    }
+
+    onDestroy(){
+        this.shieldNodeMap.clear();
     }
 }
