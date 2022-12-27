@@ -64,14 +64,13 @@ export class BoxesBatched {
 
     @testCase
     async bigScales(){
-        await this.onMouseWheel(500);
-        
+        this.onMouseWheel(600);
         await screenshot_custom_by_wait(this._dt*10);
     }
 
     @testCase
     async mallScale(){
-        await this.onMouseWheel(-500); 
+        this.onMouseWheel(-500); 
         //负数为缩小，正数为放大
         await screenshot_custom_by_wait(this._dt*10);
     }
