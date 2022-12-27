@@ -15,10 +15,10 @@ export class Bmfont {
 
     @testCase
     async returnOneGold() {
-        for(let i=0;i<11;i++){
+        for(let i=0; i<11; i++){
             //@ts-ignore
-            find('Canvas/gold').getComponent('gold').onButton()
-            await screenshot_custom(this._dt)
+            find('Canvas/gold').getComponent('gold').onButton();
+            await screenshot_custom(this._dt);
         }
        
     }

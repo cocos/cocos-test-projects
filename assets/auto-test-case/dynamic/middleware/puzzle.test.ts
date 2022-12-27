@@ -16,7 +16,7 @@ export class Puzzle {
         //@ts-ignore
         this.puzzle = find("Canvas/wrapper/map").getComponent("Puzzle");
         if(!this.puzzle){
-            await sleep(5)
+            await sleep(5);
             //@ts-ignore
             this.puzzle = find("Canvas/wrapper/map").getComponent("Puzzle");
         }
