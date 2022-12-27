@@ -16,16 +16,16 @@ export class Camera {
 
     @testCase
     async play() {
-        await screenshot_custom_by_wait(30)
+        await screenshot_custom_by_wait(this._dt/2 + 1);
     }
 
     @testCase
     async playFlipFirst() {
-        await screenshot_custom_by_wait(33)
+        await screenshot_custom_by_wait(33);
     }
 
     @testCase
     async playFlipTwo() {
-        await screenshot_custom_by_wait(3)
+        await screenshot_custom_by_wait(3);
     }
 }

@@ -7,10 +7,7 @@ import { screenshot_custom ,screenshot_custom_by_wait} from '../common/utils';
 export class CoordinateUiUi {
     _dt = 13;
 
-    @testCase
-    async index(){
-        await screenshot_custom();
-    }
+
     @testCase
     async increase() {
         for (let i = 0; i < 3; i++) {

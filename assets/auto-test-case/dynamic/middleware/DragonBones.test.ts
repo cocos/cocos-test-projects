@@ -1,142 +1,138 @@
 import { find } from 'cc';
 // @ts-ignore
-import { captureOneImage, runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
-import { screenshot_custom } from '../common/utils';
+import { runScene, testCase, testClass, sleep, beforeClass } from 'db://automation-framework/runtime/test-framework.mjs';
+import DragonBonesCtrl from '../../../cases/middleware/dragonbones/DragonBonesCtrl';
+import { simulateTouchStart, simulateTouchEnd } from '../common/SimulateEvent';
+import { screenshot_custom_by_wait } from '../common/utils';
+
 
 @runScene('DragonBones')
-// @testClass('DragonBones')
+@testClass('DragonBones')
 export class DragonBones {
     _dt = 30;
+    dragonBonesCtrl!: DragonBonesCtrl | null;
+
+    @beforeClass
+    async initData(){
+        //@ts-ignore
+        this.dragonBonesCtrl = find('Canvas/Node')!.getComponent('DragonBonesCtrl');
+        if(!this.dragonBonesCtrl){
+            await sleep(5);
+            //@ts-ignore
+            this.dragonBonesCtrl = find('Canvas/Node')!.getComponent('DragonBonesCtrl');
+        }
+    }
 
     @testCase
     async switchSkin() {
         for (let index = 0; index < 4; index++) {
-            // @ts-ignore
-            find('Canvas/Node')!.getComponent('DragonBonesCtrl')!.switchSkin();
-            await screenshot_custom(this._dt);
+            this.dragonBonesCtrl!.switchSkin();
+            await screenshot_custom_by_wait(this._dt);
         };
     };
 
     @testCase
     async switchWeaponL() {
         for (let index = 0; index < 5; index++) {
-            // @ts-ignore
-            find('Canvas/Node')!.getComponent('DragonBonesCtrl')!.switchWeaponL();
-            await screenshot_custom(5);
+            this.dragonBonesCtrl!.switchWeaponL();
+            await screenshot_custom_by_wait(this._dt);
         };
     };
 
     @testCase
     async switchWeaponR() {
         for (let index = 0; index < 5; index++) {
-            // @ts-ignore
-            find('Canvas/Node')!.getComponent('DragonBonesCtrl')!.switchWeaponR();
-            await screenshot_custom(5);
+            this.dragonBonesCtrl!.switchWeaponR();
+            await screenshot_custom_by_wait(this._dt);
         };
     };
 
     @testCase
     async jump() {
-        // @ts-ignore
-        find('Canvas/Node')!.getComponent('DragonBonesCtrl')!.jump();
+        this.dragonBonesCtrl!.jump();
         for (let i = 0; i < 2; i++) {
-            await screenshot_custom(this._dt);
+            await screenshot_custom_by_wait(this._dt);
         }
     };
 
+
+    @testCase
+    async moveDown() {
+        this.dragonBonesCtrl!.squat(true);
+        for (let i = 0; i < 2; i++) {
+            await screenshot_custom_by_wait(this._dt);
+        }
+    }
+
     @testCase
     async moveRight() {
-        // @ts-ignore
-        find('Canvas/Node')!.getComponent('DragonBonesCtrl')!.move(1);
+        this.dragonBonesCtrl!.move(1);
         for (let i = 0; i < 2; i++) {
-            await screenshot_custom(this._dt);
+            await screenshot_custom_by_wait(this._dt);
         }
     }
 
     @testCase
     async moveLeft() {
-        // @ts-ignore
-        find('Canvas/Node')!.getComponent('DragonBonesCtrl')!.move(-1);
+        this.dragonBonesCtrl!.move(-1);
         for (let i = 0; i < 2; i++) {
-            await screenshot_custom(this._dt);
-        }
-    }
-
-    @testCase
-    async moveDown() {
-        // @ts-ignore
-        find('Canvas/Node')!.getComponent('DragonBonesCtrl')!.squat(true);
-        for (let i = 0; i < 2; i++) {
-            await screenshot_custom(this._dt);
+            await screenshot_custom_by_wait(this._dt);
         }
     }
 
     @testCase
     async attack() {
-        // @ts-ignore
-        find('Canvas/Node')!.getComponent('DragonBonesCtrl')!.attack(true);
+        this.dragonBonesCtrl!.attack(true);
         for (let i = 0; i < 2; i++) {
-            await screenshot_custom(this._dt);
+            await screenshot_custom_by_wait(this._dt);
         }
     }
 
     @testCase
     async attackStop() {
-        // @ts-ignore
-        find('Canvas/Node')!.getComponent('DragonBonesCtrl')!.attack(false);
+        this.dragonBonesCtrl!.attack(false);
         for (let i = 0; i < 2; i++) {
-            await screenshot_custom(this._dt);
+            await screenshot_custom_by_wait(this._dt);
         }
     }
 
-
-
+    
     @testCase
     async aim_up() {
-        // @ts-ignore
-        find('Canvas/Node')!.getComponent('DragonBonesCtrl')!.simulateTouchStart(468, 550)
-        // // @ts-ignore
-        // find('Canvas/Node')!.getComponent('DragonBonesCtrl')!.attack(true);
+        simulateTouchStart(521.7500007152557, 778.75, this.dragonBonesCtrl?.touchHandler!);
         for (let i = 0; i < 2; i++) {
-            await screenshot_custom(7);
+            await screenshot_custom_by_wait(this._dt);
         }
-        // @ts-ignore
-        find('Canvas/Node')!.getComponent('DragonBonesCtrl')!.simulateTouchEnd()
+        simulateTouchEnd(this.dragonBonesCtrl?.touchHandler!);
     }
 
     @testCase
     async aim_done() {
-        // @ts-ignore
-        find('Canvas/Node')!.getComponent('DragonBonesCtrl')!.simulateTouchStart(500, 10)
-        // @ts-ignore
-        find('Canvas/Node')!.getComponent('DragonBonesCtrl')!.jump();
+        simulateTouchStart(619.2500007152557, 12.5, this.dragonBonesCtrl?.touchHandler!);
+        // why jump, done aim it is not easy to see the difference,that's why add jump
+        this.dragonBonesCtrl!.jump();  
         for (let i = 0; i < 2; i++) {
-            await screenshot_custom(7);
+            await screenshot_custom_by_wait(this._dt);
         }
-        // @ts-ignore
-        find('Canvas/Node')!.getComponent('DragonBonesCtrl')!.simulateTouchEnd()
+        simulateTouchEnd(this.dragonBonesCtrl?.touchHandler!);
     }
 
     @testCase
     async aim_left() {
-        // @ts-ignore
-        find('Canvas/Node')!.getComponent('DragonBonesCtrl')!.simulateTouchStart(64, 271)
+        simulateTouchStart(50.50000071525574, 432.5, this.dragonBonesCtrl?.touchHandler!);
         for (let i = 0; i < 2; i++) {
-            await screenshot_custom(7);
+            await screenshot_custom_by_wait(this._dt);
         }
-        // @ts-ignore
-        find('Canvas/Node')!.getComponent('DragonBonesCtrl')!.simulateTouchEnd()
+        simulateTouchEnd(this.dragonBonesCtrl?.touchHandler!);
     }
 
     @testCase
     async aim_right() {
-        // @ts-ignore
-        find('Canvas/Node')!.getComponent('DragonBonesCtrl')!.aim(900, 300);
+        simulateTouchStart(1153.0000007152557, 472.5, this.dragonBonesCtrl?.touchHandler!);
         for (let i = 0; i < 2; i++) {
-            await screenshot_custom(7);
+            await screenshot_custom_by_wait(this._dt);
         }
-        // @ts-ignore
-        find('Canvas/Node')!.getComponent('DragonBonesCtrl')!.simulateTouchEnd()
+        simulateTouchEnd(this.dragonBonesCtrl?.touchHandler!);
     }
 }
 

@@ -1,6 +1,6 @@
 // @ts-ignore
 import { captureOneImage, runScene, sleep, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
-import { screenshot_custom } from '../common/utils';
+import { screenshot_custom, screenshot_custom_by_wait } from '../common/utils';
 
 @runScene('tween-repeat-forever')
 @testClass('TweenRepeatForever')
@@ -21,7 +21,7 @@ export class TweenRepeatForever {
 
     @testCase
     async end() {
-        await screenshot_custom(this._dt * 200);
+        await screenshot_custom_by_wait(this._dt * 150);
     }
 }
 
