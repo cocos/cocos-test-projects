@@ -13,6 +13,15 @@ export class Toggle{
     async start(){
        await screenshot_custom(this._dt);
     }
+    @testCase
+    async transition(){
+        //@ts-ignore
+        this.findComponentAndSetValue("Canvas/toggle-transition-none","cc.Toggle",false);
+        //@ts-ignore
+        this.findComponentAndSetValue("Canvas/toggle-transition-color","cc.Toggle",false);
+        await screenshot_custom(this._dt);
+    }
+
 
     @testCase
     async allFalse(){
@@ -43,26 +52,26 @@ export class Toggle{
     @testCase
     async toggleContainerNormal(){
         //@ts-ignore
-        this.findComponentAndSetValue("Canvas/toggle-container-normal/Toggle1","cc.Toggle",true);
-        await screenshot_custom(this._dt);
-        //@ts-ignore
         this.findComponentAndSetValue("Canvas/toggle-container-normal/Toggle2","cc.Toggle",true);
         await screenshot_custom(this._dt);
         //@ts-ignore
         this.findComponentAndSetValue("Canvas/toggle-container-normal/Toggle3","cc.Toggle",true);
+        await screenshot_custom(this._dt);
+        //@ts-ignore
+        this.findComponentAndSetValue("Canvas/toggle-container-normal/Toggle1","cc.Toggle",true);
         await screenshot_custom(this._dt);
     }
 
     @testCase
     async toggleContainerAllSwitchOff(){
         //@ts-ignore
-        this.findComponentAndSetValue("Canvas/toggle-container-AllowSwitchOff/Toggle1","cc.Toggle",true);
-        await screenshot_custom(this._dt);
-        //@ts-ignore
         this.findComponentAndSetValue("Canvas/toggle-container-AllowSwitchOff/Toggle2","cc.Toggle",true);
         await screenshot_custom(this._dt);
         //@ts-ignore
         this.findComponentAndSetValue("Canvas/toggle-container-AllowSwitchOff/Toggle3","cc.Toggle",true);
+        await screenshot_custom(this._dt);
+        //@ts-ignore
+        this.findComponentAndSetValue("Canvas/toggle-container-AllowSwitchOff/Toggle1","cc.Toggle",true);
         await screenshot_custom(this._dt);
     }
 

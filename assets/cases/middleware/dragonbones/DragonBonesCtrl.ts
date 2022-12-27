@@ -332,21 +332,6 @@ export default class DragonBonesCtrl extends Component {
         this._bullets.push(bullet);
     }
 
-    simulateTouchStart(x: number, y: number) {
-        this._mouseDown_ = true;           
-        this.aim(x, y);
-        this.attack(true);
-    }
-
-    simulateTouchMove(x: number, y: number) {
-        this.aim(x, y);
-    }
-    
-    simulateTouchEnd() {
-        this._mouseDown_ = false;
-        this.attack(false);
-    }
-
     _enterFrameHandler (dt: any) {
         for (var i = this._bullets.length - 1; i >= 0; i--) {
             var bullet = this._bullets[i];

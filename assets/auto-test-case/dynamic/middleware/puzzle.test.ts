@@ -11,16 +11,21 @@ export class Puzzle {
     _dt = 10;
     puzzle: PuzzleObj | undefined;
 
-    // @beforeClass
-    // async initData(){
-    //     //@ts-ignore
-    //     this.puzzle = find("Canvas/wrapper/map").getComponent("Puzzle");
-    // }
+    @beforeClass
+    async initData(){
+        //@ts-ignore
+        this.puzzle = find("Canvas/wrapper/map").getComponent("Puzzle");
+        if(!this.puzzle){
+            await sleep(5)
+            //@ts-ignore
+            this.puzzle = find("Canvas/wrapper/map").getComponent("Puzzle");
+        }
+    }
 
     @testCase
     async startPlay() {
-        //@ts-ignore
-        this.puzzle = find("Canvas/wrapper/map").getComponent("Puzzle");
+        // //@ts-ignore
+        // this.puzzle = find("Canvas/wrapper/map").getComponent("Puzzle");
         await screenshot_custom(this._dt);
     }
 
