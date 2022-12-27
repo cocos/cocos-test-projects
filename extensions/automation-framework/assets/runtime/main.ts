@@ -7,17 +7,15 @@
 import { Game, game } from 'cc';
 import { EDITOR } from 'cc/env';
 // @ts-ignore
-import { Runner } from 'db://automation-framework/runtime/test-framework.mjs';
+import { runner } from 'db://automation-framework/runtime/test-framework.mjs';
 
 /**
  *  注册监听游戏事件
  */
 game.on(Game.EVENT_GAME_INITED, () => {
-    game.onStart = () => {
-        if (!EDITOR) {
-            Runner.run();
-        }
-    };
+    // game.onStart = () => {
+    if (!EDITOR) {
+        runner.run();
+    }
+    // };
 }, this);
-
-
