@@ -4,7 +4,6 @@ const { ccclass, property } = _decorator;
 
 const vec_3 = new Vec3();
 
-
 @ccclass('ShieldNode')
 export class ShieldNode extends Component {
 
@@ -23,7 +22,6 @@ export class ShieldNode extends Component {
 
     initScene (prefab: Prefab) {
         const posArr = [v2(-249, 96), v2(-150, 76), v2(-60, 54), v2(-248, -144), v2(-89, -34)];
-        const tmpP = new Vec3();
         for (let i = 0; i < posArr.length; i++) {
             const shieldNode = instantiate(prefab);
             shieldNode.setPosition(posArr[i].x, posArr[i].y);
@@ -48,7 +46,6 @@ export class ShieldNode extends Component {
     }
 
     onTouchMove(shieldNode: Node, event: EventTouch){
-        console.log('onTouchMove',shieldNode);
         const deltaMove = event.getUIDelta();
         shieldNode.getPosition(vec_3);
         vec_3.x += deltaMove.x;
