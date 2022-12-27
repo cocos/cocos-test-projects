@@ -14,7 +14,7 @@ export class setMipRange{
         await screenshot_custom_by_wait();
         this._totalFrames = director.getTotalFrames();
         for (let i = 0; i < 3; i++) {
-            await screenshot_custom_by_wait(this._dt*(i+1)+this._totalFrames-director.getTotalFrames());
+            await screenshot_custom_by_wait(this._dt * (i + 1) + this._totalFrames - director.getTotalFrames());
         }
     }
 }

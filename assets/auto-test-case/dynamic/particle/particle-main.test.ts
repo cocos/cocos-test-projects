@@ -1,7 +1,7 @@
 import { find, Button, Vec3 } from 'cc';
 // @ts-ignore
 import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
-import { screenshot_custom_by_wait } from '../common/utils';
+import { screenshot_custom_by_wait, mouse_wheel_by_delta } from '../common/utils';
 
 @runScene('particle-main')
 @testClass('ParticleMain')
@@ -26,27 +26,15 @@ export class ParticleMain {
 
         // move after the text appears
         //@ts-ignore
-        find('Camera').getComponent('first-person-camera')._euler = {x: 19.1, y: 2.0, z: 0}
+        let _camera = find('Camera').getComponent('first-person-camera');
+        //@ts-ignore
+        _camera._euler = {x: 19.1, y: 2.0, z: 0}
         await screenshot_custom_by_wait(this._dt);
 
-        await this.onMouseWheel(-10);
+        mouse_wheel_by_delta(-10, _camera);
         await screenshot_custom_by_wait(this._dt);
 
-        await this.onMouseWheel(30);
+        mouse_wheel_by_delta(30, _camera);
         await screenshot_custom_by_wait(this._dt);
     }
-
-    // zoom
-    public onMouseWheel (delta=1) {
-        return new Promise((resolve, reject)=>{
-        let _self = find('Camera')!.getComponent('first-person-camera')!;
-        const v3_1 = new Vec3();
-        Vec3.transformQuat(v3_1, Vec3.UNIT_Z, _self.node.rotation);
-        // @ts-ignore
-        Vec3.scaleAndAdd(_self._position, _self.node.position, v3_1, delta);
-        resolve("ok")
-        });
-    
-    }
-
 }

@@ -10,7 +10,8 @@ export class SpineCollider {
 
     @testCase
     async startPlay() {
-        for (let i = 0; i < 5; i++) {
+        await screenshot_custom_by_wait();
+        for (let i = 0; i < 4; i++) {
             await screenshot_custom_by_wait(this._dt);
         };
     }
