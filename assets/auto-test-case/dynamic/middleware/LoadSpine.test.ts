@@ -30,7 +30,7 @@ export class LoadSpine {
     async play() {
         await screenshot_custom_by_wait(this._dt * 2);
         await this.loadResource();
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 3; i++) {
             await screenshot_custom_by_wait(this._dt * 2);
         }
     }
