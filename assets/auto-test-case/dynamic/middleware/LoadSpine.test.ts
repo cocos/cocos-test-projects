@@ -1,7 +1,7 @@
 import { _decorator, loader, sp, find } from 'cc';
 // @ts-ignore
-import { captureOneImage, runScene, sleep, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
-import { screenshot_custom } from '../common/utils';
+import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
+import { screenshot_custom_by_wait } from '../common/utils';
 
 @runScene('LoadSpine')
 @testClass('LoadSpine')
@@ -28,10 +28,10 @@ export class LoadSpine {
     }
     @testCase
     async play() {
-        await screenshot_custom();
+        await screenshot_custom_by_wait(this._dt * 2);
         await this.loadResource();
-        for (let i = 0; i < 4; i++) {
-            await screenshot_custom(this._dt * 2);
+        for (let i = 0; i < 3; i++) {
+            await screenshot_custom_by_wait(this._dt * 2);
         }
     }
     

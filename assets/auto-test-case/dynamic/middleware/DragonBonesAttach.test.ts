@@ -1,12 +1,34 @@
 import { Button, find, Component } from 'cc';
 // @ts-ignore
 import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
-import { screenshot_custom } from '../common/utils';
+import { screenshot_custom_by_wait } from '../common/utils';
 
 @runScene('DragonBonesAttach')
 @testClass('DragonBonesAttach')
 export class DragonBonesAttach {
-    _delay = 0.1
+    _dt = 20;
+    @testCase
+    async startPlay(){
+        await screenshot_custom_by_wait(this._dt);
+        // add all
+        find('Canvas/ctrl/Button-004')!.getComponent(Button)?.clickEvents[0].emit([]);
+        await screenshot_custom_by_wait(this._dt);
+        // del green
+        find('Canvas/ctrl/Button-002')!.getComponent(Button)?.clickEvents[0].emit([]);
+        await screenshot_custom_by_wait(this._dt);
+        // add green
+        find('Canvas/ctrl/Button-003')!.getComponent(Button)?.clickEvents[0].emit([]);
+        await screenshot_custom_by_wait(this._dt);
+        // clikck cache
+        find('Canvas/ctrl/Button-001')!.getComponent(Button)?.clickEvents[0].emit([]);
+        await screenshot_custom_by_wait(this._dt);
+        // clikck realtime
+        find('Canvas/ctrl/Button-001')!.getComponent(Button)?.clickEvents[0].emit([]);
+        await screenshot_custom_by_wait(this._dt);
+        // del all
+        find('Canvas/ctrl/delete all')!.getComponent(Button)?.clickEvents[0].emit([]);
+        await screenshot_custom_by_wait(this._dt);
+    }
 
     /**
     @testCase
@@ -36,8 +58,8 @@ export class DragonBonesAttach {
         find('Canvas/dragonTest')!.getComponent('DragonBonesAttach')!.destroySomeNodes();
         await screenshot_custom();
     };
-     */
-
+     
+    
     @testCase
     async cacheNodes() {
         // Show all stars
@@ -72,4 +94,5 @@ export class DragonBonesAttach {
         find('Canvas/ctrl/Button-002')!.getComponent(Button)?.clickEvents[0].emit([]);
         await screenshot_custom();
     }
+    */
 }

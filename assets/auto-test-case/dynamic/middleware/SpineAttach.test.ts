@@ -1,4 +1,4 @@
-import { Button, find } from 'cc';
+import { Button, director, find } from 'cc';
 // @ts-ignore
 import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom_by_wait } from '../common/utils';
@@ -8,16 +8,16 @@ import { screenshot_custom_by_wait } from '../common/utils';
 export class SpineAttach {
     _delay = 2;
     _dt = 20;
+    _totalFrames = 0;
 
     @testCase
     async cacheNodes1() {
-        // click the cache button 2 times
+        this._totalFrames = director.getTotalFrames();
+        // click the cache button
         find('Canvas/Node-001/toggle cache')!.getComponent(Button)?.clickEvents[0].emit([]);
-        //screenshot now
-        await screenshot_custom_by_wait();
-         //each 20dt, take another screenshot
-        for (let i = 0; i < 2; i++) { 
-            await screenshot_custom_by_wait(this._dt); 
+        for (let i = 0; i < 3; i++) { //each 20dt, take another screenshot
+            await screenshot_custom_by_wait(this._dt*(i+1) + this._totalFrames - director.getTotalFrames()); 
+
         };
     }
 
@@ -25,11 +25,8 @@ export class SpineAttach {
     async cacheNodes2() {
         // click the cache button 2 times
         find('Canvas/Node-001/toggle cache')!.getComponent(Button)?.clickEvents[0].emit([]);
-        // screenshot now
-        await screenshot_custom_by_wait();
-        //each 20dt, take another screenshot
-        for (let i = 0; i < 2; i++) { 
-            await screenshot_custom_by_wait(this._dt); 
+        for (let i = 0; i < 3; i++) { //each 20dt, take another screenshot
+            await screenshot_custom_by_wait(this._dt*(i+4) + this._totalFrames - director.getTotalFrames()); 
         };
     }
 
@@ -37,11 +34,9 @@ export class SpineAttach {
     async attachNodes() {
         // click attach button
         find('Canvas/Node-001/toggle attach')!.getComponent(Button)?.clickEvents[0].emit([]);
-        // screenshot now
-        await screenshot_custom_by_wait();
-        //each 20dt, take another screenshot
-        for (let i = 0; i < 2; i++) {
-            await screenshot_custom_by_wait(this._dt); 
+        for (let i = 0; i < 3; i++) { //each 20dt, take another screenshot
+            let xx = this._dt*(i+7) + this._totalFrames - director.getTotalFrames();
+            await screenshot_custom_by_wait(xx); 
         };
     }
 
