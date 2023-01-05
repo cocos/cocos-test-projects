@@ -15,7 +15,7 @@ export class ShieldNode extends Component {
     private shieldNodeMap: Map<number, Node> = new Map();
 
     start () {
-       this.initScene(this.nodePrefab!);
+        this.initScene(this.nodePrefab!);
     }
 
     initScene (prefab: Prefab) {
