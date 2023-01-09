@@ -54,7 +54,7 @@ export class TouchEvent {
         this.touchEvent?.onTouchMove(eventOne);
         const eventTwo = simulateTouchStart(705.8749961853027, 287.3750114440918);
         this.touchEvent?.onTouchMove(eventTwo);
-        this.touchEvent!.onTouchCancel(eventOne)
+        this.touchEvent!.onTouchCancel(eventOne);
         this.touchEvent!.onTouchCancel(eventTwo);
         await screenshot_custom_by_wait();
     }
