@@ -31,7 +31,7 @@ export class EventInfo {
     async touchStart() {
        const event= simulateTouchStart(545.87, 289.63);
         //@ts-ignore
-        this.eventInfo?._touchStart(event);
+        this.eventInfo!._touchStart(event);
         await screenshot_custom_by_wait();
     }
 
@@ -39,20 +39,20 @@ export class EventInfo {
     async touchMove() {
         const event= simulateTouchStart(559.375, 420.12500762939453);
         //@ts-ignore
-        this.eventInfo?._touchMove(event);
+        this.eventInfo!._touchMove(event);
         await screenshot_custom_by_wait();
-        this.eventInfo?._touchEnd();
+        this.eventInfo!._touchEnd();
         await screenshot_custom_by_wait();
     }
 
 
     @testCase
     async mouseMove(){
-        this.mouse?.setLocation(350,450); 
-        this.eventInfo?._mouseMove(this.mouse!);
+        this.mouse!.setLocation(350,450); 
+        this.eventInfo!._mouseMove(this.mouse!);
         await screenshot_custom_by_wait();
         this.mouse!.setLocation(0,0);
-        this.eventInfo?._mouseUp();
+        this.eventInfo!._mouseUp();
         await screenshot_custom_by_wait(); 
     }
 }

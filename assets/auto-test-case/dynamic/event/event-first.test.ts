@@ -36,23 +36,23 @@ export class EventFirst {
     @testCase
     async clickButton() {
         //@ts-ignore
-        this.button?.clickEvents[0].emit();
+        this.button!.clickEvents[0].emit();
         await screenshot_custom_by_wait();
     }
 
     @testCase
     async touchStart(){
         const event = simulateTouchStart(507.1250009536743, 338.6250114440918);
-        this.eventFirst?.onTouchStart(event);
+        this.eventFirst!.onTouchStart(event);
         await screenshot_custom_by_wait();
     }
 
     @testCase
     async touchMoveAndTouchEnd(){
         const eventOne = simulateTouchStart(507.1250009536743, 338.6250114440918);
-        this.eventFirst?.onTouchMove(eventOne);
+        this.eventFirst!.onTouchMove(eventOne);
         const eventTwo = simulateTouchStart(534.6250009536743, 259.12500381469727);
-        this.eventFirst?.onTouchMove(eventTwo);
+        this.eventFirst!.onTouchMove(eventTwo);
         await screenshot_custom_by_wait();
         this.eventFirst!.onTouchEnd(eventOne);
         this.eventFirst!.onTouchEnd(eventTwo);
@@ -63,9 +63,9 @@ export class EventFirst {
     @testCase
     async touchMoveAndTouchCancel(){
         const eventOne = simulateTouchStart(453.37499618530273, 407.3750114440918);
-        this.eventFirst?.onTouchMove(eventOne);
+        this.eventFirst!.onTouchMove(eventOne);
         const eventTwo = simulateTouchStart(705.8749961853027, 287.3750114440918);
-        this.eventFirst?.onTouchMove(eventTwo);
+        this.eventFirst!.onTouchMove(eventTwo);
         this.eventFirst!.onTouchCancel(eventOne);
         this.eventFirst!.onTouchCancel(eventTwo);
         await screenshot_custom_by_wait();
