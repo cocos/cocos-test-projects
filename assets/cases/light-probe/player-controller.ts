@@ -29,7 +29,7 @@ export class PlayerController extends Component {
     private _forward = new Vec3(1, 0, 0);
     private _eulerAngle = new Vec3(0, 0, 0);
     private _speed = 0.1;
-    private _followDelta = new Vec3(-15, 10, 0);
+    private _followDelta = new Vec3(-15, 8, 0);
     private _minWalkPos = new Vec3(-100, 0, -50);
     private _maxWalkPos = new Vec3(100, 30, 45);
 
@@ -96,12 +96,12 @@ export class PlayerController extends Component {
         this.setPlayerRotation(dir);
         this.setPlayerForward(dir);
 
-        this._animation.crossFade("cocos_anim_walk", 0.3);
+        this._animation.crossFade("Take 001", 0.3);
         this._isWalking = true;
     }
 
     private stopWalking() {
-        this._animation.crossFade("cocos_anim_idle", 0.3);
+        this._animation.stop();
         this._isWalking = false;
     }
 
