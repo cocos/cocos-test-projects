@@ -1,39 +1,52 @@
 
-import { Camera, director, math, physics, Vec3 } from 'cc';
+import { Camera, game, director, math, physics, Vec3 } from 'cc';
 // @ts-ignore
 import { captureOneImage, waitForNextFrame } from 'db://automation-framework/runtime/test-framework.mjs';
 
 export async function screenshot_custom(dt?: number, imageName?: string) {
-    const frame_time = physics.PhysicsSystem.instance.fixedTimeStep;
-    if (dt) {
-        for (let i = 0; i < dt; i++) {
-            director.tick(physics.PhysicsSystem.instance.fixedTimeStep);
-        }
-    } else {
-        director.tick(frame_time);
-    }
-    //director.tick(frame_time);
-    director.pause();
-    await captureOneImage(imageName);
-    director.resume();
+    await screenshot(dt, imageName);
+    // const frame_time = physics.PhysicsSystem.instance.fixedTimeStep;
+    // if (dt) {
+    //     for (let i = 0; i < dt; i++) {
+    //         director.tick(physics.PhysicsSystem.instance.fixedTimeStep);
+    //     }
+    // } else {
+    //     director.tick(frame_time);
+    // }
+    // //director.tick(frame_time);
+    // director.pause();
+    // await captureOneImage(imageName);
+    // director.resume();
 }
 
 // add by lzh
 export async function screenshot_custom_by_wait(dt?: number, imageName?: string) {
-    const frame_time = physics.PhysicsSystem.instance.fixedTimeStep;
-    if (dt) {
-        for (let i = 0; i < dt; i++) {
-            await waitForNextFrame();
-            //director.tick(physics.PhysicsSystem.instance.fixedTimeStep);
-        }
-    } else {
-        //director.tick(frame_time);
-        await waitForNextFrame();
+    await screenshot(dt, imageName);
+    // const frame_time = physics.PhysicsSystem.instance.fixedTimeStep;
+    // if (dt) {
+    //     for (let i = 0; i < dt; i++) {
+    //         await waitForNextFrame();
+    //         //director.tick(physics.PhysicsSystem.instance.fixedTimeStep);
+    //     }
+    // } else {
+    //     //director.tick(frame_time);
+    //     await waitForNextFrame();
+    // }
+    // //director.tick(frame_time);
+    // director.pause();
+    // await captureOneImage(imageName);
+    // // director.resume();
+}
+
+async function screenshot(afterFrames?: number, imageName?: string) {
+    game.pause();
+    if (afterFrames) {
+        const tt = game.frameTime * afterFrames * 0.001;
+        console.log('>>>>>', tt);
+        director.tick(tt);
     }
-    //director.tick(frame_time);
-    director.pause();
     await captureOneImage(imageName);
-    director.resume();
+    game.resume();
 }
 
 // add by lzh: zoom
