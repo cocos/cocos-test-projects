@@ -46,7 +46,7 @@ async function screenshot(afterFrames?: number, imageName?: string) {
         director.tick(tt);
     }
     await captureOneImage(imageName);
-    game.resume();
+    // game.resume();
 }
 
 // add by lzh: zoom
