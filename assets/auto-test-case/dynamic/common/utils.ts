@@ -39,14 +39,14 @@ export async function screenshot_custom_by_wait(dt?: number, imageName?: string)
 }
 
 async function screenshot(afterFrames?: number, imageName?: string) {
-    game.pause();
     if (afterFrames) {
-        const tt = game.frameTime * afterFrames * 0.001;
-        console.log('>>>>>', tt);
-        director.tick(tt);
+        game.pause();
+        director.tick(game.frameTime * afterFrames * 0.001);
+        game.resume();
     }
+    director.pause();
     await captureOneImage(imageName);
-    // game.resume();
+    director.resume();
 }
 
 // add by lzh: zoom
