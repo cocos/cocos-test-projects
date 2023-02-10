@@ -1,9 +1,8 @@
 // @ts-ignore
 import { captureOneImage, waitForNextFrame, runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
-import { screenshot_custom } from '../dynamic/common/utils'
-import { find } from 'cc'
+
 @runScene('layout-size-changed')
-// @testClass('LayoutSizeChanged')
+@testClass('LayoutSizeChanged')
 export class LayoutSizeChanged {
     _dt = 10;
     @testCase
