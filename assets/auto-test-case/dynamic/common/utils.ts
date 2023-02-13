@@ -1,7 +1,7 @@
 
 import { Camera, game, director, math, physics, Vec3 } from 'cc';
 // @ts-ignore
-import { captureOneImage, waitForNextFrame } from 'db://automation-framework/runtime/test-framework.mjs';
+import { captureOneImage, waitForNextFrame, waitForFrames } from 'db://automation-framework/runtime/test-framework.mjs';
 
 export async function screenshot_custom(dt?: number, imageName?: string) {
     await screenshot(dt, imageName);
@@ -40,13 +40,11 @@ export async function screenshot_custom_by_wait(dt?: number, imageName?: string)
 
 async function screenshot(afterFrames?: number, imageName?: string) {
     if (afterFrames) {
-        game.pause();
-        director.tick(game.frameTime * afterFrames * 0.001);
-        game.resume();
+        afterFrames -= 1;
+        waitForFrames(afterFrames);
     }
-    director.pause();
+
     await captureOneImage(imageName);
-    director.resume();
 }
 
 // add by lzh: zoom

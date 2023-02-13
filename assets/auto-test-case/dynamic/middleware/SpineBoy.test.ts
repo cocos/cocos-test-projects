@@ -4,7 +4,7 @@ import { runScene, testCase, testClass } from 'db://automation-framework/runtime
 import { screenshot_custom } from '../common/utils';
 
 @runScene('SpineBoy')
-// @testClass('SpineBoy')
+@testClass('SpineBoy')
 export class SpineBoy {
     _delay = 0.2;
     _dt = 10;
