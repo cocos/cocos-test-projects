@@ -2,8 +2,8 @@
 import { captureOneImage, waitForNextFrame, runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
 
 @runScene('scroll-view-events')
-@testClass('scroll_view_events')
-export class scroll_view_events {
+@testClass('ScrollViewEvents')
+export class ScrollViewEvents {
     @testCase
     async startPlay() {
         await waitForNextFrame();

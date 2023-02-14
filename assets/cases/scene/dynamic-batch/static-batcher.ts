@@ -79,7 +79,7 @@ export class StaticBatcher extends Component {
             this._changeBatchState(false);
         }
 
-        const count = state === 'add' ? this.count + 1 > this.maxCount ? this.maxCount : this.count + 1 : this.count - 1 < 0 ? 1 : this.count - 1;
+        const count = state === 'add' ? this.count + 1 > this.maxCount ? this.maxCount : this.count + 1 : this.count - 1 <= 0 ? 1 : this.count - 1;
         if (count > this.count) {
             for (let i = this.count; i < count; i++) {
                 for (let j = 0; j < 10; j++) {

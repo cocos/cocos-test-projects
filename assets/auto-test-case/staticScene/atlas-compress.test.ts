@@ -2,8 +2,8 @@
 import { captureOneImage, waitForNextFrame, runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
 
 @runScene('atlas-compress')
-@testClass('atlas_compress')
-export class atlas_compress {
+@testClass('AtlasCompress')
+export class AtlasCompress {
     @testCase
     async startPlay() {
         await waitForNextFrame();
