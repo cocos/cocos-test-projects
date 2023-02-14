@@ -27,9 +27,13 @@ export class FoldItem extends Component {
     }
 
     public loadScene() {
-        BackButton.saveOffset();
-        BackButton.saveIndex(this.index);
-        director.loadScene(this._name);
+        return new Promise<void>((resovle, reject) => {
+            BackButton.saveOffset();
+            BackButton.saveIndex(this.index);
+            director.loadScene(this._name, (error: any) => {
+                error ? reject(error) : resovle();
+            });
+        });
     }
 
     public updateItem(idx: number, name: string) {

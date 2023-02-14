@@ -53,6 +53,12 @@ export class BackButton extends Component {
                     continue;
                 }
             }
+            if (str.includes('sponza')) {
+                if (sys.platform !== sys.Platform.MOBILE_BROWSER && sys.platform !== sys.Platform.DESKTOP_BROWSER && sys.platform !== sys.Platform.WIN32 && 
+                    sys.platform !== sys.Platform.ANDROID && sys.platform !== sys.Platform.IOS && sys.platform !== sys.Platform.MACOS) {
+                        continue;
+                    }
+            }
             const firstIndex = str.lastIndexOf('/') + 1;
             const lastIndex = str.lastIndexOf('.scene');
             SceneList.sceneArray.push(str.substring(firstIndex, lastIndex));

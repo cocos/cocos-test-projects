@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, instantiate, Renderable2D, UIOpacity, Color } from 'cc';
+import { _decorator, Component, Node, instantiate, UIOpacity, Color, UIRenderer } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('AutoChangeOpacity')
@@ -16,9 +16,9 @@ export class AutoChangeOpacity extends Component {
     private tempColor = new Color();
 
     @property({
-        type: Renderable2D
+        type: UIRenderer
     })
-    public renderComp: Renderable2D = null!;
+    public renderComp: UIRenderer = null!;
 
     @property({
         type: UIOpacity

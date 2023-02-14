@@ -61,6 +61,9 @@ export class SceneManager extends Component {
         this._contentUITrans.height = this._displayItems.length * (this._itemTemplateUITrans.height + this._spacing) + this._spacing; // get total content height
         this._displayHeight = this.node.parent!.getComponent(UITransform)!.height;
         this._spawnCount = Math.ceil(this._displayHeight / (this._itemTemplateUITrans.height + this._spacing)) + this._reserveSize;
+        if(this._spawnCount > this._displayItems.length) { 
+            this._spawnCount = this._displayItems.length;
+        }
         for (let j = 0; j < this._spawnCount; j++) {
             let item = instantiate(this.itemPrefab);
             let type = this._displayItems[j].type;

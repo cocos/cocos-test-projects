@@ -100,47 +100,51 @@ export class AssetLoading extends Component {
     }
 
     _load () {
-        const url = this._urls[this._curType];
-        var loadCallBack = this._loadCallBack.bind(this);
-        switch (this._curType) {
-            case 'SpriteFrame':
-                // specify the type to load sub asset from texture's url
-                loader.loadRes(url, SpriteFrame, loadCallBack);
-                break;
-            case 'Texture2D':
-                loader.loadRes(url, Texture2D, loadCallBack);
-                break;
-            case 'TextureCube':
-                loader.loadRes(url, TextureCube, loadCallBack);
-                break;
-            case 'Font':
-                loader.loadRes(url, Font, loadCallBack);
-                break;
-            case 'SpriteAtlas':
-                loader.loadRes(url, SpriteAtlas, loadCallBack);
-                break;
-            case 'Animation':
-            case 'Prefab':
-            case 'Skeleton':
-            case 'Mesh':
-            case 'ImageAsset':
-            case 'Txt':
-            case 'Audio':
-            case 'Material':
-            case 'Skeleton':
-                loader.loadRes(url, loadCallBack);
-                break;
-            case 'Scene':
-                director.loadScene(url);
-                break;
-            case 'CORS':
-                loader.load(url, loadCallBack);
-                this.loadTips.string = "CORS image should report texImage2D error under WebGL and works ok under Canvas"
-                break;
-            default:
-                loader.load(url, loadCallBack);
-                break;
-        }
+        return new Promise<void>((resovle, reject) => {
+            const url = this._urls[this._curType];
+            var loadCallBack = this._loadCallBack.bind(this);
+            switch (this._curType) {
+                case 'SpriteFrame':
+                    // specify the type to load sub asset from texture's url
+                    loader.loadRes(url, SpriteFrame, loadCallBack);
+                    break;
+                case 'Texture2D':
+                    loader.loadRes(url, Texture2D, loadCallBack);
+                    break;
+                case 'TextureCube':
+                    loader.loadRes(url, TextureCube, loadCallBack);
+                    break;
+                case 'Font':
+                    loader.loadRes(url, Font, loadCallBack);
+                    break;
+                case 'SpriteAtlas':
+                    loader.loadRes(url, SpriteAtlas, loadCallBack);
+                    break;
+                case 'Animation':
+                case 'Prefab':
+                case 'Skeleton':
+                case 'Mesh':
+                case 'ImageAsset':
+                case 'Txt':
+                case 'Audio':
+                case 'Material':
+                case 'Skeleton':
+                    loader.loadRes(url, loadCallBack);
+                    break;
+                case 'Scene':
+                    director.loadScene(url, (error: any) => {
+                        error ? reject(error) : resovle();
+                    });
+                    break;
+                case 'CORS':
+                    loader.load(url, loadCallBack);
+                    this.loadTips.string = "CORS image should report texImage2D error under WebGL and works ok under Canvas"
+                    break;
+                default:
+                    loader.load(url, loadCallBack);
+                    break;
+            }
+        });    
     }
 
     _loadCallBack (err: Error | null, res: any) {
