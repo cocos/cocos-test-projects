@@ -2,8 +2,8 @@
 import { captureOneImage, waitForNextFrame, runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
 
 @runScene('altas')
-@testClass('altas')
-export class altas {
+@testClass('Altas')
+export class Altas {
     @testCase
     async startPlay() {
         await waitForNextFrame();

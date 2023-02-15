@@ -2,8 +2,8 @@
 import { captureOneImage, waitForNextFrame, runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
 
 @runScene('layout-change-sibling')
-@testClass('layout_change_sibling')
-export class layout_change_sibling {
+@testClass('LayoutChangeSibling')
+export class LayoutChangeSibling {
     @testCase
     async startPlay() {
         await waitForNextFrame();
