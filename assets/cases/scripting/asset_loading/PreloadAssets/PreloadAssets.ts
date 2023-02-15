@@ -158,47 +158,51 @@ export class PreloadAssets extends Component {
     }
 
     _onShowResClick (event: any) {
-        var url = this._urls[this._curType];
-        switch (this._curType) {
-            case 'SpriteFrame':
-                // specify the type to load sub asset from texture's url
-                resources.load(url, SpriteFrame, (err, asset) => this._createNode(this._curType, asset));
-                break;
-            case 'Texture2D':
-                resources.load(url, Texture2D, (err, asset) => this._createNode(this._curType, asset));
-                break;
-            case 'TextureCube':
-                resources.load(url, TextureCube, (err, asset) => this._createNode(this._curType, asset));
-                break;
-            case 'Font':
-                resources.load(url, Font, (err, asset) => this._createNode(this._curType, asset));
-                break;
-            case 'SpriteAtlas':
-                resources.load(url, SpriteAtlas, (err, asset) => this._createNode(this._curType, asset));
-                break;
-            case 'Animation':
-            case 'Prefab':
-            case 'Skeleton':
-            case 'Mesh':
-            case 'ImageAsset':
-            case 'Txt':
-            case 'Audio':
-            case 'Material':
-            case 'Skeleton':
-                resources.load(url, (err, asset) => this._createNode(this._curType, asset));
-                break;
-            case 'Scene':
-                director.loadScene(url);
-                break;
-            case 'Dir':
-                resources.loadDir(url, (err, assets) => {
-                    this.loadTips.string = "The asset loaded: ";
-                    assets.forEach((r) => this.loadTips.string += `${r.name};`);
-                });
-                break;
-            default:
-                break;
-        }
+        return new Promise<void>((resovle, reject) => {
+            var url = this._urls[this._curType];
+            switch (this._curType) {
+                case 'SpriteFrame':
+                    // specify the type to load sub asset from texture's url
+                    resources.load(url, SpriteFrame, (err, asset) => this._createNode(this._curType, asset));
+                    break;
+                case 'Texture2D':
+                    resources.load(url, Texture2D, (err, asset) => this._createNode(this._curType, asset));
+                    break;
+                case 'TextureCube':
+                    resources.load(url, TextureCube, (err, asset) => this._createNode(this._curType, asset));
+                    break;
+                case 'Font':
+                    resources.load(url, Font, (err, asset) => this._createNode(this._curType, asset));
+                    break;
+                case 'SpriteAtlas':
+                    resources.load(url, SpriteAtlas, (err, asset) => this._createNode(this._curType, asset));
+                    break;
+                case 'Animation':
+                case 'Prefab':
+                case 'Skeleton':
+                case 'Mesh':
+                case 'ImageAsset':
+                case 'Txt':
+                case 'Audio':
+                case 'Material':
+                case 'Skeleton':
+                    resources.load(url, (err, asset) => this._createNode(this._curType, asset));
+                    break;
+                case 'Scene':
+                    director.loadScene(url, (err) => {
+                        err ? reject(err) : resovle();
+                    });
+                    break;
+                case 'Dir':
+                    resources.loadDir(url, (err, assets) => {
+                        this.loadTips.string = "The asset loaded: ";
+                        assets.forEach((r) => this.loadTips.string += `${r.name};`);
+                    });
+                    break;
+                default:
+                    break;
+            }
+        });
     }
 
     _createNode (type: string, res: any) {

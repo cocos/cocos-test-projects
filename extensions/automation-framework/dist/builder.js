@@ -1,1 +1,0 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});exports.configs={"*":{hooks:"./hooks",options:{AutoTest:{default:!1}}}},exports.load=function(){console.debug("custom-build-example load")},exports.unload=function(){console.debug("custom-build-example unload")};

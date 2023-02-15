@@ -53,10 +53,14 @@ export class ListItem extends Component {
     }
 
     public loadScene() {
-        BackButton.focusButtonIndex = this.node.getSiblingIndex();
-        BackButton.saveOffset();
-        BackButton.saveIndex(this.index);
-        director.loadScene(this._name);
+        return new Promise<void>((resovle, reject) => {
+            BackButton.focusButtonIndex = this.node.getSiblingIndex();
+            BackButton.saveOffset();
+            BackButton.saveIndex(this.index);
+            director.loadScene(this._name, (error: any) => {
+                error ? reject(error) : resovle();
+            });
+        });
     }
 
     public updateItem(type: ItemType, idx: number, name: string) {
