@@ -41,7 +41,7 @@ export async function screenshot_custom_by_wait(dt?: number, imageName?: string)
 async function screenshot(afterFrames?: number, imageName?: string) {
     if (afterFrames) {
         afterFrames -= 1;
-        waitForFrames(afterFrames);
+        await waitForFrames(afterFrames);
     }
 
     await captureOneImage(imageName);
