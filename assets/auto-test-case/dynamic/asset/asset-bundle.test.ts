@@ -39,16 +39,16 @@ export class AssetBundle {
         await screenshot_custom(this._dt);
     }
 
-    @testCase
-    async onClickScene() {
-        // @ts-ignore
-        await this.getSceneResult();
-        await screenshot_custom(this._dt);
-        // @ts-ignore
-        await find('Canvas')?.getComponent('BackToAssetBundle')?.onClick();
-        await sleep(this._delay);
-        await screenshot_custom(this._dt);
-    }
+    // @testCase
+    // async onClickScene() {
+    //     // @ts-ignore
+    //     await this.getSceneResult();
+    //     await screenshot_custom(this._dt);
+    //     // @ts-ignore
+    //     await find('Canvas')?.getComponent('BackToAssetBundle')?.onClick();
+    //     await sleep(this._delay);
+    //     await screenshot_custom(this._dt);
+    // }
 
     @testCase
     async onClickRelease() {

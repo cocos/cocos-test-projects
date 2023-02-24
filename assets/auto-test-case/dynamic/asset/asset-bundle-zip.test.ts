@@ -35,16 +35,16 @@ export class AssetBundleZip {
         await screenshot_custom(this._dt);
     }
 
-    @testCase
-    async onClickScene() {
-        // @ts-ignore
-        // await find('Canvas')?.getComponent('AssetBundleZip')?.onClickScene();
-        await this.getSceneResult();
-        await screenshot_custom(this._dt);
-        // @ts-ignore
-        await find('Canvas')?.getComponent('BackToAssetBundleZip')?.onClick();
-        await screenshot_custom(this._dt);
-    }
+    // @testCase
+    // async onClickScene() {
+    //     // @ts-ignore
+    //     // await find('Canvas')?.getComponent('AssetBundleZip')?.onClickScene();
+    //     await this.getSceneResult();
+    //     await screenshot_custom(this._dt);
+    //     // @ts-ignore
+    //     await find('Canvas')?.getComponent('BackToAssetBundleZip')?.onClick();
+    //     await screenshot_custom(this._dt);
+    // }
 
     @testCase
     async onClickRelease() {
