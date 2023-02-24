@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Label, AudioSource, assetManager, log, Texture2D, Sprite, SpriteFrame, AudioClip, director } from 'cc';
+import { _decorator, Component, Node, Label, AudioSource, assetManager, log, Texture2D, Sprite, SpriteFrame, AudioClip, director, game, Director } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('AssetBundleZip')
@@ -125,6 +125,9 @@ export class AssetBundleZip extends Component {
                 director.runScene(asset!, undefined, (err) => {
                     err ? reject(err) : resovle();
                 });
+                if (game.isPaused()) {
+                    director.emit(Director.EVENT_END_FRAME);
+                }
             });
         });    
     }
