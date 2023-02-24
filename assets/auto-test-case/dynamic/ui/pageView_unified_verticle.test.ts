@@ -10,7 +10,7 @@ export class PageViewUnifiedVerticle {
     _delay = 2;
     @testCase
     async startPlay() {
-        await screenshot_custom(this._dt/10);
+        await screenshot_custom(5);
     }
 
     @testCase

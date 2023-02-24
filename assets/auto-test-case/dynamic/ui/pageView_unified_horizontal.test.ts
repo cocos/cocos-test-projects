@@ -11,7 +11,7 @@ export class PageViewUnifiedHorizontal {
 
     @testCase
     async startPlay() {
-        await screenshot_custom(this._dt/5);
+        await screenshot_custom(10);
     }
 
     @testCase
