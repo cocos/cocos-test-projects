@@ -13,7 +13,7 @@ export class DragonMesh {
     async startLoad() {
         // await screenshot_custom(this._dt);
         this._totalFrames = director.getTotalFrames();
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 2; i++) {
             await screenshot_custom_by_wait(this._dt*(i+1)+this._totalFrames-director.getTotalFrames());
         }
     };
@@ -54,7 +54,7 @@ export class DragonMesh {
             // director.pause();
             // await screenshot_custom(this._dt);
             await this.loadResource();
-            for (let i = 0; i < 3; i++) {
+            for (let i = 0; i < 2; i++) {
                 await screenshot_custom_by_wait((this._dt+2)*(i+4)+this._totalFrames-director.getTotalFrames());
             }
             
