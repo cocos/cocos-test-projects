@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, Label, AudioSource, assetManager, log, Texture2D, Sprite, SpriteFrame, AudioClip, director, Layers } from 'cc';
+import { _decorator, Component, Node, Label, AudioSource, assetManager, log, Texture2D, Sprite, SpriteFrame, AudioClip, director, Layers, game, Director } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('AssetBundle')
@@ -126,6 +126,9 @@ export class AssetBundle extends Component {
                 director.runScene(asset!, undefined, (err) => {
                    err ? reject(err) : resovle();
                 });
+                if (game.isPaused()) {
+                    director.emit(Director.EVENT_END_FRAME);
+                }
             });
         });
     }

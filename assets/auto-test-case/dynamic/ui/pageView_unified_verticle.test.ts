@@ -6,11 +6,11 @@ import { screenshot_custom } from '../common/utils';
 @runScene('pageView_unified_verticle')
 @testClass('PageViewUnifiedVerticle')
 export class PageViewUnifiedVerticle {
-    _dt = 4;
+    _dt = 50;
     _delay = 2;
     @testCase
     async startPlay() {
-        await screenshot_custom(this._dt);
+        await screenshot_custom(5);
     }
 
     @testCase
@@ -20,7 +20,7 @@ export class PageViewUnifiedVerticle {
             this.removeCurrentP();
         }
         await sleep(this._delay);
-        await screenshot_custom();
+        await screenshot_custom(this._dt);
     }
     
     @testCase
@@ -30,8 +30,8 @@ export class PageViewUnifiedVerticle {
             this.addPage();
         }
         this.setCurrentPageIndex(8);
-        await sleep(this._delay);
-        await screenshot_custom();
+        await screenshot_custom(this._dt);
+
     }
 
     @testCase
@@ -43,48 +43,43 @@ export class PageViewUnifiedVerticle {
         await screenshot_custom();
         //turn to page 10
         this.setCurrentPageIndex(9);
-        await sleep(this._delay);
-        await screenshot_custom();
+        await screenshot_custom(this._dt);
+
     }
 
     @testCase
     async removePages(){
         //click to remove to return to page 9
         this.removePage();
-        await sleep(this._delay);
         //view current page
-        await screenshot_custom();
+        await screenshot_custom(this._dt + 5);
     }
 
     @testCase
     async removeLastPage(){
         //click to remove current page to page 8
         this.removeCurrentP();
-        await sleep(this._delay);
-        await screenshot_custom();
+        await screenshot_custom(this._dt + 5);
     }
 
     @testCase
     async turnToCurrentPageIndex(){
         //turn left to page 7
         this.setCurrentPageIndex(6);
-        await sleep(this._delay);
-        await screenshot_custom();
+        await screenshot_custom(this._dt);
     }
     @testCase
     async backToHomePage(){
         this.returnHomePage()
-        await sleep(this._delay);
-        await screenshot_custom();
+        await screenshot_custom(this._dt);
     }
 
     @testCase
     async clearAll(){
         //remove current page
         this.clearAllPage();
-        await sleep(this._delay);
         //view current page
-        await screenshot_custom();
+        await screenshot_custom(this._dt);
     }
     // @testCase
     // async startPlay() {
