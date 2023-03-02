@@ -69,7 +69,7 @@ export class GeometryRenderer {
 
     getToggle(node: string, componentName: string) {
         //@ts-ignore
-        this.toggle = find(node).getComponent(componentName);
+        this.toggle = find(node)!.getComponent(componentName);
         if (!this.toggle) {
             this.retry(node, componentName, 3);
         }
