@@ -65,6 +65,8 @@ export class GeometryRenderer {
         this.toggleUnlit!.isChecked = true;
         this.toggleRotate!.isChecked = true;
         await screenshot_custom();
+
+        await screenshot_custom(this.dt);
     }
 
     getToggle(node: string, componentName: string) {
