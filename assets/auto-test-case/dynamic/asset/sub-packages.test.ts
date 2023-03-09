@@ -1,6 +1,6 @@
 import { find } from 'cc';
 // @ts-ignore
-import { runScene, sleep, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
+import { runScene, sleep, testCase, testClass, waitForFrames } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
 
 @runScene('sub-packages')
@@ -11,7 +11,8 @@ export class SubPackages {
 
     @testCase
     async startPlay() {
-        await sleep(this._delay);
+        // await sleep(this._delay);
+        await waitForFrames(120);
         await screenshot_custom(this._dt);
     }
 
@@ -20,14 +21,15 @@ export class SubPackages {
         try {
             // @ts-ignore
             await find('Canvas')?.getComponent('loadSubPack')?.jumpToSubScene01();
-            await sleep(this._delay);
+            // await sleep(this._delay);
+            await waitForFrames(120);
             // @ts-ignore
             if (find('Canvas').scene.name === 'subPack01') {
                 await screenshot_custom(this._dt);
                 if (this.isExist('Canvas', 'subScript01')) {
                     // @ts-ignore
                     await find('Canvas')?.getComponent('subScript01')?.backToList();
-                    await sleep(this._delay);
+                    await waitForFrames(120);
                     await screenshot_custom(this._dt);
                 } else {
                     console.error('subScript01 can not find,please check you test case!')
