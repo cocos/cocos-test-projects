@@ -1,13 +1,14 @@
 import { _decorator, loader, sp, find } from 'cc';
 // @ts-ignore
 import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
-import { screenshot_custom_by_wait } from '../common/utils';
+import { screenshot_custom_by_wait, waitForFrames } from '../common/utils';
 
 @runScene('LoadSpine')
 @testClass('LoadSpine')
 export class LoadSpine {
     _dt = 5;
 
+    /**
     loadResource(){
         return new Promise((resolve, reject)=>{
             loader.loadRes("spine/alien/alien-pro", sp.SkeletonData, (err, spineAsset)=> {
@@ -26,10 +27,18 @@ export class LoadSpine {
             });
         });
     }
+     */
     @testCase
     async play() {
+        let num = 200; //用于计数，如果isLoadedRes没有加载好，也不能卡住。最多200帧
+        let isLoadedRes = find('Canvas/Node')!.getComponent('LoadSpine').isLoadedRes;
+        while(!isLoadedRes && num>0){
+            num -= 1;
+            await waitForFrames(1); // 等待一帧
+        }
+        
         await screenshot_custom_by_wait(this._dt * 2);
-        await this.loadResource();
+        //await this.loadResource();
         for (let i = 0; i < 3; i++) {
             await screenshot_custom_by_wait(this._dt * 2);
         }
