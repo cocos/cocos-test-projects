@@ -30,11 +30,12 @@ export class LoadSpine {
      */
     @testCase
     async play() {
-        let num = 200; //用于计数，如果isLoadedRes没有加载好，也不能卡住。最多200帧
+        let num = 1000; //Used for counting frames, up to 1000 frames
         let isLoadedRes = find('Canvas/Node')!.getComponent('LoadSpine').isLoadedRes;
         while(!isLoadedRes && num>0){
             num -= 1;
-            await waitForFrames(1); // 等待一帧
+            isLoadedRes = find('Canvas/Node')!.getComponent('LoadSpine').isLoadedRe
+            await waitForFrames(1); 
         }
         
         await screenshot_custom_by_wait(this._dt * 2);

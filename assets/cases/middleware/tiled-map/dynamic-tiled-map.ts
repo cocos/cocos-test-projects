@@ -8,9 +8,6 @@ export class DynamicTiledMap extends Component {
     @property({type: Node})
     public targetNode: Node = null!;
 
-    public isLoadedMap = false;  
-    public isLoadedMapWithTsx = false;
-
     start () {
         // Your initialization goes here.
     }
@@ -20,23 +17,17 @@ export class DynamicTiledMap extends Component {
     // }
 
 
-    onLoadTileMap (url:string, type=1) {
-        loader.loadRes(url, TiledMapAsset, (err, tmxAsset) => {
-            if (err) {
-                console.error(err);
-                if(type == 1){
-                    this.isLoadedMap = true;
-                }else{
-                    this.isLoadedMapWithTsx = true;
+    onLoadTileMap (url:string) {
+        return new Promise<void>((resovle, reject) => {
+            loader.loadRes(url, TiledMapAsset, (err, tmxAsset) => {
+                if (err) {
+                    console.error(err);
+                    reject("error");
+                    return;
                 }
-                return;
-            }
-            this.onCreateTileMap(tmxAsset!);
-            if(type == 1){
-                this.isLoadedMap = true;
-            }else{
-                this.isLoadedMapWithTsx = true;
-            }
+                this.onCreateTileMap(tmxAsset!);
+                resovle();
+            });
         });
     }
 
@@ -51,11 +42,11 @@ export class DynamicTiledMap extends Component {
 
     onBtnCreateTileMap () {
         const url = 'tilemap/tile_iso_offset';
-        this.onLoadTileMap(url, 1);
+        this.onLoadTileMap(url).then();
     }
 
     onBtnCreateTileMapWithTsx () {
         const url = 'tilemap/tile_iso_offset_with_tsx';
-        this.onLoadTileMap(url, 2);
+        this.onLoadTileMap(url).then();
     }
 }

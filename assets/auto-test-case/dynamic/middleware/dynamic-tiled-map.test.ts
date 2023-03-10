@@ -11,23 +11,14 @@ export class DynamicTiledMap {
 
     @testCase
     async startPlay() {
-        let num = 200; //用于计数，如果isLoadedRes没有加载好，也不能卡住。最多200帧
-        let isLoadedMap = find('Canvas')!.getComponent('DynamicTiledMap').isLoadedMap;
-        let isLoadedMapWithTsx = find('Canvas')!.getComponent('DynamicTiledMap').isLoadedMapWithTsx;
+        await screenshot_custom_by_wait(this._dt);
+        //find('Canvas/Button')!.getComponent(Button)?.clickEvents[0].emit([]);
+        //await sleep(this._delay);
+        await find('Canvas')!.getComponent('DynamicTiledMap').onLoadTileMap('tilemap/tile_iso_offset');
+        await screenshot_custom_by_wait(this._dt);
 
-        await screenshot_custom_by_wait(this._dt);
-        find('Canvas/Button')!.getComponent(Button)?.clickEvents[0].emit([]);
         //await sleep(this._delay);
-        while(!isLoadedMap && num>0){
-            await waitForFrames();
-        }
-        num = 200;
-        await screenshot_custom_by_wait(this._dt);
-        find('Canvas/Button-001')!.getComponent(Button)?.clickEvents[0].emit([]);
-        while(!isLoadedMapWithTsx && num>0){
-            await waitForFrames();
-        }
-        //await sleep(this._delay);
+        await find('Canvas')!.getComponent('DynamicTiledMap').onLoadTileMap('tilemap/tile_iso_offset_with_tsx');
         await screenshot_custom_by_wait(this._dt);
     }
     /**

@@ -11,8 +11,16 @@ export class DynamicMesh {
     // this test scene can't capture,so this test case cancle test
     @testCase
     async start() {
-        waitForFrames(1);
-        await sleep(2);
+        let num = 1000; //Used for counting frames, up to 1000 frames
+        let isLoadedMesh =  find("Canvas").getComponent("DynamicMeshCreator").isLoadedMesh;
+        while(!isLoadedMesh && num>0){
+            num -= 1;
+            isLoadedMesh =  find("Canvas").getComponent("DynamicMeshCreator").isLoadedMesh;
+            await waitForFrames(1); 
+        }
+
+        //waitForFrames(1);
+        //await sleep(2);
         await screenshot_custom_by_wait(this._dt - 1);
     }
 
