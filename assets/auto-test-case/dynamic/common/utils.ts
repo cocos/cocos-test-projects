@@ -57,5 +57,3 @@ export function mouse_wheel_by_delta (delta=1, camera:any) {
 export async function random(min: number, max: number) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
-
-export {waitForFrames};

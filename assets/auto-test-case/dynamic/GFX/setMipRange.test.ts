@@ -1,7 +1,7 @@
 import { director, find } from 'cc';
 // @ts-ignore
-import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
-import { screenshot_custom_by_wait, waitForFrames } from '../common/utils';
+import { runScene, testCase, testClass, waitForFrames } from 'db://automation-framework/runtime/test-framework.mjs';
+import { screenshot_custom_by_wait } from '../common/utils';
 
 @runScene('setMipRange')
 @testClass('setMipRange')
