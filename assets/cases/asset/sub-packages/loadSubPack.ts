@@ -4,11 +4,11 @@ const { ccclass, property } = _decorator;
 @ccclass("loadSubPack")
 export class loadSubPack extends Component {
 
-    @property({ type: Label })
+    @property({type: Label})
     label!: Label;
-    @property({ type: Button })
+    @property({type: Button})
     createButton_1!: Button;
-    @property({ type: Button })
+    @property({type: Button})
     createButton_2!: Button;
 
     async start() {
