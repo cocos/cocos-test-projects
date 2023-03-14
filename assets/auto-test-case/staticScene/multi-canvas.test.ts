@@ -6,7 +6,7 @@ import { find } from 'cc';
 @runScene('multi-canvas')
 @testClass('MultiCanvas')
 export class MultiCanvas {
-    _dt = 10
+    _dt = 10;
 
     @testCase
     async startPlay() {
@@ -17,7 +17,7 @@ export class MultiCanvas {
     async clickLeftButton() {
         for (let i = 0; i < 5; i++) {
             //@ts-ignore
-            find(`Canvas${i}/Button0-${i}`).getComponent('cc.Button').clickEvents[0].emit([]);
+            find(`Canvas${i}/Button0-${i}`)!.getComponent('cc.Button').clickEvents[0].emit([]);
             await screenshot_custom(this._dt);
         }
     }
@@ -26,7 +26,7 @@ export class MultiCanvas {
     async clickRightButton() {
         for (let i = 0; i < 5; i++) {
             //@ts-ignore
-            find(`CanvasP${i}/Button1-${i}`).getComponent('ClickEvent').onButtonClick();
+            find(`CanvasP${i}/Button1-${i}`)!.getComponent('ClickEvent').onButtonClick();
             await screenshot_custom(this._dt);
         }
     }

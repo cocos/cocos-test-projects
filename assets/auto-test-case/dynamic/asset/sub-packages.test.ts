@@ -1,4 +1,4 @@
-import { find } from 'cc';
+import { find, Component } from 'cc';
 // @ts-ignore
 import { runScene, sleep, testCase, testClass, waitForFrames } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
@@ -19,17 +19,18 @@ export class SubPackages {
     @testCase
     async jumpToSubScene01() {
         try {
+            const jumpToSubScene01: Component | undefined | null = find('Canvas')?.getComponent('loadSubPack');
             // @ts-ignore
-            await find('Canvas')?.getComponent('loadSubPack')?.jumpToSubScene01();
+            await jumpToSubScene01!.jumpToSubScene01()
             // await sleep(this._delay);
-            await waitForFrames(120);
+            await waitForFrames(60);
             // @ts-ignore
             if (find('Canvas').scene.name === 'subPack01') {
                 await screenshot_custom(this._dt);
                 if (this.isExist('Canvas', 'subScript01')) {
                     // @ts-ignore
                     await find('Canvas')?.getComponent('subScript01')?.backToList();
-                    await waitForFrames(120);
+                    await waitForFrames(60);
                     await screenshot_custom(this._dt);
                 } else {
                     console.error('subScript01 can not find,please check you test case!')
@@ -53,8 +54,9 @@ export class SubPackages {
     async jumpToSubScene02() {
 
         try {
+            const jumpToSubScene02: Component | undefined | null = find('Canvas')?.getComponent('loadSubPack');
             // @ts-ignore
-            await find('Canvas')?.getComponent('loadSubPack')?.jumpToSubScene02();
+            await jumpToSubScene02!.jumpToSubScene02()
             await sleep(this._delay);
             // @ts-ignore
             if (find('Canvas').scene.name === 'subPack02') {
