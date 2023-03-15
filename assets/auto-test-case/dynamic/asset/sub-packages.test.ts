@@ -29,7 +29,9 @@ export class SubPackages {
                 await screenshot_custom(this._dt);
                 if (this.isExist('Canvas', 'subScript01')) {
                     // @ts-ignore
-                    await find('Canvas')?.getComponent('subScript01')?.backToList();
+                    let subScript01 = find('Canvas')?.getComponent('subScript01');
+                    // @ts-ignore
+                    await subScript01!.backToList();
                     await waitForFrames(60);
                     await screenshot_custom(this._dt);
                 } else {
@@ -63,7 +65,9 @@ export class SubPackages {
                 await screenshot_custom(this._dt);
                 if (this.isExist('Canvas', 'subScript02')) {
                     // @ts-ignore
-                    await find('Canvas')?.getComponent('subScript02')?.backToList();
+                    let subScript02 = find('Canvas')?.getComponent('subScript02');
+                    // @ts-ignore
+                    await subScript02!.backToList();
                     await sleep(this._delay);
                     await screenshot_custom(this._dt);
                 } else {
