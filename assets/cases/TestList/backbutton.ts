@@ -1,4 +1,4 @@
-import { EventGamepad, input, Input, _decorator, Component, Node, ScrollView, Vec3, game, Label, director, Director, assetManager, find, Canvas, Layers, JsonAsset, profiler, sys } from "cc";
+import { EventGamepad, input, Input, _decorator, Component, Node, ScrollView, Vec3, game, Label, director, Director, assetManager, find, Canvas, Layers, JsonAsset, profiler, sys, CCString, CCBoolean } from "cc";
 const { ccclass, property } = _decorator;
 import { SceneList } from "./common";
 import { StateCode, TestFramework } from "./TestFramework";
@@ -13,6 +13,7 @@ declare class AutoTestConfigJson extends JsonAsset {
         sceneList: string[],
     }
 }
+
 @ccclass("BackButton")
 export class BackButton extends Component {
     private static _offset = new Vec3();
@@ -31,6 +32,11 @@ export class BackButton extends Component {
 
     @property(JsonAsset)
     public autoTestConfig: AutoTestConfigJson | null = null;
+
+    @property({type:Boolean})
+    public noAutoTest:Boolean=false;
+
+    
 
     private isAutoTesting: boolean = false;
 
@@ -61,10 +67,23 @@ export class BackButton extends Component {
             }
             const firstIndex = str.lastIndexOf('/') + 1;
             const lastIndex = str.lastIndexOf('.scene');
-            SceneList.sceneArray.push(str.substring(firstIndex, lastIndex));
-            const firstIndexFold= str.indexOf('/cases/') + 7;
-            const lastIndexFolf = str.indexOf('/',firstIndexFold);
-            SceneList.sceneFold.push(str.substring(firstIndexFold, lastIndexFolf));
+            //SceneList.sceneArray.push(str.substring(firstIndex, lastIndex));
+            //过滤noAutoTestSceneList下的场景
+            let currentScene = str.substring(firstIndex, lastIndex);
+            if(this.noAutoTest){
+                if(this.autoTestConfig!.json.sceneList.indexOf(currentScene) == -1){
+                    SceneList.sceneArray.push(currentScene);
+                    const firstIndexFold= str.indexOf('/cases/') + 7;
+                    const lastIndexFolf = str.indexOf('/',firstIndexFold);
+                    SceneList.sceneFold.push(str.substring(firstIndexFold, lastIndexFolf));
+                }
+            }else{
+                SceneList.sceneArray.push(currentScene);
+                const firstIndexFold= str.indexOf('/cases/') + 7;
+                const lastIndexFolf = str.indexOf('/',firstIndexFold);
+                SceneList.sceneFold.push(str.substring(firstIndexFold, lastIndexFolf));
+            }
+            
         }
     }
 
