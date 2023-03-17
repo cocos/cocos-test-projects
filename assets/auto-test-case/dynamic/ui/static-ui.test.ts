@@ -3,20 +3,14 @@ import { runScene, testCase, testClass, sleep } from 'db://automation-framework/
 import { screenshot_custom } from '../common/utils';
 
 @runScene('static-ui')
-// @testClass('StaticUi')
+@testClass('StaticUi')
 export class StaticUi {
-    _dt = 100;
-
-    @testCase
-    async startPlay() {
-        await screenshot_custom();
-    }
+    _dt = 85;
 
     @testCase
     async play() {
-        for (let i = 0; i < 14; i++) {
-            await sleep(0.5)
-            await screenshot_custom(this._dt * 10);
+        for (let i = 0; i < 13; i++) {
+            await screenshot_custom(this._dt);
         }
     }
 }
