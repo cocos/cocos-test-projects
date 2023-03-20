@@ -5,7 +5,7 @@ import { screenshot_custom } from '../common/utils';
 
 @runScene('Sprite-attribute-switch')
 @testClass('SpriteAttributeSwitch')
-export class StaticUi {
+export class SpriteAttributeSwitch {
     _dt = 30;
 
     @testCase
