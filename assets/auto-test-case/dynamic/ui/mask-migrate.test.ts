@@ -17,7 +17,7 @@ export class maskMigrate {
           num -= 1;
           await waitForFrames(1); 
       }
-      screenshot_custom(this._dt)
+      await screenshot_custom(this._dt)
     }
 
 }
