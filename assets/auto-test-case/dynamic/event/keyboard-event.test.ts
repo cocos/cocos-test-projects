@@ -11,6 +11,7 @@ export class keyboardEvent {
     @testCase
     async startPlay() {
       let event = new EventKeyboard(81, false);
+      await waitForFrames(this._dt);
 
       find('Canvas/keyboard-event')!.getComponent('KeyboardEvent')!.onKeyboardDown(event);
       await screenshot_custom();

@@ -1,9 +1,9 @@
 // @ts-ignore
-import { find, Button } from 'cc';
+import { find, Button, Color } from 'cc';
 import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
 
-@runScene('Sprite-attribute-switch')
+@runScene('sprite-attribute-switch')
 @testClass('SpriteAttributeSwitch')
 export class SpriteAttributeSwitch {
     _dt = 30;
@@ -24,14 +24,19 @@ export class SpriteAttributeSwitch {
       await screenshot_custom(this._dt);
       find('Canvas/buttons/resetButton')!.getComponent(Button)?.clickEvents[0].emit([]);
       find('Canvas/buttons/AnchorYButton')!.getComponent(Button)?.clickEvents[0].emit([]);
+
+      // The color of the button changes randomly, and fixed parameters are provided here
       await screenshot_custom(this._dt);
       find('Canvas/buttons/resetButton')!.getComponent(Button)?.clickEvents[0].emit([]);
-      find('Canvas/buttons/colorButton')!.getComponent(Button)?.clickEvents[0].emit([]);
+      find('Canvas')!.getComponent("SpriteAttributeSwitch")!.sprite.color = new Color(255 * 0.5, 255 * 0.5, 255 * 0.5, 255 * 0.5);
+      find('Canvas')!.getComponent("SpriteAttributeSwitch")!.updateState();
+
       await screenshot_custom(this._dt);
       find('Canvas/buttons/resetButton')!.getComponent(Button)?.clickEvents[0].emit([]);
       find('Canvas/buttons/spriteFrameButton')!.getComponent(Button)?.clickEvents[0].emit([]);
       await screenshot_custom(this._dt);
       find('Canvas/buttons/resetButton')!.getComponent(Button)?.clickEvents[0].emit([]);
+      find('Canvas/buttons/spriteTypeButton')!.getComponent(Button)?.clickEvents[0].emit([]);
       find('Canvas/buttons/spriteTypeButton')!.getComponent(Button)?.clickEvents[0].emit([]);
       await screenshot_custom(this._dt);
       find('Canvas/buttons/resetButton')!.getComponent(Button)?.clickEvents[0].emit([]);
