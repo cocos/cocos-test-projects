@@ -20,13 +20,15 @@ export class Spriteatlas {
     async start() {
       await screenshot_custom(this._dt);
       this.testScript!.editbox.string = "lake";
-      find('Canvas/Button-01')!.getComponent(Button)?.clickEvents[0].emit([]);
+      find('Canvas/Button-1')!.getComponent(Button)?.clickEvents[0].emit([]);
       await screenshot_custom(this._dt);
-      find('Canvas/Button-03')!.getComponent(Button)?.clickEvents[0].emit([]);
+      find('Canvas/Button-3')!.getComponent(Button)?.clickEvents[0].emit([]);
       await screenshot_custom(this._dt);
-      find('Canvas/Button-02')!.getComponent(Button)?.clickEvents[0].emit([]);
+      find('Canvas/Button-2')!.getComponent(Button)?.clickEvents[0].emit([]);
       await screenshot_custom(this._dt);
-      find('Canvas/Button-04')!.getComponent(Button)?.clickEvents[0].emit([]);
+      find('Canvas/Button-1')!.getComponent(Button)?.clickEvents[0].emit([]);
+      await screenshot_custom(this._dt);
+      find('Canvas/Button-4')!.getComponent(Button)?.clickEvents[0].emit([]);
       await screenshot_custom(this._dt);
     }
 }
