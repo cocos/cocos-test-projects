@@ -118,7 +118,6 @@ export class AssetBundle extends Component {
             testBundle.loadScene("sub-scene", (err, asset) => {
                 if (err) {
                     log('Error url [' + err + ']');
-                    reject(err);
                     return;
                 }
                 this._isLoading = false;
