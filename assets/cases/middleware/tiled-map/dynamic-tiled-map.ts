@@ -18,12 +18,16 @@ export class DynamicTiledMap extends Component {
 
 
     onLoadTileMap (url:string) {
-        loader.loadRes(url, TiledMapAsset, (err, tmxAsset) => {
-            if (err) {
-                console.error(err);
-                return;
-            }
-            this.onCreateTileMap(tmxAsset!);
+        return new Promise<void>((resovle, reject) => {
+            loader.loadRes(url, TiledMapAsset, (err, tmxAsset) => {
+                if (err) {
+                    console.error(err);
+                    reject("error");
+                    return;
+                }
+                this.onCreateTileMap(tmxAsset!);
+                resovle();
+            });
         });
     }
 
@@ -38,11 +42,11 @@ export class DynamicTiledMap extends Component {
 
     onBtnCreateTileMap () {
         const url = 'tilemap/tile_iso_offset';
-        this.onLoadTileMap(url);
+        this.onLoadTileMap(url).then();
     }
 
     onBtnCreateTileMapWithTsx () {
         const url = 'tilemap/tile_iso_offset_with_tsx';
-        this.onLoadTileMap(url);
+        this.onLoadTileMap(url).then();
     }
 }

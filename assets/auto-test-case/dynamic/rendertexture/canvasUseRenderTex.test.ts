@@ -14,7 +14,7 @@ export class CanvasUseRenderTex {
 
     @testCase
     async await_3s() {
-        await sleep(3)
-        await screenshot_custom(this._dt);
+        // await sleep(3)
+        await screenshot_custom(this._dt * 60);
     }
 }

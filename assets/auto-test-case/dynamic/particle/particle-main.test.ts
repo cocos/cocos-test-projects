@@ -36,5 +36,8 @@ export class ParticleMain {
 
         mouse_wheel_by_delta(30, _camera);
         await screenshot_custom_by_wait(this._dt);
+        // button click
+        find('Canvas//Button')!.getComponent(Button)?.clickEvents[0].emit([]);
+        await screenshot_custom_by_wait();
     }
 }

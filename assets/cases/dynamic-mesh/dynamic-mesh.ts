@@ -55,6 +55,8 @@ export class DynamicMeshCreator extends Component {
     private _showBoundingBox = false;
     private _boundingBoxColor = new Color(255, 255, 255, 255);
 
+    public isLoadedMesh = false; 
+
     private initCamera() {
         this._mainCamera = this.cameraComp.camera;
     }
@@ -72,6 +74,7 @@ export class DynamicMeshCreator extends Component {
 
         resources.load(names, Mesh, (err, meshes) => {
             if (this._destroyed) {
+                this.isLoadedMesh = true;
                 return;
             }
             
@@ -145,6 +148,7 @@ export class DynamicMeshCreator extends Component {
             meshRenderer.onGeometryChanged();
 
             this._initialize = true;
+            this.isLoadedMesh = true; 
         });
     }
 

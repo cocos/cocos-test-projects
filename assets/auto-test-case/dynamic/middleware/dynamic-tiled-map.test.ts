@@ -1,7 +1,7 @@
 import { find, Button } from 'cc';
 // @ts-ignore
 import { runScene, sleep, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
-import { screenshot_custom_by_wait } from '../common/utils';
+import { screenshot_custom_by_wait, waitForFrames } from '../common/utils';
 
 @runScene('dynamic-tiled-map')
 @testClass('DynamicTiledMap')
@@ -12,11 +12,13 @@ export class DynamicTiledMap {
     @testCase
     async startPlay() {
         await screenshot_custom_by_wait(this._dt);
-        find('Canvas/Button')!.getComponent(Button)?.clickEvents[0].emit([]);
-        await sleep(this._delay);
+        //find('Canvas/Button')!.getComponent(Button)?.clickEvents[0].emit([]);
+        //await sleep(this._delay);
+        await find('Canvas')!.getComponent('DynamicTiledMap').onLoadTileMap('tilemap/tile_iso_offset');
         await screenshot_custom_by_wait(this._dt);
-        find('Canvas/Button-001')!.getComponent(Button)?.clickEvents[0].emit([]);
-        await sleep(this._delay);
+
+        //await sleep(this._delay);
+        await find('Canvas')!.getComponent('DynamicTiledMap').onLoadTileMap('tilemap/tile_iso_offset_with_tsx');
         await screenshot_custom_by_wait(this._dt);
     }
     /**
