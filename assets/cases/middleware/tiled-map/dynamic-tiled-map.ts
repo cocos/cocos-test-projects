@@ -42,11 +42,11 @@ export class DynamicTiledMap extends Component {
 
     onBtnCreateTileMap () {
         const url = 'tilemap/tile_iso_offset';
-        this.onLoadTileMap(url).then();
+        this.onLoadTileMap(url);
     }
 
     onBtnCreateTileMapWithTsx () {
         const url = 'tilemap/tile_iso_offset_with_tsx';
-        this.onLoadTileMap(url).then();
+        this.onLoadTileMap(url);
     }
 }
