@@ -6,12 +6,10 @@ import { screenshot_custom } from '../common/utils';
 @runScene('sub-packages')
 @testClass('SubPackages')
 export class SubPackages {
-    _dt = 10;
-    _delay = 2
+    _dt = 70;
 
     @testCase
     async startPlay() {
-        // await sleep(this._delay);
         await waitForFrames(120);
         await screenshot_custom(this._dt);
     }
@@ -21,8 +19,7 @@ export class SubPackages {
         try {
             const jumpToSubScene01: Component | undefined | null = find('Canvas')?.getComponent('loadSubPack');
             // @ts-ignore
-            await jumpToSubScene01!.jumpToSubScene01()
-            // await sleep(this._delay);
+            await jumpToSubScene01!.jumpToSubScene01();
             await waitForFrames(60);
             // @ts-ignore
             if (find('Canvas').scene.name === 'subPack01') {
@@ -35,12 +32,12 @@ export class SubPackages {
                     await waitForFrames(60);
                     await screenshot_custom(this._dt);
                 } else {
-                    console.error('subScript01 can not find,please check you test case!')
+                    console.error('subScript01 can not find,please check you test case!');
                 }
             }
 
         } catch (error) {
-            console.error(`【script】className:${SubPackages.name},functionName:${this.jumpToSubScene01.name} load subPack01 scene fail`)
+            console.error(`【script】className:${SubPackages.name},functionName:${this.jumpToSubScene01.name} load subPack01 scene fail`);
         }
     }
 
@@ -58,8 +55,8 @@ export class SubPackages {
         try {
             const jumpToSubScene02: Component | undefined | null = find('Canvas')?.getComponent('loadSubPack');
             // @ts-ignore
-            await jumpToSubScene02!.jumpToSubScene02()
-            await sleep(this._delay);
+            await jumpToSubScene02!.jumpToSubScene02();
+            await waitForFrames(60);
             // @ts-ignore
             if (find('Canvas').scene.name === 'subPack02') {
                 await screenshot_custom(this._dt);
@@ -68,14 +65,15 @@ export class SubPackages {
                     let subScript02 = find('Canvas')?.getComponent('subScript02');
                     // @ts-ignore
                     await subScript02!.backToList();
-                    await sleep(this._delay);
                     await screenshot_custom(this._dt);
                 } else {
-                    console.error('subScript01 can not find,please check you test case!')
+                    console.error('subScript02 can not find,please check you test case!');
                 }
+            } else {
+                console.error('subPack02 can not find,please check you test case!');
             }
         } catch (error) {
-            console.error(`【script】className:${SubPackages.name},functionName:${this.jumpToSubScene02.name} load subPack02 scene fail`)
+            console.error(`【script】className:${SubPackages.name},functionName:${this.jumpToSubScene02.name} load subPack02 scene fail`);
         }
 
         // // @ts-ignore
