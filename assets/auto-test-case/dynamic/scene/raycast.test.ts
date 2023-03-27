@@ -1,7 +1,7 @@
 
 //@ts-ignore
 import { runScene, testCase, testClass, beforeClass, waitForFrames } from 'db://automation-framework/runtime/test-framework.mjs';
-import { Component, find } from 'cc';
+import { Component, find, view } from 'cc';
 import { RaycastCanvasTest } from '../../../cases/scene/raycast/RaycastCanvasTest';
 import { RaycastColliderTest } from '../../../cases/scene/raycast/RaycastColliderTest';
 import { RaycastModelTest } from '../../../cases/scene/raycast/RaycastModelTest';
@@ -18,26 +18,31 @@ export class Raycast {
     raycastCollider!: RaycastColliderTest | Component | null;
     tickTime: number = 1;
     testData!: TestData;
+    screenWidth!:number;
+    screenHeight!:number;
 
     @beforeClass
     async initData() {
+        this.screenWidth=view.getCanvasSize().width;
+        this.screenHeight=view.getCanvasSize().height
+
         this.raycastCanvas = find('Test')!.getComponent('RaycastCanvasTest');
         this.raycastModel = find('Test')!.getComponent('RaycastModelTest');
         this.raycastCollider = find('Test')!.getComponent('RaycastColliderTest');
-        this.testData = {
-            Collider: {
-                x: 671.25,
-                y: 195.5000114440918
-            },
-            Canvas: {
-                x: 596.4999961853027,
-                y: 399.2500114440918
-            },
-            Model: {
-                x: 621.4999961853027,
-                y: 616.7500114440918
-            }
-        }
+        // this.testData = {
+        //     Collider: {
+        //         x: 671.25,
+        //         y: 195.5000114440918
+        //     },
+        //     Canvas: {
+        //         x: 596.4999961853027,
+        //         y: 399.2500114440918
+        //     },
+        //     Model: {
+        //         x: 621.4999961853027,
+        //         y: 616.7500114440918
+        //     }
+        // }
         await waitForFrames(1)
     }
 
@@ -48,7 +53,7 @@ export class Raycast {
 
     @testCase
     async clickCollider() {
-        const event = this.getEvent(this.testData.Collider.x, this.testData.Collider.y);
+        const event = this.getEvent(this.screenWidth/2, this.screenHeight/4.08);
         //TODO: if engine team provide common emit event, it is need to change the emit event!
         this.raycastModel!.onTouchStart(event);
         this.raycastCanvas!.onTouchStart(event);
@@ -58,7 +63,7 @@ export class Raycast {
 
     @testCase
     async clickCanvas() {
-        const event = this.getEvent(this.testData.Canvas.x, this.testData.Canvas.y);
+        const event = this.getEvent(this.screenWidth/2, this.screenHeight/2);
         //TODO: if engine team provide common emit event, it is need to change the emit event!
         this.raycastCollider!.onTouchStart(event);
         this.raycastModel!.onTouchStart(event);
@@ -68,7 +73,7 @@ export class Raycast {
 
     @testCase
     async clickModel() {
-        const event = this.getEvent(this.testData.Model.x, this.testData.Model.y);
+        const event = this.getEvent(this.screenWidth/2, this.screenHeight/1.5);
         //TODO: if engine team provide common emit event, it is need to change the emit event!
         this.raycastCollider!.onTouchStart(event);
         this.raycastCanvas!.onTouchStart(event);
