@@ -29,8 +29,8 @@ export class NetworkDownload {
         await screenshot_custom(this.tickTime);
         //TODO:capture to progress
         await screenshot_custom(this.tickTime * 2);
-        //TODO:capture to finish
-        await screenshot_custom(this.tickTime * 10);
+        // //TODO:capture to finish
+        // await screenshot_custom(this.tickTime * 10);
     }
 }
 
