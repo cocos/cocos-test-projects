@@ -26,6 +26,7 @@ export class VietnameseText extends Component {
   @property(Node) btnContainer: Node = null;
   @property(Prefab) btnPrefab: Prefab = null;
   @property(Label) previewLabel: Label = null;
+  public isLoadButton = false;
 
   onLoad() {
     TEXTS.forEach((_, idx) => {
@@ -36,6 +37,7 @@ export class VietnameseText extends Component {
       });
       this.btnContainer.addChild(node);
     });
+    this.isLoadButton = true;
   }
 
   start() {}
