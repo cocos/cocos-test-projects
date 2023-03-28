@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Label, AudioSource, assetManager, log, Texture2D, Sprite, SpriteFrame, AudioClip, director, game, Director } from 'cc';
+import { _decorator, Component, Node, Label, AudioSource, assetManager, log, Texture2D, Sprite, SpriteFrame, AudioClip, director } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('AssetBundleZip')
