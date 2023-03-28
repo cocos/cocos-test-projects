@@ -7,7 +7,7 @@ import { screenshot_custom } from '../common/utils';
 @runScene("sponza")
 @testClass("Sponza", undefined, PlatformEnum.WINDOWS, PlatformEnum.IOS, PlatformEnum.MAC, PlatformEnum.ANDROID)
 export class Sponza {
-    tickTime: number = 5;
+    tickTime: number = 120;
 
     @testCase
     async start() {
