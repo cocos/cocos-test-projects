@@ -1,4 +1,4 @@
-import { find } from 'cc';
+import { find, game } from 'cc';
 // @ts-ignore
 import { runScene, testCase, testClass, waitForFrames } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
@@ -126,10 +126,12 @@ export class AssetBundleZip {
 
     async getSceneResult() {
         return new Promise<void>(async (resovle, reject) => {
+            game.resume();
             //@ts-ignore
             const assetBundleZip = find('Canvas')!.getComponent('AssetBundleZip')!;
             //@ts-ignore
             await assetBundleZip.onClickScene();
+            game.pause();
             //@ts-ignore
             if (!find('Canvas/Load Tip') && find('Canvas').getComponent('BackToAssetBundleZip')) {
                 resovle();
