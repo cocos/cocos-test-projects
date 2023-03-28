@@ -21,6 +21,7 @@ export class DynamicMesh {
 
         //waitForFrames(1);
         //await sleep(2);
+        console.log("DynamicMesh num:"+num);
         await screenshot_custom_by_wait(this._dt - 1);
     }
 

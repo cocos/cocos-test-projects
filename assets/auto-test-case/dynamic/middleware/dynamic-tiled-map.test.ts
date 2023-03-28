@@ -1,7 +1,7 @@
 import { find, Button } from 'cc';
 // @ts-ignore
-import { runScene, sleep, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
-import { screenshot_custom_by_wait, waitForFrames } from '../common/utils';
+import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
+import { screenshot_custom_by_wait } from '../common/utils';
 
 @runScene('dynamic-tiled-map')
 @testClass('DynamicTiledMap')

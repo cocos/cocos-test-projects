@@ -80,6 +80,7 @@ export class DynamicMeshCreator extends Component {
             
             if (err) {
                 console.log('Load gltf failed, error: ', err);
+                this.isLoadedMesh = true;
                 return;
             }
             
@@ -148,7 +149,8 @@ export class DynamicMeshCreator extends Component {
             meshRenderer.onGeometryChanged();
 
             this._initialize = true;
-            this.isLoadedMesh = true; 
+            this.isLoadedMesh = true;
+            console.log("load gltf succes")
         });
     }
 
