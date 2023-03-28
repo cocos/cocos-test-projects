@@ -1,13 +1,12 @@
 import { find } from 'cc';
 // @ts-ignore
-import { runScene, sleep, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
+import { runScene, testCase, testClass, waitForFrames } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
 
 @runScene('asset-bundle-zip')
 @testClass('AssetBundleZip')
 export class AssetBundleZip {
     _dt = 1;
-    _delay = 0.5;
 
 
     @testCase
@@ -69,26 +68,29 @@ export class AssetBundleZip {
 
     async getTextrueResult() {
         return new Promise<void>(async (resovle) => {
-            await sleep(5)
+            await waitForFrames(5 * 60);
             //@ts-ignore
-            find('Canvas').getComponent('AssetBundleZip').onClickTexture();
-            await sleep(2)
+            const assetBundleZip = find('Canvas')!.getComponent('AssetBundleZip')!;
             //@ts-ignore
-            if (find('Canvas/Load Tip').getComponent('cc.Label').string === '操作失败，请先加载 Asset Bundle') {
-                console.warn('before load bundle fail, cause onclickTexture fail!')
+            await assetBundleZip.onClickTexture();
+            // find('Canvas').getComponent('AssetBundleZip').onClickTexture();
+            await waitForFrames(2 * 60);
+            //@ts-ignore
+            if (find('Canvas/Load Tip')!.getComponent('cc.Label')!.string === '操作失败，请先加载 Asset Bundle') {
+                console.warn('before load bundle fail, cause onclickTexture fail!');
                 resovle();
             } else {
                 for (let i = 1; i < 6; i++) {
-                    await sleep(i);
+                    await waitForFrames(i * 60);
                     //@ts-ignore
-                    if (find('Canvas/Layout/Load_Texture').getComponent('cc.Button').target.getChildByName('Label').getComponent('cc.Label').string === '已加载') {
+                    if (find('Canvas/Layout/Load_Texture')!.getComponent('cc.Button')!.target.getChildByName('Label')!.getComponent('cc.Label')!.string === '已加载') {
                         resovle();
                         break;
                     } else {
                         for (let i = 1; i < 10; i++) {
-                            await sleep(i);
+                            await waitForFrames(i * 60);
                             //@ts-ignore
-                            if (find('Canvas/Layout/Load_Texture').getComponent('cc.Button').target.getChildByName('Label').getComponent('cc.Label').string === '已加载') {
+                            if (find('Canvas/Layout/Load_Texture')!.getComponent('cc.Button')!.target.getChildByName('Label')!.getComponent('cc.Label')!.string === '已加载') {
                                 resovle();
                                 break;
                             }
@@ -103,15 +105,17 @@ export class AssetBundleZip {
     async getAudioResult() {
         return new Promise<void>(async (resovle) => {
             //@ts-ignore
-            find('Canvas').getComponent('AssetBundleZip').onClickAudio();
+            const assetBundleZip = find('Canvas')!.getComponent('AssetBundleZip')!;
             //@ts-ignore
-            if (find('Canvas/Load Tip').getComponent('cc.Label').string === '播放音乐') {
+            await assetBundleZip.onClickAudio();
+            //@ts-ignore
+            if (find('Canvas/Load Tip')!.getComponent('cc.Label')!.string === '播放音乐') {
                 resovle();
             } else {
                 for (let i = 1; i < 10; i++) {
-                    await sleep(i);
+                    await waitForFrames(i * 60);
                     //@ts-ignore
-                    if (find('Canvas/Load Tip').getComponent('cc.Label').string === '播放音乐') {
+                    if (find('Canvas/Load Tip')!.getComponent('cc.Label')!.string === '播放音乐') {
                         resovle();
                     }
                 }
@@ -123,19 +127,21 @@ export class AssetBundleZip {
     async getSceneResult() {
         return new Promise<void>(async (resovle, reject) => {
             //@ts-ignore
-            find('Canvas').getComponent('AssetBundleZip').onClickScene();
+            const assetBundleZip = find('Canvas')!.getComponent('AssetBundleZip')!;
+            //@ts-ignore
+            await assetBundleZip.onClickScene();
             //@ts-ignore
             if (!find('Canvas/Load Tip') && find('Canvas').getComponent('BackToAssetBundleZip')) {
                 resovle();
             } else {
                 for (let i = 1; i < 10; i++) {
-                    await sleep(i);
+                    await waitForFrames(i * 60);
                     //@ts-ignore
-                    if (!find('Canvas/Load Tip') && find('Canvas').getComponent('BackToAssetBundleZip')) {
+                    if (!find('Canvas/Load Tip') && find('Canvas')!.getComponent('BackToAssetBundleZip')!) {
                         resovle();
                     }
                 }
-                reject('test case has error，scene:asset-bundle-zip')
+                reject('test case has error，scene:asset-bundle-zip');
             }
         })
     }
@@ -144,15 +150,17 @@ export class AssetBundleZip {
     async getDestroyResult() {
         return new Promise<void>(async (resovle) => {
             //@ts-ignore
-            find('Canvas').getComponent('AssetBundleZip').onClickDestroy();
+            const assetBundleZip = find('Canvas')!.getComponent('AssetBundleZip')!;
             //@ts-ignore
-            if (find('Canvas/Load Tip').getComponent('cc.Label').string === '分包已被销毁') {
+            await assetBundleZip.onClickDestroy();
+            //@ts-ignore
+            if (find('Canvas/Load Tip')!.getComponent('cc.Label')!.string === '分包已被销毁') {
                 resovle();
             } else {
                 for (let i = 1; i < 10; i++) {
-                    await sleep(i);
+                    await waitForFrames(i * 60);
                     //@ts-ignore
-                    if (find('Canvas/Load Tip').getComponent('cc.Label').string === '分包已被销毁') {
+                    if (find('Canvas/Load Tip')!.getComponent('cc.Label')!.string === '分包已被销毁') {
                         resovle();
                     }
                 }
@@ -163,18 +171,20 @@ export class AssetBundleZip {
     async getBundleResult() {
         return new Promise<void>(async (resovle) => {
             //@ts-ignore
-            find('Canvas').getComponent('AssetBundleZip').onClickBundle();
+            const assetBundleZip = find('Canvas')!.getComponent('AssetBundleZip')!;
             //@ts-ignore
-            if (find('Canvas/Load Tip').getComponent('cc.Label').string === 'Bundle loaded Successfully!') {
-                console.log('asset zip bundle: bundle loaded successfully!')
+            await assetBundleZip.onClickBundle();
+            //@ts-ignore
+            if (find('Canvas/Load Tip')!.getComponent('cc.Label')!.string === 'Bundle loaded Successfully!') {
+                console.log('asset zip bundle: bundle loaded successfully!');
                 resovle();
             } else {
                 for (let i = 1; i < 10; i++) {
-                    await sleep(i)
+                    await waitForFrames(i * 60);
                     //@ts-ignore
-                    if (find('Canvas/Load Tip').getComponent('cc.Label').string === 'Bundle loaded Successfully!') {
-                        console.log('asset zip bundle: bundle loaded successfully!')
-                        resovle()
+                    if (find('Canvas/Load Tip')!.getComponent('cc.Label')!.string === 'Bundle loaded Successfully!') {
+                        console.log('asset zip bundle: bundle loaded successfully!');
+                        resovle();
                     }
                 }
             }
@@ -185,16 +195,18 @@ export class AssetBundleZip {
     async getReleaseResult() {
         return new Promise<void>(async (resovle) => {
             //@ts-ignore
-            find('Canvas').getComponent('AssetBundleZip').onClickRelease()
+            const assetBundleZip = find('Canvas')!.getComponent('AssetBundleZip')!;
             //@ts-ignore
-            if (find('Canvas/Load Tip').getComponent('cc.Label').string === '资源已被释放') {
-                resovle()
+            await assetBundleZip.onClickRelease();
+            //@ts-ignore
+            if (find('Canvas/Load Tip')!.getComponent('cc.Label')!.string === '资源已被释放') {
+                resovle();
             } else {
                 for (let i = 1; i < 10; i++) {
-                    await sleep(i)
+                    await waitForFrames(i * 60);
                     //@ts-ignore
-                    if (find('Canvas/Load Tip').getComponent('cc.Label').string === '资源已被释放') {
-                        resovle()
+                    if (find('Canvas/Load Tip')!.getComponent('cc.Label')!.string === '资源已被释放') {
+                        resovle();
                     }
                 }
             }

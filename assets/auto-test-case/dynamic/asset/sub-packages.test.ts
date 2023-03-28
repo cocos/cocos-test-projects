@@ -20,7 +20,7 @@ export class SubPackages {
             const jumpToSubScene01: Component | undefined | null = find('Canvas')?.getComponent('loadSubPack');
             // @ts-ignore
             await jumpToSubScene01!.jumpToSubScene01();
-            await waitForFrames(60);
+            await waitForFrames(this._dt + 60);
             // @ts-ignore
             if (find('Canvas').scene.name === 'subPack01') {
                 await screenshot_custom(this._dt);
@@ -29,8 +29,7 @@ export class SubPackages {
                     let subScript01 = find('Canvas')?.getComponent('subScript01');
                     // @ts-ignore
                     await subScript01!.backToList();
-                    await waitForFrames(60);
-                    await screenshot_custom(this._dt);
+                    await screenshot_custom(this._dt + 60);
                 } else {
                     console.error('subScript01 can not find,please check you test case!');
                 }
@@ -56,7 +55,7 @@ export class SubPackages {
             const jumpToSubScene02: Component | undefined | null = find('Canvas')?.getComponent('loadSubPack');
             // @ts-ignore
             await jumpToSubScene02!.jumpToSubScene02();
-            await waitForFrames(60);
+            await waitForFrames(this._dt + 60);
             // @ts-ignore
             if (find('Canvas').scene.name === 'subPack02') {
                 await screenshot_custom(this._dt);
@@ -65,7 +64,7 @@ export class SubPackages {
                     let subScript02 = find('Canvas')?.getComponent('subScript02');
                     // @ts-ignore
                     await subScript02!.backToList();
-                    await screenshot_custom(this._dt);
+                    await screenshot_custom(this._dt + 120);
                 } else {
                     console.error('subScript02 can not find,please check you test case!');
                 }
