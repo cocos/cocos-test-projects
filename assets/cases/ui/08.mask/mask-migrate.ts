@@ -8,7 +8,7 @@ export class mask_migrate extends Component {
     })
     maskPerfab : Prefab = null!;
 
-    ready = false;
+    ready: Boolean = false;
 
     start() {
         const maskNode = instantiate(this.maskPerfab);

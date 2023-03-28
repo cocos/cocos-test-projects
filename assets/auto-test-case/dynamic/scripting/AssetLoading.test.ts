@@ -35,7 +35,7 @@ export class AssetLoading {
                 this.label = find("Canvas/Label")!.getComponent("cc.Label");
                 let result = await this.tryLoadSceneSuccess(retryNum);
                 if (result) {
-                    //点击返回按钮
+                    //click backbutton
                     await this.backSceneButton!.onClick();
                     if (!this.assetLoading!.loadList) {
                         this.assetLoading = find("Canvas")!.getComponent("AssetLoading");

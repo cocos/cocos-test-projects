@@ -37,7 +37,6 @@ export class WidgetDestroy {
     @testCase
     async clickMoveButton(){
         //TODO: testlist enter test case can't testing by automation
-        console.log("clickMoveButton----------------")
         this.createButton.clickEvents[0].emit([]);
         await waitForFrames(this.tickTime);
         this.moveButton.clickEvents[0].emit([]);
