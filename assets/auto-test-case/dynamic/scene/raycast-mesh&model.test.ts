@@ -79,7 +79,7 @@ export class RaycastMeshModel {
 
     @testCase
     async clickBrainStem() {
-        const eventOne = this.getEvent(this.screenWidth/2.0, this.screenWidth/2.0);
+        const eventOne = this.getEvent(this.screenWidth/2.0, this.screenHeight/2.0);
         this.intersecttraytest.onTouchStart(eventOne);
         await screenshot_custom(this.tickTime);
 
