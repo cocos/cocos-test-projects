@@ -63,7 +63,7 @@ export class AssetLoading extends Component {
         }
     }
 
-    _onClick (event: EventTouch) {
+    async _onClick (event: EventTouch) {
         if (this._isLoading) {
             return;
         }
@@ -96,7 +96,7 @@ export class AssetLoading extends Component {
         this.loadTips.string = this._curType + " Loading....";
         this._isLoading = true;
 
-        this._load();
+        await this._load();
     }
 
     _load () {
