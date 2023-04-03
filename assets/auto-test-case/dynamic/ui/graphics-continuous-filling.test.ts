@@ -1,4 +1,4 @@
-import { Component, find, Touch } from 'cc';
+import { Component, find, Touch, view } from 'cc';
 // @ts-ignore
 import { runScene, testCase, testClass, beforeClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { GraphicsContinuousFilling } from '../../../cases/ui/14.graphics/graphics-continuous-filling';
@@ -14,13 +14,17 @@ export class graphicsContinuousFilling {
     moveTouch2!:Touch;
     moveTouch3!:Touch;
     drawComponet!: GraphicsContinuousFilling|Component|null;
+    screenWidth!:number;
+    screenHeight!:number;
 
     @beforeClass
     async initData() {
-      this.startTouch = new Touch(394, 334);
-      this.moveTouch1 = new Touch(465, 340);
-      this.moveTouch2 = new Touch(465, 340);
-      this.moveTouch3 = new Touch(517, 288);
+      this.screenWidth = view.getCanvasSize().width;
+      this.screenHeight = view.getCanvasSize().height;
+      this.startTouch = new Touch(this.screenWidth/3, this.screenHeight/2);
+      this.moveTouch1 = new Touch(this.screenWidth/2, this.screenHeight/2);
+      this.moveTouch2 = new Touch(this.screenWidth/3, this.screenHeight/3);
+      this.moveTouch3 = new Touch(this.screenWidth/2, this.screenHeight/3);
 
       this.drawComponet = find('Canvas/draw')!.getComponent('GraphicsContinuousFilling');
     }
