@@ -7,8 +7,8 @@ import { simulateTouchStart, simulateTouchEnd } from '../common/SimulateEvent';
 import { screenshot_custom } from '../common/utils';
 
 @runScene('network-download')
-@testClass('NetworkDownload', undefined, PlatformEnum.WEB_DESKTOP, PlatformEnum.WEB_MOBILE, PlatformEnum.WECHATGAME, PlatformEnum.BYTEDANCE_MINI_GAME,
-PlatformEnum.OPPO_MINI_GAME,PlatformEnum.HUAWEI_QUICK_GAME,PlatformEnum.VIVO_MINI_GAME)
+@testClass('NetworkDownload', undefined, [PlatformEnum.WEB_DESKTOP, PlatformEnum.WEB_MOBILE, PlatformEnum.WECHATGAME, PlatformEnum.BYTEDANCE_MINI_GAME,
+    PlatformEnum.OPPO_MINI_GAME, PlatformEnum.HUAWEI_QUICK_GAME, PlatformEnum.VIVO_MINI_GAME])
 export class NetworkDownload {
     tickTime: number = 30;
 
