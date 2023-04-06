@@ -5,11 +5,9 @@ import { screenshot_custom } from '../dynamic/common/utils'
 @runScene('test-atlas-config')
 @testClass('TestAtlasConfig')
 export class TestAtlasConfig {
-    _dt = 50;
-    _delay = 2;
+    _dt = 170;
     @testCase
     async startPlay() {
-        await sleep(this._delay)
         await screenshot_custom(this._dt);
     }
 }
