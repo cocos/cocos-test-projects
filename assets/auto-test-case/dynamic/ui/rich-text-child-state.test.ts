@@ -15,24 +15,24 @@ export class RichTextChildState {
         this.richTextChildState = find("Canvas")!.getComponent("RichTextChildState")!;
     }
     @testCase
-    async start(){
+    async start() {
         await screenshot_custom(this.tickTime * 2);
     }
 
     @testCase
-    async hideRichText(){
+    async hideRichText() {
         this.richTextChildState!.onSetInactive();
         await screenshot_custom(this.tickTime);
     }
 
     @testCase
-    async showRichText(){
+    async showRichText() {
         this.richTextChildState!.onSetActive();
         await screenshot_custom(this.tickTime);
     }
 
     @testCase
-    async onUpdateContent(){
+    async onUpdateContent() {
         const content = '4554487854532423432434534';
         this.richTextChildState!.onUpdateContent(content);
         await screenshot_custom(this.tickTime);
