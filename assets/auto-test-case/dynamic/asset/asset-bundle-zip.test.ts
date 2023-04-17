@@ -117,6 +117,7 @@ export class AssetBundleZip {
                     //@ts-ignore
                     if (find('Canvas/Load Tip')!.getComponent('cc.Label')!.string === '播放音乐') {
                         resovle();
+                        break;
                     }
                 }
             }
@@ -139,6 +140,7 @@ export class AssetBundleZip {
                     //@ts-ignore
                     if (!find('Canvas/Load Tip') && find('Canvas')!.getComponent('BackToAssetBundleZip')!) {
                         resovle();
+                        break;
                     }
                 }
                 reject('test case has error，scene:asset-bundle-zip');
@@ -162,6 +164,7 @@ export class AssetBundleZip {
                     //@ts-ignore
                     if (find('Canvas/Load Tip')!.getComponent('cc.Label')!.string === '分包已被销毁') {
                         resovle();
+                        break;
                     }
                 }
             }
@@ -185,6 +188,7 @@ export class AssetBundleZip {
                     if (find('Canvas/Load Tip')!.getComponent('cc.Label')!.string === 'Bundle loaded Successfully!') {
                         console.log('asset zip bundle: bundle loaded successfully!');
                         resovle();
+                        break;
                     }
                 }
             }
@@ -207,6 +211,7 @@ export class AssetBundleZip {
                     //@ts-ignore
                     if (find('Canvas/Load Tip')!.getComponent('cc.Label')!.string === '资源已被释放') {
                         resovle();
+                        break;
                     }
                 }
             }

@@ -9,6 +9,9 @@ export class loadSubPackages extends Component {
 
     @property({type: Node})
     public canvas: Node = null!;
+
+    public status: Boolean = false;
+    
     start () {
         // Your initialization goes here.
         this.loadSubPackage();
@@ -25,6 +28,7 @@ export class loadSubPackages extends Component {
             this.label.string = 'load subPackage success!';
             console.log(`load subpackage(subPackage) successfully.`);
             this.loadSpriteAtlas();
+            this.status = true;
         });
     }
 
