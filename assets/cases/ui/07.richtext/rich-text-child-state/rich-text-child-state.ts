@@ -19,8 +19,8 @@ export class RichTextChildState extends Component {
         this._richText.node.active = false;
     }
 
-    public onUpdateContent () {
-        this._richText.string = Math.random().toString();
+    public onUpdateContent (content?: string) {
+        this._richText.string = content ? content: Math.random().toString();
     }
 
 }
