@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.SceneAsset",
-    "_name": "",
+    "_name": "static-batching",
     "_objFlags": 0,
     "_native": "",
     "scene": {
@@ -34,6 +34,33 @@
     "_components": [],
     "_prefab": {
       "__id__": 61
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_mobility": 0,
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
     },
     "autoReleaseAssets": false,
     "_globals": {
@@ -75,6 +102,7 @@
       "y": 1,
       "z": 1
     },
+    "_mobility": 0,
     "_layer": 1073741824,
     "_euler": {
       "__type__": "cc.Vec3",
@@ -105,6 +133,7 @@
     "_staticSettings": {
       "__id__": 4
     },
+    "_visibility": -325058561,
     "_illuminanceHDR": 65000,
     "_illuminance": 65000,
     "_illuminanceLDR": 1.6927083333333335,
@@ -118,6 +147,9 @@
     "_csmLevel": 4,
     "_csmLayerLambda": 0.75,
     "_csmOptimizationMode": 2,
+    "_csmAdvancedOptions": false,
+    "_csmLayersTransition": false,
+    "_csmTransitionRange": 0.05,
     "_shadowFixedArea": false,
     "_shadowNear": 0.1,
     "_shadowFar": 10,
@@ -128,7 +160,6 @@
     "__type__": "cc.StaticLightSettings",
     "_baked": false,
     "_editorOnly": false,
-    "_bakeable": false,
     "_castShadow": false
   },
   {
@@ -171,6 +202,7 @@
       "y": 1,
       "z": 1
     },
+    "_mobility": 0,
     "_layer": 1073741824,
     "_euler": {
       "__type__": "cc.Vec3",
@@ -248,7 +280,7 @@
     "profile": {
       "__id__": 30
     },
-    "count": 5,
+    "count": 1,
     "xinterval": 6,
     "zinterval": 3,
     "hoverSpeed": 0.01,
@@ -330,6 +362,7 @@
       "y": 1,
       "z": 1
     },
+    "_mobility": 0,
     "_layer": 524288,
     "_euler": {
       "__type__": "cc.Vec3",
@@ -386,6 +419,7 @@
       "y": 1,
       "z": 1
     },
+    "_mobility": 0,
     "_layer": 524288,
     "_euler": {
       "__type__": "cc.Vec3",
@@ -434,7 +468,7 @@
     "_prefab": null,
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 479.99999999999994,
+      "x": 480.00000000000006,
       "y": 320,
       "z": 0
     },
@@ -451,6 +485,7 @@
       "y": 1,
       "z": 1
     },
+    "_mobility": 0,
     "_layer": 524288,
     "_euler": {
       "__type__": "cc.Vec3",
@@ -494,6 +529,7 @@
       "y": 1,
       "z": 1
     },
+    "_mobility": 0,
     "_layer": 524288,
     "_euler": {
       "__type__": "cc.Vec3",
@@ -516,7 +552,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 338.3050847457627,
+    "_orthoHeight": 320,
     "_near": 1,
     "_far": 2000,
     "_color": {
@@ -590,6 +626,7 @@
       "y": 1,
       "z": 1
     },
+    "_mobility": 0,
     "_layer": 524288,
     "_euler": {
       "__type__": "cc.Vec3",
@@ -643,6 +680,7 @@
       "y": 1,
       "z": 1
     },
+    "_mobility": 0,
     "_layer": 524288,
     "_euler": {
       "__type__": "cc.Vec3",
@@ -689,6 +727,7 @@
       "y": 1,
       "z": 1
     },
+    "_mobility": 0,
     "_layer": 33554432,
     "_euler": {
       "__type__": "cc.Vec3",
@@ -926,6 +965,7 @@
       "y": 1,
       "z": 1
     },
+    "_mobility": 0,
     "_layer": 524288,
     "_euler": {
       "__type__": "cc.Vec3",
@@ -1084,6 +1124,7 @@
       "y": 1,
       "z": 1
     },
+    "_mobility": 0,
     "_layer": 524288,
     "_euler": {
       "__type__": "cc.Vec3",
@@ -1221,6 +1262,7 @@
       "y": 1,
       "z": 1
     },
+    "_mobility": 0,
     "_layer": 524288,
     "_euler": {
       "__type__": "cc.Vec3",
@@ -1365,8 +1407,8 @@
     "__prefab": null,
     "_alignFlags": 45,
     "_target": null,
-    "_left": -5.684341886080802e-14,
-    "_right": -5.684341886080802e-14,
+    "_left": 5.684341886080802e-14,
+    "_right": 5.684341886080802e-14,
     "_top": 0,
     "_bottom": 0,
     "_horizontalCenter": 0,
@@ -1427,6 +1469,7 @@
       "y": 1,
       "z": 1
     },
+    "_mobility": 0,
     "_layer": 524288,
     "_euler": {
       "__type__": "cc.Vec3",
@@ -1473,6 +1516,7 @@
       "y": 1,
       "z": 1
     },
+    "_mobility": 0,
     "_layer": 33554432,
     "_euler": {
       "__type__": "cc.Vec3",
@@ -1721,6 +1765,7 @@
       "y": 1,
       "z": 1
     },
+    "_mobility": 0,
     "_layer": 524288,
     "_euler": {
       "__type__": "cc.Vec3",
@@ -1767,6 +1812,7 @@
       "y": 1,
       "z": 1
     },
+    "_mobility": 0,
     "_layer": 33554432,
     "_euler": {
       "__type__": "cc.Vec3",
@@ -2072,6 +2118,7 @@
       "y": 1,
       "z": 1
     },
+    "_mobility": 0,
     "_layer": 1073741824,
     "_euler": {
       "__type__": "cc.Vec3",
@@ -2111,6 +2158,7 @@
       "y": 1,
       "z": 1
     },
+    "_mobility": 0,
     "_layer": 1073741824,
     "_euler": {
       "__type__": "cc.Vec3",
@@ -2137,7 +2185,11 @@
   },
   {
     "__type__": "cc.PrefabInfo",
-    "fileId": "4093ce76-4fc4-40a2-ab03-879fd1971bc7"
+    "root": null,
+    "asset": null,
+    "fileId": "4093ce76-4fc4-40a2-ab03-879fd1971bc7",
+    "instance": null,
+    "targetOverrides": null
   },
   {
     "__type__": "cc.SceneGlobals",
@@ -2155,7 +2207,11 @@
     },
     "octree": {
       "__id__": 67
-    }
+    },
+    "lightProbeInfo": {
+      "__id__": 68
+    },
+    "bakedWithStationaryMainLight": false
   },
   {
     "__type__": "cc.AmbientInfo",
@@ -2280,5 +2336,16 @@
       "z": 1024
     },
     "_depth": 8
+  },
+  {
+    "__type__": "cc.LightProbeInfo",
+    "_giScale": 1,
+    "_giSamples": 1024,
+    "_bounces": 2,
+    "_reduceRinging": 0,
+    "_showProbe": true,
+    "_showWireframe": true,
+    "_showConvex": false,
+    "_data": null
   }
 ]

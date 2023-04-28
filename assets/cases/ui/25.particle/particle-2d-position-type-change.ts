@@ -15,6 +15,7 @@ export class particle_2d_position_type_change extends Component {
         this._currIndex = (++this._currIndex) % 3;
         this.particle.positionType = this._currIndex;
         this.updateInfo();
+        this.particle.resetSystem();
     }
 
     start() {
