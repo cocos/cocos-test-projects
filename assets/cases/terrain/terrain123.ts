@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node } from 'cc';
+import { _decorator, Component, Node, Label, gfx } from 'cc';
 const { ccclass, property } = _decorator;
 
 /**
@@ -27,6 +27,9 @@ export class Terrain123 extends Component {
     @property(Toggle)
     toggle: Toggle = null!
 
+    @property(Label)
+    label: Label = null!
+
     @property(Node)
     terrainNode: Node = null!
 
@@ -43,6 +46,16 @@ export class Terrain123 extends Component {
         if (terrain != null) {
             terrain.lodEnable = toggle.isChecked;
         }
+    }
+
+    update (deltaTime: number) {
+        const terrain = this.terrainNode.getComponent(Terrain) as Terrain;
+        if (terrain == null) {
+            return;
+        }
+
+        const numTris = gfx.deviceManager.gfxDevice.numTris;
+        this.label.string = "" + numTris;
     }
 }
 

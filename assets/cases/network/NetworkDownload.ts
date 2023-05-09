@@ -23,7 +23,7 @@ export class NetworkDownload extends Component {
         };
         let downloader = new native.Downloader(hints);
         
-        let task = downloader.createDownloadTask('https://all.res-gamebox.cocos.com/res/Cocos_Game_Tools_v1.0.15.apk', native.fileUtils.getWritablePath() + 'zz');
+        let task = downloader.createDownloadTask('https://www.openssl.org/source/openssl-3.1.0.tar.gz', native.fileUtils.getWritablePath() + 'zz');
         // let task = downloader.createDownloadTask('https://download.cocos.com/CocosCreator/v2.3.1/CocosCreator_v2.3.1_20200303_win.7z', jsb.fileUtils.getWritablePath() + 'zz');
         this.status.string = "status: Downloading"
 
