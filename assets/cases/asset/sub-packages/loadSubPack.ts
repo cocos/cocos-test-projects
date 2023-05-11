@@ -13,11 +13,11 @@ export class loadSubPack extends Component {
 
     async start() {
         // Your initialization goes here.
-        await this.loadSubPackages();
+        await this.loadSubPackages().catch((reason: any) => console.error(reason));
     }
 
     async loadSubPackages() {
-        return new Promise<void>(() => {
+        return new Promise<void>((resolve, reject) => {
             this.createButton_1.node.active = false;
             this.createButton_2.node.active = false;
             this.label.string = 'Load subPackage...';
@@ -25,7 +25,8 @@ export class loadSubPack extends Component {
                 if (err) {
                     this.label.string = 'load sub-pack-01 failed!';
                     this.label.color = math.Color.RED;
-                    return console.error(err);
+                    reject(err);
+                    return;
                 }
                 this.label.string = 'load sub-pack-01 success!';
                 console.log(`load subpackage(sub-pack-01) successfully.`);
@@ -35,14 +36,15 @@ export class loadSubPack extends Component {
                     if (err) {
                         this.label.string = 'load sub-pack-02 failed!';
                         this.label.color = math.Color.RED;
-                        return console.error(err);
+                        reject(err);
+                        return;
                     }
                     this.label.string += '\n load sub-pack-02 success!';
                     console.log(`load subpackage(sub-pack-02) successfully.`);
                     this.createButton_2.node.active = true;
 
                     this.label.string += '\n load all success!';
-                    return;
+                    resolve();
                 });
             });
         })
