@@ -1,5 +1,5 @@
 import { find, Toggle, screen, game } from 'cc';
-import { captureOneImage, runScene, testCase, testClass, beforeClass, expect, waitForFrames } from 'db://automation-framework/runtime/test-framework.mjs';
+import { captureOneImage, runScene, testCase, testClass, beforeClass, waitForFrames } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
 import { ScreenTest as ScreenTestObj } from "../../../cases/screen-adaptation/screenTest";
 
