@@ -1,6 +1,6 @@
 import { find, view, screen } from 'cc';
 // @ts-ignore
-import { runScene, testCase, testClass, sleep, beforeClass } from 'db://automation-framework/runtime/test-framework.mjs';
+import { runScene, testCase, testClass, sleep, beforeClass, waitForFrames } from 'db://automation-framework/runtime/test-framework.mjs';
 import DragonBonesCtrl from '../../../cases/middleware/dragonbones/DragonBonesCtrl';
 import { simulateTouchStart, simulateTouchEnd } from '../common/SimulateEvent';
 import { screenshot_custom_by_wait } from '../common/utils';
@@ -16,6 +16,7 @@ export class DragonBones {
 
     @beforeClass
     async initData() {
+        
         //@ts-ignore
         this.dragonBonesCtrl = find('Canvas/Node')!.getComponent('DragonBonesCtrl');
         if (!this.dragonBonesCtrl) {
@@ -29,7 +30,8 @@ export class DragonBones {
 
     @testCase
     async switchSkin() {
-        for (let index = 0; index < 4; index++) {
+        await screenshot_custom_by_wait(this._dt);
+        for (let index = 0; index < 5; index++) {
             this.dragonBonesCtrl!.switchSkin();
             await screenshot_custom_by_wait(this._dt);
         };
@@ -37,7 +39,7 @@ export class DragonBones {
 
     @testCase
     async switchWeaponL() {
-        for (let index = 0; index < 5; index++) {
+        for (let index = 0; index < 6; index++) {
             this.dragonBonesCtrl!.switchWeaponL();
             await screenshot_custom_by_wait(this._dt);
         };
@@ -45,78 +47,77 @@ export class DragonBones {
 
     @testCase
     async switchWeaponR() {
-        for (let index = 0; index < 5; index++) {
+        for (let index = 0; index < 6; index++) {
             this.dragonBonesCtrl!.switchWeaponR();
             await screenshot_custom_by_wait(this._dt);
         };
     };
 
     @testCase
+    async jump() {
+        // this.dragonBonesCtrl!.move(-1);
+        this.dragonBonesCtrl!.jump();
+        await screenshot_custom_by_wait(this._dt);
+    };
+
+    @testCase
+    async moveDown() {
+        this.dragonBonesCtrl!.squat(true);
+        await screenshot_custom_by_wait(this._dt + 20);
+        this.dragonBonesCtrl!.squat(false);
+    }
+
+    @testCase
     async moveLeft() {
         this.dragonBonesCtrl!.move(-1);
-        await screenshot_custom_by_wait(this._dt * 3);
+        await waitForFrames(this._dt * 3);
+        this.dragonBonesCtrl!.move(0);
+        await screenshot_custom_by_wait(this._dt);
+        
     }
 
     @testCase
     async moveRight() {
         this.dragonBonesCtrl!.move(1);
-        await screenshot_custom_by_wait(this._dt * 3);
-    }
-
-    @testCase
-    async moveDown() {
-        this.dragonBonesCtrl!.squat(true);
+        await waitForFrames(this._dt * 2);
+        this.dragonBonesCtrl!.move(0);
         await screenshot_custom_by_wait(this._dt);
     }
 
     @testCase
-    async jump() {
-        this.dragonBonesCtrl!.move(-1);
-        this.dragonBonesCtrl!.jump();
-        await screenshot_custom_by_wait(this._dt * 3);
-    };
-
-
-    @testCase
-    async attack() {
+    async attack_left() {
+        simulateTouchStart(this.width / 3, this.height / 2.5, this.dragonBonesCtrl?.touchHandler!);
         this.dragonBonesCtrl!.attack(true);
-        await screenshot_custom_by_wait(this._dt);
-    }
-
-    @testCase
-    async attackStop() {
-        this.dragonBonesCtrl!.attack(false);
-        await screenshot_custom_by_wait(this._dt);
-    }
-
-
-    @testCase
-    async aim_up() {
-        simulateTouchStart(this.width / 2.3, this.height / 1, this.dragonBonesCtrl?.touchHandler!);
+        // simulateTouchStart(this.width / 4, this.height / 2.5, this.dragonBonesCtrl?.touchHandler!);
         await screenshot_custom_by_wait(this._dt);
         simulateTouchEnd(this.dragonBonesCtrl?.touchHandler!);
     }
 
     @testCase
-    async aim_done() {
-        simulateTouchStart(this.width / 2, this.height / 63.8, this.dragonBonesCtrl?.touchHandler!);
+    async attack_right() {
+        simulateTouchStart(this.width * 3 / 4, this.height * 3 / 5, this.dragonBonesCtrl?.touchHandler!);
+        await screenshot_custom_by_wait(this._dt - 15);
+        simulateTouchEnd(this.dragonBonesCtrl?.touchHandler!);
+    }
+
+    @testCase
+    async attack_jump_right() {
+        simulateTouchStart(this.width / 1.5, this.height / 63.8, this.dragonBonesCtrl?.touchHandler!);
         // why jump, done aim it is not easy to see the difference,that's why add jump
         this.dragonBonesCtrl!.jump();
-        await screenshot_custom_by_wait(this._dt + 20);
+        await screenshot_custom_by_wait(this._dt + 5);
         simulateTouchEnd(this.dragonBonesCtrl?.touchHandler!);
     }
 
-    // @testCase
-    // async aim_left() {
-    //     simulateTouchStart(this.width/23.71, this.height/1.84, this.dragonBonesCtrl?.touchHandler!);
-    //     await screenshot_custom_by_wait(this._dt);
-    //     simulateTouchEnd(this.dragonBonesCtrl?.touchHandler!);
-    // }
+    @testCase
+    async attack_jump_left() {
+        await waitForFrames(this._dt * 2);
+        simulateTouchStart(this.width / 10, this.height / 63.8, this.dragonBonesCtrl?.touchHandler!);
+        // why jump, done aim it is not easy to see the difference,that's why add jump
+        this.dragonBonesCtrl!.jump();
+        await screenshot_custom_by_wait(this._dt);
+        simulateTouchEnd(this.dragonBonesCtrl?.touchHandler!);
+        this.dragonBonesCtrl!.attack(false);
+    }
 
-    // @testCase
-    // async aim_right() {
-    //     simulateTouchStart(this.width, this.height/1.687, this.dragonBonesCtrl?.touchHandler!);
-    //     await screenshot_custom_by_wait(this._dt);
-    //     simulateTouchEnd(this.dragonBonesCtrl?.touchHandler!);
-    // }
 }
