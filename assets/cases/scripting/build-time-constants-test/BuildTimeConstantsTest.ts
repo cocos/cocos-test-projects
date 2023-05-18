@@ -55,7 +55,7 @@ export class BuildTimeConstantsTest extends Component {
         this.scheduleOnce(() => {
             const visibleHeight = view.getVisibleSize().height;
             const labelHeight = this.labelNode.getComponent(UITransform)!.contentSize.height;
-            const targetHeight = visibleHeight;
+            const targetHeight = visibleHeight - 20;
             if (labelHeight > targetHeight) {
                 // fit height
                 const scaleY = targetHeight / labelHeight;
