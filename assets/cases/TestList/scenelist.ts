@@ -36,11 +36,20 @@ export class SceneManager extends Component {
     onLoad() {
         this._itemTemplateUITrans = this.itemPrefab!.data.getComponent(UITransform)!;
         this._contentUITrans = this.scrollView.content!.getComponent(UITransform)!;
+        
+        this.makeSceneItems();
+    }
 
+    makeSceneItems() {
         SceneList.foldCount = 0;
         if (!this.itemPrefab) {
             return;
         }
+        
+        this._displayItems.length = 0;
+        this._items.length = 0;
+        this.node.removeAllChildren();
+
         let sceneFlod = new DisplayItems;
         sceneFlod.index = 0;
         sceneFlod.type = ItemType.SCENSE_FOLD;
@@ -58,6 +67,7 @@ export class SceneManager extends Component {
                 this._displayItems.push(sceneFlod);
             }
         }
+
         this._contentUITrans.height = this._displayItems.length * (this._itemTemplateUITrans.height + this._spacing) + this._spacing; // get total content height
         this._displayHeight = this.node.parent!.getComponent(UITransform)!.height;
         this._spawnCount = Math.ceil(this._displayHeight / (this._itemTemplateUITrans.height + this._spacing)) + this._reserveSize;
