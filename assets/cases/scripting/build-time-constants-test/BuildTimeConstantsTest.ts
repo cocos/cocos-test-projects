@@ -1,5 +1,6 @@
 import * as buildTimeConstants from 'cc/env';
-import { _decorator, Component, Node, Label } from 'cc';
+import { _decorator, Component, Node, Label, UITransform, view } from 'cc';
+import { Vec3 } from 'cc';
 const { ccclass, property, menu, executeInEditMode } = _decorator;
 
 // import * as buildTimeConstants from 'build-time-constants';
@@ -51,6 +52,18 @@ export class BuildTimeConstantsTest extends Component {
             resultString += `${key.padStart(ccKeyNameMaxLen, ' ')} : ${valueRep}\n`;
         });
         ccLabel.string = resultString;
+        this.scheduleOnce(() => {
+            const visibleHeight = view.getVisibleSize().height;
+            const labelHeight = this.labelNode.getComponent(UITransform)!.contentSize.height;
+            const targetHeight = visibleHeight - 20;
+            if (labelHeight > targetHeight) {
+                // fit height
+                const scaleY = targetHeight / labelHeight;
+                const vec3 = new Vec3(scaleY, scaleY, scaleY);
+                this.labelNode.setScale(vec3);
+                this.ccLabelNode.setScale(vec3);
+            }
+        }, 0);
 
     }
 }
