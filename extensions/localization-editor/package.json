@@ -1,0 +1,338 @@
+{
+    "package_version": 2,
+    "version": "1.0.1",
+    "name": "localization-editor",
+    "description": "i18n:localization-editor.description",
+    "main": "./webpack-dist/electron-main/main.js",
+    "author": "Cocos Creator",
+    "editor": ">=3.6.0",
+    "scripts": {
+        "build": "npx webpack --node-env production",
+        "build:dev": "npx webpack --node-env development",
+        "build:prod": "npx webpack --node-env production",
+        "dev": "npx webpack -w",
+        "pack": "npx ts-node ./bin/pack.ts",
+        "test": "npx jest",
+        "generate-icu-option": "npx ts-node ./bin/generate-icu-option.ts",
+        "generate-main-ipc": "npx ts-node ./bin/generate-main-ipc.ts"
+    },
+    "dependencies": {
+        "i18next": "^21.6.16",
+        "intl-pluralrules": "^1.3.1"
+    },
+    "devDependencies": {
+        "@editor/library-type": "^3.6.0-07221420",
+        "@electron/remote": "^1.2.2",
+        "@jest/types": "^28.1.3",
+        "@swc/core": "^1.2.223",
+        "@swc/jest": "^0.2.22",
+        "@types/crypto-js": "^4.1.1",
+        "@types/express": "^4.17.13",
+        "@types/fs-extra": "^9.0.5",
+        "@types/glob": "7.2.0",
+        "@types/jest": "^28.1.3",
+        "@types/js-yaml": "^4.0.5",
+        "@types/lodash": "^4.14.182",
+        "@types/webpack-node-externals": "^2.5.3",
+        "axios": "^0.27.2",
+        "crypto-js": "^4.1.1",
+        "csv": "^6.2.0",
+        "express": "^4.18.1",
+        "form-data": "^4.0.0",
+        "fs-extra": "^10.1.0",
+        "gettext-extractor": "^3.5.4",
+        "gettext-parser": "^5.1.2",
+        "glob": "7.2.0",
+        "jest": "^28.1.3",
+        "js-yaml": "^4.1.0",
+        "less": "^4.1.2",
+        "less-loader": "^11.0.0",
+        "raw-loader": "^4.0.2",
+        "reflect-metadata": "^0.1.13",
+        "regenerator-runtime": "^0.13.9",
+        "swc-loader": "^0.2.3",
+        "ts-jest": "^28.0.5",
+        "ts-morph": "^15.1.0",
+        "ts-node": "^10.7.0",
+        "tsyringe": "^4.6.0",
+        "typescript": "^4.6.2",
+        "vue": "^3.2.25",
+        "vue-loader": "^17.0.0",
+        "webpack": "^5.74.0",
+        "webpack-cli": "^4.10.0",
+        "webpack-dashboard": "^3.3.7",
+        "webpack-merge": "^5.8.0",
+        "webpack-node-externals": "^3.0.0",
+        "xlsx": "^0.18.5",
+        "yaml": "^2.1.3"
+    },
+    "panels": {
+        "default": {
+            "title": "Localization Editor",
+            "type": "dockable",
+            "main": "webpack-dist/electron-renderer/default.js",
+            "icon": "./static/icon-2x.png",
+            "size": {
+                "min-width": 253,
+                "min-height": 750,
+                "width": 1280,
+                "height": 1200
+            }
+        }
+    },
+    "contributions": {
+        "inspector": {
+            "section": {
+                "node": {
+                    "L10nLabel": "webpack-dist/electron-renderer/l10n-label-inspector.js"
+                }
+            }
+        },
+        "menu": [
+            {
+                "path": "i18n:menu.panel",
+                "label": "i18n:localization-editor.localization-editor",
+                "icon": "./static/icon.png",
+                "message": "open-panel"
+            }
+        ],
+        "messages": {
+            "execute-panel-method": {
+                "methods": [
+                    "default.executePanelMethod"
+                ]
+            },
+            "scene:ready": {
+                "methods": [
+                    "onSceneReady"
+                ]
+            },
+            "builder:task-changed": {
+                "methods": [
+                    "onBuilderTaskChanged"
+                ]
+            },
+            "toggle": {
+                "methods": [
+                    "toggle"
+                ]
+            },
+            "enable-changed": {
+                "methods": [
+                    "enableChanged"
+                ]
+            },
+            "get-enable": {
+                "methods": [
+                    "getEnable"
+                ]
+            },
+            "open-panel": {
+                "methods": [
+                    "openPanel"
+                ]
+            },
+            "preview-by": {
+                "methods": [
+                    "previewBy"
+                ]
+            },
+            "scan": {
+                "methods": [
+                    "scan"
+                ]
+            },
+            "uninstall": {
+                "methods": [
+                    "uninstall"
+                ]
+            },
+            "read-config": {
+                "methods": [
+                    "readConfig"
+                ]
+            },
+            "get-index-data": {
+                "methods": [
+                    "getIndexData"
+                ]
+            },
+            "get-local-language": {
+                "methods": [
+                    "getLocalLanguage"
+                ]
+            },
+            "get-translate-data": {
+                "methods": [
+                    "getTranslateData"
+                ]
+            },
+            "get-translate-data-object": {
+                "methods": [
+                    "getTranslateDataObject"
+                ]
+            },
+            "save-translate-data": {
+                "methods": [
+                    "saveTranslateData"
+                ]
+            },
+            "clear-translate-data": {
+                "methods": [
+                    "clearTranslateData"
+                ]
+            },
+            "set-local-language-locale": {
+                "methods": [
+                    "setLocalLanguageLocale"
+                ]
+            },
+            "set-language-config": {
+                "methods": [
+                    "setLanguageConfig"
+                ]
+            },
+            "get-language-config": {
+                "methods": [
+                    "getLanguageConfig"
+                ]
+            },
+            "get-all-language-configs": {
+                "methods": [
+                    "getAllLanguageConfigs"
+                ]
+            },
+            "add-target-language": {
+                "methods": [
+                    "addTargetLanguage"
+                ]
+            },
+            "remove-target-language": {
+                "methods": [
+                    "removeTargetLanguage"
+                ]
+            },
+            "get-translate-providers": {
+                "methods": [
+                    "getTranslateProviders"
+                ]
+            },
+            "get-translate-provider-supported-languages": {
+                "methods": [
+                    "getTranslateProviderSupportedLanguages"
+                ]
+            },
+            "get-current-translate-provider": {
+                "methods": [
+                    "getCurrentTranslateProvider"
+                ]
+            },
+            "get-translate-provider": {
+                "methods": [
+                    "getTranslateProvider"
+                ]
+            },
+            "set-current-translate-provider": {
+                "methods": [
+                    "setCurrentTranslateProvider"
+                ]
+            },
+            "clear-translate-provider": {
+                "methods": [
+                    "clearTranslateProvider"
+                ]
+            },
+            "change-value": {
+                "methods": [
+                    "changeValue"
+                ]
+            },
+            "get-scan-options": {
+                "methods": [
+                    "getScanOptions"
+                ]
+            },
+            "auto-translate": {
+                "methods": [
+                    "autoTranslate"
+                ]
+            },
+            "import-media-files": {
+                "methods": [
+                    "importMediaFiles"
+                ]
+            },
+            "compile": {
+                "methods": [
+                    "compile"
+                ]
+            },
+            "add-association": {
+                "methods": [
+                    "addAssociation"
+                ]
+            },
+            "remove-association": {
+                "methods": [
+                    "removeAssociation"
+                ]
+            },
+            "get-resource-list": {
+                "methods": [
+                    "getResourceList"
+                ]
+            },
+            "get-resource-bundle": {
+                "methods": [
+                    "getResourceBundle"
+                ]
+            },
+            "import-translate-file": {
+                "methods": [
+                    "importTranslateFile"
+                ]
+            },
+            "export-translate-file": {
+                "methods": [
+                    "exportTranslateFile"
+                ]
+            }
+        },
+        "asset-db": {
+            "mount": {
+                "path": "./static/assets",
+                "readonly": true,
+                "visible": true,
+                "enable": "L10nEnable"
+            }
+        },
+        "scene": {
+            "script": "./webpack-dist/electron-main/scene.js"
+        },
+        "profile": {
+            "project": {
+                "ProjectConfig": {
+                    "default": {},
+                    "label": "i18n:localization_editor_project_config"
+                },
+                "L10nEnable": {
+                    "default": false,
+                    "label": "i18n:localization_editor_project_config",
+                    "message": "enable-changed"
+                }
+            },
+            "editor": {
+                "EditorConfig": {
+                    "default": {},
+                    "label": "i18n:localization_editor_editor_config"
+                },
+                "TranslateProviderConfigMap": {
+                    "default": {},
+                    "label": "i18n:localization_editor_provider_config"
+                }
+            }
+        },
+        "builder": "webpack-dist/electron-main/builder.js",
+        "server": "webpack-dist/electron-main/server.js"
+    }
+}
