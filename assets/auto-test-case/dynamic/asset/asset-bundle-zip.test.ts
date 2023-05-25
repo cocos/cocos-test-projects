@@ -1,10 +1,9 @@
 import { find, game } from 'cc';
 // @ts-ignore
-import { runScene, testCase, testClass, waitForFrames } from 'db://automation-framework/runtime/test-framework.mjs';
+import { runScene, testCase, testClass, waitForFrames, PlatformEnum } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
 
-@runScene('asset-bundle-zip')
-@testClass('AssetBundleZip')
+@testClass('AssetBundleZip', 'asset-bundle-zip')
 export class AssetBundleZip {
     _dt = 1;
 
