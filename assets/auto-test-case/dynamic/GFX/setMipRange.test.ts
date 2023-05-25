@@ -1,10 +1,9 @@
 import { director, find } from 'cc';
 // @ts-ignore
-import { runScene, testCase, testClass, waitForFrames } from 'db://automation-framework/runtime/test-framework.mjs';
+import { runScene, testCase, testClass, waitForFrames, PlatformEnum } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom_by_wait } from '../common/utils';
 
-@runScene('setMipRange')
-@testClass('setMipRange')
+@testClass('setMipRange', 'setMipRange', [PlatformEnum.WEB_MOBILE, PlatformEnum.HUAWEI_QUICK_GAME, PlatformEnum.OPPO_MINI_GAME])
 export class setMipRange{
     _dt = 50;
     _totalFrames = 0;

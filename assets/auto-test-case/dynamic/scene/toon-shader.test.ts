@@ -10,6 +10,8 @@ export class ToonShader {
 
   @testCase
   async startPlay() {
-    await screenshot_custom_by_wait(this._dt);
+    for (let i=0; i<3; i++) {
+      await screenshot_custom_by_wait(this._dt);
+    }
   }
 }
