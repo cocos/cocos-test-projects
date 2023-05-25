@@ -25,23 +25,29 @@ export class AssetBundleZip extends Component {
         }
     }
 
-    onClickBundle () {
-        var testBundle = assetManager.getBundle('TestBundleZip');
-        if (testBundle || this._isLoading) {
-            return;
-        }
-        this._onClear()
-        this._isLoading = true;
-        this.loadTips.string = "Bundle Loading....";
-        assetManager.loadBundle('TestBundleZip', (err) => {
-            if (err) {
-                log('Error url [' + err + ']');
+    async onClickBundle (): Promise<void> {
+        return new Promise((resolve, reject) => {
+            var testBundle = assetManager.getBundle('TestBundleZip');
+            if (testBundle || this._isLoading) {
+                reject();
                 return;
             }
-            this._isLoading = false;
-            this.loadTips.string = "Bundle loaded Successfully!";
-            this.labels[0].string = "已加载";
+            this._onClear()
+            this._isLoading = true;
+            this.loadTips.string = "Bundle Loading....";
+            assetManager.loadBundle('TestBundleZip', (err) => {
+                if (err) {
+                    log('Error url [' + err + ']');
+                    reject(err);
+                    return;
+                }
+                this._isLoading = false;
+                this.loadTips.string = "Bundle loaded Successfully!";
+                this.labels[0].string = "已加载";
+                resolve();
+            });
         });
+
     }
 
     onClickTexture () {

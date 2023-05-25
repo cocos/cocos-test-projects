@@ -174,27 +174,8 @@ export class AssetBundleZip {
     }
 
     async getBundleResult() {
-        return new Promise<void>(async (resovle) => {
-            //@ts-ignore
-            const assetBundleZip = find('Canvas')!.getComponent('AssetBundleZip')!;
-            //@ts-ignore
-            await assetBundleZip.onClickBundle();
-            //@ts-ignore
-            if (find('Canvas/Load Tip')!.getComponent('cc.Label')!.string === 'Bundle loaded Successfully!') {
-                console.log('asset zip bundle: bundle loaded successfully!');
-                resovle();
-            } else {
-                for (let i = 1; i < 10; i++) {
-                    await waitForFrames(i * 60);
-                    //@ts-ignore
-                    if (find('Canvas/Load Tip')!.getComponent('cc.Label')!.string === 'Bundle loaded Successfully!') {
-                        console.log('asset zip bundle: bundle loaded successfully!');
-                        resovle();
-                        break;
-                    }
-                }
-            }
-        })
+        const assetBundleZip = find('Canvas')!.getComponent('AssetBundleZip')! as any;
+        return assetBundleZip.onClickBundle();
     }
 
 
