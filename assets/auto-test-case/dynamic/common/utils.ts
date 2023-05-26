@@ -1,5 +1,5 @@
 
-import { Camera, game, director, math, physics, Vec3 } from 'cc';
+import { Camera, game, director, Director, math, physics, Vec3 } from 'cc';
 // @ts-ignore
 import { captureOneImage, waitForNextFrame, waitForFrames } from 'db://automation-framework/runtime/test-framework.mjs';
 
@@ -56,4 +56,21 @@ export function mouse_wheel_by_delta (delta=1, camera:any) {
 
 export async function random(min: number, max: number) {
     return Math.floor(Math.random() * (max - min)) + min;
+}
+
+/**
+ * Wait for the scene to complete loading
+ * @param sceneName
+ * @param times Check seconds
+ * @returns 
+ */
+export async function waitSceneLaunched(sceneName: string, times: number = 5): Promise<boolean> {
+    for (let i=0; i<times; i++) {
+        await waitForFrames(60);
+        if (director.getScene()?.name === sceneName) {
+            return true;
+        }
+    }
+
+    return false;
 }
