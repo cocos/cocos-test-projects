@@ -1,7 +1,8 @@
-import { EventGamepad, input, Input, _decorator, Component, Node, ScrollView, Vec3, game, Label, director, Director, assetManager, find, Canvas, Layers, JsonAsset, profiler, sys, CCString, CCBoolean } from "cc";
+import { EventGamepad, input, Input, _decorator, Component, Node, ScrollView, Vec3, game, Label, director, Director, assetManager, find, Canvas, Layers, JsonAsset, profiler, sys, EditBox } from "cc";
 const { ccclass, property } = _decorator;
 import { SceneList } from "./common";
 import { StateCode, TestFramework } from "./TestFramework";
+import { SceneManager } from "./scenelist";
 
 declare class AutoTestConfigJson extends JsonAsset {
     json: {
@@ -39,6 +40,12 @@ export class BackButton extends Component {
     
 
     private isAutoTesting: boolean = false;
+
+    private searchBox?: EditBox | null;
+    private searchButton?: Node;
+    private sceneArray?: string[];
+    private sceneFold?: string[];
+
 
     __preload() {
         const sceneInfo = assetManager.main!.config.scenes;
@@ -89,6 +96,7 @@ export class BackButton extends Component {
 
     onLoad() {
         input.on(Input.EventType.GAMEPAD_INPUT, this.onGamepadInput, this);
+
     }
 
     public manuallyControl () {
@@ -147,6 +155,8 @@ export class BackButton extends Component {
         BackButton._blockInput.active = false;
         BackButton._prevNode = this.node.getChildByName('PrevButton') as Node;
         BackButton._nextNode = this.node.getChildByName('NextButton') as Node;
+        this.searchBox = this.node.getChildByPath('Node/searchEditBox')?.getComponent(EditBox);
+        this.searchButton = this.node.getChildByPath('Node/searchButton') as Node;
         if (BackButton._prevNode && BackButton._nextNode) {
             BackButton.refreshButton();
         }
@@ -188,6 +198,7 @@ export class BackButton extends Component {
             return;
         }
         this.sceneName.node.active = true;
+        this.searchBox!.node.active = this.searchButton!.active = false;
         this.sceneName.string = this.getFoldName() +' : '+ this.getSceneName();
     }
 
@@ -196,6 +207,14 @@ export class BackButton extends Component {
         BackButton._blockInput.active = true;
         director.loadScene('TestList', ()=> {
             this.sceneName.node.active = false;
+            this.searchButton!.active = true;
+            if (this.searchBox!.string.length > 0) {
+                this.searchBox!.node.active = true;
+                this.searchBox!.setFocus();
+            } else 
+            {
+                this.searchBox!.node.active = false;
+            }
             BackButton._sceneIndex = -1;
             BackButton.refreshButton();
             BackButton._scrollNode = this.node.parent!.getChildByPath('Canvas/ScrollView') as Node;
@@ -296,4 +315,42 @@ export class BackButton extends Component {
             this.nextScene();
         }
     }
+
+    searchBoxChange(searchText: string) {
+        if (!this.sceneArray) {
+            this.sceneArray = SceneList.sceneArray.slice();
+            this.sceneFold = SceneList.sceneFold.slice();
+        }
+
+        if (!searchText) {
+            SceneList.sceneArray = this.sceneArray!.slice();
+            SceneList.sceneFold = this.sceneFold!.slice();
+        } else {
+            SceneList.sceneArray.length = 0;
+            SceneList.sceneFold.length = 0;
+            searchText = searchText.toLowerCase();
+            for (let i=0; i<this.sceneArray.length; i++) {
+                if (this.sceneArray[i].toLowerCase().indexOf(searchText) !== -1) {
+                    SceneList.sceneArray.push(this.sceneArray![i]);
+                    SceneList.sceneFold.push(this.sceneFold![i]);
+                }
+            }
+        }
+
+        director.getScene()?.getComponentInChildren(SceneManager)?.makeSceneItems();
+    }
+
+    searchBoxEnter() {
+        this.searchButtonClick();
+    }
+
+    searchButtonClick() {
+        if (this.searchBox?.node.active) {
+            this.searchBox.node.active = false;
+        } else {
+            this.searchBox!.node.active = true;
+            this.searchBox?.setFocus();
+        }
+    }
+
 }
