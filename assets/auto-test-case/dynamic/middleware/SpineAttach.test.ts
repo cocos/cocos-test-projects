@@ -5,9 +5,7 @@ import { screenshot_custom_by_wait } from '../common/utils';
 
 @testClass('SpineAttach', 'SpineAttach')
 export class SpineAttach {
-    _delay = 2;
     _dt = 20;
-    _totalFrames = 0;
 
     @testCase
     async part1() {
