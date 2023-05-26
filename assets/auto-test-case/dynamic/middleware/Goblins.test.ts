@@ -11,16 +11,20 @@ export class Goblins {
     @testCase
     async start() {
       await screenshot_custom(this._dt);
-      find('Canvas/Button-002')!.getComponent(Button)?.clickEvents[0].emit([]);
-      await screenshot_custom(this._dt);
-      find('Canvas/Button-002')!.getComponent(Button)?.clickEvents[0].emit([]);
-      await screenshot_custom(this._dt);
-      find('Canvas/Button-002')!.getComponent(Button)?.clickEvents[0].emit([]);
 
+      find('Canvas/Button-002')!.getComponent(Button)?.clickEvents[0].emit([]);
+      await screenshot_custom(this._dt);
+
+      find('Canvas/Button-002')!.getComponent(Button)?.clickEvents[0].emit([]);
+      await screenshot_custom(23);
+
+      find('Canvas/Button-002')!.getComponent(Button)?.clickEvents[0].emit([]);
       find('Canvas/Button-001')!.getComponent(Button)?.clickEvents[0].emit([]);
       await screenshot_custom(this._dt);
+
       find('Canvas/Button-002')!.getComponent(Button)?.clickEvents[0].emit([]);
       await screenshot_custom(this._dt);
+
       find('Canvas/Button-002')!.getComponent(Button)?.clickEvents[0].emit([]);
       await screenshot_custom(this._dt);
     }
