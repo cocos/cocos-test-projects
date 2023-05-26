@@ -1,13 +1,12 @@
 //@ts-ignore
-import { runScene, testCase, testClass, beforeClass, waitForFrames } from 'db://automation-framework/runtime/test-framework.mjs';
+import { runScene, testCase, testClass, beforeClass, waitForFrames, PlatformEnum } from 'db://automation-framework/runtime/test-framework.mjs';
 import { Component, find, NodeEventType, view } from 'cc';
 import { screenshot_custom } from '../common/utils';
 import { simulateMouseEvent } from '../common/SimulateEvent';
 import { systemEventPC as SystemEventPC } from '../../../cases/event/system-event/mouse-event';
 
-
-@runScene('mouse-event')
-@testClass('MouseEvent')
+@testClass('MouseEvent', 'mouse-event', [PlatformEnum.WEB_MOBILE, PlatformEnum.BYTEDANCE_MINI_GAME, PlatformEnum.WECHATGAME, PlatformEnum.OPPO_MINI_GAME,
+    PlatformEnum.ANDROID, PlatformEnum.VIVO_MINI_GAME, PlatformEnum.HUAWEI_QUICK_GAME, PlatformEnum.COCOS_PLAY, PlatformEnum.IOS])
 export class MouseEvent {
     mouseEvent!: SystemEventPC | Component | null;
     testData!: TestData;
