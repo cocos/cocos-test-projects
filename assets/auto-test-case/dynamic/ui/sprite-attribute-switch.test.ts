@@ -57,6 +57,7 @@ export class SpriteAttributeSwitch {
       // spriteType 1
       resetButton.clickEvents[0].emit([]);
       spriteTypeButton.clickEvents[0].emit([]);
+      await screenshot_custom(this._dt);
       spriteTypeButton.clickEvents[0].emit([]);
       await screenshot_custom(this._dt);
       spriteTypeButton.clickEvents[0].emit([]);
@@ -68,6 +69,7 @@ export class SpriteAttributeSwitch {
       resetButton.clickEvents[0].emit([]);
       spriteFrameButton.clickEvents[0].emit([]);
       spriteTypeButton.clickEvents[0].emit([]);
+      await screenshot_custom(this._dt);
       spriteTypeButton.clickEvents[0].emit([]);
       await screenshot_custom(this._dt);
       spriteTypeButton.clickEvents[0].emit([]);
