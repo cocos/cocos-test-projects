@@ -5,17 +5,22 @@ import { screenshot_custom } from '../common/utils';
 import { simulateMouseEvent } from '../common/SimulateEvent';
 import { systemEventPC as SystemEventPC } from '../../../cases/event/system-event/mouse-event';
 
-@testClass('MouseEvent', 'mouse-event', [PlatformEnum.WEB_MOBILE, PlatformEnum.BYTEDANCE_MINI_GAME, PlatformEnum.WECHATGAME, PlatformEnum.OPPO_MINI_GAME,
-    PlatformEnum.ANDROID, PlatformEnum.VIVO_MINI_GAME, PlatformEnum.HUAWEI_QUICK_GAME, PlatformEnum.COCOS_PLAY, PlatformEnum.IOS])
+
+
+
+
+@testClass('MouseEvent', 'mouse-event', [PlatformEnum.ANDROID, PlatformEnum.IOS, PlatformEnum.HARMONY_OS, PlatformEnum.HUAWEI_AGC,
+    PlatformEnum.BYTEDANCE_MINI_GAME, PlatformEnum.OPPO_MINI_GAME, PlatformEnum.HUAWEI_QUICK_GAME, PlatformEnum.VIVO_MINI_GAME, PlatformEnum.XIAOMI_QUICK_GAME,
+    PlatformEnum.BAIDU_MINI_GAME, PlatformEnum.WECHATGAME, PlatformEnum.COCOS_PLAY, PlatformEnum.COCOS_RUNTIME, PlatformEnum.WEB_MOBILE])
 export class MouseEvent {
-    mouseEvent!: SystemEventPC | Component | null;
+    mouseEvent!: SystemEventPC | null;
     testData!: TestData;
     tickTime: number = 5;
 
 
     @beforeClass
     async initData() {
-        this.mouseEvent = find('mouse-event')!.getComponent('systemEventPC');
+        this.mouseEvent = find('mouse-event')!.getComponent('systemEventPC') as SystemEventPC;
         this.testData = {
             MouseDown: {
                 x: 717.25,
