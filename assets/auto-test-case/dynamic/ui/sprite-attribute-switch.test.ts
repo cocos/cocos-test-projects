@@ -3,54 +3,102 @@ import { find, Button, Color, Size } from 'cc';
 import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
 
-@runScene('sprite-attribute-switch')
-@testClass('SpriteAttributeSwitch')
+@testClass('SpriteAttributeSwitch', 'sprite-attribute-switch')
 export class SpriteAttributeSwitch {
     _dt = 30;
 
     @testCase
     async start() {
+      const caseScript: any = find('Canvas')!.getComponent("SpriteAttributeSwitch")!;
+      const resetButton = find('Canvas/buttons/resetButton')!.getComponent(Button)!;
+      const spriteFrameButton = find('Canvas/buttons/spriteFrameButton')!.getComponent(Button)!;
+      const spriteTypeButton = find('Canvas/buttons/spriteTypeButton')!.getComponent(Button)!;
+      const fillTypeButton = find('Canvas/buttons/fillTypeButton')!.getComponent(Button)!;
+
       await screenshot_custom(this._dt);
+
       find('Canvas/buttons/activeButton')!.getComponent(Button)?.clickEvents[0].emit([]);
       await screenshot_custom(this._dt);
 
-      find('Canvas/buttons/resetButton')!.getComponent(Button)?.clickEvents[0].emit([]);
+      resetButton.clickEvents[0].emit([]);
       find('Canvas/buttons/enabledButton')!.getComponent(Button)?.clickEvents[0].emit([]);
       await screenshot_custom(this._dt);
 
-      find('Canvas/buttons/resetButton')!.getComponent(Button)?.clickEvents[0].emit([]);
-      find('Canvas')!.getComponent("SpriteAttributeSwitch")!.transform.contentSize = new Size(200 * 2 * 0.6, 200 * 2 * 0.4);
-      find('Canvas')!.getComponent("SpriteAttributeSwitch")!.updateState();
+      resetButton.clickEvents[0].emit([]);
+      caseScript!.transform.contentSize = new Size(200 * 2 * 0.6, 200 * 2 * 0.4);
+      caseScript!.updateState();
       //find('Canvas/buttons/contentSizeButton')!.getComponent(Button)?.clickEvents[0].emit([]);
       await screenshot_custom(this._dt);
       
-      find('Canvas/buttons/resetButton')!.getComponent(Button)?.clickEvents[0].emit([]);
-      find('Canvas')!.getComponent("SpriteAttributeSwitch")!.transform.anchorX = 0.1;
-      find('Canvas')!.getComponent("SpriteAttributeSwitch")!.updateState();
+      resetButton.clickEvents[0].emit([]);
+      caseScript!.transform.anchorX = 0.1;
+      caseScript!.updateState();
       //find('Canvas/buttons/AnchorXButton')!.getComponent(Button)?.clickEvents[0].emit([]);
       await screenshot_custom(this._dt);
 
-      find('Canvas/buttons/resetButton')!.getComponent(Button)?.clickEvents[0].emit([]);
-      find('Canvas')!.getComponent("SpriteAttributeSwitch")!.transform.anchorY = 0.9;
-      find('Canvas')!.getComponent("SpriteAttributeSwitch")!.updateState();
+      resetButton.clickEvents[0].emit([]);
+      caseScript!.transform.anchorY = 0.9;
+      caseScript!.updateState();
       //find('Canvas/buttons/AnchorYButton')!.getComponent(Button)?.clickEvents[0].emit([]);
       await screenshot_custom(this._dt);
 
       // The color of the button changes randomly, and fixed parameters are provided here
-      find('Canvas/buttons/resetButton')!.getComponent(Button)?.clickEvents[0].emit([]);
-      find('Canvas')!.getComponent("SpriteAttributeSwitch")!.sprite.color = new Color(255 * 0.5, 255 * 0.5, 255 * 0.5, 255 * 0.5);
-      find('Canvas')!.getComponent("SpriteAttributeSwitch")!.updateState();
+      resetButton.clickEvents[0].emit([]);
+      caseScript!.sprite.color = new Color(255 * 0.5, 255 * 0.5, 255 * 0.5, 255 * 0.5);
+      caseScript!.updateState();
       await screenshot_custom(this._dt);
       
-      find('Canvas/buttons/resetButton')!.getComponent(Button)?.clickEvents[0].emit([]);
-      find('Canvas/buttons/spriteFrameButton')!.getComponent(Button)?.clickEvents[0].emit([]);
+      // spriteFrame
+      resetButton.clickEvents[0].emit([]);
       await screenshot_custom(this._dt);
-      find('Canvas/buttons/resetButton')!.getComponent(Button)?.clickEvents[0].emit([]);
-      find('Canvas/buttons/spriteTypeButton')!.getComponent(Button)?.clickEvents[0].emit([]);
-      find('Canvas/buttons/spriteTypeButton')!.getComponent(Button)?.clickEvents[0].emit([]);
+      spriteFrameButton.clickEvents[0].emit([]);
       await screenshot_custom(this._dt);
-      find('Canvas/buttons/resetButton')!.getComponent(Button)?.clickEvents[0].emit([]);
-      find('Canvas/buttons/fillTypeButton')!.getComponent(Button)?.clickEvents[0].emit([]);
+
+      // spriteType 1
+      resetButton.clickEvents[0].emit([]);
+      spriteTypeButton.clickEvents[0].emit([]);
+      spriteTypeButton.clickEvents[0].emit([]);
+      await screenshot_custom(this._dt);
+      spriteTypeButton.clickEvents[0].emit([]);
+      await screenshot_custom(this._dt);
+      spriteTypeButton.clickEvents[0].emit([]);
+      await screenshot_custom(this._dt);
+
+      // spriteType 2
+      resetButton.clickEvents[0].emit([]);
+      spriteFrameButton.clickEvents[0].emit([]);
+      spriteTypeButton.clickEvents[0].emit([]);
+      spriteTypeButton.clickEvents[0].emit([]);
+      await screenshot_custom(this._dt);
+      spriteTypeButton.clickEvents[0].emit([]);
+      await screenshot_custom(this._dt);
+      spriteTypeButton.clickEvents[0].emit([]);
+      await screenshot_custom(this._dt);
+
+      // fillType 1
+      resetButton.clickEvents[0].emit([]);
+      spriteTypeButton.clickEvents[0].emit([]);
+      spriteTypeButton.clickEvents[0].emit([]);
+      spriteTypeButton.clickEvents[0].emit([]);
+      fillTypeButton.clickEvents[0].emit([]);
+      await screenshot_custom(this._dt);
+      fillTypeButton.clickEvents[0].emit([]);
+      await screenshot_custom(this._dt);
+      fillTypeButton.clickEvents[0].emit([]);
+      await screenshot_custom(this._dt);
+
+
+      // fillType 1
+      resetButton.clickEvents[0].emit([]);
+      spriteFrameButton.clickEvents[0].emit([]);
+      spriteTypeButton.clickEvents[0].emit([]);
+      spriteTypeButton.clickEvents[0].emit([]);
+      spriteTypeButton.clickEvents[0].emit([]);
+      fillTypeButton.clickEvents[0].emit([]);
+      await screenshot_custom(this._dt);
+      fillTypeButton.clickEvents[0].emit([]);
+      await screenshot_custom(this._dt);
+      fillTypeButton.clickEvents[0].emit([]);
       await screenshot_custom(this._dt);
     }
 }
