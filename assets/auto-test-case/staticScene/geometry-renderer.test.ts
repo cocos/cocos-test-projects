@@ -29,28 +29,28 @@ export class GeometryRenderer {
     @testCase
     async wireframe() {
         this.geometryRenderer!.isChecked = true;
-        await screenshot_custom();
+        await screenshot_custom(10);
         this.geometryRenderer!.isChecked = false;
     }
 
     @testCase
     async depthTests() {
         this.depthTest!.isChecked = true;
-        await screenshot_custom();
+        await screenshot_custom(10);
         this.depthTest!.isChecked = false;
     }
 
     @testCase
     async toggleUnlits() {
         this.toggleUnlit!.isChecked = true;
-        await screenshot_custom();
+        await screenshot_custom(10);
         this.toggleUnlit!.isChecked = false;
     }
 
     @testCase
     async toggleRotates() {
         this.toggleRotate!.isChecked = true;
-        await screenshot_custom();
+        await screenshot_custom(10);
         for (let i = 0; i < 2; i++) {
             await screenshot_custom(this.dt - 15);
         }
@@ -64,7 +64,7 @@ export class GeometryRenderer {
         this.depthTest!.isChecked = true;
         this.toggleUnlit!.isChecked = true;
         this.toggleRotate!.isChecked = true;
-        await screenshot_custom();
+        await screenshot_custom(10);
 
         await screenshot_custom(this.dt);
     }

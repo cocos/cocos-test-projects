@@ -56,6 +56,7 @@ export class Spriteatlas {
       this.testScript!.editbox.string = "lake";
       buttonChange.clickEvents[0].emit([]);
       await screenshot_custom(this._dt);
+      
       buttonReplace.clickEvents[0].emit([]);
       await screenshot_custom(this._dt);
 
