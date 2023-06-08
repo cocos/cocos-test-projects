@@ -97,13 +97,16 @@ export class AssetLoading extends Component {
         this.loadTips.string = this._curType + " Loading....";
         this._isLoading = true;
 
-        await this._load();
+        return this._load();
     }
 
-    _load () {
-        return new Promise<void>((resovle, reject) => {
+    _load (): Promise<boolean> {
+        return new Promise((resovle, reject) => {
             const url = this._urls[this._curType];
-            var loadCallBack = this._loadCallBack.bind(this);
+            const loadCallBack = (err: Error | null, res: any) => {
+                this._loadCallBack(err, res);
+                resovle(err ? false : true);
+            }
             switch (this._curType) {
                 case 'SpriteFrame':
                     // specify the type to load sub asset from texture's url
@@ -134,7 +137,7 @@ export class AssetLoading extends Component {
                     break;
                 case 'Scene':
                     director.loadScene(url, (error: any) => {
-                        error ? reject(error) : resovle();
+                        resovle(error ? false : true);
                     });
                     break;
                 case 'CORS':
