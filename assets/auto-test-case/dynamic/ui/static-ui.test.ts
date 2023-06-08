@@ -1,7 +1,8 @@
 // @ts-ignore
 import { testCase, testClass, afterClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom, waitSceneLaunched } from '../common/utils';
-import { sys } from 'cc';
+import { find, sys } from 'cc';
+import { StaticUI } from '../../../cases/ui/19.static-ui/static-ui';
 
 @testClass('StaticUi', 'static-ui')
 export class StaticUi {
@@ -9,11 +10,12 @@ export class StaticUi {
 
     @testCase
     async play() {
-        let sceneName: string;
+        let caseScript;
         await screenshot_custom(this._dt);
         for (let i = 0; i < 12; i++) {
-            sceneName = (i % 2) === 0 ? 'static-ui-replace' : 'static-ui';
-            await waitSceneLaunched(sceneName)
+            caseScript = find("background")!.getComponent("StaticUI") as StaticUI;
+            caseScript.unschedule(caseScript.func);
+            await caseScript.func();
             await screenshot_custom(this._dt);
         }
     }
