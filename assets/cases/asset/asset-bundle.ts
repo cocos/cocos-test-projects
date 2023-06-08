@@ -126,9 +126,6 @@ export class AssetBundle extends Component {
                 director.runScene(asset!, undefined, (err) => {
                    err ? reject(err) : resovle();
                 });
-                if (game.isPaused()) {
-                    director.emit(Director.EVENT_END_FRAME);
-                }
             });
         });
     }
