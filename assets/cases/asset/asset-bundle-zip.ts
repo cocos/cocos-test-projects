@@ -119,7 +119,7 @@ export class AssetBundleZip extends Component {
         });
     }
 
-    async onClickScene ():Promise<void> {
+    async onClickScene (): Promise<void> {
         return new Promise((resovle, reject) => {
             if (this._isLoading) return;
             var testBundle = assetManager.getBundle('TestBundleZip');
