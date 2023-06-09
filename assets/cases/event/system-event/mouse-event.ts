@@ -18,7 +18,7 @@ export class systemEventPC extends Component {
     private _timeoutId = -1;
 
     onLoad () {
-        if (sys.isMobile) {
+        if (sys.isMobile && !sys.hasFeature(sys.Feature.HPE)) {
             this.notSupported.active = true;
             return;
         }
