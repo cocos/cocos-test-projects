@@ -72,14 +72,7 @@ export class BackButton extends Component {
             const firstIndex = str.lastIndexOf('/') + 1;
             const lastIndex = str.lastIndexOf('.scene');
             let currentScene = str.substring(firstIndex, lastIndex);
-            if (this.noAutoTest) {
-                if (autoTestList.indexOf(currentScene) === -1) {
-                    SceneList.sceneArray.push(currentScene);
-                    const firstIndexFold= str.indexOf('/cases/') + 7;
-                    const lastIndexFolf = str.indexOf('/',firstIndexFold);
-                    SceneList.sceneFold.push(str.substring(firstIndexFold, lastIndexFolf));
-                }
-            } else {
+            if (!this.noAutoTest || autoTestList.indexOf(currentScene) === -1) {
                 SceneList.sceneArray.push(currentScene);
                 const firstIndexFold= str.indexOf('/cases/') + 7;
                 const lastIndexFolf = str.indexOf('/',firstIndexFold);
