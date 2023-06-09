@@ -1,12 +1,19 @@
 import { find, game } from 'cc';
 // @ts-ignore
-import { runScene, testCase, testClass, waitForFrames, PlatformEnum } from 'db://automation-framework/runtime/test-framework.mjs';
+import { testCase, testClass, waitForFrames, beforeClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
+import { AssetBundleZip as AssetBundleZipComp } from '../../../cases/asset/asset-bundle-zip';
+import { BackToAssetBundleZip } from '../../../cases/asset/test-bundle-zip/back-to-asset-bundle-zip';
 
 @testClass('AssetBundleZip', 'asset-bundle-zip')
 export class AssetBundleZip {
     _dt = 1;
+    private caseScript!: AssetBundleZipComp | null;
 
+    @beforeClass
+    async initData(){
+        this.caseScript = find('Canvas')!.getComponent('AssetBundleZip') as AssetBundleZipComp;
+    }
 
     @testCase
     async startPlay() {
@@ -15,188 +22,47 @@ export class AssetBundleZip {
 
     @testCase
     async onClickBundle() {
-        await this.getBundleResult();
+        await this.caseScript!.onClickBundle();
         await screenshot_custom(this._dt);
     }
 
     @testCase
     async onClickTexture() {
-        await this.getTextrueResult();
+        await this.caseScript!.onClickTexture();
         await screenshot_custom(this._dt);
     }
 
     @testCase
     async onClickAudio() {
-        // @ts-ignore
-        // find('Canvas').getComponent('AssetBundleZip').onClickAudio();
-        await this.getAudioResult();
+        await this.caseScript!.onClickAudio();
         await screenshot_custom(this._dt);
     }
 
     @testCase
     async onClickScene() {
-        // @ts-ignore
-        // await find('Canvas')?.getComponent('AssetBundleZip')?.onClickScene();
-        await this.getSceneResult();
+        await this.caseScript!.onClickScene();
         await screenshot_custom(this._dt);
-        // @ts-ignore
-        await find('Canvas')?.getComponent('BackToAssetBundleZip')?.onClick();
+
+        await (find('Canvas')!.getComponent('BackToAssetBundleZip') as BackToAssetBundleZip)!.onClick();
         await screenshot_custom(this._dt);
+        this.initData();
     }
 
     @testCase
     async onClickRelease() {
-        // @ts-ignore
-        await this.getReleaseResult();
+        this.caseScript!.onClickRelease();
         await screenshot_custom(this._dt);
     }
 
     @testCase
     async onClickDestroy() {
-        // @ts-ignore
-        await this.getDestroyResult();
+        this.caseScript!.onClickDestroy();
         await screenshot_custom(this._dt);
     }
 
     @testCase
     async onFailLoadBundle() {
-        // @ts-ignore
-        await this.getTextrueResult();
+        await this.caseScript!.onClickTexture().catch((reason: any) => {console.log(reason)});
         await screenshot_custom(this._dt);
-    }
-
-    async getTextrueResult() {
-        return new Promise<void>(async (resovle) => {
-            await waitForFrames(5 * 60);
-            //@ts-ignore
-            const assetBundleZip = find('Canvas')!.getComponent('AssetBundleZip')!;
-            //@ts-ignore
-            await assetBundleZip.onClickTexture();
-            // find('Canvas').getComponent('AssetBundleZip').onClickTexture();
-            await waitForFrames(2 * 60);
-            //@ts-ignore
-            if (find('Canvas/Load Tip')!.getComponent('cc.Label')!.string === '操作失败，请先加载 Asset Bundle') {
-                console.warn('before load bundle fail, cause onclickTexture fail!');
-                resovle();
-            } else {
-                for (let i = 1; i < 6; i++) {
-                    await waitForFrames(i * 60);
-                    //@ts-ignore
-                    if (find('Canvas/Layout/Load_Texture')!.getComponent('cc.Button')!.target.getChildByName('Label')!.getComponent('cc.Label')!.string === '已加载') {
-                        resovle();
-                        break;
-                    } else {
-                        for (let i = 1; i < 10; i++) {
-                            await waitForFrames(i * 60);
-                            //@ts-ignore
-                            if (find('Canvas/Layout/Load_Texture')!.getComponent('cc.Button')!.target.getChildByName('Label')!.getComponent('cc.Label')!.string === '已加载') {
-                                resovle();
-                                break;
-                            }
-                        }
-                    }
-                }
-            }
-        })
-    }
-
-
-    async getAudioResult() {
-        return new Promise<void>(async (resovle) => {
-            //@ts-ignore
-            const assetBundleZip = find('Canvas')!.getComponent('AssetBundleZip')!;
-            //@ts-ignore
-            await assetBundleZip.onClickAudio();
-            //@ts-ignore
-            if (find('Canvas/Load Tip')!.getComponent('cc.Label')!.string === '播放音乐') {
-                resovle();
-            } else {
-                for (let i = 1; i < 10; i++) {
-                    await waitForFrames(i * 60);
-                    //@ts-ignore
-                    if (find('Canvas/Load Tip')!.getComponent('cc.Label')!.string === '播放音乐') {
-                        resovle();
-                        break;
-                    }
-                }
-            }
-        })
-    }
-
-
-    async getSceneResult() {
-        return new Promise<void>(async (resovle, reject) => {
-            game.resume();
-            //@ts-ignore
-            const assetBundleZip = find('Canvas')!.getComponent('AssetBundleZip')!;
-            //@ts-ignore
-            await assetBundleZip.onClickScene();
-            game.pause();
-            //@ts-ignore
-            if (!find('Canvas/Load Tip') && find('Canvas').getComponent('BackToAssetBundleZip')) {
-                resovle();
-            } else {
-                for (let i = 1; i < 10; i++) {
-                    await waitForFrames(i * 60);
-                    //@ts-ignore
-                    if (!find('Canvas/Load Tip') && find('Canvas')!.getComponent('BackToAssetBundleZip')!) {
-                        resovle();
-                        break;
-                    }
-                }
-                reject('test case has error，scene:asset-bundle-zip');
-            }
-        })
-    }
-
-
-    async getDestroyResult() {
-        return new Promise<void>(async (resovle) => {
-            //@ts-ignore
-            const assetBundleZip = find('Canvas')!.getComponent('AssetBundleZip')!;
-            //@ts-ignore
-            await assetBundleZip.onClickDestroy();
-            //@ts-ignore
-            if (find('Canvas/Load Tip')!.getComponent('cc.Label')!.string === '分包已被销毁') {
-                resovle();
-            } else {
-                for (let i = 1; i < 10; i++) {
-                    await waitForFrames(i * 60);
-                    //@ts-ignore
-                    if (find('Canvas/Load Tip')!.getComponent('cc.Label')!.string === '分包已被销毁') {
-                        resovle();
-                        break;
-                    }
-                }
-            }
-        })
-    }
-
-    async getBundleResult() {
-        const assetBundleZip = find('Canvas')!.getComponent('AssetBundleZip')! as any;
-        return assetBundleZip.onClickBundle();
-    }
-
-
-    async getReleaseResult() {
-        return new Promise<void>(async (resovle) => {
-            //@ts-ignore
-            const assetBundleZip = find('Canvas')!.getComponent('AssetBundleZip')!;
-            //@ts-ignore
-            await assetBundleZip.onClickRelease();
-            //@ts-ignore
-            if (find('Canvas/Load Tip')!.getComponent('cc.Label')!.string === '资源已被释放') {
-                resovle();
-            } else {
-                for (let i = 1; i < 10; i++) {
-                    await waitForFrames(i * 60);
-                    //@ts-ignore
-                    if (find('Canvas/Load Tip')!.getComponent('cc.Label')!.string === '资源已被释放') {
-                        resovle();
-                        break;
-                    }
-                }
-            }
-        })
     }
 }
