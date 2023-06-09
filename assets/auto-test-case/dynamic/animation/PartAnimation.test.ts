@@ -6,7 +6,7 @@ import { screenshot_custom,screenshot_custom_by_wait } from '../common/utils';
 @runScene('PartAnimation')
 @testClass('PartAnimation')
 export class PartAnimation {
-    _dt = 60;
+    _dt = 29;
 
     @testCase
     async white() {

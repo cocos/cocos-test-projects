@@ -1,13 +1,22 @@
-import { find } from 'cc';
+import { find, Size, view } from 'cc';
 // @ts-ignore
-import { captureOneImage, runScene, sleep, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
+import { runScene, sleep, testCase, testClass, beforeClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
 
 @runScene('LoadResDir')
-// @testClass('LoadResDir')
+@testClass('LoadResDir')
 export class LoadResDir {
-    _dt = 15;
-    _delay = 2
+    _dt = 135;
+    canvasSize!: Size;
+    width: number = 1197.5;
+    height: number = 797.5;
+
+    @beforeClass
+    initData() {
+        this.canvasSize = view.getCanvasSize();
+        this.width =  this.canvasSize.width;
+        this.height = this.canvasSize.height
+    }
     @testCase
     async startPlay() {
         await screenshot_custom(this._dt);
@@ -17,25 +26,25 @@ export class LoadResDir {
     async onLoadAll() {
         // @ts-ignore
         find('Canvas').getComponent('LoadResDirExample').onLoadAll();
-        await sleep(this._delay);
+        await screenshot_custom(this._dt);
+
+        // @ts-ignore
+        find('Canvas/ScrollView').getComponent('cc.ScrollView').content.position = { x: -this.width/4.6, y: this.height/1.14, z: 0 }
         await screenshot_custom(this._dt);
         // @ts-ignore
-        find('Canvas/ScrollView').getComponent('cc.ScrollView').content.position = { x: -260, y: 700, z: 0 }
+        find('Canvas/ScrollView').getComponent('cc.ScrollView').content.position = { x: -this.width/4.6, y: this.height/0.68, z: 0 }
         await screenshot_custom(this._dt);
         // @ts-ignore
-        find('Canvas/ScrollView').getComponent('cc.ScrollView').content.position = { x: -260, y: 1170, z: 0 }
+        find('Canvas/ScrollView').getComponent('cc.ScrollView').content.position = { x: -this.width/4.6, y: this.height/0.38, z: 0 }
         await screenshot_custom(this._dt);
         // @ts-ignore
-        find('Canvas/ScrollView').getComponent('cc.ScrollView').content.position = { x: -260, y: 2093.7499000000003, z: 0 }
+        find('Canvas/ScrollView').getComponent('cc.ScrollView').content.position = { x: -this.width/4.6, y: this.height/0.315, z: 0 }
         await screenshot_custom(this._dt);
         // @ts-ignore
-        find('Canvas/ScrollView').getComponent('cc.ScrollView').content.position = { x: -260, y: 2531.2499000000003, z: 0 }
+        find('Canvas/ScrollView').getComponent('cc.ScrollView').content.position = { x: -this.width/4.6, y:  this.height/0.26, z: 0 }
         await screenshot_custom(this._dt);
         // @ts-ignore
-        find('Canvas/ScrollView').getComponent('cc.ScrollView').content.position = { x: -260, y: 3031.2499000000003, z: 0 }
-        await screenshot_custom(this._dt);
-        // @ts-ignore
-        find('Canvas/ScrollView').getComponent('cc.ScrollView').content.position = { x: -260, y: 3139.4, z: 0 }
+        find('Canvas/ScrollView').getComponent('cc.ScrollView').content.position = { x: -this.width/4.6, y: this.height/0.26, z: 0 }
         await screenshot_custom(this._dt);
     }
 

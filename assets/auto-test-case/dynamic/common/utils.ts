@@ -1,39 +1,24 @@
 
-import { Camera, director, math, physics, Vec3 } from 'cc';
+import { Camera, game, director, Director, math, physics, Vec3 } from 'cc';
 // @ts-ignore
-import { captureOneImage, waitForNextFrame } from 'db://automation-framework/runtime/test-framework.mjs';
+import { captureOneImage, waitForNextFrame, waitForFrames } from 'db://automation-framework/runtime/test-framework.mjs';
 
 export async function screenshot_custom(dt?: number, imageName?: string) {
-    const frame_time = physics.PhysicsSystem.instance.fixedTimeStep;
-    if (dt) {
-        for (let i = 0; i < dt; i++) {
-            director.tick(physics.PhysicsSystem.instance.fixedTimeStep);
-        }
-    } else {
-        director.tick(frame_time);
-    }
-    //director.tick(frame_time);
-    director.pause();
-    await captureOneImage(imageName);
-    director.resume();
+    await screenshot(dt, imageName);
 }
 
 // add by lzh
 export async function screenshot_custom_by_wait(dt?: number, imageName?: string) {
-    const frame_time = physics.PhysicsSystem.instance.fixedTimeStep;
-    if (dt) {
-        for (let i = 0; i < dt; i++) {
-            await waitForNextFrame();
-            //director.tick(physics.PhysicsSystem.instance.fixedTimeStep);
-        }
-    } else {
-        //director.tick(frame_time);
-        await waitForNextFrame();
+    await screenshot(dt, imageName);
+}
+
+async function screenshot(afterFrames?: number, imageName?: string) {
+    if (afterFrames) {
+        afterFrames -= 1;
+        await waitForFrames(afterFrames);
     }
-    //director.tick(frame_time);
-    director.pause();
+
     await captureOneImage(imageName);
-    director.resume();
 }
 
 // add by lzh: zoom
@@ -45,4 +30,21 @@ export function mouse_wheel_by_delta (delta=1, camera:any) {
 
 export async function random(min: number, max: number) {
     return Math.floor(Math.random() * (max - min)) + min;
+}
+
+/**
+ * Wait for the scene to complete loading
+ * @param sceneName
+ * @param times Check seconds
+ * @returns 
+ */
+export async function waitSceneLaunched(sceneName: string, times: number = 5): Promise<boolean> {
+    for (let i=0; i<times; i++) {
+        await waitForFrames(60);
+        if (director.getScene()?.name === sceneName) {
+            return true;
+        }
+    }
+
+    return false;
 }

@@ -21,7 +21,7 @@ export class TweenThen {
 
     @testCase
     async end() {
-        await screenshot_custom(this._dt * 100);
+        await screenshot_custom(this._dt + 100);
     }
 
 }
