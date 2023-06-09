@@ -24,7 +24,7 @@ export class subScript01 extends Component {
     // }
 
     backToList() {
-        return new Promise<void>((resovle, reject)=>{
+        return new Promise<void>((resovle, reject) => {
             if (this.backRoot) {
                 this.backRoot.active = true;
             }
