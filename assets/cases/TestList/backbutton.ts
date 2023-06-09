@@ -37,21 +37,18 @@ export class BackButton extends Component {
     @property({type:Boolean})
     public noAutoTest:Boolean=false;
 
-    
-
     private isAutoTesting: boolean = false;
-
     private searchBox?: EditBox | null;
     private searchButton?: Node;
     private sceneArray?: string[];
     private sceneFold?: string[];
-
 
     __preload() {
         const sceneInfo = assetManager.main!.config.scenes;
         const array: string[] = [];
         sceneInfo.forEach((i) => array.push(i.url));
         array.sort();
+        const autoTestList = this.autoTestConfig!.json.sceneList;
         for (let i = 0;  i< array.length; i++) {
             let str = array[i];
             if (str.includes('TestList') || str.includes('subPack') || str.includes('static-ui-replace')) {
@@ -60,7 +57,7 @@ export class BackButton extends Component {
             if (str.includes('asset-bundle-zip') && !assetManager.downloader.remoteServerAddress) {
                 continue;
             }
-            if (sys.platform === sys.Platform.NX){
+            if (sys.platform === sys.Platform.NX) {
                 if (str.includes('rich-text-long-string-truncation') || str.includes('rich-text-align') || str.includes('geometry-renderer') || str.includes('particle-culling') 
                 || str.includes('boxes-unbatched') || str.includes('network') || str.includes('webview') || str.includes('video-player')) {
                     continue;
@@ -74,23 +71,20 @@ export class BackButton extends Component {
             }
             const firstIndex = str.lastIndexOf('/') + 1;
             const lastIndex = str.lastIndexOf('.scene');
-            //SceneList.sceneArray.push(str.substring(firstIndex, lastIndex));
-            //过滤noAutoTestSceneList下的场景
             let currentScene = str.substring(firstIndex, lastIndex);
-            if(this.noAutoTest){
-                if(this.autoTestConfig!.json.sceneList.indexOf(currentScene) == -1){
+            if (this.noAutoTest) {
+                if (autoTestList.indexOf(currentScene) === -1) {
                     SceneList.sceneArray.push(currentScene);
                     const firstIndexFold= str.indexOf('/cases/') + 7;
                     const lastIndexFolf = str.indexOf('/',firstIndexFold);
                     SceneList.sceneFold.push(str.substring(firstIndexFold, lastIndexFolf));
                 }
-            }else{
+            } else {
                 SceneList.sceneArray.push(currentScene);
                 const firstIndexFold= str.indexOf('/cases/') + 7;
                 const lastIndexFolf = str.indexOf('/',firstIndexFold);
                 SceneList.sceneFold.push(str.substring(firstIndexFold, lastIndexFolf));
             }
-            
         }
     }
 

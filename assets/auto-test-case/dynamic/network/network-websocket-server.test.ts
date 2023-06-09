@@ -1,12 +1,8 @@
-import { find } from 'cc';
 // @ts-ignore
-import { runScene, testCase, testClass, sleep, beforeClass, PlatformEnum } from 'db://automation-framework/runtime/test-framework.mjs';
-import { simulateTouchStart, simulateTouchEnd } from '../common/SimulateEvent';
+import { PlatformEnum, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
 
-
-@runScene('network-websocket-server')
-@testClass('NetworkWebsocketServer', undefined, [PlatformEnum.WEB_DESKTOP, PlatformEnum.WEB_MOBILE, PlatformEnum.WECHATGAME, PlatformEnum.BYTEDANCE_MINI_GAME,
+@testClass('NetworkWebsocketServer', 'network-websocket-server', [PlatformEnum.WEB_DESKTOP, PlatformEnum.WEB_MOBILE, PlatformEnum.WECHATGAME, PlatformEnum.BYTEDANCE_MINI_GAME,
     PlatformEnum.OPPO_MINI_GAME, PlatformEnum.HUAWEI_QUICK_GAME, PlatformEnum.VIVO_MINI_GAME])
 export class NetworkWebsocketServer {
     tickTime: number = 10;

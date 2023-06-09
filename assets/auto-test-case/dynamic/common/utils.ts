@@ -5,37 +5,11 @@ import { captureOneImage, waitForNextFrame, waitForFrames } from 'db://automatio
 
 export async function screenshot_custom(dt?: number, imageName?: string) {
     await screenshot(dt, imageName);
-    // const frame_time = physics.PhysicsSystem.instance.fixedTimeStep;
-    // if (dt) {
-    //     for (let i = 0; i < dt; i++) {
-    //         director.tick(physics.PhysicsSystem.instance.fixedTimeStep);
-    //     }
-    // } else {
-    //     director.tick(frame_time);
-    // }
-    // //director.tick(frame_time);
-    // director.pause();
-    // await captureOneImage(imageName);
-    // director.resume();
 }
 
 // add by lzh
 export async function screenshot_custom_by_wait(dt?: number, imageName?: string) {
     await screenshot(dt, imageName);
-    // const frame_time = physics.PhysicsSystem.instance.fixedTimeStep;
-    // if (dt) {
-    //     for (let i = 0; i < dt; i++) {
-    //         await waitForNextFrame();
-    //         //director.tick(physics.PhysicsSystem.instance.fixedTimeStep);
-    //     }
-    // } else {
-    //     //director.tick(frame_time);
-    //     await waitForNextFrame();
-    // }
-    // //director.tick(frame_time);
-    // director.pause();
-    // await captureOneImage(imageName);
-    // // director.resume();
 }
 
 async function screenshot(afterFrames?: number, imageName?: string) {

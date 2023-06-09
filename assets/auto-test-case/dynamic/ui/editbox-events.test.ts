@@ -4,9 +4,7 @@ import { captureOneImage, runScene, testCase, testClass, beforeClass } from 'db:
 import { EditboxEvent } from '../../../cases/ui/12.editbox/editbox-event';
 import { screenshot_custom } from '../common/utils';
 
-new EditboxEvent()
-@runScene('editbox-events')
-@testClass('EditboxEvents')
+@testClass('EditboxEvents', 'editbox-events')
 export class EditboxEvents {
     tickTime: number = 5;
     editboxEvent!: EditboxEvent| Component;

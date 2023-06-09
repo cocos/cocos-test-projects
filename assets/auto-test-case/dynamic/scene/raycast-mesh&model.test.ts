@@ -5,8 +5,7 @@ import { screenshot_custom } from '../common/utils'
 import { simulateTouchStart } from "../common/SimulateEvent"
 import { Camera, Component, find, view } from 'cc';
 
-@runScene('raycast-mesh&model')
-@testClass('RaycastMeshModel')
+@testClass('RaycastMeshModel', 'raycast-mesh&model')
 export class RaycastMeshModel {
     intersecttraytest!: IntersectRayTest;
     camera!: Camera | Component;
@@ -24,38 +23,6 @@ export class RaycastMeshModel {
         this.intersecttraytest = find("Node")!.getComponent("IntersectRayTest")!;
         this.camera = find("Camera")?.getComponent("cc.Camera")!;
         await waitForFrames(1);
-        // this.testData = {
-        //     CubeNonUniformScaled: {
-        //         x: 932.5,
-        //         y: 94.2500114440918
-        //     },
-        //     Cube: {
-        //         x: 946.25,
-        //         y: 366.7500114440918
-        //     },
-        //     BrainStem: {
-        //         Right: {
-        //             x: 676.25,
-        //             y: 561.7500114440918
-        //         },
-        //         Left: {
-        //             x: 597.5,
-        //             y: 563.0000114440918
-        //         },
-        //         Up: {
-        //             x: 626.25,
-        //             y: 633.0000114440918
-        //         },
-        //         Down: {
-        //             x: 660,
-        //             y: 380.5000114440918
-        //         }
-        //     },
-        //     Torus: {
-        //         x: 161.25,
-        //         y: 261.7500114440918
-        //     }
-        // }
     }
 
     @testCase

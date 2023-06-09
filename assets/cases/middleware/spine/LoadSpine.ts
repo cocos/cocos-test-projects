@@ -16,7 +16,7 @@ export class LoadSpine extends Component {
         loader.loadRes("spine/alien/alien-pro", sp.SkeletonData, (err, spineAsset)=> {
             if(err) {
                 this.tips!.string = "Failed to load asset";
-                this.isLoadedRes = true; //失败了，也算是加载完了
+                this.isLoadedRes = true; // AutoTest: Consider loading complete even if loading failed
                 return;
             }
             let comp = this.getComponent('sp.Skeleton') as sp.Skeleton;

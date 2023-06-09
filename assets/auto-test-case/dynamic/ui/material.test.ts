@@ -3,8 +3,7 @@ import { find } from 'cc';
 import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
 
-@runScene('material')
-@testClass('Material')
+@testClass('Material', 'material')
 export class Material {
     _dt = 5;
 

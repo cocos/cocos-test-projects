@@ -25,7 +25,7 @@ export class subScript01 extends Component {
 
     backToList() {
         return new Promise<void>((resovle, reject)=>{
-            if(this.backRoot){
+            if (this.backRoot) {
                 this.backRoot.active = true;
             }
             director.loadScene('sub-packages',  (error: any) => {

@@ -8,10 +8,8 @@ import { RaycastModelTest } from '../../../cases/scene/raycast/RaycastModelTest'
 import { screenshot_custom } from '../common/utils';
 import { simulateTouchStart } from '../common/SimulateEvent';
 
-
-
-@runScene('raycast')
-@testClass('Raycast')
+@runScene()
+@testClass('Raycast', 'raycast')
 export class Raycast {
     raycastCanvas!: RaycastCanvasTest | Component | null;
     raycastModel!: RaycastModelTest | Component | null;
@@ -29,20 +27,6 @@ export class Raycast {
         this.raycastCanvas = find('Test')!.getComponent('RaycastCanvasTest');
         this.raycastModel = find('Test')!.getComponent('RaycastModelTest');
         this.raycastCollider = find('Test')!.getComponent('RaycastColliderTest');
-        // this.testData = {
-        //     Collider: {
-        //         x: 671.25,
-        //         y: 195.5000114440918
-        //     },
-        //     Canvas: {
-        //         x: 596.4999961853027,
-        //         y: 399.2500114440918
-        //     },
-        //     Model: {
-        //         x: 621.4999961853027,
-        //         y: 616.7500114440918
-        //     }
-        // }
         await waitForFrames(1)
     }
 
