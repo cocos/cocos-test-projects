@@ -125,7 +125,9 @@ export class KeyboardEvent extends Component {
         if (sys.platform === sys.Platform.WIN32 ||
             sys.platform === sys.Platform.MACOS ||
             sys.platform === sys.Platform.DESKTOP_BROWSER ||
-            sys.platform === sys.Platform.WECHAT_GAME && !sys.isMobile) {
+            sys.platform === sys.Platform.WECHAT_GAME && !sys.isMobile ||
+            sys.platform === sys.Platform.ANDROID && sys.hasFeature(sys.Feature.HPE)
+            ) {
             this.noSupport.active = false;
         } else {
             this.noSupport.active = true;
