@@ -5,7 +5,6 @@ import { AssetLoading as AssetLoadingObj } from '../../../cases/scripting/asset_
 import { simulateTouchEnd, simulateTouchStart } from '../common/SimulateEvent';
 import { random, screenshot_custom } from '../common/utils';
 
-@runScene()
 @testClass('PreloadAssets', 'PreloadAssets')
 export class PreloadAssets {
     tickTime: number = 100;

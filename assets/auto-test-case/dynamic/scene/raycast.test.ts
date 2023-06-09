@@ -8,7 +8,6 @@ import { RaycastModelTest } from '../../../cases/scene/raycast/RaycastModelTest'
 import { screenshot_custom } from '../common/utils';
 import { simulateTouchStart } from '../common/SimulateEvent';
 
-@runScene()
 @testClass('Raycast', 'raycast')
 export class Raycast {
     raycastCanvas!: RaycastCanvasTest | Component | null;
