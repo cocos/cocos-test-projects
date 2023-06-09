@@ -35,7 +35,7 @@ export class BackButton extends Component {
     public autoTestConfig: AutoTestConfigJson | null = null;
 
     @property({type:Boolean})
-    public noAutoTest:Boolean=false;
+    public noAutoTest: Boolean = false;
 
     private isAutoTesting: boolean = false;
     private searchBox?: EditBox | null;
