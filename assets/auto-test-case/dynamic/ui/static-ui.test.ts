@@ -1,22 +1,31 @@
 // @ts-ignore
-import { runScene, testCase, testClass, sleep } from 'db://automation-framework/runtime/test-framework.mjs';
-import { screenshot_custom } from '../common/utils';
+import { testCase, testClass, afterClass } from 'db://automation-framework/runtime/test-framework.mjs';
+import { screenshot_custom, waitSceneLaunched } from '../common/utils';
+import { find, sys } from 'cc';
+import { StaticUI } from '../../../cases/ui/19.static-ui/static-ui';
 
-@runScene('static-ui')
-// @testClass('StaticUi')
+@testClass('StaticUi', 'static-ui')
 export class StaticUi {
-    _dt = 100;
-
-    @testCase
-    async startPlay() {
-        await screenshot_custom();
-    }
+    _dt = 10;
 
     @testCase
     async play() {
-        for (let i = 0; i < 14; i++) {
-            await sleep(0.5)
-            await screenshot_custom(this._dt * 10);
+        let caseScript;
+        await screenshot_custom(this._dt);
+        for (let i = 0; i < 12; i++) {
+            caseScript = find("background")!.getComponent("StaticUI") as StaticUI;
+            caseScript.unschedule(caseScript.func);
+            await caseScript.func();
+            await screenshot_custom(this._dt);
+        }
+    }
+
+    @afterClass
+    async cleanStorage() {
+        const local = sys.localStorage;
+        const item = local.getItem('ui-static-level');
+        if (item) {
+            local.removeItem('ui-static-level');
         }
     }
 }

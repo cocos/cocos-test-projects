@@ -20,32 +20,32 @@ export class PageViewFreeHorizontal {
     async page_One() {
         // @ts-ignore
         find('Canvas/page-view-ctrl').getComponent('PageViewCtrl').target.setCurrentPageIndex(1);
-        await sleep(this._delay);
-        await screenshot_custom(this._dt * 5);
+        // await sleep(this._delay);
+        await screenshot_custom(this._dt * 5 + 30);
     }
 
     @testCase
     async page_Two() {
         // @ts-ignore
         find('Canvas/page-view-ctrl').getComponent('PageViewCtrl').target.setCurrentPageIndex(2);
-        await sleep(this._delay);
-        await screenshot_custom(this._dt * 5);
+        // await sleep(this._delay);
+        await screenshot_custom(this._dt * 5 + 30);
     }
 
     @testCase
     async page_Three() {
         // @ts-ignore
         find('Canvas/page-view-ctrl').getComponent('PageViewCtrl').target.setCurrentPageIndex(3);
-        await sleep(this._delay);
-        await screenshot_custom(this._dt * 5);
+        // await sleep(this._delay);
+        await screenshot_custom(this._dt * 5 + 30);
     }
 
     @testCase
     async page_Four() {
         // @ts-ignore
         find('Canvas/page-view-ctrl').getComponent('PageViewCtrl').target.setCurrentPageIndex(4);
-        await sleep(this._delay);
-        await screenshot_custom(this._dt * 5);
+        // await sleep(this._delay);
+        await screenshot_custom(this._dt * 5 + 30);
     }
 
 }

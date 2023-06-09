@@ -12,7 +12,7 @@ export class subScript02 extends Component {
     start () {
         // Your initialization goes here.
         this.backRoot = this.node.getParent()!.getChildByName('backRoot');
-        if(this.backRoot) {
+        if (this.backRoot) {
             this.backRoot.active = false;
         }
         console.log('subScript02 load finish');
@@ -24,9 +24,13 @@ export class subScript02 extends Component {
     // }
 
     backToList() {
-        if(this.backRoot){
-            this.backRoot.active = true;
-        }
-        director.loadScene('sub-packages');
+        return new Promise<void>((resovle, reject) => {
+            if (this.backRoot) {
+                this.backRoot.active = true;
+            }
+            director.loadScene('sub-packages',  (error: any) => {
+                error ? reject(error) : resovle();
+            });
+        });
     }
 }

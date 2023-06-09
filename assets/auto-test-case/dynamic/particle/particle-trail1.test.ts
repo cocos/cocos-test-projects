@@ -10,8 +10,7 @@ export class ParticleTrail1 {
 
     @testCase
     async startPlay() {
-        await waitForNextFrame()
-        await screenshot_custom_by_wait();
+        await screenshot_custom_by_wait(1);
         for (let i = 0; i < 5; i++) {
             await screenshot_custom_by_wait(this._dt);
         };

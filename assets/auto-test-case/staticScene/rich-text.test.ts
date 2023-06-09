@@ -1,40 +1,44 @@
+import { find } from 'cc';
 // @ts-ignore
-import { captureOneImage, waitForNextFrame, runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
+import { beforeClass, expect, captureOneImage, waitForFrames, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
 
-@runScene('rich-text')
-@testClass('RichText')
+@testClass('RichText', 'rich-text')
 export class RichText {
+
+    private caseScript: any;
+
+    @beforeClass
+    async initData() {
+        // @ts-ignore
+        this.caseScript = find('Canvas/Layout/<img>').getComponent('RichTextEvent');
+        expect(this.caseScript).to.not.be.a('null');
+    }
 
     @testCase
     async startPlay() {
-        await waitForNextFrame();
+        await waitForFrames();
         await captureOneImage();
     }
 
-    // _dt = 20
-    // @testCase
-    // async startPlay() {
-    //     await screenshot_custom();
-    // }
+    @testCase
+    async onSingleClick() {
+        this.caseScript.onClick();
+        await waitForFrames(20);
+        await captureOneImage();
+    }
 
-    // @testCase
-    // async onSingleClick() {
-    //     // @ts-ignore
-    //     find('Canvas/Layout/<img>').getComponent('RichTextEvent').onClick()
-    //     await screenshot_custom(this._dt);
-    // }
+    @testCase
+    async onDoubleClick() {
+        this.caseScript.onClick();
+        await waitForFrames(20);
+        this.caseScript.onClick();
+        await waitForFrames(20);
+        await captureOneImage();
+    }
 
-    // @testCase
-    // async onDoubleClick() {
-    //     // @ts-ignore
-    //     find('Canvas/Layout/<img>').getComponent('RichTextEvent').onClick()
-    //     // @ts-ignore
-    //     find('Canvas/Layout/<img>').getComponent('RichTextEvent').onClick()
-    //     await screenshot_custom(this._dt);
-    // }
-
-    // @testCase
-    // async end() {
-    //     await screenshot_custom(this._dt * 20);
-    // }
+    @testCase
+    async end() {
+        await waitForFrames(300);
+        await captureOneImage();
+    }
 }
