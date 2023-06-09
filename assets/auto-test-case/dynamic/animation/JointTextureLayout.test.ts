@@ -5,16 +5,16 @@ import { screenshot_custom_by_wait } from '../common/utils';
 @runScene('JointTextureLayout')
 @testClass('JointTextureLayout')
 export class JointTextureLayout {
-    _dt = 110;
+    _dt = 80;
     _delay = 2;
 
     @testCase
-    async stand() {
+    async comeDown() {
         await screenshot_custom_by_wait(this._dt);
     }
 
     @testCase
-    async comeDown() {
+    async stand() {
         await screenshot_custom_by_wait(69);
     }
 }

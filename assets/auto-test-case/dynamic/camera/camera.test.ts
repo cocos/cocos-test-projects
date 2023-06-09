@@ -16,7 +16,7 @@ export class Camera {
 
     @testCase
     async play() {
-        await screenshot_custom_by_wait(this._dt/2 + 1);
+        await screenshot_custom_by_wait(35);
     }
 
     @testCase

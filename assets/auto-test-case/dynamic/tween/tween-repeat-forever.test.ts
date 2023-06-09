@@ -21,7 +21,7 @@ export class TweenRepeatForever {
 
     @testCase
     async end() {
-        await screenshot_custom_by_wait(this._dt * 150);
+        await screenshot_custom_by_wait(this._dt + 100);
     }
 }
 

@@ -28,6 +28,11 @@ export class EventInfo {
     }
 
     @testCase
+    async start(){
+        await screenshot_custom_by_wait();
+    }
+
+    @testCase
     async touchStart() {
        const event= simulateTouchStart(545.87, 289.63);
         //@ts-ignore
