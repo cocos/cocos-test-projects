@@ -37,7 +37,6 @@ export class BackButton extends Component {
     @property({type:Boolean})
     public noAutoTest: Boolean = false;
 
-    private isAutoTesting: boolean = false;
     private searchBox?: EditBox | null;
     private searchButton?: Node;
     private sceneArray?: string[];
@@ -66,8 +65,8 @@ export class BackButton extends Component {
             if (str.includes('sponza')) {
                 if (sys.platform !== sys.Platform.MOBILE_BROWSER && sys.platform !== sys.Platform.DESKTOP_BROWSER && sys.platform !== sys.Platform.WIN32 && 
                     sys.platform !== sys.Platform.ANDROID && sys.platform !== sys.Platform.IOS && sys.platform !== sys.Platform.MACOS) {
-                        continue;
-                    }
+                    continue;
+                }
             }
             const firstIndex = str.lastIndexOf('/') + 1;
             const lastIndex = str.lastIndexOf('.scene');
@@ -83,7 +82,6 @@ export class BackButton extends Component {
 
     onLoad() {
         input.on(Input.EventType.GAMEPAD_INPUT, this.onGamepadInput, this);
-
     }
 
     public manuallyControl () {
@@ -91,13 +89,6 @@ export class BackButton extends Component {
         this.node.getChildByName('NextButton')!.active = true;
         this.node.getChildByName('back')!.active = true;
         profiler.showStats();
-    }
-
-    public autoControl () {
-        this.node.getChildByName('PrevButton')!.active = false;
-        this.node.getChildByName('NextButton')!.active = false;
-        this.node.getChildByName('back')!.active = false;
-        profiler.hideStats();
     }
 
     public static get offset() {
@@ -148,28 +139,6 @@ export class BackButton extends Component {
             BackButton.refreshButton();
         }
         director.on(Director.EVENT_BEFORE_SCENE_LOADING,this.switchSceneName,this);
-        if (!this.autoTestConfig!.json.enabled) return;
-        TestFramework.instance.connect(this.autoTestConfig!.json.server, this.autoTestConfig!.json.port, this.autoTestConfig!.json.timeout, (err) => {
-            if (err) {
-                this.isAutoTesting = false;
-            }
-            else {
-                TestFramework.instance.startTest({ time: Date.now() }, (err) => {
-                    if (err) {
-                        this.isAutoTesting = false;
-                    }
-                    else {
-                        this.isAutoTesting = true;
-                        this.autoControl();
-                        let sceneList = this.autoTestConfig!.json.sceneList;
-                        let testList = SceneList.sceneArray.filter(x => sceneList.indexOf(x) !== -1);
-                        SceneList.sceneArray.length = 0;
-                        SceneList.sceneArray.push(...testList);
-                        this.nextScene();
-                    }
-                })
-            }
-        });
     }
 
     onDestroy () {
@@ -207,7 +176,6 @@ export class BackButton extends Component {
             BackButton._scrollNode = this.node.parent!.getChildByPath('Canvas/ScrollView') as Node;
             if (BackButton._scrollNode) {
                 BackButton._scrollCom = BackButton._scrollNode.getComponent(ScrollView);
-                //BackButton._scrollCom!.content!.getComponent(Layout)!.updateLayout();
                 BackButton._scrollCom!.scrollToOffset(BackButton.offset, 0.1, true);
             }
             BackButton._blockInput.active = false;
@@ -220,27 +188,6 @@ export class BackButton extends Component {
         this.updateSceneIndex(true);
         const sceneName = this.getSceneName();
         director.loadScene(sceneName, (err) => {
-            if (this.isAutoTesting) {
-                if (err) {
-                    TestFramework.instance.postMessage(StateCode.SCENE_ERROR, sceneName, '', () => {
-                        this.manuallyControl();
-                    });
-                } else {
-                    TestFramework.instance.postMessage(StateCode.SCENE_CHANGED, sceneName, '', (err) => {
-                        if (err) {
-                            this.manuallyControl();
-                        }
-                        else if (BackButton._sceneIndex === SceneList.sceneArray.length - 1) {
-                            TestFramework.instance.endTest('', () => {
-                                this.manuallyControl();
-                            });
-                        }
-                        else {
-                            this.nextScene();
-                        }
-                    });
-                }
-            }
             BackButton._blockInput.active = false;
         });
     }
