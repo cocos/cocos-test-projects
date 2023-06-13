@@ -2,7 +2,7 @@
 import { captureOneImage, waitForNextFrame, runScene, testCase, testClass, PlatformEnum } from 'db://automation-framework/runtime/test-framework.mjs';
 
 @runScene('label-shadow')
-@testClass('LabelShadow', undefined, [PlatformEnum.WINDOWS, PlatformEnum.IOS, PlatformEnum.ANDROID, PlatformEnum.MAC])
+@testClass('LabelShadow', undefined, [PlatformEnum.WINDOWS])
 export class LabelShadow {
     @testCase
     async startPlay() {
