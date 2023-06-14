@@ -134,6 +134,7 @@ export class BackButton extends Component {
         BackButton._prevNode = this.node.getChildByName('PrevButton') as Node;
         BackButton._nextNode = this.node.getChildByName('NextButton') as Node;
         this.searchBox = this.node.getChildByPath('Node/searchEditBox')?.getComponent(EditBox);
+        this.searchBox!.placeholder = `Search scene in (${SceneList.sceneArray.length}) ...`;
         this.searchButton = this.node.getChildByPath('Node/searchButton') as Node;
         if (BackButton._prevNode && BackButton._nextNode) {
             BackButton.refreshButton();
