@@ -1,29 +1,18 @@
-import { find} from 'cc';
+import { find } from 'cc';
 // @ts-ignore
-import { runScene, testCase, testClass, beforeClass, sleep, PlatformEnum } from 'db://automation-framework/runtime/test-framework.mjs';
+import { testCase, testClass, beforeClass, PlatformEnum } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom_by_wait } from '../common/utils';
 import { simulateMultiTouch } from '../common/SimulateEvent';
 import { MultiTouchCtrl } from '../../../cases/event/multiTouch/MultiTouchCtrl';
 
-@runScene('multiTouch')
-@testClass('MultiTouch', undefined, [PlatformEnum.WEB_DESKTOP, PlatformEnum.MAC, PlatformEnum.WINDOWS])
+@testClass('MultiTouch', 'multiTouch', [PlatformEnum.WEB_DESKTOP, PlatformEnum.MAC, PlatformEnum.WINDOWS])
 export class MultiTouch {
-    _dt = 2;
-    _delay = 5;
-    multiTouchCtrl : MultiTouchCtrl | undefined;
-    isChecked: Boolean | undefined = true;
+    multiTouchCtrl!: MultiTouchCtrl;
     
     @beforeClass
     async initData(){
-        //@ts-ignore
-        this.multiTouchCtrl = find('MultiCtrl').getComponent('MultiTouchCtrl');
-         //@ts-ignore
-        this.multiTouchCtrl.toggle.isChecked = this.isChecked;
-        if(!this.multiTouchCtrl){
-            await sleep(this._delay);
-            //@ts-ignore
-            this.multiTouchCtrl = find('MultiCtrl').getComponent('MultiTouchCtrl');
-        }
+        this.multiTouchCtrl = find('MultiCtrl')!.getComponent('MultiTouchCtrl') as MultiTouchCtrl;
+        this.multiTouchCtrl.toggle.isChecked = true;
     }
 
     @testCase
