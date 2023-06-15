@@ -75,7 +75,7 @@ export class VideoPlayerCtrl extends Component {
 
     onPlayRemoteVideo () {
         this.videoPlayer.resourceType = VideoPlayer.ResourceType.REMOTE;
-        const remoteURL = 'http://download.cocos.org/CocosTest/test-case/movie.mp4';
+        const remoteURL = 'https://download.cocos.org/CocosTest/test-case/movie.mp4';
         if (this.videoPlayer.remoteURL === remoteURL) {
             this.videoPlayer.play();
         }

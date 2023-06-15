@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.4",
+  "ver": "2.3.8",
   "importer": "fbx",
   "imported": true,
   "uuid": "206bff6d-9dc8-40e8-aaae-a487f6da4781",
@@ -31,9 +31,10 @@
       "id": "90275",
       "name": "Paladin_J_Nordstrom.mesh",
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 13212
       },
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "imported": true,
       "files": [
         ".bin",
@@ -48,9 +49,10 @@
       "id": "f42d9",
       "name": "Paladin_J_Nordstrom_Helmet.mesh",
       "userData": {
-        "gltfIndex": 1
+        "gltfIndex": 1,
+        "triangleCount": 1448
       },
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "imported": true,
       "files": [
         ".bin",
@@ -65,9 +67,10 @@
       "id": "e9da4",
       "name": "Paladin_J_Nordstrom_Sword.mesh",
       "userData": {
-        "gltfIndex": 2
+        "gltfIndex": 2,
+        "triangleCount": 228
       },
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "imported": true,
       "files": [
         ".bin",
@@ -82,9 +85,10 @@
       "id": "019db",
       "name": "Paladin_J_Nordstrom_Shield.mesh",
       "userData": {
-        "gltfIndex": 3
+        "gltfIndex": 3,
+        "triangleCount": 102
       },
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "imported": true,
       "files": [
         ".bin",
@@ -92,12 +96,12 @@
       ],
       "subMetas": {}
     },
-    "18d6f": {
+    "73b7f": {
       "importer": "gltf-animation",
-      "uuid": "206bff6d-9dc8-40e8-aaae-a487f6da4781@18d6f",
+      "uuid": "206bff6d-9dc8-40e8-aaae-a487f6da4781@73b7f",
       "displayName": "",
-      "id": "18d6f",
-      "name": "mixamo.com.animation",
+      "id": "73b7f",
+      "name": "Take 001.animation",
       "userData": {
         "gltfIndex": 0,
         "wrapMode": 2,
@@ -173,7 +177,10 @@
       "id": "43c71",
       "name": "file1.image",
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
       },
       "ver": "1.0.3",
       "imported": true,
@@ -190,7 +197,10 @@
       "id": "612f0",
       "name": "file4.image",
       "userData": {
-        "gltfIndex": 1
+        "gltfIndex": 1,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
       },
       "ver": "1.0.3",
       "imported": true,
@@ -271,7 +281,7 @@
       "userData": {
         "gltfIndex": 0
       },
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "imported": true,
       "files": [
         ".json"
@@ -293,15 +303,16 @@
     "legacyFbxImporter": false,
     "animationImportSettings": [
       {
-        "name": "mixamo.com",
+        "name": "Take 001",
         "duration": 0.03333333507180214,
         "fps": 30,
         "splits": [
           {
-            "name": "mixamo.com",
+            "name": "Take 001",
             "from": 0,
             "to": 0.03333333507180214,
-            "wrapMode": 2
+            "wrapMode": 2,
+            "previousId": "73b7f"
           }
         ]
       }
@@ -334,7 +345,27 @@
     "dumpMaterials": false,
     "materialDumpDir": "db://assets/char/Materials_paladin_prop_j_nordstrom",
     "fbx": {
-      "smartMaterialEnabled": false
+      "smartMaterialEnabled": false,
+      "matchMeshNames": false
+    },
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
     }
   }
 }
