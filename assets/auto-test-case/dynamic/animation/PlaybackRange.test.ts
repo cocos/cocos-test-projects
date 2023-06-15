@@ -2,16 +2,16 @@ import { EventHandler, Label, find } from 'cc';
 // @ts-ignore
 import { testClass, testCase, beforeClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom, screenshot_custom_by_wait} from '../common/utils';
-import { PlaybackRange } from '../../../cases/animation/scripts/PlaybackRange';
+import { PlaybackRange as CaseComponent } from '../../../cases/animation/scripts/PlaybackRange';
 
 @testClass('PlaybackRange', 'PlaybackRange')
-export class PlaybackRange2 {
-    private caseScript!: PlaybackRange;
+export class PlaybackRange {
+    private caseScript!: CaseComponent;
     private max!: number;
 
     @beforeClass
     async initData() {
-        this.caseScript = find('scene')!.getComponent('PlaybackRange') as PlaybackRange;
+        this.caseScript = find('scene')!.getComponent('PlaybackRange') as CaseComponent;
     }
 
     @testCase
