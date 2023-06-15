@@ -1,17 +1,20 @@
 //@ts-ignore
-import { runScene, testCase, testClass, beforeClass, waitForFrames, PlatformEnum } from 'db://automation-framework/runtime/test-framework.mjs';
-import { Component, find } from 'cc';
+import { testCase, testClass, waitForFrames } from 'db://automation-framework/runtime/test-framework.mjs';
 import { PlayerController } from '../../../cases/light-probe/player-controller';
 import { screenshot_custom } from '../common/utils';
+import { simulateTouchStart, simulateTouchEnd } from '../common/SimulateEvent';
+import { find } from 'cc';
 
-@runScene("sponza")
-@testClass("Sponza", undefined, [PlatformEnum.WEB_DESKTOP, PlatformEnum.WEB_MOBILE, PlatformEnum.WECHATGAME, PlatformEnum.BYTEDANCE_MINI_GAME,
-    PlatformEnum.OPPO_MINI_GAME, PlatformEnum.HUAWEI_QUICK_GAME, PlatformEnum.VIVO_MINI_GAME])
+@testClass("Sponza", "sponza")
 export class Sponza {
-    tickTime: number = 120;
-
     @testCase
     async start() {
-        await screenshot_custom(this.tickTime);
+        await screenshot_custom(5);
+
+        // move back the character
+        const caseScript = find('Canvas')?.getComponent(PlayerController);
+        simulateTouchStart(10, 10, caseScript?.downButton.node);
+        await screenshot_custom(100);
+        simulateTouchEnd(caseScript?.downButton.node);
     }
 }
