@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.2",
+  "ver": "2.3.8",
   "importer": "fbx",
   "imported": true,
   "uuid": "a0b0ee45-499d-4e5e-8b08-97433481f959",
@@ -12,9 +12,10 @@
       "id": "e8b59",
       "name": "Archmodels_64_032_0.003.mesh",
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 29324
       },
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "imported": true,
       "files": [
         ".bin",
@@ -47,7 +48,7 @@
       "userData": {
         "gltfIndex": 0
       },
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "imported": true,
       "files": [
         ".json"
@@ -58,7 +59,8 @@
   "userData": {
     "imageMetas": [],
     "fbx": {
-      "smartMaterialEnabled": true
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
     },
     "redirect": "a0b0ee45-499d-4e5e-8b08-97433481f959@11c86",
     "assetFinder": {
@@ -144,6 +146,25 @@
     },
     "depthWriteInAlphaModeBlend": false,
     "dumpMaterials": false,
-    "useVertexColors": true
+    "useVertexColors": true,
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

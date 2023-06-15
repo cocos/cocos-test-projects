@@ -1,12 +1,12 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "346bc863-3ec8-44bd-9ddc-173b5f796b20",
   "files": [],
   "subMetas": {
     "9dcd7": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "346bc863-3ec8-44bd-9ddc-173b5f796b20@9dcd7",
       "imported": true,
@@ -16,7 +16,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 1004
       },
       "id": "9dcd7",
       "name": "tower.mesh",
@@ -135,7 +136,7 @@
       "displayName": ""
     },
     "0f953": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "346bc863-3ec8-44bd-9ddc-173b5f796b20@0f953",
       "imported": true,
@@ -175,6 +176,25 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": []
+    "imageMetas": [],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

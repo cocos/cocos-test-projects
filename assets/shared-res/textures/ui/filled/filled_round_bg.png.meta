@@ -1,11 +1,11 @@
 {
-  "ver": "1.0.23",
+  "ver": "1.0.26",
   "importer": "image",
   "imported": true,
   "uuid": "5cc6354a-2762-45fe-bdc3-ba659747ad23",
   "files": [
-    ".png",
-    ".json"
+    ".json",
+    ".png"
   ],
   "subMetas": {
     "6c48a": {
@@ -14,7 +14,7 @@
       "displayName": "filled_round_bg",
       "id": "6c48a",
       "name": "texture",
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "imported": true,
       "files": [
         ".json"
@@ -29,11 +29,12 @@
         "premultiplyAlpha": false,
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "5cc6354a-2762-45fe-bdc3-ba659747ad23"
+        "imageUuidOrDatabaseUri": "5cc6354a-2762-45fe-bdc3-ba659747ad23",
+        "visible": false
       }
     },
     "f9941": {
-      "ver": "1.0.9",
+      "ver": "1.0.12",
       "importer": "sprite-frame",
       "uuid": "5cc6354a-2762-45fe-bdc3-ba659747ad23@f9941",
       "imported": true,
@@ -67,7 +68,65 @@
         "isUuid": true,
         "imageUuidOrDatabaseUri": "5cc6354a-2762-45fe-bdc3-ba659747ad23@6c48a",
         "atlasUuid": "",
-        "packable": true
+        "packable": true,
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [
+            -70,
+            -70,
+            0,
+            70,
+            -70,
+            0,
+            -70,
+            70,
+            0,
+            70,
+            70,
+            0
+          ],
+          "indexes": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            3
+          ],
+          "uv": [
+            0,
+            140,
+            140,
+            140,
+            0,
+            0,
+            140,
+            0
+          ],
+          "nuv": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "minPos": [
+            -70,
+            -70,
+            0
+          ],
+          "maxPos": [
+            70,
+            70,
+            0
+          ]
+        }
       },
       "displayName": "filled_round_bg",
       "id": "f9941",

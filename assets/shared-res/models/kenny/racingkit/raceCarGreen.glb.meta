@@ -1,5 +1,5 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "104fadcc-65b2-4213-91a7-bb24faba87f5",
@@ -22,7 +22,7 @@
       "displayName": ""
     },
     "5ef09": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "104fadcc-65b2-4213-91a7-bb24faba87f5@5ef09",
       "imported": true,
@@ -32,14 +32,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 294
       },
       "id": "5ef09",
       "name": "Mesh body.mesh",
       "displayName": ""
     },
     "205ba": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "104fadcc-65b2-4213-91a7-bb24faba87f5@205ba",
       "imported": true,
@@ -49,14 +50,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 1
+        "gltfIndex": 1,
+        "triangleCount": 284
       },
       "id": "205ba",
       "name": "Mesh wheelBackLeft.mesh",
       "displayName": ""
     },
     "2e43f": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "104fadcc-65b2-4213-91a7-bb24faba87f5@2e43f",
       "imported": true,
@@ -66,14 +68,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 2
+        "gltfIndex": 2,
+        "triangleCount": 284
       },
       "id": "2e43f",
       "name": "Mesh wheelBackRight.mesh",
       "displayName": ""
     },
     "ef74f": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "104fadcc-65b2-4213-91a7-bb24faba87f5@ef74f",
       "imported": true,
@@ -83,14 +86,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 3
+        "gltfIndex": 3,
+        "triangleCount": 284
       },
       "id": "ef74f",
       "name": "Mesh wheelFrontLeft.mesh",
       "displayName": ""
     },
     "4e0b0": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "104fadcc-65b2-4213-91a7-bb24faba87f5@4e0b0",
       "imported": true,
@@ -100,7 +104,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 4
+        "gltfIndex": 4,
+        "triangleCount": 284
       },
       "id": "4e0b0",
       "name": "Mesh wheelFrontRight.mesh",
@@ -155,7 +160,7 @@
       "displayName": ""
     },
     "4eedd": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "104fadcc-65b2-4213-91a7-bb24faba87f5@4eedd",
       "imported": true,
@@ -196,6 +201,25 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": []
+    "imageMetas": [],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

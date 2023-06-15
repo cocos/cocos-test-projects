@@ -1,5 +1,5 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "1566f42d-6020-4d4f-9105-565608e613a3",
@@ -13,7 +13,7 @@
       "displayName": "",
       "id": "bcca5",
       "name": "UnnamedMesh.mesh",
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "imported": true,
       "files": [
         ".bin",
@@ -21,7 +21,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 1
       }
     },
     "a3140": {
@@ -44,7 +45,8 @@
           "from": 0,
           "to": 4
         },
-        "events": []
+        "events": [],
+        "previousId": "a3140"
       }
     },
     "77f57": {
@@ -53,7 +55,7 @@
       "displayName": "",
       "id": "77f57",
       "name": "SimpleMorph.prefab",
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "imported": true,
       "files": [
         ".json"
@@ -76,7 +78,8 @@
             "name": "UnnamedAnimation",
             "from": 0,
             "to": 4,
-            "wrapMode": 2
+            "wrapMode": 2,
+            "previousId": "a3140"
           }
         ]
       }
@@ -91,6 +94,25 @@
       "materials": [],
       "scenes": [
         "1566f42d-6020-4d4f-9105-565608e613a3@77f57"
+      ]
+    },
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
       ]
     }
   }

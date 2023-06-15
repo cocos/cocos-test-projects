@@ -1,12 +1,12 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "4da41302-4460-4a1f-b84c-28c95a6eb6cb",
   "files": [],
   "subMetas": {
     "bae8f": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "4da41302-4460-4a1f-b84c-28c95a6eb6cb@bae8f",
       "imported": true,
@@ -16,7 +16,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 172
       },
       "id": "bae8f",
       "name": "formation_rock.mesh",
@@ -55,7 +56,7 @@
       "displayName": ""
     },
     "8c440": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "4da41302-4460-4a1f-b84c-28c95a6eb6cb@8c440",
       "imported": true,
@@ -90,6 +91,25 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": []
+    "imageMetas": [],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

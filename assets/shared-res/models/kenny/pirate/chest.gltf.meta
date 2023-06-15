@@ -1,12 +1,12 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "7ed2129e-95a9-4c9a-a4c8-1039e71a99bf",
   "files": [],
   "subMetas": {
     "aad6e": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "7ed2129e-95a9-4c9a-a4c8-1039e71a99bf@aad6e",
       "imported": true,
@@ -16,14 +16,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 92
       },
       "id": "aad6e",
       "name": "chest.mesh",
       "displayName": ""
     },
     "07938": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "7ed2129e-95a9-4c9a-a4c8-1039e71a99bf@07938",
       "imported": true,
@@ -33,7 +34,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 1
+        "gltfIndex": 1,
+        "triangleCount": 360
       },
       "id": "07938",
       "name": "lid.mesh",
@@ -72,7 +74,7 @@
       "displayName": ""
     },
     "a19ff": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "7ed2129e-95a9-4c9a-a4c8-1039e71a99bf@a19ff",
       "imported": true,
@@ -108,6 +110,25 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": []
+    "imageMetas": [],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

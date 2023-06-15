@@ -1,12 +1,12 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "2a767dc1-f8a1-4c28-a452-1aeb92910cec",
   "files": [],
   "subMetas": {
     "7e05a": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "2a767dc1-f8a1-4c28-a452-1aeb92910cec@7e05a",
       "imported": true,
@@ -16,7 +16,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 104
       },
       "id": "7e05a",
       "name": "Mesh ladder.mesh",
@@ -39,7 +40,7 @@
       "displayName": ""
     },
     "f3733": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "2a767dc1-f8a1-4c28-a452-1aeb92910cec@f3733",
       "imported": true,
@@ -73,6 +74,25 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": []
+    "imageMetas": [],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

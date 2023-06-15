@@ -1,12 +1,12 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "e20403c4-26ec-4398-b5fa-1aa5c84ac7dd",
   "files": [],
   "subMetas": {
     "f30d8": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "e20403c4-26ec-4398-b5fa-1aa5c84ac7dd@f30d8",
       "imported": true,
@@ -16,7 +16,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 132
       },
       "id": "f30d8",
       "name": "Mesh bridgeHalf.mesh",
@@ -55,7 +56,7 @@
       "displayName": ""
     },
     "3f637": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "e20403c4-26ec-4398-b5fa-1aa5c84ac7dd@3f637",
       "imported": true,
@@ -90,6 +91,25 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": []
+    "imageMetas": [],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

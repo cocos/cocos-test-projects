@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.SceneAsset",
-    "_name": "",
+    "_name": "Morph-Head",
     "_objFlags": 0,
     "_native": "",
     "scene": {
@@ -116,7 +116,10 @@
     "_shadowNear": 1,
     "_shadowFar": 30,
     "_shadowOrthoSize": 5,
-    "_id": "597uMYCbhEtJQc0ffJlcgA"
+    "_id": "597uMYCbhEtJQc0ffJlcgA",
+    "_csmLevel": 1,
+    "_csmLayerLambda": 0.75,
+    "_csmOptimizationMode": 2
   },
   {
     "__type__": "cc.StaticLightSettings",
@@ -357,9 +360,7 @@
       }
     ],
     "_visFlags": 0,
-    "lightmapSettings": {
-      "__id__": 11
-    },
+    "lightmapSettings": null,
     "_mesh": {
       "__uuid__": "e1ec1aea-16e3-4213-8fea-5911bbeeb907@b5cc5",
       "__expectedType__": "cc.Mesh"
@@ -369,10 +370,13 @@
     "_shadowBias": 0,
     "_shadowNormalBias": 0,
     "_enableMorph": true,
-    "_id": "f0M2G0snxGlJ8ptwGpbS5S"
+    "_id": "f0M2G0snxGlJ8ptwGpbS5S",
+    "bakeSettings": {
+      "__id__": 11
+    }
   },
   {
-    "__type__": "cc.ModelLightmapSettings",
+    "__type__": "cc.ModelBakeSettings",
     "texture": null,
     "uvParam": {
       "__type__": "cc.Vec4",
@@ -954,7 +958,6 @@
     "_type": 0,
     "_inverted": false,
     "_segments": 64,
-    "_spriteFrame": null,
     "_alphaThreshold": 0.1,
     "_id": "6087MFehVPaa/i9ywMBIsI"
   },

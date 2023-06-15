@@ -1,12 +1,12 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "5b292531-6e09-49a3-a143-53cb6f655f5f",
   "files": [],
   "subMetas": {
     "a6d73": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "5b292531-6e09-49a3-a143-53cb6f655f5f@a6d73",
       "imported": true,
@@ -16,7 +16,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 72
       },
       "id": "a6d73",
       "name": "Mesh noExport.mesh",
@@ -28,19 +29,22 @@
       "uuid": "5b292531-6e09-49a3-a143-53cb6f655f5f@765da",
       "imported": true,
       "files": [
-        ".png",
-        ".json"
+        ".json",
+        ".png"
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": true,
+        "type": "texture"
       },
       "id": "765da",
       "name": "tankcoBanner.image",
       "displayName": ""
     },
     "e39f7": {
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "importer": "texture",
       "uuid": "5b292531-6e09-49a3-a143-53cb6f655f5f@e39f7",
       "imported": true,
@@ -144,7 +148,7 @@
       "displayName": ""
     },
     "b8a57": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "5b292531-6e09-49a3-a143-53cb6f655f5f@b8a57",
       "imported": true,
@@ -189,6 +193,25 @@
         "name": "tankcoBanner",
         "uri": "5b292531-6e09-49a3-a143-53cb6f655f5f@765da"
       }
-    ]
+    ],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

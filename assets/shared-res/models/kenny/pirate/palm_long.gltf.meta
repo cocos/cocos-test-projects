@@ -1,12 +1,12 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "d547079f-8c0e-41ae-a98c-0a9b51b4b0d4",
   "files": [],
   "subMetas": {
     "09cd4": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "d547079f-8c0e-41ae-a98c-0a9b51b4b0d4@09cd4",
       "imported": true,
@@ -16,14 +16,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 36
       },
       "id": "09cd4",
       "name": "Group 28.mesh",
       "displayName": ""
     },
     "f811e": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "d547079f-8c0e-41ae-a98c-0a9b51b4b0d4@f811e",
       "imported": true,
@@ -33,7 +34,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 1
+        "gltfIndex": 1,
+        "triangleCount": 158
       },
       "id": "f811e",
       "name": "Group 30.mesh",
@@ -72,7 +74,7 @@
       "displayName": ""
     },
     "5f43d": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "d547079f-8c0e-41ae-a98c-0a9b51b4b0d4@5f43d",
       "imported": true,
@@ -108,6 +110,25 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": []
+    "imageMetas": [],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

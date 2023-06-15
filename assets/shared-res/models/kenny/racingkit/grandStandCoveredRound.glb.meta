@@ -1,12 +1,12 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "3cd01866-bdd7-4796-b0aa-866dad05b4e3",
   "files": [],
   "subMetas": {
     "c4c1a": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "3cd01866-bdd7-4796-b0aa-866dad05b4e3@c4c1a",
       "imported": true,
@@ -16,7 +16,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 1302
       },
       "id": "c4c1a",
       "name": "Mesh grandStandCoveredRound.mesh",
@@ -103,7 +104,7 @@
       "displayName": ""
     },
     "ae63a": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "3cd01866-bdd7-4796-b0aa-866dad05b4e3@ae63a",
       "imported": true,
@@ -141,6 +142,25 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": []
+    "imageMetas": [],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

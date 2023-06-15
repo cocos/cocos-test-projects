@@ -1,5 +1,5 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "fbx",
   "imported": true,
   "uuid": "4e540908-9de0-4083-8cf4-5e2cd36f057a",
@@ -14,9 +14,10 @@
       "id": "cb203",
       "name": "hellFire.mesh",
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 1054
       },
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "imported": true,
       "files": [
         ".bin",
@@ -38,7 +39,8 @@
           "from": 0,
           "to": 1
         },
-        "events": []
+        "events": [],
+        "previousId": "1f586"
       },
       "ver": "1.0.16",
       "imported": true,
@@ -73,7 +75,8 @@
             "params": []
           }
         ],
-        "speed": 1
+        "speed": 1,
+        "previousId": "ca16a"
       },
       "ver": "1.0.16",
       "imported": true,
@@ -103,7 +106,8 @@
             "params": []
           }
         ],
-        "speed": 1
+        "speed": 1,
+        "previousId": "bd671"
       },
       "ver": "1.0.16",
       "imported": true,
@@ -126,7 +130,8 @@
           "from": 4.666666666666667,
           "to": 5.433333333333334
         },
-        "events": []
+        "events": [],
+        "previousId": "79e35"
       },
       "ver": "1.0.16",
       "imported": true,
@@ -150,7 +155,8 @@
           "to": 6.733333333333333
         },
         "events": [],
-        "speed": 1
+        "speed": 1,
+        "previousId": "b4251"
       },
       "ver": "1.0.16",
       "imported": true,
@@ -174,7 +180,8 @@
           "to": 8
         },
         "events": [],
-        "speed": 1
+        "speed": 1,
+        "previousId": "cf5ee"
       },
       "ver": "1.0.16",
       "imported": true,
@@ -225,7 +232,7 @@
       "userData": {
         "gltfIndex": 0
       },
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "imported": true,
       "files": [
         ".json"
@@ -246,37 +253,43 @@
             "name": "idle",
             "from": 0,
             "to": 1,
-            "wrapMode": 2
+            "wrapMode": 2,
+            "previousId": "1f586"
           },
           {
             "name": "attack1",
             "from": 1.3333333333333333,
             "to": 2.966666666666667,
-            "wrapMode": 2
+            "wrapMode": 2,
+            "previousId": "ca16a"
           },
           {
             "name": "attack2",
             "from": 3.3333333333333335,
             "to": 4.466666666666667,
-            "wrapMode": 2
+            "wrapMode": 2,
+            "previousId": "bd671"
           },
           {
             "name": "hit",
             "from": 4.666666666666667,
             "to": 5.433333333333334,
-            "wrapMode": 2
+            "wrapMode": 2,
+            "previousId": "79e35"
           },
           {
             "name": "die",
             "from": 5.666666666666667,
             "to": 6.733333333333333,
-            "wrapMode": 2
+            "wrapMode": 2,
+            "previousId": "b4251"
           },
           {
             "name": "run",
             "from": 7,
             "to": 8,
-            "wrapMode": 2
+            "wrapMode": 2,
+            "previousId": "cf5ee"
           }
         ]
       }
@@ -301,7 +314,27 @@
     "materialDumpDir": "db://assets/res/model/monster/hellFireNew",
     "disableMeshSplit": true,
     "fbx": {
-      "smartMaterialEnabled": false
+      "smartMaterialEnabled": false,
+      "matchMeshNames": false
+    },
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
     }
   }
 }

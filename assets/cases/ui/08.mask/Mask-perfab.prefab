@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.Prefab",
-    "_name": "",
+    "_name": "Mask-perfab",
     "_objFlags": 0,
     "_native": "",
     "data": {
@@ -29,6 +29,9 @@
       },
       {
         "__id__": 10
+      },
+      {
+        "__id__": 13
       }
     ],
     "_prefab": {
@@ -244,10 +247,6 @@
     "_type": 3,
     "_inverted": false,
     "_segments": 64,
-    "_spriteFrame": {
-      "__uuid__": "664063d5-b2e8-4e66-bb2b-0442816cb438@f9941",
-      "__expectedType__": "cc.SpriteFrame"
-    },
     "_alphaThreshold": 0.7,
     "_id": ""
   },
@@ -264,5 +263,50 @@
       "__id__": 0
     },
     "fileId": "9cYxGiAItAULzlLdyUcccm"
+  },
+  {
+    "__type__": "cc.Sprite",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "__prefab": null,
+    "_customMaterial": null,
+    "_srcBlendFactor": 2,
+    "_dstBlendFactor": 4,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_spriteFrame": {
+      "__uuid__": "664063d5-b2e8-4e66-bb2b-0442816cb438@f9941",
+      "__expectedType__": "cc.SpriteFrame"
+    },
+    "_type": 0,
+    "_fillType": 0,
+    "_sizeMode": 1,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_useGrayscale": false,
+    "_atlas": null,
+    "_id": "53jERMfZNFe6mE537+6sly",
+    "_prefab": {
+      "__id__": 14
+    }
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "40oEBA/rlKKYK3gpjr4fa1"
   }
 ]

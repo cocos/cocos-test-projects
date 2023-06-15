@@ -1,12 +1,12 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "16712090-f0c4-45b8-9250-69b25178f580",
   "files": [],
   "subMetas": {
     "50743": {
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "importer": "texture",
       "uuid": "16712090-f0c4-45b8-9250-69b25178f580@50743",
       "imported": true,
@@ -30,7 +30,7 @@
       "displayName": ""
     },
     "d9c96": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "16712090-f0c4-45b8-9250-69b25178f580@d9c96",
       "imported": true,
@@ -40,14 +40,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 18324
       },
       "id": "d9c96",
       "name": "pCube49.mesh",
       "displayName": ""
     },
     "3effa": {
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "importer": "texture",
       "uuid": "16712090-f0c4-45b8-9250-69b25178f580@3effa",
       "imported": true,
@@ -71,7 +72,7 @@
       "displayName": ""
     },
     "221a5": {
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "importer": "texture",
       "uuid": "16712090-f0c4-45b8-9250-69b25178f580@221a5",
       "imported": true,
@@ -95,7 +96,7 @@
       "displayName": ""
     },
     "0089c": {
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "importer": "texture",
       "uuid": "16712090-f0c4-45b8-9250-69b25178f580@0089c",
       "imported": true,
@@ -119,7 +120,7 @@
       "displayName": ""
     },
     "9b633": {
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "importer": "texture",
       "uuid": "16712090-f0c4-45b8-9250-69b25178f580@9b633",
       "imported": true,
@@ -143,7 +144,7 @@
       "displayName": ""
     },
     "9b782": {
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "importer": "texture",
       "uuid": "16712090-f0c4-45b8-9250-69b25178f580@9b782",
       "imported": true,
@@ -183,7 +184,7 @@
       "displayName": ""
     },
     "796a3": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "16712090-f0c4-45b8-9250-69b25178f580@796a3",
       "imported": true,
@@ -243,6 +244,25 @@
       {
         "uri": "db://assets/shared-res/models/corset/Corset_specularGlossiness.png"
       }
-    ]
+    ],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

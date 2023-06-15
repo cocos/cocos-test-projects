@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.SceneAsset",
-    "_name": "",
+    "_name": "PartAnimation",
     "_objFlags": 0,
     "_native": "",
     "scene": {
@@ -116,7 +116,10 @@
     "_shadowFixedArea": false,
     "_shadowNear": 1,
     "_shadowFar": 30,
-    "_shadowOrthoSize": 5
+    "_shadowOrthoSize": 5,
+    "_csmLevel": 1,
+    "_csmLayerLambda": 0.75,
+    "_csmOptimizationMode": 2
   },
   {
     "__type__": "cc.StaticLightSettings",
@@ -931,9 +934,7 @@
       }
     ],
     "_visFlags": 0,
-    "lightmapSettings": {
-      "__id__": 28
-    },
+    "lightmapSettings": null,
     "_mesh": {
       "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@a804a",
       "__expectedType__": "cc.Mesh"
@@ -941,10 +942,13 @@
     "_shadowCastingMode": 0,
     "_shadowReceivingMode": 1,
     "_enableMorph": true,
-    "_id": "4ecvRxNeVAA5c42fFmdDCN"
+    "_id": "4ecvRxNeVAA5c42fFmdDCN",
+    "bakeSettings": {
+      "__id__": 28
+    }
   },
   {
-    "__type__": "cc.ModelLightmapSettings",
+    "__type__": "cc.ModelBakeSettings",
     "texture": null,
     "uvParam": {
       "__type__": "cc.Vec4",

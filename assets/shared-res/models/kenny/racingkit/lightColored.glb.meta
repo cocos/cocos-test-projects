@@ -1,5 +1,5 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "8832827d-167e-42a3-9bd6-071fe0690136",
@@ -22,7 +22,7 @@
       "displayName": ""
     },
     "7300b": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "8832827d-167e-42a3-9bd6-071fe0690136@7300b",
       "imported": true,
@@ -32,7 +32,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 268
       },
       "id": "7300b",
       "name": "Mesh lightColored.mesh",
@@ -119,7 +120,7 @@
       "displayName": ""
     },
     "82ea9": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "8832827d-167e-42a3-9bd6-071fe0690136@82ea9",
       "imported": true,
@@ -158,6 +159,25 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": []
+    "imageMetas": [],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

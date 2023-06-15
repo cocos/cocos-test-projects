@@ -1,11 +1,11 @@
 {
-  "ver": "1.0.23",
+  "ver": "1.0.26",
   "importer": "image",
   "imported": true,
   "uuid": "770bf63f-6722-4d9a-9aa9-3009ba65be29",
   "files": [
-    ".png",
-    ".json"
+    ".json",
+    ".png"
   ],
   "subMetas": {
     "6c48a": {
@@ -14,7 +14,7 @@
       "displayName": "filled_round_fg",
       "id": "6c48a",
       "name": "texture",
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "imported": true,
       "files": [
         ".json"
@@ -29,11 +29,12 @@
         "premultiplyAlpha": false,
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "770bf63f-6722-4d9a-9aa9-3009ba65be29"
+        "imageUuidOrDatabaseUri": "770bf63f-6722-4d9a-9aa9-3009ba65be29",
+        "visible": false
       }
     },
     "f9941": {
-      "ver": "1.0.9",
+      "ver": "1.0.12",
       "importer": "sprite-frame",
       "uuid": "770bf63f-6722-4d9a-9aa9-3009ba65be29@f9941",
       "imported": true,
@@ -67,7 +68,65 @@
         "isUuid": true,
         "imageUuidOrDatabaseUri": "770bf63f-6722-4d9a-9aa9-3009ba65be29@6c48a",
         "atlasUuid": "",
-        "packable": true
+        "packable": true,
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [
+            -66,
+            -66,
+            0,
+            66,
+            -66,
+            0,
+            -66,
+            66,
+            0,
+            66,
+            66,
+            0
+          ],
+          "indexes": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            3
+          ],
+          "uv": [
+            0,
+            132,
+            132,
+            132,
+            0,
+            0,
+            132,
+            0
+          ],
+          "nuv": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "minPos": [
+            -66,
+            -66,
+            0
+          ],
+          "maxPos": [
+            66,
+            66,
+            0
+          ]
+        }
       },
       "displayName": "filled_round_fg",
       "id": "f9941",

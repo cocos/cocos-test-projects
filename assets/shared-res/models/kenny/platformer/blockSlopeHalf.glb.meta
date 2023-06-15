@@ -1,12 +1,12 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "92373dd3-feba-41db-bb54-67622cd3abca",
   "files": [],
   "subMetas": {
     "24325": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "92373dd3-feba-41db-bb54-67622cd3abca@24325",
       "imported": true,
@@ -38,7 +38,7 @@
       "displayName": ""
     },
     "453b8": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "92373dd3-feba-41db-bb54-67622cd3abca@453b8",
       "imported": true,
@@ -48,7 +48,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 64
       },
       "id": "453b8",
       "name": "Mesh blockSlopeHalf.mesh",
@@ -90,6 +91,25 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": []
+    "imageMetas": [],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

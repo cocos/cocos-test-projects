@@ -1,12 +1,12 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "2447bb3a-f372-4743-b045-0cd672241c27",
   "files": [],
   "subMetas": {
     "30834": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "2447bb3a-f372-4743-b045-0cd672241c27@30834",
       "imported": true,
@@ -16,14 +16,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 44
       },
       "id": "30834",
       "name": "Mesh button.mesh",
       "displayName": ""
     },
     "4e851": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "2447bb3a-f372-4743-b045-0cd672241c27@4e851",
       "imported": true,
@@ -33,7 +34,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 1
+        "gltfIndex": 1,
+        "triangleCount": 20
       },
       "id": "4e851",
       "name": "Mesh knob.mesh",
@@ -88,7 +90,7 @@
       "displayName": ""
     },
     "55c2e": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "2447bb3a-f372-4743-b045-0cd672241c27@55c2e",
       "imported": true,
@@ -125,6 +127,25 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": []
+    "imageMetas": [],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

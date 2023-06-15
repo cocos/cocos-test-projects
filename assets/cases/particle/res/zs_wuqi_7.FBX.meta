@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.4",
+  "ver": "2.3.8",
   "importer": "fbx",
   "imported": true,
   "uuid": "aed492e5-3748-4e01-99a1-36428e32c213",
@@ -10,8 +10,8 @@
       "uuid": "aed492e5-3748-4e01-99a1-36428e32c213@30783",
       "displayName": "",
       "id": "30783",
-      "name": "zs_wuqi_7.FBX.prefab",
-      "ver": "1.0.12",
+      "name": "zs_wuqi_7.prefab",
+      "ver": "1.0.13",
       "imported": true,
       "files": [
         ".json"
@@ -22,7 +22,7 @@
       }
     },
     "04770": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "name": "zs_weapon_017.mesh",
       "id": "04770",
@@ -35,7 +35,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 498
       }
     },
     "91c13": {
@@ -49,7 +50,10 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": true,
+        "type": "texture"
       },
       "displayName": "",
       "id": "91c13",
@@ -124,7 +128,27 @@
     ],
     "legacyFbxImporter": true,
     "fbx": {
-      "smartMaterialEnabled": false
+      "smartMaterialEnabled": false,
+      "matchMeshNames": false
+    },
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
     }
   }
 }

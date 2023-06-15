@@ -1,12 +1,12 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "5d49508f-5557-4331-9e03-91b0f73bbb0d",
   "files": [],
   "subMetas": {
     "25299": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "5d49508f-5557-4331-9e03-91b0f73bbb0d@25299",
       "imported": true,
@@ -22,7 +22,7 @@
       "displayName": ""
     },
     "e73a8": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "5d49508f-5557-4331-9e03-91b0f73bbb0d@e73a8",
       "imported": true,
@@ -32,7 +32,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 204
       },
       "id": "e73a8",
       "name": "Mesh crate.mesh",
@@ -90,6 +91,25 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": []
+    "imageMetas": [],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

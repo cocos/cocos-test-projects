@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.4",
+  "ver": "2.3.8",
   "importer": "fbx",
   "imported": true,
   "uuid": "fee022cf-1556-4426-9bc1-fdd87d8625f0",
@@ -21,7 +21,8 @@
           "from": 0,
           "to": 1.2999999523162842
         },
-        "events": []
+        "events": [],
+        "previousId": "18d6f"
       },
       "ver": "1.0.16",
       "imported": true,
@@ -39,7 +40,7 @@
       "userData": {
         "gltfIndex": 0
       },
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "imported": true,
       "files": [
         ".json"
@@ -60,7 +61,8 @@
             "name": "mixamo.com",
             "from": 0,
             "to": 1.2999999523162842,
-            "wrapMode": 2
+            "wrapMode": 2,
+            "previousId": "18d6f"
           }
         ]
       }
@@ -76,7 +78,27 @@
       ]
     },
     "fbx": {
-      "smartMaterialEnabled": false
+      "smartMaterialEnabled": false,
+      "matchMeshNames": false
+    },
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
     }
   }
 }

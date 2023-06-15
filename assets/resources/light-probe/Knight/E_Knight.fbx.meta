@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.2",
+  "ver": "2.3.8",
   "importer": "fbx",
   "imported": true,
   "uuid": "c12c45f3-dca3-4d8a-8226-f0bebb48a791",
@@ -71,7 +71,10 @@
       "id": "95137",
       "name": "knight_rig:file15.image",
       "userData": {
-        "gltfIndex": 7
+        "gltfIndex": 7,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": true,
+        "type": "texture"
       },
       "ver": "1.0.3",
       "imported": true,
@@ -81,16 +84,17 @@
       ],
       "subMetas": {}
     },
-    "112eb": {
+    "0c95e": {
       "importer": "gltf-mesh",
-      "uuid": "c12c45f3-dca3-4d8a-8226-f0bebb48a791@112eb",
+      "uuid": "c12c45f3-dca3-4d8a-8226-f0bebb48a791@0c95e",
       "displayName": "",
-      "id": "112eb",
-      "name": "knight_rig:Body_Material0.mesh",
+      "id": "0c95e",
+      "name": "knight_rig:Body.mesh",
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 104416
       },
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "imported": true,
       "files": [
         ".bin",
@@ -105,9 +109,10 @@
       "id": "bc42a",
       "name": "knight_rig:Shield.mesh",
       "userData": {
-        "gltfIndex": 1
+        "gltfIndex": 1,
+        "triangleCount": 15768
       },
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "imported": true,
       "files": [
         ".bin",
@@ -122,9 +127,10 @@
       "id": "6d77a",
       "name": "knight_rig:Sword.mesh",
       "userData": {
-        "gltfIndex": 2
+        "gltfIndex": 2,
+        "triangleCount": 2065
       },
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "imported": true,
       "files": [
         ".bin",
@@ -139,9 +145,10 @@
       "id": "303d9",
       "name": "knight_rig:polySurface579.mesh",
       "userData": {
-        "gltfIndex": 3
+        "gltfIndex": 3,
+        "triangleCount": 2
       },
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "imported": true,
       "files": [
         ".bin",
@@ -156,9 +163,10 @@
       "id": "e8046",
       "name": "knight_rig:polySurface580.mesh",
       "userData": {
-        "gltfIndex": 4
+        "gltfIndex": 4,
+        "triangleCount": 2
       },
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "imported": true,
       "files": [
         ".bin",
@@ -173,9 +181,10 @@
       "id": "a0575",
       "name": "knight_rig:polySurface581.mesh",
       "userData": {
-        "gltfIndex": 5
+        "gltfIndex": 5,
+        "triangleCount": 2
       },
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "imported": true,
       "files": [
         ".bin",
@@ -190,9 +199,10 @@
       "id": "7079e",
       "name": "knight_rig:polySurface582.mesh",
       "userData": {
-        "gltfIndex": 6
+        "gltfIndex": 6,
+        "triangleCount": 2
       },
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "imported": true,
       "files": [
         ".bin",
@@ -214,7 +224,8 @@
           "from": 0,
           "to": 12.458333015441895
         },
-        "events": []
+        "events": [],
+        "previousId": "73b7f"
       },
       "ver": "1.0.16",
       "imported": true,
@@ -315,7 +326,10 @@
       "id": "6df3b",
       "name": "knight_rig:file9.image",
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
       },
       "ver": "1.0.3",
       "imported": true,
@@ -332,7 +346,10 @@
       "id": "28f92",
       "name": "knight_rig:file11.image",
       "userData": {
-        "gltfIndex": 1
+        "gltfIndex": 1,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
       },
       "ver": "1.0.3",
       "imported": true,
@@ -349,7 +366,10 @@
       "id": "c9bf3",
       "name": "knight_rig:file7.image",
       "userData": {
-        "gltfIndex": 2
+        "gltfIndex": 2,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
       },
       "ver": "1.0.3",
       "imported": true,
@@ -366,7 +386,10 @@
       "id": "a4189",
       "name": "knight_rig:file12.image",
       "userData": {
-        "gltfIndex": 3
+        "gltfIndex": 3,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
       },
       "ver": "1.0.3",
       "imported": true,
@@ -383,7 +406,10 @@
       "id": "82b49",
       "name": "knight_rig:file10.image",
       "userData": {
-        "gltfIndex": 4
+        "gltfIndex": 4,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
       },
       "ver": "1.0.3",
       "imported": true,
@@ -400,7 +426,10 @@
       "id": "1fd7f",
       "name": "knight_rig:file17.image",
       "userData": {
-        "gltfIndex": 5
+        "gltfIndex": 5,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
       },
       "ver": "1.0.3",
       "imported": true,
@@ -417,7 +446,10 @@
       "id": "78fc1",
       "name": "knight_rig:file16.image",
       "userData": {
-        "gltfIndex": 6
+        "gltfIndex": 6,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
       },
       "ver": "1.0.3",
       "imported": true,
@@ -434,7 +466,10 @@
       "id": "4b961",
       "name": "knight_rig:file14.image",
       "userData": {
-        "gltfIndex": 8
+        "gltfIndex": 8,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
       },
       "ver": "1.0.3",
       "imported": true,
@@ -451,7 +486,10 @@
       "id": "77c3a",
       "name": "knight_rig:file13.image",
       "userData": {
-        "gltfIndex": 9
+        "gltfIndex": 9,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": false,
+        "type": "texture"
       },
       "ver": "1.0.3",
       "imported": true,
@@ -677,7 +715,7 @@
       "userData": {
         "gltfIndex": 0
       },
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "imported": true,
       "files": [
         ".json"
@@ -729,7 +767,8 @@
       }
     ],
     "fbx": {
-      "smartMaterialEnabled": true
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
     },
     "animationImportSettings": [
       {
@@ -741,7 +780,8 @@
             "name": "Take 001",
             "from": 0,
             "to": 12.458333015441895,
-            "wrapMode": 2
+            "wrapMode": 2,
+            "previousId": "73b7f"
           }
         ]
       }
@@ -749,7 +789,7 @@
     "redirect": "c12c45f3-dca3-4d8a-8226-f0bebb48a791@1a7e9",
     "assetFinder": {
       "meshes": [
-        "c12c45f3-dca3-4d8a-8226-f0bebb48a791@112eb",
+        "c12c45f3-dca3-4d8a-8226-f0bebb48a791@0c95e",
         "c12c45f3-dca3-4d8a-8226-f0bebb48a791@bc42a",
         "c12c45f3-dca3-4d8a-8226-f0bebb48a791@6d77a",
         "c12c45f3-dca3-4d8a-8226-f0bebb48a791@303d9",
@@ -779,15 +819,15 @@
         "c12c45f3-dca3-4d8a-8226-f0bebb48a791@8e24a"
       ],
       "materials": [
-        "4d07334c-7653-4eaf-92d6-7dac945027d7",
-        "be795f4d-c0ad-47ee-905a-d88104881111",
-        "588463b2-4abd-4b2b-9463-289b30fdf52f",
-        "05653a60-aea3-4ad7-98cf-5d5b0c92d0a8",
-        "08b1d4a5-31e0-4abe-8d9d-10222794a4a7",
-        "4f324b77-3462-429f-9e2f-2c3b12a80422",
-        "a9870ae4-8c03-4aaf-a198-cb5a3b2ec606",
-        "0bc1b3d6-e118-4bd4-b051-a51a325d3fa0",
-        "e77b59e1-cb97-42c6-9c06-0639af48aa98"
+        "a2ab3a20-0aeb-4508-af4f-a91b9b891600",
+        "74ec56d8-9cd9-4ab9-ad85-7f2c09dbf46d",
+        "675c6897-650b-4c3c-952b-cb94ceb89203",
+        "0e49734c-76db-48f3-9f46-7670233f3631",
+        "cf56bf0e-c29d-45a9-b1bb-6784dd3ae874",
+        "dc8e38a7-814e-4c1e-9328-643803b5ef60",
+        "00cc02da-4d76-4fb7-b5f7-ca61a6157743",
+        "e0e4cb39-c8a8-4f0e-a986-0c89f99f173d",
+        "8300fdec-558a-44a2-a588-c8c62797bc2f"
       ],
       "scenes": [
         "c12c45f3-dca3-4d8a-8226-f0bebb48a791@1a7e9"
@@ -1103,6 +1143,25 @@
       }
     },
     "dumpMaterials": true,
-    "materialDumpDir": "db://assets/FBX/Knight/Materials_E_Knight"
+    "materialDumpDir": "db://assets/FBX/Knight/Materials_E_Knight",
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

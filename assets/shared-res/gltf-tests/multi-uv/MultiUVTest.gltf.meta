@@ -1,12 +1,12 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "d2ee34ab-594a-46fe-b68f-8b7385eddb5c",
   "files": [],
   "subMetas": {
     "2f6d1": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "d2ee34ab-594a-46fe-b68f-8b7385eddb5c@2f6d1",
       "imported": true,
@@ -16,14 +16,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 12
       },
       "id": "2f6d1",
       "name": "Cube.mesh",
       "displayName": ""
     },
     "3effa": {
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "importer": "texture",
       "uuid": "d2ee34ab-594a-46fe-b68f-8b7385eddb5c@3effa",
       "imported": true,
@@ -47,7 +48,7 @@
       "displayName": ""
     },
     "221a5": {
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "importer": "texture",
       "uuid": "d2ee34ab-594a-46fe-b68f-8b7385eddb5c@221a5",
       "imported": true,
@@ -87,7 +88,7 @@
       "displayName": ""
     },
     "9fa1e": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "d2ee34ab-594a-46fe-b68f-8b7385eddb5c@9fa1e",
       "imported": true,
@@ -131,6 +132,25 @@
       {
         "uri": "db://assets/shared-res/gltf-tests/multi-uv/uv1.png"
       }
-    ]
+    ],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

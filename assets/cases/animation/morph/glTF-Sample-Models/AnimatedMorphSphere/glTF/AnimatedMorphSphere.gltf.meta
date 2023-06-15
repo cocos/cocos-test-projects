@@ -1,5 +1,5 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "5267db74-21ca-4e7b-a170-e34c2c9ee749",
@@ -13,7 +13,7 @@
       "displayName": "",
       "id": "825ed",
       "name": "Sphere.mesh",
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "imported": true,
       "files": [
         ".bin",
@@ -21,7 +21,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 960
       }
     },
     "f3a36": {
@@ -44,7 +45,8 @@
           "from": 0,
           "to": 7.1999945640563965
         },
-        "events": []
+        "events": [],
+        "previousId": "f3a36"
       }
     },
     "42d80": {
@@ -69,7 +71,7 @@
       "displayName": "",
       "id": "6a159",
       "name": "AnimatedMorphSphere.prefab",
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "imported": true,
       "files": [
         ".json"
@@ -92,7 +94,8 @@
             "name": "Globe",
             "from": 0,
             "to": 7.1999945640563965,
-            "wrapMode": 2
+            "wrapMode": 2,
+            "previousId": "f3a36"
           }
         ]
       }
@@ -109,6 +112,25 @@
       ],
       "scenes": [
         "5267db74-21ca-4e7b-a170-e34c2c9ee749@6a159"
+      ]
+    },
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
       ]
     }
   }

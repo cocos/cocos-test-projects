@@ -1,12 +1,12 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "ef4bd78a-24e1-4261-bf87-a16c8d7ad2ee",
   "files": [],
   "subMetas": {
     "25602": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "ef4bd78a-24e1-4261-bf87-a16c8d7ad2ee@25602",
       "imported": true,
@@ -22,7 +22,7 @@
       "displayName": ""
     },
     "d8986": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "ef4bd78a-24e1-4261-bf87-a16c8d7ad2ee@d8986",
       "imported": true,
@@ -32,7 +32,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 60
       },
       "id": "d8986",
       "name": "plant.mesh",
@@ -73,6 +74,25 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": []
+    "imageMetas": [],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

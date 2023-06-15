@@ -1,12 +1,12 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "6645bba9-e160-47fe-81e6-3a9fe030dd8b",
   "files": [],
   "subMetas": {
     "7425d": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "6645bba9-e160-47fe-81e6-3a9fe030dd8b@7425d",
       "imported": true,
@@ -16,14 +16,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 96
       },
       "id": "7425d",
       "name": "Mesh flagTankco.mesh",
       "displayName": ""
     },
     "e5a79": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "6645bba9-e160-47fe-81e6-3a9fe030dd8b@e5a79",
       "imported": true,
@@ -33,7 +34,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 1
+        "gltfIndex": 1,
+        "triangleCount": 88
       },
       "id": "e5a79",
       "name": "Mesh Group 391.mesh",
@@ -45,19 +47,22 @@
       "uuid": "6645bba9-e160-47fe-81e6-3a9fe030dd8b@765da",
       "imported": true,
       "files": [
-        ".png",
-        ".json"
+        ".json",
+        ".png"
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": true,
+        "type": "texture"
       },
       "id": "765da",
       "name": "tankcoBanner.image",
       "displayName": ""
     },
     "e39f7": {
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "importer": "texture",
       "uuid": "6645bba9-e160-47fe-81e6-3a9fe030dd8b@e39f7",
       "imported": true,
@@ -145,7 +150,7 @@
       "displayName": ""
     },
     "f2ce7": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "6645bba9-e160-47fe-81e6-3a9fe030dd8b@f2ce7",
       "imported": true,
@@ -190,6 +195,25 @@
         "name": "tankcoBanner",
         "uri": "6645bba9-e160-47fe-81e6-3a9fe030dd8b@765da"
       }
-    ]
+    ],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

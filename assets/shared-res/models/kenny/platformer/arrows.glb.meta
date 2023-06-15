@@ -1,12 +1,12 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "64d7cae0-c908-4a1a-9ba7-c0bbc429482b",
   "files": [],
   "subMetas": {
     "86cbe": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "64d7cae0-c908-4a1a-9ba7-c0bbc429482b@86cbe",
       "imported": true,
@@ -16,14 +16,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 22
       },
       "id": "86cbe",
       "name": "Mesh arrows-0.mesh",
       "displayName": ""
     },
     "97e2d": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "64d7cae0-c908-4a1a-9ba7-c0bbc429482b@97e2d",
       "imported": true,
@@ -33,14 +34,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 1
+        "gltfIndex": 1,
+        "triangleCount": 24
       },
       "id": "97e2d",
       "name": "Mesh arrowLeft-1.mesh",
       "displayName": ""
     },
     "52c7a": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "64d7cae0-c908-4a1a-9ba7-c0bbc429482b@52c7a",
       "imported": true,
@@ -50,7 +52,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 2
+        "gltfIndex": 2,
+        "triangleCount": 24
       },
       "id": "52c7a",
       "name": "Mesh arrowLeft-2.mesh",
@@ -105,7 +108,7 @@
       "displayName": ""
     },
     "23c07": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "64d7cae0-c908-4a1a-9ba7-c0bbc429482b@23c07",
       "imported": true,
@@ -143,6 +146,25 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": []
+    "imageMetas": [],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

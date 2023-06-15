@@ -1,12 +1,12 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "eb67725b-bd59-453e-8432-bc7342bce791",
   "files": [],
   "subMetas": {
     "3f9a6": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "eb67725b-bd59-453e-8432-bc7342bce791@3f9a6",
       "imported": true,
@@ -16,7 +16,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 162
       },
       "id": "3f9a6",
       "name": "Mesh pitsGarageClosed.mesh",
@@ -28,19 +29,22 @@
       "uuid": "eb67725b-bd59-453e-8432-bc7342bce791@765da",
       "imported": true,
       "files": [
-        ".png",
-        ".json"
+        ".json",
+        ".png"
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": true,
+        "type": "texture"
       },
       "id": "765da",
       "name": "tankcoBanner.image",
       "displayName": ""
     },
     "e39f7": {
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "importer": "texture",
       "uuid": "eb67725b-bd59-453e-8432-bc7342bce791@e39f7",
       "imported": true,
@@ -144,7 +148,7 @@
       "displayName": ""
     },
     "bdc58": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "eb67725b-bd59-453e-8432-bc7342bce791@bdc58",
       "imported": true,
@@ -189,6 +193,25 @@
         "name": "tankcoBanner",
         "uri": "eb67725b-bd59-453e-8432-bc7342bce791@765da"
       }
-    ]
+    ],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

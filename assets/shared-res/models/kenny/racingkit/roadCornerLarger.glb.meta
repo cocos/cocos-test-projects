@@ -1,5 +1,5 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "2aca09d2-2f45-4835-a28c-59f181d3ffa7",
@@ -22,7 +22,7 @@
       "displayName": ""
     },
     "678dc": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "2aca09d2-2f45-4835-a28c-59f181d3ffa7@678dc",
       "imported": true,
@@ -32,7 +32,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 216
       },
       "id": "678dc",
       "name": "Mesh roadCornerLarger.mesh",
@@ -71,7 +72,7 @@
       "displayName": ""
     },
     "86cea": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "2aca09d2-2f45-4835-a28c-59f181d3ffa7@86cea",
       "imported": true,
@@ -107,6 +108,25 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": []
+    "imageMetas": [],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

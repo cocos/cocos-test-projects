@@ -1,5 +1,5 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "de6314a3-4e89-4cd8-8653-07c7cc969d4c",
@@ -22,7 +22,7 @@
       "displayName": ""
     },
     "92175": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "de6314a3-4e89-4cd8-8653-07c7cc969d4c@92175",
       "imported": true,
@@ -32,14 +32,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 15452
       },
       "id": "92175",
       "name": "mesh_helmet_LP_13930damagedHelmet.mesh",
       "displayName": ""
     },
     "3effa": {
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "importer": "texture",
       "uuid": "de6314a3-4e89-4cd8-8653-07c7cc969d4c@3effa",
       "imported": true,
@@ -63,7 +64,7 @@
       "displayName": ""
     },
     "221a5": {
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "importer": "texture",
       "uuid": "de6314a3-4e89-4cd8-8653-07c7cc969d4c@221a5",
       "imported": true,
@@ -87,7 +88,7 @@
       "displayName": ""
     },
     "0089c": {
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "importer": "texture",
       "uuid": "de6314a3-4e89-4cd8-8653-07c7cc969d4c@0089c",
       "imported": true,
@@ -111,7 +112,7 @@
       "displayName": ""
     },
     "9b633": {
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "importer": "texture",
       "uuid": "de6314a3-4e89-4cd8-8653-07c7cc969d4c@9b633",
       "imported": true,
@@ -135,7 +136,7 @@
       "displayName": ""
     },
     "9b782": {
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "importer": "texture",
       "uuid": "de6314a3-4e89-4cd8-8653-07c7cc969d4c@9b782",
       "imported": true,
@@ -159,7 +160,7 @@
       "displayName": ""
     },
     "3b75d": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "de6314a3-4e89-4cd8-8653-07c7cc969d4c@3b75d",
       "imported": true,
@@ -215,6 +216,25 @@
       {
         "uri": "db://assets/shared-res/models/damaged-helmet/Default_normal.jpg"
       }
-    ]
+    ],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

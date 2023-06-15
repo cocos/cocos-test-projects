@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.2",
+  "ver": "2.3.8",
   "importer": "fbx",
   "imported": true,
   "uuid": "60f153af-20a2-40de-9e00-79852bca54cb",
@@ -32,7 +32,7 @@
       "userData": {
         "gltfIndex": 0
       },
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "imported": true,
       "files": [
         ".json"
@@ -112,16 +112,17 @@
       ],
       "subMetas": {}
     },
-    "112eb": {
+    "0c95e": {
       "importer": "gltf-mesh",
-      "uuid": "60f153af-20a2-40de-9e00-79852bca54cb@112eb",
+      "uuid": "60f153af-20a2-40de-9e00-79852bca54cb@0c95e",
       "displayName": "",
-      "id": "112eb",
-      "name": "knight_rig:Body_Material0.mesh",
+      "id": "0c95e",
+      "name": "knight_rig:Body.mesh",
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 104416
       },
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "imported": true,
       "files": [
         ".bin",
@@ -136,9 +137,10 @@
       "id": "bc42a",
       "name": "knight_rig:Shield.mesh",
       "userData": {
-        "gltfIndex": 1
+        "gltfIndex": 1,
+        "triangleCount": 15768
       },
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "imported": true,
       "files": [
         ".bin",
@@ -153,9 +155,10 @@
       "id": "6d77a",
       "name": "knight_rig:Sword.mesh",
       "userData": {
-        "gltfIndex": 2
+        "gltfIndex": 2,
+        "triangleCount": 2065
       },
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "imported": true,
       "files": [
         ".bin",
@@ -170,9 +173,10 @@
       "id": "303d9",
       "name": "knight_rig:polySurface579.mesh",
       "userData": {
-        "gltfIndex": 3
+        "gltfIndex": 3,
+        "triangleCount": 2
       },
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "imported": true,
       "files": [
         ".bin",
@@ -187,9 +191,10 @@
       "id": "e8046",
       "name": "knight_rig:polySurface580.mesh",
       "userData": {
-        "gltfIndex": 4
+        "gltfIndex": 4,
+        "triangleCount": 2
       },
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "imported": true,
       "files": [
         ".bin",
@@ -204,9 +209,10 @@
       "id": "a0575",
       "name": "knight_rig:polySurface581.mesh",
       "userData": {
-        "gltfIndex": 5
+        "gltfIndex": 5,
+        "triangleCount": 2
       },
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "imported": true,
       "files": [
         ".bin",
@@ -221,9 +227,10 @@
       "id": "7079e",
       "name": "knight_rig:polySurface582.mesh",
       "userData": {
-        "gltfIndex": 6
+        "gltfIndex": 6,
+        "triangleCount": 2
       },
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "imported": true,
       "files": [
         ".bin",
@@ -245,7 +252,8 @@
           "from": 0,
           "to": 1.0833333730697632
         },
-        "events": []
+        "events": [],
+        "previousId": "73b7f"
       },
       "ver": "1.0.16",
       "imported": true,
@@ -703,7 +711,8 @@
       }
     ],
     "fbx": {
-      "smartMaterialEnabled": true
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
     },
     "animationImportSettings": [
       {
@@ -715,7 +724,8 @@
             "name": "Take 001",
             "from": 0,
             "to": 1.0833333730697632,
-            "wrapMode": 2
+            "wrapMode": 2,
+            "previousId": "73b7f"
           }
         ]
       }
@@ -723,7 +733,7 @@
     "redirect": "60f153af-20a2-40de-9e00-79852bca54cb@30130",
     "assetFinder": {
       "meshes": [
-        "60f153af-20a2-40de-9e00-79852bca54cb@112eb",
+        "60f153af-20a2-40de-9e00-79852bca54cb@0c95e",
         "60f153af-20a2-40de-9e00-79852bca54cb@bc42a",
         "60f153af-20a2-40de-9e00-79852bca54cb@6d77a",
         "60f153af-20a2-40de-9e00-79852bca54cb@303d9",
@@ -765,6 +775,25 @@
       ],
       "scenes": [
         "60f153af-20a2-40de-9e00-79852bca54cb@30130"
+      ]
+    },
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
       ]
     }
   }

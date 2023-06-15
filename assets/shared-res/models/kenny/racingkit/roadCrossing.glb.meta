@@ -1,5 +1,5 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "6d1e6760-b8f5-47b1-9419-e798ddd1ae34",
@@ -22,7 +22,7 @@
       "displayName": ""
     },
     "04ff9": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "6d1e6760-b8f5-47b1-9419-e798ddd1ae34@04ff9",
       "imported": true,
@@ -32,7 +32,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 266
       },
       "id": "04ff9",
       "name": "Mesh roadCrossing.mesh",
@@ -71,7 +72,7 @@
       "displayName": ""
     },
     "bec9d": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "6d1e6760-b8f5-47b1-9419-e798ddd1ae34@bec9d",
       "imported": true,
@@ -107,6 +108,25 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": []
+    "imageMetas": [],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

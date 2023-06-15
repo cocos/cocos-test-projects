@@ -1,12 +1,12 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "9076b274-c50f-480b-80fb-37746ea79c93",
   "files": [],
   "subMetas": {
     "dff97": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "9076b274-c50f-480b-80fb-37746ea79c93@dff97",
       "imported": true,
@@ -16,14 +16,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 3174
       },
       "id": "dff97",
       "name": "ship_light_8angles-0.mesh",
       "displayName": ""
     },
     "90c54": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "9076b274-c50f-480b-80fb-37746ea79c93@90c54",
       "imported": true,
@@ -33,14 +34,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 1
+        "gltfIndex": 1,
+        "triangleCount": 144
       },
       "id": "90c54",
       "name": "cannon_front 1-1.mesh",
       "displayName": ""
     },
     "79b2e": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "9076b274-c50f-480b-80fb-37746ea79c93@79b2e",
       "imported": true,
@@ -50,14 +52,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 2
+        "gltfIndex": 2,
+        "triangleCount": 856
       },
       "id": "79b2e",
       "name": "cannon_front 1-2.mesh",
       "displayName": ""
     },
     "a5641": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "9076b274-c50f-480b-80fb-37746ea79c93@a5641",
       "imported": true,
@@ -67,14 +70,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 3
+        "gltfIndex": 3,
+        "triangleCount": 168
       },
       "id": "a5641",
       "name": "cannon_left 1-3.mesh",
       "displayName": ""
     },
     "b6e30": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "9076b274-c50f-480b-80fb-37746ea79c93@b6e30",
       "imported": true,
@@ -84,14 +88,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 4
+        "gltfIndex": 4,
+        "triangleCount": 188
       },
       "id": "b6e30",
       "name": "cannon_left 1-4.mesh",
       "displayName": ""
     },
     "272ae": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "9076b274-c50f-480b-80fb-37746ea79c93@272ae",
       "imported": true,
@@ -101,14 +106,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 5
+        "gltfIndex": 5,
+        "triangleCount": 160
       },
       "id": "272ae",
       "name": "sail_back 1-5.mesh",
       "displayName": ""
     },
     "3e1bf": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "9076b274-c50f-480b-80fb-37746ea79c93@3e1bf",
       "imported": true,
@@ -118,14 +124,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 6
+        "gltfIndex": 6,
+        "triangleCount": 160
       },
       "id": "3e1bf",
       "name": "sail_front 1-6.mesh",
       "displayName": ""
     },
     "c3d88": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "9076b274-c50f-480b-80fb-37746ea79c93@c3d88",
       "imported": true,
@@ -135,14 +142,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 7
+        "gltfIndex": 7,
+        "triangleCount": 160
       },
       "id": "c3d88",
       "name": "sail_middle 1-7.mesh",
       "displayName": ""
     },
     "affca": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "9076b274-c50f-480b-80fb-37746ea79c93@affca",
       "imported": true,
@@ -152,7 +160,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 8
+        "gltfIndex": 8,
+        "triangleCount": 1292
       },
       "id": "affca",
       "name": "steering 1-8.mesh",
@@ -255,7 +264,7 @@
       "displayName": ""
     },
     "04734": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "9076b274-c50f-480b-80fb-37746ea79c93@04734",
       "imported": true,
@@ -302,6 +311,25 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": []
+    "imageMetas": [],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

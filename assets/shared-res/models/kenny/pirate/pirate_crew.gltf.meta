@@ -1,12 +1,12 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "6f5248fb-d695-442e-ac74-fcd75e29db76",
   "files": [],
   "subMetas": {
     "e7c96": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "6f5248fb-d695-442e-ac74-fcd75e29db76@e7c96",
       "imported": true,
@@ -16,14 +16,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 28
       },
       "id": "e7c96",
       "name": "armLeft 1-0.mesh",
       "displayName": ""
     },
     "2263e": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "6f5248fb-d695-442e-ac74-fcd75e29db76@2263e",
       "imported": true,
@@ -33,14 +34,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 1
+        "gltfIndex": 1,
+        "triangleCount": 28
       },
       "id": "2263e",
       "name": "armRight 1-1.mesh",
       "displayName": ""
     },
     "6b32b": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "6f5248fb-d695-442e-ac74-fcd75e29db76@6b32b",
       "imported": true,
@@ -50,14 +52,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 2
+        "gltfIndex": 2,
+        "triangleCount": 106
       },
       "id": "6b32b",
       "name": "body 1-2.mesh",
       "displayName": ""
     },
     "91bc3": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "6f5248fb-d695-442e-ac74-fcd75e29db76@91bc3",
       "imported": true,
@@ -67,14 +70,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 3
+        "gltfIndex": 3,
+        "triangleCount": 94
       },
       "id": "91bc3",
       "name": "Group 143-3.mesh",
       "displayName": ""
     },
     "c2f8c": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "6f5248fb-d695-442e-ac74-fcd75e29db76@c2f8c",
       "imported": true,
@@ -84,14 +88,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 4
+        "gltfIndex": 4,
+        "triangleCount": 36
       },
       "id": "c2f8c",
       "name": "Group 143-4.mesh",
       "displayName": ""
     },
     "ca7ca": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "6f5248fb-d695-442e-ac74-fcd75e29db76@ca7ca",
       "imported": true,
@@ -101,14 +106,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 5
+        "gltfIndex": 5,
+        "triangleCount": 32
       },
       "id": "ca7ca",
       "name": "legLeft 1-5.mesh",
       "displayName": ""
     },
     "45b12": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "6f5248fb-d695-442e-ac74-fcd75e29db76@45b12",
       "imported": true,
@@ -118,7 +124,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 6
+        "gltfIndex": 6,
+        "triangleCount": 32
       },
       "id": "45b12",
       "name": "legRight 1-6.mesh",
@@ -221,7 +228,7 @@
       "displayName": ""
     },
     "1a22f": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "6f5248fb-d695-442e-ac74-fcd75e29db76@1a22f",
       "imported": true,
@@ -266,6 +273,25 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": []
+    "imageMetas": [],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "f1f2015a-4ee5-4f0f-a479-000d27c38eaf",
@@ -22,7 +22,7 @@
       "displayName": ""
     },
     "b9b19": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "f1f2015a-4ee5-4f0f-a479-000d27c38eaf@b9b19",
       "imported": true,
@@ -32,7 +32,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 60
       },
       "id": "b9b19",
       "name": "Mesh roadSide.mesh",
@@ -71,7 +72,7 @@
       "displayName": ""
     },
     "ca16f": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "f1f2015a-4ee5-4f0f-a479-000d27c38eaf@ca16f",
       "imported": true,
@@ -107,6 +108,25 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": []
+    "imageMetas": [],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

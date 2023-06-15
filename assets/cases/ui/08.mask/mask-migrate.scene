@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.SceneAsset",
-    "_name": "",
+    "_name": "mask-migrate",
     "_objFlags": 0,
     "_native": "",
     "scene": {
@@ -441,6 +441,9 @@
       },
       {
         "__id__": 17
+      },
+      {
+        "__id__": 29
       }
     ],
     "_prefab": null,
@@ -622,10 +625,6 @@
     "_type": 3,
     "_inverted": false,
     "_segments": 64,
-    "_spriteFrame": {
-      "__uuid__": "664063d5-b2e8-4e66-bb2b-0442816cb438@f9941",
-      "__expectedType__": "cc.SpriteFrame"
-    },
     "_alphaThreshold": 0.4,
     "_id": "f11K6lStRKpK6XEG3zpnWp"
   },
@@ -859,5 +858,43 @@
       "z": 1024
     },
     "_depth": 8
+  },
+  {
+    "__type__": "cc.Sprite",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 12
+    },
+    "_enabled": true,
+    "__prefab": null,
+    "_customMaterial": null,
+    "_srcBlendFactor": 2,
+    "_dstBlendFactor": 4,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_spriteFrame": {
+      "__uuid__": "664063d5-b2e8-4e66-bb2b-0442816cb438@f9941",
+      "__expectedType__": "cc.SpriteFrame"
+    },
+    "_type": 0,
+    "_fillType": 0,
+    "_sizeMode": 1,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_useGrayscale": false,
+    "_atlas": null,
+    "_id": "be8dRe3TxLFaZwW1tSZeCR"
   }
 ]

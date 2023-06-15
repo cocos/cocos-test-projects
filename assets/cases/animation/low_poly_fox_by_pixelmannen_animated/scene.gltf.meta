@@ -1,5 +1,5 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "3004862e-868e-4b34-95cb-f185d324e081",
@@ -25,14 +25,15 @@
           "to": 10.766666666666667
         },
         "speed": 1,
-        "wrapMode": 2
+        "wrapMode": 2,
+        "previousId": "57146"
       },
       "id": "57146",
       "name": "Walk.animation",
       "displayName": ""
     },
     "3a99e": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "3004862e-868e-4b34-95cb-f185d324e081@3a99e",
       "imported": true,
@@ -42,7 +43,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 576
       },
       "id": "3a99e",
       "name": "fox1_fox_material_0.mesh",
@@ -66,7 +68,8 @@
           "to": 15.9375
         },
         "speed": 1,
-        "wrapMode": 2
+        "wrapMode": 2,
+        "previousId": "73b7f"
       },
       "id": "73b7f",
       "name": "Take 001.animation",
@@ -89,7 +92,8 @@
           "to": 7.166666666666667
         },
         "events": [],
-        "wrapMode": 2
+        "wrapMode": 2,
+        "previousId": "c2696"
       },
       "id": "c2696",
       "name": "Idle.animation",
@@ -113,7 +117,8 @@
           "to": 15.9375
         },
         "wrapMode": 2,
-        "speed": 1
+        "speed": 1,
+        "previousId": "9292d"
       },
       "id": "9292d",
       "name": "Run.animation",
@@ -137,7 +142,7 @@
       "displayName": ""
     },
     "e39f7": {
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "importer": "texture",
       "uuid": "3004862e-868e-4b34-95cb-f185d324e081@e39f7",
       "imported": true,
@@ -161,7 +166,7 @@
       "displayName": ""
     },
     "d1932": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "3004862e-868e-4b34-95cb-f185d324e081@d1932",
       "imported": true,
@@ -191,25 +196,29 @@
             "name": "Take 001",
             "from": 0,
             "to": 15.9375,
-            "wrapMode": 2
+            "wrapMode": 2,
+            "previousId": "73b7f"
           },
           {
             "name": "Idle",
             "from": 0,
             "to": 7.166666666666667,
-            "wrapMode": 2
+            "wrapMode": 2,
+            "previousId": "c2696"
           },
           {
             "name": "Walk",
             "from": 7.166666666666667,
             "to": 10.766666666666667,
-            "wrapMode": 2
+            "wrapMode": 2,
+            "previousId": "57146"
           },
           {
             "name": "Run",
             "from": 10.766666666666667,
             "to": 15.9375,
-            "wrapMode": 2
+            "wrapMode": 2,
+            "previousId": "9292d"
           }
         ]
       }
@@ -237,6 +246,25 @@
       {
         "uri": "db://assets/cases/animation/low_poly_fox_by_pixelmannen_animated/textures/fox_material_baseColor.png"
       }
-    ]
+    ],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }

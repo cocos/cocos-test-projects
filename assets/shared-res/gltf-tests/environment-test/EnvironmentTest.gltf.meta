@@ -1,5 +1,5 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.8",
   "importer": "gltf",
   "imported": true,
   "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e",
@@ -22,7 +22,7 @@
       "displayName": ""
     },
     "52060": {
-      "ver": "1.0.12",
+      "ver": "1.0.13",
       "importer": "gltf-scene",
       "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@52060",
       "imported": true,
@@ -38,7 +38,7 @@
       "displayName": ""
     },
     "85552": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@85552",
       "imported": true,
@@ -48,14 +48,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 1
+        "gltfIndex": 1,
+        "triangleCount": 8448
       },
       "id": "85552",
       "name": "Dielectric0_N3D2.mesh",
       "displayName": ""
     },
     "420b6": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@420b6",
       "imported": true,
@@ -65,14 +66,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 8448
       },
       "id": "420b6",
       "name": "Metallic0_N3D.mesh",
       "displayName": ""
     },
     "d502a": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@d502a",
       "imported": true,
@@ -82,14 +84,15 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 2
+        "gltfIndex": 2,
+        "triangleCount": 8448
       },
       "id": "d502a",
       "name": "Dielectric0_N3D.mesh",
       "displayName": ""
     },
     "d0b0e": {
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "importer": "texture",
       "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@d0b0e",
       "imported": true,
@@ -113,7 +116,7 @@
       "displayName": ""
     },
     "2ab37": {
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "importer": "texture",
       "uuid": "9f94c180-f4f5-4146-88ee-0771efc58f8e@2ab37",
       "imported": true,
@@ -203,6 +206,25 @@
         "name": "tmp_image_pie_b20b_ebb4_317droughness_map2_roughness_tmp_image_pie_b20b_ebb4_317dmetal_map2_metallic_1",
         "uri": "db://assets/shared-res/gltf-tests/environment-test/EnvironmentTest_images/roughness_metallic_1.jpg"
       }
-    ]
+    ],
+    "mountAllAnimationsOnPrefab": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }
