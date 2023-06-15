@@ -36,7 +36,7 @@ export class WebviewCtrl extends Component {
     }
 
     onGoTo () {
-        this.webview.url = 'http://docs.cocos.com/creator/manual/zh/';
+        this.webview.url = 'https://docs.cocos.com/creator/manual/zh/';
     }
 
     onEventTypes (target: WebView, eventType: typeof WebView.EventType) {
