@@ -1,4 +1,4 @@
-import { _decorator, Component, Label } from 'cc';
+import { _decorator, Component, Node, Label, sys } from 'cc';
 const { ccclass, property } = _decorator;
 
 import { LastTimeResult } from './ByteCodeCache';
@@ -18,8 +18,17 @@ export class ByteCodeCache extends Component {
     @property({ type: Label })
     public titleLabel: Label = null!;
 
+    @property(Node)
+    public noSupport: Node = null!
+
     start() {
-        setTimeout(this.runTest.bind(this), 0);
+        if (sys.platform === sys.Platform.OPENHARMONY) {
+            this.noSupport.active = true;
+            this.titleLabel.enabled = false;
+            this.statusLabel.enabled = false;
+        } else {
+            setTimeout(this.runTest.bind(this), 0);
+        }
     }
 
     runTest() {
