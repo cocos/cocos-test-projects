@@ -27,8 +27,8 @@ export class WidgetDestroy {
         for (let i=0; i<3; i++) {
             simulateTouchStart(0, 0, this.createButton!);
             simulateTouchEnd(this.createButton!);
+            await screenshot_custom(40);
         }
-        await screenshot_custom(40);
     }
 
     @testCase
