@@ -1,7 +1,6 @@
 import { EventGamepad, input, Input, _decorator, Component, Node, ScrollView, Vec3, game, Label, director, Director, assetManager, find, Canvas, Layers, JsonAsset, profiler, sys, EditBox } from "cc";
 const { ccclass, property } = _decorator;
 import { SceneList } from "./common";
-import { StateCode, TestFramework } from "./TestFramework";
 import { SceneManager } from "./scenelist";
 
 declare class AutoTestConfigJson extends JsonAsset {
@@ -34,8 +33,8 @@ export class BackButton extends Component {
     @property(JsonAsset)
     public autoTestConfig: AutoTestConfigJson | null = null;
 
-    @property({type:Boolean})
-    public noAutoTest: Boolean = false;
+    @property
+    public noAutoTest = false;
 
     private searchBox?: EditBox | null;
     private searchButton?: Node;
@@ -271,7 +270,7 @@ export class BackButton extends Component {
             }
         }
 
-        director.getScene()?.getComponentInChildren(SceneManager)?.makeSceneItems();
+        (director.getScene()?.getComponentInChildren('scenemanager') as SceneManager)?.makeSceneItems();
     }
 
     searchBoxEnter() {
