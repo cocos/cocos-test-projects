@@ -28,6 +28,19 @@ export function simulateMultiTouch(startX: number, startY: number, moveX: number
 }
 
 
+//模拟移动
+export function simulateTouchMove(node?: Node, x: number = 0, y: number = 0) {
+    const changedTouches: Touch[] = [];
+    let event = new EventTouch(changedTouches, true, Input.EventType.TOUCH_MOVE, []);
+    if (node) {
+        event.target = event.currentTarget = node;
+        event.touch = new Touch(x, y, 0);
+        changedTouches.push(event.touch);
+        node!.dispatchEvent(event);
+    }
+    return event;
+}
+
 //模拟结束
 export function simulateTouchEnd(node?: Node, x: number = 0, y: number = 0) {
     const changedTouches: Touch[] = [];
