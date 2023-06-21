@@ -68,6 +68,7 @@ export class BackButton extends Component {
                 }
             }
 
+            // The size of the resource file is exceedingly large, and it may reach the memory threshold on this platform.
             if (sys.platform === sys.Platform.XIAOMI_QUICK_GAME && str.endsWith('lod.scene')) {
                 continue;
             }
