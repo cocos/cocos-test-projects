@@ -22,7 +22,6 @@ export class LayoutScrollview {
 
     @testCase
     async scrollHorizontal() {
-        waitForFrames(10);
         const node = find('Canvas/h/New ScrollView')!;
         simulateTouchStart(0, 0, node);
         simulateTouchMove(node, -200, 0);
