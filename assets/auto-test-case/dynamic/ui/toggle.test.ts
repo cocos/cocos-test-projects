@@ -36,7 +36,6 @@ export class Toggle{
         await screenshot_custom(5);
     }
 
-
     @testCase
     async transitionScale(){
         const node = find("Canvas/toggle-transition-scale")!;
@@ -100,5 +99,4 @@ export class Toggle{
         simulateTouchEnd(node, 0, 0);
         await screenshot_custom(5);
     }
-
 }
