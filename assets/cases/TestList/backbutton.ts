@@ -67,6 +67,11 @@ export class BackButton extends Component {
                     continue;
                 }
             }
+
+            if (sys.platform === sys.Platform.XIAOMI_QUICK_GAME && str.endsWith('lod.scene')) {
+                continue;
+            }
+
             const firstIndex = str.lastIndexOf('/') + 1;
             const lastIndex = str.lastIndexOf('.scene');
             let currentScene = str.substring(firstIndex, lastIndex);
