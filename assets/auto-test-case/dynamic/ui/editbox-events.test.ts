@@ -1,9 +1,7 @@
-import { Component, EditBox, EventKeyboard, EventTouch, Input, KeyCode, find, game, input, Touch } from 'cc';
+import { EditBox, find } from 'cc';
 // @ts-ignore
-import { captureOneImage, runScene, testCase, testClass, beforeClass, waitForFrames } from 'db://automation-framework/runtime/test-framework.mjs';
-import { EditboxEvent } from '../../../cases/ui/12.editbox/editbox-event';
+import { testCase, testClass, beforeClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
-import { simulateTouchEnd, simulateTouchStart } from '../common/SimulateEvent';
 
 @testClass('EditboxEvents', 'editbox-events')
 export class EditboxEvents {
@@ -11,8 +9,8 @@ export class EditboxEvents {
     private df = 5;
 
     @beforeClass
-    async initData(){
-        this.editBox =  find("Canvas/eventedit/New EditBox")!.getComponent(EditBox)!;
+    async initData() {
+        this.editBox = find("Canvas/eventedit/New EditBox")!.getComponent(EditBox)!;
     }
 
     @testCase
