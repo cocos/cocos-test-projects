@@ -45,8 +45,9 @@ export class ScrollViewScrollToOffset extends Component {
         this.offsetLabel.string = '点击随机滚动查看偏移数据';
     }
 
-    public randomScrollOffset() {
-        let offsetAnchor = Math.random();
+    public randomScrollOffset(btn: Button | null, param1?: number) {
+        console.log(arguments);
+        let offsetAnchor = param1 || Math.random();
         let maxOffsetVec = this.scroll.getMaxScrollOffset();
         let thisOffsetVec: Vec2 =new Vec2(offsetAnchor * maxOffsetVec.x, offsetAnchor * maxOffsetVec.y);
         this.scroll.scrollToOffset(thisOffsetVec);
