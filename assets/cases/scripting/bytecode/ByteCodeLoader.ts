@@ -9,17 +9,16 @@ declare function require(pkg: string): any;
 
 @ccclass('ByteCodeCache')
 export class ByteCodeCache extends Component {
-
-
     @property({ type: Label })
     public statusLabel: Label = null!;
-
 
     @property({ type: Label })
     public titleLabel: Label = null!;
 
+    public isAutoTest = false; // In order to automate test take over
+
     start() {
-        this.scheduleOnce(this.runTest.bind(this), 1);
+        if (!this.isAutoTest) setTimeout(this.runTest.bind(this), 0);
     }
 
     runTest() {

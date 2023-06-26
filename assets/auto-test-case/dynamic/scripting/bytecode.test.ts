@@ -12,7 +12,7 @@ export class ByteCode {
     @beforeClass
     initData() {
         this.caseScript = find('Canvas/Sprite')?.getComponent(ByteCodeCache)!;
-        this.caseScript.unscheduleAllCallbacks();
+        this.caseScript.isAutoTest = true;
     }
 
     @testCase
