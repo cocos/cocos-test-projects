@@ -19,11 +19,10 @@ export class ByteCodeCache extends Component {
     public titleLabel: Label = null!;
 
     start() {
-        setTimeout(this.runTest.bind(this), 0);
+        this.scheduleOnce(this.runTest.bind(this), 1);
     }
 
     runTest() {
-
         this.titleLabel.string = 'Bytecode Test';
 
         if (typeof jsb === 'undefined' || !jsb.saveByteCode) {

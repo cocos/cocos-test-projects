@@ -13,6 +13,7 @@ export class LoadResDir {
     initData() {
         this.caseScript = find('Canvas')?.getComponent(LoadResDirExample)!;
     }
+    
     @testCase
     async startPlay() {
         await screenshot_custom(this.df);
