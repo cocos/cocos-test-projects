@@ -2,12 +2,12 @@ import { EventTouch, Touch, Input, Node, EventMouse, NodeEventType, SystemEvent,
 
 //模拟触摸开始
 export function simulateTouchStart(x: number, y: number, node?: Node) {
-    let changeTouch: Touch[] = [];
-    let touch = new Touch(x, y);
-    changeTouch.push(touch);
-    let event = new EventTouch(changeTouch, true, Input.EventType.TOUCH_START, changeTouch);
-    event.touch = touch;
+    const changedTouches: Touch[] = [];
+    let event = new EventTouch(changedTouches, true, Input.EventType.TOUCH_START, changedTouches);
+    event.touch = new Touch(x, y, 0);
     if (node) {
+        event.target = event.currentTarget = node;
+        changedTouches.push(event.touch);
         node!.dispatchEvent(event);
     }
     return event;
@@ -32,9 +32,9 @@ export function simulateMultiTouch(startX: number, startY: number, moveX: number
 export function simulateTouchMove(node?: Node, x: number = 0, y: number = 0) {
     const changedTouches: Touch[] = [];
     let event = new EventTouch(changedTouches, true, Input.EventType.TOUCH_MOVE, []);
+    event.touch = new Touch(x, y, 0);
     if (node) {
         event.target = event.currentTarget = node;
-        event.touch = new Touch(x, y, 0);
         changedTouches.push(event.touch);
         node!.dispatchEvent(event);
     }
@@ -45,9 +45,9 @@ export function simulateTouchMove(node?: Node, x: number = 0, y: number = 0) {
 export function simulateTouchEnd(node?: Node, x: number = 0, y: number = 0) {
     const changedTouches: Touch[] = [];
     let event = new EventTouch(changedTouches, true, Input.EventType.TOUCH_END, []);
+    event.touch = new Touch(x, y, 0);
     if (node) {
         event.target = event.currentTarget = node;
-        event.touch = new Touch(x, y, 0);
         changedTouches.push(event.touch);
         node!.dispatchEvent(event);
     }
