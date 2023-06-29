@@ -10,6 +10,5 @@ export class ReflectionProbe2 {
     async start() {
       await screenshot_custom(this._dt);
       await screenshot_custom(this._dt);
-      await screenshot_custom(this._dt);
     }
 }
