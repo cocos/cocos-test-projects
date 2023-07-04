@@ -33,11 +33,11 @@ export class BlockingDectection extends Component {
 
     start() {
         this.updateSupportedLabel();
-
-        this.oldCallback = native.onBlockingDetected;
-        this.oldBlockingTimeout = native.blockingTimeout;
-        native.onBlockingDetected = this.onBlockingDetected.bind(this)
-        native.blockingTimeout = 0; // disable by default
+        const bd = native.blockingDetection;
+        this.oldCallback = bd.callback;
+        this.oldBlockingTimeout = bd.timeout
+        bd.callback = this.onBlockingDetected.bind(this)
+        bd.timeout = 0; // disable by default
     }
 
     update(deltaTime: number) {
@@ -46,7 +46,7 @@ export class BlockingDectection extends Component {
                 if (!this.isBlockingDetectionEnabled()) {
                     this.resultLabel.string = "Disabled";
                 } else {
-                    this.resultLabel.string = `Timeout ${native.blockingTimeout} ms, execution ${this.timeUsed} ms.`
+                    this.resultLabel.string = `Timeout ${native.blockingDetection.timeout} ms, execution ${this.timeUsed} ms.`
                 }
             }
             return;
@@ -72,8 +72,9 @@ export class BlockingDectection extends Component {
     }
 
     protected onDestroy(): void {
-        native.onBlockingDetected = this.oldCallback;
-        native.blockingTimeout = this.oldBlockingTimeout;
+        const bd = native.blockingDetection;
+        bd.callback = this.oldCallback;
+        bd.timeout = this.oldBlockingTimeout;
     }
 
 
@@ -84,7 +85,7 @@ export class BlockingDectection extends Component {
         setTimeout(() => {
             console.log(`update timeout to ${timeoutMS}`);
             this.status = Status.WAITING_FOR_TIMEOUT;
-            native.blockingTimeout = Number.parseInt(timeoutMS, 10);
+            native.blockingDetection.timeout = Number.parseInt(timeoutMS, 10);
             this.skipFrames = 1;
         }, 50);
     }
@@ -101,7 +102,7 @@ export class BlockingDectection extends Component {
 
 
     private isBlockingDetectionEnabled() {
-        return this.isSupported() && (native.blockingTimeout !== undefined) && native.blockingTimeout > 0;
+        return this.isSupported() && (native.blockingDetection.timeout !== undefined) && native.blockingDetection.timeout > 0;
     }
 
 
