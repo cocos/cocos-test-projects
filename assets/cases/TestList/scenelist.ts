@@ -1,12 +1,17 @@
-import { Sprite, Button, input, Input, Vec2, _decorator, Component, Node, ScrollView, Prefab, instantiate, EventGamepad, Vec3, UITransform, ScrollBar, EventTouch } from "cc";
+import { Sprite, Button, input, Input, Vec2, _decorator, Component, Node, ScrollView, Prefab, instantiate, EventGamepad, Vec3, UITransform, ScrollBar, EventTouch, native } from "cc";
 import { ItemType, ListItem } from "./listitem";
 const { ccclass, property } = _decorator;
 import { BackButton } from "./backbutton";
 import { SceneList } from "./common";
+import { NATIVE } from "cc/env";
 
 class DisplayItems {
     index: number = -1;
     type: number = -1;
+}
+if(NATIVE) {
+    // blocking detection timeout, ms
+    native.blkDct.timeout = 1000;
 }
 
 const _temp_vec3 = new Vec3();
