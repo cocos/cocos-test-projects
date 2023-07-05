@@ -31,7 +31,6 @@ export class Material {
         await screenshot_custom(0);
     }
 
-
     @testCase
     async useAlbedoMap_False() {
         UISimulate.changeToggle(this.albedoToggle, false);
