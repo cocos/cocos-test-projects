@@ -106,6 +106,10 @@ export class SpriteAttributeSwitch {
         await screenshot_custom(this._dt); // 22
         this.switchFillType(0);
         await screenshot_custom(this._dt); // 23
+
+        // reset all
+        this.caseScript.reset();
+        await screenshot_custom(this._dt); // 24
     }
 
     private switchFillType(value: number) {
