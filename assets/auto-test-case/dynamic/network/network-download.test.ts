@@ -1,7 +1,7 @@
 
-import { Component, find, Button } from 'cc';
+import { find, Button } from 'cc';
 // @ts-ignore
-import { runScene, testCase, testClass, waitForFrames, beforeClass, PlatformEnum } from 'db://automation-framework/runtime/test-framework.mjs';
+import { testCase, testClass, beforeClass, PlatformEnum } from 'db://automation-framework/runtime/test-framework.mjs';
 import { NetworkDownload as NetworkDownloadObj } from '../../../cases/network/NetworkDownload';
 import { screenshot_custom } from '../common/utils';
 import { UISimulate } from '../common/SimulateEvent';
@@ -28,30 +28,7 @@ export class NetworkDownload {
     async clickButton() {
         let count = 0;
         let unprogress = true;
-        let tickTimeout = 0;
         UISimulate.clickButton(this.networkDownloadButton!);
-        // do {
-        //     tickTimeout += this.tickTime;
-        //     await waitForFrames(this.tickTime);
-        //     console.log('NetworkDownload:', this.networkDownloadObject?.text.string);
-        //     if (this.networkDownloadObject!.status.string === "status: Success") {
-        //         console.log('NetworkDownload status: Success');
-        //         break;
-        //     } else if (this.networkDownloadObject!.status.string === "status: Error") {
-        //         count += 1;
-        //         if (count >= 3) {
-        //             console.log('NetworkDownload exit after 3 failed attempts.');
-        //             break;
-        //         } else {
-        //             tickTimeout = 0;
-        //             console.log('NetworkDownload status: Error, then retry:', count);
-        //             this.networkDownloadButton!.clickEvents[0].emit([]);
-        //         }
-        //     }
-        // } while (tickTimeout < 7200)
-        // await screenshot_custom();
-
-
         return new Promise<void>((resolve, reject) => {
             this.networkDownloadObject?.node.on('onProgress', async () => {
                 if (unprogress) {
