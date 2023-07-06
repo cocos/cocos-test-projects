@@ -11,7 +11,9 @@ class DisplayItems {
 }
 if(NATIVE) {
     // blocking detection timeout, ms
-    native.blkDct.timeout = 1000;
+    if(native.monitor && native.monitor.blocking) {
+        native.monitor.blocking.timeout = 1000;
+    } 
 }
 
 const _temp_vec3 = new Vec3();

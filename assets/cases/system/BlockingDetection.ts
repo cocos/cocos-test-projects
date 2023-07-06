@@ -31,13 +31,17 @@ export class BlockingDectection extends Component {
     private timeUsed: number = 0;
     private skipFrames = 0;
 
+    get blocking() {
+        return native.monitor?.blocking || {};
+    }
+
     start() {
         this.updateSupportedLabel();
-        const bd = native.blkDct;
-        this.oldCallback = bd.callback;
-        this.oldBlockingTimeout = bd.timeout
-        bd.callback = this.onBlockingDetected.bind(this)
-        bd.timeout = 0; // disable by default
+        const blocking = this.blocking;
+        this.oldCallback = blocking.callback;
+        this.oldBlockingTimeout = blocking.timeout
+        blocking.callback = this.onBlockingDetected.bind(this)
+        blocking.timeout = 0; // disable by default
     }
 
     update(deltaTime: number) {
@@ -46,7 +50,7 @@ export class BlockingDectection extends Component {
                 if (!this.isBlockingDetectionEnabled()) {
                     this.resultLabel.string = "Disabled";
                 } else {
-                    this.resultLabel.string = `Timeout ${native.blkDct.timeout} ms, execution ${this.timeUsed} ms.`
+                    this.resultLabel.string = `Timeout ${this.blocking.timeout} ms, execution ${this.timeUsed} ms.`
                 }
             }
             return;
@@ -72,9 +76,9 @@ export class BlockingDectection extends Component {
     }
 
     protected onDestroy(): void {
-        const bd = native.blkDct;
-        bd.callback = this.oldCallback;
-        bd.timeout = this.oldBlockingTimeout;
+        const blocking = this.blocking;
+        blocking.callback = this.oldCallback;
+        blocking.timeout = this.oldBlockingTimeout;
     }
 
 
@@ -85,7 +89,7 @@ export class BlockingDectection extends Component {
         setTimeout(() => {
             console.log(`update timeout to ${timeoutMS}`);
             this.status = Status.WAITING_FOR_TIMEOUT;
-            native.blkDct.timeout = Number.parseInt(timeoutMS, 10);
+            native.monitor.blocking.timeout = Number.parseInt(timeoutMS, 10);
             this.skipFrames = 1;
         }, 50);
     }
@@ -102,7 +106,8 @@ export class BlockingDectection extends Component {
 
 
     private isBlockingDetectionEnabled() {
-        return this.isSupported() && (native.blkDct.timeout !== undefined) && native.blkDct.timeout > 0;
+        const blocking = this.blocking;
+        return this.isSupported() && (blocking.timeout !== undefined) && blocking.timeout > 0;
     }
 
 
