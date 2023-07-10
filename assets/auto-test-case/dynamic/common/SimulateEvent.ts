@@ -1,4 +1,4 @@
-import { EventTouch, Touch, Input, Node, EventMouse, NodeEventType, SystemEvent, SystemEventType } from 'cc';
+import { EventTouch, Touch, Input, Node, EventMouse, NodeEventType, SystemEvent, SystemEventType, Toggle, EventHandler, Slider, Button } from 'cc';
 
 //模拟触摸开始
 export function simulateTouchStart(x: number, y: number, node?: Node) {
@@ -43,4 +43,24 @@ export function simulateMouseEvent(eventType: SystemEventType | NodeEventType, x
     const event = new EventMouse(eventType, false);
     event.setLocation(x, y);
     return event;
+}
+
+
+export module UISimulate {
+    export function clickButton(button: Button) {
+        EventHandler.emitEvents(button.clickEvents, button);
+        button.node.emit(Button.EventType.CLICK, button);
+    }
+
+    export function changeToggle(toggle: Toggle, isChecked?: boolean ) {
+        toggle.isChecked = (isChecked === undefined) ? !toggle.isChecked : isChecked;
+        EventHandler.emitEvents(toggle.checkEvents, toggle);
+        toggle.node.emit(Toggle.EventType.TOGGLE, toggle);
+    }
+
+    export function changeSlider(slider: Slider, progress: number ) {
+        slider.progress = progress;
+        EventHandler.emitEvents(slider.slideEvents, slider);
+        slider.node.emit('slide', slider);
+    }
 }

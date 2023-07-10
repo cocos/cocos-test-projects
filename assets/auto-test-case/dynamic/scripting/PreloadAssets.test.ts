@@ -4,19 +4,25 @@ import { runScene, testCase, testClass, sleep, beforeClass, PlatformEnum, waitFo
 import { AssetLoading as AssetLoadingObj } from '../../../cases/scripting/asset_loading/AssetLoading/AssetLoading';
 import { simulateTouchEnd, simulateTouchStart } from '../common/SimulateEvent';
 import { random, screenshot_custom } from '../common/utils';
+import { BackToAssetLoading } from '../../../resources/test_assets/back-to-asset-loading';
 
 @testClass('PreloadAssets', 'PreloadAssets')
 export class PreloadAssets {
     tickTime: number = 100;
     testData!: TestData;
-    preloadAssets!: AssetLoadingObj | Component | null;
-    backSceneButton!: Button | Component | null;
-    label!: Label | Component | null;
+    preloadAssets!: AssetLoadingObj | null;
+    backSceneButton!: BackToAssetLoading | null;
+    label!: Label | null;
 
     @beforeClass
     async initData() {
-        this.preloadAssets = find("Canvas")!.getComponent("PreloadAssets");
+        this.preloadAssets = find("Canvas")!.getComponent("PreloadAssets") as AssetLoadingObj;
         console.log(this.preloadAssets)
+    }
+
+    @testCase
+    async startPlay() {
+        await screenshot_custom(0);
     }
 
     @testCase
@@ -32,15 +38,15 @@ export class PreloadAssets {
             if (loadName === "Preload_Scene") {
                 simulateTouchEnd(node!);
                 await waitForFrames(this.tickTime);
-                this.backSceneButton = find("Canvas")!.getComponent("BackToAssetLoading");
-                this.label = find("Canvas/Label")!.getComponent("cc.Label");
+                this.backSceneButton = find("Canvas")!.getComponent("BackToAssetLoading") as BackToAssetLoading;
+                this.label = find("Canvas/Label")!.getComponent(Label);
                 let result = await this.tryLoadSceneSuccess(retryNum);
                 if (result) {
                     await screenshot_custom(this.tickTime);
                     //click back button
                     await this.backSceneButton!.onClick();
                     if (!this.preloadAssets!.loadList) {
-                        this.preloadAssets = find("Canvas")!.getComponent("PreloadAssets");
+                        this.preloadAssets = find("Canvas")!.getComponent("PreloadAssets") as AssetLoadingObj;
                     }
                     await screenshot_custom(this.tickTime * 5);
                     continue;

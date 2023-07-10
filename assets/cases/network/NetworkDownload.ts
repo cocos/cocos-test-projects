@@ -31,16 +31,19 @@ export class NetworkDownload extends Component {
             console.log(bytesReceived, totalBytesReceived, totalBytesExpected)
             let progress = (totalBytesReceived / totalBytesExpected * 100).toFixed(1);
             this.text.string = totalBytesReceived + " ==> " + progress + "%";
+            this.node.emit('onProgress'); // for auto-test
         };
 
         downloader.onSuccess = (task) => {            
             console.log("Download success!");
             this.status.string = "status: Success"
+            this.node.emit('onSuccess');
         };
     
         downloader.onError = (task, errorCode, errorCodeInternal, errorStr) => {
             console.log("Task error:", errorStr);
             this.status.string = "status: Error"
+            this.node.emit('onError');
         };   
     }
 
