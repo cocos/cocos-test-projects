@@ -11,19 +11,11 @@ export class setMipRange {
 
     @testCase
     async startPlay() {
-        const controlNode = find('control')!;
-        const cubemapScript = controlNode.getComponent('setMipRange_cubemap') as setMipRange_cubemap;
-        const quadScript = controlNode.getComponent('setMipRange_quad') as setMipRange_quad;
-
-        let num = 6000; //Used for counting frames, up to 1000 frames
-        while (!cubemapScript.ready && !quadScript.ready && num > 0) {
-            num -= 1;
-            await waitForFrames(1);
-        }
-
+        await waitForFrames(5);
         await screenshot_custom_by_wait();
-        for (let i = 0; i < 7; i++) {
-            await screenshot_custom_by_wait(this._dt);
+        await screenshot_custom_by_wait(this._dt);
+        for (let i = 0; i < 3; i++) {
+            await screenshot_custom_by_wait(this._dt*2);
         }
     }
 }
