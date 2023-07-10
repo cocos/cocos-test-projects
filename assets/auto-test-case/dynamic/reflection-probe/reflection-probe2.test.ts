@@ -9,6 +9,5 @@ export class ReflectionProbe2 {
     @testCase
     async start() {
       await screenshot_custom(this._dt);
-      await screenshot_custom(this._dt);
     }
 }

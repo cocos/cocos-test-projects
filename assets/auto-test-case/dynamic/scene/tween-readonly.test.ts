@@ -11,8 +11,8 @@ export class TweenReadonly {
 
     @testCase
     async play() {
-        for (let i=0; i<4; i++) {
-            await screenshot_custom(38);
-        }
+        await screenshot_custom(58);
+        await screenshot_custom(60);
+        await screenshot_custom(1);
     }
 }
