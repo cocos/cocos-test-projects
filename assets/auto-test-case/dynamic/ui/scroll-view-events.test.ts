@@ -1,7 +1,7 @@
 // @ts-ignore
 import { runScene, testCase, testClass, waitForFrames } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
-import { find } from 'cc';
+import { ScrollView, Vec2, find } from 'cc';
 import { simulateTouchStart, simulateTouchMove, simulateTouchEnd } from '../common/SimulateEvent';
 
 @testClass('ScrollViewEvents', 'scroll-view-events')
@@ -18,20 +18,20 @@ export class ScrollViewEvents {
         // ScrollToRight
         simulateTouchStart(0, 0, node);
         simulateTouchMove(node, -200, 0);
-        await screenshot_custom(30);
+        await screenshot_custom(1);
 
         // BounceToRight
         simulateTouchEnd(node, -200, 0);
-        await screenshot_custom(60);
+        await screenshot_custom(90);
 
         // ScrollToLeft
         simulateTouchStart(0, 0, node);
-        simulateTouchMove(node, 800, 0);
-        await screenshot_custom(30);
+        simulateTouchMove(node, 400, 0);
+        await screenshot_custom(1);
 
         // BounceToLeft
-        simulateTouchEnd(node, 800, 0);
-        await screenshot_custom(60);
+        simulateTouchEnd(node, 400, 0);
+        await screenshot_custom(90);
     }
 
     @testCase
@@ -41,19 +41,19 @@ export class ScrollViewEvents {
         // ScrollToBottom
         simulateTouchStart(0, 0, node);
         simulateTouchMove(node, 0, 400);
-        await screenshot_custom(30);
+        await screenshot_custom(1);
 
         // BounceToBottom
         simulateTouchEnd(node, 0, 400);
-        await screenshot_custom(60);
+        await screenshot_custom(90);
 
         // ScrollToTop
         simulateTouchStart(0, 0, node);
-        simulateTouchMove(node, 0, -800);
-        await screenshot_custom(30);
+        simulateTouchMove(node, 0, -400);
+        await screenshot_custom(1);
 
-        // BounceToBottom
-        simulateTouchEnd(node, 0, -800);
-        await screenshot_custom(60);
+        // BounceToTop
+        simulateTouchEnd(node, 0, -400);
+        await screenshot_custom(90);
     }
 }

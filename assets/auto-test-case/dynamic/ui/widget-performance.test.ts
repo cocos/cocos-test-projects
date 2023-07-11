@@ -1,5 +1,5 @@
 // @ts-ignore
-import { beforeClass, afterClass, testCase, testClass, waitForFrames, expect } from 'db://automation-framework/runtime/test-framework.mjs';
+import { beforeClass, afterClass, testCase, testClass, waitForFrames, expect, srandom } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
 import { Label, find, profiler } from 'cc';
 
@@ -13,6 +13,7 @@ export class WidgetPerformance {
     async initData() {
         profiler.showStats();
         this.tip = find('canvas/tip')?.getComponent(Label) as Label;
+        srandom('widget-performance');
     }
 
     @afterClass

@@ -46,7 +46,6 @@ export class ScrollViewScrollToOffset extends Component {
     }
 
     public randomScrollOffset(btn: Button | null, param1?: number) {
-        console.log(arguments);
         let offsetAnchor = param1 || Math.random();
         let maxOffsetVec = this.scroll.getMaxScrollOffset();
         let thisOffsetVec: Vec2 =new Vec2(offsetAnchor * maxOffsetVec.x, offsetAnchor * maxOffsetVec.y);

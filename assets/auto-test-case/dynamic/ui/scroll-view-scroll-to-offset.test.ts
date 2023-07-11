@@ -1,20 +1,20 @@
 
 // @ts-ignore
-import { beforeClass, testCase, testClass, waitForFrames } from 'db://automation-framework/runtime/test-framework.mjs';
+import { beforeClass, testCase, testClass, srandom } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
-import { find, Node } from 'cc';
-import { simulateTouchEnd, simulateTouchMove, simulateTouchStart } from '../common/SimulateEvent';
-import { ScrollViewScrollToOffset } from '../../../cases/ui/06.scrollview/scroll-view-scroll-to-offset';
+import { Button, find, ScrollView } from 'cc';
+import { UISimulate } from '../common/SimulateEvent';
 
 @testClass('ScrollViewScrollToOffsetTest', 'scroll-view-scroll-to-offset')
 export class ScrollViewScrollToOffsetTest{
-    private caseScript!: ScrollViewScrollToOffset;
-    private scrollView!: Node;
+    private scrollView!: ScrollView;
+    private button!: Button;
 
     @beforeClass
     async initData() {
-        this.caseScript = find('Canvas')?.getComponent(ScrollViewScrollToOffset) as ScrollViewScrollToOffset;
-        this.scrollView = find('Canvas/ScrollView')!;
+        this.scrollView = find('Canvas/ScrollView')?.getComponent(ScrollView)!;
+        this.button = find('Canvas/Button')?.getComponent(Button)!;
+        srandom('scroll-view-scroll-to-offset');
     }
 
     @testCase
@@ -24,28 +24,24 @@ export class ScrollViewScrollToOffsetTest{
 
     @testCase
     async randomScrollOffset(){
-        this.caseScript.randomScrollOffset(null, 0.71);
+        UISimulate.clickButton(this.button);
         await screenshot_custom(1);
-        this.caseScript.randomScrollOffset(null, 0.27);
+        UISimulate.clickButton(this.button);
         await screenshot_custom(1);
-        this.caseScript.randomScrollOffset(null, 0.43);
+        UISimulate.clickButton(this.button);
         await screenshot_custom(1);
     }
 
     @testCase
     async scrollToLeft(){
-        simulateTouchStart(0, 0, this.scrollView);
-        await waitForFrames(1);
-        simulateTouchEnd(this.scrollView, 100, 0);
-        await screenshot_custom(120);
+        this.scrollView.scrollToLeft(0.5);
+        await screenshot_custom(60);
     }
 
     @testCase
     async scrollToRigth(){
-        simulateTouchStart(0, 0, this.scrollView);
-        await waitForFrames(1);
-        simulateTouchEnd(this.scrollView, -100, 0);
-        await screenshot_custom(120);
+        this.scrollView.scrollToRight(0.5);
+        await screenshot_custom(60);
     }
 
 }

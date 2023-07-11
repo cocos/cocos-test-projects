@@ -1,31 +1,26 @@
 // @ts-ignore
-import { testCase, testClass, waitForFrames } from 'db://automation-framework/runtime/test-framework.mjs';
+import { testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
-import { find } from 'cc';
-import { simulateMultiTouch, simulateTouchEnd, simulateTouchMove, simulateTouchStart } from '../common/SimulateEvent';
+import { ScrollView, find } from 'cc';
 
 @testClass('LayoutScrollview', 'layout-scrollview')
 export class LayoutScrollview {
     @testCase
     async startPlay() {
-        await screenshot_custom(1);
+        await screenshot_custom(2);
     }
 
     @testCase
     async scrollVertical() {
-        const node = find('Canvas/v/New ScrollView')!;
-        simulateTouchStart(0, 0, node);
-        simulateTouchMove(node, 0, 200);
-        simulateTouchEnd(node, 0, 200);
-        await screenshot_custom(30);
+        const scrollView = find('Canvas/v/New ScrollView')?.getComponent(ScrollView)!;
+        scrollView.scrollToPercentVertical(0, 0.5, true);
+        await screenshot_custom(60);
     }
 
     @testCase
     async scrollHorizontal() {
-        const node = find('Canvas/h/New ScrollView')!;
-        simulateTouchStart(0, 0, node);
-        simulateTouchMove(node, -200, 0);
-        simulateTouchEnd(node, -200, 0);
-        await screenshot_custom(30);
+        const scrollView = find('Canvas/h/New ScrollView')?.getComponent(ScrollView)!;
+        scrollView.scrollToPercentHorizontal(1, 0.5, true);
+        await screenshot_custom(60);
     }
 }
