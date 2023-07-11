@@ -8,8 +8,8 @@ enum Status {
     TIMEOUT_TRIGGERED,
 }
 
-@ccclass('BlockingDectection')
-export class BlockingDectection extends Component {
+@ccclass('BlockingDetection')
+export class BlockingDetection extends Component {
 
     @property({ type: Label })
     notSupportedLabel: Label | null = null;
@@ -35,6 +35,8 @@ export class BlockingDectection extends Component {
         return native.monitor?.blocking || {};
     }
 
+    externalCallback: null | { (): void } = null;
+
     start() {
         this.updateSupportedLabel();
         const blocking = this.blocking;
@@ -50,13 +52,17 @@ export class BlockingDectection extends Component {
                 if (!this.isBlockingDetectionEnabled()) {
                     this.resultLabel.string = "Disabled";
                 } else {
-                    this.resultLabel.string = `Timeout ${this.blocking.timeout} ms, execution ${this.timeUsed} ms.`
+                    const Max = (this.blocking.timeout + 16) *1.1;
+                    const Min = (this.blocking.timeout + 16) *0.9;
+                    const Success = this.timeUsed >= Min && this.timeUsed <= Max;
+                    const SuccessLabel = Success ? "Success." : "Failed!";
+                    this.resultLabel.string = `Timeout ${this.blocking.timeout} ms, execution ${this.timeUsed} ms. ${SuccessLabel}`
                 }
             }
             return;
         }
-        if(this.skipFrames > 0) {
-            this.skipFrames --;
+        if (this.skipFrames > 0) {
+            this.skipFrames--;
             return;
         }
         let i = 0;
@@ -102,6 +108,9 @@ export class BlockingDectection extends Component {
         //@ts-expect-error
         if (Error.captureStackTrace) Error.captureStackTrace(err);
         console.error(err);
+        if(this.externalCallback) {
+            this.externalCallback();
+        }
     }
 
 
