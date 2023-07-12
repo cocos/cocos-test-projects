@@ -1,10 +1,9 @@
 import { find } from 'cc';
 // @ts-ignore
-import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
+import { testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
 
-@runScene('rich-text-font-color')
-@testClass('RichTextFontColor')
+@testClass('RichTextFontColor', 'rich-text-font-color')
 export class RichTextFontColor {
     _frameCount = 50;
 
