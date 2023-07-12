@@ -3,7 +3,6 @@ import { find, Slider, v3 } from 'cc';
 import { runScene, testCase, testClass, PlatformEnum } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom_by_wait } from '../common/utils';
 
-@runScene()
 @testClass('AudioBuffer', 'audioBuffer', [PlatformEnum.WINDOWS])
 export class AudioBuffer {
   _dt = 10;
