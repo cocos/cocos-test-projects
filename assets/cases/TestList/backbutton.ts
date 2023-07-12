@@ -1,8 +1,7 @@
-import { EventGamepad, input, Input, _decorator, Component, Node, ScrollView, Vec3, game, Label, director, Director, assetManager, find, Canvas, Layers, JsonAsset, profiler, sys, EditBox } from "cc";
-const { ccclass, property } = _decorator;
+import { EventGamepad, input, Input, _decorator, Component, Node, ScrollView, Vec3, game, Label, director, Director, assetManager, find, Canvas, Layers, JsonAsset, profiler, sys, EditBox, CCBoolean } from "cc";
 import { SceneList } from "./common";
-import { StateCode, TestFramework } from "./TestFramework";
 import { SceneManager } from "./scenelist";
+const { ccclass, property } = _decorator;
 
 declare class AutoTestConfigJson extends JsonAsset {
     json: {
@@ -34,8 +33,8 @@ export class BackButton extends Component {
     @property(JsonAsset)
     public autoTestConfig: AutoTestConfigJson | null = null;
 
-    @property({type:Boolean})
-    public noAutoTest: Boolean = false;
+    @property(CCBoolean)
+    public noAutoTest = false;
 
     private searchBox?: EditBox | null;
     private searchButton?: Node;
