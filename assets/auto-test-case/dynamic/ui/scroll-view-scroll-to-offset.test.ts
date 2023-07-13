@@ -25,11 +25,11 @@ export class ScrollViewScrollToOffsetTest{
     @testCase
     async randomScrollOffset(){
         UISimulate.clickButton(this.button);
-        await screenshot_custom(1);
+        await screenshot_custom(10);
         UISimulate.clickButton(this.button);
-        await screenshot_custom(1);
+        await screenshot_custom(10);
         UISimulate.clickButton(this.button);
-        await screenshot_custom(1);
+        await screenshot_custom(10);
     }
 
     @testCase

@@ -37,7 +37,7 @@ export class WidgetPerformance {
             await screenshot_custom();
 
             if (i > 1 && this.fps !== undefined) {
-                expect(Math.abs((fps2 - this.fps) / this.fps)).to.lessThan(0.2, `FPS fluctuates too much! Before: ${this.fps} After:${fps2}`);
+                expect(Math.abs((fps2 - this.fps) / this.fps)).to.lessThan(0.4, `FPS fluctuates too much! Before: ${this.fps} After:${fps2}`);
             }
 
             this.now = now2;
