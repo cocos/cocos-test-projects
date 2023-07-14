@@ -1,6 +1,7 @@
 // @ts-ignore
 import { testCase, testClass, beforeClass, srandom } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom_by_wait } from '../common/utils';
+import { director } from 'cc';
 
 @testClass('ParticleGravity', 'particle-gravity')
 export class ParticleGravity {
@@ -8,7 +9,7 @@ export class ParticleGravity {
 
     @beforeClass
     async initData() {
-        srandom('particle-gravity');
+        srandom(director.getScene()!.name);
     }
 
     @testCase

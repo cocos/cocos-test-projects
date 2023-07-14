@@ -1,4 +1,4 @@
-import { Component, find } from 'cc';
+import { Component, director, find } from 'cc';
 // @ts-ignore
 import { testCase, testClass, beforeClass, srandom } from 'db://automation-framework/runtime/test-framework.mjs';
 import { RichTextChildState as RichTextChildStateObj } from '../../../cases/ui/07.richtext/rich-text-child-state/rich-text-child-state';
@@ -12,7 +12,7 @@ export class RichTextChildState {
     @beforeClass
     initData() {
         this.richTextChildState = find("Canvas")!.getComponent("RichTextChildState")! as RichTextChildStateObj;
-        srandom('rich-text-child-state');
+        srandom(director.getScene()!.name);
     }
     @testCase
     async start() {

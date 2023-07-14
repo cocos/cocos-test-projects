@@ -1,4 +1,4 @@
-import { find, Node } from 'cc';
+import { director, find, Node } from 'cc';
 // @ts-ignore
 import { testCase, testClass, beforeClass, srandom } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom_by_wait } from '../common/utils';
@@ -13,7 +13,7 @@ export class ParticleColor {
     async initData() {
         this.camera = find('Camera')!;
         this.camera.getComponent(FirstPersonCamera)!.enabled = false;
-        srandom('particle-color');
+        srandom(director.getScene()!.name);
     }
 
     @testCase

@@ -1,4 +1,4 @@
-import { Button, Slider, Toggle, find } from 'cc';
+import { Button, Slider, Toggle, director, find } from 'cc';
 // @ts-ignore
 import { beforeClass, testCase, testClass, srandom } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
@@ -22,7 +22,7 @@ export class ParticleForce {
         this.toggle2 = find('New Canvas/2')?.getComponent(Toggle) as Toggle;
         this.toggle3 = find('New Canvas/3')?.getComponent(Toggle) as Toggle;
         this.toggle4 = find('New Canvas/4')?.getComponent(Toggle) as Toggle;
-        srandom('particle-force');
+        srandom(director.getScene()!.name);
     }
 
     @testCase
