@@ -3,6 +3,7 @@ const { ccclass, property } = _decorator;
 import { SceneList } from "./common";
 import { StateCode, TestFramework } from "./TestFramework";
 import { SceneManager } from "./scenelist";
+import { NATIVE } from "cc/env";
 
 declare class AutoTestConfigJson extends JsonAsset {
     json: {
@@ -55,6 +56,9 @@ export class BackButton extends Component {
                 continue;
             }
             if (str.includes('asset-bundle-zip') && !assetManager.downloader.remoteServerAddress) {
+                continue;
+            }
+            if(str.includes('blockingDetection') && !NATIVE) {
                 continue;
             }
             if (sys.platform === sys.Platform.NX) {
