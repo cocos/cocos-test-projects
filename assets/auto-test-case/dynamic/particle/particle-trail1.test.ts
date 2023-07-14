@@ -1,18 +1,21 @@
+import { director } from 'cc';
 // @ts-ignore
-import { runScene, testCase, testClass, waitForNextFrame } from 'db://automation-framework/runtime/test-framework.mjs';
+import { beforeClass, testCase, testClass, srandom } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom_by_wait } from '../common/utils';
 
-@runScene('particle-trail1')
-@testClass('ParticleTrail1')
+@testClass('ParticleTrail1', 'particle-trail1')
 export class ParticleTrail1 {
-    _delay = 0.2;
-    _dt = 60;
+    private df = 60;
+
+    @beforeClass
+    async initData() {
+        srandom(director.getScene()!.name);
+    }
 
     @testCase
     async startPlay() {
-        await screenshot_custom_by_wait(1);
         for (let i = 0; i < 5; i++) {
-            await screenshot_custom_by_wait(this._dt);
-        };
+            await screenshot_custom_by_wait(this.df);
+        }
     }
 }
