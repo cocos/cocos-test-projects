@@ -13,7 +13,7 @@ export class ParticleCulling {
     async initData() {
         this.camera = find('Main Camera')!;
         this.camera.getComponent(FirstPersonCamera)!.enabled = false;
-        srandom('particle-color');
+        srandom('particle-culling');
     }
 
     @testCase
