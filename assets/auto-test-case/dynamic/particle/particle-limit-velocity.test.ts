@@ -1,224 +1,193 @@
-import { find } from 'cc';
+import { Button, Slider, Toggle, find } from 'cc';
 // @ts-ignore
-import { captureOneImage, runScene, sleep, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
+import { beforeClass, testCase, testClass, srandom } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
+import { UISimulate } from '../common/SimulateEvent';
 
-@runScene('particle-limit-velocity')
-// @testClass('ParticleLimitVelocity')
+@testClass('ParticleLimitVelocity', 'particle-limit-velocity')
 export class ParticleLimitVelocity {
-    _dt = 1;
-    _delay = 2;
+    private df = 10;
+    private translateSlider!: Slider;
+    private rotateSlider!: Slider;
+    private toggle1!: Toggle;
+    private toggle2!: Toggle;
+    private toggle3!: Toggle;
+    private toggle4!: Toggle;
+
+    @beforeClass
+    async initData() {
+        this.translateSlider = find('New Canvas/translate')?.getComponent(Slider) as Slider;
+        this.rotateSlider = find('New Canvas/rotate')?.getComponent(Slider) as Slider;
+        this.toggle1 = find('New Canvas/1')?.getComponent(Toggle) as Toggle;
+        this.toggle2 = find('New Canvas/2')?.getComponent(Toggle) as Toggle;
+        this.toggle3 = find('New Canvas/3')?.getComponent(Toggle) as Toggle;
+        this.toggle4 = find('New Canvas/4')?.getComponent(Toggle) as Toggle;
+        srandom('particle-force');
+    }
 
     @testCase
     async startPlay() {
         for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this._dt);
-        };
+            await screenshot_custom(this.df);
+        }
     }
 
     @testCase
     async onTranslateChanged_05() {
-        // @ts-ignore
-        find('New Canvas/translate').getComponent('cc.Slider').progress = 0.5;
-        // @ts-ignore
-        find('New Canvas').getComponent('TransformController').onTranslateChanged(find('New Canvas/translate').getComponent('cc.Slider'));
+        UISimulate.changeSlider(this.translateSlider, 0.5);
         for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this._dt);
-        };
+            await screenshot_custom(this.df);
+        }
     }
 
     @testCase
     async onTranslateChanged_10() {
-        // @ts-ignore
-        find('New Canvas/translate').getComponent('cc.Slider').progress = 1;
-        // @ts-ignore
-        find('New Canvas').getComponent('TransformController').onTranslateChanged(find('New Canvas/translate').getComponent('cc.Slider'));
+        UISimulate.changeSlider(this.translateSlider, 1);
         for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this._dt);
-        };
+            await screenshot_custom(this.df);
+        }
     }
 
     @testCase
     async onTranslateChanged_00() {
-        // @ts-ignore
-        find('New Canvas/translate').getComponent('cc.Slider').progress = 0;
-        // @ts-ignore
-        find('New Canvas').getComponent('TransformController').onTranslateChanged(find('New Canvas/translate').getComponent('cc.Slider'));
+        UISimulate.changeSlider(this.translateSlider, 0);
         for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this._dt);
-        };
+            await screenshot_custom(this.df);
+        }
     }
 
     @testCase
     async onRotateChanged_05() {
-        // @ts-ignore
-        find('New Canvas/rotate').getComponent('cc.Slider').progress = 0.5;
-        // @ts-ignore
-        find('New Canvas').getComponent('TransformController').onRotateChanged(find('New Canvas/rotate').getComponent('cc.Slider'));
+        UISimulate.changeSlider(this.rotateSlider, 0.5);
         for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this._dt);
-        };
+            await screenshot_custom(this.df);
+        }
     }
 
     @testCase
     async onRotateChanged_10() {
-        // @ts-ignore
-        find('New Canvas/rotate').getComponent('cc.Slider').progress = 1;
-        // @ts-ignore
-        find('New Canvas').getComponent('TransformController').onRotateChanged(find('New Canvas/rotate').getComponent('cc.Slider'));
+        UISimulate.changeSlider(this.rotateSlider, 1);
         for (let i = 0; i < 3; i++) {
-
-            await screenshot_custom(this._dt);
-        };
+            await screenshot_custom(this.df);
+        }
     }
 
     @testCase
     async onRotateChanged_00() {
-        // @ts-ignore
-        find('New Canvas/rotate').getComponent('cc.Slider').progress = 0;
-        // @ts-ignore
-        find('New Canvas').getComponent('TransformController').onRotateChanged(find('New Canvas/rotate').getComponent('cc.Slider'));
+        UISimulate.changeSlider(this.rotateSlider, 0);
         for (let i = 0; i < 3; i++) {
-
-            await screenshot_custom(this._dt);
-        };
+            await screenshot_custom(this.df);
+        }
     }
 
     @testCase
     async unChecked() {
-        // @ts-ignore
-        find('New Canvas/1').getComponent('cc.Toggle').isChecked = false;
-        // @ts-ignore
-        find('New Canvas/2').getComponent('cc.Toggle').isChecked = false;
-        // @ts-ignore
-        find('New Canvas/3').getComponent('cc.Toggle').isChecked = false;
-        // @ts-ignore
-        find('New Canvas/4').getComponent('cc.Toggle').isChecked = false;
-        // @ts-ignore
-        find('New Canvas/rotate').getComponent('cc.Slider').progress = 1;
-        // @ts-ignore
-        find('New Canvas').getComponent('TransformController').onRotateChanged(find('New Canvas/rotate').getComponent('cc.Slider'));
-        // @ts-ignore
-        find('New Canvas/translate').getComponent('cc.Slider').progress = 1;
-        // @ts-ignore
-        find('New Canvas').getComponent('TransformController').onTranslateChanged(find('New Canvas/translate').getComponent('cc.Slider'));
-        for (let i = 0; i < 3; i++) {
+        UISimulate.changeToggle(this.toggle1, false);
+        UISimulate.changeToggle(this.toggle2, false);
+        UISimulate.changeToggle(this.toggle3, false);
+        UISimulate.changeToggle(this.toggle4, false);
 
-            await screenshot_custom(this._dt);
-        };
+        UISimulate.changeSlider(this.translateSlider, 1);
+        UISimulate.changeSlider(this.rotateSlider, 1);
+
+        for (let i = 0; i < 3; i++) {
+            await screenshot_custom(this.df);
+        }
     }
 
 
     @testCase
     async Checked() {
-        // @ts-ignore
-        find('New Canvas/1').getComponent('cc.Toggle').isChecked = true;
-        // @ts-ignore
-        find('New Canvas/2').getComponent('cc.Toggle').isChecked = true;
-        // @ts-ignore
-        find('New Canvas/3').getComponent('cc.Toggle').isChecked = true;
-        // @ts-ignore
-        find('New Canvas/4').getComponent('cc.Toggle').isChecked = true;
-        // @ts-ignore
-        find('New Canvas/rotate').getComponent('cc.Slider').progress = 1;
-        // @ts-ignore
-        find('New Canvas').getComponent('TransformController').onRotateChanged(find('New Canvas/rotate').getComponent('cc.Slider'));
-        // @ts-ignore
-        find('New Canvas/translate').getComponent('cc.Slider').progress = 1;
-        // @ts-ignore
-        find('New Canvas').getComponent('TransformController').onTranslateChanged(find('New Canvas/translate').getComponent('cc.Slider'));
+        UISimulate.changeToggle(this.toggle1, true);
+        UISimulate.changeToggle(this.toggle2, true);
+        UISimulate.changeToggle(this.toggle3, true);
+        UISimulate.changeToggle(this.toggle4, true);
+
+        UISimulate.changeSlider(this.translateSlider, 1);
+        UISimulate.changeSlider(this.rotateSlider, 1);
+
         for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this._dt);
-        };
+            await screenshot_custom(this.df);
+        }
     }
 
     @testCase
     async click_F() {
-        // @ts-ignore
-        find('New Canvas/rotate').getComponent('cc.Slider').progress = 0;
-        // @ts-ignore
-        find('New Canvas').getComponent('TransformController').onRotateChanged(find('New Canvas/rotate').getComponent('cc.Slider'));
-        // @ts-ignore
-        find('New Canvas/translate').getComponent('cc.Slider').progress = 0;
-        // @ts-ignore
-        find('New Canvas').getComponent('TransformController').onTranslateChanged(find('New Canvas/translate').getComponent('cc.Slider'));
-        // @ts-ignore
-        find('Camera').getComponent('CameraController').onPushJoystick(1, 'F');
+        for (let k=0; k<3; k++) {
+            UISimulate.clickButton(find('New Canvas/Pad/Direction/Forward')?.getComponent(Button)!);
+        }
         for (let i = 0; i < 3; i++) {
-
-            await screenshot_custom(this._dt);
-        };
+            await screenshot_custom(this.df);
+        }
     }
 
     @testCase
     async click_B() {
-        // @ts-ignore
-        find('Camera').getComponent('CameraController').onPushJoystick(1, 'B');
+        for (let k=0; k<3; k++) {
+            UISimulate.clickButton(find('New Canvas/Pad/Direction/Back')?.getComponent(Button)!);
+        }
         for (let i = 0; i < 3; i++) {
-
-            await screenshot_custom(this._dt);
-        };
+            await screenshot_custom(this.df);
+        }
     }
 
     @testCase
     async click_L() {
-        // @ts-ignore
-        find('Camera').getComponent('CameraController').onPushJoystick(1, 'L');
+        for (let k=0; k<3; k++) {
+            UISimulate.clickButton(find('New Canvas/Pad/Direction/Left')?.getComponent(Button)!);
+        }
         for (let i = 0; i < 3; i++) {
-
-            await screenshot_custom(this._dt);
-        };
+            await screenshot_custom(this.df);
+        }
     }
 
     @testCase
     async click_R() {
-        // @ts-ignore
-        find('Camera').getComponent('CameraController').onPushJoystick(1, 'R');
+        for (let k=0; k<3; k++) {
+            UISimulate.clickButton(find('New Canvas/Pad/Direction/Right')?.getComponent(Button)!);
+        }
         for (let i = 0; i < 3; i++) {
-
-            await screenshot_custom(this._dt);
-        };
+            await screenshot_custom(this.df);
+        }
     }
 
     @testCase
     async click_U() {
-        // @ts-ignore
-        find('Camera').getComponent('CameraController').onPushJoystick(1, 'U');
+        for (let k=0; k<3; k++) {
+            UISimulate.clickButton(find('New Canvas/Pad/ViewDir/Up')?.getComponent(Button)!);
+        }
         for (let i = 0; i < 3; i++) {
-
-            await screenshot_custom(this._dt);
-        };
+            await screenshot_custom(this.df);
+        }
     }
 
     @testCase
     async click_D() {
-        // @ts-ignore
-        find('Camera').getComponent('CameraController').onPushJoystick(1, 'D');
+        for (let k=0; k<3; k++) {
+            UISimulate.clickButton(find('New Canvas/Pad/ViewDir/Down')?.getComponent(Button)!);
+        }
         for (let i = 0; i < 3; i++) {
-
-            await screenshot_custom(this._dt);
-        };
+            await screenshot_custom(this.df);
+        }
     }
 
     @testCase
     async click_RL() {
-        // @ts-ignore
-        find('Camera').getComponent('CameraController').onPushJoystick(1, 'RL');
+        for (let k=0; k<3; k++) {
+            UISimulate.clickButton(find('New Canvas/Pad/ViewDir/Left')?.getComponent(Button)!);
+        }
         for (let i = 0; i < 3; i++) {
-
-            await screenshot_custom(this._dt);
-        };
+            await screenshot_custom(this.df);
+        }
     }
 
     @testCase
     async click_RR() {
-        // @ts-ignore
-        find('Camera').getComponent('CameraController').onPushJoystick(1, 'RR');
+        for (let k=0; k<3; k++) {
+            UISimulate.clickButton(find('New Canvas/Pad/ViewDir/Right')?.getComponent(Button)!);
+        }
         for (let i = 0; i < 3; i++) {
-
-            await screenshot_custom(this._dt);
-        };
+            await screenshot_custom(this.df);
+        }
     }
-
-
 }

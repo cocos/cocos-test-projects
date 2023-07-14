@@ -29,7 +29,7 @@ export class ParticleForce {
     async startPlay() {
         for (let i = 0; i < 3; i++) {
             await screenshot_custom(this.df);
-        };
+        }
     }
 
     @testCase
@@ -37,7 +37,7 @@ export class ParticleForce {
         UISimulate.changeSlider(this.translateSlider, 0.5);
         for (let i = 0; i < 3; i++) {
             await screenshot_custom(this.df);
-        };
+        }
     }
 
     @testCase
@@ -45,7 +45,7 @@ export class ParticleForce {
         UISimulate.changeSlider(this.translateSlider, 1);
         for (let i = 0; i < 3; i++) {
             await screenshot_custom(this.df);
-        };
+        }
     }
 
     @testCase
@@ -53,7 +53,7 @@ export class ParticleForce {
         UISimulate.changeSlider(this.translateSlider, 0);
         for (let i = 0; i < 3; i++) {
             await screenshot_custom(this.df);
-        };
+        }
     }
 
     @testCase
@@ -61,7 +61,7 @@ export class ParticleForce {
         UISimulate.changeSlider(this.rotateSlider, 0.5);
         for (let i = 0; i < 3; i++) {
             await screenshot_custom(this.df);
-        };
+        }
     }
 
     @testCase
@@ -69,7 +69,7 @@ export class ParticleForce {
         UISimulate.changeSlider(this.rotateSlider, 1);
         for (let i = 0; i < 3; i++) {
             await screenshot_custom(this.df);
-        };
+        }
     }
 
     @testCase
@@ -77,7 +77,7 @@ export class ParticleForce {
         UISimulate.changeSlider(this.rotateSlider, 0);
         for (let i = 0; i < 3; i++) {
             await screenshot_custom(this.df);
-        };
+        }
     }
 
     @testCase
@@ -108,7 +108,7 @@ export class ParticleForce {
 
         for (let i = 0; i < 3; i++) {
             await screenshot_custom(this.df);
-        };
+        }
     }
 
     @testCase
@@ -118,7 +118,7 @@ export class ParticleForce {
         }
         for (let i = 0; i < 3; i++) {
             await screenshot_custom(this.df);
-        };
+        }
     }
 
     @testCase
@@ -128,7 +128,7 @@ export class ParticleForce {
         }
         for (let i = 0; i < 3; i++) {
             await screenshot_custom(this.df);
-        };
+        }
     }
 
     @testCase
@@ -138,7 +138,7 @@ export class ParticleForce {
         }
         for (let i = 0; i < 3; i++) {
             await screenshot_custom(this.df);
-        };
+        }
     }
 
     @testCase
@@ -148,7 +148,7 @@ export class ParticleForce {
         }
         for (let i = 0; i < 3; i++) {
             await screenshot_custom(this.df);
-        };
+        }
     }
 
     @testCase
@@ -158,7 +158,7 @@ export class ParticleForce {
         }
         for (let i = 0; i < 3; i++) {
             await screenshot_custom(this.df);
-        };
+        }
     }
 
     @testCase
@@ -168,7 +168,7 @@ export class ParticleForce {
         }
         for (let i = 0; i < 3; i++) {
             await screenshot_custom(this.df);
-        };
+        }
     }
 
     @testCase
@@ -178,7 +178,7 @@ export class ParticleForce {
         }
         for (let i = 0; i < 3; i++) {
             await screenshot_custom(this.df);
-        };
+        }
     }
 
     @testCase
@@ -188,6 +188,6 @@ export class ParticleForce {
         }
         for (let i = 0; i < 3; i++) {
             await screenshot_custom(this.df);
-        };
+        }
     }
 }
