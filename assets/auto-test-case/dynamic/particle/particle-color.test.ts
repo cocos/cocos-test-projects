@@ -1,27 +1,25 @@
-import { find, Vec3 } from 'cc';
+import { find, Node } from 'cc';
 // @ts-ignore
-import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
+import { testCase, testClass, beforeClass, srandom } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom_by_wait, mouse_wheel_by_delta } from '../common/utils';
+import { FirstPersonCamera } from '../../../shared-res/first-person-camera';
 
-@runScene('particle-color')
-@testClass('ParticleColor')
+@testClass('ParticleColor', 'particle-color')
 export class ParticleColor {
-  _dt = 19;
+  private camera!: Node;
+  private df = 30;
+
+  @beforeClass
+  async initData() {
+      this.camera = find('Camera')!;
+      this.camera.getComponent(FirstPersonCamera)!.enabled = false;
+      srandom('particle-color');
+  }
 
   @testCase
   async startPlay() {
-    //@ts-ignore
-    let _camera = find('Camera').getComponent('first-person-camera');
-    await screenshot_custom_by_wait(this._dt);
-    await screenshot_custom_by_wait(this._dt);
-    await screenshot_custom_by_wait(this._dt);
-    //@ts-ignore
-    _camera._euler = {x: 6.0, y: -5.5, z: 0};
-    await screenshot_custom_by_wait(this._dt);
-    mouse_wheel_by_delta(20, _camera);
-    await screenshot_custom_by_wait(this._dt);
-    
-    mouse_wheel_by_delta(-22, _camera);
-    await screenshot_custom_by_wait(this._dt);
+      for (let i=0; i<6; i++) {
+          await screenshot_custom_by_wait(this.df);
+      }
   }
 }
