@@ -24,7 +24,7 @@ export class IntersectRayTest extends Component {
     private _container!: Node;
     private _points: Node[] = [];
 
-    onLoad () {
+    start () {
         this._container = new Node('_TEST_');
         this.node.scene.addChild(this._container);
         this._points.push(instantiate(this.point)); this._points.push(instantiate(this.point)); this._points.push(instantiate(this.point));
