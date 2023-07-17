@@ -34,8 +34,8 @@ export class WidgetDestroy extends Component {
 
     updateLabel() {
         this.coinNumber.string = ('The Coin Num is:' + director.getScene()!.children[2].children[3].children.length);
-        this.activeWidgetNum.string = 'The active Widget Num is:' + (widgetManager._activeWidgetsIterator.length - 5);
-        // 此处的 5 为当前场景非create出的组件的widget数量
-        // 提示中的 activeNode 和 iconNum 的差值为常驻节点的 widget 数量（目前也为5）
+        this.activeWidgetNum.string = 'The active Widget Num is:' + (widgetManager._activeWidgetsIterator.length - 6);
+        // 此处的 6 为当前场景非create出的组件的widget数量
+        // 提示中的 activeNode 和 iconNum 的差值为常驻节点的激活的 widget 数量（目前为5）
     }
 }
