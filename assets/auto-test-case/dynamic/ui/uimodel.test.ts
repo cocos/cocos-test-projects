@@ -12,9 +12,8 @@ export class UIModel {
 
     @beforeClass
     async initData() {
-        const canvas = find('Canvas')!;
-        this.btnModel = canvas.getChildByUuid('729fK2cYNEAbJlFk/9NZCo')?.getComponent(Button) as Button;
-        this.btnParticle = canvas.getChildByUuid('c7Unfoc7JJXZhl8urAwbN5')?.getComponent(Button) as Button;
+        this.btnModel = find('Canvas/model')?.getComponent(Button) as Button;
+        this.btnParticle = find('Canvas/particle')?.getComponent(Button) as Button;
         srandom(director.getScene()!.name);
     }
 
