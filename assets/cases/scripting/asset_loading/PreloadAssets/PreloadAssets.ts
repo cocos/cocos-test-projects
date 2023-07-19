@@ -43,6 +43,9 @@ export class PreloadAssets extends Component {
     @property({ type: SpriteFrame })
     public loadMaterialSpriteFrame: SpriteFrame = null!;
 
+    @property({type: Material})
+    public standardMaterial: Material = null!;
+
     // use this for initialization
     onLoad () {
         // registered event
@@ -266,7 +269,7 @@ export class PreloadAssets extends Component {
                 node.setPosition(0, 0, 50);
                 node.setScale(5, 5, 5);
                 component.mesh = res;
-                component.material = builtinResMgr.get<Material>('standard-material');
+                component.material = this.standardMaterial;
                 break;
             case "Prefab":
                 let prefab = instantiate(res);
