@@ -23,7 +23,7 @@ export class BatchTester extends Component {
 
     public _nodes: Node[] = [];
     public _delays: number[] = [];
-    public _startTime = 0;
+    public _startFrame = 0;
 
     public start () {
         for (let i = 0; i < this.count; i++) {
@@ -33,11 +33,11 @@ export class BatchTester extends Component {
         }
         this.label.string = 'Boxes: ' + this.count * 100;
         this.slider.progress = this.count / this.maxCount;
-        this._startTime = director.getTotalFrames() * game.frameTime;
+        this._startFrame = director.getTotalFrames();
     }
 
     public update () {
-        const t = director.getTotalFrames() * game.frameTime - this._startTime;
+        const t = Math.floor((director.getTotalFrames() - this._startFrame) * 16.7);
         for (let i = 0; i < this._nodes.length; i++) {
             const node = this._nodes[i];
             const delay = this._delays[i];
