@@ -81,6 +81,17 @@ export class VideoPlayerCtrl extends Component {
         }
     }
 
+    onEventType (target: VideoPlayerCtrl, type: string) {
+        switch (type) {
+            case VideoPlayer.EventType.READY_TO_PLAY: {
+                if (!this.videoPlayer.isPlaying) {  
+                    this.videoPlayer.play();
+                }
+                break;
+            }
+        }
+    }
+
     update () {
         this.slider.progress = this.videoPlayer.currentTime / this.videoPlayer.duration;
     }
