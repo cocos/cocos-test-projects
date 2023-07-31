@@ -26,45 +26,42 @@ export class Spriteatlas {
 
       this.testScript!.editbox.string = "lake";
       buttonChange.clickEvents[0].emit([]);
-      await screenshot_custom(this._dt);
+      await screenshot_custom(this._dt); // 2
 
       this.testScript!.editbox.string = "mountain";
       buttonChange.clickEvents[0].emit([]);
-      await screenshot_custom(this._dt);
+      await screenshot_custom(this._dt); // 3
 
       this.testScript!.editbox.string = "wrong";
       buttonChange.clickEvents[0].emit([]);
-      await screenshot_custom(this._dt);
-
+      await screenshot_custom(this._dt); // 4
 
       this.testScript!.editbox.string = "sea";
       buttonReplace.clickEvents[0].emit([]);
-      await screenshot_custom(this._dt);
+      await screenshot_custom(this._dt); //5
 
       this.testScript!.editbox.string = "tree";
       buttonReplace.clickEvents[0].emit([]);
-      await screenshot_custom(this._dt);
+      await screenshot_custom(this._dt); // 6
 
       this.testScript!.editbox.string = "wrong";
       buttonReplace.clickEvents[0].emit([]);
-      await screenshot_custom(this._dt);
-
-
-      buttonClean.clickEvents[0].emit([]);
-      await screenshot_custom(this._dt);
+      await screenshot_custom(this._dt); // 7
 
       this.testScript!.editbox.string = "lake";
       buttonChange.clickEvents[0].emit([]);
-      await screenshot_custom(this._dt);
-      
-      buttonReplace.clickEvents[0].emit([]);
-      await screenshot_custom(this._dt);
+      await screenshot_custom(this._dt); // 9
 
+      buttonClean.clickEvents[0].emit([]);
+      await screenshot_custom(this._dt); // clean
+
+      buttonChange.clickEvents[0].emit([]);
+      await screenshot_custom(this._dt); // 10
 
       buttonTips.clickEvents[0].emit([]);
-      await screenshot_custom(this._dt);
+      await screenshot_custom(this._dt); // 11
 
       buttonTips.clickEvents[0].emit([]);
-      await screenshot_custom(this._dt);
+      await screenshot_custom(this._dt); // 12
     }
 }

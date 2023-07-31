@@ -3,6 +3,7 @@ import { Button, Color, Component, find, Label, LabelOutline, LabelShadow, Size,
 // @ts-ignore
 import { runScene, testCase, testClass, beforeClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
+import { UISimulate } from '../common/SimulateEvent';
 
 @testClass('LabelAttributeSwitch', 'label-attribute-switch')
 export class LabelAttributeSwitch {
@@ -64,7 +65,6 @@ export class LabelAttributeSwitch {
         await screenshot_custom(this.tickTime);
     }
 
-
     @testCase
     async switchAnchorX() {
         this.reset();
@@ -73,7 +73,6 @@ export class LabelAttributeSwitch {
         this.caseScript.updateState();
         await screenshot_custom(this.tickTime);
     }
-
 
     @testCase
     async switchAnchorY() {
@@ -93,7 +92,6 @@ export class LabelAttributeSwitch {
         this.caseScript.updateState();
         await screenshot_custom(this.tickTime);
     }
-
 
     @testCase
     async stringButton() {
@@ -139,7 +137,6 @@ export class LabelAttributeSwitch {
         btn!.clickEvents[0].emit([]);
         await screenshot_custom(this.tickTime);
     }
-
 
     @testCase
     async useSystemFontButton() {
@@ -202,7 +199,6 @@ export class LabelAttributeSwitch {
         await screenshot_custom(this.tickTime);
     }
 
-
     @testCase
     async switchOutlineWidth() {
         this.reset();
@@ -219,7 +215,6 @@ export class LabelAttributeSwitch {
         await screenshot_custom(this.tickTime);
     }
 
-
     @testCase
     async shadowColorButton() {
         this.reset();
@@ -227,7 +222,6 @@ export class LabelAttributeSwitch {
         this.caseScript.updateState();
         await screenshot_custom(this.tickTime);
     }
-
 
     @testCase
     async shadowOffsetButton() {
@@ -237,7 +231,6 @@ export class LabelAttributeSwitch {
         await screenshot_custom(this.tickTime);
     }
 
-
     @testCase
     async shadowBlurButton() {
         this.reset();
@@ -246,10 +239,14 @@ export class LabelAttributeSwitch {
         await screenshot_custom(this.tickTime);
     }
 
+    @testCase
+    async resetAll() {
+        this.reset();
+        await screenshot_custom(this.tickTime);
+    }
 
     reset() {
-        this.resetBtn!.clickEvents[0].emit([]);
-        // await screenshot_custom(this.tickTime);
+        UISimulate.clickButton(this.resetBtn!);
     }
 
 }
