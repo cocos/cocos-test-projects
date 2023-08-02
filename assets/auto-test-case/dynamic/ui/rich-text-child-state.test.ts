@@ -7,7 +7,7 @@ import { screenshot_custom } from '../common/utils';
 @testClass('RichTextChildState', 'rich-text-child-state')
 export class RichTextChildState {
     richTextChildState!: RichTextChildStateObj;
-    tickTime: number = 60;
+    df: number = 60;
 
     @beforeClass
     initData() {
@@ -35,6 +35,6 @@ export class RichTextChildState {
     @testCase
     async onUpdateContent() {
         this.richTextChildState!.onUpdateContent();
-        await screenshot_custom(this.tickTime);
+        await screenshot_custom(this.df);
     }
 }
