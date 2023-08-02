@@ -1,48 +1,51 @@
-import { Component, EditBox, find } from 'cc';
+import { EditBox, find } from 'cc';
 // @ts-ignore
-import { captureOneImage, runScene, testCase, testClass, beforeClass } from 'db://automation-framework/runtime/test-framework.mjs';
-import { EditboxEvent } from '../../../cases/ui/12.editbox/editbox-event';
+import { testCase, testClass, beforeClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
 
 @testClass('EditboxEvents', 'editbox-events')
 export class EditboxEvents {
-    tickTime: number = 5;
-    editboxEvent!: EditboxEvent| Component;
-    box!:any;
+    private editBox!: EditBox;
+    private df = 5;
 
     @beforeClass
-    async start(){
-        // @ts-ignore
-        this.editboxEvent = find("Canvas/ctrl").getComponent("EditboxEvent")!;
-        this.box =  find("Canvas/eventedit/New EditBox")!.getComponent("cc.EditBox")!;
+    async initData() {
+        this.editBox = find("Canvas/eventedit/New EditBox")!.getComponent(EditBox)!;
     }
 
     @testCase
     async startPlay() {
-        await screenshot_custom(this.tickTime);
+        await screenshot_custom(this.df);
     }
 
     @testCase
     async begin() {
-        this.editboxEvent.editBegan(this.box,"beginning");
-        await screenshot_custom(this.tickTime);
+        this.editBox.focus();
+        await screenshot_custom(this.df);
     }
 
     @testCase
     async input() {
-        this.editboxEvent.editInputing("input string",this.box,"input");
-        await screenshot_custom(this.tickTime);
+        this.editBox.string = 'AW34$5中';
+        this.editBox._showLabels();
+        this.editBox._editBoxTextChanged('AW34$5中');
+        await screenshot_custom(this.df);
     }
 
     @testCase
-    async editReturn() {
-        this.editboxEvent.editReturn(this.box,"return");
-        await screenshot_custom(this.tickTime);
+    async return() {
+        this.editBox.blur();
+        this.editBox._showLabels();
+        this.editBox._editBoxEditingReturn('AW34$5中');
+        await screenshot_custom(this.df);
     }
 
     @testCase
     async end() {
-        this.editboxEvent.editEnd(this.box,"end");
-        await screenshot_custom(this.tickTime);
+        this.editBox.focus();
+        this.editBox.blur();
+        this.editBox._showLabels();
+        this.editBox._editBoxEditingDidEnded('AW34$5中');
+        await screenshot_custom(this.df);
     }
 }

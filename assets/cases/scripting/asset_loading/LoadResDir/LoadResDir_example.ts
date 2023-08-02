@@ -81,59 +81,73 @@ export class LoadResDirExample extends Component {
         this._clear();
     }
 
-    onLoadAll () {
-        if (this._hasLoading) { return; }
-        this._hasLoading = true;
-
-        this._clear();
-        this._createLabel("Load All Assets");
-        this.scrollView.scrollToTop();
-        this.btnClearAll.active = false;  // 防止加载的过程中清除资源
-
-        loader.loadResDir("test_assets", (err: Error | null, assets: Asset[]) => {
-            if (!this.isValid && err) {
+    async onLoadAll (): Promise<void> {
+        return new Promise((resolve, reject) => {
+            if (this._hasLoading) {
+                reject();
                 return;
             }
-
-            this._assets = assets;
-            for (var i = 0; i < assets.length; ++i) {
-                var asset = assets[i];
-                var info = asset.toString();
-                if (!info) {
-                    if (asset instanceof JsonAsset) {
-                        info = JSON.stringify(asset.json, null, 4);
-                    }
-                    else {
-                        info = info || asset.name || js.getClassName(asset);
-                    }
+            this._hasLoading = true;
+    
+            this._clear();
+            this._createLabel("Load All Assets");
+            this.scrollView.scrollToTop();
+            this.btnClearAll.active = false;  // 防止加载的过程中清除资源
+    
+            loader.loadResDir("test_assets", (err: Error | null, assets: Asset[]) => {
+                if (!this.isValid && err) {
+                    reject();
+                    return;
                 }
-                this._createLabel(info);
-            }
-            this._hasLoading = false;
-            this.btnClearAll.active = true;
+    
+                this._assets = assets;
+                for (var i = 0; i < assets.length; ++i) {
+                    var asset = assets[i];
+                    var info = asset.toString();
+                    if (!info) {
+                        if (asset instanceof JsonAsset) {
+                            info = JSON.stringify(asset.json, null, 4);
+                        }
+                        else {
+                            info = info || asset.name || js.getClassName(asset);
+                        }
+                    }
+                    this._createLabel(info);
+                }
+                this._hasLoading = false;
+                this.btnClearAll.active = true;
+                resolve();
+            });
         });
     }
 
-    onLoadSpriteFrameAll () {
-        if (this._hasLoading) { return; }
-        this._hasLoading = true;
-
-        this._clear();
-        this._createLabel("Load All Sprite Frame");
-        this.scrollView.scrollToTop();
-        this.btnClearAll.active = false;  // 防止加载的过程中清除资源
-
-        loader.loadResDir("test_assets", SpriteFrame, (err: Error | null, assets: Asset[]) => {
-            if (!this.isValid) {
+    onLoadSpriteFrameAll (): Promise<void> {
+        return new Promise((resolve, reject) => {
+            if (this._hasLoading) {
+                reject();
                 return;
             }
-            this._assets = assets;
-            for (var i = 0; i < assets.length; ++i) {
-                var asset = assets[i];
-                this._createLabel(asset.name);
-            }
-            this._hasLoading = false;
-            this.btnClearAll.active = true;
+            this._hasLoading = true;
+
+            this._clear();
+            this._createLabel("Load All Sprite Frame");
+            this.scrollView.scrollToTop();
+            this.btnClearAll.active = false;  // 防止加载的过程中清除资源
+
+            loader.loadResDir("test_assets", SpriteFrame, (err: Error | null, assets: Asset[]) => {
+                if (!this.isValid) {
+                    reject();
+                    return;
+                }
+                this._assets = assets;
+                for (var i = 0; i < assets.length; ++i) {
+                    var asset = assets[i];
+                    this._createLabel(asset.name);
+                }
+                this._hasLoading = false;
+                this.btnClearAll.active = true;
+                resolve();
+            });
         });
     }
 }

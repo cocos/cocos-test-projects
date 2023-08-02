@@ -1,111 +1,76 @@
 // @ts-ignore
-import { runScene, sleep, testCase, testClass, waitForNextFrame, captureOneImage } from 'db://automation-framework/runtime/test-framework.mjs';
+import { beforeClass, testCase, testClass, expect } from 'db://automation-framework/runtime/test-framework.mjs';
+import { screenshot_custom_by_wait } from '../dynamic/common/utils';
+import { Button, director, find, Toggle } from 'cc';
+import { StaticBatcher } from '../../cases/scene/dynamic-batch/static-batcher';
 
-@runScene('static-batching')
-@testClass('StaticBatching')
+@testClass('StaticBatching', 'static-batching')
 export class StaticBatching {
+    private caseScript!: StaticBatcher;
+    private addButtonNode!: Button;
+    private reduceButtonNode!: Button;
+    private batchToggle!: Toggle;
+
+    @beforeClass
+    async initData() {
+        this.caseScript = find('Camera')?.getComponent(StaticBatcher) as StaticBatcher;
+        this.addButtonNode = find('New Canvas/batchButton/add')!.getComponent(Button) as Button;
+        this.addButtonNode = find('New Canvas/batchButton/reduce')!.getComponent(Button) as Button;
+        this.batchToggle = find('New Canvas/check/Toggle')!.getComponent(Toggle) as Toggle;
+    }
 
     @testCase
     async startPlay() {
-        await waitForNextFrame();
-        await captureOneImage();
+        await screenshot_custom_by_wait(1);
     }
 
-    // _dt = 10
-    // _delay = 0.5
-    // _delayMax=1
+    @testCase
+    async batch300() {
+        this.clickButton(this.addButtonNode, 2, 'add');
+        await screenshot_custom_by_wait(10);
 
+        const drawcall1 = director.root?.device.numDrawCalls;
+        this.changeToggle(true);
+        await screenshot_custom_by_wait(10);
+        const drawcall2 = director.root?.device.numDrawCalls;
+        expect(drawcall2).to.lessThan(drawcall1! * 0.5, `点击 batch 按钮，drawcall 数量没有明显减少！前：${drawcall1} 后：${drawcall2}`);
+    }
 
-    // @testCase
-    // async startPlay() {
-    //     await screenshot_custom(this._dt)
-    // }
+    @testCase
+    async batch500() {
+        this.clickButton(this.addButtonNode, 2, 'add');
+        this.changeToggle(false);
+        await screenshot_custom_by_wait(10);
 
+        const drawcall1 = director.root?.device.numDrawCalls;
+        this.changeToggle(true);
+        await screenshot_custom_by_wait(10);
+        const drawcall2 = director.root?.device.numDrawCalls;
+        expect(drawcall2).to.lessThan(drawcall1! * 0.5, `点击 batch 按钮，drawcall 数量没有明显减少！前：${drawcall1} 后：${drawcall2}`);
+    }
 
-    // @testCase
-    // async maxBoxes() {
-    //     for(let i=0;i<5;i++){
-    //         if(sys.platform === sys.Platform.WECHAT_GAME||sys.platform === sys.Platform.IOS||sys.platform === sys.Platform.ANDROID){
-    //             await sleep(this._delayMax);
-    //         }else{
-    //             console.log('【srcipt】_delay 0.5 end')
-    //             await sleep(this._delay);
-    //         }
-    //         if(i===4){
-    //             await screenshot_custom(this._dt)
-    //         }
-    //         console.log('【srcipt】maxBoxes')
-    //         await this.addOrReduce('add');
-    // }
-    //     await screenshot_custom(this._dt)
-    // }
+    @testCase
+    async reduce() {
+        const drawcall1 = director.root?.device.numDrawCalls;
+        this.clickButton(this.addButtonNode, 1, 'add');
+        await screenshot_custom_by_wait(10);
 
- 
+        this.clickButton(this.reduceButtonNode, 1);
+        await screenshot_custom_by_wait(10);
+        const drawcall2 = director.root?.device.numDrawCalls;
 
-    // @testCase
-    // async checkTrueAndReduce() {
-    //     this.checkBox(true);
-    //     for(let i=0;i<2;i++){
-    //         await this.addOrReduce('');
-    //     }
-    //     await screenshot_custom(this._dt)
-    // }
+        expect(drawcall2).to.equal(drawcall1, `增减一次 box 数量，观察 batch 下 drawcall 是否数值和上一次一致：结果不一致！前：${drawcall1} 后：${drawcall2}`);
+    }
 
-  
+    clickButton(btn: Button, count: number = 1, customData: string = '') {
+        for (let i=0; i<count; i++) {
+            this.caseScript.setCount(btn, customData);
+        }
+    }
 
-    // @testCase
-    // async checkFalseAndReduce() {
-    //     this.checkBox(false);
-    //     for(let i=0;i<2;i++){
-    //         await this.addOrReduce('');
-    //     }
-    //     await screenshot_custom(this._dt)
-    // }
-
-    // @testCase
-    // async checkTrueAndAdd() {
-    //     this.checkBox(true);
-    //     await this.addOrReduce('add');
-    //     await sleep(this._delay);
-    //     await screenshot_custom(this._dt)
-    // }
-
-    // @testCase
-    // async checkFalseAndAdd() {
-    //     this.checkBox(false);
-    //     await this.addOrReduce('add');
-    //     await sleep(this._delay);
-    //     await screenshot_custom(this._dt)
-    // }
-
-    // @testCase
-    // async minBoxes() {
-    //     await sleep(this._delay);
-    //     for(let i=0;i<8;i++){
-    //         await this.addOrReduce('');
-    //     }
-    //     await screenshot_custom(this._dt)
-    // }
-
-    
-    // async addOrReduce(funStr: string) {
-    //     //@ts-ignore
-    //     if (find('Camera')) {
-    //         //@ts-ignore
-    //         let staticBatcher=find('Camera').getComponent('StaticBatcher')
-    //         //@ts-ignore
-    //         let toggle=find('New Canvas/check/Toggle').getComponent('cc.Button')
-    //         //@ts-ignore
-    //        await staticBatcher.setCount(toggle, funStr)
-    //     }
-    // }
-
-    // async checkBox(ischeck: boolean) {
-    //     //@ts-ignore
-    //     if (find('Camera')) {
-    //         //@ts-ignore
-    //         find('Camera').getComponent('StaticBatcher').useBatch(find('New Canvas/check/Toggle').getComponent('cc.Button').isChecked = ischeck)
-    //     }
-    // }
+    changeToggle(value: boolean) {
+        this.batchToggle.isChecked = value;
+        this.caseScript.useBatch(this.batchToggle);
+    }
 
 }

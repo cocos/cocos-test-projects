@@ -1,29 +1,33 @@
-import { find, Vec3 } from 'cc';
+import { director, find, Node } from 'cc';
 // @ts-ignore
-import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
-import { screenshot_custom_by_wait, mouse_wheel_by_delta } from '../common/utils';
+import { beforeClass, testCase, testClass, srandom, waitForFrames } from 'db://automation-framework/runtime/test-framework.mjs';
+import { screenshot_custom_by_wait } from '../common/utils';
+import { FirstPersonCamera } from '../../../shared-res/first-person-camera';
 
-@runScene('particle-renderer')
-@testClass('ParticleRenderer')
+@testClass('ParticleRenderer', 'particle-renderer')
 export class ParticleRenderer {
-  _dt = 45;
+    private df = 60;
+    private camera!: Node;
 
-  @testCase
-  async startPlay() {
-    await screenshot_custom_by_wait(this._dt);
-    await screenshot_custom_by_wait(this._dt);
-    await screenshot_custom_by_wait(this._dt);
+    @beforeClass
+    async initData() {
+        this.camera = find('Camera')!;
+        this.camera.getComponent(FirstPersonCamera)!.enabled = false;
+        srandom(director.getScene()!.name);
+    }
 
-    //@ts-ignore
-    let _camera = find('Camera').getComponent('first-person-camera');
-    //@ts-ignore
-    _camera._euler = {x: 13, y: 13, z: 0};
-    await screenshot_custom_by_wait(this._dt);
+    @testCase
+    async startPlay() {
+        await waitForFrames(180);
 
-    mouse_wheel_by_delta(20, _camera);
-    await screenshot_custom_by_wait(this._dt);
+        for (let i = 0; i < 3; i++) {
+            await screenshot_custom_by_wait(this.df);
+        }
 
-    mouse_wheel_by_delta(-22, _camera);
-    await screenshot_custom_by_wait(this._dt);
-  }
+        this.camera?.setPosition(3.707, 0, 3.5857984799816562);
+        await screenshot_custom_by_wait(this.df);
+
+        this.camera?.setPosition(3.707, 0, 54.59651096129296);
+        await screenshot_custom_by_wait(this.df);
+    }
 }

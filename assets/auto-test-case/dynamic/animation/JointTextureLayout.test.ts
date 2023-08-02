@@ -1,20 +1,14 @@
 // @ts-ignore
-import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
-import { screenshot_custom_by_wait } from '../common/utils';
+import { testClass, testCase, waitForFrames, captureOneImage } from 'db://automation-framework/runtime/test-framework.mjs';
 
-@runScene('JointTextureLayout')
-@testClass('JointTextureLayout')
+@testClass('JointTextureLayout', 'JointTextureLayout')
 export class JointTextureLayout {
-    _dt = 80;
-    _delay = 2;
-
     @testCase
-    async comeDown() {
-        await screenshot_custom_by_wait(this._dt);
-    }
+    async startPlay() {
+        await waitForFrames(48);
+        await captureOneImage();
 
-    @testCase
-    async stand() {
-        await screenshot_custom_by_wait(69);
+        await waitForFrames(25);
+        await captureOneImage();
     }
 }
