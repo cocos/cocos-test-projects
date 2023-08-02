@@ -1,4 +1,4 @@
-import { EventTouch, Touch, Input, Node, EventMouse, NodeEventType, SystemEvent, SystemEventType, Toggle, EventHandler, Slider, Button } from 'cc';
+import { EventTouch, Touch, Input, Node, EventMouse, NodeEventType, Toggle, EventHandler, Slider, Button } from 'cc';
 
 //模拟触摸开始
 export function simulateTouchStart(x: number, y: number, node?: Node) {
@@ -55,7 +55,7 @@ export function simulateTouchEnd(node?: Node, x: number = 0, y: number = 0) {
 }
 
 //鼠标事件
-export function simulateMouseEvent(eventType: SystemEventType | NodeEventType, x: number, y: number) {
+export function simulateMouseEvent(eventType: NodeEventType, x: number, y: number) {
     const event = new EventMouse(eventType, false);
     event.setLocation(x, y);
     return event;

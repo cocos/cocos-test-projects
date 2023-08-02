@@ -22,5 +22,4 @@ export class RichTextChildState extends Component {
     public onUpdateContent (content?: string) {
         this._richText.string = content ? content: random().toString();
     }
-
 }

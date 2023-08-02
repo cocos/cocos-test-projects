@@ -14,21 +14,22 @@ export class RichTextChildState {
         this.richTextChildState = find("Canvas")!.getComponent("RichTextChildState")! as RichTextChildStateObj;
         srandom(director.getScene()!.name);
     }
+
     @testCase
     async start() {
-        await screenshot_custom(this.tickTime * 2);
+        await screenshot_custom(this.df);
     }
 
     @testCase
     async hideRichText() {
         this.richTextChildState!.onSetInactive();
-        await screenshot_custom(this.tickTime);
+        await screenshot_custom(this.df);
     }
 
     @testCase
     async showRichText() {
         this.richTextChildState!.onSetActive();
-        await screenshot_custom(this.tickTime);
+        await screenshot_custom(this.df);
     }
 
     @testCase
