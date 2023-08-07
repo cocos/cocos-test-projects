@@ -1,29 +1,30 @@
 import { find } from 'cc';
 // @ts-ignore
-import { runScene, testCase, testClass, sleep, beforeClass } from 'db://automation-framework/runtime/test-framework.mjs';
-import { simulateTouchStart, simulateTouchEnd } from '../common/SimulateEvent';
+import { beforeClass, testCase, testClass, expect } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom} from '../common/utils';
+import { NetworkCtrl } from '../../../cases/network/NetworkCtrl';
 
-
-@runScene('network')
-@testClass('Network')
+@testClass('Network', 'network')
 export class Network {
-    tickTime: number = 30;
+    private caseScript!: NetworkCtrl;
+
+    @beforeClass
+    async initData() {
+        this.caseScript = find('Canvas')?.getComponent(NetworkCtrl)!;
+    }
 
     @testCase
     async start(){
-        await screenshot_custom();
+        await screenshot_custom(2);
     }
 
     @testCase
     async network(){
-        //sen binary websocket instance wasn't ready
-        await screenshot_custom(this.tickTime*2 + 10);
+        await screenshot_custom(660);
 
-        await screenshot_custom(this.tickTime*3);
+        expect(this.caseScript.xhr.string).to.not.equal('waiting..');
+        expect(this.caseScript.xhrAB.string).to.not.equal('waiting..');
+        expect(this.caseScript.xhrTimeout.string).to.not.equal('waiting..');
+        expect(this.caseScript.websocket.string).to.not.equal('waiting..');
     }
 }
-
-
-
-

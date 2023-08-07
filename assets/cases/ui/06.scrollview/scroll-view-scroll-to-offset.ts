@@ -1,5 +1,5 @@
 
-import { _decorator, Component, find, ScrollView, Label, Vec2, Button } from 'cc';
+import { _decorator, Component, find, ScrollView, Label, Vec2, Button, random } from 'cc';
 const { ccclass, property } = _decorator;
 
 /**
@@ -45,8 +45,8 @@ export class ScrollViewScrollToOffset extends Component {
         this.offsetLabel.string = '点击随机滚动查看偏移数据';
     }
 
-    public randomScrollOffset() {
-        let offsetAnchor = Math.random();
+    public randomScrollOffset(btn: Button | null, param1?: number) {
+        let offsetAnchor = param1 || random();
         let maxOffsetVec = this.scroll.getMaxScrollOffset();
         let thisOffsetVec: Vec2 =new Vec2(offsetAnchor * maxOffsetVec.x, offsetAnchor * maxOffsetVec.y);
         this.scroll.scrollToOffset(thisOffsetVec);

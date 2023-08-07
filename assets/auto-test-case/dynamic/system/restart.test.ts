@@ -1,37 +1,25 @@
 import { find,sys } from 'cc';
 // @ts-ignore
-import { runScene } from 'db://automation-framework/runtime/test-framework.mjs';
+import { testClass, testCase } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
-@runScene('restart')
-// @testClass('Restart')
-export class Restart {
-    _dt = 3;
+import { Restart } from '../../../cases/system/restart';
+@testClass('RestartTest', 'restart')
+export class RestartTest {
+    private df = 3;
 
-    // @testCase
+    @testCase
     async startPlay() {
         for (let i = 0; i < 5; i++) {
-            await screenshot_custom(this._dt);
+            await screenshot_custom(this.df);
         }
     }
 
-    // @testCase
+    @testCase
     async restart() {
-        // @ts-ignore
-        find('Canvas').getComponent('Restart').restart();
+        find('Canvas')!.getComponent(Restart)!.restart();
+        // if (sys.platform === sys.Platform.ANDROID || sys.platform === sys.Platform.IOS)
         for (let i = 0; i < 5; i++) {
-            await screenshot_custom(this._dt);
-        }
-    }
-
-    // @testCase
-    async onAndroidRestart() {
-        // @ts-ignore
-        if (sys.platform === sys.Platform.ANDROID || sys.platform === sys.Platform.IOS) {
-            // @ts-ignore
-            find('Canvas').getComponent('Restart').restart();
-            for (let i = 0; i < 5; i++) {
-                await screenshot_custom(this._dt);
-            }
+            await screenshot_custom(this.df);
         }
     }
 }

@@ -31,18 +31,18 @@ export class NetworkDownload {
         let unfinished = true;
         UISimulate.clickButton(this.networkDownloadButton!);
         return new Promise<void>(async (resolve, reject) => {
-            this.networkDownloadObject?.node.on('onProgress', async () => {
+            this.networkDownloadObject!.onProgress = async () => {
                 if (unprogress) {
                     unprogress = false;
                     await screenshot_custom();
                 }
-            });
-            this.networkDownloadObject?.node.on('onSuccess', async () => {
+            };
+            this.networkDownloadObject!.onSuccess = async () => {
                 unfinished = false;
                 await screenshot_custom();
                 resolve();
-            });
-            this.networkDownloadObject?.node.on('onError', async () => {
+            };
+            this.networkDownloadObject!.onError = async () => {
                 count += 1;
                 if (count >= 3) {
                     unfinished = false;
@@ -54,16 +54,16 @@ export class NetworkDownload {
                     console.log('NetworkDownload status: Error, then retry:', count);
                     UISimulate.clickButton(this.networkDownloadButton!);
                 }
-            });
+            };
 
             let elapseTime = 0;
-            while (unfinished && elapseTime < 1800) {
+            while (unfinished && elapseTime < 3600) {
                 elapseTime += 300;
                 await waitForFrames(300);
             }
 
             if (unfinished) {
-                console.log('NetworkDownload timeout 30s.');
+                console.log('NetworkDownload timeout 60s.');
                 await screenshot_custom();
                 reject();
             }

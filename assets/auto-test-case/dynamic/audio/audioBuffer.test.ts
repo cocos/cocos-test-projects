@@ -1,12 +1,12 @@
-import { clamp, find, Slider, v3 } from 'cc';
+import { find, Slider, v3 } from 'cc';
 // @ts-ignore
-import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
+import { runScene, testCase, testClass, PlatformEnum } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom_by_wait } from '../common/utils';
 
-@runScene('audioBuffer')
-@testClass('AudioBuffer')
+@testClass('AudioBuffer', 'audioBuffer', [PlatformEnum.WINDOWS])
 export class AudioBuffer {
   _dt = 10;
+
   @testCase
   async startPlay() {
     await screenshot_custom_by_wait(this._dt);
@@ -26,8 +26,8 @@ export class AudioBuffer {
   }
 
   // Simulates the touch traverse event
-  onDragMove (deltaX=-1) {
-    let selfAudio = find('Canvas')!.getComponent('audioBuffer')!;
+  onDragMove(deltaX = -1) {
+    let selfAudio = find('Canvas')!.getComponent('audioBuffer')! as any;
     let pos1 = selfAudio.graphics1.node.position;
     let pos2 = selfAudio.graphics2.node.position;
     let posX1 = pos1.x;

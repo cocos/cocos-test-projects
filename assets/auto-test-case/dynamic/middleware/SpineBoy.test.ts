@@ -1,131 +1,125 @@
 import { find } from 'cc';
 // @ts-ignore
-import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
+import { beforeClass, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
+import SpineBoyCtrl from '../../../cases/middleware/spine/SpineBoyCtrl';
 
 @testClass('SpineBoy', 'SpineBoy')
 export class SpineBoy {
-    _delay = 0.2;
-    _dt = 10;
+    private caseScript!: SpineBoyCtrl;
+    private df = 10;
+
+    @beforeClass
+    async initData() {
+        this.caseScript = find('Canvas/spineboy')?.getComponent(SpineBoyCtrl)!;
+    }
 
     @testCase
     async startPlay() {
         for (let i = 0; i < 2; i++) {
-            await screenshot_custom(this._dt);
+            await screenshot_custom(this.df);
         };
     }
 
     @testCase
     async stop() {
-        // @ts-ignore
-        find('Canvas/spineboy').getComponent('SpineBoyCtrl').stop();
+        this.caseScript.stop();
         for (let i = 0; i < 2; i++) {
-            await screenshot_custom(this._dt);
+            await screenshot_custom(this.df);
         };
     }
 
     @testCase
     async walk() {
-        // @ts-ignore
-        find('Canvas/spineboy').getComponent('SpineBoyCtrl').walk();
+        this.caseScript.walk();
         for (let i = 0; i < 2; i++) {
-            await screenshot_custom(2 * this._dt);
+            await screenshot_custom(2 * this.df);
         };
     }
 
     @testCase
     async run() {
-        // @ts-ignore
-        find('Canvas/spineboy').getComponent('SpineBoyCtrl').run();
+        this.caseScript.run();
         for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this._dt);
+            await screenshot_custom(this.df);
         };
     }
 
     @testCase
     async jump() {
-        // @ts-ignore
-        find('Canvas/spineboy').getComponent('SpineBoyCtrl').jump();
+        this.caseScript.jump();
         for (let i = 0; i < 2; i++) {
-            await screenshot_custom(this._dt);
+            await screenshot_custom(this.df);
         };
     }
 
     @testCase
     async shoot() {
-        // @ts-ignore
-        find('Canvas/spineboy').getComponent('SpineBoyCtrl').shoot();
+        this.caseScript.shoot();
         for (let i = 0; i < 2; i++) {
-            await screenshot_custom(this._dt);
+            await screenshot_custom(this.df);
         };
     }
 
     @testCase
     async idle() {
-        // @ts-ignore
-        find('Canvas/spineboy').getComponent('SpineBoyCtrl').idle();
+        this.caseScript.idle();
         for (let i = 0; i < 2; i++) {
-            await screenshot_custom(2 * this._dt);
+            await screenshot_custom(2 * this.df);
         };
     }
 
     @testCase
     async portal() {
-        // @ts-ignore
-        find('Canvas/spineboy').getComponent('SpineBoyCtrl').portal();
+        this.caseScript.portal();
         for (let i = 0; i < 3; i++) {
-            await screenshot_custom(3 * this._dt);
+            await screenshot_custom(3 * this.df);
         };
     }
 
     @testCase
     async toggleDebugSlots() {
-        for (let i = 0; i < 3; i++) {
-            // @ts-ignore
-            find('Canvas/spineboy').getComponent('SpineBoyCtrl').toggleDebugSlots();
-            await screenshot_custom(this._dt);
+        this.caseScript.run();
+        this.caseScript.toggleDebugSlots();
+        for (let i = 0; i < 2; i++) {
+            await screenshot_custom(this.df);
         };
+        this.caseScript.toggleDebugSlots();
     }
 
     @testCase
     async toggleDebugBones() {
-        // @ts-ignore
-        find('Canvas/spineboy').getComponent('SpineBoyCtrl').toggleDebugBones();
+        this.caseScript.toggleDebugBones();
         for (let i = 0; i < 2; i++) {
-            await screenshot_custom(this._dt);
+            await screenshot_custom(this.df);
         };
-        // @ts-ignore
-        find('Canvas/spineboy').getComponent('SpineBoyCtrl').toggleDebugBones();
-        await screenshot_custom(this._dt);
+        this.caseScript.toggleDebugBones();
     }
 
     @testCase
     async toggleDebugMesh() {
-        // @ts-ignore
-        find('Canvas/spineboy').getComponent('SpineBoyCtrl').toggleDebugMesh();
+        this.caseScript.toggleDebugMesh();
         for (let i = 0; i < 2; i++) {
-            await screenshot_custom(this._dt);
+            await screenshot_custom(this.df);
         }
-        // @ts-ignore
-        find('Canvas/spineboy').getComponent('SpineBoyCtrl').toggleDebugMesh();
-        await screenshot_custom(this._dt);
+        this.caseScript.toggleDebugMesh();
     }
 
     @testCase
     async toggleUseTint() {
-        // @ts-ignore
-        find('Canvas/spineboy').getComponent('SpineBoyCtrl').toggleUseTint();
+        this.caseScript.toggleUseTint();
         for (let i = 0; i < 2; i++) {
-            await screenshot_custom(this._dt);
+            await screenshot_custom(this.df);
         };
+        this.caseScript.toggleUseTint();
     }
 
     @testCase
     async toggleTimeScale() {
-        // @ts-ignore
-        find('Canvas/spineboy').getComponent('SpineBoyCtrl').toggleTimeScale();
+        this.caseScript.toggleTimeScale();
         for (let i = 0; i < 2; i++) {
-            await screenshot_custom(this._dt);
+            await screenshot_custom(this.df);
         };
+        this.caseScript.toggleTimeScale();
     }
 }

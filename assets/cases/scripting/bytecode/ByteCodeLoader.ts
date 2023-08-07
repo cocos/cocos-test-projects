@@ -9,21 +9,19 @@ declare function require(pkg: string): any;
 
 @ccclass('ByteCodeCache')
 export class ByteCodeCache extends Component {
-
-
     @property({ type: Label })
     public statusLabel: Label = null!;
-
 
     @property({ type: Label })
     public titleLabel: Label = null!;
 
+    public isAutoTest = false; // In order to automate test take over
+
     start() {
-        setTimeout(this.runTest.bind(this), 0);
+        if (!this.isAutoTest) setTimeout(this.runTest.bind(this), 0);
     }
 
     runTest() {
-
         this.titleLabel.string = 'Bytecode Test';
 
         if (typeof jsb === 'undefined' || !jsb.saveByteCode) {

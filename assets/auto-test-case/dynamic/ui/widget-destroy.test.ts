@@ -1,21 +1,20 @@
-import { Button, Component, find } from 'cc';
+import { find, Node } from 'cc';
 // @ts-ignore
-import { runScene, testCase, testClass, beforeClass, waitForFrames } from 'db://automation-framework/runtime/test-framework.mjs';
+import { testCase, testClass, beforeClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
+import { simulateTouchEnd, simulateTouchStart } from '../common/SimulateEvent';
 
-@runScene('widget-destroy')
-@testClass('WidgetDestroy')
+@testClass('WidgetDestroy', 'widget-destroy')
 export class WidgetDestroy {
-    createButton!:Button | Component ;
-    delButton!:Button | Component;
-    moveButton!:Button | Component;
-    tickTime: number = 60;
+    createButton!: Node | null;
+    delButton!: Node | null;
+    moveButton!: Node | null;
 
     @beforeClass
-    async initData(){
-        this.createButton = find("Canvas/create button")!.getComponent("cc.Button")!;
-        this.delButton = find("Canvas/del button")!.getComponent("cc.Button")!;
-        this.moveButton = find("Canvas/move button")!.getComponent("cc.Button")!;
+    async initData() {
+        this.createButton = find("Canvas/create button");
+        this.delButton = find("Canvas/del button");
+        this.moveButton = find("Canvas/move button");
     }
 
     @testCase
@@ -24,23 +23,25 @@ export class WidgetDestroy {
     }
 
     @testCase
-    async createCoinAndDeleteButton(){
-        this.createButton.clickEvents[0].emit([]) ;
-        await waitForFrames(this.tickTime);
-        this.createButton.clickEvents[0].emit([]);
-        await waitForFrames(this.tickTime);
-        this.delButton.clickEvents[0].emit([]);
-        await screenshot_custom(this.tickTime);
+    async clickCreate() {
+        for (let i=0; i<3; i++) {
+            simulateTouchStart(0, 0, this.createButton!);
+            simulateTouchEnd(this.createButton!);
+            await screenshot_custom(40);
+        }
     }
-    
 
     @testCase
-    async clickMoveButton(){
-        //TODO: testlist enter test case can't testing by automation
-        this.createButton.clickEvents[0].emit([]);
-        await waitForFrames(this.tickTime);
-        this.moveButton.clickEvents[0].emit([]);
-        await waitForFrames(this.tickTime);
-        await screenshot_custom(this.tickTime);
+    async clickDelButton() {
+        simulateTouchStart(0, 0, this.delButton!);
+        simulateTouchEnd(this.delButton!);
+        await screenshot_custom(40);
+    }
+
+    @testCase
+    async clickMoveButton() {
+        simulateTouchStart(0, 0, this.moveButton!);
+        simulateTouchEnd(this.moveButton!);
+        await screenshot_custom(40);
     }
 }
