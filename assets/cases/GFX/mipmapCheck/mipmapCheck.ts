@@ -40,6 +40,8 @@ export class MipmapCheck extends Component {
     allDone = false;
     ready = false;
 
+    checkTimes = 0;
+
     start () {
         this.scheduleOnce(() => {
             this.memeryBefore = cc.director.root.device.memoryStatus.textureSize;
@@ -51,10 +53,9 @@ export class MipmapCheck extends Component {
         }, 1);
     }
 
-
-
     checkMemory () {
         this.memeryAfter = cc.director.root.device.memoryStatus.textureSize;
+        console.log(`memory: before - ${this.memeryBefore} | after - ${this.memeryAfter}`);
         if (this.memeryAfter === this.memeryBefore) {
             this.showTip!.string = 'Memory Check Pass!';
         } else {
@@ -68,12 +69,13 @@ export class MipmapCheck extends Component {
         if (this.allDone || !this.ready) {
             return;
         }
-        if (!this.textureUsed) {
+        if (!this.textureUsed && this.checkTimes < 10) {
             this.checkMemory();
             return;
         }
         if (this.moveCount >= 2) {
             this.mat!.setProperty('albedoMap', null);
+            this.textureUsed!.getGFXTexture()!.destroy();
             this.textureUsed?.destroy();
             this.textureUsed = null;
             return;
