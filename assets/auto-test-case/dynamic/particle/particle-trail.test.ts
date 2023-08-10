@@ -5,7 +5,7 @@ import { screenshot_custom_by_wait } from '../common/utils';
 
 @testClass('ParticleTrail', 'particle-trail')
 export class ParticleTrail {
-    private df = 60;
+    private df = 79;
 
     @beforeClass
     async initData() {
