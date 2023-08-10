@@ -19,14 +19,19 @@ export class Particle2dSpriteChange {
             await screenshot_custom_by_wait(this.df);
         }
 
-        UISimulate.clickButton(find('Canvas/Button')?.getComponent(Button)!);
+        const button = find('Canvas/Button')?.getComponent(Button)!
+
+        UISimulate.clickButton(button);
         for (let i=0; i<3; i++) {
             await screenshot_custom_by_wait(this.df);
         }
 
-        UISimulate.clickButton(find('Canvas/Button')?.getComponent(Button)!);
+        UISimulate.clickButton(button);
         for (let i=0; i<3; i++) {
             await screenshot_custom_by_wait(this.df);
         }
+
+        UISimulate.clickButton(button);
+        await screenshot_custom_by_wait(this.df);
     }
 }
