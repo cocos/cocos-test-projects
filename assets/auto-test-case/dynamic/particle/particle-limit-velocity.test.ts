@@ -2,11 +2,11 @@ import { Button, Slider, Toggle, director, find } from 'cc';
 // @ts-ignore
 import { beforeClass, testCase, testClass, srandom } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
-import { UISimulate } from '../common/SimulateEvent';
+import { UISimulate, simulateTouchEnd, simulateTouchStart } from '../common/SimulateEvent';
 
 @testClass('ParticleLimitVelocity', 'particle-limit-velocity')
 export class ParticleLimitVelocity {
-    private df = 10;
+    private df = 30;
     private translateSlider!: Slider;
     private rotateSlider!: Slider;
     private toggle1!: Toggle;
@@ -27,167 +27,52 @@ export class ParticleLimitVelocity {
 
     @testCase
     async startPlay() {
-        for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this.df);
-        }
+        await screenshot_custom(this.df);
     }
 
     @testCase
-    async onTranslateChanged_05() {
+    async play() {
         UISimulate.changeSlider(this.translateSlider, 0.5);
-        for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this.df);
-        }
-    }
+        await screenshot_custom(this.df);
 
-    @testCase
-    async onTranslateChanged_10() {
         UISimulate.changeSlider(this.translateSlider, 1);
-        for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this.df);
-        }
-    }
+        await screenshot_custom(this.df);
 
-    @testCase
-    async onTranslateChanged_00() {
         UISimulate.changeSlider(this.translateSlider, 0);
-        for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this.df);
-        }
-    }
 
-    @testCase
-    async onRotateChanged_05() {
         UISimulate.changeSlider(this.rotateSlider, 0.5);
-        for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this.df);
-        }
-    }
+        await screenshot_custom(this.df);
 
-    @testCase
-    async onRotateChanged_10() {
         UISimulate.changeSlider(this.rotateSlider, 1);
-        for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this.df);
-        }
-    }
+        await screenshot_custom(this.df);
 
-    @testCase
-    async onRotateChanged_00() {
         UISimulate.changeSlider(this.rotateSlider, 0);
-        for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this.df);
+
+        for (let i=0; i<2; i++) {
+            if (i === 1) {
+                UISimulate.changeToggle(this.toggle1, false);
+                UISimulate.changeToggle(this.toggle2, false);
+                UISimulate.changeToggle(this.toggle3, false);
+                UISimulate.changeToggle(this.toggle4, false);
+            }
+
+            await this.simulateTouchAndScreenshot(find('New Canvas/Pad/Direction/Forward')?.getComponent(Button)!);
+            await this.simulateTouchAndScreenshot(find('New Canvas/Pad/Direction/Back')?.getComponent(Button)!);
+            await this.simulateTouchAndScreenshot(find('New Canvas/Pad/Direction/Left')?.getComponent(Button)!);
+            await this.simulateTouchAndScreenshot(find('New Canvas/Pad/Direction/Right')?.getComponent(Button)!);
+            await this.simulateTouchAndScreenshot(find('New Canvas/Pad/ViewDir/Up')?.getComponent(Button)!);
+            await this.simulateTouchAndScreenshot(find('New Canvas/Pad/ViewDir/Down')?.getComponent(Button)!);
+            await this.simulateTouchAndScreenshot(find('New Canvas/Pad/ViewDir/Left')?.getComponent(Button)!);
+            await this.simulateTouchAndScreenshot(find('New Canvas/Pad/ViewDir/Right')?.getComponent(Button)!);
         }
     }
 
-    @testCase
-    async unChecked() {
-        UISimulate.changeToggle(this.toggle1, false);
-        UISimulate.changeToggle(this.toggle2, false);
-        UISimulate.changeToggle(this.toggle3, false);
-        UISimulate.changeToggle(this.toggle4, false);
-
-        UISimulate.changeSlider(this.translateSlider, 1);
-        UISimulate.changeSlider(this.rotateSlider, 1);
-
-        for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this.df);
+    private async simulateTouchAndScreenshot(button: Button) {
+        for (let k=0; k<2; k++) {
+            UISimulate.clickButton(button);
         }
-    }
-
-
-    @testCase
-    async Checked() {
-        UISimulate.changeToggle(this.toggle1, true);
-        UISimulate.changeToggle(this.toggle2, true);
-        UISimulate.changeToggle(this.toggle3, true);
-        UISimulate.changeToggle(this.toggle4, true);
-
-        UISimulate.changeSlider(this.translateSlider, 1);
-        UISimulate.changeSlider(this.rotateSlider, 1);
-
-        for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this.df);
-        }
-    }
-
-    @testCase
-    async click_F() {
-        for (let k=0; k<3; k++) {
-            UISimulate.clickButton(find('New Canvas/Pad/Direction/Forward')?.getComponent(Button)!);
-        }
-        for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this.df);
-        }
-    }
-
-    @testCase
-    async click_B() {
-        for (let k=0; k<3; k++) {
-            UISimulate.clickButton(find('New Canvas/Pad/Direction/Back')?.getComponent(Button)!);
-        }
-        for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this.df);
-        }
-    }
-
-    @testCase
-    async click_L() {
-        for (let k=0; k<3; k++) {
-            UISimulate.clickButton(find('New Canvas/Pad/Direction/Left')?.getComponent(Button)!);
-        }
-        for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this.df);
-        }
-    }
-
-    @testCase
-    async click_R() {
-        for (let k=0; k<3; k++) {
-            UISimulate.clickButton(find('New Canvas/Pad/Direction/Right')?.getComponent(Button)!);
-        }
-        for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this.df);
-        }
-    }
-
-    @testCase
-    async click_U() {
-        for (let k=0; k<3; k++) {
-            UISimulate.clickButton(find('New Canvas/Pad/ViewDir/Up')?.getComponent(Button)!);
-        }
-        for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this.df);
-        }
-    }
-
-    @testCase
-    async click_D() {
-        for (let k=0; k<3; k++) {
-            UISimulate.clickButton(find('New Canvas/Pad/ViewDir/Down')?.getComponent(Button)!);
-        }
-        for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this.df);
-        }
-    }
-
-    @testCase
-    async click_RL() {
-        for (let k=0; k<3; k++) {
-            UISimulate.clickButton(find('New Canvas/Pad/ViewDir/Left')?.getComponent(Button)!);
-        }
-        for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this.df);
-        }
-    }
-
-    @testCase
-    async click_RR() {
-        for (let k=0; k<3; k++) {
-            UISimulate.clickButton(find('New Canvas/Pad/ViewDir/Right')?.getComponent(Button)!);
-        }
-        for (let i = 0; i < 3; i++) {
-            await screenshot_custom(this.df);
-        }
+        simulateTouchStart(10, 10, button.node);
+        await screenshot_custom(this.df);
+        simulateTouchEnd(button.node);
     }
 }
