@@ -7,7 +7,7 @@ import { LoadResDirExample } from '../../../cases/scripting/asset_loading/LoadRe
 @testClass('LoadResDir', 'LoadResDir')
 export class LoadResDir {
     private caseScript!: LoadResDirExample;
-    private df = 2;
+    private df = 10;
 
     @beforeClass
     initData() {
@@ -25,7 +25,7 @@ export class LoadResDir {
         await screenshot_custom(this.df);
 
         this.caseScript.scrollView.scrollToBottom();
-        await screenshot_custom(this.df);
+        await screenshot_custom(this.df * 6);
     }
 
     @testCase
