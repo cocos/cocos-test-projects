@@ -7,7 +7,7 @@ import { FirstPersonCamera } from '../../../shared-res/first-person-camera';
 @testClass('ParticleColor', 'particle-color')
 export class ParticleColor {
     private camera!: Node;
-    private df = 30;
+    private df = 90;
 
     @beforeClass
     async initData() {
@@ -18,7 +18,7 @@ export class ParticleColor {
 
     @testCase
     async startPlay() {
-        for (let i=0; i<6; i++) {
+        for (let i=0; i<8; i++) {
             await screenshot_custom_by_wait(this.df);
         }
     }

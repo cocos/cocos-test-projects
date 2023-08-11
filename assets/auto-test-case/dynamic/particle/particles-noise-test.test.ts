@@ -5,8 +5,6 @@ import { screenshot_custom_by_wait } from '../common/utils';
 
 @testClass('ParticlesNoiseTest', 'particles-noise-test')
 export class ParticlesNoiseTest {
-    private df = 120;
-
     @beforeClass
     async initData() {
         srandom(director.getScene()!.name);
@@ -14,8 +12,9 @@ export class ParticlesNoiseTest {
 
     @testCase
     async startPlay() {
-        for (let i=0; i<3; i++) {
-            await screenshot_custom_by_wait(this.df);
-        }
+        await screenshot_custom_by_wait(15);
+        await screenshot_custom_by_wait(105);
+        await screenshot_custom_by_wait(120);
+        await screenshot_custom_by_wait(120);
     }
 }

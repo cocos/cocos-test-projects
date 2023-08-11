@@ -21,7 +21,9 @@ export class AudioBuffer {
     find('Canvas/Slider')!.getComponent(Slider)!.progress = 1;
     await screenshot_custom_by_wait(this._dt);
     // Simulates the touch traverse event
-    this.onDragMove(-100);
+    this.onDragMove(-600);
+    await screenshot_custom_by_wait(this._dt * 2);
+    this.onDragMove(300);
     await screenshot_custom_by_wait(this._dt * 2);
   }
 
