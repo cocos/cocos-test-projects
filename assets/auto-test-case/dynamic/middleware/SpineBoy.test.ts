@@ -16,13 +16,69 @@ export class SpineBoy {
 
     @testCase
     async startPlay() {
+        await screenshot_custom(this.df);
+
+        this.caseScript.walk();
+    }
+
+
+    @testCase
+    async toggleDebugSlots() {
+        this.caseScript.toggleDebugSlots();
         for (let i = 0; i < 2; i++) {
             await screenshot_custom(this.df);
         };
+        this.caseScript.toggleDebugSlots();
+        await screenshot_custom(this.df);
     }
 
     @testCase
+    async toggleDebugBones() {
+        this.caseScript.toggleDebugBones();
+        for (let i = 0; i < 2; i++) {
+            await screenshot_custom(this.df);
+        };
+        this.caseScript.toggleDebugBones();
+        await screenshot_custom(this.df);
+    }
+
+    @testCase
+    async toggleDebugMesh() {
+        this.caseScript.toggleDebugMesh();
+        for (let i = 0; i < 2; i++) {
+            await screenshot_custom(this.df);
+        }
+        this.caseScript.toggleDebugMesh();
+        await screenshot_custom(this.df);
+    }
+
+    @testCase
+    async toggleUseTint() {
+        this.caseScript.toggleUseTint();
+        await screenshot_custom(this.df);
+        this.caseScript.toggleUseTint();
+        await screenshot_custom(this.df);
+    }
+
+    @testCase
+    async toggleTimeScale() {
+        this.caseScript.toggleTimeScale();
+        for (let i = 0; i < 2; i++) {
+            await screenshot_custom(30);
+        };
+        this.caseScript.toggleTimeScale();
+    }
+
+
+
+
+    @testCase
     async stop() {
+        this.caseScript.toggleDebugSlots();
+        this.caseScript.toggleDebugBones();
+        this.caseScript.toggleDebugMesh();
+        this.caseScript.toggleUseTint();
+
         this.caseScript.stop();
         for (let i = 0; i < 2; i++) {
             await screenshot_custom(this.df);
@@ -40,7 +96,7 @@ export class SpineBoy {
     @testCase
     async run() {
         this.caseScript.run();
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 2; i++) {
             await screenshot_custom(this.df);
         };
     }
@@ -49,7 +105,7 @@ export class SpineBoy {
     async jump() {
         this.caseScript.jump();
         for (let i = 0; i < 2; i++) {
-            await screenshot_custom(this.df);
+            await screenshot_custom(30);
         };
     }
 
@@ -57,7 +113,7 @@ export class SpineBoy {
     async shoot() {
         this.caseScript.shoot();
         for (let i = 0; i < 2; i++) {
-            await screenshot_custom(this.df);
+            await screenshot_custom(5);
         };
     }
 
@@ -72,54 +128,10 @@ export class SpineBoy {
     @testCase
     async portal() {
         this.caseScript.portal();
-        for (let i = 0; i < 3; i++) {
-            await screenshot_custom(3 * this.df);
-        };
+        await screenshot_custom(20);
+        await screenshot_custom(20);
+        await screenshot_custom(38);
+        await screenshot_custom(120);
     }
 
-    @testCase
-    async toggleDebugSlots() {
-        this.caseScript.run();
-        this.caseScript.toggleDebugSlots();
-        for (let i = 0; i < 2; i++) {
-            await screenshot_custom(this.df);
-        };
-        this.caseScript.toggleDebugSlots();
-    }
-
-    @testCase
-    async toggleDebugBones() {
-        this.caseScript.toggleDebugBones();
-        for (let i = 0; i < 2; i++) {
-            await screenshot_custom(this.df);
-        };
-        this.caseScript.toggleDebugBones();
-    }
-
-    @testCase
-    async toggleDebugMesh() {
-        this.caseScript.toggleDebugMesh();
-        for (let i = 0; i < 2; i++) {
-            await screenshot_custom(this.df);
-        }
-        this.caseScript.toggleDebugMesh();
-    }
-
-    @testCase
-    async toggleUseTint() {
-        this.caseScript.toggleUseTint();
-        for (let i = 0; i < 2; i++) {
-            await screenshot_custom(this.df);
-        };
-        this.caseScript.toggleUseTint();
-    }
-
-    @testCase
-    async toggleTimeScale() {
-        this.caseScript.toggleTimeScale();
-        for (let i = 0; i < 2; i++) {
-            await screenshot_custom(this.df);
-        };
-        this.caseScript.toggleTimeScale();
-    }
 }
