@@ -23,22 +23,15 @@ export class UIModel {
     }
 
     @testCase
-    async model() {
-        UISimulate.clickButton(this.btnModel);
-        for (let i = 0; i < 2; i++) {
-            await screenshot_custom(this.df);
-        }
-
+    async play() {
         UISimulate.clickButton(this.btnModel);
         await screenshot_custom(this.df);
-    }
 
-    @testCase
-    async particle() {
         UISimulate.clickButton(this.btnParticle);
-        for (let i = 0; i < 2; i++) {
-            await screenshot_custom(this.df);
-        }
+        await screenshot_custom(this.df * 2);
+        
+        UISimulate.clickButton(this.btnModel);
+        await screenshot_custom(this.df);
 
         UISimulate.clickButton(this.btnParticle);
         await screenshot_custom(this.df);
