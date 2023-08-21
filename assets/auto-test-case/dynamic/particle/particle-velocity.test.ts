@@ -26,35 +26,34 @@ export class ParticleVelocity {
     }
 
     @testCase
-    async startPlay() {
-        await screenshot_custom(this.df);
-    }
-
-    @testCase
     async play() {
-        UISimulate.changeSlider(this.translateSlider, 0.5);
-        await screenshot_custom(this.df);
-
-        UISimulate.changeSlider(this.translateSlider, 1);
-        await screenshot_custom(this.df);
-
-        UISimulate.changeSlider(this.translateSlider, 0);
-
-        UISimulate.changeSlider(this.rotateSlider, 0.5);
-        await screenshot_custom(this.df);
-
-        UISimulate.changeSlider(this.rotateSlider, 1);
-        await screenshot_custom(this.df);
-
-        UISimulate.changeSlider(this.rotateSlider, 0);
-
         for (let i=0; i<2; i++) {
             if (i === 1) {
                 UISimulate.changeToggle(this.toggle1, false);
                 UISimulate.changeToggle(this.toggle2, false);
                 UISimulate.changeToggle(this.toggle3, false);
                 UISimulate.changeToggle(this.toggle4, false);
+
+                UISimulate.changeSlider(this.translateSlider, 0);
+                UISimulate.changeSlider(this.rotateSlider, 0);
             }
+
+            await screenshot_custom(this.df);
+
+            UISimulate.changeSlider(this.translateSlider, 0.5);
+            await screenshot_custom(this.df);
+    
+            UISimulate.changeSlider(this.translateSlider, 1);
+            await screenshot_custom(this.df);
+    
+            UISimulate.changeSlider(this.translateSlider, 0);
+            UISimulate.changeSlider(this.rotateSlider, 0.5);
+            await screenshot_custom(this.df);
+    
+            UISimulate.changeSlider(this.rotateSlider, 1);
+            await screenshot_custom(this.df);
+    
+            UISimulate.changeSlider(this.rotateSlider, 0);
 
             await this.simulateTouchAndScreenshot(find('New Canvas/Pad/Direction/Forward')?.getComponent(Button)!);
             await this.simulateTouchAndScreenshot(find('New Canvas/Pad/Direction/Back')?.getComponent(Button)!);
