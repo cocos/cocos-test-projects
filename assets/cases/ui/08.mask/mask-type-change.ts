@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, SpriteFrame, Mask, Label } from 'cc';
+import { _decorator, Component, Node, SpriteFrame, Mask, Label, UITransform } from 'cc';
 const { ccclass, type } = _decorator;
 
 @ccclass('mask_type_change')
@@ -52,6 +52,7 @@ export class mask_type_change extends Component {
                                     mask.type = Mask.Type.SPRITE_STENCIL;
                                     mask.spriteFrame = this.image;
                                     mask.alphaThreshold = 0.1;
+                                    mask.node.getComponent(UITransform)!.setContentSize(100, 100);
                                     this.scheduleOnce(() => {
                                         mask.enabled = false;
                                         this.scheduleOnce(() => {
