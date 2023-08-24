@@ -57,13 +57,16 @@ export class NetworkDownload {
             };
 
             let elapseTime = 0;
-            while (unfinished && elapseTime < 3600) {
+            while (unfinished && elapseTime < 7300) {
                 elapseTime += 300;
                 await waitForFrames(300);
             }
 
             if (unfinished) {
-                console.log('NetworkDownload timeout 60s.');
+                console.log('NetworkDownload timeout 120s.');
+                this.networkDownloadObject!.onProgress = null;
+                this.networkDownloadObject!.onSuccess = null;
+                this.networkDownloadObject!.onError = null;
                 await screenshot_custom();
                 reject();
             }
