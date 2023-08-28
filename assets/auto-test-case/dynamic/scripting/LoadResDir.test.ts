@@ -1,4 +1,4 @@
-import { find } from 'cc';
+import { Label, find } from 'cc';
 // @ts-ignore
 import { testCase, testClass, beforeClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
@@ -22,6 +22,8 @@ export class LoadResDir {
     @testCase
     async onLoadAll() {
         await this.caseScript.onLoadAll();
+        const label = this.caseScript.scrollView.content!.children[0].getComponent(Label)!;
+        label.string = label.string.replace(/https?:\/\/.+packages\/remote\//ig, 'http://localserver:port/planId/jobId/platformIndex/packages/remote/');
         await screenshot_custom(this.df);
 
         this.caseScript.scrollView.scrollToBottom();

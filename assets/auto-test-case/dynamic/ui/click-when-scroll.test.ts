@@ -1,8 +1,8 @@
 // @ts-ignore
 import { testCase, testClass, waitForFrames } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom_by_wait } from '../common/utils';
-import { input, Input, find, Touch, EventTouch, Event, EventMouse } from 'cc';
-import { simulateTouchStart, simulateTouchEnd, simulateMultiTouch, simulateTouchMove } from '../common/SimulateEvent';
+import { find, Button } from 'cc';
+import { simulateTouchStart, simulateTouchEnd, simulateTouchMove, UISimulate } from '../common/SimulateEvent';
 
 @testClass('ClickWhenScroll', 'click-when-scroll')
 export class ClickWhenScroll {
@@ -23,8 +23,7 @@ export class ClickWhenScroll {
                 await waitForFrames(60);
             }
             item = contentNode?.children[i];
-            simulateTouchStart(0, 0, item);
-            simulateTouchEnd(item, 0, 0);
+            UISimulate.clickButton(item!.getComponent(Button)!);
             await screenshot_custom_by_wait(5);
         }
     }

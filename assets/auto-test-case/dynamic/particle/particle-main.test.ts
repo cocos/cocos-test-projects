@@ -1,14 +1,18 @@
-import { find, Button, Vec3 } from 'cc';
+import { find, Button, director } from 'cc';
 // @ts-ignore
-import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
+import { beforeClass, testCase, testClass, srandom } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom_by_wait, mouse_wheel_by_delta } from '../common/utils';
 
-@runScene('particle-main')
-@testClass('ParticleMain')
+@testClass('ParticleMain', 'particle-main')
 export class ParticleMain {
     _delay = 0.3;
     _dt = 30;
 
+    @beforeClass
+    async initData() {
+        srandom(director.getScene()!.name);
+    }
+  
     @testCase
     async startPlay() {
         // begin start to screenshot
