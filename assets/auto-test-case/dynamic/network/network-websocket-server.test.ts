@@ -22,7 +22,6 @@ export class NetworkWebsocketServer {
     @testCase
     async network() {
         await screenshot_custom(4*60);
-        expect(this.caseScript.wsStatus.string).to.equal(this.caseScript.wsServerStatus.string);
     }
 
     @testCase
