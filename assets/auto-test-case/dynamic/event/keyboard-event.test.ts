@@ -25,6 +25,8 @@ export class keyboardEvent {
 
       caseScript.onKeyboardUp(eventKeyUp);
       await screenshot_custom(this._dt);
+
+      await screenshot_custom(this._dt);
     }
 
 }

@@ -1,137 +1,108 @@
-import { find } from 'cc';
+import { EventHandler, Slider, Toggle, find } from 'cc';
 // @ts-ignore
-import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
+import { beforeClass, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
+import { UISimulate } from '../common/SimulateEvent';
 
 @testClass('Material', 'material')
 export class Material {
     _dt = 5;
+    cullFaceToggle!: Toggle;
+    albedoToggle!: Toggle;
+    albedoSlider!: Slider;
+    metallicToggle!: Toggle;
+    alphaTestToggle!: Toggle;
+    metallicSlider!: Slider;
+    alphaThresholdSlider!: Slider;
 
+    @beforeClass
+    async initData() {
+        this.cullFaceToggle = find('Canvas/CullFace/Toggle')?.getComponent(Toggle)!;
+        this.albedoToggle = find('Canvas/Albedo/Toggle')?.getComponent(Toggle)!;
+        this.albedoSlider = find('Canvas/Albedo/manual albedo/Slider')?.getComponent(Slider)!;
+        this.metallicToggle = find('Canvas/Metallic/Toggle')?.getComponent(Toggle)!;
+        this.metallicSlider = find('Canvas/Metallic/manual metallic/Slider')?.getComponent(Slider)!;
+        this.alphaTestToggle = find('Canvas/AlphaTest/Toggle')?.getComponent(Toggle)!;
+        this.alphaThresholdSlider = find('Canvas/AlphaTest/manual alpha test/Slider')?.getComponent(Slider)!;
+    }
+    
     @testCase
     async startPlay() {
         await screenshot_custom(0);
     }
 
-
-    @testCase
-    async cullFrontFace_FRONT() {
-        // @ts-ignore
-        find('Sphere').getComponent('MaterialTest')._material.overridePipelineStates({
-            rasterizerState: {
-                cullMode: 1,
-            }
-        });
-        await screenshot_custom(this._dt);
-    }
-
-    @testCase
-    async cullFrontFace_BACK() {
-        // @ts-ignore
-        find('Sphere').getComponent('MaterialTest')._material.overridePipelineStates({
-            rasterizerState: {
-                cullMode: 2,
-            }
-        });
-        await screenshot_custom(this._dt);
-    }
-
     @testCase
     async useAlbedoMap_False() {
-        // @ts-ignore
-        find('Sphere').getComponent('MaterialTest')._material.recompileShaders({ USE_ALBEDO_MAP: false });
+        UISimulate.changeToggle(this.albedoToggle, false);
+        await screenshot_custom(this._dt);
+
+        UISimulate.changeSlider(this.albedoSlider, 0);
+        await screenshot_custom(this._dt);
+
+        UISimulate.changeSlider(this.albedoSlider, 0.5);
+        await screenshot_custom(this._dt);
+
+        UISimulate.changeSlider(this.albedoSlider, 1);
         await screenshot_custom(this._dt);
     }
 
     @testCase
     async useAlbedoMap_True() {
-        // @ts-ignore
-        find('Sphere').getComponent('MaterialTest')._material.recompileShaders({ USE_ALBEDO_MAP: true });
+        UISimulate.changeToggle(this.albedoToggle, true);
         await screenshot_custom(this._dt);
     }
 
-    // @testCase
-    // async setAlbedo_0_0() {
-    //     await screenshot_custom(this._dt);
-    // }
-
-    // @testCase
-    // async setAlbedo_0_5() {
-    //     await screenshot_custom(this._dt);
-    // }
-
-    // @testCase
-    // async setAlbedo_1_0() {
-    //     await screenshot_custom(this._dt);
-    // }
-
     @testCase
     async useMetallicMap_False() {
-        // @ts-ignore
-        find('Sphere').getComponent('MaterialTest')._material.recompileShaders({ USE_METALLIC_ROUGHNESS_MAP: false });
+        UISimulate.changeToggle(this.metallicToggle, false);
+        await screenshot_custom(this._dt);
+
+        UISimulate.changeSlider(this.metallicSlider, 0);
+        await screenshot_custom(this._dt);
+
+        UISimulate.changeSlider(this.metallicSlider, 0.5);
+        await screenshot_custom(this._dt);
+
+        UISimulate.changeSlider(this.metallicSlider, 1);
         await screenshot_custom(this._dt);
     }
 
     @testCase
     async useMetallicMap_True() {
-        // @ts-ignore
-        find('Sphere').getComponent('MaterialTest')._material.recompileShaders({ USE_METALLIC_ROUGHNESS_MAP: true });
+        UISimulate.changeToggle(this.metallicToggle, true);
         await screenshot_custom(this._dt);
     }
 
     @testCase
-    async setMetallic_00() {
-        // @ts-ignore
-        find('Sphere').getComponent('MaterialTest')._material.setProperty('metallic', 0)
+    async useAlphaTest_True() {
+        UISimulate.changeToggle(this.alphaTestToggle, true);
         await screenshot_custom(this._dt);
-    }
 
-    @testCase
-    async setMetallic_05() {
-        // @ts-ignore
-        find('Sphere').getComponent('MaterialTest')._material.setProperty('metallic', 0.5)
+        UISimulate.changeSlider(this.alphaThresholdSlider, 0);
         await screenshot_custom(this._dt);
-    }
 
-    @testCase
-    async setMetallic_10() {
-        // @ts-ignore
-        find('Sphere').getComponent('MaterialTest')._material.setProperty('metallic', 1)
+        UISimulate.changeSlider(this.alphaThresholdSlider, 0.5);
+        await screenshot_custom(this._dt);
+
+        UISimulate.changeSlider(this.alphaThresholdSlider, 1);
         await screenshot_custom(this._dt);
     }
 
     @testCase
     async useAlphaTest_False() {
-        // @ts-ignore
-        find('Sphere').getComponent('MaterialTest')._material.recompileShaders({ USE_ALPHA_TEST: false })
-        await screenshot_custom(this._dt);
-    }
-
-
-    @testCase
-    async useAlphaTest_True() {
-        // @ts-ignore
-        find('Sphere').getComponent('MaterialTest')._material.recompileShaders({ USE_ALPHA_TEST: true })
+        UISimulate.changeToggle(this.alphaTestToggle, false);
         await screenshot_custom(this._dt);
     }
 
     @testCase
-    async setAlphaThreshold_00() {
-        // @ts-ignore
-        find('Sphere').getComponent('MaterialTest')._material.setProperty('alphaThreshold', 0)
+    async cullFrontFace_FRONT() {
+        UISimulate.changeToggle(this.cullFaceToggle, true);
         await screenshot_custom(this._dt);
     }
 
     @testCase
-    async setAlphaThreshold_05() {
-        // @ts-ignore
-        find('Sphere').getComponent('MaterialTest')._material.setProperty('alphaThreshold', 0.5)
-        await screenshot_custom(this._dt);
-    }
-
-    @testCase
-    async setAlphaThreshold_10() {
-        // @ts-ignore
-        find('Sphere').getComponent('MaterialTest')._material.setProperty('alphaThreshold', 1)
+    async cullFrontFace_BACK() {
+        UISimulate.changeToggle(this.cullFaceToggle, false);
         await screenshot_custom(this._dt);
     }
 }

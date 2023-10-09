@@ -1,11 +1,12 @@
 
-import { Component, find, Button } from 'cc';
+import { find, Button } from 'cc';
 // @ts-ignore
-import { runScene, testCase, testClass, waitForFrames, beforeClass, PlatformEnum } from 'db://automation-framework/runtime/test-framework.mjs';
+import { testCase, testClass, beforeClass, PlatformEnum, waitForFrames } from 'db://automation-framework/runtime/test-framework.mjs';
 import { NetworkDownload as NetworkDownloadObj } from '../../../cases/network/NetworkDownload';
 import { screenshot_custom } from '../common/utils';
+import { UISimulate } from '../common/SimulateEvent';
 
-@testClass('NetworkDownload', 'network-download', [PlatformEnum.WEB_DESKTOP, PlatformEnum.WEB_MOBILE, PlatformEnum.WECHATGAME, PlatformEnum.BYTEDANCE_MINI_GAME, PlatformEnum.OPPO_MINI_GAME, PlatformEnum.HUAWEI_QUICK_GAME, PlatformEnum.VIVO_MINI_GAME])
+@testClass('NetworkDownload', 'network-download', [PlatformEnum.WEB_DESKTOP, PlatformEnum.WEB_MOBILE, PlatformEnum.WECHATGAME, PlatformEnum.BYTEDANCE_MINI_GAME, PlatformEnum.OPPO_MINI_GAME, PlatformEnum.HUAWEI_QUICK_GAME, PlatformEnum.VIVO_MINI_GAME, PlatformEnum.XIAOMI_QUICK_GAME])
 export class NetworkDownload {
     tickTime: number = 60;
     networkDownloadButton!: Button | null;
@@ -26,27 +27,46 @@ export class NetworkDownload {
     @testCase
     async clickButton() {
         let count = 0;
-        let tickTimeout = 0;
-        this.networkDownloadButton!.clickEvents[0].emit([]);
-        do {
-            tickTimeout += this.tickTime;
-            await waitForFrames(this.tickTime);
-            console.log('NetworkDownload:', this.networkDownloadObject?.text.string);
-            if (this.networkDownloadObject!.status.string === "status: Success") {
-                console.log('NetworkDownload status: Success');
-                break;
-            } else if (this.networkDownloadObject!.status.string === "status: Error") {
+        let unprogress = true;
+        let unfinished = true;
+        UISimulate.clickButton(this.networkDownloadButton!);
+        return new Promise<void>(async (resolve, reject) => {
+            this.networkDownloadObject!.onProgress = async () => {
+                if (unprogress) {
+                    unprogress = false;
+                    await screenshot_custom();
+                }
+            };
+            this.networkDownloadObject!.onSuccess = async () => {
+                unfinished = false;
+                await screenshot_custom();
+                resolve();
+            };
+            this.networkDownloadObject!.onError = async () => {
                 count += 1;
                 if (count >= 3) {
+                    unfinished = false;
                     console.log('NetworkDownload exit after 3 failed attempts.');
-                    break;
+                    await screenshot_custom();
+                    reject();
+                    return;
                 } else {
-                    tickTimeout = 0;
                     console.log('NetworkDownload status: Error, then retry:', count);
-                    this.networkDownloadButton!.clickEvents[0].emit([]);
+                    UISimulate.clickButton(this.networkDownloadButton!);
                 }
+            };
+
+            let elapseTime = 0;
+            while (unfinished && elapseTime < 3600) {
+                elapseTime += 300;
+                await waitForFrames(300);
             }
-        } while (tickTimeout < 7200)
-        await screenshot_custom();
+
+            if (unfinished) {
+                console.log('NetworkDownload timeout 60s.');
+                await screenshot_custom();
+                reject();
+            }
+        });
     }
 }
