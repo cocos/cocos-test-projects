@@ -8,8 +8,6 @@ export class VideoPlayerCtrl extends Component {
     @type(VideoPlayer)
     public videoPlayer: VideoPlayer = null!;
     @type(Label)
-    public eventType: Label = null!;
-    @type(Label)
     public playbackRate: Label = null!;
     @type(Label)
     public stayOnBottom: Label = null!;
@@ -43,7 +41,6 @@ export class VideoPlayerCtrl extends Component {
                 break;
         }
         this.platform.string = `platform: ${sys.platform}`;
-        this.eventType.string = 'nothing';
     }
 
     onStayOnBottom () {
@@ -65,32 +62,33 @@ export class VideoPlayerCtrl extends Component {
 
     onPlayLocalVideo () {
         this.videoPlayer.resourceType = VideoPlayer.ResourceType.LOCAL;
-        if (this.videoPlayer.clip === this.videClip) {
-            this.videoPlayer.play();
-        }
-        else {
+        if (this.videoPlayer.clip !== this.videClip){
             this.videoPlayer.clip = this.videClip;
+        }
+        if (!this.videoPlayer.isPlaying) {
+            this.videoPlayer.play();
         }
     }
 
     onPlayRemoteVideo () {
         this.videoPlayer.resourceType = VideoPlayer.ResourceType.REMOTE;
-        const remoteURL = 'http://download.cocos.org/CocosTest/test-case/movie.mp4';
-        if (this.videoPlayer.remoteURL === remoteURL) {
-            this.videoPlayer.play();
-        }
-        else {
+        const remoteURL = 'https://download.cocos.org/CocosTest/test-case/movie.mp4';
+        if (this.videoPlayer.remoteURL !== remoteURL) {
             this.videoPlayer.remoteURL = remoteURL;
+        }
+        if (!this.videoPlayer.isPlaying) {  
+            this.videoPlayer.play();
         }
     }
 
     onEventType (target: VideoPlayerCtrl, type: string) {
-        this.eventType.string = type;
         switch (type) {
-            case VideoPlayer.EventType.READY_TO_PLAY:
-            case VideoPlayer.EventType.META_LOADED:
-                this.videoPlayer.play();
+            case VideoPlayer.EventType.READY_TO_PLAY: {
+                if (!this.videoPlayer.isPlaying) {  
+                    this.videoPlayer.play();
+                }
                 break;
+            }
         }
     }
 

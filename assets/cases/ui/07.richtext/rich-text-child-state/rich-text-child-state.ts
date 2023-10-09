@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, RichText } from 'cc';
+import { _decorator, Component, EventTouch, Node, RichText } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('RichTextChildState')
@@ -19,8 +19,8 @@ export class RichTextChildState extends Component {
         this._richText.node.active = false;
     }
 
-    public onUpdateContent (content?: string) {
-        this._richText.string = content ? content: Math.random().toString();
+    public onUpdateContent (event: EventTouch | null, content?: string) {
+        this._richText.string = content || Math.random().toString();
     }
 
 }

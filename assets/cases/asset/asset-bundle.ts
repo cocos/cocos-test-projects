@@ -13,8 +13,6 @@ export class AssetBundle extends Component {
     @property({type: [Label]})
     public labels: Array<Label> = [];
 
-    private _audioSource: AudioSource = null!;
-
     private _isLoading: Boolean = false;
 
     // LIFE-CYCLE CALLBACKS:
@@ -97,7 +95,6 @@ export class AssetBundle extends Component {
             let component = node.addComponent(AudioSource);
             component.clip = asset!;
             component.play();
-            this._audioSource = component;
             this.loadTips.string = "播放音乐";
             this.labels[2].string = "已加载";
             this.showWindow.addChild(node);
@@ -163,9 +160,7 @@ export class AssetBundle extends Component {
 
 
     _onClear () {
+        this.showWindow.destroyAllChildren();
         this.showWindow.removeAllChildren();
-        if (this._audioSource && this._audioSource instanceof AudioSource) {
-            this._audioSource.stop();
-        }
     }
 }

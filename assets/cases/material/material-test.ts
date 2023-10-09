@@ -16,13 +16,15 @@ export class MaterialTest extends Component {
     public manualAlphaTest: Node = null!;
 
     private _material: Material = null!;
+    private _startFrames: number = 0;
 
     start () {
         this._material = this.node.getComponent(MeshRenderer)!.material!;
+        this._startFrames = director.getTotalFrames();
     }
 
     update () {
-        this.node.setRotationFromEuler(0, director.getTotalFrames() * 0.1, 0);
+        this.node.setRotationFromEuler(0, (director.getTotalFrames() - this._startFrames) * 0.1, 0);
     }
 
     // callbacks
@@ -30,6 +32,9 @@ export class MaterialTest extends Component {
     useAlbedoMap (e: Toggle) {
         this._material.recompileShaders({ USE_ALBEDO_MAP: e.isChecked });
         this.manualAlbedo.active = !e.isChecked;
+        if (e.isChecked) {
+            this._material.setProperty('albedo', Color.WHITE.clone());
+        }
     }
 
     useMetallicMap (e: Toggle) {
