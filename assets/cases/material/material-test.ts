@@ -32,6 +32,9 @@ export class MaterialTest extends Component {
     useAlbedoMap (e: Toggle) {
         this._material.recompileShaders({ USE_ALBEDO_MAP: e.isChecked });
         this.manualAlbedo.active = !e.isChecked;
+        if (e.isChecked) {
+            this._material.setProperty('albedo', Color.WHITE.clone());
+        }
     }
 
     useMetallicMap (e: Toggle) {

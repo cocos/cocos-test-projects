@@ -17,7 +17,7 @@ export class WidgetDestroy extends Component {
 
     persistRootNodeWidgetCount = 0;
 
-    onLoad(): void {
+    start(): void {
         let persistRootNode = find("backRoot");
         if (persistRootNode) {
             let widgetArr = persistRootNode.getComponentsInChildren(Widget);

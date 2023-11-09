@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Prefab, instantiate, Widget, Sprite, Color, Texture2D, SpriteFrame, Label, UITransform, random } from "cc";
+import { _decorator, Component, Node, Prefab, instantiate, Widget, Sprite, Color, Texture2D, SpriteFrame, Label, UITransform } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("WidgetPreformance")
@@ -29,17 +29,17 @@ export class WidgetPreformance extends Component {
             this.nodeA.addChild(child);
             const childWidgetComp = child.getComponent(Widget)!;
             childWidgetComp.isAlignTop = true;
-            let bol = arr[Math.floor(random() * arr.length)];
+            let bol = arr[Math.floor(Math.random() * arr.length)];
             childWidgetComp.isAlignLeft = bol;
-            bol = arr[Math.floor(random() * arr.length)];
+            bol = arr[Math.floor(Math.random() * arr.length)];
             childWidgetComp.isAlignBottom = true;
             childWidgetComp.isAlignRight = bol;
             childWidgetComp.top = 0;
-            childWidgetComp.left = random() * 200;
+            childWidgetComp.left = Math.random() * 200;
             childWidgetComp.bottom = 0;
-            childWidgetComp.right = random() * 150;
+            childWidgetComp.right = Math.random() * 150;
             const renderComp = child.getComponent(Sprite)!;
-            renderComp.color = new Color(random() * 255, random() * 255, random() * 255, 255);
+            renderComp.color = new Color(Math.random() * 255, Math.random() * 255, Math.random() * 255, 255);
         }
 
         const uiTrans = this.nodeA.getComponent(UITransform)!;

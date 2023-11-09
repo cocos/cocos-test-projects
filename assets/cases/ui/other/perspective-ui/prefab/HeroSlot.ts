@@ -1,8 +1,8 @@
-import { _decorator, Component, Label, random, Sprite, SpriteFrame } from "cc";
+import { _decorator, Component, Label, Sprite, SpriteFrame } from "cc";
 const { ccclass, property } = _decorator;
 
 const getRandomInt = function (min: number, max: number) {
-    var ratio = random();
+    var ratio = Math.random();
     return min + Math.floor((max - min) * ratio);
 };
 
