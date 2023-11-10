@@ -1,16 +1,16 @@
-import { find } from 'cc';
 // @ts-ignore
-import { runScene, testCase, testClass, sleep } from 'db://automation-framework/runtime/test-framework.mjs';
+import { beforeClass, testCase, testClass, srandom } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../dynamic/common/utils';
 
-@runScene('perspective-ui')
-//@testClass('Perspectiveui')
+@testClass('Perspectiveui', 'perspective-ui')
 export class Perspectiveui {
-    _dt = 10;
+    @beforeClass
+    async initData() {
+        srandom('perspective-ui');
+    }
 
     @testCase
-    async start(){
-        await sleep(0.5)
-        await screenshot_custom(this._dt);
+    async start() {
+        await screenshot_custom(2);
     }
 }

@@ -1,65 +1,46 @@
-import { find, Size, view } from 'cc';
+import { Label, find } from 'cc';
 // @ts-ignore
-import { runScene, sleep, testCase, testClass, beforeClass } from 'db://automation-framework/runtime/test-framework.mjs';
+import { testCase, testClass, beforeClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
+import { LoadResDirExample } from '../../../cases/scripting/asset_loading/LoadResDir/LoadResDir_example';
 
-@runScene('LoadResDir')
-@testClass('LoadResDir')
+@testClass('LoadResDir', 'LoadResDir')
 export class LoadResDir {
-    _dt = 135;
-    canvasSize!: Size;
-    width: number = 1197.5;
-    height: number = 797.5;
+    private caseScript!: LoadResDirExample;
+    private df = 10;
 
     @beforeClass
     initData() {
-        this.canvasSize = view.getCanvasSize();
-        this.width =  this.canvasSize.width;
-        this.height = this.canvasSize.height
+        this.caseScript = find('Canvas')?.getComponent(LoadResDirExample)!;
     }
+    
     @testCase
     async startPlay() {
-        await screenshot_custom(this._dt);
+        await screenshot_custom(this.df);
     }
 
     @testCase
     async onLoadAll() {
-        // @ts-ignore
-        find('Canvas').getComponent('LoadResDirExample').onLoadAll();
-        await screenshot_custom(this._dt);
+        await this.caseScript.onLoadAll();
+        const label = this.caseScript.scrollView.content!.children[0].getComponent(Label)!;
+        label.string = label.string.replace(/https?:\/\/.+packages\/remote\//ig, 'http://localserver:port/planId/jobId/platformIndex/packages/remote/');
+        await screenshot_custom(this.df);
 
-        // @ts-ignore
-        find('Canvas/ScrollView').getComponent('cc.ScrollView').content.position = { x: -this.width/4.6, y: this.height/1.14, z: 0 }
-        await screenshot_custom(this._dt);
-        // @ts-ignore
-        find('Canvas/ScrollView').getComponent('cc.ScrollView').content.position = { x: -this.width/4.6, y: this.height/0.68, z: 0 }
-        await screenshot_custom(this._dt);
-        // @ts-ignore
-        find('Canvas/ScrollView').getComponent('cc.ScrollView').content.position = { x: -this.width/4.6, y: this.height/0.38, z: 0 }
-        await screenshot_custom(this._dt);
-        // @ts-ignore
-        find('Canvas/ScrollView').getComponent('cc.ScrollView').content.position = { x: -this.width/4.6, y: this.height/0.315, z: 0 }
-        await screenshot_custom(this._dt);
-        // @ts-ignore
-        find('Canvas/ScrollView').getComponent('cc.ScrollView').content.position = { x: -this.width/4.6, y:  this.height/0.26, z: 0 }
-        await screenshot_custom(this._dt);
-        // @ts-ignore
-        find('Canvas/ScrollView').getComponent('cc.ScrollView').content.position = { x: -this.width/4.6, y: this.height/0.26, z: 0 }
-        await screenshot_custom(this._dt);
+        this.caseScript.scrollView.scrollToBottom();
+        await screenshot_custom(this.df * 6);
     }
 
     @testCase
     async onLoadSpriteFrameAll() {
-        // @ts-ignore
-        find('Canvas').getComponent('LoadResDirExample').onLoadSpriteFrameAll();
-        await screenshot_custom(this._dt);
+        this.caseScript.onClearAll();
+
+        await this.caseScript.onLoadSpriteFrameAll();
+        await screenshot_custom(this.df);
     }
 
     @testCase
     async onClearAll() {
-        // @ts-ignore
-        find('Canvas').getComponent('LoadResDirExample').onClearAll();
-        await screenshot_custom(this._dt);
+        this.caseScript.onClearAll();
+        await screenshot_custom(this.df);
     }
-
 }

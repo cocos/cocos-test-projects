@@ -1,13 +1,11 @@
 // @ts-ignore
-import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
-import { screenshot_custom } from '../common/utils';
+import { testCase, testClass, waitForFrames, captureOneImage } from 'db://automation-framework/runtime/test-framework.mjs';
 
-@runScene('label-cacheMode-color')
-//@testClass('LabelCacheModeColor')
+@testClass('LabelCacheModeColor', 'label-cacheMode-color')
 export class LabelCacheModeColor {
-
     @testCase
     async startPlay() {
-        await screenshot_custom();
+        await waitForFrames(5);
+        await captureOneImage();
     }
 }
