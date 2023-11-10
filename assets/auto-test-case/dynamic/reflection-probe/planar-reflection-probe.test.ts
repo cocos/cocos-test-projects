@@ -2,15 +2,14 @@
 import { runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
 import { screenshot_custom } from '../common/utils';
 
-@runScene('planar-reflection-probe')
-@testClass('planarReflectionProbe')
+@testClass('planarReflectionProbe', 'planar-reflection-probe')
 export class planarReflectionProbe {
-    _dt = 20;
+    private df = 20;
 
     @testCase
     async start() {
-      await screenshot_custom(this._dt);
-      await screenshot_custom(this._dt);
-      await screenshot_custom(this._dt);
+        await screenshot_custom(this.df);
+        await screenshot_custom(this.df);
+        await screenshot_custom(this.df);
     }
 }

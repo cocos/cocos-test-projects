@@ -1,111 +1,50 @@
 // @ts-ignore
-import { runScene, sleep, testCase, testClass, waitForNextFrame, captureOneImage } from 'db://automation-framework/runtime/test-framework.mjs';
+import { beforeClass, testCase, testClass, expect } from 'db://automation-framework/runtime/test-framework.mjs';
+import { screenshot_custom_by_wait } from '../dynamic/common/utils';
+import { Button, director, find, Toggle } from 'cc';
+import { UISimulate } from '../dynamic/common/SimulateEvent';
 
-@runScene('static-batching')
-@testClass('StaticBatching')
+@testClass('StaticBatching', 'static-batching')
 export class StaticBatching {
+    private addButton!: Button;
+    private reduceButton!: Button;
+    private batchToggle!: Toggle;
+    private df = 60;
+
+    @beforeClass
+    async initData() {
+        this.addButton = find('New Canvas/batchButton/add')!.getComponent(Button) as Button;
+        this.reduceButton = find('New Canvas/batchButton/reduce')!.getComponent(Button) as Button;
+        this.batchToggle = find('New Canvas/check/Toggle')!.getComponent(Toggle) as Toggle;
+    }
 
     @testCase
     async startPlay() {
-        await waitForNextFrame();
-        await captureOneImage();
+        await screenshot_custom_by_wait(1);
     }
 
-    // _dt = 10
-    // _delay = 0.5
-    // _delayMax=1
+    @testCase
+    async add() {
+        const drawcall1 = director.root?.device.numDrawCalls;
+        UISimulate.changeToggle(this.batchToggle, true);
+        await screenshot_custom_by_wait(this.df);
+        const drawcall2 = director.root?.device.numDrawCalls;
+        expect(drawcall2).to.lessThan(drawcall1! * 0.5, `Click the batch button and the number of drawcalls is not significantly reduced! Before: ${drawcall1} After: ${drawcall2}`);
+        
+        for (let i=0; i<9; i++) {
+            UISimulate.clickButton(this.addButton);
+            await screenshot_custom_by_wait(this.df + i * 10);
+        }
+    }
 
+    @testCase
+    async reduce() {
+        for (let i=9; i>0; i--) {
+            UISimulate.clickButton(this.reduceButton);
+            await screenshot_custom_by_wait(this.df + i * 10);
+        }
 
-    // @testCase
-    // async startPlay() {
-    //     await screenshot_custom(this._dt)
-    // }
-
-
-    // @testCase
-    // async maxBoxes() {
-    //     for(let i=0;i<5;i++){
-    //         if(sys.platform === sys.Platform.WECHAT_GAME||sys.platform === sys.Platform.IOS||sys.platform === sys.Platform.ANDROID){
-    //             await sleep(this._delayMax);
-    //         }else{
-    //             console.log('【srcipt】_delay 0.5 end')
-    //             await sleep(this._delay);
-    //         }
-    //         if(i===4){
-    //             await screenshot_custom(this._dt)
-    //         }
-    //         console.log('【srcipt】maxBoxes')
-    //         await this.addOrReduce('add');
-    // }
-    //     await screenshot_custom(this._dt)
-    // }
-
- 
-
-    // @testCase
-    // async checkTrueAndReduce() {
-    //     this.checkBox(true);
-    //     for(let i=0;i<2;i++){
-    //         await this.addOrReduce('');
-    //     }
-    //     await screenshot_custom(this._dt)
-    // }
-
-  
-
-    // @testCase
-    // async checkFalseAndReduce() {
-    //     this.checkBox(false);
-    //     for(let i=0;i<2;i++){
-    //         await this.addOrReduce('');
-    //     }
-    //     await screenshot_custom(this._dt)
-    // }
-
-    // @testCase
-    // async checkTrueAndAdd() {
-    //     this.checkBox(true);
-    //     await this.addOrReduce('add');
-    //     await sleep(this._delay);
-    //     await screenshot_custom(this._dt)
-    // }
-
-    // @testCase
-    // async checkFalseAndAdd() {
-    //     this.checkBox(false);
-    //     await this.addOrReduce('add');
-    //     await sleep(this._delay);
-    //     await screenshot_custom(this._dt)
-    // }
-
-    // @testCase
-    // async minBoxes() {
-    //     await sleep(this._delay);
-    //     for(let i=0;i<8;i++){
-    //         await this.addOrReduce('');
-    //     }
-    //     await screenshot_custom(this._dt)
-    // }
-
-    
-    // async addOrReduce(funStr: string) {
-    //     //@ts-ignore
-    //     if (find('Camera')) {
-    //         //@ts-ignore
-    //         let staticBatcher=find('Camera').getComponent('StaticBatcher')
-    //         //@ts-ignore
-    //         let toggle=find('New Canvas/check/Toggle').getComponent('cc.Button')
-    //         //@ts-ignore
-    //        await staticBatcher.setCount(toggle, funStr)
-    //     }
-    // }
-
-    // async checkBox(ischeck: boolean) {
-    //     //@ts-ignore
-    //     if (find('Camera')) {
-    //         //@ts-ignore
-    //         find('Camera').getComponent('StaticBatcher').useBatch(find('New Canvas/check/Toggle').getComponent('cc.Button').isChecked = ischeck)
-    //     }
-    // }
-
+        UISimulate.changeToggle(this.batchToggle, false);
+        await screenshot_custom_by_wait(this.df);
+    }
 }
