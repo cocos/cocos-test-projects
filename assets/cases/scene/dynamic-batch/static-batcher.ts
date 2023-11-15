@@ -1,4 +1,4 @@
-import { _decorator, Component, director, instantiate, Label, Node, Prefab, Slider, BatchingUtility, Toggle, game, Director, Button, profiler } from 'cc';
+import { _decorator, Component, director, instantiate, Label, Node, Prefab, Slider, BatchingUtility, Toggle, game, Director, Button, profiler, random } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('StaticBatcher')
@@ -110,7 +110,7 @@ export class StaticBatcher extends Component {
         node.name = '' + (i * 10 + j) * 10;
         node.setParent(this.root as Node);
         Array.prototype.push.apply(this._nodes, node.children);
-        Array.prototype.push.apply(this._delays, node.children.map(() => Math.random() * Math.PI * 2));
+        Array.prototype.push.apply(this._delays, node.children.map(() => random() * Math.PI * 2));
     }
 
     public useBatch(t: Toggle){

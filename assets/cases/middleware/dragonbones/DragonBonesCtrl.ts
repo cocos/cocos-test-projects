@@ -1,5 +1,5 @@
 
-import { _decorator, Component, Node, dragonBones, macro, Input, input, Vec3, director, EventTouch, KeyCode } from 'cc';
+import { _decorator, Component, Node, dragonBones, macro, Input, input, Vec3, director, EventTouch, KeyCode, random } from 'cc';
 const { ccclass, property, requireComponent } = _decorator;
 
 
@@ -388,15 +388,15 @@ export default class DragonBonesCtrl extends Component {
     }
 
     _fire (firePoint: Vec3) {
-        firePoint.x += Math.random() * 2 - 1;
-        firePoint.y += Math.random() * 2 - 1;
+        firePoint.x += random() * 2 - 1;
+        firePoint.y += random() * 2 - 1;
         firePoint.z = 0;
 
         var armature = this._armatureDisplay!.buildArmature("bullet_01");
         var effect = this._armatureDisplay!.buildArmature("fire_effect_01");
         var radian = this._faceDir < 0 ? Math.PI - this._aimRadian : this._aimRadian;
         var bullet = new DragonBullet();
-        bullet.init(this.node.parent!, armature, effect, radian + Math.random() * 0.02 - 0.01, 40, firePoint);
+        bullet.init(this.node.parent!, armature, effect, radian + random() * 0.02 - 0.01, 40, firePoint);
         this.addBullet(bullet);
     }
 
@@ -576,9 +576,9 @@ export class DragonBullet {
             var effectDisplay = this._effect.node;
             effectDisplay.angle = radian * macro.DEG;
             effectDisplay.setPosition(thePos);
-            effectDisplay.scaleX = 1 + Math.random() * 1;
-            effectDisplay.scaleY = 1 + Math.random() * 0.5;
-            if (Math.random() < 0.5) {
+            effectDisplay.scaleX = 1 + random() * 1;
+            effectDisplay.scaleY = 1 + random() * 0.5;
+            if (random() < 0.5) {
                 effectDisplay.scaleY *= -1;
             }
 
