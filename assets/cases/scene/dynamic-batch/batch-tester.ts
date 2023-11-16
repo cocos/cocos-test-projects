@@ -1,4 +1,4 @@
-import { _decorator, Component, director, game, instantiate, Label, Node, Prefab, random, Slider } from 'cc';
+import { _decorator, Component, director, game, instantiate, Label, Node, Prefab, Slider } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('BatchTester')
@@ -76,6 +76,6 @@ export class BatchTester extends Component {
         node.name = '' + (i * 10 + j) * 10;
         node.setParent(this.node.parent as Node);
         Array.prototype.push.apply(this._nodes, node.children);
-        Array.prototype.push.apply(this._delays, node.children.map(() => random() * Math.PI * 2));
+        Array.prototype.push.apply(this._delays, node.children.map(() => Math.random() * Math.PI * 2));
     }
 }
