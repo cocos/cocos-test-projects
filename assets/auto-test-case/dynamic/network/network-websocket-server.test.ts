@@ -5,7 +5,7 @@ import { screenshot_custom } from '../common/utils';
 import { NetworkWebSocket } from '../../../cases/network/NetworkWebsocket';
 
 @testClass('NetworkWebsocketServer', 'network-websocket-server', [PlatformEnum.WEB_DESKTOP, PlatformEnum.WEB_MOBILE, PlatformEnum.WECHATGAME, PlatformEnum.BYTEDANCE_MINI_GAME,
-    PlatformEnum.OPPO_MINI_GAME, PlatformEnum.HUAWEI_QUICK_GAME, PlatformEnum.VIVO_MINI_GAME])
+    PlatformEnum.OPPO_MINI_GAME, PlatformEnum.HUAWEI_QUICK_GAME, PlatformEnum.VIVO_MINI_GAME, PlatformEnum.XIAOMI_QUICK_GAME])
 export class NetworkWebsocketServer {
     private caseScript!: NetworkWebSocket;
 
