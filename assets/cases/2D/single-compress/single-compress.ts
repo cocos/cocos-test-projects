@@ -14,11 +14,9 @@ export class SingleCompress extends Component {
             const name = sprite.name;
             const label = spriteRoot.children[1].getComponent(Label);
             if (texture.isCompressed) {
-                // 纹理压缩
                 label.color = new Color(255, 176, 36);
                 // @ts-ignore
             } else if (texture._mipmaps[0]._native === `.${name}`) {
-                // 格式和预期一致
                 label.color = new Color(84, 103, 241);
             }
         })
