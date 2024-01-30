@@ -1,11 +1,11 @@
 {
-  "ver": "1.0.23",
+  "ver": "1.0.27",
   "importer": "image",
   "imported": true,
   "uuid": "527c5953-c968-4c72-aa55-36cd88ca75e4",
   "files": [
-    ".png",
-    ".json"
+    ".json",
+    ".png"
   ],
   "subMetas": {
     "6c48a": {
@@ -14,7 +14,7 @@
       "displayName": "etc2_rgba",
       "id": "6c48a",
       "name": "texture",
-      "ver": "1.0.21",
+      "ver": "1.0.22",
       "imported": true,
       "files": [
         ".json"
@@ -29,7 +29,8 @@
         "mipfilter": "none",
         "premultiplyAlpha": false,
         "anisotropy": 0,
-        "isUuid": true
+        "isUuid": true,
+        "visible": false
       }
     },
     "f9941": {
@@ -38,7 +39,7 @@
       "displayName": "etc2_rgba",
       "id": "f9941",
       "name": "spriteFrame",
-      "ver": "1.0.9",
+      "ver": "1.0.12",
       "imported": true,
       "files": [
         ".json"
@@ -63,13 +64,71 @@
         "isUuid": true,
         "imageUuidOrDatabaseUri": "527c5953-c968-4c72-aa55-36cd88ca75e4@6c48a",
         "atlasUuid": "",
-        "packable": true
+        "packable": true,
+        "pixelsToUnit": 100,
+        "pivotX": 0.5,
+        "pivotY": 0.5,
+        "meshType": 0,
+        "vertices": {
+          "rawPosition": [
+            -77,
+            -65.5,
+            0,
+            77,
+            -65.5,
+            0,
+            -77,
+            65.5,
+            0,
+            77,
+            65.5,
+            0
+          ],
+          "indexes": [
+            0,
+            1,
+            2,
+            2,
+            1,
+            3
+          ],
+          "uv": [
+            24,
+            147,
+            178,
+            147,
+            24,
+            16,
+            178,
+            16
+          ],
+          "nuv": [
+            0.10526315789473684,
+            0.10062893081761007,
+            0.7807017543859649,
+            0.10062893081761007,
+            0.10526315789473684,
+            0.9245283018867925,
+            0.7807017543859649,
+            0.9245283018867925
+          ],
+          "minPos": [
+            -77,
+            -65.5,
+            0
+          ],
+          "maxPos": [
+            77,
+            65.5,
+            0
+          ]
+        }
       }
     }
   },
   "userData": {
     "type": "sprite-frame",
-    "redirect": "527c5953-c968-4c72-aa55-36cd88ca75e4@f9941",
+    "redirect": "527c5953-c968-4c72-aa55-36cd88ca75e4@6c48a",
     "compressSettings": {
       "useCompressTexture": true,
       "presetId": "dccb557a034387b75e6baa80196832f0"
