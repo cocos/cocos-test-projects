@@ -7,7 +7,7 @@ import { find } from 'cc';
 @testClass('MaskTypeChange')
 export class MaskTypeChange{
     _delay = 1;
-    _dt =120;
+    _dt =122;
     
     @testCase
     async start(){
