@@ -8,32 +8,22 @@ import { UILog } from '../../../ui/ui-log';
 export class AsyncFunctionsTest extends Component {
     @property(UILog)
     public logPanel: UILog = null!;
-    public isAutoTest = false; // In order to automate test take over
 
     public start () {
-        if (!this.isAutoTest) {
-            (async () => { // Directly running an async function should be OK.
-                await this.testSleep();
-                await this.testSleepThrow();
-            })();
-        }
-    }
+        (async () => { // Directly running an async function should be OK.
+            this._getLogPanelChecked().addLabel(`Async function starts at ${new Date()}`);
+            // cc.log(`Async function starts at ${new Date()}`);
+            await sleep(2000);
+            this._getLogPanelChecked().addLabel(`Async function ends at ${new Date()}(Expected: 2 seconds past)`);
+            // cc.log(`Async function ends at ${new Date()}(Expected: 2 seconds past)`);
 
-    public async testSleep() {
-        this._getLogPanelChecked().addLabel(`Async function starts at ${new Date()}`);
-        // cc.log(`Async function starts at ${new Date()}`);
-        await sleep(2000);
-        this._getLogPanelChecked().addLabel(`Async function ends at ${new Date()}(Expected: 2 seconds past)`);
-        // cc.log(`Async function ends at ${new Date()}(Expected: 2 seconds past)`);
-    }
-
-    public async testSleepThrow() {
-        try {
-            this._getLogPanelChecked().addLabel(`Async function(which is throw-ful) starts at ${new Date()}`);
-            await sleepThrow(1000);
-        } catch (error) {
-            this._getLogPanelChecked().addLabel(`Async function(which is throw-ful) throws "${error}" at ${new Date()}(Expected: 1 seconds past)`);
-        }
+            try {
+                this._getLogPanelChecked().addLabel(`Async function(which is throw-ful) starts at ${new Date()}`);
+                await sleepThrow(1000);
+            } catch (error) {
+                this._getLogPanelChecked().addLabel(`Async function(which is throw-ful) throws "${error}" at ${new Date()}(Expected: 1 seconds past)`);
+            }
+        })();
     }
 
     private _getLogPanelChecked () {

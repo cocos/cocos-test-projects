@@ -1,4 +1,4 @@
-import { _decorator, Component, director, game, instantiate, Label, Node, Prefab, Slider } from 'cc';
+import { _decorator, Component, director, instantiate, Label, Node, Prefab, Slider } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('BatchTester')
@@ -23,7 +23,6 @@ export class BatchTester extends Component {
 
     public _nodes: Node[] = [];
     public _delays: number[] = [];
-    public _startFrame = 0;
 
     public start () {
         for (let i = 0; i < this.count; i++) {
@@ -33,11 +32,10 @@ export class BatchTester extends Component {
         }
         this.label.string = 'Boxes: ' + this.count * 100;
         this.slider.progress = this.count / this.maxCount;
-        this._startFrame = director.getTotalFrames();
     }
 
     public update () {
-        const t = (director.getTotalFrames() - this._startFrame) * game.frameTime;
+        const t = director.getCurrentTime();
         for (let i = 0; i < this._nodes.length; i++) {
             const node = this._nodes[i];
             const delay = this._delays[i];
