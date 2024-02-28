@@ -122,6 +122,9 @@
       },
       "custom-pipeline": {
         "_value": false
+      },
+      "graphics": {
+        "_value": true
       }
     },
     "includeModules": [
@@ -136,6 +139,7 @@
       "gfx-webgl",
       "intersection-2d",
       "light-probe",
+      "meshopt",
       "particle",
       "particle-2d",
       "physics-2d-builtin",
@@ -158,7 +162,7 @@
     },
     "flags": {}
   },
-  "__version__": "1.0.7",
+  "__version__": "1.0.9",
   "macroConfig": {
     "ENABLE_TRANSPARENT_CANVAS": false
   }
