@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, EditBox } from "cc";
+import { _decorator, Component, Node, EditBox, screen, macro } from "cc";
 const { ccclass, property, menu } = _decorator;
 
 @ccclass("EditboxCtrl")
@@ -14,6 +14,13 @@ export class EditboxCtrl extends Component {
 
     start () {
         // Your initialization goes here.
+        screen.on("orientation-change", (orientation) => {
+            if (orientation === macro.ORIENTATION_LANDSCAPE_LEFT || orientation === macro.ORIENTATION_LANDSCAPE_RIGHT) {
+                console.log("orientation-change landscape", orientation);
+            } else {
+                console.log("orientation-change portrait", orientation);
+            }
+        });
     }
 
     setFocus (event: EditBox, custom: string) {
