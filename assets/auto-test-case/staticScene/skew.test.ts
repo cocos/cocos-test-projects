@@ -1,7 +1,7 @@
 // @ts-ignore
 import { captureOneImage, waitForNextFrame, runScene, testCase, testClass } from 'db://automation-framework/runtime/test-framework.mjs';
 
-@runScene('skew')
+@runScene('SkewTest')
 @testClass('Skew')
 export class Skew {
     @testCase
