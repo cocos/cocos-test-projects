@@ -34,7 +34,7 @@ export class SpineSharedTest extends Component {
                 return;
             }
 
-            const bundleName = sp.spine.SPINE_VERSION === '3.8' ? "SharedCacheBundle" : "SharedCacheBundle_4_2";
+            const bundleName = this.isVersion4_2() ? "SharedCacheBundle_4_2" : "SharedCacheBundle";
             bundle.load(bundleName, Prefab, (err: Error, res: Prefab) => {
                 if (err) {
                     console.error(err);
@@ -48,7 +48,7 @@ export class SpineSharedTest extends Component {
     }
 
     onAdd() {
-        const prefab = sp.spine.SPINE_VERSION === '3.8' ? this.prefab : this.prefab_4_2;
+        const prefab = this.isVersion4_2() ? this.prefab_4_2 : this.prefab;
         const node = instantiate(prefab);
         this.node.addChild(node);
         this._nodeArr.push(node);
@@ -59,6 +59,10 @@ export class SpineSharedTest extends Component {
             node.destroy();
         }
         this._nodeArr.length = 0;
+    }
+
+    private isVersion4_2(): boolean {    
+        return sp.spine.SPINE_VERSION === '4.2';
     }
 }
 

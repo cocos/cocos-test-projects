@@ -14,10 +14,10 @@ export class LoadSpine extends Component {
         // Your initialization goes here.
 
         let alienRes;
-        if (sp.spine.SPINE_VERSION === '3.8') {
-            alienRes = 'spine/alien/3.8/alien-pro';
-        } else {
+        if (sp.spine.SPINE_VERSION === '4.2') {
             alienRes = 'spine/alien/4.2/alien-pro';
+        } else {
+            alienRes = 'spine/alien/3.8/alien-pro';
         }
         loader.loadRes(alienRes, sp.SkeletonData, (err, spineAsset)=> {
             if(err) {

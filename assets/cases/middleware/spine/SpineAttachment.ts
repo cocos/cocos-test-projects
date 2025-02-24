@@ -21,13 +21,14 @@ export class SpineAttachment extends Component {
 
         const skin = spineData.findSkin('default');
         let gunSlotIndex = -1;
-        if (sp.spine.SPINE_VERSION === '3.8') {
-            gunSlotIndex = spineData.findSlotIndex('gun');
-        } else {
+        if (sp.spine.SPINE_VERSION === '4.2') {
             const slotData = spineData.findSlot('gun');
             if (slotData) {
                 gunSlotIndex = slotData.index;
             }
+            
+        } else {
+            gunSlotIndex = spineData.findSlotIndex('gun');
         }
 
         this._newAttachment = skin.getAttachment(gunSlotIndex, 'gun-nohand');
