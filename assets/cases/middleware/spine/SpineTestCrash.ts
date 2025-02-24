@@ -18,10 +18,15 @@ export class SpineTestCrash extends Component {
     })
     spineBoyPrefab: Prefab = null!;
 
-    start() {
+    @property({
+        type: Prefab
+    })
+    spineBoyPrefab_4_2: Prefab = null!;
 
+    start() {
+        const prefab = sp.spine.SPINE_VERSION === '3.8' ? this.spineBoyPrefab : this.spineBoyPrefab_4_2;
         this.firstSpine.setCompleteListener((trackEntry) => {
-            const node = instantiate(this.spineBoyPrefab);
+            const node = instantiate(prefab);
             this.node.addChild(node);
         });
     }

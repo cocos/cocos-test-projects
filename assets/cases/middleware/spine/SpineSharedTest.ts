@@ -1,4 +1,4 @@
-import { _decorator, AssetManager, assetManager, Component, director, instantiate, Node, Prefab } from 'cc';
+import { _decorator, AssetManager, assetManager, Component, director, instantiate, Node, Prefab, sp } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('SpineSharedTest')
@@ -8,6 +8,9 @@ export class SpineSharedTest extends Component {
 
     @property({type: Prefab})
     prefab: Prefab = null!;
+
+    @property({type: Prefab})
+    prefab_4_2: Prefab = null!;
 
     private _nodeArr: Node[] = [];
 
@@ -31,7 +34,8 @@ export class SpineSharedTest extends Component {
                 return;
             }
 
-            bundle.load("SharedCacheBundle", Prefab, (err: Error, res: Prefab) => {
+            const bundleName = sp.spine.SPINE_VERSION === '3.8' ? "SharedCacheBundle" : "SharedCacheBundle_4_2";
+            bundle.load(bundleName, Prefab, (err: Error, res: Prefab) => {
                 if (err) {
                     console.error(err);
                     return;
@@ -44,7 +48,8 @@ export class SpineSharedTest extends Component {
     }
 
     onAdd() {
-        const node = instantiate(this.prefab);
+        const prefab = sp.spine.SPINE_VERSION === '3.8' ? this.prefab : this.prefab_4_2;
+        const node = instantiate(prefab);
         this.node.addChild(node);
         this._nodeArr.push(node);
     }
