@@ -19,6 +19,7 @@ export class SpinePhysics extends Component {
         if (sp.SPINE_VERSION === '4.2') {
             this.node.parent.getChildByName("Unsupported_Tip").active = false;
             this.skeleton.skeletonData = this.skeletonData;
+            this.skeleton.setAnimation(0, 'swing', true);
         }
     }
 }

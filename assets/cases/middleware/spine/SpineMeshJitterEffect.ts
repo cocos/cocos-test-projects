@@ -15,8 +15,10 @@ export class SpineMeshJitterEffect extends Component {
         this._maxEffect = 2;
         this._index = 0;
 
-        this._jitterEffect = new sp.VertexEffectDelegate();
-        this._jitterEffect.initJitter(20, 20);
+        if (sp.SPINE_VERSION === '3.8') {
+            this._jitterEffect = new sp.VertexEffectDelegate();
+            this._jitterEffect.initJitter(20, 20);
+        }
     }
 
     switchEffect () {

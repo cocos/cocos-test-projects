@@ -25,8 +25,10 @@ export default class extends Component {
         const skeletonNodeUIProps = this.skeleton!.node._uiProps.uiTransformComp!;
         this._bound = new Size(skeletonNodeUIProps.width, skeletonNodeUIProps.height);
 
-        this._swirlEffect = new sp.VertexEffectDelegate();
-        this._swirlEffect.initSwirlWithPowOut(0, 2);
+        if (sp.SPINE_VERSION === '3.8') {
+            this._swirlEffect = new sp.VertexEffectDelegate();
+            this._swirlEffect.initSwirlWithPowOut(0, 2);
+        }
     }
 
     switchEffect () {
@@ -51,12 +53,14 @@ export default class extends Component {
             if (percent > 1) percent = 1 - (percent -1 );
 
             let bound = this._bound!;
-            let swirlEffect = this._swirlEffect!.getSwirlVertexEffect();
-            swirlEffect.angle = 360 * percent;
-            swirlEffect.centerX = bound.width * 0.5;
-            swirlEffect.centerY = bound.height * 0.5;
+            if (this._swirlEffect) {
+                let swirlEffect = this._swirlEffect!.getSwirlVertexEffect();
+                swirlEffect.angle = 360 * percent;
+                swirlEffect.centerX = bound.width * 0.5;
+                swirlEffect.centerY = bound.height * 0.5;
 
-            swirlEffect.radius = percent * Math.sqrt(bound.width * bound.width + bound.height * bound.height);
+                swirlEffect.radius = percent * Math.sqrt(bound.width * bound.width + bound.height * bound.height);
+            }
         }    
     } 
 }
