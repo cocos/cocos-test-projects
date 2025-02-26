@@ -24,7 +24,7 @@ export class SpineTestCrash extends Component {
     spineBoyPrefab_4_2: Prefab = null!;
 
     start() {
-        const prefab = sp.spine.SPINE_VERSION === '3.8' ? this.spineBoyPrefab : this.spineBoyPrefab_4_2;
+        const prefab = sp.SPINE_VERSION === '3.8' ? this.spineBoyPrefab : this.spineBoyPrefab_4_2;
         this.firstSpine.setCompleteListener((trackEntry) => {
             const node = instantiate(prefab);
             this.node.addChild(node);

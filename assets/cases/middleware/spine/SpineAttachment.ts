@@ -21,7 +21,7 @@ export class SpineAttachment extends Component {
 
         const skin = spineData.findSkin('default');
         let gunSlotIndex = -1;
-        if (sp.spine.SPINE_VERSION === '4.2') {
+        if (sp.SPINE_VERSION === '4.2') {
             const slotData = spineData.findSlot('gun');
             if (slotData) {
                 gunSlotIndex = slotData.index;

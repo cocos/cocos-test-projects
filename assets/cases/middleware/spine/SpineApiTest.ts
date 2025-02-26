@@ -53,7 +53,7 @@ export class SpineApiTest extends Component {
   
   
         console.log('findBone:', data?.findBone('neck'))
-        if (sp.spine.SPINE_VERSION !== '4.2') {
+        if (sp.SPINE_VERSION !== '4.2') {
             console.log('findBoneIndex:', data?.findBoneIndex('neck'));
         }
         console.log('findSlot:', data?.findSlot('back-hand'));
@@ -72,7 +72,7 @@ export class SpineApiTest extends Component {
 
         const slot = this.skeleton?.findSlot('back-hand');
   
-        if (sp.spine.SPINE_VERSION !== '4.2') {
+        if (sp.SPINE_VERSION !== '4.2') {
             console.log('slot?.getAttachmentTime:', slot?.getAttachmentTime());
         }
         console.log('slot?.getSkeleton:', slot?.getSkeleton());

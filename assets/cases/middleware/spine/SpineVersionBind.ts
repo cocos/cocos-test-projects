@@ -21,7 +21,7 @@ export class SpineVersionBind extends Component {
 
 
     onLoad() {
-        const version = sp.spine.SPINE_VERSION;
+        const version = sp.SPINE_VERSION;
         if (version === undefined || version === '3.8') {
             this.skeleton.skeletonData = this.skeletonData_3_8;
         } else if (version === '4.2') {

@@ -62,7 +62,7 @@ export class SpineSharedTest extends Component {
     }
 
     private isVersion4_2(): boolean {    
-        return sp.spine.SPINE_VERSION === '4.2';
+        return sp.SPINE_VERSION === '4.2';
     }
 }
 
