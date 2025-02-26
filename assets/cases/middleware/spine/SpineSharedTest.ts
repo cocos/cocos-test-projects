@@ -1,4 +1,4 @@
-import { _decorator, AssetManager, assetManager, Component, director, instantiate, Node, Prefab } from 'cc';
+import { _decorator, AssetManager, assetManager, Component, director, instantiate, Node, Prefab, sp } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('SpineSharedTest')
@@ -8,6 +8,9 @@ export class SpineSharedTest extends Component {
 
     @property({type: Prefab})
     prefab: Prefab = null!;
+
+    @property({type: Prefab})
+    prefab_4_2: Prefab = null!;
 
     private _nodeArr: Node[] = [];
 
@@ -31,7 +34,8 @@ export class SpineSharedTest extends Component {
                 return;
             }
 
-            bundle.load("SharedCacheBundle", Prefab, (err: Error, res: Prefab) => {
+            const bundleName = this.isVersion4_2() ? "SharedCacheBundle_4_2" : "SharedCacheBundle";
+            bundle.load(bundleName, Prefab, (err: Error, res: Prefab) => {
                 if (err) {
                     console.error(err);
                     return;
@@ -44,7 +48,8 @@ export class SpineSharedTest extends Component {
     }
 
     onAdd() {
-        const node = instantiate(this.prefab);
+        const prefab = this.isVersion4_2() ? this.prefab_4_2 : this.prefab;
+        const node = instantiate(prefab);
         this.node.addChild(node);
         this._nodeArr.push(node);
     }
@@ -54,6 +59,10 @@ export class SpineSharedTest extends Component {
             node.destroy();
         }
         this._nodeArr.length = 0;
+    }
+
+    private isVersion4_2(): boolean {    
+        return sp.SPINE_VERSION === '4.2';
     }
 }
 

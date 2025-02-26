@@ -13,7 +13,13 @@ export class LoadSpine extends Component {
     start () {
         // Your initialization goes here.
 
-        loader.loadRes("spine/alien/alien-pro", sp.SkeletonData, (err, spineAsset)=> {
+        let alienRes;
+        if (sp.SPINE_VERSION === '4.2') {
+            alienRes = 'spine/alien/4.2/alien-pro';
+        } else {
+            alienRes = 'spine/alien/3.8/alien-pro';
+        }
+        loader.loadRes(alienRes, sp.SkeletonData, (err, spineAsset)=> {
             if(err) {
                 this.tips!.string = "Failed to load asset";
                 this.isLoadedRes = true; // AutoTest: Consider loading complete even if loading failed

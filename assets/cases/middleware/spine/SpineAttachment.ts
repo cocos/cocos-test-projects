@@ -20,7 +20,16 @@ export class SpineAttachment extends Component {
         if (!spineData) return;
 
         const skin = spineData.findSkin('default');
-        const gunSlotIndex = spineData.findSlotIndex('gun');
+        let gunSlotIndex = -1;
+        if (sp.SPINE_VERSION === '4.2') {
+            const slotData = spineData.findSlot('gun');
+            if (slotData) {
+                gunSlotIndex = slotData.index;
+            }
+            
+        } else {
+            gunSlotIndex = spineData.findSlotIndex('gun');
+        }
 
         this._newAttachment = skin.getAttachment(gunSlotIndex, 'gun-nohand');
         const handSlot = this.skeletonComponent.findSlot('front-hand');
