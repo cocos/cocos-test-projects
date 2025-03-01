@@ -27,7 +27,7 @@ export class LoadRes {
         // @ts-ignore
         find('Canvas').getComponent('LoadResExample').loadSpriteFrame();
         await sleep(3)
-        await screenshot_custom(this._dt);
+        await screenshot_custom(this._dt * 100);
     }
 
 
