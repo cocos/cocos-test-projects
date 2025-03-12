@@ -22,6 +22,8 @@ export class WebviewCtrl extends Component {
             case sys.HUAWEI_QUICK_GAME:
             case sys.OPPO_MINI_GAME:
             case sys.VIVO_MINI_GAME:
+            case sys.MIGU_MINI_GAME:
+            case sys.HONOR_MINI_GAME:
             case sys.XIAOMI_QUICK_GAME:
             case sys.BAIDU_MINI_GAME:
             case sys.WECHAT_GAME:
