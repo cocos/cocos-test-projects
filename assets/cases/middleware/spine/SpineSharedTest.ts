@@ -27,14 +27,14 @@ export class SpineSharedTest extends Component {
         // Here we prevent instantiate multi times.
         const children  = this.node.children;
         const count = children.length;
-        if (children[count - 1].name === "SharedCacheBundle") return;
+        const bundleName = this.isVersion4_2() ? "SharedCacheBundle_4_2" : "SharedCacheBundle";
+        if (children[count - 1].name === bundleName) return;
         assetManager.loadBundle("SpineSharedTest", (err: Error, bundle: AssetManager.Bundle) => {
             if (err) {
                 console.error(err);
                 return;
             }
 
-            const bundleName = this.isVersion4_2() ? "SharedCacheBundle_4_2" : "SharedCacheBundle";
             bundle.load(bundleName, Prefab, (err: Error, res: Prefab) => {
                 if (err) {
                     console.error(err);
