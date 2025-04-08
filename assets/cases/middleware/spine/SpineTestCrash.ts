@@ -41,10 +41,9 @@ export class SpineTestCrash extends Component {
             // This is to test the crash issue when destroying a node with a Spine animation.
             this.scheduleOnce(() => {
                 const length = this.node.children.length;
-                const node = this.node.children[length - 1]
-                console.log('bf test node', node.name)
-                node.parent = null
-                node.destroy()
+                const node = this.node.children[length - 1];
+                node.parent = null;
+                node.destroy();
             }, 1.5)
         });
     }
