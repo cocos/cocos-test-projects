@@ -49,15 +49,10 @@ export class SpineTestCrash extends Component {
             }, 1.5)
         });
 
-        if (sp.SPINE_VERSION === '3.8') {
-            resources.load('spine/alien/3.8/alien-pro', sp.SkeletonData, (err, asset) => {
-                this._alienSkeletonData = asset;
-            });
-        } else {
-            resources.load('spine/alien/4.2/alien-pro', sp.SkeletonData, (err, asset) => {
-                this._alienSkeletonData = asset;
-            });
-        }
+        const alienPath = `spine/alien/${sp.SPINE_VERSION}/alien-pro`;
+        resources.load(alienPath, sp.SkeletonData, (err, asset) => {
+            this._alienSkeletonData = asset;
+        });
 
         
         this.secondSpine.setCompleteListener((trackEntry) => {
