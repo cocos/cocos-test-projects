@@ -5,6 +5,7 @@
     },
     "configs": {
       "migrationsConfig": {
+        "name": "迁移生成的配置",
         "cache": {
           "base": {
             "_value": true
@@ -28,10 +29,13 @@
             "_value": true
           },
           "meshopt": {
-            "_value": true
+            "_value": false
           },
           "2d": {
             "_value": true
+          },
+          "sorting-2d": {
+            "_value": false
           },
           "xr": {
             "_value": false
@@ -55,7 +59,7 @@
             "_value": true
           },
           "particle": {
-            "_value": false
+            "_value": true
           },
           "physics": {
             "_value": true,
@@ -102,7 +106,7 @@
             "_value": true
           },
           "primitive": {
-            "_value": false
+            "_value": true
           },
           "profiler": {
             "_value": true
@@ -111,10 +115,10 @@
             "_value": false
           },
           "geometry-renderer": {
-            "_value": false
+            "_value": true
           },
           "debug-renderer": {
-            "_value": false
+            "_value": true
           },
           "particle-2d": {
             "_value": true
@@ -138,10 +142,10 @@
             "_value": false
           },
           "terrain": {
-            "_value": false
+            "_value": true
           },
           "light-probe": {
-            "_value": false
+            "_value": true
           },
           "tiled-map": {
             "_value": true
@@ -169,10 +173,10 @@
             "_value": true
           },
           "marionette": {
-            "_value": true
+            "_value": false
           },
           "procedural-animation": {
-            "_value": true
+            "_value": false
           },
           "custom-pipeline-post-process": {
             "_value": false
@@ -188,10 +192,7 @@
             "_value": false
           }
         },
-        "flags": {
-          "LOAD_SPINE_MANUALLY": false
-        },
-        "name": "迁移生成的配置",
+        "flags": {},
         "includeModules": [
           "2d",
           "3d",
@@ -199,22 +200,25 @@
           "animation",
           "audio",
           "base",
+          "debug-renderer",
           "dragon-bones",
+          "geometry-renderer",
           "gfx-webgl",
           "graphics",
           "intersection-2d",
           "legacy-pipeline",
-          "marionette",
+          "light-probe",
           "mask",
-          "meshopt",
+          "particle",
           "particle-2d",
           "physics-2d-builtin",
           "physics-cannon",
-          "procedural-animation",
+          "primitive",
           "profiler",
           "rich-text",
           "skeletal-animation",
           "spine-3.8",
+          "terrain",
           "tiled-map",
           "tween",
           "ui",
