@@ -1,4 +1,4 @@
-import { _decorator, Component, sp, Node, Prefab, instantiate } from 'cc';
+import { _decorator, Component, sp, Node, Prefab, instantiate, resources } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('SpineTestCrash')
@@ -23,6 +23,8 @@ export class SpineTestCrash extends Component {
     })
     spineBoyPrefab_4_2: Prefab = null!;
 
+    private _alienSkeletonData : sp.SkeletonData | null = null;
+
     start() {
         const prefab = sp.SPINE_VERSION === '3.8' ? this.spineBoyPrefab : this.spineBoyPrefab_4_2;
         this.firstSpine.setCompleteListener((trackEntry) => {
@@ -45,6 +47,18 @@ export class SpineTestCrash extends Component {
                 node.parent = null;
                 node.destroy();
             }, 1.5)
+        });
+
+        const alienPath = `spine/alien/${sp.SPINE_VERSION}/alien-pro`;
+        resources.load(alienPath, sp.SkeletonData, (err, asset) => {
+            this._alienSkeletonData = asset;
+        });
+
+        
+        this.secondSpine.setCompleteListener((trackEntry) => {
+            this.secondSpine.skeletonData = null;
+            this.secondSpine.skeletonData = this._alienSkeletonData;
+            this.secondSpine.setAnimation(0, 'run', true);
         });
     }
 
