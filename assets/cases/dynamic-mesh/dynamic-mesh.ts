@@ -50,6 +50,7 @@ export class DynamicMeshCreator extends Component {
     private _dragon: Node = null!;
     private _initialize: boolean = false;
     private _destroyed: boolean = false;
+    private _mesh: Mesh = null!;
 
     // debug only
     private _showBoundingBox = false;
@@ -143,7 +144,7 @@ export class DynamicMeshCreator extends Component {
             for (let i = 1; i < this._options.maxSubMeshes; i++) {
                 mesh.updateSubMesh(i, this._geometries[i]);
             }
-
+            this._mesh = mesh;
             const meshRenderer = this._dragon.getComponent(MeshRenderer) as MeshRenderer;
             meshRenderer.mesh = mesh;
             meshRenderer.onGeometryChanged();
@@ -179,6 +180,9 @@ export class DynamicMeshCreator extends Component {
     }
 
     onDestroy () {
+        if(!this._destroyed) {
+            this._mesh!.destroy();
+        }
         this._destroyed = true;
     }
 
