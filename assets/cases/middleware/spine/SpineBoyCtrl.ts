@@ -84,7 +84,13 @@ export default class SpineBoyCtrl extends Component{
         if (this._hasStop) {
             this.spine?.setToSetupPose();
         }
-        this.spine?.setAnimation(0, 'walk', true);
+        let trackEntry = this.spine?.setAnimation(0, 'walk', true);
+        if (trackEntry) {
+            this.spine?.setTrackEndListener(trackEntry, (entry: any) => {
+                var animationName = entry.animation ? entry.animation.name : "";
+                console.log("[setTrackEndListener originalName %s][animation %s] end.", trackEntry.animation.name, animationName);
+            });
+        }
         this._hasStop = false;
     }
 
