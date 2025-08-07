@@ -1,22 +1,33 @@
-import { _decorator, Component, Node, sp } from 'cc';
+import { _decorator, Component, Node, resources, sp, Texture2D } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('SpineAttachment')
 export class SpineAttachment extends Component {
 
     @property({type: sp.Skeleton})
-    skeletonComponent: sp.Skeleton;
+    skeletonComponent!: sp.Skeleton;
+
+    @property({ type: sp.SkeletonData })
+   skeletonData_3_8_tmp!: sp.SkeletonData;
+
+   @property({ type: sp.SkeletonData })
+   skeletonData_4_2_tmp!: sp.SkeletonData;
 
     private _oldAttachment: sp.Attachment | null = null;
     private _newAttachment: sp.Attachment | null = null;
-    private _slot: sp.Slot | null = null;
+    private _slot: sp.spine.Slot | null = null;
 
     private _index: number = 0;
 
 
     start() {
-        const asset = this.skeletonComponent.skeletonData;
-        const spineData = asset?.getRuntimeData();
+        let skeletonData = null;
+        if (sp.SPINE_VERSION === '3.8') {
+            skeletonData = this.skeletonData_3_8_tmp;
+        } else {
+            skeletonData = this.skeletonData_4_2_tmp;
+        }
+        const spineData = skeletonData.getRuntimeData();
         if (!spineData) return;
 
         const skin = spineData.findSkin('default');
@@ -50,6 +61,7 @@ export class SpineAttachment extends Component {
 
         this._index += 1;
         if (this._index % 2 === 1) {
+            //attachment set from other skeletonData
             this._slot.setAttachment(this._newAttachment);
         } else {
             this._slot.setAttachment(this._oldAttachment);
