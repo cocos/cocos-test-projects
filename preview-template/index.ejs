@@ -1,4 +1,4 @@
-<html>
+<html class="dark">
     <head>
         <link rel="icon" href="./favicon.ico" />
         <meta charset="utf-8" />
@@ -19,30 +19,56 @@
     </head>
     <body>
         <%- include(cocosToolBar, {config: config}) %>
-        <div id="content" class="content">
-            <div class="contentWrap">
-                <div id="GameDiv" class="wrapper">
-                    <div id="Cocos3dGameContainer">
-                        <canvas id="GameCanvas" tabindex="-1" style="background-color: '';"></canvas>
-                    </div>
-                    <div id="splash">
-                        <div class="progress-bar stripes"><span></span></div>
-                    </div>
-                    <div id="bulletin">
-                        <div id="sceneIsEmpty" class="inner"><%=tip_sceneIsEmpty%></div>
-                    </div>
-                    <div class="error" id="error">
-                        <div class="title">Error <i>(Please open the console to see detailed errors)</i></div>
-                        <div class="error-message"></div>
-                        <div class="error-stack"></div>
+        <div style="display: flex;flex: auto;align-items: center;">
+            <%- include ./dist/index.html %>
+            <div id="content" class="content">
+                <div class="contentWrap">
+                    <div id="GameDiv" class="wrapper">
+                        <div id="Cocos3dGameContainer">
+                            <canvas id="GameCanvas"></canvas>
+                        </div>
+                        <div id="splash">
+                            <div class="progress-bar stripes"><span></span></div>
+                        </div>
+                        <div id="bulletin">
+                            <div id="sceneIsEmpty" class="inner"><%=tip_sceneIsEmpty%></div>
+                        </div>
+                        <div class="error" id="error">
+                            <div class="title">Error <i>(Please open the console to see detailed errors)</i></div>
+                            <div class="error-main"></div>
+                        </div>
                     </div>
                 </div>
+                <p class="footer">
+                    Created with <a href="https://www.cocos.com/products" target="_blank" title="Cocos Creator">Cocos Creator</a>
+                </p>
             </div>
-            <p class="footer">
-                Created with <a href="https://www.cocos.com/products" target="_blank" title="Cocos Creator">Cocos Creator</a>
-            </p>
         </div>
         <%- include(cocosTemplate, {}) %>
-		<script src="/test.js"></script>
     </body>
 </html>
+
+<script>
+    document.getElementsByClassName('toolbar')[0].insertAdjacentHTML('afterbegin', '<div><button id="btn-show-tree">Tree</button></div>');
+    const devtoolsBtn = document.getElementById('btn-show-tree');
+    let isOpen = !!localStorage.getItem('ccc_devtools_show');
+    toggle(isOpen);
+    devtoolsBtn.addEventListener('click', () => {
+        isOpen = !isOpen;
+        toggle(isOpen);
+    }, false);
+
+    function toggle(isOpen) {
+        const devApp = document.getElementById('dev-app');
+        window.ccdevShow = isOpen;
+        if (isOpen) {
+            devApp.style.display = 'flex';
+            devtoolsBtn.classList.add('checked');
+            localStorage.setItem('ccc_devtools_show', 1);
+        } else {
+            devApp.style.display = 'none';
+            devtoolsBtn.classList.remove('checked');
+            localStorage.removeItem('ccc_devtools_show');
+        }
+    }
+</script>

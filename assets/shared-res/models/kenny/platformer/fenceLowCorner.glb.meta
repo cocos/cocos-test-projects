@@ -1,12 +1,12 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.14",
   "importer": "gltf",
   "imported": true,
   "uuid": "a05723ad-fe28-4a9e-bca9-8ea9f042add8",
   "files": [],
   "subMetas": {
     "a0cf8": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "a05723ad-fe28-4a9e-bca9-8ea9f042add8@a0cf8",
       "imported": true,
@@ -16,7 +16,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 76
       },
       "id": "a0cf8",
       "name": "Mesh fenceLowCorner.mesh",
@@ -39,7 +40,7 @@
       "displayName": ""
     },
     "c3a00": {
-      "ver": "1.0.12",
+      "ver": "1.0.14",
       "importer": "gltf-scene",
       "uuid": "a05723ad-fe28-4a9e-bca9-8ea9f042add8@c3a00",
       "imported": true,
@@ -59,7 +60,6 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "a05723ad-fe28-4a9e-bca9-8ea9f042add8@c3a00",
     "assetFinder": {
       "meshes": [
         "a05723ad-fe28-4a9e-bca9-8ea9f042add8@a0cf8"
@@ -73,6 +73,24 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": []
+    "imageMetas": [],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }
