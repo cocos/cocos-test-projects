@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.SceneAsset",
-    "_name": "",
+    "_name": "render-ui-to-model",
     "_objFlags": 0,
     "_native": "",
     "scene": {
@@ -493,9 +493,7 @@
       }
     ],
     "_visFlags": 0,
-    "lightmapSettings": {
-      "__id__": 14
-    },
+    "lightmapSettings": null,
     "_mesh": {
       "__uuid__": "054daf25-262f-4267-92ba-e8bd2d1c2bb7@82fcb",
       "__expectedType__": "cc.Mesh"
@@ -505,10 +503,13 @@
     "_shadowBias": 0,
     "_shadowNormalBias": 0,
     "_enableMorph": true,
-    "_id": "ff+lEW2CpL7oGO/oQwCVWf"
+    "_id": "ff+lEW2CpL7oGO/oQwCVWf",
+    "bakeSettings": {
+      "__id__": 14
+    }
   },
   {
-    "__type__": "cc.ModelLightmapSettings",
+    "__type__": "cc.ModelBakeSettings",
     "texture": null,
     "uvParam": {
       "__type__": "cc.Vec4",
@@ -996,9 +997,7 @@
       }
     ],
     "_visFlags": 0,
-    "lightmapSettings": {
-      "__id__": 36
-    },
+    "lightmapSettings": null,
     "_mesh": {
       "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@fc873",
       "__expectedType__": "cc.Mesh"
@@ -1008,7 +1007,10 @@
     "_shadowBias": 0,
     "_shadowNormalBias": 0,
     "_enableMorph": true,
-    "_id": "fbFU/8NetF2a0jLZiOfrlL"
+    "_id": "fbFU/8NetF2a0jLZiOfrlL",
+    "bakeSettings": {
+      "__id__": 36
+    }
   },
   {
     "__type__": "cc.Node",
@@ -1142,7 +1144,7 @@
     "_id": "e2J+mmwxpK0rwKYsQeCdB0"
   },
   {
-    "__type__": "cc.ModelLightmapSettings",
+    "__type__": "cc.ModelBakeSettings",
     "texture": null,
     "uvParam": {
       "__type__": "cc.Vec4",

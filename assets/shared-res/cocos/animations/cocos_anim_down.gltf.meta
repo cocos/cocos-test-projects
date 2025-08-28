@@ -1,10 +1,10 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.14",
   "importer": "gltf",
   "imported": true,
   "uuid": "92515b6a-664d-4865-b0ef-61637a436f8b",
   "files": [
-    "__original-animation-0.cconb"
+    "__original-animation-0.bin"
   ],
   "subMetas": {
     "96245": {
@@ -13,10 +13,10 @@
       "displayName": "",
       "id": "96245",
       "name": "cocos_anim_down.animation",
-      "ver": "1.0.16",
+      "ver": "1.0.18",
       "imported": true,
       "files": [
-        ".cconb"
+        ".bin"
       ],
       "subMetas": {},
       "userData": {
@@ -36,7 +36,7 @@
       "displayName": "",
       "id": "bce50",
       "name": "cocos_anim_down.prefab",
-      "ver": "1.0.12",
+      "ver": "1.0.14",
       "imported": true,
       "files": [
         ".json"
@@ -59,12 +59,12 @@
             "name": "cocos_anim_down",
             "from": 0,
             "to": 2.633333444595337,
-            "wrapMode": 2
+            "wrapMode": 2,
+            "previousId": "96245"
           }
         ]
       }
     ],
-    "redirect": "92515b6a-664d-4865-b0ef-61637a436f8b@bce50",
     "assetFinder": {
       "meshes": [],
       "skeletons": [],
@@ -72,6 +72,24 @@
       "materials": [],
       "scenes": [
         "92515b6a-664d-4865-b0ef-61637a436f8b@bce50"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
       ]
     }
   }
