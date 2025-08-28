@@ -1,10 +1,10 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.14",
   "importer": "gltf",
   "imported": true,
   "uuid": "1566f42d-6020-4d4f-9105-565608e613a3",
   "files": [
-    "__original-animation-0.cconb"
+    "__original-animation-0.bin"
   ],
   "subMetas": {
     "bcca5": {
@@ -13,7 +13,7 @@
       "displayName": "",
       "id": "bcca5",
       "name": "UnnamedMesh.mesh",
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "imported": true,
       "files": [
         ".bin",
@@ -21,7 +21,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 1
       }
     },
     "a3140": {
@@ -30,10 +31,10 @@
       "displayName": "",
       "id": "a3140",
       "name": "UnnamedAnimation.animation",
-      "ver": "1.0.16",
+      "ver": "1.0.18",
       "imported": true,
       "files": [
-        ".cconb"
+        ".bin"
       ],
       "subMetas": {},
       "userData": {
@@ -53,7 +54,7 @@
       "displayName": "",
       "id": "77f57",
       "name": "SimpleMorph.prefab",
-      "ver": "1.0.12",
+      "ver": "1.0.14",
       "imported": true,
       "files": [
         ".json"
@@ -76,12 +77,12 @@
             "name": "UnnamedAnimation",
             "from": 0,
             "to": 4,
-            "wrapMode": 2
+            "wrapMode": 2,
+            "previousId": "a3140"
           }
         ]
       }
     ],
-    "redirect": "1566f42d-6020-4d4f-9105-565608e613a3@77f57",
     "assetFinder": {
       "meshes": [
         "1566f42d-6020-4d4f-9105-565608e613a3@bcca5"
@@ -91,6 +92,24 @@
       "materials": [],
       "scenes": [
         "1566f42d-6020-4d4f-9105-565608e613a3@77f57"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
       ]
     }
   }

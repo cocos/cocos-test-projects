@@ -1,12 +1,12 @@
 {
-  "ver": "2.2.0",
+  "ver": "2.3.14",
   "importer": "gltf",
   "imported": true,
   "uuid": "cb470193-b517-4296-a565-b4aae8996327",
   "files": [],
   "subMetas": {
     "60206": {
-      "ver": "1.0.12",
+      "ver": "1.0.14",
       "importer": "gltf-scene",
       "uuid": "cb470193-b517-4296-a565-b4aae8996327@60206",
       "imported": true,
@@ -22,7 +22,7 @@
       "displayName": ""
     },
     "173c3": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "uuid": "cb470193-b517-4296-a565-b4aae8996327@173c3",
       "imported": true,
@@ -32,7 +32,8 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0
+        "gltfIndex": 0,
+        "triangleCount": 50
       },
       "id": "173c3",
       "name": "Mesh heart.mesh",
@@ -59,7 +60,6 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
-    "redirect": "cb470193-b517-4296-a565-b4aae8996327@60206",
     "assetFinder": {
       "meshes": [
         "cb470193-b517-4296-a565-b4aae8996327@173c3"
@@ -73,6 +73,24 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": []
+    "imageMetas": [],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
   }
 }
