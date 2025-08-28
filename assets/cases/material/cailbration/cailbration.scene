@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.SceneAsset",
-    "_name": "cailbration",
+    "_name": "",
     "_objFlags": 0,
     "_native": "",
     "scene": {
@@ -111,10 +111,7 @@
     "_shadowFixedArea": false,
     "_shadowNear": 0.1,
     "_shadowFar": 10,
-    "_shadowOrthoSize": 5,
-    "_csmLevel": 1,
-    "_csmLayerLambda": 0.75,
-    "_csmOptimizationMode": 2
+    "_shadowOrthoSize": 5
   },
   {
     "__type__": "cc.StaticLightSettings",
@@ -266,7 +263,9 @@
       }
     ],
     "_visFlags": 0,
-    "lightmapSettings": null,
+    "lightmapSettings": {
+      "__id__": 9
+    },
     "_mesh": {
       "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@fc873",
       "__expectedType__": "cc.Mesh"
@@ -274,13 +273,10 @@
     "_shadowCastingMode": 0,
     "_shadowReceivingMode": 0,
     "_enableMorph": true,
-    "_id": "b4PPSe5QVPo5wB/nuMuQUN",
-    "bakeSettings": {
-      "__id__": 9
-    }
+    "_id": "b4PPSe5QVPo5wB/nuMuQUN"
   },
   {
-    "__type__": "cc.ModelBakeSettings",
+    "__type__": "cc.ModelLightmapSettings",
     "texture": null,
     "uvParam": {
       "__type__": "cc.Vec4",

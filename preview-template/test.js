@@ -1,0 +1,1 @@
+console.warn('load preview plugin success!');

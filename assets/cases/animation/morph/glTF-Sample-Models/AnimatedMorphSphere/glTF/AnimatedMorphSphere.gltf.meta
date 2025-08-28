@@ -1,10 +1,10 @@
 {
-  "ver": "2.3.14",
+  "ver": "2.2.0",
   "importer": "gltf",
   "imported": true,
   "uuid": "5267db74-21ca-4e7b-a170-e34c2c9ee749",
   "files": [
-    "__original-animation-0.bin"
+    "__original-animation-0.cconb"
   ],
   "subMetas": {
     "825ed": {
@@ -13,7 +13,7 @@
       "displayName": "",
       "id": "825ed",
       "name": "Sphere.mesh",
-      "ver": "1.1.1",
+      "ver": "1.1.0",
       "imported": true,
       "files": [
         ".bin",
@@ -21,8 +21,7 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0,
-        "triangleCount": 960
+        "gltfIndex": 0
       }
     },
     "f3a36": {
@@ -31,10 +30,10 @@
       "displayName": "",
       "id": "f3a36",
       "name": "Globe.animation",
-      "ver": "1.0.18",
+      "ver": "1.0.16",
       "imported": true,
       "files": [
-        ".bin"
+        ".cconb"
       ],
       "subMetas": {},
       "userData": {
@@ -70,7 +69,7 @@
       "displayName": "",
       "id": "6a159",
       "name": "AnimatedMorphSphere.prefab",
-      "ver": "1.0.14",
+      "ver": "1.0.12",
       "imported": true,
       "files": [
         ".json"
@@ -93,12 +92,12 @@
             "name": "Globe",
             "from": 0,
             "to": 7.1999945640563965,
-            "wrapMode": 2,
-            "previousId": "f3a36"
+            "wrapMode": 2
           }
         ]
       }
     ],
+    "redirect": "5267db74-21ca-4e7b-a170-e34c2c9ee749@6a159",
     "assetFinder": {
       "meshes": [
         "5267db74-21ca-4e7b-a170-e34c2c9ee749@825ed"
@@ -110,24 +109,6 @@
       ],
       "scenes": [
         "5267db74-21ca-4e7b-a170-e34c2c9ee749@6a159"
-      ]
-    },
-    "lods": {
-      "enable": false,
-      "hasBuiltinLOD": false,
-      "options": [
-        {
-          "screenRatio": 0.25,
-          "faceCount": 1
-        },
-        {
-          "screenRatio": 0.125,
-          "faceCount": 0.25
-        },
-        {
-          "screenRatio": 0.01,
-          "faceCount": 0.1
-        }
       ]
     }
   }

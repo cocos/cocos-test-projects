@@ -1,12 +1,12 @@
 {
-  "ver": "2.3.14",
+  "ver": "2.2.0",
   "importer": "gltf",
   "imported": true,
   "uuid": "eb1af154-fb56-40dc-bc17-caa10aa19b41",
   "files": [],
   "subMetas": {
     "e064d": {
-      "ver": "1.1.1",
+      "ver": "1.1.0",
       "importer": "gltf-mesh",
       "uuid": "eb1af154-fb56-40dc-bc17-caa10aa19b41@e064d",
       "imported": true,
@@ -16,8 +16,7 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0,
-        "triangleCount": 168
+        "gltfIndex": 0
       },
       "id": "e064d",
       "name": "Mesh grandStandCovered.mesh",
@@ -104,7 +103,7 @@
       "displayName": ""
     },
     "e44fb": {
-      "ver": "1.0.14",
+      "ver": "1.0.12",
       "importer": "gltf-scene",
       "uuid": "eb1af154-fb56-40dc-bc17-caa10aa19b41@e44fb",
       "imported": true,
@@ -124,6 +123,7 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
+    "redirect": "eb1af154-fb56-40dc-bc17-caa10aa19b41@e44fb",
     "assetFinder": {
       "meshes": [
         "eb1af154-fb56-40dc-bc17-caa10aa19b41@e064d"
@@ -141,24 +141,6 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": [],
-    "lods": {
-      "enable": false,
-      "hasBuiltinLOD": false,
-      "options": [
-        {
-          "screenRatio": 0.25,
-          "faceCount": 1
-        },
-        {
-          "screenRatio": 0.125,
-          "faceCount": 0.25
-        },
-        {
-          "screenRatio": 0.01,
-          "faceCount": 0.1
-        }
-      ]
-    }
+    "imageMetas": []
   }
 }

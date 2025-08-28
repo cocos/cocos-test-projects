@@ -1,12 +1,12 @@
 {
-  "ver": "2.3.14",
+  "ver": "2.2.0",
   "importer": "gltf",
   "imported": true,
   "uuid": "de243a2e-7b68-400c-a535-aedfac797eb3",
   "files": [],
   "subMetas": {
     "19572": {
-      "ver": "1.0.14",
+      "ver": "1.0.12",
       "importer": "gltf-scene",
       "uuid": "de243a2e-7b68-400c-a535-aedfac797eb3@19572",
       "imported": true,
@@ -22,7 +22,7 @@
       "displayName": ""
     },
     "a6d73": {
-      "ver": "1.1.1",
+      "ver": "1.1.0",
       "importer": "gltf-mesh",
       "uuid": "de243a2e-7b68-400c-a535-aedfac797eb3@a6d73",
       "imported": true,
@@ -32,8 +32,7 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0,
-        "triangleCount": 96
+        "gltfIndex": 0
       },
       "id": "a6d73",
       "name": "Mesh noExport.mesh",
@@ -45,22 +44,19 @@
       "uuid": "de243a2e-7b68-400c-a535-aedfac797eb3@765da",
       "imported": true,
       "files": [
-        ".json",
-        ".png"
+        ".png",
+        ".json"
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0,
-        "fixAlphaTransparencyArtifacts": true,
-        "hasAlpha": true,
-        "type": "texture"
+        "gltfIndex": 0
       },
       "id": "765da",
       "name": "tankcoBanner.image",
       "displayName": ""
     },
     "e39f7": {
-      "ver": "1.0.22",
+      "ver": "1.0.21",
       "importer": "texture",
       "uuid": "de243a2e-7b68-400c-a535-aedfac797eb3@e39f7",
       "imported": true,
@@ -152,6 +148,7 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
+    "redirect": "de243a2e-7b68-400c-a535-aedfac797eb3@19572",
     "assetFinder": {
       "meshes": [
         "de243a2e-7b68-400c-a535-aedfac797eb3@a6d73"
@@ -175,24 +172,6 @@
         "name": "tankcoBanner",
         "uri": "de243a2e-7b68-400c-a535-aedfac797eb3@765da"
       }
-    ],
-    "lods": {
-      "enable": false,
-      "hasBuiltinLOD": false,
-      "options": [
-        {
-          "screenRatio": 0.25,
-          "faceCount": 1
-        },
-        {
-          "screenRatio": 0.125,
-          "faceCount": 0.25
-        },
-        {
-          "screenRatio": 0.01,
-          "faceCount": 0.1
-        }
-      ]
-    }
+    ]
   }
 }

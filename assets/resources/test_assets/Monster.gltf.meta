@@ -1,14 +1,14 @@
 {
-  "ver": "2.3.14",
+  "ver": "2.2.0",
   "importer": "gltf",
   "imported": true,
   "uuid": "84db66ec-643f-4e78-b06c-3af1ac7a4871",
   "files": [
-    "__original-animation-0.bin"
+    "__original-animation-0.cconb"
   ],
   "subMetas": {
     "cf79d": {
-      "ver": "1.1.1",
+      "ver": "1.1.0",
       "importer": "gltf-mesh",
       "uuid": "84db66ec-643f-4e78-b06c-3af1ac7a4871@cf79d",
       "imported": true,
@@ -18,20 +18,19 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0,
-        "triangleCount": 884
+        "gltfIndex": 0
       },
       "id": "cf79d",
       "name": "monster.mesh",
       "displayName": ""
     },
     "a3140": {
-      "ver": "1.0.18",
+      "ver": "1.0.16",
       "importer": "gltf-animation",
       "uuid": "84db66ec-643f-4e78-b06c-3af1ac7a4871@a3140",
       "imported": true,
       "files": [
-        ".bin"
+        ".cconb"
       ],
       "subMetas": {},
       "userData": {
@@ -66,7 +65,7 @@
       "displayName": ""
     },
     "e39f7": {
-      "ver": "1.0.22",
+      "ver": "1.0.21",
       "importer": "texture",
       "uuid": "84db66ec-643f-4e78-b06c-3af1ac7a4871@e39f7",
       "imported": true,
@@ -106,7 +105,7 @@
       "displayName": ""
     },
     "a07f9": {
-      "ver": "1.0.14",
+      "ver": "1.0.12",
       "importer": "gltf-scene",
       "uuid": "84db66ec-643f-4e78-b06c-3af1ac7a4871@a07f9",
       "imported": true,
@@ -136,12 +135,12 @@
             "name": "UnnamedAnimation",
             "from": 0,
             "to": 3.333329916000366,
-            "wrapMode": 2,
-            "previousId": "a3140"
+            "wrapMode": 2
           }
         ]
       }
     ],
+    "redirect": "84db66ec-643f-4e78-b06c-3af1ac7a4871@a07f9",
     "assetFinder": {
       "meshes": [
         "84db66ec-643f-4e78-b06c-3af1ac7a4871@cf79d"
@@ -163,24 +162,6 @@
       {
         "uri": "db://assets/resources/test_assets/Monster.jpg"
       }
-    ],
-    "lods": {
-      "enable": false,
-      "hasBuiltinLOD": false,
-      "options": [
-        {
-          "screenRatio": 0.25,
-          "faceCount": 1
-        },
-        {
-          "screenRatio": 0.125,
-          "faceCount": 0.25
-        },
-        {
-          "screenRatio": 0.01,
-          "faceCount": 0.1
-        }
-      ]
-    }
+    ]
   }
 }

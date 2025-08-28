@@ -1,16 +1,16 @@
 {
-  "ver": "2.3.14",
+  "ver": "2.3.8",
   "importer": "fbx",
   "imported": true,
   "uuid": "86cd2388-8d0f-4dc0-8b03-4e75fb571d0f",
   "files": [],
   "subMetas": {
-    "dc9b1": {
+    "a5f8b": {
       "importer": "gltf-mesh",
-      "uuid": "86cd2388-8d0f-4dc0-8b03-4e75fb571d0f@dc9b1",
+      "uuid": "86cd2388-8d0f-4dc0-8b03-4e75fb571d0f@a5f8b",
       "displayName": "",
-      "id": "dc9b1",
-      "name": "red sandtone.mesh",
+      "id": "a5f8b",
+      "name": "Plane.001.mesh",
       "userData": {
         "gltfIndex": 0,
         "triangleCount": 520200
@@ -71,7 +71,7 @@
       "userData": {
         "gltfIndex": 0
       },
-      "ver": "1.0.14",
+      "ver": "1.0.13",
       "imported": true,
       "files": [
         ".json"
@@ -90,9 +90,10 @@
       "smartMaterialEnabled": true,
       "matchMeshNames": false
     },
+    "redirect": "86cd2388-8d0f-4dc0-8b03-4e75fb571d0f@ed3ee",
     "assetFinder": {
       "meshes": [
-        "86cd2388-8d0f-4dc0-8b03-4e75fb571d0f@dc9b1"
+        "86cd2388-8d0f-4dc0-8b03-4e75fb571d0f@a5f8b"
       ],
       "skeletons": [],
       "textures": [
@@ -124,13 +125,19 @@
         }
       ]
     },
+    "meshOptimizer": {
+      "simplifyOptions": {
+        "targetRatio": 0.63,
+        "enableSmartLink": true,
+        "agressiveness": 7,
+        "maxIterationCount": 100
+      },
+      "enable": true,
+      "algorithm": "simplify"
+    },
     "legacyFbxImporter": false,
     "allowMeshDataAccess": true,
     "addVertexColor": false,
-    "generateLightmapUVNode": false,
-    "meshSimplify": {
-      "enable": true,
-      "targetRatio": 0.63
-    }
+    "generateLightmapUVNode": false
   }
 }

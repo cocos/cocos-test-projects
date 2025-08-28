@@ -1,12 +1,12 @@
 {
-  "ver": "2.3.14",
+  "ver": "2.2.0",
   "importer": "gltf",
   "imported": true,
   "uuid": "dbf79868-bc59-45b7-8be2-9061b865ff58",
   "files": [],
   "subMetas": {
     "67858": {
-      "ver": "1.0.14",
+      "ver": "1.0.12",
       "importer": "gltf-scene",
       "uuid": "dbf79868-bc59-45b7-8be2-9061b865ff58@67858",
       "imported": true,
@@ -22,7 +22,7 @@
       "displayName": ""
     },
     "750a3": {
-      "ver": "1.1.1",
+      "ver": "1.1.0",
       "importer": "gltf-mesh",
       "uuid": "dbf79868-bc59-45b7-8be2-9061b865ff58@750a3",
       "imported": true,
@@ -32,8 +32,7 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0,
-        "triangleCount": 280
+        "gltfIndex": 0
       },
       "id": "750a3",
       "name": "Mesh grandStandAwning.mesh",
@@ -92,6 +91,7 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
+    "redirect": "dbf79868-bc59-45b7-8be2-9061b865ff58@67858",
     "assetFinder": {
       "meshes": [
         "dbf79868-bc59-45b7-8be2-9061b865ff58@750a3"
@@ -107,24 +107,6 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": [],
-    "lods": {
-      "enable": false,
-      "hasBuiltinLOD": false,
-      "options": [
-        {
-          "screenRatio": 0.25,
-          "faceCount": 1
-        },
-        {
-          "screenRatio": 0.125,
-          "faceCount": 0.25
-        },
-        {
-          "screenRatio": 0.01,
-          "faceCount": 0.1
-        }
-      ]
-    }
+    "imageMetas": []
   }
 }

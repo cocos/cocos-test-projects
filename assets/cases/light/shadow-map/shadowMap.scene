@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.SceneAsset",
-    "_name": "shadowMap",
+    "_name": "",
     "_objFlags": 0,
     "_native": "",
     "scene": {
@@ -153,10 +153,7 @@
     "_shadowFixedArea": true,
     "_shadowNear": 1,
     "_shadowFar": 50,
-    "_shadowOrthoSize": 5,
-    "_csmLevel": 4,
-    "_csmLayerLambda": 0.75,
-    "_csmOptimizationMode": 2
+    "_shadowOrthoSize": 5
   },
   {
     "__type__": "cc.StaticLightSettings",
@@ -306,20 +303,19 @@
       }
     ],
     "_visFlags": 0,
-    "lightmapSettings": null,
+    "lightmapSettings": {
+      "__id__": 9
+    },
     "_mesh": {
       "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@2e76e"
     },
     "_shadowCastingMode": 0,
     "_shadowReceivingMode": 1,
     "_enableMorph": true,
-    "_id": "a4QyYLeEtPkbN7ou4PveG5",
-    "bakeSettings": {
-      "__id__": 9
-    }
+    "_id": "a4QyYLeEtPkbN7ou4PveG5"
   },
   {
-    "__type__": "cc.ModelBakeSettings",
+    "__type__": "cc.ModelLightmapSettings",
     "texture": null,
     "uvParam": {
       "__type__": "cc.Vec4",
@@ -392,20 +388,19 @@
       }
     ],
     "_visFlags": 0,
-    "lightmapSettings": null,
+    "lightmapSettings": {
+      "__id__": 12
+    },
     "_mesh": {
       "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@17020"
     },
     "_shadowCastingMode": 1,
     "_shadowReceivingMode": 1,
     "_enableMorph": true,
-    "_id": "de7f5tiypBRKDkBgR8zX/d",
-    "bakeSettings": {
-      "__id__": 12
-    }
+    "_id": "de7f5tiypBRKDkBgR8zX/d"
   },
   {
-    "__type__": "cc.ModelBakeSettings",
+    "__type__": "cc.ModelLightmapSettings",
     "texture": null,
     "uvParam": {
       "__type__": "cc.Vec4",
@@ -480,24 +475,23 @@
       }
     ],
     "_visFlags": 0,
-    "lightmapSettings": null,
+    "lightmapSettings": {
+      "__id__": 16
+    },
     "_mesh": {
       "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@a804a"
     },
     "_shadowCastingMode": 1,
     "_shadowReceivingMode": 1,
     "_enableMorph": true,
-    "_id": "d0rXbtTy5NXZo3aSZV8hb9",
-    "bakeSettings": {
-      "__id__": 16
-    }
+    "_id": "d0rXbtTy5NXZo3aSZV8hb9"
   },
   {
     "__type__": "cc.CompPrefabInfo",
     "fileId": "d0rXbtTy5NXZo3aSZV8hb9"
   },
   {
-    "__type__": "cc.ModelBakeSettings",
+    "__type__": "cc.ModelLightmapSettings",
     "texture": null,
     "uvParam": {
       "__type__": "cc.Vec4",
@@ -649,7 +643,7 @@
     ]
   },
   {
-    "__type__": "cc.ModelBakeSettings",
+    "__type__": "cc.ModelLightmapSettings",
     "texture": null,
     "uvParam": {
       "__type__": "cc.Vec4",
@@ -715,7 +709,7 @@
     ]
   },
   {
-    "__type__": "cc.ModelBakeSettings",
+    "__type__": "cc.ModelLightmapSettings",
     "texture": null,
     "uvParam": {
       "__type__": "cc.Vec4",
@@ -822,24 +816,23 @@
       }
     ],
     "_visFlags": 0,
-    "lightmapSettings": null,
+    "lightmapSettings": {
+      "__id__": 43
+    },
     "_mesh": {
       "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@40ece"
     },
     "_shadowCastingMode": 1,
     "_shadowReceivingMode": 1,
     "_enableMorph": true,
-    "_id": "96iA3WPA5I05IZoDQaGnl+",
-    "bakeSettings": {
-      "__id__": 43
-    }
+    "_id": "96iA3WPA5I05IZoDQaGnl+"
   },
   {
     "__type__": "cc.CompPrefabInfo",
     "fileId": "96iA3WPA5I05IZoDQaGnl+"
   },
   {
-    "__type__": "cc.ModelBakeSettings",
+    "__type__": "cc.ModelLightmapSettings",
     "texture": null,
     "uvParam": {
       "__type__": "cc.Vec4",
@@ -1100,7 +1093,7 @@
     ]
   },
   {
-    "__type__": "cc.ModelBakeSettings",
+    "__type__": "cc.ModelLightmapSettings",
     "texture": null,
     "uvParam": {
       "__type__": "cc.Vec4",
@@ -1166,7 +1159,7 @@
     ]
   },
   {
-    "__type__": "cc.ModelBakeSettings",
+    "__type__": "cc.ModelLightmapSettings",
     "texture": null,
     "uvParam": {
       "__type__": "cc.Vec4",
@@ -1464,7 +1457,7 @@
     ]
   },
   {
-    "__type__": "cc.ModelBakeSettings",
+    "__type__": "cc.ModelLightmapSettings",
     "texture": null,
     "uvParam": {
       "__type__": "cc.Vec4",
@@ -1530,7 +1523,7 @@
     ]
   },
   {
-    "__type__": "cc.ModelBakeSettings",
+    "__type__": "cc.ModelLightmapSettings",
     "texture": null,
     "uvParam": {
       "__type__": "cc.Vec4",

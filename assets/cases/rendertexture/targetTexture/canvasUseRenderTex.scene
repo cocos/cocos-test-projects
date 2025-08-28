@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.SceneAsset",
-    "_name": "canvasUseRenderTex",
+    "_name": "",
     "_objFlags": 0,
     "_native": "",
     "scene": {
@@ -119,10 +119,7 @@
     "_shadowFixedArea": false,
     "_shadowNear": 1,
     "_shadowFar": 30,
-    "_shadowOrthoSize": 5,
-    "_csmLevel": 1,
-    "_csmLayerLambda": 0.75,
-    "_csmOptimizationMode": 2
+    "_shadowOrthoSize": 5
   },
   {
     "__type__": "cc.StaticLightSettings",
@@ -807,7 +804,9 @@
       }
     ],
     "_visFlags": 0,
-    "lightmapSettings": null,
+    "lightmapSettings": {
+      "__id__": 24
+    },
     "_mesh": {
       "__uuid__": "1263d74c-8167-4928-91a6-4e2672411f47@fc873",
       "__expectedType__": "cc.Mesh"
@@ -815,13 +814,10 @@
     "_shadowCastingMode": 0,
     "_shadowReceivingMode": 1,
     "_enableMorph": true,
-    "_id": "82tPLkoHFEzqkiUrHMRTS1",
-    "bakeSettings": {
-      "__id__": 24
-    }
+    "_id": "82tPLkoHFEzqkiUrHMRTS1"
   },
   {
-    "__type__": "cc.ModelBakeSettings",
+    "__type__": "cc.ModelLightmapSettings",
     "texture": null,
     "uvParam": {
       "__type__": "cc.Vec4",

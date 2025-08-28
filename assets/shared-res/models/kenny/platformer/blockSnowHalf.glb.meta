@@ -1,12 +1,12 @@
 {
-  "ver": "2.3.14",
+  "ver": "2.2.0",
   "importer": "gltf",
   "imported": true,
   "uuid": "dfb05729-6a75-40b0-8a9c-ce362bd9afa4",
   "files": [],
   "subMetas": {
     "a00e1": {
-      "ver": "1.1.1",
+      "ver": "1.1.0",
       "importer": "gltf-mesh",
       "uuid": "dfb05729-6a75-40b0-8a9c-ce362bd9afa4@a00e1",
       "imported": true,
@@ -16,8 +16,7 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0,
-        "triangleCount": 116
+        "gltfIndex": 0
       },
       "id": "a00e1",
       "name": "Mesh blockSnowHalf.mesh",
@@ -56,7 +55,7 @@
       "displayName": ""
     },
     "928f1": {
-      "ver": "1.0.14",
+      "ver": "1.0.12",
       "importer": "gltf-scene",
       "uuid": "dfb05729-6a75-40b0-8a9c-ce362bd9afa4@928f1",
       "imported": true,
@@ -76,6 +75,7 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
+    "redirect": "dfb05729-6a75-40b0-8a9c-ce362bd9afa4@928f1",
     "assetFinder": {
       "meshes": [
         "dfb05729-6a75-40b0-8a9c-ce362bd9afa4@a00e1"
@@ -90,24 +90,6 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": [],
-    "lods": {
-      "enable": false,
-      "hasBuiltinLOD": false,
-      "options": [
-        {
-          "screenRatio": 0.25,
-          "faceCount": 1
-        },
-        {
-          "screenRatio": 0.125,
-          "faceCount": 0.25
-        },
-        {
-          "screenRatio": 0.01,
-          "faceCount": 0.1
-        }
-      ]
-    }
+    "imageMetas": []
   }
 }

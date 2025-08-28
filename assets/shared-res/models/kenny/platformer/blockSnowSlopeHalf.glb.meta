@@ -1,12 +1,12 @@
 {
-  "ver": "2.3.14",
+  "ver": "2.2.0",
   "importer": "gltf",
   "imported": true,
   "uuid": "1499e659-5280-418a-87b0-f3e65983b8cf",
   "files": [],
   "subMetas": {
     "c44b5": {
-      "ver": "1.1.1",
+      "ver": "1.1.0",
       "importer": "gltf-mesh",
       "uuid": "1499e659-5280-418a-87b0-f3e65983b8cf@c44b5",
       "imported": true,
@@ -16,8 +16,7 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0,
-        "triangleCount": 112
+        "gltfIndex": 0
       },
       "id": "c44b5",
       "name": "Mesh blockSnowSlopeHalf.mesh",
@@ -56,7 +55,7 @@
       "displayName": ""
     },
     "3e33c": {
-      "ver": "1.0.14",
+      "ver": "1.0.12",
       "importer": "gltf-scene",
       "uuid": "1499e659-5280-418a-87b0-f3e65983b8cf@3e33c",
       "imported": true,
@@ -76,6 +75,7 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
+    "redirect": "1499e659-5280-418a-87b0-f3e65983b8cf@3e33c",
     "assetFinder": {
       "meshes": [
         "1499e659-5280-418a-87b0-f3e65983b8cf@c44b5"
@@ -90,24 +90,6 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": [],
-    "lods": {
-      "enable": false,
-      "hasBuiltinLOD": false,
-      "options": [
-        {
-          "screenRatio": 0.25,
-          "faceCount": 1
-        },
-        {
-          "screenRatio": 0.125,
-          "faceCount": 0.25
-        },
-        {
-          "screenRatio": 0.01,
-          "faceCount": 0.1
-        }
-      ]
-    }
+    "imageMetas": []
   }
 }

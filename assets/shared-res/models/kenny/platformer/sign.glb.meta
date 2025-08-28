@@ -1,12 +1,12 @@
 {
-  "ver": "2.3.14",
+  "ver": "2.2.0",
   "importer": "gltf",
   "imported": true,
   "uuid": "347b9248-a596-417a-bcd2-8d70ae666f11",
   "files": [],
   "subMetas": {
     "1383f": {
-      "ver": "1.1.1",
+      "ver": "1.1.0",
       "importer": "gltf-mesh",
       "uuid": "347b9248-a596-417a-bcd2-8d70ae666f11@1383f",
       "imported": true,
@@ -16,8 +16,7 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0,
-        "triangleCount": 110
+        "gltfIndex": 0
       },
       "id": "1383f",
       "name": "Mesh sign.mesh",
@@ -56,7 +55,7 @@
       "displayName": ""
     },
     "9ccfa": {
-      "ver": "1.0.14",
+      "ver": "1.0.12",
       "importer": "gltf-scene",
       "uuid": "347b9248-a596-417a-bcd2-8d70ae666f11@9ccfa",
       "imported": true,
@@ -76,6 +75,7 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
+    "redirect": "347b9248-a596-417a-bcd2-8d70ae666f11@9ccfa",
     "assetFinder": {
       "meshes": [
         "347b9248-a596-417a-bcd2-8d70ae666f11@1383f"
@@ -90,24 +90,6 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": [],
-    "lods": {
-      "enable": false,
-      "hasBuiltinLOD": false,
-      "options": [
-        {
-          "screenRatio": 0.25,
-          "faceCount": 1
-        },
-        {
-          "screenRatio": 0.125,
-          "faceCount": 0.25
-        },
-        {
-          "screenRatio": 0.01,
-          "faceCount": 0.1
-        }
-      ]
-    }
+    "imageMetas": []
   }
 }

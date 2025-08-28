@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.14",
+  "ver": "2.2.0",
   "importer": "gltf",
   "imported": true,
   "uuid": "9f0390cb-907e-4380-91d4-1c34460b00f6",
@@ -11,7 +11,7 @@
       "displayName": "",
       "id": "490db",
       "name": "mesh.mesh",
-      "ver": "1.1.1",
+      "ver": "1.1.0",
       "imported": true,
       "files": [
         ".bin",
@@ -19,8 +19,7 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0,
-        "triangleCount": 32
+        "gltfIndex": 0
       }
     },
     "e39f7": {
@@ -29,7 +28,7 @@
       "displayName": "",
       "id": "e39f7",
       "name": "UnnamedTexture.texture",
-      "ver": "1.0.22",
+      "ver": "1.0.21",
       "imported": true,
       "files": [
         ".json"
@@ -85,7 +84,7 @@
       "displayName": "",
       "id": "73ae7",
       "name": "MorphPrimitivesTest.prefab",
-      "ver": "1.0.14",
+      "ver": "1.0.12",
       "imported": true,
       "files": [
         ".json"
@@ -103,6 +102,7 @@
         "uri": "db://assets/cases/animation/morph/glTF-Sample-Models/MorphPrimitivesTest/glTF/uv_texture.jpg"
       }
     ],
+    "redirect": "9f0390cb-907e-4380-91d4-1c34460b00f6@73ae7",
     "assetFinder": {
       "meshes": [
         "9f0390cb-907e-4380-91d4-1c34460b00f6@490db"
@@ -117,24 +117,6 @@
       ],
       "scenes": [
         "9f0390cb-907e-4380-91d4-1c34460b00f6@73ae7"
-      ]
-    },
-    "lods": {
-      "enable": false,
-      "hasBuiltinLOD": false,
-      "options": [
-        {
-          "screenRatio": 0.25,
-          "faceCount": 1
-        },
-        {
-          "screenRatio": 0.125,
-          "faceCount": 0.25
-        },
-        {
-          "screenRatio": 0.01,
-          "faceCount": 0.1
-        }
       ]
     }
   }

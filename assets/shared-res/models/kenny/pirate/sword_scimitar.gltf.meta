@@ -1,12 +1,12 @@
 {
-  "ver": "2.3.14",
+  "ver": "2.2.0",
   "importer": "gltf",
   "imported": true,
   "uuid": "8aa7d99c-0543-494a-9d60-646b6c72db90",
   "files": [],
   "subMetas": {
     "36c9a": {
-      "ver": "1.1.1",
+      "ver": "1.1.0",
       "importer": "gltf-mesh",
       "uuid": "8aa7d99c-0543-494a-9d60-646b6c72db90@36c9a",
       "imported": true,
@@ -16,8 +16,7 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0,
-        "triangleCount": 408
+        "gltfIndex": 0
       },
       "id": "36c9a",
       "name": "sword_scimitar.mesh",
@@ -88,7 +87,7 @@
       "displayName": ""
     },
     "8e31b": {
-      "ver": "1.0.14",
+      "ver": "1.0.12",
       "importer": "gltf-scene",
       "uuid": "8aa7d99c-0543-494a-9d60-646b6c72db90@8e31b",
       "imported": true,
@@ -108,6 +107,7 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
+    "redirect": "8aa7d99c-0543-494a-9d60-646b6c72db90@8e31b",
     "assetFinder": {
       "meshes": [
         "8aa7d99c-0543-494a-9d60-646b6c72db90@36c9a"
@@ -124,24 +124,6 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": [],
-    "lods": {
-      "enable": false,
-      "hasBuiltinLOD": false,
-      "options": [
-        {
-          "screenRatio": 0.25,
-          "faceCount": 1
-        },
-        {
-          "screenRatio": 0.125,
-          "faceCount": 0.25
-        },
-        {
-          "screenRatio": 0.01,
-          "faceCount": 0.1
-        }
-      ]
-    }
+    "imageMetas": []
   }
 }

@@ -1,10 +1,10 @@
 {
-  "ver": "2.3.14",
+  "ver": "2.2.0",
   "importer": "gltf",
   "imported": true,
   "uuid": "1d795f67-fa84-4827-8bb8-1d2772d596d5",
   "files": [
-    "__original-animation-0.bin"
+    "__original-animation-0.cconb"
   ],
   "subMetas": {
     "2f6d1": {
@@ -13,7 +13,7 @@
       "displayName": "",
       "id": "2f6d1",
       "name": "Cube.mesh",
-      "ver": "1.1.1",
+      "ver": "1.1.0",
       "imported": true,
       "files": [
         ".bin",
@@ -21,8 +21,7 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0,
-        "triangleCount": 12
+        "gltfIndex": 0
       }
     },
     "4e621": {
@@ -31,10 +30,10 @@
       "displayName": "",
       "id": "4e621",
       "name": "Square.animation",
-      "ver": "1.0.18",
+      "ver": "1.0.16",
       "imported": true,
       "files": [
-        ".bin"
+        ".cconb"
       ],
       "subMetas": {},
       "userData": {
@@ -70,7 +69,7 @@
       "displayName": "",
       "id": "cdf3a",
       "name": "AnimatedMorphCube.prefab",
-      "ver": "1.0.14",
+      "ver": "1.0.12",
       "imported": true,
       "files": [
         ".json"
@@ -93,12 +92,12 @@
             "name": "Square",
             "from": 0,
             "to": 4.199997425079346,
-            "wrapMode": 2,
-            "previousId": "4e621"
+            "wrapMode": 2
           }
         ]
       }
     ],
+    "redirect": "1d795f67-fa84-4827-8bb8-1d2772d596d5@cdf3a",
     "assetFinder": {
       "meshes": [
         "1d795f67-fa84-4827-8bb8-1d2772d596d5@2f6d1"
@@ -110,24 +109,6 @@
       ],
       "scenes": [
         "1d795f67-fa84-4827-8bb8-1d2772d596d5@cdf3a"
-      ]
-    },
-    "lods": {
-      "enable": false,
-      "hasBuiltinLOD": false,
-      "options": [
-        {
-          "screenRatio": 0.25,
-          "faceCount": 1
-        },
-        {
-          "screenRatio": 0.125,
-          "faceCount": 0.25
-        },
-        {
-          "screenRatio": 0.01,
-          "faceCount": 0.1
-        }
       ]
     }
   }

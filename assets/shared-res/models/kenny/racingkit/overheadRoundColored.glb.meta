@@ -1,12 +1,12 @@
 {
-  "ver": "2.3.14",
+  "ver": "2.2.0",
   "importer": "gltf",
   "imported": true,
   "uuid": "60a57602-8175-4dc6-93a7-ab0660f90d39",
   "files": [],
   "subMetas": {
     "cb004": {
-      "ver": "1.1.1",
+      "ver": "1.1.0",
       "importer": "gltf-mesh",
       "uuid": "60a57602-8175-4dc6-93a7-ab0660f90d39@cb004",
       "imported": true,
@@ -16,8 +16,7 @@
       ],
       "subMetas": {},
       "userData": {
-        "gltfIndex": 0,
-        "triangleCount": 100
+        "gltfIndex": 0
       },
       "id": "cb004",
       "name": "Mesh overheadRoundColored.mesh",
@@ -56,7 +55,7 @@
       "displayName": ""
     },
     "3b9da": {
-      "ver": "1.0.14",
+      "ver": "1.0.12",
       "importer": "gltf-scene",
       "uuid": "60a57602-8175-4dc6-93a7-ab0660f90d39@3b9da",
       "imported": true,
@@ -76,6 +75,7 @@
     "normals": 2,
     "tangents": 2,
     "dumpMaterials": false,
+    "redirect": "60a57602-8175-4dc6-93a7-ab0660f90d39@3b9da",
     "assetFinder": {
       "meshes": [
         "60a57602-8175-4dc6-93a7-ab0660f90d39@cb004"
@@ -90,24 +90,6 @@
       "skeletons": [],
       "textures": []
     },
-    "imageMetas": [],
-    "lods": {
-      "enable": false,
-      "hasBuiltinLOD": false,
-      "options": [
-        {
-          "screenRatio": 0.25,
-          "faceCount": 1
-        },
-        {
-          "screenRatio": 0.125,
-          "faceCount": 0.25
-        },
-        {
-          "screenRatio": 0.01,
-          "faceCount": 0.1
-        }
-      ]
-    }
+    "imageMetas": []
   }
 }

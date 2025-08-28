@@ -5,6 +5,7 @@
     },
     "configs": {
       "migrationsConfig": {
+        "name": "迁移生成的配置",
         "cache": {
           "base": {
             "_value": true
@@ -34,7 +35,10 @@
             "_value": true
           },
           "sorting-2d": {
-            "_value": true
+            "_value": false
+          },
+          "xr": {
+            "_value": false
           },
           "rich-text": {
             "_value": true
@@ -186,15 +190,9 @@
           },
           "legacy-pipeline": {
             "_value": false
-          },
-          "xr": {
-            "_value": false
           }
         },
-        "flags": {
-          "LOAD_SPINE_MANUALLY": false
-        },
-        "name": "迁移生成的配置",
+        "flags": {},
         "includeModules": [
           "2d",
           "3d",
@@ -220,7 +218,6 @@
           "profiler",
           "rich-text",
           "skeletal-animation",
-          "sorting-2d",
           "spine-3.8",
           "terrain",
           "tiled-map",
