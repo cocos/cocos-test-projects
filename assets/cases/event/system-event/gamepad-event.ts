@@ -1,11 +1,21 @@
-import { _decorator, Component, Node, ProgressBar, EventGamepad, input, Input, GamepadCode, Vec2, UITransform, Vec3, v3, Graphics, Color, sys, Gamepad, view } from 'cc';
+import { _decorator, Component, Node, Toggle, Label, ProgressBar, EventGamepad, input, Input, GamepadCode, Vec2, UITransform, Vec3, v3, Graphics, Color, sys, Gamepad, view } from 'cc';
 const { ccclass, property } = _decorator;
+
 
 @ccclass('gamepad_event')
 export class gamepad_event extends Component {
 
     @property(Node)
     public supportTip: Node = null!;
+
+    @property(Label)
+    public joystickInfo: Label = null!;
+
+    @property(Toggle)
+    public gamePad1: Toggle = null!;
+
+    @property(Toggle)
+    public gamePad2: Toggle = null!;
 
     @property(ProgressBar)
     public L1: ProgressBar = null!;
@@ -55,6 +65,8 @@ export class gamepad_event extends Component {
     private _leftStickPos: Vec3 = null!;
     private _rightStickPos: Vec3 = null!;
     private _stickMoveDistance = 50;
+    
+    private _gamepadArray: Array<{deviceId: number, toggle: Toggle}> = new Array();
 
     onLoad() {
         if (!sys.hasFeature(sys.Feature.EVENT_GAMEPAD)) {
@@ -62,6 +74,10 @@ export class gamepad_event extends Component {
             return;
         }
         input.on(Input.EventType.GAMEPAD_INPUT, this.gamepadInput, this);
+        input.on(Input.EventType.GAMEPAD_CHANGE, this.gamepadChange, this);
+
+        this.gamePad1.node.active = false;
+        this.gamePad2.node.active = false;
 
         this._leftStickPos = this.L3.node.position.clone();
         this._rightStickPos = this.R3.node.position.clone();
@@ -70,14 +86,58 @@ export class gamepad_event extends Component {
         this.graphicsLeft.stroke();
         this.graphicsRight.circle(0, 0, this._stickMoveDistance+10);
         this.graphicsRight.stroke();
+        this._gamepadArray.push({deviceId:-1, toggle: this.gamePad1});
+        this._gamepadArray.push({deviceId:-1, toggle: this.gamePad2});
     }
 
     onDestroy () {
         input.off(Input.EventType.GAMEPAD_INPUT, this.gamepadInput, this);
     }
 
+    gamepadChange(e: EventGamepad) {
+        const gp = e.gamepad;
+        console.debug(`连接手柄：设备ID  ${gp.deviceId}   设备状态 ${gp.connected} `);
+        this.updateGamepad(e);
+    }
+
+    updateGamepad(e: EventGamepad) {
+        const gp = e.gamepad;
+        for(let i = 0; i < this._gamepadArray.length; ++i) {
+            const item = this._gamepadArray[i];
+            if(item.deviceId == -1 && gp.connected) {
+                item.deviceId = gp.deviceId;
+                item.toggle.node.active = gp.connected;
+                return;
+            } else if(item.deviceId != -1 && item.deviceId == gp.deviceId && !gp.connected) {
+                item.deviceId = -1;
+                item.toggle.node.active = gp.connected;
+                return;
+            }
+        }
+        console.warn(`2个以上手柄，或者异常: 设备ID  ${gp.deviceId}   设备状态 ${gp.connected} `);
+    }
+
     gamepadInput (e: EventGamepad) {
         const gp = e.gamepad;
+        if(!gp.connected) {
+            console.warn(`这个设备ID：${gp.deviceId} 的状态不应该是未链接`);
+        }
+        let isGamepadExist = false;
+        for(let i = 0; i < this._gamepadArray.length; ++i) {
+            const item = this._gamepadArray[i];
+            if(gp.deviceId != item.deviceId) {
+                continue;
+            }
+            isGamepadExist = true;
+            if(gp.deviceId === item.deviceId && (item.toggle.node.active == false || (item.toggle.node.active == true && !item.toggle.isChecked)) ) {
+                return;
+            }
+        }
+        if(!isGamepadExist) {
+            this.updateGamepad(e);
+        }
+
+        this.joystickInfo.string = '手柄ID: ' + gp.deviceId;
         this.L1.progress =  gp.buttonL1.getValue();
         this.L2.progress = gp.buttonL2.getValue();
         this.L3.progress = gp.buttonL3.getValue();
