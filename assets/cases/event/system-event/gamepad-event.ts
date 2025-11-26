@@ -17,6 +17,12 @@ export class gamepad_event extends Component {
     @property(Toggle)
     public gamePad2: Toggle = null!;
 
+    @property(Toggle)
+    public gamePad3: Toggle = null!;
+
+    @property(Toggle)
+    public gamePad4: Toggle = null!;
+
     @property(ProgressBar)
     public L1: ProgressBar = null!;
     @property(ProgressBar)
@@ -78,6 +84,8 @@ export class gamepad_event extends Component {
 
         this.gamePad1.node.active = false;
         this.gamePad2.node.active = false;
+        this.gamePad3.node.active = false;
+        this.gamePad4.node.active = false;
 
         this._leftStickPos = this.L3.node.position.clone();
         this._rightStickPos = this.R3.node.position.clone();
@@ -88,6 +96,8 @@ export class gamepad_event extends Component {
         this.graphicsRight.stroke();
         this._gamepadArray.push({deviceId:-1, toggle: this.gamePad1});
         this._gamepadArray.push({deviceId:-1, toggle: this.gamePad2});
+        this._gamepadArray.push({deviceId:-1, toggle: this.gamePad3});
+        this._gamepadArray.push({deviceId:-1, toggle: this.gamePad4});
     }
 
     onDestroy () {
