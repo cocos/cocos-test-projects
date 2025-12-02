@@ -124,6 +124,7 @@ export class KeyboardEvent extends Component {
     onLoad () {
         if (sys.platform === sys.Platform.WIN32 ||
             sys.platform === sys.Platform.MACOS ||
+            sys.platform === sys.Platform.OPENHARMONY ||
             sys.platform === sys.Platform.DESKTOP_BROWSER ||
             sys.platform === sys.Platform.WECHAT_GAME && !sys.isMobile ||
             sys.platform === sys.Platform.ANDROID && sys.hasFeature(sys.Feature.HPE)
