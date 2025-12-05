@@ -18,7 +18,7 @@ export class systemEventPC extends Component {
     private _timeoutId = -1;
 
     onLoad () {
-        if (sys.isMobile && !sys.hasFeature(sys.Feature.HPE)) {
+        if (sys.isMobile && !sys.hasFeature(sys.Feature.HPE) && sys.platform !== sys.Platform.OPENHARMONY) {
             this.notSupported.active = true;
             return;
         }
