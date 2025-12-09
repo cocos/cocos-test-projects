@@ -112,6 +112,10 @@ const keyCode2KeyName: Record<number, string> = {
     2001: "ctrlRight",
     2002: "altRight",
     2003: "numEnter",
+    20093:"__menu",
+    91:"__win_left",
+    93:"__win_right",
+    20094:"__print_screen",
 };
 
 @ccclass('KeyboardEvent')
