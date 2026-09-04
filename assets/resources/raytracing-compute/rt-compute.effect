@@ -1,0 +1,136 @@
+// Effect Syntax Guide: https://docs.cocos.com/creator/manual/zh/shader/index.html
+
+CCEffect %{
+  techniques:
+  - name: opaque
+    passes:
+    - pass: rt1w
+      compute: rt-comp
+}%
+
+CCProgram rt-comp %{
+  precision highp float;
+  precision mediump image2D;
+
+  const uint OBJ_NUM = 2;
+  const float MAX_DISTANCE = 100000000.0F;
+
+  layout(local_size_x = 8, local_size_y = 4, local_size_z = 1) in;
+
+  // xyz - vec3 center, w - radius
+  #pragma rate b_sphereBuffer pass
+  layout(std140) uniform b_sphereBuffer {
+    vec4 b_spheres[2];
+  };
+
+  #pragma rate co pass
+  layout (rgba8) writeonly uniform image2D co;
+
+  struct Ray {
+    vec3 origin;
+    vec3 direction;
+  };
+
+  struct Sphere {
+    vec3 center;
+    float radius;
+  };
+
+  struct HitRecord {
+    vec3 p;
+    vec3 normal;
+    float t;
+    bool frontFace;
+  };
+
+  float hit_sphere(vec3 center, float radius, Ray r) {
+    vec3 oc = r.origin - center;
+    float a = dot(r.direction, r.direction);
+    float half_b = dot(oc, r.direction);
+    float c = dot(oc, oc) - radius*radius;
+    float discriminant = half_b*half_b - a*c;
+    return discriminant < 0.F ? -1.F : -half_b - sqrt(discriminant);
+  }
+
+  void setFaceNormal(in Ray r, in vec3 outNormal, inout HitRecord record) {
+    record.frontFace = dot(r.direction, outNormal) < 0;
+    record.normal = record.frontFace ? outNormal : -outNormal;
+  }
+
+  bool hit(in Sphere s, in Ray r, float t_min, float t_max, inout HitRecord record) {
+    vec3 oc = r.origin - s.center;
+    float a = dot(r.direction, r.direction);
+    float half_b = dot(oc, r.direction);
+    float c = dot(oc, oc) - s.radius*s.radius;
+    float discriminant = half_b*half_b - a*c;
+    if (discriminant > 0) {
+      float root = sqrt(discriminant);
+
+      // front
+      float temp = (-half_b - root) / a;
+      if(temp < t_max && temp > t_min) {
+        record.t = temp;
+        record.p = r.origin + temp * r.direction;
+        vec3 outNormal = (record.p - s.center) / s.radius;
+        setFaceNormal(r, outNormal, record);
+        return true;
+      }
+
+      // back
+      temp = (-half_b + root) / a;
+      if(temp < t_max && temp > t_min) {
+        record.t = temp;
+        record.p = r.origin + temp * r.direction;
+        vec3 outNormal = (record.p - s.center) / s.radius;
+        setFaceNormal(r, outNormal, record);
+        return true;
+      }
+    }
+    return false;
+  }
+
+  bool hit_object(in Ray r, float t_min, float t_max, inout HitRecord record) {
+    HitRecord rec;
+    bool hitCheck = false;
+    float closest = t_max;
+    for (uint i = 0; i < OBJ_NUM; i++) {
+      vec4 v = b_spheres[i];
+      Sphere s;
+      s.center = v.xyz;
+      s.radius = v.w;
+      if(hit(s, r, t_min, closest, rec)) {
+        hitCheck = true;
+        closest = record.t;
+        record = rec;
+      }
+    }
+    return hitCheck;
+  }
+
+  vec4 ray_color(in Ray r) {
+    HitRecord record;
+    if(hit_object(r, 0, MAX_DISTANCE, record)) {
+      return vec4(0.5 * (record.normal + vec3(1.0, 1.0, 1.0)), 1.0);
+    }
+
+    ivec2 size = imageSize(co);
+    uint currY = gl_GlobalInvocationID.y;
+    float ratio = float(currY) / float(size.y);
+    vec3 res = (1.0 - ratio) * vec3(1.0, 1.0, 1.0) + ratio * vec3(0.5, 0.7, 1.0);
+    return vec4(res, 1.0);
+  }
+
+  void main () {
+    Ray r;
+    r.origin = vec3(0.0, 0.0, 0.0);
+
+    ivec2 size = imageSize(co);
+    float aspect = float(size.x) / float(size.y);
+    vec2 ndc = vec2(float(gl_GlobalInvocationID.x) / float(size.x) * 2.0 - 1.0, float(gl_GlobalInvocationID.y) / float(size.y) * 2.0 - 1.0);
+    ndc.x *= aspect;
+    r.direction = normalize(vec3(ndc, -1.0));
+
+    vec4 color = ray_color(r);
+    imageStore(co, ivec2(gl_GlobalInvocationID.xy), color);
+  }
+}%
