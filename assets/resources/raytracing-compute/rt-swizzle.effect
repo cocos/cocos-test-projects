@@ -1,0 +1,47 @@
+// Copyright (c) 2017-2023 Xiamen Yaji Software Co., Ltd.
+
+CCEffect %{
+  techniques:
+  - passes:
+    - vert: swizzle-pass-vs
+      frag: swizzle-pass-fs
+      pass: swizzle
+      phase: swizzle-phase
+      depthStencilState:
+        depthTest: false
+        depthWrite: false
+      rasterizerState:
+        cullMode: none
+}%
+
+CCProgram swizzle-pass-vs %{
+  #include <builtin/uniforms/cc-global>
+  #include <legacy/input>
+  precision highp float;
+  out vec2 v_uv;
+
+  void main () {
+    vec4 pos = vec4(a_position, 1.0);
+    gl_Position = pos;
+    v_uv = a_texCoord;
+  }
+}%
+
+CCProgram swizzle-pass-fs %{
+  precision highp float;
+  in vec2 v_uv;
+
+  #pragma rate mainTexture pass
+  layout(binding = 0) uniform sampler2D mainTexture;
+
+  layout(location = 0) out vec4 fragColor;
+
+void main () {
+    #if defined(CC_USE_METAL) || defined(CC_USE_WGPU)
+    vec2 uv = vec2(v_uv.x, 1.0 - v_uv.y);
+    #else
+    vec2 uv = v_uv;
+    #endif
+    fragColor = texture(mainTexture, uv);
+  }
+}%
