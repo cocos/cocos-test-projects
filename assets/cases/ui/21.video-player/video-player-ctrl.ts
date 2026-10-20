@@ -106,6 +106,10 @@ export class VideoPlayerCtrl extends Component {
                 }
                 break;
             }
+            case VideoPlayer.EventType.STOPPED: {
+                this.slider.progress = 0;
+                break;
+            }
         }
     }
 
