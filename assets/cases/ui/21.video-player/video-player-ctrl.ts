@@ -52,9 +52,9 @@ export class VideoPlayerCtrl extends Component {
 
     onPlaybackRate () {
         let playbackRates: number[] = [];
-        if(sys.platform === sys.BYTEDANCE_MINI_GAME || sys.platform === sys.WECHAT_GAME) {
+        if(sys.platform === sys.BYTEDANCE_MINI_GAME || sys.platform === sys.WECHAT_GAME || sys.platform === 'SUDV2_MINI_GAME') {
             // The rate at which the WeChat mini-game and douyin platform  is played is fixed at a few values。
-            if(sys.platform === sys.WECHAT_GAME) {
+            if(sys.platform === sys.WECHAT_GAME || sys.platform === 'SUDV2_MINI_GAME') {
                 // https://developers.weixin.qq.com/miniprogram/dev/api/media/video/VideoContext.playbackRate.html
                 playbackRates = [1.0, 1.25, 1.5, 0.5, 0.8];
             } else if(sys.platform === sys.BYTEDANCE_MINI_GAME) {
