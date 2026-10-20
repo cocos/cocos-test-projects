@@ -54,6 +54,14 @@ export class VideoPlayerCtrl extends Component {
     }
 
     onPlaybackRate () {
+        if (sys.platform === 'SUDV2_MINI_GAME') {
+            const playbackRates = [1.0, 1.25, 1.5, 0.5, 0.8];
+            const index = playbackRates.indexOf(this._playbackRate);
+            this._playbackRate = playbackRates[(index + 1) % playbackRates.length];
+            this.videoPlayer.playbackRate = this._playbackRate;
+            this.playbackRate.string = `x${this._playbackRate}`;
+            return;
+        }
         this._playbackRate = this._playbackRate++ >= 3 ? 1 : this._playbackRate;
         this.videoPlayer.playbackRate = this._playbackRate;
         this.playbackRate.string = `x${this._playbackRate}`;
