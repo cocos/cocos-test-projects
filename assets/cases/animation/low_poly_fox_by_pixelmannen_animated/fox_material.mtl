@@ -1,20 +1,22 @@
 {
   "__type__": "cc.Material",
-  "_name": "fox_material",
+  "_name": "",
   "_objFlags": 0,
+  "__editorExtras__": {},
   "_native": "",
   "_effectAsset": {
-    "__uuid__": "1baf0fc9-befa-459c-8bdd-af1a450a0319"
+    "__uuid__": "1baf0fc9-befa-459c-8bdd-af1a450a0319",
+    "__expectedType__": "cc.EffectAsset"
   },
   "_techIdx": 0,
   "_defines": [
     {
-      "OCCLUSION_CHANNEL": "r",
-      "ROUGHNESS_CHANNEL": "g",
-      "METALLIC_CHANNEL": "b",
-      "USE_ALBEDO_MAP": true,
-      "USE_SKINNING": true
-    }
+      "USE_ALBEDO_MAP": true
+    },
+    {},
+    {},
+    {},
+    {}
   ],
   "_states": [
     {
@@ -23,42 +25,104 @@
       },
       "blendState": {
         "targets": [
-          {}
+          {
+            "blend": false,
+            "blendSrc": 1,
+            "blendDst": 0,
+            "blendEq": 0,
+            "blendSrcAlpha": 1,
+            "blendDstAlpha": 0,
+            "blendAlphaEq": 0,
+            "blendColorMask": 15
+          }
         ]
-      },
-      "depthStencilState": {}
+      }
+    },
+    {
+      "blendState": {
+        "targets": [
+          {
+            "blend": true,
+            "blendSrc": 1,
+            "blendDst": 1,
+            "blendEq": 0,
+            "blendSrcAlpha": 0,
+            "blendDstAlpha": 1,
+            "blendAlphaEq": 0,
+            "blendColorMask": 15
+          }
+        ]
+      }
+    },
+    {
+      "blendState": {
+        "targets": [
+          {
+            "blend": false,
+            "blendSrc": 1,
+            "blendDst": 0,
+            "blendEq": 0,
+            "blendSrcAlpha": 1,
+            "blendDstAlpha": 0,
+            "blendAlphaEq": 0,
+            "blendColorMask": 15
+          }
+        ]
+      }
+    },
+    {
+      "blendState": {
+        "targets": [
+          {
+            "blend": true,
+            "blendSrc": 2,
+            "blendDst": 4,
+            "blendEq": 0,
+            "blendSrcAlpha": 1,
+            "blendDstAlpha": 4,
+            "blendAlphaEq": 0,
+            "blendColorMask": 15
+          }
+        ]
+      }
+    },
+    {
+      "blendState": {
+        "targets": [
+          {
+            "blend": false,
+            "blendSrc": 1,
+            "blendDst": 0,
+            "blendEq": 0,
+            "blendSrcAlpha": 1,
+            "blendDstAlpha": 0,
+            "blendAlphaEq": 0,
+            "blendColorMask": 15
+          }
+        ]
+      }
     }
   ],
   "_props": [
     {
-      "pbrScale": {
-        "__type__": "cc.Vec4",
-        "x": 1,
-        "y": 0.58,
-        "z": 0,
-        "w": 1
-      },
-      "albedoScale": {
-        "__type__": "cc.Vec3",
-        "x": 1,
-        "y": 1,
-        "z": 1
-      },
+      "alphaThreshold": 1,
+      "occlusion": 1,
+      "roughness": 1,
+      "metallic": 1,
       "emissiveScale": {
         "__type__": "cc.Vec3",
         "x": 0,
         "y": 0,
         "z": 0
       },
-      "alphaThreshold": 1,
-      "occlusion": 1,
-      "roughness": 1,
-      "metallic": 1,
-      "normalStrenth": 1,
       "mainTexture": {
-        "__uuid__": "3004862e-868e-4b34-95cb-f185d324e081@e39f7"
-      },
-      "normalStrength": 1
-    }
+        "__uuid__": "3004862e-868e-4b34-95cb-f185d324e081@e39f7",
+        "__expectedType__": "cc.TextureBase"
+      }
+    },
+    {},
+    {},
+    {},
+    {}
   ]
 }
