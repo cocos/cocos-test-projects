@@ -21,10 +21,8 @@
  * 注意：worker 运行在独立线程，runTask 必须是自包含纯函数，不能访问 cc / 场景 / DOM / 主线程闭包变量。
  */
 
-// 微信 V1 worker 的结构化克隆不保留 TypedArray：Float32Array 过界后退化成普通对象，
-// 按下标读取得到 undefined → 计算全 NaN。故在微信侧改用纯数字数组收发（克隆无损）。
-// Web / 微信 V2 仍走 TypedArray（可零拷贝）。检测方式与底部消息注册一致。
-var IS_WECHAT_WORKER = (typeof worker !== 'undefined' && worker && typeof worker.onMessage === 'function');
+// 主线程按 PAL 的 transfer 能力发送 TypedArray 或普通数组；回包沿用输入的数据类型。
+// 无需在 Worker 内重复判断微信版本，也无需依赖 Worker 内是否暴露 wx.env。
 
 // ==== 任务主体：对 [start, end) 区间的球做每帧重计算 ====
 function runTask (args) {
@@ -85,7 +83,7 @@ function runTask (args) {
         outVel[o] = vx; outVel[o + 1] = vy; outVel[o + 2] = vz;
     }
     // 微信 V1：返回纯数字数组（TypedArray 过界会丢类型）。Web/V2：返回 TypedArray。
-    if (IS_WECHAT_WORKER) {
+    if (Array.isArray(pos)) {
         return {
             positions: Array.prototype.slice.call(outPos),
             velocities: Array.prototype.slice.call(outVel),
@@ -108,14 +106,20 @@ function handleMessage (msg) {
 }
 
 function reply (msg) {
+    // TypedArray 输入只来自支持 transfer 的发送方；普通数组回包不使用第二个参数。
+    var value = msg.value;
+    var transfer = value && ArrayBuffer.isView(value.positions)
+        ? [value.positions.buffer, value.velocities.buffer] : null;
     // 微信小游戏：全局 worker 对象
     if (typeof worker !== 'undefined' && worker && typeof worker.postMessage === 'function') {
-        worker.postMessage(msg);
+        if (transfer) worker.postMessage(msg, transfer);
+        else worker.postMessage(msg);
         return;
     }
     // Web Worker：全局 self
     if (typeof self !== 'undefined' && typeof self.postMessage === 'function') {
-        self.postMessage(msg);
+        if (transfer) self.postMessage(msg, transfer);
+        else self.postMessage(msg);
     }
 }
 

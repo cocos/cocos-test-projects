@@ -1,45 +1,20 @@
 /**
- * RandomSpheres —— CPU 压测：四种计算模式对比（单线程 / 内嵌函数 / 独立JS / 微信版本）
+ * Worker testcase：比较主线程计算、WorkerPool 与直接 Worker。
  *
- * 设计思路：
- *   - n 个球体只是"可视化 + 渲染底座"。渲染（draw call 提交）永远发生在主线程，
- *     Worker 无法帮忙 —— 这就是"渲染成本"，是主线程不可压缩的下限。
- *   - 每帧驱动球体运动的"重计算"（每球 mathIterations 次三角函数扰动 + 积分）
- *     是纯 CPU 负载、球与球之间互相独立 —— 这类计算才可以丢给 Worker。
- *   - 四种模式对比：
- *       0 单线程(主线程)   ：重计算在 update 里跑（看计算如何吃掉帧预算）
- *       1 多线程(内嵌函数) ：WorkerPool 函数模式，worker 代码由 computeChunkKernel.toString() 动态生成，
- *                            把 count 个球均分成 N 块并行算（Web 真并行；微信/原生透明同步降级）
- *       2 多线程(独立JS)   ：WorkerPool 脚本模式，worker 代码在单独的 workers/spheres-worker.js 文件里，
- *                            脚本路径作为第一个参数（Web 走 new Worker(path) 真并行；
- *                            编辑器预览下自动从 resources TextAsset 读原文转 blob URL 加载）
- *       3 多线程(微信版本) ：同样用独立JS脚本，但显式预检 worker 能力（getWorkerCapabilities + checkWorkerScript），
- *                            报告后端/V1/V2 状态；微信上走 wx.createWorker（V1 单 worker 异步卸载 / V2 多 worker 并行）
- *   - 模式 1/2/3 共用「分块并行」管线：把 [0,count) 均分成若干块，每块一个任务丢进池里并行算，
- *     全部到齐后合并回填再 setPosition。三者区别只在 worker 代码来源 / 执行后端。
- *   - 调大 mathIterations / count，观察模式 0 掉帧而模式 1/2/3 稳住帧率的临界点。
+ * 按钮切换「单线程 / Worker（自动）」；Inspector 另外保留函数和脚本模式供调试。
+ * Inspector 的「Worker 管理方式」选择 WorkerPool / 直接 Worker。
+ * 自动模式请求 maxWorkers 个 Worker，PAL 根据平台能力封顶：微信 V1 至多 1 个，
+ * 获得 V2 灰度资格才支持多个。模式选择不会开启灰度，也不会强制指定 V1/V2。
+ * HUD 展示管理方式、实际后端和并发上限；降级为 sync 时明确显示主线程同步执行。
+ * Worker 只负责球体运动计算，节点更新与渲染仍在主线程。
  *
- * 用法：
- *   1. 把本文件拷进 Cocos Creator 4.x 项目的 assets/；
- *   2. 把 workers/spheres-worker.js 拷进项目（相对游戏根目录的 workers/ 下）；
- *      - Web 构建：保证该文件能以 'workers/spheres-worker.js' 被访问到（拷进构建产物同名目录）；
- *      - 微信构建：放进 workers/ 目录并在 game.json 声明 { "workers": "workers" }；
- *      - 编辑器预览：预览服务器不伺服项目根原始文件（404），脚本模式自动改从
- *        assets/resources/workers/spheres-worker.txt（TextAsset）读原文转 blob URL；
- *        修改 workers/spheres-worker.js 后需同步更新该 txt；
- *   3. 挂到场景任意节点（推荐原点空节点），预览/真机运行；
- *   4. Inspector 里切换 mode、调整 count / mathIterations。
- *
- * 注意：
- *   - 模式 1（内嵌函数）依赖 new Function/toString，微信禁用动态执行 → 微信上自动同步降级（非真并行）。
- *   - 模式 2/3（独立JS/微信）依赖物理 worker 文件，是微信上唯一能真并行的路线。
- *   - 微信 V1 只有 1 个 worker（池自动封顶到 1，是异步卸载非多核）；V2 才支持多 worker（灰度/Android）。
- *
- * simulateNoWorker 属性：
- *   勾选后，在创建 WorkerPool 前临时移除全局 Worker/Blob，使 isWorkerSupported() 返回 false，
- *   从而触发同步 fallback 路径（内嵌函数模式走 PooledWorker 同步执行；脚本模式走 options.fallback）。
- *   用于验证无 Worker 环境下的降级行为。注意 isWorkerSupported() 结果会被缓存，一旦设为 false，
- *   后续整个会话期间都会走 fallback，刷新页面可恢复。
+ * 使用 项目场景 或把组件挂到场景节点：
+ * - Web 构建：将 workers/spheres-worker.js 复制到构建根目录的 workers/ 下。
+ * - 微信构建：复制同一脚本，并在 game.json 配置 { "workers": "workers" }。
+ * - 浏览器预览：自动读取 resources/workers/spheres-worker.txt 转成 Blob URL。
+ * 修改独立 JS 后需要同步更新该 TextAsset。
+ * simulateNoWorker 仅对当前组件模拟 Web 无 Worker，不修改全局对象或小游戏平台能力；
+ * 是否成功降级以执行器的实际 backend 为准。
  */
 
 import {
@@ -53,7 +28,6 @@ import {
     director,
     Director,
     Enum,
-    isWorkerSupported,
     Label,
     Layers,
     Material,
@@ -68,13 +42,15 @@ import {
     UITransform,
     utils,
     Vec3,
-    WorkerPool,
     getOptimalWorkerCount,
     getWorkerCapabilities,
     checkWorkerScript,
 } from 'cc';
 import type { WorkerTask } from 'cc';
+import { WorkerManagement, createDemoExecutor } from './worker-executor';
+import type { IWorkerExecutor } from './worker-executor';
 import { BUILD } from 'cc/env';
+import { WorkerTestTrace } from './worker-test-trace';
 
 const { ccclass, property } = _decorator;
 
@@ -85,17 +61,14 @@ enum ComputeMode {
     WORKER_INLINE = 1,
     /** 多线程独立JS：WorkerPool 脚本模式，worker 代码在单独的 .js 文件里。 */
     WORKER_SCRIPT = 2,
-    /** 多线程微信版本：独立JS脚本 + 显式微信 worker 预检（wx.createWorker，自动 V1/V2）。 */
-    WORKER_WECHAT = 3,
-    /** 微信 V1：强制单 worker（异步卸载，无多核并行）。 */
-    WORKER_WECHAT_V1 = 4,
-    /** 微信 V2：强制多 worker（真并行；真 V1 平台/开发者工具会被引擎按 concurrencyLimit 封顶为 1）。 */
-    WORKER_WECHAT_V2 = 5,
+    /** 平台 Worker 自动适配：脚本模式，实际能力由 PAL 检测。保留旧自动模式的序列化值 3。 */
+    WORKER_AUTO = 3,
 }
 const ComputeModeEnum = Enum(ComputeMode);
+const WorkerManagementEnum = Enum({ WorkerPool: WorkerManagement.WORKER_POOL, '直接 Worker': WorkerManagement.DIRECT_WORKER });
 
-/** 按钮循环切换的模式顺序：单线程 → 微信 V1 → 微信 V2。 */
-const MODE_CYCLE = [ComputeMode.MAIN_THREAD, ComputeMode.WORKER_WECHAT_V1, ComputeMode.WORKER_WECHAT_V2];
+/** 按钮循环切换的模式顺序：单线程 → Worker（自动）。 */
+const MODE_CYCLE = [ComputeMode.MAIN_THREAD, ComputeMode.WORKER_AUTO];
 
 /** 模式的中文显示名（用于按钮 / HUD）。 */
 function modeDisplayName (m: ComputeMode): string {
@@ -103,9 +76,7 @@ function modeDisplayName (m: ComputeMode): string {
     case ComputeMode.MAIN_THREAD: return '单线程';
     case ComputeMode.WORKER_INLINE: return '内嵌函数';
     case ComputeMode.WORKER_SCRIPT: return '独立JS';
-    case ComputeMode.WORKER_WECHAT: return '微信(自动)';
-    case ComputeMode.WORKER_WECHAT_V1: return '微信 V1';
-    case ComputeMode.WORKER_WECHAT_V2: return '微信 V2';
+    case ComputeMode.WORKER_AUTO: return 'Worker（自动）';
     default: return '未知';
     }
 }
@@ -121,7 +92,7 @@ const WORKER_SCRIPT_PATH = 'workers/spheres-worker.js';
  * 预览环境专用：worker 脚本原文以 TextAsset 形式放在 assets/resources/workers/spheres-worker.txt。
  * Creator 预览服务器只伺服编译产物（/assets、/scripting 等 bundle），项目根 workers/ 原始文件是 404，
  * new Worker(path) 会直接 onerror。因此预览下运行时读出 TextAsset 文本转同源 blob URL 再交给 WorkerPool。
- * 注意：两份文件内容必须保持一致（源头是项目根 workers/spheres-worker.js）。
+ * 注意：两份文件内容必须保持一致（源头是 workers/worker-test/spheres-worker.js）。
  */
 const WORKER_TEXT_ASSET = 'workers/spheres-worker';
 
@@ -265,23 +236,45 @@ function computeChunkKernel (
     return { positions: outPos, velocities: outVel };
 }
 
+export interface IWorkerCaseSnapshot {
+    runId: string;
+    management: 'pool' | 'direct';
+    mode: 'main' | 'worker';
+    backend: string;
+    concurrency: number;
+    generation: number;
+    busy: boolean;
+    initializing: boolean;
+    count: number;
+    mathIterations: number;
+    completedBatches: number;
+    validatedBatches: number;
+    validationFailures: number;
+    lastRoundTripMs: number;
+    validationCpuMs: number;
+    lastError: string;
+}
+
 @ccclass('RandomSpheres')
 export class RandomSpheres extends Component {
+
+    /** 自动模式请求的 Worker 数量；引擎会按平台能力封顶，不用于选择微信版本。 */
+    @property({ min: 1, step: 1 })
+    public maxWorkers = 4;
+
+    /** 线程管理方式；微信 V1/V2 能力仍由 PAL 自动识别。 */
+    @property({ type: WorkerManagementEnum, displayName: 'Worker 管理方式', tooltip: 'WorkerPool 使用引擎调度；直接 Worker 由 Demo 自行创建和管理 Worker。' })
+    public workerManagement = WorkerManagement.WORKER_POOL;
+
     /** 球体数量。 */
     @property
     public count = 300;
 
-    /** 计算模式：0=单线程 1=多线程内嵌函数 2=多线程独立JS 3=多线程微信版本。 */
+    /** 计算模式：0=单线程 1=多线程内嵌函数 2=多线程独立JS 3=Worker自动适配。 */
     @property({ type: ComputeModeEnum })
     public mode = ComputeMode.MAIN_THREAD;
 
-    /**
-     * 模拟环境不支持 Web Worker。
-     * 开启后，在创建 WorkerPool 前临时移除全局 Worker/Blob，
-     * 使 isWorkerSupported() 返回 false，从而触发同步 fallback 路径。
-     * 注意：isWorkerSupported() 结果会被缓存，一旦本次模拟将其设为 false，
-     * 后续整个会话期间 WorkerPool 都会走 fallback，刷新页面可恢复。
-     */
+    /** 仅对本组件模拟 Web 无 Worker，不修改全局或小游戏平台能力。 */
     @property
     public simulateNoWorker: boolean = false;
 
@@ -298,6 +291,82 @@ export class RandomSpheres extends Component {
 
     @property
     public speed = 6;
+
+    /** 校验第一批及每 N 批结果；0 关闭参考计算。校验会增加主线程开销。 */
+    @property({ min: 0, step: 1, tooltip: '0 关闭；启用时第一批及每 N 批与主线程参考计算比较。性能压测时设为 0。' })
+    public validationEveryBatches = 120;
+
+    @property
+    public telemetryEnabled = true;
+
+    /** 周期性统计日志的间隔，生命周期和校验事件不受此间隔影响。 */
+    @property({ min: 1 })
+    public telemetryIntervalSeconds = 5;
+
+    private _trace = new WorkerTestTrace();
+    private _completedBatches = 0;
+    private _validatedBatches = 0;
+    private _lastVerifiedGeneration = -1;
+    private _firstCompletedGeneration = -1;
+    private _validationFailures = 0;
+    private _lastRoundTripMs = 0;
+    private _validationCpuMs = 0;
+    private _batchStarted = 0;
+    private _expectedBatch: IComputeResult | null = null;
+    private _lastSampleAt = 0;
+    private _lastError = '';
+    private _observedBackend = '';
+
+    /** Public acceptance state; capability availability alone is not proof that a Worker ran. */
+    public getTestSnapshot (): IWorkerCaseSnapshot {
+        return {
+            runId: this._trace.runId,
+            management: this.workerManagement === WorkerManagement.DIRECT_WORKER ? 'direct' : 'pool',
+            mode: this.mode === ComputeMode.MAIN_THREAD ? 'main' : 'worker',
+            backend: this.mode === ComputeMode.MAIN_THREAD ? 'main' : this._pool?.backend || 'initializing',
+            concurrency: this._pool?.concurrency || 0,
+            generation: this._poolGen, busy: this._workerBusy, initializing: this._poolInitializing,
+            count: this.count, mathIterations: this.mathIterations,
+            completedBatches: this._completedBatches, validatedBatches: this._validatedBatches,
+            validationFailures: this._validationFailures, lastRoundTripMs: this._lastRoundTripMs,
+            validationCpuMs: this._validationCpuMs, lastError: this._lastError,
+        };
+    }
+
+    /** Used by the repository automation suite; settings remain available in the Inspector. */
+    public configureTest (options: {
+        management: 'pool' | 'direct'; mode: 'main' | 'worker';
+        count?: number; mathIterations?: number; simulateNoWorker?: boolean;
+    }): void {
+        this._destroyPool();
+        this.workerManagement = options.management === 'direct' ? WorkerManagement.DIRECT_WORKER : WorkerManagement.WORKER_POOL;
+        this.mode = options.mode === 'main' ? ComputeMode.MAIN_THREAD : ComputeMode.WORKER_AUTO;
+        this._lastMode = this.mode;
+        this._lastWorkerManagement = this.workerManagement;
+        this.mathIterations = options.mathIterations ?? 4;
+        this.simulateNoWorker = options.simulateNoWorker ?? false;
+        this.validationEveryBatches = 1;
+        this._completedBatches = this._validatedBatches = this._validationFailures = 0;
+        this._lastRoundTripMs = this._validationCpuMs = 0;
+        this._lastError = '';
+        this.rebuild(options.count ?? 8);
+        this._emitTrace('configured');
+    }
+
+    private _emitTrace (event: string, extra: object = {}): void {
+        if (!this.telemetryEnabled) return;
+        this._trace.emit(event, { ...this.getTestSnapshot(), ...extra });
+    }
+
+    private _observeBackend (): void {
+        const backend = this._pool?.backend;
+        if (!backend) return;
+        const previous = this._observedBackend;
+        this._observedBackend = backend;
+        if (previous && previous !== backend) {
+            this._emitTrace('backend-change', { previousBackend: previous, recoveredSynchronously: backend === 'sync' });
+        }
+    }
 
     // ---------------- 内部状态 ----------------
 
@@ -323,7 +392,7 @@ export class RandomSpheres extends Component {
     private _simStepsAtLastHud = 0;    // 上次 HUD 刷新时的模拟步数
     private _lastHudTime = 0;          // 上次 HUD 刷新时刻
 
-    private _pool: WorkerPool | null = null;
+    private _pool: IWorkerExecutor | null = null;
     // 脚本模式：预览环境下由 resources TextAsset 转成的 blob URL（缓存复用，onDestroy 释放）
     private _workerScriptUrl: string | null = null;
     // 池代数令牌：销毁池/切模式后使在途的异步脚本 URL 解析回调失效，防止旧回调"复活"池
@@ -333,6 +402,7 @@ export class RandomSpheres extends Component {
     private _workerBusy = false;
     private _lastDt = 1 / 60;
     private _lastMode: ComputeMode = ComputeMode.MAIN_THREAD;
+    private _lastWorkerManagement = WorkerManagement.WORKER_POOL;
 
     // 多 Worker 分块：本帧已完成的块数 / 目标块数，以及每个块的待回填结果
     private _multiWorkerCount = 1;
@@ -351,28 +421,28 @@ export class RandomSpheres extends Component {
     private _modeButton: Label | null = null;
     private _frameCounter = 0;
 
-    // 当前池实际解析到的后端（'minigame' | 'web' | 'sync' | 'none'，即 WorkerPool.backend 的返回类型），用于 HUD 展示
-    private _poolBackend = '';
-
     // ---- simulateNoWorker 辅助字段 ----
-    private _savedWorker: unknown = null;
-    private _savedBlob: unknown = null;
     private _noWorkerSimActive = false;
     private _noWorkerSimVerified = false;  // 是否已确认 fallback 生效
 
     // ---------------- 生命周期 ----------------
 
     public start (): void {
+        this._normalizeLegacyMode();
         this._ensureCamera();
         this._buildHUD();
+        this._lastWorkerManagement = this.workerManagement;
         this._lastMode = this.mode; // rebuild 内部会按当前模式建 Worker，避免 _syncMode 重复创建
         this.rebuild(this.count);
+        this._lastSampleAt = performance.now();
+        this._emitTrace('case-start');
 
         director.on(Director.EVENT_BEFORE_UPDATE, this._onBeforeUpdate, this);
         director.on(Director.EVENT_AFTER_DRAW, this._onAfterDraw, this);
     }
 
     public onDestroy (): void {
+        this._emitTrace('case-stop');
         director.off(Director.EVENT_BEFORE_UPDATE, this._onBeforeUpdate, this);
         director.off(Director.EVENT_AFTER_DRAW, this._onAfterDraw, this);
         this._destroyPool();
@@ -388,6 +458,7 @@ export class RandomSpheres extends Component {
             this._createdCamera.destroy();
             this._createdCamera = null;
         }
+        this._trace.dispose();
     }
 
     /** 销毁现有球体并按新数量重建，可在运行时调用。 */
@@ -448,6 +519,7 @@ export class RandomSpheres extends Component {
         }
         this._frameCounter++;
         this._syncMode();
+        this._observeBackend();
 
         let computeMs = 0;
         let applyMs = 0;
@@ -479,6 +551,11 @@ export class RandomSpheres extends Component {
         this._accApply += applyMs;
         this._accFrames++;
 
+        const sampleNow = performance.now();
+        if (this.telemetryEnabled && sampleNow - this._lastSampleAt >= Math.max(1, this.telemetryIntervalSeconds) * 1000) {
+            this._lastSampleAt = sampleNow;
+            this._emitTrace('sample', { renderFps: this._renderFps, simulationSteps: this._simSteps });
+        }
         if (this._frameCounter % 20 === 0) {
             this._updateHUD();
         }
@@ -526,23 +603,32 @@ export class RandomSpheres extends Component {
         }
     }
 
-    /** 是否为某种 Worker 计算模式（内嵌函数 / 独立JS / 微信）。 */
+
+    /** 旧场景保存的 4/5 原本只控制池大小，统一迁移为自动模式。 */
+    private _normalizeLegacyMode (): void {
+        if ((this.mode as number) === 4 || (this.mode as number) === 5) {
+            this.mode = ComputeMode.WORKER_AUTO;
+        }
+    }
+
     private _isWorkerMode (m: ComputeMode): boolean {
         return m === ComputeMode.WORKER_INLINE
             || m === ComputeMode.WORKER_SCRIPT
-            || m === ComputeMode.WORKER_WECHAT
-            || m === ComputeMode.WORKER_WECHAT_V1
-            || m === ComputeMode.WORKER_WECHAT_V2;
+            || m === ComputeMode.WORKER_AUTO;
     }
 
     /** 运行时切换 mode：进出 / 在不同 Worker 模式之间切换时正确交接缓冲区与池。 */
     private _syncMode (): void {
-        if (this.mode === this._lastMode) {
+        this._normalizeLegacyMode();
+        if (this.mode === this._lastMode && this.workerManagement === this._lastWorkerManagement) {
             return;
         }
         const from = this._lastMode;
+        const managementChanged = this.workerManagement !== this._lastWorkerManagement;
+        this._lastWorkerManagement = this.workerManagement;
         this._lastMode = this.mode;
         this._updateModeButtonLabel();
+        this._emitTrace('mode-change');
 
         const fromWorker = this._isWorkerMode(from);
         const toWorker = this._isWorkerMode(this.mode);
@@ -551,7 +637,7 @@ export class RandomSpheres extends Component {
             // 离开 Worker 模式 → 主线程：终止池；若缓冲区已被移交（detached），从节点位置重建
             this._destroyPool();
             this._ensureValidBuffers();
-        } else if (toWorker && from !== this.mode) {
+        } else if (toWorker && (from !== this.mode || managementChanged)) {
             // 进入 Worker 模式（从主线程，或从另一种 Worker 模式切来）：重建池并发起首次计算。
             // 不同 Worker 模式的池配置不同（函数/脚本/微信），必须销毁重建。
             this._destroyPool();
@@ -586,65 +672,32 @@ export class RandomSpheres extends Component {
         this._simInterval = 0;
     }
 
-    // ---------------- Worker（引擎 WorkerPool，不再手写 new Worker） ----------------
+    // ---------------- Worker（引擎线程池 / Demo 直接管理） ----------------
 
-    /**
-     * 进入「模拟无 Worker」环境：临时移除全局 Worker/Blob，
-     * 使 isWorkerSupported() 返回 false，从而让 WorkerPool 走同步 fallback 路径。
-     * 必须在 _ensurePool() 和 getOptimalWorkerCount() 之前调用。
-     */
+    /** 仅对本组件模拟 Web 无 Worker，不修改全局对象或 PAL 的能力缓存。 */
     private _enterNoWorkerSim (): void {
-        if (!this.simulateNoWorker || this._noWorkerSimActive) {
-            return;
-        }
-        this._savedWorker = (globalThis as any).Worker;
-        this._savedBlob = (globalThis as any).Blob;
-        delete (globalThis as any).Worker;
-        delete (globalThis as any).Blob;
-        this._noWorkerSimActive = true;
-        console.log('[RandomSpheres] [simulateNoWorker] 已临时移除全局 Worker/Blob，'
-            + 'isWorkerSupported() 将返回 false，WorkerPool 将走同步 fallback 路径');
+        this._noWorkerSimActive = this.simulateNoWorker && getWorkerCapabilities().supportsFunctionWorker;
     }
 
-    /**
-     * 退出「模拟无 Worker」环境：恢复全局 Worker/Blob。
-     * 在首次 pool.run() 之后调用（此时 _spawnWorker 已调用 isWorkerSupported() 并缓存结果）。
-     * 注意：isWorkerSupported() 的缓存一旦设为 false 就不可逆，恢复 Worker 不会改变缓存值。
-     */
     private _exitNoWorkerSim (): void {
-        if (!this._noWorkerSimActive) {
-            return;
-        }
-        (globalThis as any).Worker = this._savedWorker;
-        (globalThis as any).Blob = this._savedBlob;
+        if (!this._noWorkerSimActive) return;
+        this._noWorkerSimVerified = this._pool?.backend === 'sync';
         this._noWorkerSimActive = false;
-
-        // 验证 fallback 是否生效：isWorkerSupported() 已被 _spawnWorker 调用并缓存
-        const supported = isWorkerSupported();
-        this._noWorkerSimVerified = !supported;
-        if (this._noWorkerSimVerified) {
-            console.log('[RandomSpheres] [simulateNoWorker] 验证通过：isWorkerSupported()=false，'
-                + 'WorkerPool 正在走同步 fallback 路径');
-        } else {
-            console.warn('[RandomSpheres] [simulateNoWorker] 验证失败：isWorkerSupported()=true，'
-                + '可能已被其他模块提前缓存。WorkerPool 未走 fallback 路径。');
-        }
     }
 
     /**
-     * 按当前模式创建 WorkerPool。三种 worker 模式都用「分块并行」，区别只在 worker 代码来源 / 后端：
+     * 按当前模式创建执行器。三种 worker 模式都按可用并发数分块，区别只在 worker 代码来源 / 后端：
      *   - WORKER_INLINE：函数模式，worker 代码由 computeChunkKernel.toString() 生成；
      *   - WORKER_SCRIPT：脚本模式，worker 代码在独立 .js 文件（Web 走 new Worker(path)）；
-     *   - WORKER_WECHAT：脚本模式 + 显式微信预检（微信走 wx.createWorker，V1 封顶 1 / V2 多 worker）。
+     *   - WORKER_AUTO：脚本模式，显式请求 maxWorkers，由平台能力决定实际并发上限。
      */
     private _resolvePoolConcurrency (): number {
         if (!this._pool) {
             return this._multiWorkerCount;
         }
-        // 优先读引擎新增的 WorkerPool.concurrency（= 实际创建的 worker 数，最精确）。该 getter 需引擎
-        // 重新生成声明（bin/.declarations/cc.d.ts）后才对 demo 可见，故对旧声明做防御性回退到
-        // getWorkerCapabilities().concurrencyLimit（平台上限，demo 已导入的稳定 API）。
-        // 两者在微信 V1（上限=1）结果一致，都能把分块压到 1，消除多块串行往返；Web 上 concurrency 更紧。
+        if (this._pool.backend === 'sync' || this._pool.backend === 'none') return 1;
+        // concurrency 是池的并发上限，不是已启动的线程数量。
+        // 兼容尚未重新生成 concurrency 声明的编辑器，回退时仍受平台上限约束。
         const precise = (this._pool as unknown as { concurrency?: number }).concurrency;
         if (typeof precise === 'number' && precise > 0) {
             return precise;
@@ -654,12 +707,19 @@ export class RandomSpheres extends Component {
     }
 
     private _ensurePool (): void {
-        if (this._pool) {
+        this._normalizeLegacyMode();
+        if (this._pool || this._poolInitializing) {
             return;
         }
-        // 在创建池之前进入模拟（getOptimalWorkerCount 和 _spawnWorker 都会调用 isWorkerSupported）
-        this._enterNoWorkerSim();
-
+        if ([getWorkerCapabilities, getOptimalWorkerCount, checkWorkerScript].some(api => typeof api !== 'function')) {
+            this._lastError = 'Missing basic Worker feature';
+            this._emitTrace('fallback', { reason: this._lastError });
+            console.warn('[RandomSpheres] 当前引擎未提供 Worker 基础 API，请启用 worker 并重新构建。');
+            this.mode = ComputeMode.MAIN_THREAD;
+            this._lastMode = this.mode;
+            this._updateModeButtonLabel();
+            return;
+        }
         // 脚本模式兜底：无任何 worker 后端时主线程同步执行（与 worker 脚本 runTask 等价）
         const scriptFallback: WorkerTask = (
             pos: Float32Array, vel: Float32Array, start: number, end: number,
@@ -669,76 +729,88 @@ export class RandomSpheres extends Component {
         if (this.mode === ComputeMode.WORKER_INLINE) {
             // 内嵌函数模式：按逻辑核数（留一个核给主线程）并行；idleReleaseAfter=0 常驻不释放
             this._multiWorkerCount = getOptimalWorkerCount();
-            this._pool = new WorkerPool(computeChunkKernel as unknown as WorkerTask, {
-                maxWorkers: this._multiWorkerCount,
-                idleReleaseAfter: 0,
-            });
-            this._poolBackend = this._pool.backend;
+            this._enterNoWorkerSim();
+            try {
+                this._pool = createDemoExecutor(computeChunkKernel as unknown as WorkerTask, {
+                    maxWorkers: this._multiWorkerCount,
+                    idleReleaseAfter: 0,
+                }, this.workerManagement, this._noWorkerSimActive);
+                this._pool.recheck();
+            } catch (error) {
+                this._destroyPool();
+                this.mode = ComputeMode.MAIN_THREAD;
+                this._lastError = String(error);
+                this._emitTrace('fallback', { reason: this._lastError });
+                console.warn('[RandomSpheres] 执行器创建失败，回退主线程', error);
+                return;
+            } finally {
+                this._exitNoWorkerSim();
+            }
+            this._observeBackend();
+            this._emitTrace('executor-ready');
             // Fix1：分块数封顶到池实际并行度，避免单 worker 平台多块串行排队、成倍放大往返延迟
             const poolConcurrency = this._resolvePoolConcurrency();
             this._multiWorkerCount = Math.min(this._multiWorkerCount, poolConcurrency);
-            console.log(`[RandomSpheres] 池已创建 mode=${ComputeMode[this.mode]} `
-                + `backend=${this._poolBackend} concurrency=${poolConcurrency}`);
+            console.log(`[RandomSpheres] 执行器已创建 mode=${ComputeMode[this.mode]} `
+                + `backend=${this._pool?.backend} concurrency=${poolConcurrency}`);
             return;
         }
 
-        // ---- 独立JS / 微信模式：worker 代码在单独脚本文件里，脚本 URL 作为第一个参数（新 API）----
-        if (this.mode === ComputeMode.WORKER_WECHAT
-            || this.mode === ComputeMode.WORKER_WECHAT_V1
-            || this.mode === ComputeMode.WORKER_WECHAT_V2) {
-            // 微信版本：用最新能力检测 API 显式预检。getWorkerCapabilities() 自报当前后端
-            // （web / minigame / none）与并发上限，checkWorkerScript() 校验脚本是否真的打进了包。
-            // 不再用已移除的 checkWeChatWorker——后端选择由引擎按能力自动完成（微信→wx.createWorker）。
-            const caps = getWorkerCapabilities();
-            const status = checkWorkerScript(WORKER_SCRIPT_PATH);
-            console.log(`[RandomSpheres] [微信版本] capabilities: kind=${caps.kind} `
-                + `available=${caps.available} parallel=${caps.parallel} `
-                + `concurrencyLimit=${caps.concurrencyLimit === Infinity ? 'Infinity' : caps.concurrencyLimit} `
-                + `transfer=${caps.supportsTransfer} sab=${caps.supportsSharedArrayBuffer}`);
-            console.log(`[RandomSpheres] [微信版本] checkWorkerScript: ready=${status.ready} `
-                + `version=${status.version} reason="${status.reason}"`);
-            console.log(`[RandomSpheres] [微信版本] capability reason: ${caps.reason}`);
-            // V1：强制单 worker（异步卸载，无多核并行）；
-            // V2 / 自动：请求多 worker，引擎按平台 concurrencyLimit 封顶（真 V1 平台/开发者工具自动降为 1）。
-            // 微信探测不到 CPU 核心数（getOptimalWorkerCount 返回 1），V2 想测多 worker 需显式给数。
-            this._multiWorkerCount = this.mode === ComputeMode.WORKER_WECHAT_V1
-                ? 1
-                : Math.max(getOptimalWorkerCount(), 4);
-        } else {
-            this._multiWorkerCount = getOptimalWorkerCount();
-        }
+        // 平台自动模式请求池大小，版本选择始终交给平台运行时。
+        this._multiWorkerCount = this.mode === ComputeMode.WORKER_AUTO
+            ? (Number.isFinite(this.maxWorkers) ? Math.max(1, Math.floor(this.maxWorkers)) : 4)
+            : getOptimalWorkerCount();
 
         // 脚本 URL 可能需要异步解析（预览下从 resources TextAsset 转 blob），池在回调里创建。
         // 调用方随后的 _sendToWorkerMulti() 会因 _pool 为空而跳过，由回调补发首帧任务。
         const gen = ++this._poolGen;
         this._poolInitializing = true;
-        this._resolveWorkerScriptUrl().then((url) => {
-            this._poolInitializing = false;
+        this._resolveWorkerScriptUrl(gen).then((url) => {
             if (gen !== this._poolGen || this._pool) {
                 return; // 解析期间池已销毁 / 模式已切换，放弃本次创建
             }
-            this._pool = new WorkerPool(url, {
-                maxWorkers: this._multiWorkerCount,
-                idleReleaseAfter: 0,
-                // 超时看门狗：worker 若因脚本未打包/平台异常而永不回消息，到点自动判失败 →
-                // 引擎 respawn/回退主线程，而不是让 _workerBusy 永远卡住（抖音"卡死"的兜底）。
-                timeout: 5000,
-                fallback: scriptFallback,
-            });
-            this._poolBackend = this._pool.backend;
+            this._poolInitializing = false;
+            const caps = getWorkerCapabilities();
+            const status = checkWorkerScript(url);
+            console.log(`[RandomSpheres] Worker 能力 available=${caps.available} `
+                + `parallel=${caps.parallel} limit=${caps.concurrencyLimit} transfer=${caps.supportsTransfer}; `
+                + `脚本 ready=${status.ready} version=${status.version} reason=${status.reason}`);
+            this._enterNoWorkerSim();
+            try {
+                this._pool = createDemoExecutor(url, {
+                    maxWorkers: this._multiWorkerCount,
+                    idleReleaseAfter: 0,
+                    // 超时看门狗：worker 若因脚本未打包/平台异常而永不回消息，到点自动判失败 →
+                    // 引擎 respawn/回退主线程，而不是让 _workerBusy 永远卡住（抖音"卡死"的兜底）。
+                    timeout: 5000,
+                    fallback: scriptFallback,
+                }, this.workerManagement, this._noWorkerSimActive);
+                this._pool.recheck();
+            } finally {
+                this._exitNoWorkerSim();
+            }
+            this._observeBackend();
+            this._emitTrace('executor-ready', { script: url, capabilities: {
+                available: caps.available, supportsStandardWorker: caps.supportsStandardWorker,
+                supportsTransfer: caps.supportsTransfer, concurrencyLimit: Number.isFinite(caps.concurrencyLimit) ? caps.concurrencyLimit : 'unbounded',
+            } });
             // Fix1：分块数封顶到池实际并行度（微信 V1 上 concurrency=1 → 只发 1 块，消除 4 块串行往返）
             const poolConcurrency = this._resolvePoolConcurrency();
             this._multiWorkerCount = Math.min(this._multiWorkerCount, poolConcurrency);
-            console.log(`[RandomSpheres] 池已创建 mode=${ComputeMode[this.mode]} `
-                + `backend=${this._poolBackend} concurrency=${poolConcurrency} script=${url}`);
+            console.log(`[RandomSpheres] 执行器已创建 mode=${ComputeMode[this.mode]} `
+                + `backend=${this._pool?.backend} concurrency=${poolConcurrency} script=${url}`);
             this._sendToWorkerMulti();
         }).catch((err) => {
-            this._poolInitializing = false;
             if (gen !== this._poolGen) {
                 return;
             }
-            console.warn('[RandomSpheres] worker 脚本加载失败，回退到主线程', err);
+            this._poolInitializing = false;
+            this._exitNoWorkerSim();
+            this._lastError = String(err);
+            this._destroyPool();
             this.mode = ComputeMode.MAIN_THREAD;
+            this._emitTrace('fallback', { reason: this._lastError });
+            console.warn('[RandomSpheres] Worker 初始化失败，回退到主线程', err);
         });
     }
 
@@ -749,7 +821,7 @@ export class RandomSpheres extends Component {
      *   改从 resources 的 TextAsset 加载脚本原文，转成同源 blob: URL（引擎侧仍走脚本模式
      *   createWorkerFromPath 流程，new Worker(blobUrl)）。blob URL 缓存复用，onDestroy 释放。
      */
-    private _resolveWorkerScriptUrl (): Promise<string> {
+    private _resolveWorkerScriptUrl (gen: number): Promise<string> {
         if (BUILD) {
             return Promise.resolve(WORKER_SCRIPT_PATH);
         }
@@ -758,12 +830,15 @@ export class RandomSpheres extends Component {
         }
         return new Promise((resolve, reject) => {
             resources.load(WORKER_TEXT_ASSET, TextAsset, (err, asset) => {
+                if (gen !== this._poolGen) {
+                    resolve(WORKER_SCRIPT_PATH); // 过期加载不再创建 Blob URL，防止销毁后泄漏。
+                    return;
+                }
                 if (err || !asset) {
                     reject(err || new Error(`TextAsset 未找到: ${WORKER_TEXT_ASSET}`));
                     return;
                 }
-                // simulateNoWorker 激活时全局 Blob 已被移除，用保存的构造器兜底
-                const BlobCtor = (globalThis.Blob || this._savedBlob) as typeof Blob | null;
+                const BlobCtor = globalThis.Blob;
                 if (!BlobCtor || typeof URL === 'undefined' || !URL.createObjectURL) {
                     resolve(WORKER_SCRIPT_PATH); // 无法转 blob，给真实路径（池将走同步 fallback）
                     return;
@@ -787,15 +862,28 @@ export class RandomSpheres extends Component {
      */
     private _sendToWorkerMulti (): void {
         if (!this._pool || this._workerBusy || this._pos.length === 0 || this.count === 0) {
-            // 池还在异步创建中（脚本 URL 解析）时不要退出模拟：isWorkerSupported 尚未被池调用
+            // 结束本次组件级无 Worker 模拟状态。
             if (!this._poolInitializing) {
                 this._exitNoWorkerSim();
             }
             return;
         }
         this._workerBusy = true;
+        const gen = this._poolGen;
+        const pool = this._pool;
+        this._expectedBatch = null;
+        this._validationCpuMs = 0;
+        const interval = Math.floor(this.validationEveryBatches);
+        if (interval > 0 && (this._lastVerifiedGeneration !== this._poolGen || this._completedBatches % interval === 0)) {
+            const started = performance.now();
+            this._expectedBatch = computeKernel(this._pos.slice(), this._vel.slice(), this.count,
+                this.mathIterations, this._lastDt, this.bounds);
+            this._validationCpuMs = performance.now() - started;
+        }
+        this._batchStarted = performance.now();
 
-        const wc = Math.max(1, Math.min(this._multiWorkerCount, this.count));
+        // 运行中可能已退回同步执行，下一批任务随实际池并发上限收缩到一块。
+        const wc = Math.max(1, Math.min(this._multiWorkerCount, this._resolvePoolConcurrency(), this.count));
         this._multiTotal = wc;
         this._multiDone = 0;
         this._multiResults = new Array<IChunkResult>(wc);
@@ -839,23 +927,28 @@ export class RandomSpheres extends Component {
                 velPayload = Array.from(velSlice);
                 transfer = [];
             }
-            this._pool.run<IChunkResult>(
+            pool.run<IChunkResult>(
                 [posPayload, velPayload, start, end, this.mathIterations, this._lastDt, this.bounds],
                 transfer,
             ).then((res) => {
+                if (gen !== this._poolGen || pool !== this._pool) return;
                 this._multiResults[c] = res;
                 this._multiDone++;
                 if (this._multiDone === this._multiTotal) {
                     this._mergeMultiResults();
                 }
             }).catch((err) => {
+                if (gen !== this._poolGen || pool !== this._pool) return;
+                this._destroyPool(); // 使同一批其他任务的回调失效，保留主线程权威数据。
                 this._workerBusy = false;
-                console.warn('[RandomSpheres] Worker 计算失败，回退到主线程', err);
+                this._lastError = String(err);
                 this.mode = ComputeMode.MAIN_THREAD;
+                this._emitTrace('fallback', { reason: this._lastError });
+                console.warn('[RandomSpheres] Worker 计算失败，回退到主线程', err);
             });
         }
 
-        // 首批 run() 已触发 _spawnWorker → isWorkerSupported()，可恢复全局环境
+        // 结束本次组件级无 Worker 模拟状态。
         this._exitNoWorkerSim();
     }
 
@@ -864,6 +957,35 @@ export class RandomSpheres extends Component {
      * 并更新插值计时（_lastResultTime / _simInterval）。缓冲区不再被 transfer，可安全原地复用。
      */
     private _mergeMultiResults (): void {
+        this._observeBackend();
+        this._lastRoundTripMs = performance.now() - this._batchStarted;
+        const reference = this._expectedBatch;
+        const checkingStarted = performance.now();
+        try {
+            // Check every chunk before writing any authoritative state: malformed/partial results cannot corrupt it.
+            for (let c = 0; c < this._multiTotal; c++) {
+                const result = this._multiResults[c];
+                const { start, end } = this._multiChunks[c];
+                const size = (end - start) * 3;
+                if (!result || result.positions?.length !== size || result.velocities?.length !== size) {
+                    throw new Error(`Worker chunk ${c} has invalid buffer lengths`);
+                }
+                for (let i = 0; i < size; i++) {
+                    const position = result.positions[i], velocity = result.velocities[i];
+                    if (!Number.isFinite(position) || !Number.isFinite(velocity)) throw new Error(`Non-finite Worker chunk ${c}:${i}`);
+                    if (reference && (Math.abs(position - reference.positions[start * 3 + i]) > 1e-5
+                        || Math.abs(velocity - reference.velocities[start * 3 + i]) > 1e-5)) {
+                        throw new Error(`Worker/main-thread mismatch at chunk ${c}:${i}`);
+                    }
+                }
+            }
+        } catch (error) {
+            this._validationFailures++;
+            this._lastError = String(error);
+            this._emitTrace('validation-failed', { reason: this._lastError });
+            throw error;
+        }
+        this._validationCpuMs += performance.now() - checkingStarted;
         const now = performance.now();
         // 估算模拟步间隔（结果到齐周期），作为插值 alpha 的分母；EMA 平滑，clamp 防异常值
         if (this._lastResultTime > 0) {
@@ -891,11 +1013,25 @@ export class RandomSpheres extends Component {
         this._simSteps++;
         this._hasPending = true;
         this._workerBusy = false;
+        this._completedBatches++;
+        if (reference) {
+            this._validatedBatches++;
+            this._lastVerifiedGeneration = this._poolGen;
+        }
+        this._expectedBatch = null;
         this._multiResults = [];
         this._multiChunks = [];
+        if (reference) this._emitTrace('validation-pass');
+        if (this._firstCompletedGeneration !== this._poolGen) {
+            this._firstCompletedGeneration = this._poolGen;
+            this._emitTrace('first-batch');
+        }
     }
 
     private _destroyPool (): void {
+        if (this._pool || this._poolInitializing) this._emitTrace('executor-stop');
+        this._expectedBatch = null;
+        this._observedBackend = '';
         this._poolGen++; // 使在途的异步脚本 URL 解析回调失效
         this._poolInitializing = false;
         if (this._pool) {
@@ -908,8 +1044,7 @@ export class RandomSpheres extends Component {
         this._multiTotal = 0;
         this._multiResults = [];
         this._multiChunks = [];
-        this._poolBackend = '';
-        // 确保模拟环境恢复（防止 _sendToWorkerMulti 提前 return 时遗漏恢复）
+        // 清理组件级模拟状态。
         this._exitNoWorkerSim();
     }
 
@@ -923,7 +1058,8 @@ export class RandomSpheres extends Component {
         const compute = this._accCompute / frames;
         const apply = this._accApply / frames;
         const frame = this._accFrame / frames;
-        const modeName = ComputeMode[this.mode];
+        const modeName = modeDisplayName(this.mode);
+        const management = this.workerManagement === WorkerManagement.DIRECT_WORKER ? '直接 Worker' : 'WorkerPool';
         const isWorker = this._isWorkerMode(this.mode);
 
         // Fix2：模拟更新率（sim Hz）= 两次 HUD 刷新之间权威结果回传次数 / 时间间隔。
@@ -946,23 +1082,29 @@ export class RandomSpheres extends Component {
             : `渲染 FPS: ${this._renderFps.toFixed(0)}（单线程每帧即模拟步）`;
 
         let workerInfo = '';
-        if (this.mode === ComputeMode.WORKER_INLINE) {
-            workerInfo = `（内嵌函数：${this._multiWorkerCount} 线程分块并行，`
-                + `worker代码由函数toString生成 | backend=${this._poolBackend}）`;
-        } else if (this.mode === ComputeMode.WORKER_SCRIPT) {
-            workerInfo = `（独立JS：${this._multiWorkerCount} 线程分块并行，`
-                + `worker脚本=${(this._workerScriptUrl || WORKER_SCRIPT_PATH).slice(0, 42)} | backend=${this._poolBackend}）`;
-        } else if (this.mode === ComputeMode.WORKER_WECHAT
-            || this.mode === ComputeMode.WORKER_WECHAT_V1
-            || this.mode === ComputeMode.WORKER_WECHAT_V2) {
-            workerInfo = `（${modeDisplayName(this.mode)}：${this._multiWorkerCount} 线程分块并行，`
-                + `wx.createWorker | backend=${this._poolBackend}，V1单worker/V2多worker）`;
+        if (isWorker) {
+            const backend = this._pool?.backend;
+            const caps = getWorkerCapabilities();
+            if (!backend) {
+                workerInfo = `${management} 准备中`;
+            } else if (backend === 'sync') {
+                workerInfo = `管理方式：${management} | 实际执行：主线程同步降级 | backend=sync`;
+            } else if (backend === 'none') {
+                workerInfo = `管理方式：${management} | 实际执行：不可用 | backend=none`;
+            } else {
+                const concurrency = this._resolvePoolConcurrency();
+                const chunks = Math.max(1, Math.min(this._multiWorkerCount, concurrency, this.count));
+                workerInfo = `管理方式：${management} | 实际执行：Worker 线程 | backend=${backend}\n`
+                    + `并发上限=${concurrency} | 分块=${chunks} | `
+                    + (concurrency > 1 ? '可并行计算' : '单 Worker 异步卸载')
+                    + ` | transfer=${caps.supportsTransfer} | 标准能力标志=${caps.supportsStandardWorker}`;
+            }
         }
 
         if (this.simulateNoWorker) {
             const simStatus = this._noWorkerSimVerified
                 ? 'fallback 生效（同步执行）'
-                : (this._noWorkerSimActive ? '等待验证...' : '未验证（可能缓存已命中）');
+                : (this._noWorkerSimActive ? '等待验证...' : '未生效或未验证');
             workerInfo += `\n[simulateNoWorker] ${simStatus}`;
         }
 
@@ -976,7 +1118,7 @@ export class RandomSpheres extends Component {
         //         + `compute=${compute.toFixed(2)}ms apply=${apply.toFixed(2)}ms frame=${frame.toFixed(2)}ms `
         //         + `renderFps=${this._renderFps.toFixed(0)}`
         //         + (isWorker
-        //             ? ` simHz=${simHz.toFixed(1)} workers=${this._multiWorkerCount} backend=${this._poolBackend}` : ''));
+        //             ? ` simHz=${simHz.toFixed(1)} workers=${this._multiWorkerCount} backend=${this._pool?.backend}` : ''));
         // }
 
         this._accCompute = 0;
@@ -1111,7 +1253,7 @@ export class RandomSpheres extends Component {
         this._buildModeButton(canvasNode, w, h);
     }
 
-    /** 构建模式切换按钮（底部居中），点击循环：单线程 → 微信 V1 → 微信 V2。 */
+    /** 构建模式切换按钮（底部居中），点击循环：单线程 → Worker（自动）。 */
     private _buildModeButton (canvasNode: Node, w: number, h: number): void {
         const btnW = Math.min(360, w - 40);
         const btnH = 64;
@@ -1161,7 +1303,7 @@ export class RandomSpheres extends Component {
         this._updateModeButtonLabel();
     }
 
-    /** 按钮点击：循环切换到下一个模式（单线程 → 微信 V1 → 微信 V2 → …）。 */
+    /** 按钮点击：循环切换到下一个模式（单线程 → Worker（自动） → …）。 */
     private _onModeButtonClick (): void {
         const idx = MODE_CYCLE.indexOf(this.mode);
         this.mode = MODE_CYCLE[(idx + 1) % MODE_CYCLE.length];
