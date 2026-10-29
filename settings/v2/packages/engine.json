@@ -37,9 +37,6 @@
           "sorting-2d": {
             "_value": false
           },
-          "xr": {
-            "_value": false
-          },
           "rich-text": {
             "_value": true
           },
@@ -141,6 +138,12 @@
           "websocket-server": {
             "_value": false
           },
+          "worker": {
+            "_value": true
+          },
+          "worker-pool": {
+            "_value": true
+          },
           "terrain": {
             "_value": true
           },
@@ -190,6 +193,9 @@
           },
           "legacy-pipeline": {
             "_value": false
+          },
+          "xr": {
+            "_value": false
           }
         },
         "flags": {},
@@ -225,7 +231,9 @@
           "ui",
           "video",
           "websocket",
-          "webview"
+          "webview",
+          "worker",
+          "worker-pool"
         ],
         "noDeprecatedFeatures": {
           "value": false,
