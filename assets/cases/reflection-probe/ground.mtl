@@ -2,6 +2,7 @@
   "__type__": "cc.Material",
   "_name": "",
   "_objFlags": 0,
+  "__editorExtras__": {},
   "_native": "",
   "_effectAsset": {
     "__uuid__": "1baf0fc9-befa-459c-8bdd-af1a450a0319",
@@ -13,33 +14,88 @@
       "USE_ALBEDO_MAP": true
     },
     {},
+    {},
+    {},
     {}
   ],
   "_states": [
     {
-      "rasterizerState": {},
-      "depthStencilState": {},
       "blendState": {
         "targets": [
-          {}
+          {
+            "blend": false,
+            "blendSrc": 1,
+            "blendDst": 0,
+            "blendEq": 0,
+            "blendSrcAlpha": 1,
+            "blendDstAlpha": 0,
+            "blendAlphaEq": 0,
+            "blendColorMask": 15
+          }
         ]
       }
     },
     {
-      "rasterizerState": {},
-      "depthStencilState": {},
       "blendState": {
         "targets": [
-          {}
+          {
+            "blend": true,
+            "blendSrc": 1,
+            "blendDst": 1,
+            "blendEq": 0,
+            "blendSrcAlpha": 0,
+            "blendDstAlpha": 1,
+            "blendAlphaEq": 0,
+            "blendColorMask": 15
+          }
         ]
       }
     },
     {
-      "rasterizerState": {},
-      "depthStencilState": {},
       "blendState": {
         "targets": [
-          {}
+          {
+            "blend": false,
+            "blendSrc": 1,
+            "blendDst": 0,
+            "blendEq": 0,
+            "blendSrcAlpha": 1,
+            "blendDstAlpha": 0,
+            "blendAlphaEq": 0,
+            "blendColorMask": 15
+          }
+        ]
+      }
+    },
+    {
+      "blendState": {
+        "targets": [
+          {
+            "blend": true,
+            "blendSrc": 2,
+            "blendDst": 4,
+            "blendEq": 0,
+            "blendSrcAlpha": 1,
+            "blendDstAlpha": 4,
+            "blendAlphaEq": 0,
+            "blendColorMask": 15
+          }
+        ]
+      }
+    },
+    {
+      "blendState": {
+        "targets": [
+          {
+            "blend": false,
+            "blendSrc": 1,
+            "blendDst": 0,
+            "blendEq": 0,
+            "blendSrcAlpha": 1,
+            "blendDstAlpha": 0,
+            "blendAlphaEq": 0,
+            "blendColorMask": 15
+          }
         ]
       }
     }
@@ -56,9 +112,11 @@
       "roughness": 1,
       "mainTexture": {
         "__uuid__": "60880fb6-4b88-45a0-b88a-ab97336e54a1@6c48a",
-        "__expectedType__": "cc.Texture2D"
+        "__expectedType__": "cc.TextureBase"
       }
     },
+    {},
+    {},
     {},
     {}
   ]

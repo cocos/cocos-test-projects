@@ -2,6 +2,7 @@
   "__type__": "cc.Material",
   "_name": "",
   "_objFlags": 0,
+  "__editorExtras__": {},
   "_native": "",
   "_effectAsset": {
     "__uuid__": "a3cd009f-0ab0-420d-9278-b9fdab939bbc",
@@ -9,15 +10,56 @@
   },
   "_techIdx": 0,
   "_defines": [
+    {},
+    {},
     {}
   ],
   "_states": [
     {
-      "rasterizerState": {},
-      "depthStencilState": {},
       "blendState": {
         "targets": [
-          {}
+          {
+            "blend": false,
+            "blendSrc": 1,
+            "blendDst": 0,
+            "blendEq": 0,
+            "blendSrcAlpha": 1,
+            "blendDstAlpha": 0,
+            "blendAlphaEq": 0,
+            "blendColorMask": 15
+          }
+        ]
+      }
+    },
+    {
+      "blendState": {
+        "targets": [
+          {
+            "blend": true,
+            "blendSrc": 2,
+            "blendDst": 4,
+            "blendEq": 0,
+            "blendSrcAlpha": 1,
+            "blendDstAlpha": 4,
+            "blendAlphaEq": 0,
+            "blendColorMask": 15
+          }
+        ]
+      }
+    },
+    {
+      "blendState": {
+        "targets": [
+          {
+            "blend": false,
+            "blendSrc": 1,
+            "blendDst": 0,
+            "blendEq": 0,
+            "blendSrcAlpha": 1,
+            "blendDstAlpha": 0,
+            "blendAlphaEq": 0,
+            "blendColorMask": 15
+          }
         ]
       }
     }
@@ -38,6 +80,8 @@
         "b": 231,
         "a": 255
       }
-    }
+    },
+    {},
+    {}
   ]
 }
