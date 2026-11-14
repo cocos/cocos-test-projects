@@ -1,12 +1,12 @@
 {
-  "ver": "2.3.4",
+  "ver": "2.3.14",
   "importer": "gltf",
   "imported": true,
   "uuid": "2e546bc3-ff51-4b10-aeed-6449412a0fe5",
   "files": [],
   "subMetas": {
     "9c834": {
-      "ver": "1.1.0",
+      "ver": "1.1.1",
       "importer": "gltf-mesh",
       "name": "NormalTangentTest_low.mesh",
       "id": "9c834",
@@ -112,7 +112,7 @@
       }
     },
     "c98cb": {
-      "ver": "1.0.12",
+      "ver": "1.0.14",
       "importer": "gltf-scene",
       "name": "NormalTangentMirrorTest.prefab",
       "id": "c98cb",
@@ -179,6 +179,20 @@
           "faceCount": 0.1
         }
       ]
+    },
+    "legacyFbxImporter": false,
+    "allowMeshDataAccess": true,
+    "addVertexColor": false,
+    "generateLightmapUVNode": false,
+    "meshOptimizer": {
+      "enable": false,
+      "algorithm": "simplify",
+      "simplifyOptions": {
+        "targetRatio": 1,
+        "enableSmartLink": true,
+        "agressiveness": 7,
+        "maxIterationCount": 100
+      }
     }
   }
 }
